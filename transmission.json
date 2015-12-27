@@ -1,0 +1,46 @@
+{
+    "Transmission": {
+        "containers": {
+            "transmission": {
+                "image": "dperson/transmission",
+                "launch_order": 1,
+                "ports": {
+                    "51413": {
+                        "description": "Port used to share the file being downloaded. You may need to open it(protocol: tcp and udp) on your firewall. Suggested default: 51413.",
+                        "host_default": 51413,
+                        "label": "Sharing port"
+                    },
+                    "9091": {
+                        "description": "Transmission WebUI port. Suggested default: 9091",
+                        "host_default": 9091,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/var/lib/transmission-daemon": {
+                        "description": "Choose a Share where Transmission will save all of it's files including your downloads. Eg: create a Share called transmission-rockon.",
+                        "label": "Data Storage"
+                    }
+                }
+            }
+        },
+        "custom_config": {
+            "TRPASSWD": {
+                "description": "Choose a login password for the Transmission WebUI.",
+                "label": "WebUI password"
+            },
+            "TRUSER": {
+                "description": "Choose a login username for Transmission WebUI.",
+                "label": "WebUI username"
+            }
+        },
+        "description": "Open Source BitTorrent client",
+        "ui": {
+            "slug": ""
+        },
+	"version": "1.0",
+        "website": "http://www.transmissionbt.com/"
+    }
+}

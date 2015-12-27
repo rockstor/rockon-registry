@@ -1,0 +1,49 @@
+{
+    "OpenVPN": {
+        "containers": {
+            "openvpn": {
+                "image": "kylemanna/openvpn",
+                "launch_order": 2,
+                "opts": [
+                    [
+                        "--cap-add=NET_ADMIN",
+                        ""
+                    ],
+                    [
+                        "--volumes-from",
+                        "ovpn-data"
+                    ]
+                ],
+                "ports": {
+                    "1194": {
+                        "description": "OpenVPN server listening port. You may need to open it on your firewall.",
+                        "host_default": 1194,
+                        "label": "Server port",
+                        "protocol": "udp"
+                    }
+                }
+            },
+            "ovpn-data": {
+                "image": "busybox",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "-v",
+                        "/etc/openvpn"
+                    ]
+                ]
+            }
+        },
+        "custom_config": {
+            "servername": {
+                "description": "Your Rockstor system's public ip address or hostname.",
+                "label": "Server address"
+            }
+        },
+        "description": "Open Source VPN server",
+        "icon": "https://openvpn.net/",
+        "more_info": "<h4>Additional steps are required by this Rock-on.</h4><p>Run these following commands as the<code>root</code>user on your Rockstor system, i.e., via a ssh console.</p><h4><u>Initialize PKI</u>&nbsp;&nbsp;&nbsp;&nbsp;<i>The OpenVPN Rock-on will not start without it.</i></h4><code>/opt/rockstor/bin/ovpn-initpki</code><h4><u>Generate a client certificate</u>&nbsp;&nbsp;&nbsp;&nbsp;<i>One for every client</i></h4><code>/opt/rockstor/bin/ovpn-client-gen</code><br><h4><u>Retrieve client configuration</u>&nbsp;&nbsp;&nbsp;&nbsp<i>For any one of your clients. The resulting .ovpn file can be used to connect to this OpenVPN server.</i></h4><code>/opt/rockstor/bin/ovpn-client-print</code><h4><u>Configure firewall</u></h4><p>If your Rockstor system is behind a firewall, you will need to configure it to allow OpenVPN traffic to forward to your Rockstor system.</p>",
+        "website": "https://openvpn.net/",
+	"version": "1.0"
+    }
+}
