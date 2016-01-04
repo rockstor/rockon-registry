@@ -33,6 +33,7 @@
             "slug": ""
         },
         "volume_add_support": true,
-        "website": "https://www.getsync.com/"
+        "website": "https://www.getsync.com/",
+	"version": "1.0"
     }
 }
