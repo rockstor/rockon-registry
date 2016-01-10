@@ -1,0 +1,10 @@
+{
+    "OwnCloud": "owncloud.json",
+    "Transmission": "transmission.json",
+    "Syncthing": "syncthing.json",
+    "BTSync": "btsync.json",
+    "OpenVPN": "openvpn.json",
+    "Plex": "plex.json",
+    "Discourse": "discourse.json",
+    "JenkinsCI": "jenkins.json"
+}
