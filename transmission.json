@@ -1,5 +1,11 @@
 {
     "Transmission": {
+	"description": "Open Source BitTorrent client",
+        "ui": {
+            "slug": ""
+        },
+	"version": "1.0",
+        "website": "http://www.transmissionbt.com/",
         "containers": {
             "transmission": {
                 "image": "dperson/transmission",
@@ -23,24 +29,21 @@
                         "description": "Choose a Share where Transmission will save all of it's files including your downloads. Eg: create a Share called transmission-rockon.",
                         "label": "Data Storage"
                     }
-                }
+                },
+		"environment": {
+		    "TRUSER": {
+			"description": "Choose a login username for Transmission WebUI.",
+			"label": "WebUI username",
+			"index": 1
+		    },
+		    "TRPASSWD": {
+			"description": "Choose a login password for the Transmission WebUI.",
+			"label": "WebUI password",
+			"default": "admin",
+			"index": 2
+		    }
+		}
             }
-        },
-        "custom_config": {
-            "TRPASSWD": {
-                "description": "Choose a login password for the Transmission WebUI.",
-                "label": "WebUI password"
-            },
-            "TRUSER": {
-                "description": "Choose a login username for Transmission WebUI.",
-                "label": "WebUI username"
-            }
-        },
-        "description": "Open Source BitTorrent client",
-        "ui": {
-            "slug": ""
-        },
-	"version": "1.0",
-        "website": "http://www.transmissionbt.com/"
+        }
     }
 }
