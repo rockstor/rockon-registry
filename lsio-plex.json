@@ -1,14 +1,19 @@
 {
     "LSIO-Plex": {
+        "description": "Plex media server",
+        "ui": {
+            "slug": "web"
+        },
+        "volume_add_support": true,
+        "website": "https://plex.tv/",
+        "version": "24.09.2015",
         "containers": {
             "plex": {
                 "image": "linuxserver/plex",
                 "launch_order": 1,
                 "opts": [
-                    [
-                        "--net=host",
-                        ""
-                    ]
+                    "--net=host",
+                    ""
                 ],
                 "environment": {
                     "PUID": { 
@@ -36,13 +41,6 @@
                     }
                 }
             }
-        },
-        "description": "Plex media server",
-        "ui": {
-            "slug": "web"
-        },
-        "volume_add_support": true,
-        "website": "https://plex.tv/",
-	    "version": "24.09.2015"
+        }
     }
 }
