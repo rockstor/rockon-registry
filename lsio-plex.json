@@ -10,14 +10,14 @@
                         ""
                     ]
                 ],
-                "custom_config": {
-                    "PUID": {
-                        "description": "UID of the user Plex will run as",
+                "environment": {
+                    "PUID": { 
+                        "description": "User ID Plex will run as",
                         "label": "PUID"
                     },
                     "PGID": {
-                        "description": "PGID of the user Plex will run as",
-                        "label": "PGUI"
+                        "description": "Group ID Plex will run as",
+                        "label": "PGID"
                     }
                 },
                 "volumes": {
@@ -43,6 +43,6 @@
         },
         "volume_add_support": true,
         "website": "https://plex.tv/",
-	"version": "24.09.2015"
+	    "version": "24.09.2015"
     }
 }
