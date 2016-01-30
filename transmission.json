@@ -12,7 +12,7 @@
                 "launch_order": 1,
                 "ports": {
                     "51413": {
-                        "description": "Port used to share the file being downloaded. You may need to open it(protocol: tcp and udp) on your firewall. Suggested default: 51413.",
+                        "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall. Suggested default: 51413.",
                         "host_default": 51413,
                         "label": "Sharing port"
                     },
@@ -26,7 +26,7 @@
                 },
                 "volumes": {
                     "/var/lib/transmission-daemon": {
-                        "description": "Choose a Share where Transmission will save all of it's files including your downloads. Eg: create a Share called transmission-rockon.",
+                        "description": "Choose a Share where Transmission will save all of it's config and data files including your downloads. Eg: create a Share called transmission-data.",
                         "label": "Data Storage"
                     }
                 },
