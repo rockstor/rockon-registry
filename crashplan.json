@@ -1,0 +1,39 @@
+{
+    "CrashPlan": {
+        "description": "Crashplan backupservice",
+        "more_info": "<h4>Crashplan backupservice by Code42 - containerized by Joshiegy for Rockstor</h4>",
+        "version": "one point oh",
+        "website": "http://www.code42.com/",
+        "volume_add_support": true,
+        "containers": {
+            "crashplan": {
+                "image": "joshiegy/crashplan",
+                "launch_order": 1,
+                "ports": {
+                    "4242": {
+                        "description": "Crashplan Computer-to-Computer port. Suggested default: 4242",
+                        "label": "P2P port",
+                        "host_default": 4242,
+                        "protocol": "tcp"
+                    },
+                    "4243": {
+                      "description": "Crashplan mgmt-port. Suggested default: 4243",
+                      "label": "mgmt-port",
+                      "host_default": 4243,
+                      "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for the Crashplan configuration.",
+                        "label": "Config Storage"
+                    },
+                    "/media": {
+                        "description": "Choose a Share with media content.",
+                        "label": "Media Storage"
+                    }
+                }
+            }
+        }
+    }
+}
