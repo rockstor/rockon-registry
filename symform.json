@@ -5,6 +5,9 @@
         "version": "one point oh",
         "website": "http://www.symform.com/",
         "volume_add_support": true,
+        "opts": [
+          "-v /dev/rtc:/dev/rtc:ro"
+        ],
         "containers": {
             "symform": {
                 "image": "joshiegy/symform",
