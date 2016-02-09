@@ -29,15 +29,17 @@
 				"/var/opt/gitlab": {
 					"description": "Choose a Share for GitLab repositories. Eg: create a Share called gitlab-repos for this purpose alone.",
 					"label": "Repository Storage",
-					"min_size": 1073741824
+					"min_size": 1048576
 				},
 				"/etc/gitlab": {
 					"description": "Choose a Share for GitLab configuration. Eg: create a Share called gitlab-config for this purpose alone.",
 					"label": "Config Storage"
+					"min_size": 1048576
 				},
 				"/var/log/gitlab": {
                                         "description": "Choose a Share for GitLab log files. Eg: create a Share called gitlab-logs for this purpose alone.",
                                         "label": "Config logs"
+					"min_size": 1048576
                                 }
 			}
 		    }
