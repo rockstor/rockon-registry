@@ -37,7 +37,7 @@
 				},
 				"/var/log/gitlab": {
                                         "description": "Choose a Share for GitLab log files. Eg: create a Share called gitlab-logs for this purpose alone.",
-                                        "label": "Config logs"
+					"label": "Config logs",
 					"min_size": 1048576
                                 }
 			}
