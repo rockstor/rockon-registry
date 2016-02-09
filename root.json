@@ -6,5 +6,6 @@
     "OpenVPN": "openvpn.json",
     "Plex": "plex.json",
     "Discourse": "discourse.json",
-    "JenkinsCI": "jenkins.json"
+    "JenkinsCI": "jenkins.json",
+    "EmbyServer": "embyserver.json"
 }
