@@ -9,14 +9,14 @@
 						"host_default": 8080,
 						"protocol": "tcp",
 						"label": "HTTP WebUI port",
-						"description": "GitLab WebUI port.Suggested default: 8080",
+						"description": "GitLab WebUI port. Suggested default: 8080",
 						"ui":true
 					},
 					"443": {
 						"host_default": 8443,
 						"protocol": "tcp",
 						"label": "HTTPS WebUI port",
-						"description": "GitLab WebUI port.Suggested default: 8443. Not enabled in docker image by default"
+						"description": "GitLab WebUI port. Suggested default: 8443. Not enabled in docker image by default"
 					},
 					"22": {
 						"host_default": 2222,
