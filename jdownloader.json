@@ -2,33 +2,26 @@
     "JDownloader": {
         "containers": {
             "jdownloader": {
-                "image": "aptalca/docker-jdownloader2",
+                "image": "egnerfl/jdownloader-headless",
                 "launch_order": 1,
-                "ports": {
-                    "3389": {
-                        "description": "Port for incoming data. Default is 3389",
-                        "host_default": 3389,
-                        "label": "Listening port",
-                        "protocol": "tcp"
-                    },
-                    "8080": {
-                        "description": "JDownloader WebUI port. Suggested default: 8082.",
-                        "host_default": 8082,
-                        "label": "WebUI port",
-                        "protocol": "tcp",
-                        "ui": true
-                    }
-                },
                 "volumes": {
-                    "/config": {
-                        "description": "Choose a storage for your JDownloader Config.",
-                        "label": "Config Storage"
-                    },
-                    "/data": {
+                    "/downloads": {
                         "description": "Choose a storage for your Downloads.",
                         "label": "Data Storage"
                     }
-                }
+                },
+                "environment": {
+        		    "JDEMAIL": {
+            			"description": "myJDownloader Username",
+            			"label": "my.jdownloader username",
+            			"index": 1
+        		    },
+        		    "JDPASSWORD": {
+            			"description": "myJDownloader Password",
+            			"label": "my.jdownloader password",
+            			"index": 2
+        		    }
+        		}
             }
         },
         "description": "Headless JDownloader 2",
@@ -36,7 +29,7 @@
             "slug": ""
         },
         "volume_add_support": true,
-        "website": "http://jdownloader.org/",
+        "website": "http://my.jdownloader.org/",
         "version": "1.0"
     }
 }
