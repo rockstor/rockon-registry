@@ -80,6 +80,8 @@ As it is evident from above, a container object has nested objects for port and 
   (optional)"protocol": "<tcp or udp>"
 }
 ```
+Note that protocol is optional and if it's not present, both tcp and udp ports are mapped simultaneously. So if you wish to allow both tcp and udp, just don't specify protocol in the Port object.
+
 ### Volume object
 
 ```
