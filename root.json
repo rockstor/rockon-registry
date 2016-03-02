@@ -7,5 +7,6 @@
     "Plex": "plex.json",
     "Discourse": "discourse.json",
     "JenkinsCI": "jenkins.json",
-    "EmbyServer": "embyserver.json"
+    "EmbyServer": "embyserver.json",
+    "NZBGet": "nzbget.json"
 }
