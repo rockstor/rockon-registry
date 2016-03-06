@@ -2,7 +2,7 @@
     "Plex": {
         "containers": {
             "plex": {
-                "image": "timhaak/plex",
+                "image": "linuxserver/plex",
                 "launch_order": 1,
                 "opts": [
                     [
