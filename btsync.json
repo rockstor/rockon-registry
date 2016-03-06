@@ -2,12 +2,12 @@
     "BTSync": {
         "containers": {
             "btsync": {
-                "image": "crewjam/btsync",
+                "image": "bittorrent/sync",
                 "launch_order": 1,
                 "ports": {
-                    "3369": {
+                    "55555": {
                         "description": "Port for incoming data. You may need to open it(protocol: udp) on your firewall. Suggested default: 3369.",
-                        "host_default": 3369,
+                        "host_default": 55555,
                         "label": "Listening port",
                         "procotol": "udp"
                     },
@@ -20,8 +20,8 @@
                     }
                 },
                 "volumes": {
-                    "/data": {
-                        "description": "Choose a Share for all incoming data. Eg: create a Share called btsync-data for this purpose alone. It will be available as /data inside BTSync.",
+                    "/mnt/sync": {
+                        "description": "Choose a Share for all incoming data. Eg: create a Share called btsync-data for this purpose alone. It will be available as /data inside BTSync. Further Folders can be added to /mnt/mounted_folders/<DIR_NAME>",
                         "label": "Data Storage"
                     }
                 }
