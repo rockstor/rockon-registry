@@ -2,7 +2,7 @@
     "BTSync": {
         "containers": {
             "btsync": {
-                "image": "aostanin/btsync",
+                "image": "crewjam/btsync",
                 "launch_order": 1,
                 "ports": {
                     "3369": {
