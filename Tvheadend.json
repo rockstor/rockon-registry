@@ -1,7 +1,7 @@
 {
 "Tvheadend": {
     "containers": {
-        "couchpotato": {
+        "Tvheadend": {
             "image": "dreamcat4/tvheadend",
             "launch_order": 1,
             "ports": {
