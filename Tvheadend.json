@@ -1,0 +1,42 @@
+{
+"Tvheadend": {
+    "containers": {
+        "couchpotato": {
+            "image": "dreamcat4/tvheadend",
+            "launch_order": 1,
+            "ports": {
+                "9981": {
+                    "description": "Port for  Web interface. Suggested default: 9981.",
+                    "host_default": 9981,
+                    "label": "WebUI port",
+                    "procotol": "tcp"
+                },
+                "9982": {
+                    "description": "Port for . Suggested default: 9982.",
+                    "host_default": 9982,
+                    "label": " port",
+                    "procotol": "tcp"
+                }
+            },
+            "volumes": {
+                "/recordings": {
+                    "description": "Choose a share to download to.",
+                    "label": "Data Storage"
+                },
+                "/config": {
+                    "description": "Choose a share to host configuration.",
+                    "label": "Config Storage"
+                }
+            }
+        }
+    },
+    "description": "Tvheadend",
+    "more_info": "",
+    "ui": {
+        "slug": ""
+    },
+    "volume_add_support": true,
+    "website": "https://tvheadend.org/",
+    "version": "alpha"
+}
+}
