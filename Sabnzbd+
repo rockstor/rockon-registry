@@ -1,3 +1,4 @@
+{
 "Sabnzbd+": {
     "containers": {
         "sabnzbd": {
@@ -31,4 +32,5 @@
     "volume_add_support": true,
     "website": "https://www.sabnzbd.org/",
     "version": "alpha"
+}
 }
