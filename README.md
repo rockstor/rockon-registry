@@ -20,7 +20,11 @@ If you are familiar with Docker and know how to run apps by hand, you can create
 
 3. Upload the file to /opt/rockstor/rockons-metastore/[app].json. Hit update in the Web-UI and install your brand new Rock-On!
 
-If you like to share your app with rest of the Rockstor community, open a pull request in this repository. Thank you!
+If you like to share your app with rest of the Rockstor community, open a pull request in this repository. Please follow these guidelines when opening a pull request.
+
+1. One Rock-On per pull request please. If you are working on multiple apps, separate them out. It will make testing and merging a lot more manageable.
+
+2. Add a comment to your pull request detailing how you've tested it out. More details the better as it will help ensure quality and benefit the whole community!
 
 ## What is the structure of a Rock-On profile file?
 
