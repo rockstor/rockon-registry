@@ -1,0 +1,39 @@
+{
+    "Symform": {
+        "description": "Symform backupservice",
+        "more_info": "<h4>Symform syncservice - containerized by Joshiegy for Rockstor</h4>",
+        "version": "one point oh",
+        "website": "http://www.symform.com/",
+        "volume_add_support": true,
+        "opts": [
+          "-v /dev/rtc:/dev/rtc:ro"
+        ],
+        "containers": {
+            "symform": {
+                "image": "joshiegy/symform",
+                "launch_order": 1,
+                "ports": {
+                    "59234": {
+                        "description": "Symform webgui port. Suggested default: 59234",
+                        "label": "Webgui",
+                        "host_default": 59234,
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+                    "42666": {
+                      "description": "Symform sync-port - Select the same here as in the Webgui-wizard later. Suggested default: 42666",
+                      "label": "sync-port",
+                      "host_default": 42666,
+                      "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a Share for the syncdata.",
+                        "label": "Data Storage"
+                    }
+                }
+            }
+        }
+    }
+}
