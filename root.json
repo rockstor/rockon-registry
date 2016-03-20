@@ -8,5 +8,8 @@
     "Discourse": "discourse.json",
     "JenkinsCI": "jenkins.json",
     "EmbyServer": "embyserver.json",
-    "NZBGet": "nzbget.json"
+    "NZBGet": "nzbget.json",
+    "CouchPotato": "couchpotato.json",
+    "sabnzb": "sabnzb.json",
+    "Sonarr": "sonarr.json"
 }
