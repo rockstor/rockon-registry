@@ -4,12 +4,6 @@
             "couchpotato": {
                 "image": "linuxserver/couchpotato",
                 "launch_order": 1,
-                "opts": [
-                    [
-                        "--net=host",
-                        ""
-                    ]
-                ],
                 "ports": {
                     "5050": {
                         "description": "couchpotato WebUI port. Suggested default: 5050",
