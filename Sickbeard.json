@@ -13,15 +13,30 @@
                     }
                 },
                 "volumes": {
-                    "/data": {
+                    "/download": {
                         "description": "Choose a share to download to.",
                         "label": "Data Storage"
                     },
                     "/config": {
                         "description": "Choose a share host configuration.",
                         "label": "Config Storage"
+                    },
+                    "/tv": {
+                        "description": "Choose a share to host shows.",
+                        "label": "Config TV"
                     }
-                }
+                },
+                "environment": {
+                    "PUID": {
+		        "description": "Enter a valid UID to run sickbeard as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run sickbeard as.",
+                        "index": 1
+		    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run sickbeard as.",
+                        "index": 2
+                    }
             }
         },
         "description": "Sickbeard",
