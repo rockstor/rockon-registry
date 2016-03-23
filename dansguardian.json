@@ -6,7 +6,7 @@
                 "launch_order": 1,
                 "ports": {
                     "8080": {
-                        "description": "Port for HTTP Proxy. Suggested default: 8080.",
+                        "description": "Port for HTTP Proxy. Suggested default: 9999.",
                         "host_default": 9999,
                         "label": "Web proxy port",
                         "protocol": "tcp"
