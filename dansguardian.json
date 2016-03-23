@@ -1,0 +1,33 @@
+{
+    "dansguardian": {
+        "containers": {
+            "dansguardian": {
+                "image": "iamdh4/dansguardian",
+                "launch_order": 1,
+                "ports": {
+                    "8080": {
+                        "description": "Port for HTTP Proxy. Suggested default: 8080.",
+                        "host_default": 9999,
+                        "label": "Web proxy port",
+                        "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for configuration. Eg: create a Share called dansguardian-config for this purpose alone.",
+                        "label": "Config Storage",
+                        "min_size": 1073741824
+                    }
+                }
+            }
+        },
+        "description": "HTTP Content Filter",
+        "ui": {
+            "https": true,
+            "slug": ""
+        },
+        "volume_add_support": true,
+        "website": "http://dansguardian.org/",
+	"version": "1.0"
+    }
+}
