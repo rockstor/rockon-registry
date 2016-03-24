@@ -47,7 +47,7 @@
             "slug": ""
         },
         "volume_add_support": true,
-		"website": "<https://hub.docker.com/r/linuxserver/couchpotato/>",
+	"website": "<https://hub.docker.com/r/linuxserver/couchpotato/>",
 	"version": "1.0"
     }
 }
