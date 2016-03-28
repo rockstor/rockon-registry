@@ -1,0 +1,51 @@
+{
+    "SqueezeBoxServer": {
+        "containers": {
+            "squeezebox": {
+                "image": "tdeckers/logitechmediaserver",
+                "launch_order": 1,
+                "ports": {
+                    "9000": {
+                        "description": "Webserver Port. Suggested default: 9000.",
+                        "host_default": 9000,
+                        "label": "Webserver port",
+                        "protocol": "tcp"
+                    },
+                    "9090": {
+                        "description": "CLI Port. Suggested default: 9090.",
+                        "host_default": 9090,
+                        "label": "CLI port",
+                        "protocol": "tcp"
+                    },
+                    "3483": {
+                        "description": "SlimProto Port. Suggested default: 3483.",
+                        "host_default": 3483,
+                        "label": "Slimproto port"
+                    },
+                    "9001": {
+                        "description": "Supervisord. Suggested default: 9001.",
+                        "host_default": 9001,
+                        "label": "Supervisord port",
+                        "protocol": "tcp"
+                    }
+
+                },
+                "volumes": {
+                    "/media": {
+                        "description": "Select the Share containing your Media",
+                        "label": "Config Media",
+                        "min_size": 1073741824
+                    }
+                }
+            }
+        },
+        "description": "Server for Squeezebox Devices",
+        "ui": {
+            "https": true,
+            "slug": ""
+        },
+        "volume_add_support": true,
+        "website": "http://mysqueezebox.com",
+        "version": "1.0"
+    }
+}
