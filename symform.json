@@ -1,17 +1,20 @@
 {
     "Symform": {
-        "description": "Symform backupservice",
-        "more_info": "<h4>Symform syncservice - containerized by Joshiegy for Rockstor</h4>",
+        "description": "Symform backup service",
+        "more_info": "<h4>Symform free online backup service - containerized by Joshiegy for Rockstor</h4>",
         "version": "one point oh",
         "website": "http://www.symform.com/",
         "volume_add_support": true,
-        "opts": [
-          "-v /dev/rtc:/dev/rtc:ro"
-        ],
         "containers": {
-            "symform": {
+            "joshiegy-symform": {
                 "image": "joshiegy/symform",
                 "launch_order": 1,
+		"opts": [
+		    [
+			"-v",
+			"/dev/rtc:/dev/rtc:ro"
+		    ]
+		],
                 "ports": {
                     "59234": {
                         "description": "Symform webgui port. Suggested default: 59234",
