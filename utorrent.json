@@ -26,7 +26,7 @@
                         "description": "Choose a Share for utorrent settingsuration. Eg: create a Share called utorrent-settings for this purpose alone.",
                         "label": "settings Storage"
                     },
-					"/media": {
+					"/downloads": {
                     "description": "Choose a Share for utorrent downloads. Eg: create a Share called utorrent-downloads for this purpose alone.",
                     "label": "Download Storage"
                     }
