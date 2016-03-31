@@ -3,6 +3,7 @@
     "CouchPotato": "couchpotato.json",
     "Discourse": "discourse.json",
     "EmbyServer": "embyserver.json",
+    "Gogs": "gogs.json",
     "JenkinsCI": "jenkins.json",
     "Logitech Squeezebox": "LogitechSqueezebox.json",
     "NZBGet": "nzbget.json",
