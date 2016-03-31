@@ -1,5 +1,5 @@
 {
-    "Plex|Linuxserver.io": {
+    "Plex": {
         "containers": {
             "plex-linuxserver.io": {
                 "image": "linuxserver/plex",
