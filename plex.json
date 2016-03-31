@@ -18,7 +18,7 @@
 		    },
 		    "1900": {
 			"description": "DLNA Server port 2 of 2",
-			"host_default": 1900,
+			"host_default": 1901,
 			"label": "DLNA port 2",
 			"protocol": "udp"
 		    }
