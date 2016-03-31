@@ -1,7 +1,7 @@
 {
     "BTSync": {
         "containers": {
-            "btsync": {
+            "bittorrent-btsync": {
                 "image": "bittorrent/sync",
                 "launch_order": 1,
                 "ports": {
@@ -21,14 +21,14 @@
                 },
                 "volumes": {
                     "/mnt/sync": {
-                        "description": "Choose a Share for all incoming data. Eg: create a Share called btsync-data for this purpose alone. It will be available as /data inside BTSync. Further Folders can be added to /mnt/mounted_folders/<DIR_NAME>",
+                        "description": "Choose a Share for all incoming data including app state and config. Eg: create a Share called btsync-data for this purpose alone. It will be available as /mnt/sync inside BTSync.",
                         "label": "Data Storage"
                     }
                 }
             }
         },
         "description": "BitTorrent Sync",
-        "more_info": "<h4>Authentication</h4><p>Default username for your BTSync UI is<code>admin</code>and password is<code>password</code></p><h4>Storage</h4><p>You can also assign additional Shares for custom organization of your data.</p>",
+        "more_info": "<h4>Note about mapping Rockstor Shares</h4><p>BTSync supports mapping more Shares into the Rock-On via the Add Storage button. But, the Rock-on Directory must be a subdirectory of /mnt/mounted_folders. Eg: /mnt/mounted_folders/Photos. Shares mapped to other directories will not be visible.</p>",
         "ui": {
             "slug": ""
         },
