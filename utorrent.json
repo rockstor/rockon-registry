@@ -1,0 +1,57 @@
+{
+    "utorrent": {
+        "containers": {
+            "utorrent": {
+                "image": "dbarton/utorrent",
+                "launch_order": 1,
+		"opts": [
+                    [
+                        "--net=host",
+                        "",
+					"-v",
+					"/dev/rtc:/dev/rtc:ro"
+					]
+				],	
+                "ports": {
+                    "8080": {
+                        "description": "utorrent WebUI port. Suggested default: 8080",
+                        "host_default": 8080,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/settings": {
+                        "description": "Choose a Share for utorrent settingsuration. Eg: create a Share called utorrent-settings for this purpose alone.",
+                        "label": "settings Storage"
+                    },
+					"/downloads": {
+                    "description": "Choose a Share for utorrent downloads. Eg: create a Share called utorrent-downloads for this purpose alone.",
+                    "label": "Download Storage"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+		        "description": "Enter a valid UID to run utorrent as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run utorrent as.",
+                        "index": 1
+		    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run utorrent as.",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "utorrent is a movie downloader for bittorrent users.",
+		"more_info": "<h4>Default username: admin</p>Default password: utorrent. Also for daemonusage with CP etc. visit https://couchpota.to/forum/viewtopic.php?t=4158, and edit authfile found in settings folder.",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+	"website": "https://hub.docker.com/r/dbarton/utorrent/",
+	"version": "1.0"
+    }
+}
