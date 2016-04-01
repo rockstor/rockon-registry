@@ -1,6 +1,7 @@
 {
     "BTSync": "btsync.json",
     "CouchPotato": "couchpotato.json",
+    "Deluge": "deluge.json",
     "Discourse": "discourse.json",
     "EmbyServer": "embyserver.json",
     "Gogs": "gogs.json",
