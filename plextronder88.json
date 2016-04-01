@@ -4,21 +4,24 @@
             "plex-linuxserver.io": {
                 "image": "linuxserver/plex",
                 "launch_order": 1,
-				"opts": [
-                    [
-                        "--net=host",
-                        "",
-					"-v",
-					"/dev/rtc:/dev/rtc:ro"
-					]
-				],	
-                "ports": {
+				 "ports": {
                     "32400": {
                         "description": "WebUI port. Suggested default: 32400",
                         "host_default": 32400,
                         "label": "WebUI port",
                         "ui": true
-                    }
+                    },
+					"32469": {
+						"description": "DLNA Server port 1 of 2",
+						"host_default": 32469,
+						"label": "DLNA port 1"
+					},
+					"1900": {
+						"description": "DLNA Server port 2 of 2",
+						"host_default": 1900,
+						"label": "DLNA port 2",
+						"protocol": "udp"
+					}
                 },
                 "volumes": {
                     "/config": {
@@ -54,7 +57,7 @@
                 }
             }
         },
-        "description": "Plex media server by Linuxserver.io",
+        "description": "Plex media server by Linuxserver.io - JSON by Tronder88",
         "more_info": "<h4>Adding more media to Plex.</h4><p>You can add more Shares(with media) to Plex from the settings wizard of this Rock-on. Then, from Plex WebUI, you can update and re-index your library.</p>",
         "ui": {
             "slug": "web"
