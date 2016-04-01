@@ -26,6 +26,54 @@ If you like to share your app with rest of the Rockstor community, open a pull r
 
 2. Add a comment to your pull request detailing how you've tested it out. More details the better as it will help ensure quality and benefit the whole community!
 
+## One time setup before opening pull requests.
+
+Go to [rockon-registry repo](https://github.com/rockstor/rockon-registry) and click on the <b>Fork</b> button. This will fork the repository into your profile which serves as your private git remote called origin. The next few git steps are demonstrated on a Linux terminal. 
+
+Create a local clone of your fork.
+```
+git clone git@github.com:your_github_username/rockon-registry.git
+```
+Configure this new git repo with your name and email address. This is required to accurately record collaboration.
+```
+cd rockon-registry
+git config user.name "Firstname Lastname"
+git config user.email your_email_address
+```
+
+Add a remote called upstream to periodically rebase your local repository with changes in the upstream made by other contributors.
+```
+git remote add upstream https://github.com/rockstor/rockon-registry.git
+```
+Above 4 steps help you setup your local environment. If you are familiar with git and use an IDE like Eclipse, you can achieve the same outcome in a different way. Here, we listed the simple terminal way of setting it up.
+
+## Steps to Contribute a Rock-on with a pull request
+
+Rebase your master branch before making your own changes.
+```
+cd rockon-registry
+git checkout master
+git pull --rebase upstream master
+```
+
+Checkout a new/separate branch for your Rock-on
+```
+git checkout -b rockon_name
+```
+
+Add and commit your rockon to git. Say you are working on Syncthing Rock-on and have the syncthing.json tested and ready to go. First copy the file over to your repo. Next,
+```
+git add syncthing.json
+git commit -m 'add synctthing rock-on'
+```
+
+Push your rockon to github. <branch_name> is from two steps ago.
+```
+git push origin <branch_name>
+```
+
+Now go to github and open a pull request. Thanks!
+
 ## What is the structure of a Rock-On profile file?
 
 it's a big mass of JSON with nested objects, arrays and values.
