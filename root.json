@@ -14,5 +14,6 @@
     "Syncthing": "syncthing.json",
     "sabnzb": "sabnzb.json",
     "Sonarr": "sonarr.json",
+    "Symform": "symform.json",
     "Transmission": "transmission.json"
 }
