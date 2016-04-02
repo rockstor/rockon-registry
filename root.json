@@ -8,12 +8,12 @@
     "JenkinsCI": "jenkins.json",
     "Logitech Squeezebox": "LogitechSqueezebox.json",
     "NZBGet": "nzbget.json",
-    "OwnCloud": "owncloud.json",
     "OpenVPN": "openvpn.json",
+    "OwnCloud": "owncloud.json",
     "Plex": "plex.json",
-    "Syncthing": "syncthing.json",
     "sabnzb": "sabnzb.json",
     "Sonarr": "sonarr.json",
     "Symform": "symform.json",
+    "Syncthing": "syncthing.json",
     "Transmission": "transmission.json"
 }
