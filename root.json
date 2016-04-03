@@ -12,6 +12,7 @@
     "OwnCloud": "owncloud.json",
     "Plex": "plex.json",
     "sabnzb": "sabnzb.json",
+    "Sickbeard": "Sickbeard.json",
     "Sonarr": "sonarr.json",
     "Symform": "symform.json",
     "Syncthing": "syncthing.json",
