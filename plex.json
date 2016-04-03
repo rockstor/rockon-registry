@@ -38,15 +38,20 @@
                     }
                 },
 		"environment": {
+		    "VERSION": {
+			"description": "Choose version of plex. If you are subscribed to Plex Pass, type the word plexpass. Otherwise, type latest.",
+			"label": "VERSION",
+			"index": 1
+		    },
                     "PUID": {
 		        "description": "Enter a valid UID to run Plex with. It must have full permissions to all Shares mapped in the previous step.",
                         "label": "UID",
-                        "index": 1
+                        "index": 2
 		    },
                     "PGID": {
                         "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
                         "label": "GID",
-                        "index": 2
+                        "index": 3
                     }
                 }
             }
