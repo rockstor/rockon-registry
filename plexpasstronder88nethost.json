@@ -7,8 +7,7 @@
                 
 		"opts": [
                     [
-                        "--net=host",
-                        "",
+                        "--net=host"
                     ]
                     ],
 		"ports": {
@@ -35,12 +34,13 @@
                 },
 		"environment": {
                     "VERSION": {
-					"description": "Choose version of plex, supports choice of <plexpass> or <latest> ",
-					"label": "VERSION",
-					"index": 1
-					},
+			"description": "Choose version of plex, supports choice of plexpass or latest ",
+			"label": "VERSION",
+			"index": 1,
+			"host_default": latest
+		},
 					
-					"PUID": {
+		"PUID": {
 		        "description": "Enter a valid UID to run Plex with. It must have full permissions to all Shares mapped in the previous step.",
                         "label": "UID",
                         "index": 2
