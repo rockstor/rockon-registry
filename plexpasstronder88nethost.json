@@ -4,13 +4,12 @@
             "plex-linuxserver.io": {
                 "image": "linuxserver/plex",
                 "launch_order": 1,
-                
 		"opts": [
-                    [
-                        "--net=host",
-                        ""
-                    ]
-                    ],
+ -                    [
+ -                        "--net=host",
+ -                        ""
+ -                    ]
+ -                ],
 		"ports": {
                     "32400": {
                         "description": "WebUI port. Suggested default: 32400",
