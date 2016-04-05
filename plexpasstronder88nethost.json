@@ -37,7 +37,7 @@
 			"description": "Choose version of plex, supports choice of plexpass or latest ",
 			"label": "VERSION",
 			"index": 1,
-			"host_default": "latest"
+			"host_default": latest
 		},
 					
 		"PUID": {
