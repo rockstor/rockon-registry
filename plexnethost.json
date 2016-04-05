@@ -1,0 +1,63 @@
+{
+    "Plex": {
+        "containers": {
+            "plex-linuxserver.io": {
+                "image": "linuxserver/plex",
+                "launch_order": 1,
+                "opts": [
+                	[
+                	"--net=host",
+                	""
+                	]
+					],
+                "ports": {
+                    "32400": {
+                        "description": "WebUI port. Suggested default: 32400",
+                        "host_default": 32400,
+                        "label": "WebUI port",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for Plex configuration. Eg: create a Share called plex-config for this purpose alone.",
+                        "label": "Config Storage"
+                    },
+		    "/transcode": {
+			"description": "A dedicated Share to offload heavy writes while transcoding. Helps conserve space on Rock-on root Share.",
+			"label": "Transcode Storage"
+		    },
+                    "/data": {
+                        "description": "Choose a Share for Plex content(your media). Eg: create a Share called plex-data for this purpose alone. You can also assign other media Shares on the system after installation.",
+                        "label": "Data Storage"
+                    }
+                },
+		"environment": {
+		    "VERSION": {
+			"description": "Choose version of plex. If you are subscribed to Plex Pass, type the word plexpass. Otherwise, type latest.",
+			"label": "VERSION",
+			"index": 1
+		    },
+                    "PUID": {
+		        "description": "Enter a valid UID to run Plex with. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID",
+                        "index": 2
+		    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID",
+                        "index": 3
+                    }
+                }
+            }
+        },
+        "description": "Plex media server by Linuxserver.io - nethost edition tronder88",
+        "more_info": "<h4>Adding more media to Plex.</h4><p>You can add more Shares(with media) to Plex from the settings wizard of this Rock-on. Then, from Plex WebUI, you can update and re-index your library.</p>",
+        "ui": {
+            "slug": "web"
+        },
+        "volume_add_support": true,
+        "website": "https://hub.docker.com/r/linuxserver/plex/",
+	"version": "1.0"
+    }
+}
