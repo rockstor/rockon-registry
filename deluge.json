@@ -5,13 +5,13 @@
                 "image": "linuxserver/deluge",
                 "launch_order": 1,
 		"opts": [
-                    [
-                        "--net=host",
-                        "",
-					"-v",
-					"/dev/rtc:/dev/rtc:ro"
-					]
-				],	
+                    	[
+                    		"--net=host",
+                        	"",
+				"-v",
+				"/dev/rtc:/dev/rtc:ro"
+			]
+			],	
                 "ports": {
                     "8112": {
                         "description": "Deluge WebUI port. Suggested default: 8112",
@@ -26,9 +26,9 @@
                         "description": "Choose a Share for Deluge configuration. Eg: create a Share called Deluge-config for this purpose alone.",
                         "label": "Config Storage"
                     },
-					"/downloads": {
-                    "description": "Choose a Share for Deluge downloads. Eg: create a Share called Deluge-downloads for this purpose alone.",
-                    "label": "Download Storage"
+		    "/downloads": {
+                	"description": "Choose a Share for Deluge downloads. Eg: create a Share called Deluge-downloads for this purpose alone.",
+                	"label": "Download Storage"
                     }
                 },
                 "environment": {
