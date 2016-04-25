@@ -33,7 +33,7 @@
                     "/transcode": {
                         "optional": true,
                         "description": "Transcode directory to offload heavy writes in a docker container",
-                        "lable": "Transcode Location"
+                        "label": "Transcode Location"
                     },
                     "/data": {
                         "description": "Choose a Share for Plex content(your media). Eg: create a Share called plex-data for this purpose alone. You can also assign other media Shares on the system after installation.",
