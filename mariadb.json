@@ -1,7 +1,7 @@
 {
     "MariaDB":{
         "containers":{
-            "Sonarr":{
+            "MariaDB":{
                 "image":"linuxserver/mariadb",
                 "launch_order":1,
                 "ports":{
@@ -43,6 +43,7 @@
             "slug":""
         },
         "volume_add_support":true,
+        "more_info": "<h4>Important locations</h4><p>Configuration file:<code>/config/custom.cnf</code></p> <p>Databases: <code>/config/databases</code></p> <p>Logs: <code>/config/log/mysql/</code></p>",
         "website":"https://hub.docker.com/r/linuxserver/mariadb/",
         "version":"1.0"
     }
