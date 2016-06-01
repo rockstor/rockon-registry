@@ -47,7 +47,7 @@
                 }
             }
         },
-        "description":"Lightweight portal to view & manage your HTPC apps.",
+        "description":"Headphones is an automated music downloader for NZB and Torrent.",
         "ui":{
             "slug":""
         },
