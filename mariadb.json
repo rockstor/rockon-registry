@@ -30,7 +30,7 @@
                         "label":"GID to run MariaDB as.",
                         "index":2
                     },
-                    "DATABASE PASSWORD":{
+                    "MYSQL_ROOT_PASSWORD":{
                         "description":"Enter a root password for the MariaDB server (minimum 4 characters).",
                         "label":"Root password.",
                         "index":3
