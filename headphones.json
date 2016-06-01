@@ -1,15 +1,9 @@
 {
     "Headphones":{
         "containers":{
-            "Headphones":{
+            "linuxserver-headphones":{
                 "image":"linuxserver/headphones",
                 "launch_order":1,
-            		"opts": [
-            		    [
-            			"-v",
-            			"/etc/localtime:/etc/localtime:ro"
-            		    ]
-            		],
                 "ports":{
                     "8181":{
                         "description":"Web server port. Suggested default: 8181",
