@@ -6,6 +6,7 @@
     "EmbyServer": "embyserver.json",
     "GitLab CE": "gitlab-rc.json",
     "Gogs": "gogs.json",
+    "Headphones": "headphones.json",
     "JenkinsCI": "jenkins.json",
     "Logitech Squeezebox": "LogitechSqueezebox.json",
     "MariaDB": "mariadb.json",
