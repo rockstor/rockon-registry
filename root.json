@@ -8,6 +8,7 @@
     "Gogs": "gogs.json",
     "JenkinsCI": "jenkins.json",
     "Logitech Squeezebox": "LogitechSqueezebox.json",
+    "MariaDB": "mariadb.json",
     "NZBGet": "nzbget.json",
     "OpenVPN": "openvpn.json",
     "OwnCloud": "owncloud.json",
