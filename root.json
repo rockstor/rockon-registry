@@ -12,6 +12,7 @@
     "OpenVPN": "openvpn.json",
     "OwnCloud": "owncloud.json",
     "Plex": "plex.json",
+    "Plexpy": "plexpy.json",
     "sabnzb": "sabnzb.json",
     "Sickbeard": "Sickbeard.json",
     "Sonarr": "sonarr.json",
