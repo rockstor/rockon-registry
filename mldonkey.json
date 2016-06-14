@@ -1,0 +1,126 @@
+{
+    "MLDonkey": {
+        "containers": {
+            "mldonkey": {
+                "image": "angeletor/mldonkey",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "--net=host",
+						""
+                    ]
+                ],
+                "ports": {
+                    "4001": {
+                        "description": "MLDonkey native UI port. Suggested default: 4001",
+                        "host_default": 4001,
+                        "label": "Native UI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+                    "4080": {
+                        "description": "MLDonkey Web UI port. Suggested default: 4080",
+                        "host_default": 4080,
+                        "label": "Web UI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+                    "20562": {
+                        "description": "MLDonkey edonkey TCP port. Suggested default: 20562",
+                        "host_default": 20562,
+                        "label": "eDonkey TCP port",
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+                    "20566": {
+                        "description": "MLDonkey edonkey UDP port. Always TCPPort+4. Suggested default: 20566",
+                        "host_default": 20566,
+                        "label": "eDonkey UDP port",
+                        "protocol": "udp",
+                        "ui": true
+                    },
+                    "6209": {
+                        "description": "MLDonkey Overnet port(TCP&UDP). Suggested default: 6209",
+                        "host_default": 6209,
+                        "label": "Overnet port",
+                        "ui": true
+                    },
+                    "16965": {
+                        "description": "MLDonkey Kad UDP port. Suggested default: 16965",
+                        "host_default": 16965,
+                        "label": "Kad UDP port",
+                        "protocol": "udp",
+                        "ui": true
+                    },
+                    "3617": {
+                        "description": "MLDonkey BT UDP port. Suggested default: 3617",
+                        "host_default": 3617,
+                        "label": "BT UDP port",
+                        "protocol": "udp",
+                        "ui": true
+                    },
+                    "6881": {
+                        "description": "MLDonkey BT TCP client port. Suggested default: 6882",
+                        "host_default": 6882,
+                        "label": "BT Client TCP port",
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+                    "6882": {
+                        "description": "MLDonkey BT TCP tracker port. Suggested default: 6881",
+                        "host_default": 6881,
+                        "label": "BT Server TCP port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/var/lib/mldonkey": {
+                        "description": "Choose a Share for MLDonkey configuration. Eg: create a Share called mldonkey-config for this purpose alone.",
+                        "label": "MLDonkey Config"
+                    },
+                    "/mnt/mldonkey_tmp": {
+                        "description": "Choose a Share for MLDonkey Temporal data. Provide room enough for ongoing downloads.",
+                        "label": "MLDonkey TMP",
+                        "min_size": 1073741824
+                    },
+                    "/mnt/mldonkey_completed": {
+                        "description": "Choose a Share for MLDonkey Downloaded data. Provide room enough for finished downloads.",
+                        "label": "MLDonkey Completed Downloads",
+                        "min_size": 1073741824
+                    }
+                },
+                "environment": {
+                    "PUID": {
+                        "description": "Enter a valid UID to run MLDonkey with. It must have full permissions to all Shares mapped in the previous step. MUST be 2001 right now!!!!",
+                        "label": "UID",
+                        "index": 1
+                    },
+                    "PGID": {
+                        "description": "Enter a valid GID to run MLDonkey with. It(or the above UID) must have full permissions to all Shares mapped in the previous step. MUST be 2001 right now!!!",
+                        "label": "GID",
+                        "index": 2
+                    },
+                    "MLDONKEY_CLIENT_NAME": {
+                        "description": "Enter a name for your client in ED2K Network",
+                        "label": "Client Name",
+                        "index": 3
+                    },
+                    "MLDONKEY_ADMIN_PASSWORD": {
+                        "description": "Enter a password for the main user 'admin'. Default will be empty, should be changed",
+                        "label": "Admin Password",
+                        "index": 4
+                    }
+                }
+            }
+        },
+    "version": "1.0",
+        "description": "MLDonkey client for eMule, Bittorrent, Filetransfer and many more P2P networks.",
+        "icon": "http://mldonkey.sourceforge.net/wiki.png",
+        "more_info": "<p>Default MLDonkey Admin username is <code>admin</code></p><p>If you change ANY port you MUST change them by hand in the server too!!!!</p>Create a user mldonkey with uid&gid 2001 matching the uid&gid provided in the setup. For the time being you MUST use 2001 as both!!!",
+        "ui": {
+            "slug": ""
+        },
+        "website": "https://hub.docker.com/r/angeletor/mldonkey/"
+    }
+}
