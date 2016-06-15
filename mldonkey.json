@@ -11,9 +11,9 @@
                     ]
                 ],
                 "ports": {
-                    "4001": {
-                        "description": "MLDonkey native UI port. Suggested default: 4001",
-                        "host_default": 4001,
+                    "4000": {
+                        "description": "MLDonkey native UI port. Suggested default: 4000",
+                        "host_default": 4000,
                         "label": "Native UI port",
                         "protocol": "tcp",
                         "ui": true
