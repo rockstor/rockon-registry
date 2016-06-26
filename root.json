@@ -18,12 +18,13 @@
     "Plex": "plex.json",
     "Plexpy": "plexpy.json",
     "Rocket.Chat": "rocketchat.json",
-    "sabnzb": "sabnzb.json",
     "Sickbeard": "sickbeard.json",
     "Sickrage": "sickrage.json",
     "Sonarr": "sonarr.json",
     "Symform": "symform.json",
     "Syncthing": "syncthing.json",
     "Transmission": "transmission.json",
-    "ZoneMinder": "zoneminder.json"
+    "Unifi Controller": "unifi.json",
+    "ZoneMinder": "zoneminder.json",
+    "sabnzb": "sabnzb.json"
 }
