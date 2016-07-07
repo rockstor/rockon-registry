@@ -1,7 +1,7 @@
 {
     "Rocket.Chat": {
         "container_links": {
-            "Rocket.Chat": [{
+            "rocketchat": [{
                 "name": "mongodb.rocketchat",
                 "source_container": "mongodb.rocketchat"
             }]
