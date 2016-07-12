@@ -3,6 +3,7 @@
         "containers": {
             "owncloud-official": {
                 "image": "owncloud",
+                "launch_order": 1,
                 "ports": {
                     "80": {
                         "description": "OwnCloud WebUI port. Suggested default: 8080",
