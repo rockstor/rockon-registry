@@ -13,6 +13,7 @@
     "NZBGet": "nzbget.json",
     "OpenVPN": "openvpn.json",
     "OwnCloud": "owncloud.json",
+    "OwnCloud-Official": "owncloud-official.json",
     "Plex": "plex.json",
     "Plexpy": "plexpy.json",
     "Rocket.Chat": "rocketchat.json",
