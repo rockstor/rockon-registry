@@ -1,0 +1,57 @@
+{
+    "Rocket.Chat": {
+        "container_links": {
+            "rocketchat": [{
+                "name": "mongodb.rocketchat",
+                "source_container": "mongodb.rocketchat"
+            }]
+        },
+        "containers": {
+            "mongodb.rocketchat": {
+                "image": "mongo",
+                "launch_order": 1,
+                "volumes": {
+                    "/data/db": {
+                        "description": "Choose a Share for Rocket.Chat Mongo database. E.g. create a Share called rocketchat-DB for this purpose.",
+                        "label": "mongo DB storage",
+                        "min_size": "1073741824"
+                    }
+                }
+            },
+            "rocketchat": {
+                "image": "rocketchat/rocket.chat",
+                "label": "0.35.0",
+                "launch_order": 2,
+                "ports": {
+                    "3000": {
+                        "description": "Rocket.Chat WebUI port. Suggested default: 3000",
+                        "host_default": 3000,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "opts": [
+                    [
+                        "-e",
+                        "MONGO_URL=mongodb://mongodb.rocketchat:27017/rocketchat"
+                    ],
+                    [
+                        "--link",
+                        "mongodb.rocketchat"
+                    ]
+                ],
+                "environment": {}
+            }
+        },
+        "description": "Rocket.Chat",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "volume_add_support": true,
+        "more_info": "<h4>Setting up the application</h4><p>Go after installation to the Rocket.Chat web interface for administration of your RocketChat installation.</p>",
+        "website": "https://rocket.chat/",
+        "version": "0.35.0"
+    }
+}

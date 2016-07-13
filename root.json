@@ -15,6 +15,7 @@
     "OwnCloud": "owncloud.json",
     "Plex": "plex.json",
     "Plexpy": "plexpy.json",
+    "Rocket.Chat": "rocketchat.json",
     "sabnzb": "sabnzb.json",
     "Sickbeard": "sickbeard.json",
     "Sickrage": "sickrage.json",
