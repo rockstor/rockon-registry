@@ -22,10 +22,15 @@
                 },
                 "volumes": {
                     "/config": {
-                        "description": "Choose a Share for the configuration data.",
+                        "description": "Choose a Share for the data and configuration data.",
                         "label": "Config Storage",
                         "min_size": "1073741824"
-		    }
+		    },
+                    "/config/mysql": {
+                        "description": "Choose a Share for the database.",
+                        "label": "mysql Storage",
+                        "min_size": "1073741824"
+                    }
                 }
             }
         },
