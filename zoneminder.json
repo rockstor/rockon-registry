@@ -7,7 +7,6 @@
                 "opts": [
                          [
                           "--privileged=true",
-                          "--restart=on-failure:2",
                           ""
                           ]
                          ],
