@@ -5,9 +5,9 @@
                 "image": "istepanov/syncthing",
                 "launch_order": 1,
                 "ports": {
-                    "21025": {
-                        "description": "Port for discovery broadcasts. You may need to open it(protocol: udp) on your firewall. Suggested default: 21025.",
-                        "host_default": 21025,
+                    "21027": {
+                        "description": "Port for discovery broadcasts. You may need to open it(protocol: udp) on your firewall. Suggested default: 21027.",
+                        "host_default": 21027,
                         "label": "Discovery port",
                         "protocol": "udp"
                     },
