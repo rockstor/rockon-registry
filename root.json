@@ -23,5 +23,6 @@
     "Sonarr": "sonarr.json",
     "Symform": "symform.json",
     "Syncthing": "syncthing.json",
-    "Transmission": "transmission.json"
+    "Transmission": "transmission.json",
+    "Unifi Controller": "unifi.json"
 }
