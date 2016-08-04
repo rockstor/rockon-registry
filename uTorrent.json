@@ -5,20 +5,18 @@
 				"image": "dbarton/utorrent",
 				"launch_order": 1,
 				"ports": {
+					"6881": {
+						"description": "Port for incoming data. You may need to open it(protocol: udp) on your firewall. Suggested default: 6881. Should NOT be changed",
+						"host_default": 6881,
+						"label": "uTorrent Incoming Port"
+					},
 					"8080": {
 						"description": "Port for utorrent Web interface. Suggested default: 8080.",
 						"host_default": 8080,
 						"label": "WebUI port",
-						"procotol": "tcp",
+						"protocol": "tcp",
 						"ui": true
 					}
-				},
-				"6881": {
-					"description": "Port for incoming data. You may need to open it(protocol: udp) on your firewall. Suggested default: 6881. Should NOT be changed",
-					"host_default": 6881,
-					"label": "uTorrent port",
-					"procotol": "udp",
-					"ui": true
 				},
 				"volumes": {
 					"/media": {
@@ -31,15 +29,14 @@
 					}
 				}
 			}
-
 		},
-		"description": "BitTorrent client by [dbarton and Mahmoud87]",
-		"more_info": "<h4>uTorrent WebUI Logins.</h4><p>Username: admin / Password: (Leave it blank). You can always change the logins after your first sign in, go to settings >> WebUI.</p>",
+		"description": "BitTorrent Client by [dbarton and Mahmoud87]",
+		"more_info": "<h2><font color=#9ACD32><strong>uTorrent WebUI Logins</strong></font></h2><p><strong><u>Username:</u></strong> admin<br> <u><strong>Password:</strong></u> (Leave it blank)<br> You can always change the logins after your first sign in, go to settings >> WebUI<br>WebUI Port in <strong>CouchPotato</strong> and <strong>Sonarr</strong> will be <strong><u>8088</strong><u><br>.</p>",
 		"ui": {
 			"slug": "gui"
 		},
 		"volume_add_support": true,
 		"website": "https://hub.docker.com/r/dbarton/utorrent/",
-		"version": "alpha"
+		"version": "1.0"
 	}
 }
