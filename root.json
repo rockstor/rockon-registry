@@ -4,6 +4,7 @@
     "Deluge": "deluge.json",
     "Discourse": "discourse.json",
     "EmbyServer": "embyserver.json",
+    "Ghost": "ghost.json",
     "GitLab CE": "gitlab-rc.json",
     "Gogs": "gogs.json",
     "Headphones": "headphones.json",
@@ -23,5 +24,6 @@
     "Sonarr": "sonarr.json",
     "Symform": "symform.json",
     "Syncthing": "syncthing.json",
-    "Transmission": "transmission.json"
+    "Transmission": "transmission.json",
+    "ZoneMinder": "zoneminder.json"
 }
