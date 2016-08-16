@@ -31,7 +31,7 @@
 			}
 		},
 		"description": "BitTorrent Client by [dbarton and Mahmoud87]",
-		"more_info": "<h2><font color=#9ACD32><strong>uTorrent WebUI Logins</strong></font></h2><p><strong><u>Username:</u></strong> admin<br> <u><strong>Password:</strong></u> (Leave it blank)<br> You can always change the logins after your first sign in, go to settings >> WebUI<br>WebUI Port in <strong>CouchPotato</strong> and <strong>Sonarr</strong> will be <strong><u>8088</strong><u><br>.</p>",
+		"more_info": "<h2><font color=#9ACD32><strong>uTorrent WebUI Logins</strong></font></h2><p><strong><u>Username:</u></strong> admin<br> <u><strong>Password:</strong></u> (Leave it blank)<br> You can always change the logins after your first sign in, go to settings >> WebUI.</p>",
 		"ui": {
 			"slug": "gui"
 		},
