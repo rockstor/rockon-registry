@@ -1,0 +1,55 @@
+{
+    "haproxy-letsencrypt": {
+        "description": "Reliable, High Performance TCP/HTTP Load Balancer with letsencrypt integration.",
+        "version": "1.0.0",
+        "website": "https://github.com/daniel-illi/docker-haproxy-letsencrypt/tree/rock-on",
+        "icon": "https://cdn.rawgit.com/daniel-illi/docker-haproxy-letsencrypt/rock-on/logo.png",
+        "more_info": "At startup the config file named haproxy.cfg gets created in the config volume unless a file with the same name already exists. Extend it with your own custom configuration.<br/>An example configuration file can be found here: <a href='https://cdn.rawgit.com/daniel-illi/docker-haproxy-letsencrypt/rock-on/haproxy.cfg.example'>haproxy.cfg.example</a><br/>The exposed http port must be reachable on port 80 from the internet for letsencrypt hostname validation. Configure your router accordingly.",
+        "containers": {
+            "haproxy-letsencrypt": {
+                "image": "illi/docker-haproxy-letsencrypt",
+                "tag": "latest",
+                "launch_order": 1,
+                "ports": {
+                    "80": {
+                        "description": "Http port. Needs to be reachable on port 80 from the internet for letsencrypt hostname validation. Configure your router accordingly.",
+                        "host_default": 1080,
+                        "label": "Http port",
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+                    "443": {
+                        "description": "Https port.",
+                        "host_default": 1443,
+                        "label": "Https port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for the haproxy configuration. Eg: create a Share called haproxy-config for this purpose alone.",
+                        "label": "Config Storage",
+                        "min_size": 1073741824
+                    },
+                    "/etc/letsencrypt": {
+                        "description": "Choose a Share for the letsencrypt files (account files, certificates, keys). Eg: create a share called letsencrypt-data for this purpose alone.",
+                        "label": "Letsencrypt Data Storage",
+                        "min_size": 1073741824
+                    }
+
+                },
+                "environment": {
+                    "CERTS": {
+                        "description": "Comma separated list of hostnames for which the letsencrypt certificate will get generated. All of them must resolve to the external ip of this rockstor box.",
+                        "label": "Comma separated list of hostnames"
+                    },
+                    "EMAIL": {
+                        "description": "Email Adress used for account registration",
+                        "label": "Email Adress"
+                    }
+                }
+            }
+        }
+    }
+}
