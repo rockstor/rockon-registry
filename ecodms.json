@@ -24,15 +24,15 @@
                         "description": "Choose a Share for data. Eg: create a Share called ecodms-data for this purpose alone.",
                         "label": "Data Storage"
                     },
-                    "/srv/ecodms/scaninput": {
+                    "/srv/scaninput": {
                         "description": "Choose a Share for scaninput documents. Eg: create a Share called ecodms-scaninput for this purpose alone.",
                         "label": "Scaninput folder"
                     },
-                    "/srv/ecodms/backup": {
+                    "/srv/backup": {
                         "description": "Choose a Share as backup location. Backups from ecoDMS are stored here.",
                         "label": "Backup storage"
                     },
-                    "/srv/ecodms/restore": {
+                    "/srv/restore": {
                         "description": "Choose a Share for restoring backups. A backup can put in here and can the be restored.",
                         "label": "Restore folder"
                     }
