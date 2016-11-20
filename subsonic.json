@@ -11,7 +11,7 @@
                         "label": "Webserver port",
                         "protocol": "tcp",
                         "ui": true
-                    }, 
+                    },
                     "4050": {
                         "description": "Webserver SSL Port. Suggested default: 4050.",
                         "host_default": 4050,
@@ -25,7 +25,7 @@
                         "description": "Select the Share containing your Media",
                         "label": "Music Storage",
                         "min_size": 1073741824
-                    }, 
+                    },
                     "/subsonic": {
                         "description": "Choose a Share for Subsonic configuration. Eg: create a Share called subsonic-config for this purpose alone.",
                         "label": "Config Storage",
@@ -42,11 +42,6 @@
                         "description": "This environment variable is used to set the maximum Java heap size in megabytes - 150 is a good default",
                         "label": "MAX_MEM",
                         "index": 1
-                    },
-                    "TZ": {
-                        "description": "This environment variable is used to set the TimeZone of the container.",
-                        "label": "TZ",
-                        "index": 2
                     }
                 }
             }
