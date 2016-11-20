@@ -7,6 +7,7 @@
     "Ghost": "ghost.json",
     "GitLab CE": "gitlab-rc.json",
     "Gogs": "gogs.json",
+    "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
     "Headphones": "headphones.json",
     "JenkinsCI": "jenkins.json",
     "Logitech Squeezebox": "LogitechSqueezebox.json",
@@ -21,10 +22,14 @@
     "Sickbeard": "sickbeard.json",
     "Sickrage": "sickrage.json",
     "Sonarr": "sonarr.json",
+    "Subsonic": "subsonic.json",
     "Symform": "symform.json",
     "Syncthing": "syncthing.json",
     "Transmission": "transmission.json",
     "Unifi Controller": "unifi.json",
     "ZoneMinder": "zoneminder.json",
-    "sabnzb": "sabnzb.json"
+    "ecoDMS": "ecodms.json",
+    "sabnzb": "sabnzb.json",
+    "sabnzb": "sabnzb.json",
+    "uTorrent": "uTorrent.json"
 }
