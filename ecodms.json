@@ -1,0 +1,51 @@
+{
+    "ecoDMS": {
+        "containers": {
+            "ecodms": {
+                "image": "ecodms/allinone-16.09",
+                "launch_order": 1,
+                "ports": {
+                    "17001": {
+                        "description": "Port for ecoDMS client connection",
+                        "host_default": 17001,
+                        "label": "Client",
+                        "protocol": "tcp"
+                    },
+                    "8080": {
+                        "description": "ecoDMS WebUI port. Disabled by default. Must be enabled in settings.",
+                        "host_default": 8080,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/srv/data": {
+                        "description": "Choose a Share for data. Eg: create a Share called ecodms-data for this purpose alone.",
+                        "label": "Data Storage"
+                    },
+                    "/srv/scaninput": {
+                        "description": "Choose a Share for scaninput documents. Eg: create a Share called ecodms-scaninput for this purpose alone.",
+                        "label": "Scaninput folder"
+                    },
+                    "/srv/backup": {
+                        "description": "Choose a Share as backup location. Backups from ecoDMS are stored here.",
+                        "label": "Backup storage"
+                    },
+                    "/srv/restore": {
+                        "description": "Choose a Share for restoring backups. A backup can put in here and can the be restored.",
+                        "label": "Restore folder"
+                    }
+                }
+            }
+        },
+        "description": "ecoDMS document management system",
+        "more_info": "Maybe your system does not have enough entropy available for running ecoDMS. You can check with \"cat /proc/sys/kernel/random/entropy_avai\" on the command line. Values lower than 200 are realy bad. In this case install and enable haveged service.",
+        "ui": {
+            "slug": ""
+        },
+        "website": "https://www.ecodms.de/",
+	"version": "16.09 (eleanor)",
+        "icon": "https://hub.docker.com/v2/users/ecodms/avatar/"
+    }
+}
