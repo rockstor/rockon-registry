@@ -3,13 +3,13 @@
         "containers": {
             "plex-linuxserver.io": {
                 "image": "linuxserver/plex",
-                "launch_order": 1,
                 "opts": [
                     [
                         "--net=host",
                         ""
                     ]
                 ],
+                "launch_order": 1,
                 "ports": {
                     "32400": {
                         "description": "WebUI port. Suggested default: 32400",
@@ -28,17 +28,17 @@
                         "label": "Data Storage"
                     }
                 },
-		"environment": {
-		    "VERSION": {
+                "environment": {
+                    "VERSION": {
                         "description": "Choose version of plex. unless you know which version to try, just type latest",
                         "label": "VERSION",
                         "index": 1
                     },
                     "PUID": {
-		        "description": "Enter a valid UID to run Plex with. It must have full permissions to all Shares mapped in the previous step.",
+                        "description": "Enter a valid UID to run Plex with. It must have full permissions to all Shares mapped in the previous step.",
                         "label": "UID",
                         "index": 2
-		    },
+                    },
                     "PGID": {
                         "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
                         "label": "GID",
@@ -54,6 +54,6 @@
         },
         "volume_add_support": true,
         "website": "https://hub.docker.com/r/linuxserver/plex/",
-	"version": "1.0"
+        "version": "1.0"
     }
 }
