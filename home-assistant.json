@@ -12,10 +12,8 @@
         "launch_order": 1,
         "opts": [
           [
-            "--net=host",
-            "",
-            "-v",
-            "/etc/localtime:/etc/localtime:ro"
+            "--net",
+            "host"
           ]
         ],
         "uid": -1,
