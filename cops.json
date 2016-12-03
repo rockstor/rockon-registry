@@ -1,0 +1,49 @@
+{
+    "COPS": {
+        "containers": {
+            "cops": {
+                "image": "linuxserver/cops",
+                "launch_order": 1,
+                "ports": {
+                    "80": {
+                        "description": "Cops Webui port, Suggested default: 80",
+                        "host_default": 80,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for cops configuration. Eg: create a Share called cops-config for this purpose alone.",
+                        "label": "Config Storage"
+                    },
+                    "/movies": {
+                        "description": "Choose a Share for cops book library. Eg: create a Share called cops-library for this purpose alone.",
+                        "label": "Books location"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+		                "description": "Enter a valid UID to run cops as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run cops as.",
+                        "index": 1
+		            },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run cops as.",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.",
+		"more_info": "<h4>Unlike other implementations of COPS in a docker container, the linuxserver version gives you access to config_local.php in /config to customise your install to suit your needs, including details of your email account etc to enable emailing of books, it also includes the dependencies required to directly view epub books in your browser.",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+	    "website": "https://hub.docker.com/r/linuxserver/cops/",
+	    "version": "1.0"
+    }
+}
