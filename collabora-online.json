@@ -27,10 +27,6 @@
             }
         },"opts": [
             [
-                "--restart",
-                "always"
-            ],
-            [
                 "--cap-add",
                 "MKNOD"
             ]
