@@ -7,7 +7,7 @@
                 "ports": {                    
                     "443": {
                         "description": "OwnCloud SSL-WebUI port. Suggested default: 8443",
-                        "host_default": 8440,
+                        "host_default": 8443,
                         "label": "WebUI port",
                         "ui": true
                     }
@@ -24,7 +24,7 @@
             "version": "latest",
         "description": "Secure file sharing and hosting",
         "icon": "https://owncloud.org/wp-content/themes/owncloudorgnew/assets/img/common/logo_owncloud.svg",
-        "more_info": "<p>Default username for your OwnCloud UI is<code>admin</code>and password is<code>changeme</code></p>",
+        "more_info": "<p>To set up owncloud with SSL check this guide: https://forum.rockstor.com/t/owncloud-ssl-offical-image-guide <br> Please notice, that you can't access the Web-GUI of owncloud before you have completed the setup described in the Guide!</p>",
         "ui": {
             "https": true,
             "slug": ""
