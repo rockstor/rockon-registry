@@ -16,6 +16,7 @@
     "OpenVPN": "openvpn.json",
     "OwnCloud": "owncloud.json",
     "OwnCloud-Official": "owncloud-official.json",
+    "OwnCloudHTTPS": "owncloudHTTPS.json",
     "Plex": "plex.json",
     "Plexpy": "plexpy.json",
     "Rocket.Chat": "rocketchat.json",
@@ -29,7 +30,6 @@
     "Unifi Controller": "unifi.json",
     "ZoneMinder": "zoneminder.json",
     "ecoDMS": "ecodms.json",
-    "sabnzb": "sabnzb.json",
     "sabnzb": "sabnzb.json",
     "uTorrent": "uTorrent.json"
 }

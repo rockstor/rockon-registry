@@ -1,0 +1,34 @@
+{
+"owncloudHTTPS": {
+        "containers": {
+            "owncloudHTTPS": {
+                "image": "owncloud",
+                "launch_order": 1,
+                "ports": {
+                    "443": {
+                        "description": "OwnCloud SSL-WebUI port. Suggested default: 8443",
+                        "host_default": 8443,
+                        "label": "WebUI port",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/var/www/html": {
+                        "description": "Choose a Share for OwnCloud. Eg: create a Share called owncloud-all for this purpose alone.",
+                        "label": "Storage",
+                        "min_size": 1073741824
+                    }
+                }
+            }
+        },
+            "version": "latest",
+        "description": "Secure file sharing and hosting",
+        "icon": "https://owncloud.org/wp-content/themes/owncloudorgnew/assets/img/common/logo_owncloud.svg",
+        "more_info": "<p>To set up owncloud with SSL follow <a href='https://forum.rockstor.com/t/owncloud-ssl-offical-image-guide' target='_blank'>this guide.</a> <br> Please notice, that you can't access the Web-GUI of owncloud before you have completed the setup described in the Guide!</p>",
+        "ui": {
+            "https": true,
+            "slug": ""
+        },
+        "website": "https://owncloud.org/"
+    }
+}
