@@ -1,5 +1,7 @@
 {
     "BTSync": "btsync.json",
+    "COPS": "cops.json",
+    "Collabora Online": "collabora-online.json",
     "CouchPotato": "couchpotato.json",
     "Deluge": "deluge.json",
     "Discourse": "discourse.json",
@@ -9,6 +11,7 @@
     "Gogs": "gogs.json",
     "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
     "Headphones": "headphones.json",
+    "Home Assistant": "home-assistant.json",
     "JenkinsCI": "jenkins.json",
     "Logitech Squeezebox": "LogitechSqueezebox.json",
     "MariaDB": "mariadb.json",
