@@ -1,0 +1,44 @@
+{
+    "Muximux": {
+        "containers": {
+            "muximux": {
+                "image": "linuxserver/muximux:latest",
+                "launch_order": 1,
+                "ports": {
+                    "80": {
+                        "description": "muximux WebUI port. Suggested default: 80",
+                        "host_default": 80,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for muximux configuration. Eg: create a Share called muximux-config for this purpose alone.",
+                        "label": "Config Storage"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+		        "description": "Enter a valid UID to run muximux as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run muximux as.",
+                        "index": 1
+		    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run muximux as.",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "This is a lightweight portal to view & manage your HTPC apps.",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+	"website": "https://hub.docker.com/r/linuxserver/muximux/",
+	"version": "1.0"
+    }
+}
