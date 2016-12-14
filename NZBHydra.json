@@ -1,0 +1,48 @@
+{
+    "NZBHydra": {
+        "containers": {
+            "nzbhydra": {
+                "image": "linuxserver/hydra:latest",
+                "launch_order": 1,
+                "ports": {
+                    "5075": {
+                        "description": "nzbhydra WebUI port. Suggested default: 5050",
+                        "host_default": 5075,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for nzbhydra configuration. Eg: create a Share called nzbhydra-config for this purpose alone.",
+                        "label": "Config Storage"
+                    },
+					"/downloads": {
+                    "description": "Choose a Share for nzbhydra downloads. Eg: create a Share called nzbhydra-downloads for this purpose alone.",
+                    "label": "Download Storage"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+		        "description": "Enter a valid UID to run nzbhydra as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run nzbhydra as.",
+                        "index": 1
+		    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run nzbhydra as.",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "NZBHydra is a meta search for NZB indexers.",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+	"website": "https://hub.docker.com/r/linuxserver/nzbhydra/",
+	"version": "1.0"
+    }
+}
