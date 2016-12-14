@@ -6,7 +6,7 @@
                 "launch_order": 1,
                 "ports": {
                     "5075": {
-                        "description": "nzbhydra WebUI port. Suggested default: 5050",
+                        "description": "nzbhydra WebUI port. Suggested default: 5075",
                         "host_default": 5075,
                         "label": "WebUI port",
                         "protocol": "tcp",
