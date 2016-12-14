@@ -1,0 +1,48 @@
+{
+    "Jackett": {
+        "containers": {
+            "jackett": {
+                "image": "linuxserver/jackett:latest",
+                "launch_order": 1,
+                "ports": {
+                    "9117": {
+                        "description": "Jackett WebUI port. Suggested default: 9117",
+                        "host_default": 9117,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for jackett configuration. Eg: create a Share called jackett-config for this purpose alone.",
+                        "label": "Config Storage"
+                    },
+					"/downloads": {
+                    "description": "Choose a Share for jackett downloads. Eg: create a Share called jackett-downloads for this purpose alone.",
+                    "label": "Download Storage"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+		        "description": "Enter a valid UID to run jackett as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run jackett as.",
+                        "index": 1
+		    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run jackett as.",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "Jackett works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc).",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+	"website": "https://hub.docker.com/r/linuxserver/jackett/",
+	"version": "1.0"
+    }
+}
