@@ -1,0 +1,35 @@
+{
+    "collabora-online": {
+        "description": "Collabora Online is a LibreOffice-based online office suite that can be integrated with owncloud/nextcloud.",
+        "version": "1.0.0",
+        "website": "https://www.collaboraoffice.com/code/",
+        "more_info": "",
+        "containers": {
+            "collabora": {
+                "image": "collabora/code",
+                "tag": "latest",
+                "launch_order": 1,
+                "ports": {
+                    "9980": {
+                        "description": "",
+                        "host_default": 9980,
+                        "label": "Http port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "environment": {
+                    "domain": {
+                        "description": "Hostname(s) that your own Nextcloud/Owncloud runs on. Also make sure to escape all dots with double backslashes (\\), since this string will be evaluated as a regular expression (and your bash 'eats' the first backslash.) If you want to use the docker container with more than one Nextcloud, you'll need to use 'domain=cloud\\\\.nextcloud\\\\.com\\|second\\\\.nexcloud\\\\.com' instead. (All hosts seperated by \\|.)",
+                        "label": "Own-/Nextcloud hostname(s)"
+                    }
+                }
+            }
+        },"opts": [
+            [
+                "--cap-add",
+                "MKNOD"
+            ]
+        ]
+    }
+}

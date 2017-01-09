@@ -1,0 +1,45 @@
+{
+    "ZoneMinder": {
+        "containers": {
+            "zoneminder": {
+                "image": "aptalca/zoneminder-1.29",
+                "launch_order": 1,
+                "opts": [
+                         [
+                          "--privileged=true",
+                          ""
+                          ]
+                         ],
+                "ports": {
+                    "80": {
+                        "description": "Port for running ZoneMinder. You shouldn't open this externally (it's unsecure). Do not use 80 (it will interfere with RockStor)",
+                        "host_default": 8080,
+                        "protocol": "tcp",
+                        "label": "ZoneMinder Port",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for the data and configuration data. (you can add seperate shares for events later by attaching a volume to /config/data/events)",
+                        "label": "Config Storage",
+                        "min_size": "1073741824"
+                    },
+                    "/config/mysql": {
+                        "description": "Choose a Share for the database.",
+                        "label": "MySQL Storage",
+                        "min_size": "1073741824"
+                    }
+                }
+            }
+        },
+        "description": "ZoneMinder: Free, open-source software to control IP, USB and Analog (CCTV) cameras (v1.29) - please note this runs as privileged in docker (to set shm to a higher amount)",
+        "more_info": "</h4>Tips and Setup Instructions:</h4></p>        </p>        This container includes mysql, no need for a separate mysql/mariadb container</p>            All settings and library files are stored outside of the container and they are preserved when this docker is updated or re-installed (change the variable /path/to/config in the run command to a location of your choice)</p>            This container includes avconv (ffmpeg variant) and cambozola but they need to be enabled in the settings. In the WebUI, click on Options in the top right corner and go to the Images tab</p>            Click on the box next to OPT_Cambozola to enable</p>            Click on the box next OPT_FFMPEG to enable ffmpeg</p>            Enter the following for ffmpeg path: /usr/bin/avconv</p>                Enter the following for ffmpeg output options: -r 30 -vcodec libx264 -threads 2 -b 2000k -minrate 800k -maxrate 5000k (you can change these options to your liking)</p>                    Next to ffmpeg_formats, add mp4 (you can also add a star after mp4 and remove the star after avi to make mp4 the default format)</p>                    Hit save</p>                    Now you should be able to add your cams and record in mp4 x264 format</p>                    Important:</p>                    </p>                    The web gui will be available at http://serverip:port/zm</p>                    On first start, open zoneminder settings, go to the paths tab and enter the following for PATH_ZMS: /zm/cgi-bin/nph-zms</p>                        The default timezone for php is set as America/New_York if you would like to change it, edit the php.ini in the config folder. Here's a list of available timezone options: http://php.net/manual/en/timezones.php",
+        "ui": {
+            "slug": "/zm"
+        },
+        "volume_add_support": true,
+        "version": "1.0",
+        "website": "https://github.com/aptalca/docker-zoneminder/tree/v1.29"
+    }
+}
