@@ -19,6 +19,7 @@
     "MariaDB": "mariadb.json",
     "Muximux": "Muximux.json",
     "NZBGet": "nzbget.json",
+    "NZBHydra": "NZBHydra.json",
     "OpenVPN": "openvpn.json",
     "OwnCloud": "owncloud.json",
     "OwnCloud-Official": "owncloud-official.json",

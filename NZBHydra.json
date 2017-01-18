@@ -2,7 +2,7 @@
     "NZBHydra": {
         "containers": {
             "nzbhydra": {
-                "image": "linuxserver/hydra:latest",
+                "image": "linuxserver/hydra",
                 "launch_order": 1,
                 "ports": {
                     "5075": {
