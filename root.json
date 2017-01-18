@@ -17,6 +17,7 @@
     "JenkinsCI": "jenkins.json",
     "Logitech Squeezebox": "LogitechSqueezebox.json",
     "MariaDB": "mariadb.json",
+    "Muximux": "Muximux.json",
     "NZBGet": "nzbget.json",
     "OpenVPN": "openvpn.json",
     "OwnCloud": "owncloud.json",
