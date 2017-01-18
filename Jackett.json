@@ -2,7 +2,7 @@
     "Jackett": {
         "containers": {
             "jackett": {
-                "image": "linuxserver/jackett:latest",
+                "image": "linuxserver/jackett",
                 "launch_order": 1,
                 "ports": {
                     "9117": {
