@@ -42,6 +42,16 @@
                         "label": "WebUI password",
                         "default": "admin",
                         "index": 2
+		    },
+		    "USERID": {
+			"description": "Choose a UID to run transmission as.",
+			"label": "UID",
+			"index": 3
+		    },
+		    "GROUPID": {
+			"description": "Choose a GID to run transmission as.",
+			"label": "GID",
+			"index": 4
                     }
                 }
             }
