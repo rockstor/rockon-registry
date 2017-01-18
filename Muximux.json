@@ -2,7 +2,7 @@
     "Muximux": {
         "containers": {
             "muximux": {
-                "image": "linuxserver/muximux:latest",
+                "image": "linuxserver/muximux",
                 "launch_order": 1,
                 "ports": {
                     "80": {
