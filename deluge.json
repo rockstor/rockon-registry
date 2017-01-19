@@ -25,17 +25,17 @@
                         "description": "Choose a Share for Deluge configuration. Eg: create a Share called Deluge-config for this purpose alone.",
                         "label": "Config Storage"
                     },
-            "/downloads": {
-                    "description": "Choose a Share for Deluge downloads. Eg: create a Share called Deluge-downloads for this purpose alone.",
-                    "label": "Download Storage"
+                    "/downloads": {
+                        "description": "Choose a Share for Deluge downloads. Eg: create a Share called Deluge-downloads for this purpose alone.",
+                        "label": "Download Storage"
                     }
                 },
                 "environment": {
                     "PUID": {
-                "description": "Enter a valid UID to run Deluge as. It must have full permissions to all Shares mapped in the previous step.",
+                        "description": "Enter a valid UID to run Deluge as. It must have full permissions to all Shares mapped in the previous step.",
                         "label": "UID to run Deluge as.",
                         "index": 1
-            },
+                    },
                     "PGID": {
                         "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
                         "label": "GID to run Deluge as.",
