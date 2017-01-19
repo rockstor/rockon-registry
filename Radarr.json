@@ -1,0 +1,53 @@
+{
+    "Radarr": {
+        "containers": {
+            "radarr": {
+                "image": "linuxserver/radarr",
+                "launch_order": 1,
+                "ports": {
+                    "7878": {
+                        "description": "Radarr WebUI port. Suggested default: 7878",
+                        "host_default": 7878,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for Radarr configuration. Eg: create a Share called Radarr-config for this purpose alone.",
+                        "label": "Config Storage"
+                    },
+                    "/movies": {
+                        "description": "Choose a Share for Radarr media library Eg: create a Share called Radarr-library for this purpose alone. You can also assign other media Shares on the system after installation.",
+                        "label": "Movies location"
+                    },
+					"/downloads": {
+                    "description": "Choose a Share for Radarr downloads. Eg: create a Share called Radarr-downloads for this purpose alone.",
+                    "label": "Download Storage"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+		        "description": "Enter a valid UID to run Radarr as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run Radarr as.",
+                        "index": 1
+		    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run Radarr as.",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "Radarr is a movie downloader for usenet",
+		"more_info": "TBA",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+	"website": "https://hub.docker.com/r/linuxserver/radarr/",
+	"version": "1.0"
+    }
+}
