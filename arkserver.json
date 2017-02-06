@@ -1,0 +1,87 @@
+{
+    "Ark": {
+        "containers": {
+            "ark": {
+                "image": "turzam/ark",
+                "launch_order": 1,
+                "ports": {
+                    "27016": {
+                        "description": "Server TCP Port for running ARK Server (You need to open this on your firewall)",
+                        "host_default": 27016,
+                        "protocol": "tcp",
+                        "label": "ARK Server Port 27016tcp"
+                    },
+                    "27016": {
+                        "description": "Server UDP Port for running ARK Server (You need to open this on your firewall)",
+                        "host_default": 27016,
+                        "protocol": "udp",
+                        "label": "ARK Server Port 27016udp"
+                    },
+                    "7778": {
+                        "description": "Steam TCP Port for running ARK Server (You need to open this on your firewall)",
+                        "host_default": 7778,
+                        "protocol": "tcp",
+                        "label": "ARK Server Port 7778tcp"
+                    },
+                    "7778": {
+                        "description": "Steam UDP Port for running ARK Server (You need to open this on your firewall)",
+                        "host_default": 7778,
+                        "protocol": "udp",
+                        "label": "ARK Server Port 7778udp"
+                    },
+                    "32330": {
+                        "description": "RCON Port for ARK Server (Remote Management)",
+                        "host_default": 32330,
+                        "protocol": "tcp",
+                        "label": "ARK Server Port 7778tcp"
+                    }
+
+                },
+                "volumes": {
+                    "/ark": {
+                        "description": "Choose a Share for the data and configuration data.",
+                        "label": "Config Storage",
+                        "min_size": "1073741824"
+                    }
+                },
+                "environment":{
+                    "ADMINPASSWORD":{
+                         "description": "Enter an administrator password for the ARK server.",
+                         "label": "Admin Password",
+                         "index": 1
+                    },
+                    "UID":{
+                          "description": "User to run ARK.",
+                          "label": "UID to run ARK as",
+                          "index": 2
+                    },
+                    "GID":{
+                          "description": "Group to run ARK.",
+                          "label": "GID to run ARK as",
+                          "index": 3
+                    },
+                    "AUTOUPDATE":{
+                          "description": "How often to autoupdate (default 120)",
+                          "label": "AUpdate",
+                          "index": 4
+                    },
+                    "AUTOBACKUP":{
+                          "description": "How oftent to autobackup (default 60)",
+                          "label": "ABackup",
+                          "index": 5
+                    },
+                    "WARNMINUTE":{
+                          "description": "When to give warning (default 30)",
+                          "label": "WarnM",
+                          "index": 6
+                    }
+                }
+            }
+        },
+        "description": "ARK: Docker build for managing an ARK: Survival Evolved server.",
+	"more_info": "First run </p> docker run -it -p 7778:7778 -p 7778:7778/udp -p 27015:27015 -p 27015:27015/udp -p 32330:32330 -e SESSIONNAME=myserver -e ADMINPASSWORD=mypasswordadmin -e AUTOUPDATE=120 -e AUTOBACKUP=60 -e WARNMINUTE=30 -v /my/path/to/ark:/ark --name ark turzam/ark </p> Wait for ark to be downloaded installed and launched, then Ctrl+C to stop the server. </p> Edit /my/path/to/ark/GameUserSetting.ini and Game.ini </p> Edit /my/path/to/ark/arkserver.cfg to add mods and configure warning time. </p> Add auto update every day and autobackup by editing /my/path/to/ark/crontab with this lines : </p> 0 0 * * * arkmanager update --warn --update-mods >> /ark/log/crontab.log 2>&1 </p> 0 0 * * * arkmanager backup >> /ark/log/crontab.log 2>&1 </p> docker start ark</p> Check your server with :</p> docker exec ark arkmanager status",
+        "volume_add_support": true,
+        "version": "1.00",
+        "website": "https://github.com/TuRz4m/Ark-docker"
+    }
+}
