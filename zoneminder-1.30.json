@@ -22,7 +22,7 @@
                 "volumes": {
                     "/config": {
                         "description": "Choose a Share for the data and configuration data. (you can add seperate shares for events later by attaching a volume to /config/data/events)",
-                        "label": "Config Storage",
+                        "label": "Date and Config Storage",
                         "min_size": "1073741824"
                     },
                     "/config/mysql": {
