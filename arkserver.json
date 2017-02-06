@@ -5,13 +5,13 @@
                 "image": "turzam/ark",
                 "launch_order": 1,
                 "ports": {
-                    "27016": {
+                    "27015": {
                         "description": "Server TCP Port for running ARK Server (You need to open this on your firewall)",
                         "host_default": 27015,
                         "protocol": "tcp",
                         "label": "ARK Server Port 27015tcp"
                     },
-                    "27016": {
+                    "27015": {
                         "description": "Server UDP Port for running ARK Server (You need to open this on your firewall)",
                         "host_default": 27015,
                         "protocol": "udp",
