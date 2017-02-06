@@ -46,20 +46,10 @@
                           "label": "GID to run ARK as",
                           "index": 3
                     },
-                    "AUTOUPDATE":{
-                          "description": "How often to autoupdate (default 120)",
-                          "label": "AUpdate",
+                    "SESSIONNAME":{
+                          "description": "Session Name",
+                          "label": "SessionName",
                           "index": 4
-                    },
-                    "AUTOBACKUP":{
-                          "description": "How oftent to autobackup (default 60)",
-                          "label": "ABackup",
-                          "index": 5
-                    },
-                    "WARNMINUTE":{
-                          "description": "When to give warning (default 30)",
-                          "label": "WarnM",
-                          "index": 6
                     }
                 }
             }
