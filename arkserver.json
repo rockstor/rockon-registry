@@ -7,15 +7,15 @@
                 "ports": {
                     "27016": {
                         "description": "Server TCP Port for running ARK Server (You need to open this on your firewall)",
-                        "host_default": 27016,
+                        "host_default": 27015,
                         "protocol": "tcp",
-                        "label": "ARK Server Port 27016tcp"
+                        "label": "ARK Server Port 27015tcp"
                     },
                     "27016": {
                         "description": "Server UDP Port for running ARK Server (You need to open this on your firewall)",
-                        "host_default": 27016,
+                        "host_default": 27015,
                         "protocol": "udp",
-                        "label": "ARK Server Port 27016udp"
+                        "label": "ARK Server Port 27015udp"
                     },
                     "7778": {
                         "description": "Steam TCP Port for running ARK Server (You need to open this on your firewall)",
