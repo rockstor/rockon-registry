@@ -6,34 +6,20 @@
                 "launch_order": 1,
                 "ports": {
                     "27015": {
-                        "description": "Server TCP Port for running ARK Server (You need to open this on your firewall)",
+                        "description": "Server Port for running ARK Server (You need to open this on your firewall - both tcp/udp)",
                         "host_default": 27015,
-                        "protocol": "tcp",
-                        "label": "ARK Server Port 27015tcp"
-                    },
-                    "27015": {
-                        "description": "Server UDP Port for running ARK Server (You need to open this on your firewall)",
-                        "host_default": 27015,
-                        "protocol": "udp",
-                        "label": "ARK Server Port 27015udp"
+                        "label": "ARK Server Port (27015)"
                     },
                     "7778": {
-                        "description": "Steam TCP Port for running ARK Server (You need to open this on your firewall)",
+                        "description": "Steam TCP Port for running ARK Server (You need to open this on your firewall - both tcp/udp)",
                         "host_default": 7778,
-                        "protocol": "tcp",
-                        "label": "ARK Steam Port 7778tcp"
-                    },
-                    "7778": {
-                        "description": "Steam UDP Port for running ARK Server (You need to open this on your firewall)",
-                        "host_default": 7778,
-                        "protocol": "udp",
-                        "label": "ARK Steam Port 7778udp"
+                        "label": "ARK Steam Port (7778)"
                     },
                     "32330": {
                         "description": "RCON Port for ARK Server (Remote Management)",
                         "host_default": 32330,
                         "protocol": "tcp",
-                        "label": "ARK RCON Port 32330tcp"
+                        "label": "ARK RCON Port (32330)"
                     }
 
                 },
