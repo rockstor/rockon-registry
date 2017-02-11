@@ -1,0 +1,99 @@
+{
+    "Transmission with OpenVPN": {
+		"description": "Docker container which runs Transmission torrent client with WebUI while connecting to OpenVPN by Haugene",
+		"version": "1.0",
+		"website": "https://hub.docker.com/r/haugene/transmission-openvpn/",
+		"more_info": "Docker container which runs Transmission torrent client with WebUI while connecting to OpenVPN. It bundles certificates and configurations for several VPN providers. When using PIA as provider it will update Transmission hourly with assigned open port.",
+		"containers": {
+            "transmission-openvpn": {
+                "image": "haugene/transmission-openvpn",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "--privileged",
+						"--dns=8.8.8.8",
+						"--dns=8.8.4.4"
+                    ]
+				],
+                "ports": {
+                    "9091": {
+                        "description": "Tranmission WebUI port. Suggested default: 9091. Remember to setup a NGINX reverse proxy to allow a WebUI connection to Transmission",
+                        "host_default": 9091,
+                        "label": "WebUI port",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a Share where Transmission will save all of it's config and data files including your downloads. Eg: create a Share called transmission-data.",
+                        "label": "Data"
+					},
+                    "/downloads": {
+                        "description": "Choose an additional share where Transmission can save your downloads. Eg: create a Share called transmission-downloads",
+                        "label": "Downloads"
+                    }
+                },
+				"environment": {
+                    "LOCAL_NETWORK": {
+						"description": "Enter you local network and mask like 10.11.12.0/24",
+                        "label": "Local Network",
+                        "index": 1
+					},
+                    "OPENVPN_PROVIDER": {
+						"description": "Select the OpenVPN provider to use. Supported providers are PIA, BTGUARD, TIGER, FROOT, TORGUARD, NORDVPN, USENETSERVER, IPVANISH, ANONINE, HIDEME, PUREVPN, HIDEMYASS and PRIVATEVPN",
+                        "label": "OpenVPN Provider",
+                        "index": 2
+					},
+                    "OPENVPN_USERNAME": {
+                        "description": "Enter your OpenVPN username",
+                        "label": "OpenVPN Username",
+                        "index": 3
+                    },
+                    "OPENVPN_PASSWORD": {
+                        "description": "Enter your OpenVPN password",
+                        "label": "OpenVPN password",
+                        "index": 4
+                    },
+                    "OPENVPN_CONFIG": {
+                        "description": "Enter the OpenVPN endpoint to connect to (e.g. Netherlands).",
+                        "label": "OpenVPN config",
+                        "index": 5
+                    },
+                    "OPENVPN_OPTS": {
+                        "description": "Enter additional startup options you want to pass on to OpenVPN",
+                        "label": "OpenVPN startup options",
+                        "index": 6
+                    },
+                    "TRANSMISSION_RATIO_LIMIT": {
+                        "description": "Enter the transmission ratio limit",
+                        "label": "Transmission ratio limit (2)",
+                        "index": 7
+                    },
+                    "TRANSMISSION_RATIO_LIMIT_ENABLED": {
+                        "description": "Enter the transmission ratio limit status (true/false)",
+                        "label": "Transmission ratio limit status (true/false)",
+                        "index": 8
+                    },
+					"TRANSMISSION_SPEED_LIMIT_UP": {
+                        "description": "Enter the transmission upload speed limit",
+                        "label": "Transmission upload speed limit (1)",
+                        "index": 9
+                    },
+                    "TRANSMISSION_SPEED_LIMIT_UP_ENABLED": {
+                        "description": "Enter the transmission upload speed limit status (true/false)",
+                        "label": "Transmission upload speed limit status (true/false)",
+                        "index": 10
+                    },
+                    "TRANSMISSION_UMASK": {
+                        "description": "Enter Transmission file creation UMASK",
+                        "label": "Transmission UMASK (000)",
+                        "index": 11
+                    }
+ 				},
+				"ui": {
+					"slug": ""
+				}
+			}
+        }
+    }
+}
