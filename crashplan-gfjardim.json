@@ -1,0 +1,58 @@
+ {
+	"Crashplan": {
+        "containers": {
+            "crashplan": {
+                "image": "gfjardim/crashplan",
+                "launch_order": 1,
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a share for the crashplan configuration & log files.",
+                        "label": "/config"
+                    },
+                    "/backup": {
+                        "description": "Choose a share for the crashplan backup files.",
+                        "label": "Backup"
+                    }
+				},
+				"opts": [ 
+					[
+						"-v", 
+						"/mnt2:/rockstor-data",
+						"-p",
+						"4242",
+						"-p",
+						"4243"
+					]
+				],
+                "ports": {
+                    "4280": {
+                        "description": "Port for VNC UI to crashplan (Use 4280)",
+                        "host_default": 4280,
+                        "label": "VNC UI",
+                        "procotol": "tcp",
+                        "ui": true
+                    }
+                },				"environment": {
+                    "TZ": {
+						"description": "Enter you local timezone (e.g. Europe/Amsterdam",
+                        "label": "Local Timezone",
+                        "index": 1
+					},
+                    "VNC_PASSWD": {
+						"description": "Enter you VNC Password for the webui interface",
+                        "label": "VNC Password",
+                        "index": 2
+					}
+				}
+            }
+        },
+        "description": "Crashplan backup service, by gfjardim",
+        "more_info": "Crashplan backup service",
+        "ui": {
+            "slug": "/vnc_auto.html"
+        },
+        "volume_add_support": true,
+        "website": "https://hub.docker.com/r/gfjardim/crashplan/",
+        "version": "alpha"
+    }
+}
