@@ -38,7 +38,7 @@
             }
         },
         "description": "CrashPlan rockon, container from jrcs/crashplan",
-        "more_info": "<h4>Add more storage Crashplan to backup</h4><p>You can add more Shares to backup to crashplan rockon from the settings wizard of this Rock-on. Then, from crashplan UI on your <em>desktop</em> setup your backup. Refer to <a href="https://support.crashplan.com/Configuring/Using_CrashPlan_On_A_Headless_Computer">Crashplan: Using crashplan Headless</a></p>",
+        "more_info": "<h4>Add more storage Crashplan to backup</h4><p>You can add more Shares to backup to crashplan rockon from the settings wizard of this Rock-on. Then, from crashplan UI on your <em>desktop</em> setup your backup. Refer to <a href=https://support.crashplan.com/Configuring/Using_CrashPlan_On_A_Headless_Computer>Crashplan: Using crashplan Headless</a></p>",
         "volume_add_support": true,
         "website": "https://hub.docker.com/r/jrcs/crashplan/",
         "version": "1.0"
