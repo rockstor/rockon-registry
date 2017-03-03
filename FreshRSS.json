@@ -32,9 +32,9 @@
 					}
 				}
 			}
-		}
+		},
 		"description": "FreshRSS is a free, self-hostable aggregator for rss feeds",
 		"website": "https://freshrss.org/",
-		"version": "1.0",
+		"version": "1.0"
 	}
 }
