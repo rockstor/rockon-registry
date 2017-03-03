@@ -27,13 +27,6 @@
                         "description": "Choose a share to store incoming backup. Eg: create a share called crashplan-storage for this purpose alone. You can also assign other Shares on the system after installation to backup.",
                         "label": "Data Storage"
                     }
-                },
-                "environment": {
-                    "TZ": {
-                        "description": "Timezone for crashplan logs. ex: America/Chicago . Look at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
-                        "label": "TZ",
-                        "index": 1
-                    }
                 }
             }
         },
