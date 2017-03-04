@@ -1,0 +1,39 @@
+{
+    "crashplan": {
+        "containers": {
+            "crashplan": {
+                "image": "jrcs/crashplan",
+                "launch_order": 1,
+                "ports": {
+                    "4242": {
+                        "description": "Backing up from your local computer to your remote computer uses port 4242 by default.",
+                        "host_default": 4242,
+                        "label": "Backup port",
+                        "ui": false
+                    },
+                    "4243": {
+                        "description": "CrashPlan app communicates with the CrashPlan service using port 4243 by default",
+                        "host_default": 4243,
+                        "label": "Service to App communication",
+                        "ui": false
+                    }
+                },
+                "volumes": {
+                    "/var/crashplan": {
+                        "description": "Choose a Share for crashplan configuration. Eg: create a Share called crashplan-config for this purpose alone.",
+                        "label": "Config Storage"
+                    },
+                    "/storage": {
+                        "description": "Choose a share to store incoming backup. Eg: create a share called crashplan-storage for this purpose alone. You can also assign other Shares on the system after installation to backup.",
+                        "label": "Data Storage"
+                    }
+                }
+            }
+        },
+        "description": "CrashPlan rockon, container from jrcs/crashplan",
+        "more_info": "<h4>Add more storage Crashplan to backup</h4><p>You can add more Shares to backup to crashplan rockon from the settings wizard of this Rock-on. Then, from crashplan UI on your <em>desktop</em> setup your backup. Refer to <a href=https://support.crashplan.com/Configuring/Using_CrashPlan_On_A_Headless_Computer>Crashplan: Using crashplan Headless</a></p>",
+        "volume_add_support": true,
+        "website": "https://hub.docker.com/r/jrcs/crashplan/",
+        "version": "1.0"
+    }
+}
