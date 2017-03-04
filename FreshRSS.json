@@ -1,0 +1,40 @@
+{
+	"FreshRSS": {
+		"containers": {
+			"linuxserver-freshrss": {
+				"image": "linuxserver/freshrss",
+				"launch_order": 1,
+				"ports": {
+					"80": {
+						"description": "FreshRSS Web UI Port",
+						"host_default": 3093,
+						"label": "WebUI port",
+						"protocol": "tcp",
+						"ui": true
+					}
+				},
+				"volumes": {
+					"/config": {
+						"description": "local storage for freshrss site files",
+						"label": "Config"
+					}
+				},
+				"environment": {
+					"PUID": {
+						"description": "Enter a valid UID to run as. It must have full permissions to all Shares mapped in the previous step.",
+						"label": "UID",
+						"index": 1
+					},
+					"PGID": {
+						"description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+						"label": "GID",
+						"index": 2
+					}
+				}
+			}
+		},
+		"description": "FreshRSS is a free, self-hostable aggregator for rss feeds",
+		"website": "https://freshrss.org/",
+		"version": "1.0"
+	}
+}
