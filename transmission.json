@@ -6,7 +6,7 @@
             "slug": ""
         },
         "version": "1.0",
-        "website": "http: //www.transmissionbt.com/",
+        "website": "http://www.transmissionbt.com/",
         "containers": {
             "transmission": {
                 "image": "dperson/transmission",
