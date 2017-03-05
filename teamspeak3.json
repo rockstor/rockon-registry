@@ -10,21 +10,21 @@
                         "host_default": 9987,
                         "label": "Voice port",
                         "protocol": "udp",
-                        "ui": true
+                        "ui": false
                     },
                     "10011": {
                         "description": "Teamspeak3 Listning port (tcp). Suggested default: 10011",
                         "host_default": 10011,
                         "label": "Listning port",
                         "protocol": "tcp",
-                        "ui": true
+                        "ui": false
                     },
                     "30033": {
                         "description": "Teamspeak3 File-Transfer port (tcp). Suggested default: 30033",
                         "host_default": 30033,
                         "label": "File-Transfer port",
                         "protocol": "tcp",
-                        "ui": true
+                        "ui": false
                     }
                 },
                 "volumes": {
@@ -49,9 +49,6 @@
         },
         "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalabilty up to thousands of simultaneous users.",
     	    "more_info": "<h4>You need to get the previliged key using system console to get serveradmin access</h4></p>1. Open system console (don't forget to start the service) or use SSH</p>2. cd /mnt2/[sharename]/serverfiles/logs</p>3. grep \"token\" ./*",
-        "ui": {
-            "slug": ""
-        },
         "volume_add_support": false,
 	"website": "https://hub.docker.com/r/linuxserver/gsm-ts3/",
 	"version": "1.0"
