@@ -1,0 +1,25 @@
+{
+    "HTTP to HTTPS redirect": {
+        "containers": {
+            "redirect-http-to-https": {
+                "image": "geldim/https-redirect",
+                "launch_order": 1,
+                "ports": {
+                    "80": {
+                        "description": "Set this to port 80 to accept HTTP connections. It will automatically redirect to HTTPS, where the admin UI is hosted (port 443)",
+                        "host_default": 80,
+                        "label": "HTTP port",
+                        "protocol": "tcp"
+                    }
+                }
+            }
+        },
+        "description": "Access the Rockstor Admin Web UI without having to remember to type https://",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "website": "https://hub.docker.com/r/geldim/https-redirect/",
+        "version": "1.0"
+    }
+}
