@@ -25,13 +25,13 @@
                 },
                 "environment": {
                     "PUID": {
-                        "description": "Enter a valid UID to run Radarr as. It must have full permissions to all Shares mapped in the previous step.",
-                        "label": "UID to run Radarr as.",
+                        "description": "Enter a valid UID to run as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run Ombi as.",
                         "index": 1
                      },
                     "PGID": {
                         "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
-                        "label": "GID to run Radarr as.",
+                        "label": "GID to run Ombi as.",
                         "index": 2
                      }
                  }
