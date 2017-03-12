@@ -1,0 +1,56 @@
+{
+    "Teamspeak3": {
+        "containers": {
+            "Teamspeak3": {
+                "image": "linuxserver/gsm-ts3",
+                "launch_order": 1,
+                "ports": {
+                    "9987": {
+                        "description": "Teamspeak3 Voice port (udp). Suggested default: 9987",
+                        "host_default": 9987,
+                        "label": "Voice port",
+                        "protocol": "udp",
+                        "ui": false
+                    },
+                    "10011": {
+                        "description": "Teamspeak3 Listning port (tcp). Suggested default: 10011",
+                        "host_default": 10011,
+                        "label": "Listning port",
+                        "protocol": "tcp",
+                        "ui": false
+                    },
+                    "30033": {
+                        "description": "Teamspeak3 File-Transfer port (tcp). Suggested default: 30033",
+                        "host_default": 30033,
+                        "label": "File-Transfer port",
+                        "protocol": "tcp",
+                        "ui": false
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for Teamspeak3 configuration. Eg: create a Share called Teamspeak3-config for this purpose alone.",
+                        "label": "Config Storage"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+		        "description": "Enter a valid UID to run Teamspeak3 as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run Teamspeak3 as.",
+                        "index": 1
+		    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run Teamspeak3 as.",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalabilty up to thousands of simultaneous users.",
+    	    "more_info": "<h4>You need to get the previliged key using system console to get serveradmin access</h4></p>1. Open system console (don't forget to start the service) or use SSH</p>2. cd /mnt2/[sharename]/serverfiles/logs</p>3. grep \"token\" ./*",
+        "volume_add_support": false,
+	"website": "https://hub.docker.com/r/linuxserver/gsm-ts3/",
+	"version": "1.0"
+    }
+}
