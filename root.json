@@ -35,6 +35,7 @@
     "Subsonic": "subsonic.json",
     "Symform": "symform.json",
     "Syncthing": "syncthing.json",
+    "TeamSpeak3": "teamspeak3.json",
     "Transmission": "transmission.json",
     "Unifi Controller": "unifi.json",
     "ZoneMinder": "zoneminder.json",
