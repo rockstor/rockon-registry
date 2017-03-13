@@ -1,13 +1,9 @@
 {
     "Ombi": {
-        "website": "https://hub.docker.com/r/rogueosb/ombi/",
-        "version": "1.0",
-        "description": "Ombi is a request webui for Plex. It supports Sonarr, Radarr, Sickbeard & friends, along with couchpotato.",
         "containers": {
             "ombi": {
-                "image": "rogueosb/ombi",
+                "image": "linuxserver/ombi",
                 "launch_order": 1,
-                "volume_add_support": true,
                 "ports": {
                     "3579": {
                         "description": "Ombi WebUI port. Suggested default: 3579",
@@ -19,24 +15,32 @@
                 },
                 "volumes": {
                     "/config": {
-                        "description": "Choose a Share for Ombi Configuration Files",
+                        "description": "Choose a Share for Ombi configuration. Eg: create a Share called Ombi-config for this purpose alone.",
                         "label": "Config Storage"
+               
                     }
                 },
                 "environment": {
                     "PUID": {
-                        "description": "Enter a valid UID to run as. It must have full permissions to all Shares mapped in the previous step.",
+                        "description": "Enter a valid UID to run Ombi as. It must have full permissions to all Shares mapped in the previous step.",
                         "label": "UID to run Ombi as.",
                         "index": 1
-                     },
+		    },
                     "PGID": {
                         "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
                         "label": "GID to run Ombi as.",
                         "index": 2
-                     }
-                 }
-              }
-          }
-       }
+                    }
+                }
+            }
+        },
+        "description": "Ombi allows you to host your own Plex Request and user management system",
+		"more_info": "TBA",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+	"website": "https://hub.docker.com/r/linuxserver/ombi/",
+	"version": "1.0"
     }
 }
