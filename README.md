@@ -158,6 +158,6 @@ An options object is a list of up to two elements. (This needs to be improved or
 {
   "description": "<Detailed description. Eg: Login username for Syncthing UI>",
   "label": "Web-UI username",
-  (optiona)"index": <integer: 1 or above. order of this environment variable, if relevant>
+  (optional)"index": <integer: 1 or above. order of this environment variable, if relevant>
 }
 ```
