@@ -39,6 +39,10 @@
                         "MARIADB_USER=zabbix"
                     ],
                     [
+                        "-e",
+                        "MARIADB_PASS=766a2bb5d24bddae466c572bcabca3ee"
+                    ],
+                    [
                         "--volumes-from",
                         "zabbix-db-storage"
                     ],
@@ -79,6 +83,10 @@
                         "ZS_DBUser=zabbix"
                     ],
                     [
+                        "-e",
+                        "ZS_DBPassword=766a2bb5d24bddae466c572bcabca3ee"
+                    ],
+                    [
                         "--link",
                         "zabbix-db:zabbix.db"
                     ],
@@ -88,16 +96,6 @@
                     ]
                 ],
                 "environment": {}
-            }
-        },
-        "custom_config": {
-            "ZS_DBPassword": {
-                "description": "Database Password",
-                "label": "Database Password (enter twice)"
-            },
-            "MARIADB_PASS": {
-                "description": "Database Password",
-                "label": "Database Password (enter twice)"
             }
         },
         "description": "Compiled Zabbix (server, proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix web UI based on CentOS 7, Supervisor, Nginx, PHP.",
