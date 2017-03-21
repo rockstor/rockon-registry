@@ -47,12 +47,7 @@
                         "/etc/localtime:/etc/localtime:ro"
                     ]
                 ],
-                "environment": {
-                    "MARIADB_PASS": {
-                        "description": "MariaDB Password (enter twice)",
-                        "label": "MariaDB Password (enter twice)"
-                    }
-                 }
+                "environment": {}
             },
             "zabbix": {
                 "image": "monitoringartist/zabbix-xxl",
@@ -92,12 +87,17 @@
                         "/etc/localtime:/etc/localtime:ro"
                     ]
                 ],
-                "environment": {
-                    "ZS_DBPassword": {
-                        "description": "MariaDB Password (enter twice)",
-                        "label": "MariaDB Password (enter twice)"
-                     }
-                }
+                "environment": {}
+            }
+        },
+        "custom_config": {
+            "ZS_DBPassword": {
+                "description": "Database Password",
+                "label": "Database Password (enter twice)"
+            },
+            "MARIADB_PASS": {
+                "description": "Database Password",
+                "label": "Database Password (enter twice)"
             }
         },
         "description": "Compiled Zabbix (server, proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix web UI based on CentOS 7, Supervisor, Nginx, PHP.",
