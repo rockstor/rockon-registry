@@ -49,8 +49,8 @@
                 ],
                 "environment": {
                     "MARIADB_PASS": {
-                        "description": "MariaDB Password",
-                        "label": "MariaDB Password"
+                        "description": "MariaDB Password (enter twice)",
+                        "label": "MariaDB Password (enter twice)"
                     }
                  }
             },
@@ -94,8 +94,8 @@
                 ],
                 "environment": {
                     "ZS_DBPassword": {
-                        "description": "MariaDB Password (enter again)",
-                        "label": "MariaDB Password (enter again)"
+                        "description": "MariaDB Password (enter twice)",
+                        "label": "MariaDB Password (enter twice)"
                      }
                 }
             }
