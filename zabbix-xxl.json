@@ -17,7 +17,7 @@
                 "launch_order": 1,
                 "volumes": {
                     "/var/lib/mysql": {
-                        "description": "Choose a Share for Zabbix Database,. E.g. create a Share called zabbix-db for this purpose.",
+                        "description": "Choose a Share for Zabbix Database. (create a share called zabbix-db for this purpose)",
                         "label": "Zabbix Database",
                         "min_size": "1073741824"
                     }
@@ -28,7 +28,7 @@
                 "launch_order": 2,
                 "volumes": {
                     "/backups": {
-                        "description": "Choose a Share for Zabbix Backups. E.g. create a Share called zabbix-backups for this purpose.",
+                        "description": "Choose a Share for Zabbix Backups. (create a share called zabbix-backups for this purpose)",
                         "label": "Zabbix Backups",
                         "min_size": "1073741824"
                     }
@@ -57,6 +57,12 @@
                 "image": "monitoringartist/zabbix-xxl",
                 "label": "latest",
                 "launch_order": 3,
+                "volumes": {
+                    "/etc/custom-config": {
+                        "description": "Choose a share for any custom config files. (create a share called zabbix-config for this puporse)",
+                        "label": "Zabbix Custom Config"
+                    }
+                },
                 "ports": {
                     "80": {
                         "description": "Zabbix Server Web Interface (Suugested default:8080)",
