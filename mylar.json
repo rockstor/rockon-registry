@@ -3,7 +3,7 @@
     "website": "https://hub.docker.com/r/linuxserver/mylar/",
     "version": "1.0",
     "description": "Mylar is an automated Comic Book (cbr/cbz) downloader program heavily-based on the Headphones template and logic ",
-    "icon": "https://raw.githubusercontent.com/evilhero/mylar/master/data/images/favicon.ico".
+    "icon": "https://raw.githubusercontent.com/evilhero/mylar/master/data/images/favicon.ico",
       "containers": {
         "mylar": {
           "image": "linuxserver/mylar",
