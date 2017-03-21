@@ -1,0 +1,113 @@
+{
+    "Zabbix-XXL": {
+        "container_links": {
+            "zabbix": [{
+                "name": "zabbox.db",
+                "source_container": "zabbix-db"
+            }],
+            "zabbix-db": [{
+                "name": "zabbix-db-storage",
+                "source_container": "zabbix-db-storage"
+            }]
+        },
+        "containers": {
+            "zabbix-db-storage": {
+                "image": "busybox",
+                "label": "latest",
+                "launch_order": 1,
+                "volumes": {
+                    "/var/lib/mysql": {
+                        "description": "Choose a Share for Zabbix Database,. E.g. create a Share called zabbix-db for this purpose.",
+                        "label": "Zabbix Database",
+                        "min_size": "1073741824"
+                    }
+                }
+            },
+            "zabbix-db": {
+                "image": "monitoringartist/zabbix-db-mariadb",
+                "launch_order": 2,
+                "volumes": {
+                    "/backups": {
+                        "description": "Choose a Share for Zabbix Backups. E.g. create a Share called zabbix-backups for this purpose.",
+                        "label": "Zabbix Backups",
+                        "min_size": "1073741824"
+                    }
+                },
+                "opts": [
+                    [
+                        "-e",
+                        "MARIADB_USER=zabbix"
+                    ],
+                    [
+                        "--volumes-from",
+                        "zabbix-db-storage"
+                    ],
+                    [
+                        "-v",
+                        "/etc/localtime:/etc/localtime:ro"
+                    ]
+                ],
+                "environment": {
+                    "MARIADB_PASS": {
+                        "description": "MariaDB Password",
+                        "label": "MariaDB Password"
+                    }
+                 }
+            },
+            "zabbix": {
+                "image": "monitoringartist/zabbix-xxl",
+                "label": "latest",
+                "launch_order": 3,
+                "ports": {
+                    "80": {
+                        "description": "Zabbix Server Web Interface (Suugested default:8080)",
+                        "host_default": 80,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+                    "10051": {
+                        "description": "Zabbix Server API Port (default:10051)",
+                        "host_default": 10051,
+                        "label": "API Port",
+                        "protocol": "tcp",
+                        "ui": false
+                    }
+                },
+                "opts": [
+                    [
+                        "-e",
+                        "ZS_DBHost=zabbix.db"
+                    ],
+                    [
+                        "-e",
+                        "ZS_DBUser=zabbix"
+                    ],
+                    [
+                        "--link",
+                        "zabbix-db:zabbix.db"
+                    ],
+                    [
+                        "-v",
+                        "/etc/localtime:/etc/localtime:ro"
+                    ]
+                ],
+                "environment": {
+                    "ZS_DBPassword": {
+                        "description": "MariaDB Password (enter again)",
+                        "label": "MariaDB Password (enter again)"
+                     }
+                }
+            }
+        },
+        "description": "Compiled Zabbix (server, proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix web UI based on CentOS 7, Supervisor, Nginx, PHP.",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "volume_add_support": true,
+        "more_info": "<h4>More Information</h4><p>please check the link for backups and troubleshooting if needed</p>",
+        "website": "https://hub.docker.com/r/monitoringartist/zabbix-xxl/",
+        "version": "1.0"
+    }
+}
