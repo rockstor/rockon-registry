@@ -2,7 +2,7 @@
     "Subsonic": {
         "containers": {
             "subsonic": {
-                "image": "hurricane/docker-subsonic",
+                "image": "hurricane/subsonic",
                 "launch_order": 1,
                 "ports": {
                     "4040": {
