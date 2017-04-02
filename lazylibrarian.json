@@ -1,0 +1,53 @@
+{
+  "LazyLibrarian": {
+    "containers": {
+      "linuxserver-lazylibrarian": {
+        "image": "linuxserver/lazylibrarian",
+        "launch_order": 1,
+        "ports": {
+          "5299": {
+            "description": "Web server port. Suggested default: 5299",
+            "host_default": 5299,
+            "label": "Port for the web interface",
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/config": {
+            "description": "Choose a share where the config file should be stored. Eg: create a share called lazylibrarian-config for this purpose alone. ",
+            "label": "Config storage"
+          },
+          "/downloads": {
+            "description": "Choose a share where the books will be downloaded to. ",
+            "label": "Download storage"
+          },
+          "/books": {
+            "description": "Choose a share where the book library is located. ",
+            "label": "Book library"
+          }
+        },
+        "environment": {
+          "PUID": {
+            "description": "UID",
+            "label": "UID to run lazylibrarian as",
+            "index": 1
+          },
+          "PGID": {
+            "description": "GID",
+            "label": "GID to run lazylibrarian as",
+            "index": 2
+          }
+        }
+      }
+    },
+    "description": "lazylibrarian is an automated ebook downloader for NZB and Torrent.",
+    "ui": {
+      "slug": ""
+    },
+    "volume_add_support": true,
+    "more_info": "<h4>Setting up the application</h4><p>Go to the web interface to configure your lazylibrarian installation.</p>",
+    "website": "https://hub.docker.com/r/linuxserver/lazylibrarian/",
+    "version": "37"
+  }
+}
