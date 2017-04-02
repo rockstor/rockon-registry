@@ -46,7 +46,7 @@
       "slug": ""
     },
     "volume_add_support": true,
-    "more_info": "<h4>Setting up the application</h4><p>Go after installation to the Headphones web interface to configure your lazylibrarian installation.</p>",
+    "more_info": "<h4>Setting up the application</h4><p>Go to the web interface to configure your lazylibrarian installation.</p>",
     "website": "https://hub.docker.com/r/linuxserver/lazylibrarian/",
     "version": "37"
   }
