@@ -1,0 +1,49 @@
+{
+	"Radarr": {
+		"website": "https://hub.docker.com/r/linuxserver/radarr/",
+		"version": "1.0",
+        "description": "Radarr is a PVR for Movies on Usenet and Torrents",
+		"containers": {
+			"radarr": {
+				"image": "linuxserver/radarr",
+				"launch_order": 1,
+				"volume_add_support": true,
+				"ports": {
+					"7878": {
+						"description": "Radarr WebUI port. Suggested default: 7878",
+						"host_default": 7878,
+						"label": "WebUI port",
+						"protocol": "tcp",
+						"ui": true
+					}
+				},
+				"volumes": {
+					"/config": {
+						"description": "Choose a Share for Radarr Configuration Files",
+						"label": "Config Storage"
+					},
+					"/movies": {
+						"description": "Choose a Share for Radarr Media Library",
+						"label": "Movies location"
+					},
+					"/downloads": {
+						"description": "Choose a Share for Radarr Downloads",
+						"label": "Download Storage"
+					}
+				},
+				"environment": {
+					"PUID": {
+						"description": "Enter a valid UID to run Radarr as. It must have full permissions to all Shares mapped in the previous step.",
+						"label": "UID to run Radarr as.",
+						"index": 1
+					},
+					"PGID": {
+						"description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+						"label": "GID to run Radarr as.",
+						"index": 2
+					}
+				}
+			}
+		}
+	}
+}
