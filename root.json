@@ -30,6 +30,7 @@
     "OwnCloudHTTPS": "owncloudHTTPS.json",
     "Plex": "plex.json",
     "Plexpy": "plexpy.json",
+    "Radarr": "radarr.json",
     "Rocket.Chat": "rocketchat.json",
     "Sickbeard": "sickbeard.json",
     "Sickrage": "sickrage.json",
