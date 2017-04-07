@@ -20,7 +20,7 @@
             },
             "rocketchat": {
                 "image": "rocketchat/rocket.chat",
-                "label": "0.35.0",
+                "label": "0.54.2",
                 "launch_order": 2,
                 "ports": {
                     "3000": {
@@ -52,6 +52,6 @@
         "volume_add_support": true,
         "more_info": "<h4>Setting up the application</h4><p>Go after installation to the Rocket.Chat web interface for administration of your RocketChat installation.</p>",
         "website": "https://rocket.chat/",
-        "version": "0.35.0"
+        "version": "0.54.2"
     }
 }
