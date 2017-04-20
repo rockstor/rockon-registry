@@ -1,0 +1,36 @@
+{
+"Couchpotato": {
+    "containers": {
+        "couchpotato": {
+            "image": "timhaak/couchpotato",
+            "launch_order": 1,
+            "ports": {
+                "5050": {
+                    "description": "Port for couchpotato Web interface. Suggested default: 5050.",
+                    "host_default": 5050,
+                    "label": "WebUI port",
+                    "procotol": "tcp"
+                }
+            },
+            "volumes": {
+                "/data": {
+                    "description": "Choose a share to download to.",
+                    "label": "Data Storage"
+                },
+                "/config": {
+                    "description": "Choose a share to host configuration.",
+                    "label": "Config Storage"
+                }
+            }
+        }
+    },
+    "description": "Couchpotato",
+    "more_info": "",
+    "ui": {
+        "slug": ""
+    },
+    "volume_add_support": true,
+    "website": "https://couchpota.to/",
+    "version": "alpha"
+}
+}
