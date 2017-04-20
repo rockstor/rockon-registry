@@ -48,7 +48,7 @@
             "slug": ""
         },
         "volume_add_support": true,
-        "website": "https://hub.docker.com/r/linuxserver/sabnzbd/",
+        "website": "<https://hub.docker.com/r/linuxserver/sabnzbd/>",
 	"version": "1.0"
     }
 }
