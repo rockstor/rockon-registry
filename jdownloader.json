@@ -1,0 +1,35 @@
+{
+    "JDownloader": {
+        "containers": {
+            "jdownloader": {
+                "image": "egnerfl/jdownloader-headless",
+                "launch_order": 1,
+                "volumes": {
+                    "/downloads": {
+                        "description": "Choose a storage for your Downloads.",
+                        "label": "Data Storage"
+                    }
+                },
+                "environment": {
+        		    "JDEMAIL": {
+            			"description": "myJDownloader Username",
+            			"label": "my.jdownloader username",
+            			"index": 1
+        		    },
+        		    "JDPASSWORD": {
+            			"description": "myJDownloader Password",
+            			"label": "my.jdownloader password",
+            			"index": 2
+        		    }
+        		}
+            }
+        },
+        "description": "Headless JDownloader 2",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+        "website": "http://my.jdownloader.org/",
+        "version": "1.0"
+    }
+}
