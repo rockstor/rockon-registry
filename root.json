@@ -24,6 +24,7 @@
     "Mylar": "mylar.json",
     "NZBGet": "nzbget.json",
     "NZBHydra": "NZBHydra.json",
+    "Ombi": "ombi.json",
     "OpenVPN": "openvpn.json",
     "OwnCloud": "owncloud.json",
     "OwnCloud-Official": "owncloud-official.json",
