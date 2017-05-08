@@ -22,7 +22,7 @@
                         "ui": false
                     },
                     "80": {
-                        "description": "Web-port. Recommended: 80",
+                        "description": "Web-port. Recommended: 80.<p>If other port than 80 is used some blocked sites will not show correctly</p>",
                         "host_default": 80,
                         "label": "Web-Port",
                         "ui": true
@@ -30,7 +30,7 @@
                 },
                 "volumes": {
                     "/etc/pihole": {
-                        "description": "Choose a Share for Plex Requests configuration. Eg: create a Share called pihole-config for this purpose alone.",
+                        "description": "Choose a Share for Pi-Hole configuration. Eg: create a Share called pihole-config for this purpose alone.",
                         "label": "Config Storage"
                     }
                 },
@@ -46,19 +46,19 @@
                         "index": 2
                     },
                     "DNS1": {
-                        "description": "Enter desired webpassword for pi-hole.",
-                        "label": "DNS Server 1",
+                        "description": "Enter Primary DNS server. Eg. 8.8.8.8",
+                        "label": "Primary DNS Server",
                         "index": 3,
                         "default": "8.8.8.8"
                     },
                     "DNS2": {
-                        "description": "Enter desired webpassword for pi-hole.",
-                        "label": "DNS Server 2",
+                        "description": "Enter Secondary DNS server. Eg. 8.8.4.4",
+                        "label": "Secondary DNS Server",
                         "index": 4,
                         "default": "8.8.4.4"
                     },
                     "IPv6": {
-                        "description": "Enter desired webpassword for pi-hole.",
+                        "description": "Enable or Disable Pi-Hole IPv6 support. Enter: true or false",
                         "label": "Enable IPv6",
                         "index": 5,
                         "default": "false"
