@@ -22,7 +22,7 @@
                         "ui": false
                     },
                     "80": {
-                        "description": "Web-port. Recommended: 80.<p>If other port than 80 is used some blocked sites will not show correctly</p>",
+                        "description": "Web-port. Recommended: 80. If other port than 80 is used some blocked sites will not show correctly.",
                         "host_default": 80,
                         "label": "Web-Port",
                         "ui": true
@@ -46,13 +46,13 @@
                         "index": 2
                     },
                     "DNS1": {
-                        "description": "Enter Primary DNS server. Eg. 8.8.8.8",
+                        "description": "Enter Primary DNS server. Eg: 8.8.8.8",
                         "label": "Primary DNS Server",
                         "index": 3,
                         "default": "8.8.8.8"
                     },
                     "DNS2": {
-                        "description": "Enter Secondary DNS server. Eg. 8.8.4.4",
+                        "description": "Enter Secondary DNS server. Eg: 8.8.4.4",
                         "label": "Secondary DNS Server",
                         "index": 4,
                         "default": "8.8.4.4"
