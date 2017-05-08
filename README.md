@@ -154,7 +154,7 @@ An options object is a list of exactly two elements. (This needs to be improved 
 ["--net", "host"]
 ```
 
-Note that the options field is a 2-d array, so the complete line for the above example looks like
+Note that the opts field is a 2-d array, so the complete line for the above example looks like
 
 ```
 "opts": [ ["--net", "host"] ],
