@@ -28,6 +28,17 @@
 						"label": "uTorrent Settings"
 					}
 				}
+				"environment": {
+                    "UTORRENT_UID": {
+		        		"description": "Enter a valid UID to run utorrent as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run uTorrent as.",
+                        "index": 1
+		    		},
+                    "UTORRENT_GID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run uTorrent as.",
+                        "index": 2
+                    }
 			}
 		},
 		"description": "BitTorrent Client by [dbarton and Mahmoud87]",
