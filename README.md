@@ -83,7 +83,7 @@ it's a big mass of JSON with nested objects, arrays and values.
 {
     "<Rock-On name. eg: LSIO-Plex>": {
       "description": "<description of the Rock-On. Eg: Plex brought to you by Linuxserver.io>",
-      "version": "<optional: arbitrary version string>",
+      "version": "<arbitrary version string>",
       "website": "<Underlying app website>",
       (optional)"icon": "<link to icon, if any>",
       (optional)"more_info": "<string or html with more information to display to the user in the Rockstor UI>",
@@ -104,7 +104,7 @@ Each container object is key'd by it's name and nested within "containers" of th
 {
   "image": "<docker image. eg: linuxserver/plex>",
   (optional)"tag": "tag of the docker image, if any. latest is used by default.>",
-  (optional)"launch_order": "1 or above. If there are multiple containers and they must be started in order, specify here.>",
+  "launch_order": "1 or above. If there are multiple containers and they must be started in order, specify here.>",
   (optional)"ports": {
     "<container side port number1>": <port object represending a port mapping between host and container. see below>,
     "<port number2>": <another port object, if necessary. see below>, ...
@@ -146,11 +146,20 @@ Note that protocol is optional and if it's not present, both tcp and udp ports a
 
 ### Options object
 
-An options object is a list of up to two elements. (This needs to be improved or deprecated in favor of more specific design.)
+An options object is a list of exactly two elements. (This needs to be improved or deprecated in favor of more specific design.)
+
+`--net=host` would be represented as:
 
 ```
-[ "<eg: --net=host>" ]
+["--net", "host"]
 ```
+
+Note that the opts field is a 2-d array, so the complete line for the above example looks like
+
+```
+"opts": [ ["--net", "host"] ],
+```
+
 
 ### Environment object
 
