@@ -87,7 +87,10 @@ it's a big mass of JSON with nested objects, arrays and values.
       "website": "<Underlying app website>",
       (optional)"icon": "<link to icon, if any>",
       (optional)"more_info": "<string or html with more information to display to the user in the Rockstor UI>",
-      (optional)"volume_add_support": <true, If the app allows arbitrary Shares to be mapped to the main container>,
+      (optional)"ui":{
+                "slug":"gui", link to webui becomes ROCKSTOR_IP:PORT/gui with slug value gui
+      },
+      (optional)"volume_add_support": true, If the app allows arbitrary Shares to be mapped to the main container>,
       "containers": {
         "<container1 name>": <container object representing the main container. see below>,
         "<container2 name>": <container object representing the second container, if any. see below>, ...
@@ -129,7 +132,8 @@ As it is evident from above, a container object has nested objects for port and 
   "description": "<A detailed description of this port mapping, why it's for etc..>",
   "label": "<A short label for this mapping. eg: Web-UI port>",
   "host_default": <integer: suggested port number on the host. eg: 8080>,
-  (optional)"protocol": "<tcp or udp>"
+  (optional)"protocol": "<tcp or udp>",
+  (optional)"ui":true,  not needed if false
 }
 ```
 Note that protocol is optional and if it's not present, both tcp and udp ports are mapped simultaneously. So if you wish to allow both tcp and udp, just don't specify protocol in the Port object.
