@@ -18,9 +18,9 @@
                         "description": "Choose a Share for jackett configuration. Eg: create a Share called jackett-config for this purpose alone.",
                         "label": "Config Storage"
                     },
-					"/downloads": {
-                    "description": "Choose a Share for jackett downloads. Eg: create a Share called jackett-downloads for this purpose alone.",
-                    "label": "Download Storage"
+                    "/downloads": {
+                        "description": "Choose a Share for jackett downloads. Eg: create a Share called jackett-downloads for this purpose alone.",
+                        "label": "Download Storage"
                     }
                 },
                 "environment": {
