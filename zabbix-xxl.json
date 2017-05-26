@@ -104,7 +104,7 @@
                 "environment": {}
             }
         },
-        "description": "Compiled Zabbix (server, proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix web UI based on CentOS 7, Supervisor, Nginx, PHP.",
+        "description": "Compiled Zabbix Server (and proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix web UI based on CentOS 7, Supervisor, Nginx, PHP.",
         "ui": {
             "https": false,
             "slug": ""
