@@ -1,0 +1,37 @@
+{
+	"dropbox": {
+		"containers": {
+			"dropbox": {
+				"image": "janeczku/dropbox",
+				"launch_order": 1,
+				"volumes": {
+					"/dbox": {
+						"description": "Directory for your dropbox fodler.",
+						"label": "Dropbox folder"
+					}
+				},
+				"environment": {
+                    "DBOX_UID": {
+		        		"description": "Enter a valid UID to run dropbox as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run dropbox as.",
+                        "index": 1
+		    		},
+                    "DBOX_GID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run dropbox as.",
+                        "index": 2
+                    },
+                    "DBOX_SKIP_UPDATE": {
+		        		"description": "Set this to true to skip updating to the latest Dropbox version on contrainer start. Default should be false.",
+                        "label": "Skip updating dropbox?",
+                        "index": 3
+		    		}
+                }
+			}
+		},
+		"description": "Run Dropbox inside Docker. Fully working with local host folder mount or inter-container linking (via --volumes-from).",
+		"more_info": "After installed visit /var/logs/messages and look for a line similar to 'DATETIME HOSTNAME journal: Please visit https://www.dropbox.com/cli_link_nonce?nonce=CODE to link this device.'",
+		"website": "https://hub.docker.com/r/janeczku/dropbox/",
+		"version": "3.18.1"
+	}
+}
