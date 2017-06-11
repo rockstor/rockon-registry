@@ -6,9 +6,13 @@
 				"opts": [ ["--net", "host"] ],
 				"launch_order": 1,
 				"volumes": {
-					"/dbox": {
-						"description": "Directory for your dropbox fodler.",
+					"/dbox/Dropbox": {
+						"description": "Directory for your dropbox folder.",
 						"label": "Dropbox folder"
+					},
+						"/dbox/.dropbox": {
+						"description": "Directory for your dropbox configuration.",
+						"label": "dropbox config folder"
 					}
 				},
 				"environment": {
