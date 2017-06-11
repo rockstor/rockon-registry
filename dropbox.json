@@ -4,6 +4,23 @@
 			"dropbox": {
 				"image": "janeczku/dropbox",
 				"launch_order": 1,
+				"ports": {
+					"80": {
+						"description": "Port for http dropbox connections",
+						"host_default": 80,
+						"label": "http port"
+					},
+					"443": {
+						"description": "Port HTTPS",
+						"host_default": 443,
+						"label": "https Port"
+					},
+					"17500": {
+						"description": "Port for dropbox lan sync.",
+						"host_default": 17500,
+						"label": "lan sync port"
+					}
+				},
 				"volumes": {
 					"/dbox": {
 						"description": "Directory for your dropbox fodler.",
