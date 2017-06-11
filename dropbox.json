@@ -3,6 +3,7 @@
 		"containers": {
 			"dropbox": {
 				"image": "janeczku/dropbox",
+				"opts": [ ["--net", "host"] ],
 				"launch_order": 1,
 				"ports": {
 					"80": {
