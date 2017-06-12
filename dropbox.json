@@ -27,7 +27,7 @@
                         "index": 2
                     },
                     "$DBOX_SKIP_UPDATE": {
-		        		"description": "Set this to true to skip updating to the latest Dropbox version on contrainer start. Default should be false.",
+		        		"description": "Set this to true to skip updating to the latest Dropbox version on contrainer start. Default should be False. Accepts only True or False (case sensitive).",
                         "label": "Skip updating dropbox?",
                         "index": 3
 		    		}
