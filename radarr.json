@@ -44,6 +44,7 @@
 					}
 				}
 			}
-		}
+		},
+		"volume_add_support": true,
 	}
 }
