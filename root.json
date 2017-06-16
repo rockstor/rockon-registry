@@ -5,6 +5,7 @@
     "CouchPotato": "couchpotato.json",
     "Deluge": "deluge.json",
     "Discourse": "discourse.json",
+    "Dropbox": "dropbox.json",
     "Duplicati2-canary": "duplicati2-canary.json",
     "EmbyServer": "embyserver.json",
     "FreshRSS": "FreshRSS.json",
