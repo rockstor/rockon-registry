@@ -1,6 +1,6 @@
 # rockon-registry
 
-This repository consists of Rock-on(Docker based apss) configuration profiles
+This repository consists of Rock-on(Docker based apps) configuration profiles
 formatted in JSON files. The Rock-On framework of Rockstor parses a well
 formatted profiles and provides a generic management and workflow such as
 install, uninstall, update, start and stop.
