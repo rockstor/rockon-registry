@@ -1,0 +1,52 @@
+{
+    "Minio": {
+        "containers": {
+            "Minio": {
+                "image": "jhardison/rockstor-minio",
+                "launch_order": 1,
+                "ports": {
+                    "9000": {
+                        "description": "Port for Minio services including API and Portal access. Suggested default: 9000",
+                        "host_default": 9000,
+                        "label": "Minio main port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/root/.minio": {
+                        "description": "Minio configuration share.",
+                        "label": "Config Storage",
+                        "min_size": 1073741824
+                    },
+                    "/export": {
+                        "description": "Choose a share for all data in Minio.",
+                        "label": "Data Storage"
+                    }
+                },
+                "environment":{
+                    "MINIO_ACCESS_KEY":{
+                        "description": "Custom username or access key of 5 to 20 characters in lenght.",
+                        "label": "Custom Access Key"
+                    },
+                    "MINIO_SECRET_KEY":{
+                        "description": "Custom password or secret key of 8 to 40 characters in length.",
+                        "label": "Custom Secret Key"
+                    },
+                    "MINIO_BROWSER":{
+                        "description": "To disable web browser access, set this value to 'off'. Otherwise set to 'on'.",
+                        "label": "Web Browser Access"
+                    }
+                }
+            }
+        },
+        "description": "Minio is a distributed object storage server built for cloud applications and devops.",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "volume_add_support": false,
+        "website": "https://minio.io",
+	"version": "1.0"
+    }
+}
