@@ -33,7 +33,7 @@
                 }
             }
         },
-        "description": "cardigann works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc). (modified for vpn)",
+        "description": "cardigann works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc)",
         "ui": {
             "slug": ""
         },
