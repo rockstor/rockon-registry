@@ -33,7 +33,7 @@
                 }
             }
         },
-        "description": "cardigann works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc)",
+        "description": "Cardigann is a server for adding extra indexers to Sonarr, SickRage and CouchPotato via Torznab and TorrentPotato proxies",
         "ui": {
             "slug": ""
         },
