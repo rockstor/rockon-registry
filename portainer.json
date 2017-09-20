@@ -1,0 +1,24 @@
+{
+  "Portainer": {
+    "website": "https://hub.docker.com/r/portainer/portainer/",
+    "version": "1.0",
+    "description":
+      "Portainer is a lightweight advanced management UI which allows you to easily manage your Docker host or Swarm cluster.",
+    "containers": {
+      "portainer": {
+        "image": "portainer/portainer",
+        "launch_order": 1,
+        "opts": [["-v", "/var/run/docker.sock:/var/run/docker.sock"]],
+        "ports": {
+          "9000": {
+            "description": "Portainer WebUI port. Suggested default: 8090",
+            "host_default": 9000,
+            "label": "WebUI port",
+            "protocol": "tcp",
+            "ui": true
+          }
+        }
+      }
+    }
+  }
+}
