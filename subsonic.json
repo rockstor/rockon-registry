@@ -2,8 +2,18 @@
     "Subsonic": {
         "containers": {
             "subsonic": {
-                "image": "hurricane/subsonic",
+                "image": "danisla/subsonic",
                 "launch_order": 1,
+                "opts": [
+                    [
+                        "-e",
+			"SUBSONIC_CONTEXT_PATH=/"
+                    ],
+		    [
+			"-e",
+			"SUBSONIC_MAX_MEMORY=512"
+		    ]
+                ],
                 "ports": {
                     "4040": {
                         "description": "Webserver Port. Suggested default: 4040.",
@@ -11,47 +21,35 @@
                         "label": "Webserver port",
                         "protocol": "tcp",
                         "ui": true
-                    },
-                    "4050": {
-                        "description": "Webserver SSL Port. Suggested default: 4050.",
-                        "host_default": 4050,
-                        "label": "Webserver SSL port",
-                        "protocol": "tcp",
-                        "ui": true
                     }
                 },
                 "volumes": {
-                    "/music": {
-                        "description": "Select the Share containing your Media",
-                        "label": "Music Storage",
-                        "min_size": 1073741824
-                    },
-                    "/subsonic": {
-                        "description": "Choose a Share for Subsonic configuration. Eg: create a Share called subsonic-config for this purpose alone.",
-                        "label": "Config Storage",
-                        "min_size": 1073741824
-                    },
-                    "/podcasts": {
-                        "description": "Select the Share to store podcasts",
-                        "label": "Podcast Storage",
-                        "min_size": 1073741824
+                    "/opt/app/state": {
+			"description": "Choose a Share for SubSonic configuration. Eg: create a Share called subsonic-config for this purpose alone.",
+			"label": "Config Storage"
+		    },
+		    "/mnt/music": {
+                        "description": "Choose a Share for SubSonic's music library (your media). Eg: create a Share called subsonic-music for this purpose alone. You can also assign other media Shares on the system after installation.",
+                        "label": "Music Storage"
                     }
                 },
 		"environment": {
-		    "MAX_MEM": {
-                        "description": "This environment variable is used to set the maximum Java heap size in megabytes - 150 is a good default",
-                        "label": "MAX_MEM",
+		    "SUBSONIC_UID": {
+                        "description": "Enter a valid UID to run Plex with. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID",
                         "index": 1
-                    }
+                    },
+		    "SUBSONIC_GID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID",
+                        "index": 2
+		    }
                 }
             }
         },
-        "description": "Subsonic music server",
-        "ui": {
-            "slug": ""
-        },
+        "description": "Subsonic. Your complete, personal media streamer.",
         "volume_add_support": true,
-        "website": "http://www.subsonic.org",
+        "website": "https://hub.docker.com/r/danisla/subsonic/",
         "version": "1.0"
     }
 }
