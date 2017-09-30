@@ -15,6 +15,12 @@
                 "image": "busybox",
                 "label": "latest",
                 "launch_order": 1,
+                "opts": [
+		            [
+			            "--restart",
+			            "no"
+		            ]
+		        ],
                 "volumes": {
                     "/var/lib/mysql": {
                         "description": "Choose a Share for Zabbix Database. (create a share called zabbix-db for this purpose)",
