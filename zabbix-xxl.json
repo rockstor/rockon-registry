@@ -51,10 +51,6 @@
                     [
                         "--volumes-from",
                         "zabbix-db-storage"
-                    ],
-                    [
-                        "-v",
-                        "/etc/localtime:/etc/localtime:ro"
                     ]
                 ],
                 "environment": {}
@@ -101,10 +97,6 @@
                     [
                         "--link",
                         "zabbix-db:zabbix.db"
-                    ],
-                    [
-                        "-v",
-                        "/etc/localtime:/etc/localtime:ro"
                     ]
                 ],
                 "environment": {}
