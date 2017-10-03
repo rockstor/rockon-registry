@@ -23,12 +23,12 @@
             "label": "WebUI port",
             "protocol": "tcp",
             "ui": true,
-            "volumes": {
-              "/data": {
-                "description": "Data share for Portainer information.",
-                "label": "Data Storage"
-              }
-            }
+          }
+        },
+        "volumes": {
+          "/data": {
+            "description": "Data share for Portainer information.",
+            "label": "Data Storage"
           }
         }
       }
