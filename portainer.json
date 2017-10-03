@@ -7,14 +7,28 @@
       "portainer": {
         "image": "portainer/portainer",
         "launch_order": 1,
-        "opts": [["-v", "/var/run/docker.sock:/var/run/docker.sock"]],
+        "opts": [
+          [
+            "-v",
+            "/var/run/docker.sock:/var/run/docker.sock"
+          ][
+            "--privileged",
+            ""
+          ]
+        ],
         "ports": {
           "9000": {
             "description": "Portainer WebUI port. Suggested default: 8090",
             "host_default": 9000,
             "label": "WebUI port",
             "protocol": "tcp",
-            "ui": true
+            "ui": true,
+            "volumes": {
+              "/data": {
+                "description": "Data share for Portainer information.",
+                "label": "Data Storage"
+              }
+            }
           }
         }
       }
