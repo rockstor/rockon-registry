@@ -11,7 +11,8 @@
           [
             "-v",
             "/var/run/docker.sock:/var/run/docker.sock"
-          ][
+          ],
+          [
             "--privileged",
             ""
           ]
@@ -22,7 +23,7 @@
             "host_default": 9000,
             "label": "WebUI port",
             "protocol": "tcp",
-            "ui": true,
+            "ui": true
           }
         },
         "volumes": {
