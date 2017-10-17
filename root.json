@@ -12,6 +12,7 @@
     "FreshRSS": "FreshRSS.json",
     "Ghost": "ghost.json",
     "GitLab CE": "gitlab-rc.json",
+    "Gmvault": "gmvault.json",
     "Gogs": "gogs.json",
     "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
     "HTTP to HTTPS redirect": "redirect-http-to-https.json",
