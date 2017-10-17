@@ -1,0 +1,78 @@
+{
+    "Gmvault": {
+        "containers": {
+            "gmvault": {
+                "image": "aubertg/gmvault-docker",
+                "launch_order": 1,
+                "volumes": {
+                    "/data": {
+                        "description": "A share where the OAuth token file exists, and email backups and logs will be stored.",
+                        "label": "Data Storage"
+                    },
+                    "/etc/ssmtp/": {
+                        "description": "A directory containing only a ssmtp config file to send email reports from the Docker container.",
+                        "label": "SSMTP Configuration"
+                    }
+                },
+                "environment": {
+                    "GMVAULT_EMAIL_ADDRESS": {
+                        "description": "The email address of the account to back up.",
+                        "label": "GMVAULT_EMAIL_ADDRESS",
+                        "index": 1
+                    },
+                    "GMVAULT_SEND_REPORTS_TO": {
+                        "description": "The email address to send reports to; defaults to GMVAULT_EMAIL_ADDRESS.",
+                        "label": "GMVAULT_SEND_REPORTS_TO",
+                        "index": 2
+                    },
+                    "GMVAULT_UID": {
+                        "description": "Numeric uid in the host that should own created files; defaults to 9000.",
+                        "label": "GMVAULT_UID",
+                        "index": 3,
+                        "default": 9000
+                    },
+                    "GMVAULT_GID": {
+                        "description": "Numeric gid in the host that should own created files; defaults to 9000.",
+                        "label": "GMVAULT_GID",
+                        "index": 4,
+                        "default": 9000
+                    },
+                    "GMVAULT_TIMEZONE": {
+                        "description": "Timezone; defaults to America/Los_Angeles.",
+                        "label": "GMVAULT_TIMEZONE",
+                        "index": 5,
+                        "default": "America/Los_Angeles"
+                    },
+                    "GMVAULT_OPTIONS": {
+                        "description": "Additional options to pass to gmvault (such as '-c no' for no deletions).",
+                        "label": "GMVAULT_OPTIONS",
+                        "index": 6,
+                        "default": "-c no"
+                    },
+                    "GMVAULT_QUICK_SYNC_SCHEDULE": {
+                        "description": "Custom quick sync schedule; defaults to daily. (Cron format)",
+                        "label": "GMVAULT_QUICK_SYNC_SCHEDULE",
+                        "index": 7,
+                        "default": "1 2 * * 1-6"
+                    },
+                    "GMVAULT_FULL_SYNC_SCHEDULE": {
+                        "description": "Custom full sync schedule; defaults to weekly. (Cron format)",
+                        "label": "GMVAULT_FULL_SYNC_SCHEDULE",
+                        "index": 8,
+                        "default": "1 3 * * 0"
+                    },
+                    "GMVAULT_SYNC_ON_STARTUP": {
+                        "description": "Set to `yes` to trigger a sync when the container starts, in addition to the normal cron schedule.",
+                        "label": "GMVAULT_SYNC_ON_STARTUP",
+                        "index": 9,
+                        "default": "no"
+                    }
+                }
+            }
+        },
+        "description": "Gmail Backup using gmvault.org",
+        "more_info": "A Docker image that runs Gmvault on a regular basis, with both quick (daily) and full (weekly) synchronization schedules. Emails out sync reports through ssmtp.",
+        "website": "https://hub.docker.com/r/aubertg/gmvault-docker/",
+        "version": "1.9.1"
+    }
+}
