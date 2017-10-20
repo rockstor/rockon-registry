@@ -1,5 +1,6 @@
 {
     "Bitcoin": "bitcoind.json",
+    "Booksonic": "booksonic.json",
     "BTSync": "btsync.json",
     "COPS": "cops.json",
     "Collabora Online": "collabora-online.json",
@@ -46,6 +47,7 @@
     "TFTP server": "tftpserver.json",
     "Transmission": "transmission.json",
     "Unifi Controller": "unifi.json",
+    "Xeoma Video Surveillance": "xeoma.json",
     "ZoneMinder": "zoneminder.json",
     "ZoneMinder-1.30": "zoneminder-1.30.json",
     "crashplan": "crashplan.json",
