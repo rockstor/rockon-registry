@@ -2,7 +2,7 @@
     "Syncthing": {
         "containers": {
             "syncthing": {
-                "image": "istepanov/syncthing",
+                "image": "linuxserver/syncthing",
                 "launch_order": 1,
                 "ports": {
                     "21027": {
@@ -26,7 +26,7 @@
                     }
                 },
                 "volumes": {
-                    "/home/syncthing/.config/syncthing": {
+                    "/config": {
                         "description": "Choose a Share for configuration. Eg: create a Share called syncthing-config for this purpose alone.",
                         "label": "Config Storage",
                         "min_size": 1073741824
@@ -35,10 +35,22 @@
                         "description": "Choose a Share for all incoming data. Eg: create a Share called syncthing-data for this purpose alone.",
                         "label": "Data Storage"
                     }
-                }
+                },
+		"environment": {
+		    "PUID": {
+			"description": "Enter a valid UID to run Syncthing with. It must have full permissions to all Shares mapped in the previous step.",
+			"label": "UID",
+			"index": 1	
+		    },
+		    "PGID": {
+			"description": "Enter a valid GID to use along with the same UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+			"label": "GID",
+			"index": 2
+		    }
+		}
             }
         },
-        "description": "Continuous File Synchronization",
+        "description": "Continuous File Synchronization by Linuxserver.io",
         "ui": {
             "https": true,
             "slug": ""
