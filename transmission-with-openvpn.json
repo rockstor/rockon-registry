@@ -1,0 +1,93 @@
+{
+    "Transmission - OpenVPN": {
+        "website": "https://hub.docker.com/r/haugene/transmission-openvpn/",
+        "version": "1.0",
+        "description": "Docker container running Transmission torrent client with WebUI while connecting to OpenVPN",
+        "more_info": "<p>See the container's documentation for a list of included VPN provider profiles. If your provider isn't included, set it up as a custom provider, by putting the relevant files in the <code>Custom profile</code> share.</p>",
+        "containers": {
+            "transmission-openvpn": {
+                "image": "haugene/transmission-openvpn",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "-v",
+                        "/etc/localtime:/etc/localtime:ro"
+                    ],
+                    [
+                        "--cap-add",
+                        "NET_ADMIN"
+                    ],
+                    [
+                        "--device",
+                        "/dev/net/tun"
+                    ]
+                ],
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a Share where Transmission will save all of it's config and data files including your downloads. Eg: create a Share called transmission-data.",
+                        "label": "Data Storage"
+                    },
+                    "/etc/openvpn/custom": {
+                        "description": "Choose a Share where a set of custom OpenVPN profile files can be found. This can be an empty share if you use one of the included provider profiles.",
+                        "label": "OpenVPN config"
+                    }
+                },
+                "ports": {
+                    "9091": {
+                        "description": "Transmission web UI port (proxied)",
+                        "host_default": 9091,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "environment": {
+                    "OPENVPN_PROVIDER": {
+                        "description": "OpenVPN Provider, in uppercase",
+                        "label": "OPENVPN_PROVIDER",
+                        "default": "CUSTOM",
+                        "index": 1
+                    },
+                    "OPENVPN_CONFIG": {
+                        "description": "Provider config name; 'default' is a safe bet",
+                        "label": "OPENVPN_CONFIG",
+                        "default": "default",
+                        "index": 2
+                    },
+                    "OPENVPN_USERNAME": {
+                        "description": "Your VPN username",
+                        "label": "OPENVPN_USERNAME",
+                        "index": 3
+                    },
+                    "OPENVPN_PASSWORD": {
+                        "description": "Your VPN password",
+                        "label": "OPENVPN_PASSWORD",
+                        "index": 4
+                    },
+                    "OPENVPN_OPTS": {
+                        "description": "OpenVPN options",
+                        "label": "OPENVPN_OPTS",
+                        "default": "--inactive 3600 --ping 10 --ping-exit 60",
+                        "index": 5
+                    },
+                    "LOCAL_NETWORK": {
+                        "description": "IP range (in CIDR notation, e.g. 192.168.0.0/24) to consider 'local'; this range is added to the routing, so that the web UI can be used.",
+                        "label": "LOCAL_NETWORK",
+                        "default": "",
+                        "index": 6
+                    },
+                    "PUID": {
+                        "description": "Choose a User ID to run Transmission as",
+                        "label": "User ID",
+                        "index": 7
+                    },
+                    "PGID": {
+                        "description": "Choose a Group ID to run Transmission as",
+                        "label": "Group ID",
+                        "index": 8
+                    }
+                }
+            }
+        }
+    }
+}
