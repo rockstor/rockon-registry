@@ -43,15 +43,13 @@
                 },
                 "environment": {
                     "OPENVPN_PROVIDER": {
-                        "description": "OpenVPN Provider, in uppercase",
+                        "description": "OpenVPN Provider, in uppercase, e.g. PIA or CUSTOM",
                         "label": "OPENVPN_PROVIDER",
-                        "default": "CUSTOM",
                         "index": 1
                     },
                     "OPENVPN_CONFIG": {
                         "description": "Provider config name; 'default' is a safe bet",
                         "label": "OPENVPN_CONFIG",
-                        "default": "default",
                         "index": 2
                     },
                     "OPENVPN_USERNAME": {
@@ -65,15 +63,13 @@
                         "index": 4
                     },
                     "OPENVPN_OPTS": {
-                        "description": "OpenVPN options",
+                        "description": "OpenVPN options, recommended: '--inactive 3600 --ping 10 --ping-exit 60'",
                         "label": "OPENVPN_OPTS",
-                        "default": "--inactive 3600 --ping 10 --ping-exit 60",
                         "index": 5
                     },
                     "LOCAL_NETWORK": {
                         "description": "IP range (in CIDR notation, e.g. 192.168.0.0/24) to consider 'local'; this range is added to the routing, so that the web UI can be used.",
                         "label": "LOCAL_NETWORK",
-                        "default": "",
                         "index": 6
                     },
                     "PUID": {
