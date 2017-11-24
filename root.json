@@ -46,6 +46,7 @@
     "TeamSpeak3": "teamspeak3.json",
     "TFTP server": "tftpserver.json",
     "Transmission": "transmission.json",
+    "Transmission with OpenVPN": "transmission-with-openvpn.json",
     "Unifi Controller": "unifi.json",
     "Xeoma Video Surveillance": "xeoma.json",
     "ZoneMinder": "zoneminder.json",
