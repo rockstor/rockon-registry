@@ -44,7 +44,7 @@
                         "description": "STUN Port. Suggested default: 3478",
                         "host_default": 3478,
                         "label": "STUN Port",
-                        "protocol": "tcp",
+                        "protocol": "udp",
                         "ui": false
                     }
                 },
