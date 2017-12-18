@@ -1,0 +1,35 @@
+{
+	"DuckDNS": {
+		"website": "https://hub.docker.com/r/linuxserver/duckdns/",
+		"version": "1.0",
+        "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence.",
+		"containers": {
+			"duckdns": {
+				"image": "linuxserver/duckdns",
+				"launch_order": 1,
+				"environment": {
+					"PUID": {
+						"description": "Enter a valid UID to run DuckDNS as.",
+						"label": "UID to run Duck DNS as.",
+						"index": 1
+					},
+					"PGID": {
+						"description": "Enter a valid GID to use along with the above UID. ",
+						"label": "GID to run Duck DNS as.",
+						"index": 2
+					},
+					"SUBDOMAINS": {
+						"description": "Enter a valid Subdomain. Multiple subdomains allowed, comma separated, no spaces",
+						"label": "Subdomain(s)",
+						"index": 1
+					},
+					"TOKEN": {
+						"description": "Authentication/API Token for DuckDNS",
+						"label": "Token for Duck DNS",
+						"index": 1
+				}
+			}
+		},
+		"volume_add_support": true
+	}
+}
