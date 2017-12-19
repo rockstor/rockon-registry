@@ -14,7 +14,9 @@
 						"host_default": 80,
 						"label": "WebUI port",
 						"protocol": "tcp",
-						"ui": true
+						"ui": {
+							"slug": "smokeping/smokeping.cgi"
+						}
 					}
 				},
 				"volumes": {
