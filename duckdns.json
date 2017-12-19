@@ -27,9 +27,10 @@
 						"description": "Authentication/API Token for DuckDNS",
 						"label": "Token for Duck DNS",
 						"index": 1
-				}
-			}
-		},
+				    }
+			    }
+		    },
 		"volume_add_support": true
-	}
+	    }
+    }
 }
