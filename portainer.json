@@ -2,7 +2,7 @@
   "Portainer": {
     "website": "https://hub.docker.com/r/portainer/portainer/",
     "version": "1.0",
-    "description": "Portainer is a lightweight advanced management UI which allows you to easily manage your Docker host or Swarm cluster.",
+    "description": "Advanced Users Only!!!! Portainer is a lightweight advanced management UI which allows you to easily manage your Docker host or Swarm cluster.",
     "containers": {
       "portainer": {
         "image": "portainer/portainer",
