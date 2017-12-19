@@ -21,12 +21,12 @@
 					"SUBDOMAINS": {
 						"description": "Enter a valid Subdomain. Multiple subdomains allowed, comma separated, no spaces",
 						"label": "Subdomain(s)",
-						"index": 1
+						"index": 3
 					},
 					"TOKEN": {
 						"description": "Authentication/API Token for DuckDNS",
 						"label": "Token for Duck DNS",
-						"index": 1
+						"index": 4
 				    }
 			    }
 		    }
