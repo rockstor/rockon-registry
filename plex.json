@@ -26,6 +26,10 @@
                     "/data": {
                         "description": "Choose a Share for Plex content(your media). Eg: create a Share called plex-data for this purpose alone. You can also assign other media Shares on the system after installation.",
                         "label": "Data Storage"
+                    },
+                    "/transcode": {
+                        "description": "Choose a Share for Plex transcoding content. Eg: create a Share called transcode the faster the drive the better for this purpose.",
+                        "label": "Transcoding Storage"
                     }
                 },
                 "environment": {
