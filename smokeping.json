@@ -2,7 +2,10 @@
 	"SmokePing": {
 		"website": "https://hub.docker.com/r/linuxserver/smokeping/",
 		"version": "1.0",
-        "description": "SmokePing is a network latency history monitor.",
+		"description": "SmokePing is a network latency history monitor.",
+		"ui": {
+			"slug": "smokeping/smokeping.cgi"
+		},
 		"containers": {
 			"SmokePing": {
 				"image": "linuxserver/smokeping",
@@ -13,10 +16,7 @@
 						"description": "SmokePing WebUI port. Suggested default: 7878",
 						"host_default": 80,
 						"label": "WebUI port",
-						"protocol": "tcp",
-						"ui": {
-							"slug": "smokeping/smokeping.cgi"
-						}
+						"protocol": "tcp"
 					}
 				},
 				"volumes": {
