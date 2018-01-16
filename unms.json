@@ -2,7 +2,7 @@
     "UNMS": {
         "containers": {
             "unms-oznu": {
-                "image": "docker pull oznu/unms",
+                "image": "oznu/unms",
                 "launch_order": 1,
                 "ports": {
                     "80": {
