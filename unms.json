@@ -9,13 +9,13 @@
                         "description": " Expose the HTTP web server port on the docker host, Leave Default of 80",
                         "host_default": 80,
                         "label": "http80",
-                        "ui": false
+                        "ui": true
                     },
                     "443": {
                         "description": "Expose the HTTPS and WSS web server port on the docker host, Leave default 443",
                         "host_default": 443,
                         "label": "https443",
-                        "ui": true
+                        "ui": false
                     }
                 },
                 "volumes": {
