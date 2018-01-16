@@ -1,0 +1,46 @@
+{
+    "UNMS": {
+        "containers": {
+            "unms-oznu": {
+                "image": "docker pull oznu/unms",
+                "launch_order": 1,
+                "ports": {
+                    "80": {
+                        "description": " Expose the HTTP web server port on the docker host, Leave Default of 80",
+                        "host_default": 80,
+                        "label": "http80",
+                        "ui": false
+                    },
+                    "443": {
+                        "description": "Expose the HTTPS and WSS web server port on the docker host, Leave default 443",
+                        "host_default": 443,
+                        "label": "https443",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for UNMS configuration. Eg: create a Share called UNMS-config for this purpose alone.",
+                        "label": "Config Storage"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+                        "description": "Enter a valid UID to run UNMS with. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID",
+                        "index": 1
+                    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "Ubiquiti UNMS",
+        "volume_add_support": true,
+        "website": "https://hub.docker.com/r/oznu/unms/",
+        "version": "1.0"
+    }
+}
