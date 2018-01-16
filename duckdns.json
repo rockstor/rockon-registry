@@ -27,6 +27,11 @@
 						"description": "Authentication/API Token for DuckDNS",
 						"label": "Token for Duck DNS",
 						"index": 4
+					},
+					"TZ": {
+						"description": "Timezone to use in logs (for instance, America/new_York)",
+						"label": "Timezone",
+						"index": 5
 				    }
 			    }
 		    }
