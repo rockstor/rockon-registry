@@ -19,7 +19,7 @@
                         "protocol": "tcp"
                     },
                     "3483": {
-                        "description": "SlimProto Port. Suggested default: 3483.",
+                        "description": "SlimProto Port. Suggested default: 3483. Should NOT be changed",
                         "host_default": 3483,
                         "label": "Slimproto port"
                     }
