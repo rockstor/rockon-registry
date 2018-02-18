@@ -24,16 +24,6 @@
 						"description": "Enter the name of the database you would like to create.",
 						"label": "SQLite DB Name",
 						"index": 1
-					},
-					"NEXTCLOUD_ADMIN_USER": {
-						"description": "Enter the name of the user you would like to use.",
-						"label": "Admin User Name",
-						"index": 2
-					},
-					"NEXTCLOUD_ADMIN_PASSWORD": {
-						"description": "Enter the name of the database you would like to use.",
-						"label": "Admin User Password",
-						"index": 3
 					}
 				}
             }
