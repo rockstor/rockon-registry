@@ -10,21 +10,14 @@
                         "host_default": 8080,
                         "label": "Redirect to WebUI",
                         "protocol": "tcp",
-                        "ui": true
+                        "ui": false
                     },
                     "8443": {
                         "description": "Port for WebUI and API. Suggested default: 8443",
                         "host_default": 8443,
                         "label": "HTTPS WebUI",
                         "protocol": "tcp",
-                        "ui": false
-                    },
-                    "8081": {
-                        "description": "Management Port. Suggested default: 8081",
-                        "host_default": 8081,
-                        "label": "Management Port",
-                        "protocol": "tcp",
-                        "ui": false
+                        "ui": true
                     },
                     "8880": {
                         "description": "Redirect to Portal. Suggested default: 8880",
@@ -41,25 +34,54 @@
                         "ui": false
                     },
                     "3478": {
-                        "description": "STUN Port. Suggested default: 3478",
+                        "description": "STUN Port (UDP). Suggested default: 3478",
                         "host_default": 3478,
                         "label": "STUN Port",
                         "protocol": "udp",
                         "ui": false
+                    },
+                    "10001": {
+                        "description": "UBNT Discovery Port (UDP). Suggested default: 10001",
+                        "host_default": 10001,
+                        "label": "STUN Port",
+                        "protocol": "udp",
+                        "ui": false
+		    },
+                    "6789": {
+                        "description": "Speed Test (unifi5 only). Suggested default: 6789",
+                        "host_default": 6789,
+                        "label": "Speed Test",
+                        "protocol": "tcp",
+                        "ui": false
                     }
                 },
                 "volumes": {
-                    "/var/lib/unifi": {
-                        "description": "Choose a Share for Unifi Controller configuration. Eg: create a Share called unifi-config for this purpose alone.",
+                    "/unifi": {
+                        "description": "Choose a Share for Unifi Controller. Eg: create a Share called unifi for this purpose alone.",
                         "label": "Config Storage"
                     }
-                }
+                },
+
+		"environment": {
+		    "UNIFI_UID": {
+			"description": "Enter a valid UID to run Unifi. It must have full permissions to the share mapped in the previous step.",
+			"label": "UID",
+			"index": 1	
+		    },
+		    "UNIFI_GID": {
+			"description": "Enter a valid GID to use along with the same UID. It(or the above UID) must have full permissions to the unifi share mapped in the previous step.",
+			"label": "GID",
+			"index": 2
+		    }
+		},
+		"opts":[ ["-e", "RUNAS_UID0=false"] ]
             }
         },
         "description": "Unifi Access Point controller",
         "more_info": "This is a containerized version of Ubiquiti Network's Unifi Controller.",
-        "volume_add_support": false,
+        "volume_add_support": true,
         "ui": {
+            "https": true,
             "slug": ""
         },
         "website": "https://hub.docker.com/r/jacobalberty/unifi/",
