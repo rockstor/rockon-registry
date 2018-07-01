@@ -10,7 +10,6 @@
                         "description": "FileRun WebUI port. Suggested default: 8080",
                         "host_default": 8080,
                         "label": "WebUI port",
-                        "protocol": "tcp",
                         "ui": true
                     }
                 },
@@ -39,9 +38,6 @@
         "description": "A full featured web based file manager with an easy to use user interface",
         "icon": "http://www.filerun.com/images/long-logo.png",
         "more_info": "<p>Default username for your FileRun UI is<code>superuser</code>and password is<code>superuser</code></p>",
-        "ui": {
-            "slug": ""
-        },
         "volume_add_support": true,
         "website": "http://filerun.com/"
     }
