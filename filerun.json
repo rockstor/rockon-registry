@@ -39,6 +39,10 @@
         "icon": "http://www.filerun.com/images/long-logo.png",
         "more_info": "<p>Default username for your FileRun UI is<code>superuser</code>and password is<code>superuser</code></p>",
         "volume_add_support": true,
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
         "website": "http://filerun.com/"
     }
 }
