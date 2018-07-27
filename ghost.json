@@ -14,7 +14,7 @@
                     }
                 },
                 "volumes": {
-                    "/var/lib/ghost": {
+                    "/var/lib/ghost/content": {
                         "description": "Choose a share for your blog data.",
                         "label": "Blog Storage",
                         "min_size": "1073741824"
@@ -26,7 +26,7 @@
         "volume_add_support": false,
 	"more_info": "navigate to the ui link for the admin site or go to the base url for the public facing site",
 	"ui": {
-          "slug": "/ghost"
+          "slug": "ghost"
         },
         "version": "1.0",
         "website": "https://ghost.org"
