@@ -12,6 +12,7 @@
                         "description": "Website Port",
                         "label": "Gollum Port",
                         "host_default": 8082,
+                        "protocol": "tcp",
                         "ui": true
                     }
                 },
