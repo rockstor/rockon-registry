@@ -1,0 +1,44 @@
+{
+	"nginx": {
+		"description": "Open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a web server.",
+		"version": "1.0.0",
+		"website": "https://www.nginx.com/",
+		"icon": "https://cdn-1.wp.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.svg",
+		"more_info": "At startup the config file named default.conf gets created in the config volume if the directory is empty. Extend it with your own custom configuration.<br/>An example configuration file can be found <a href='https://www.nginx.com/resources/wiki/start/topics/examples/full/'>in the nginx wiki</a>. The config volume can be refered as <pre>/config</pre>",
+		"containers": {
+			"nginx": {
+				"image": "jtarka/nginx",
+				"tag": "latest",
+				"launch_order": 1,
+				"ports": {
+					"80": {
+						"description": "HTTP port",
+						"host_default": 1080,
+						"label": "HTTP port",
+						"protocol": "tcp",
+						"ui": true
+					},
+					"443": {
+						"description": "HTTPS port.",
+						"host_default": 1443,
+						"label": "HTTPS port",
+						"protocol": "tcp",
+						"ui": true
+					}
+				},
+				"volumes": {
+					"/config": {
+						"description": "Choose a Share for the nginx configuration. Eg: create a Share called nginx-config for this purpose alone.",
+						"label": "Config Storage",
+						"min_size": 10240
+					},
+					"/usr/share/nginx/html": {
+						"description": "Choose a Share for the files that nginx will serve (HTML, JavaScript, etc.). Eg: create a share called nginx-data for this purpose alone.",
+						"label": "Served Content Storage",
+						"min_size": 102400
+					}
+				}
+			}
+		}
+	}
+}
