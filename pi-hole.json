@@ -1,8 +1,8 @@
 {
     "Pi-Hole": {
         "containers": {
-            "pi-hole-diginc": {
-                "image": "diginc/pi-hole",
+            "pi-hole": {
+                "image": "pihole/pihole",
                 "opts": [
                     [
                         "--cap-add",
@@ -71,13 +71,13 @@
                 }
             }
         },
-        "description": "PI-Hole by DigInc",
+        "description": "The official Pi-hole Docker image",
         "more_info": "<h4>PI-HOLE™: A BLACK HOLE FOR INTERNET ADVERTISEMENTS</h4><p><b>Admin page</b></p><p>To access admin interface go to URL: http://[SERVERIP]/Admin</p><p>If you have different port than 80 you need to specify that in the URL.</p><p><b>Block Over 100,000 Ad-serving Domains</b></p><p>Known ad-serving domains are pulled from third party sources and compiled into one list.</p><p><b>Block Advertisements On Any Device</b></p><p>Network-level blocking allows any device to block ads, regardless of hardware or OS.</p><p><b>Improve Overall Network Performance</b></p><p>Since ads are blocked before they are downloaded, your network will perform better.</p>",
         "ui": {
             "slug": "admin"
         },
         "volume_add_support": false,
-        "website": "https://hub.docker.com/r/diginc/pi-hole/",
-        "version": "1.0"
+        "website": "https://hub.docker.com/r/pihole/pihole/",
+        "version": "1.1"
     }
 }
