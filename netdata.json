@@ -1,0 +1,40 @@
+{
+    "Netdata": {
+        "containers": {
+            "netdata": {
+                "image": "titpetric/netdata",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "--cap-add=SYS_PTRACE",
+                        ""
+                    ],
+                    [
+                        "-v",
+                        "/proc:/host/proc:ro"
+                    ],
+                    [
+                        "-v",
+                        "/sys:/host/sys:ro"
+                    ]
+                ],
+                "ports": {
+                    "19999": {
+                        "description": "port used to access the webUI port",
+                        "host_default": 19999,
+                        "label": "webUI port",
+                        "ui": true
+                    }
+                }
+            }
+        },
+        "description": "Netdata is a scalable, distributed, real-time, performance and health monitoring solution for Linux, FreeBSD and MacOS.<p>Out of the box, it collects 1k to 5k metrics per server per second. It is the corresponding of running top, vmstat, iostat, iotop, sar, systemd-cgtop and a dozen more console tools in parallel. netdata is very efficient in this: the daemon needs just 1% to 3% cpu of a single core.</p>",
+        "icon": "https://github.com/firehol/netdata/blob/master/web/images/seo-performance-64.png",
+        "more_info": "See https://github.com/firehol/netdata/wiki for more info.",
+        "website": "https://my-netdata.io/",
+        "ui": {
+            "slug": ""
+        },
+	    "version": "1.0"
+    }
+}
