@@ -33,6 +33,12 @@
                         "label": "webUI port",
                         "ui": true
                     }
+                },
+                "volumes": {
+                    "/etc/netdata/override": {
+                        "description": "Choose a Share for Netdata configuration files. All configuration files for custom plugins and alerts placed here will override defaults.",
+                        "label": "Config Storage"
+                    }
                 }
             }
         },
