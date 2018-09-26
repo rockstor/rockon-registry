@@ -117,13 +117,14 @@ Each container object is key'd by it's name and nested within "containers" of th
     "<path2 inside container>": <another volume object, if necessary. see below>, ...
   },
   (optional)"opts": [ An array of option objects that represent container options such as --net=host etc.. see below],
+  (optional)"cmd_arguments": [ An array of cmd_arguments objects that represent arguments to pass to the 'docker run' command. See below],
   (optional)"environment": {
     "<env var1 name>": <env object representing one environment variable required by this container. see below>,
     "<env var2 name>": <another env object, if necessary. see below>, ...
   }
 }
 ```
-As it is evident from above, a container object has nested objects for port and volume mappings, container options and environment variables. These are described below.
+As it is evident from above, a container object has nested objects for port and volume mappings, container options, command arguments, and environment variables. These are described below.
 
 ### Port object
 
@@ -164,6 +165,21 @@ Note that the opts field is a 2-d array, so the complete line for the above exam
 "opts": [ ["--net", "host"] ],
 ```
 
+### Command arguments object
+
+A command arguments object is a list of exactly two elements detailing specific arguments to be passed onto the `docker run` command. As these arguments will simply be appended to the `docker run` command, they need to follow the same syntax and order. For instance, 
+
+`docker run <...> image/name argument1 argument2="text2"` would be represented as:
+
+```
+["argument1", "argument2="text2"]
+```
+
+Note that, as for the options object, the cmd_arguments field is a 2-d array, so the complete line for the above example looks like
+
+```
+"cmd_arguments": [ ["argument1", "argument2="text2"] ],
+```
 
 ### Environment object
 
