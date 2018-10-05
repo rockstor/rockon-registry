@@ -18,7 +18,13 @@
 			                   "label": "EULA Accept",
 			                   "index": 1
 		                     }
-                     }
+                     },
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a Share for the Minecraft server data, including configuration, mods, etc.",
+                        "label": "Data storage"
+                        }
+                    }
                 }
             },
             "description": "Minecraft server with selectable version",
@@ -30,4 +36,5 @@
         "website": "https://hub.docker.com/r/itzg/minecraft-server/",
 	      "version": "1.0"
       }
+
 }
