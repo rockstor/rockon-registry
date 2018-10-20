@@ -20,6 +20,7 @@
     "Home Assistant": "home-assistant.json",
     "Jackett": "Jackett.json",
     "JenkinsCI": "jenkins.json",
+    "Koel": "koel.json",
     "LazyLibrarian": "lazylibrarian.json",
     "Logitech Squeezebox": "LogitechSqueezebox.json",
     "MariaDB": "mariadb.json",
