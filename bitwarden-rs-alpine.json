@@ -13,7 +13,8 @@
                         "description": "Admin interface",
                         "label": "Admin interface",
                         "host_default": 80,
-                        "protocol": "tcp"
+                        "protocol": "tcp",
+                        "ui": true
                     }
                 },
                 "volumes": {
