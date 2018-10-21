@@ -7,6 +7,7 @@
             "bitwarden-rs": {
                 "image": "mprasil/bitwarden",
                 "tag": "alpine",
+                "launch_order": 1,
                 "ports": {
                     "80": {
                         "description": "Admin interface",
