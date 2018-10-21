@@ -1,6 +1,8 @@
 {
     "Bitwarden-rs": {
         "description": "Bitwarden-rs on Alpine",
+        "version": "0.0.1",
+        "website": "https://github.com/dani-garcia/bitwarden_rs",
         "containers": {
             "bitwarden-rs": {
                 "image": "mprasil/bitwarden",
