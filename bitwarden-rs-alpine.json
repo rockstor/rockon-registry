@@ -1,0 +1,25 @@
+{
+    "Bitwarden-rs": {
+        "description": "Bitwarden-rs on Alpine",
+        "containers": {
+            "bitwarden-rs": {
+                "image": "mprasil/bitwarden",
+                "tag": "alpine",
+                "ports": {
+                    "80": {
+                        "description": "Admin interface",
+                        "label": "Admin interface",
+                        "host_default": 80,
+                        "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/data": {
+                        "description": "Where all bitwarden-rs data will be stored",
+                        "label": "Bitwarden-rs storage"
+                    }
+                }
+            }
+        }
+    }
+}
