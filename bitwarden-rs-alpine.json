@@ -28,7 +28,7 @@
                     }
                 },
                 "opts": [
-                    ["-e", "ROCKET_TLS='{certs=\"/ssl/certs.pem\",key=\"/ssl/key.pem\"}'"]
+                    ["-e", "ROCKET_TLS={certs=\"/ssl/certs.pem\",key=\"/ssl/key.pem\"}"]
                 ]
             }
         }
