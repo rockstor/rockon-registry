@@ -9,7 +9,7 @@
                 "tag": "alpine",
                 "launch_order": 1,
                 "ports": {
-                    "443": {
+                    "80": {
                         "description": "Admin interface",
                         "label": "Admin interface",
                         "host_default": 80,
