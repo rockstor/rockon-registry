@@ -9,7 +9,7 @@
                 "tag": "alpine",
                 "launch_order": 1,
                 "ports": {
-                    "80": {
+                    "443": {
                         "description": "Admin interface",
                         "label": "Admin interface",
                         "host_default": 80,
@@ -21,7 +21,14 @@
                     "/data": {
                         "description": "Where all bitwarden-rs data will be stored",
                         "label": "Bitwarden-rs storage"
+                    },
+                    "/ssl": {
+                        "description": "SSL cert/key location to enable ssl",
+                        "label": "Bitwarden-rs cert storage"
                     }
+                },
+                "environment": {
+                    "ROCKET_TLS": "{certs='/ssl/chain.pem',key='ssl/key.pem'}"
                 }
             }
         }
