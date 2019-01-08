@@ -27,9 +27,9 @@
                         "label": "Bitwarden-rs cert storage"
                     }
                 },
-                "environment": {
-                    "ROCKET_TLS": "{certs='/ssl/chain.pem',key='ssl/key.pem'}"
-                }
+                "opts": [
+                    ["-e", "ROCKET_TLS='{certs=\"/ssl/certs.pem\",key=\"/ssl/key.pem\"}'"]
+                ]
             }
         }
     }
