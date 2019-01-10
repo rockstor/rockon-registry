@@ -29,15 +29,20 @@
                     }
                 },
                 "environment": {
+                    "TZ": {
+                        "description": "Set the timezone inside the container. For example: Europe/London or America/Chicago. The complete list can be found here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
+                        "label": "TIMEZONE",
+                        "index": 1
+                    },
                     "PLEX_UID": {
                         "description": "Enter a valid UID to run Plex with. It must have full permissions to all Shares mapped in the previous step.",
                         "label": "UID",
-                        "index": 1
+                        "index": 2
                     },
                     "PLEX_GID": {
                         "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
                         "label": "GID",
-                        "index": 2
+                        "index": 3
                     }
                 }
             }
