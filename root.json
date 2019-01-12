@@ -1,6 +1,7 @@
 {
     "Bitcoin": "bitcoind.json",
     "Booksonic": "booksonic.json",
+    "Bitwarden-rs": "bitwarden-rs-alpine.json",
     "BTSync": "btsync.json",
     "COPS": "cops.json",
     "Collabora Online": "collabora-online.json",
