@@ -1,5 +1,5 @@
 {
-    "EmbyServer": {
+    "Emby server": {
         "containers": {
             "embyserver": {
                 "image": "emby/embyserver",
@@ -10,6 +10,12 @@
                         ""
                     ]
                 ],
+                "devices": {
+                    "VAAPI": {
+                        "description": "<u>Optional:</u> path to hardware transcoding device (/dev/dri/renderD128). Leave blank if not needed.",
+                        "label": "VAAPI device"
+                    }
+                },
                 "ports": {
                     "8096": {
                         "description": "Emby Server WebUI port. Suggested default: 8096",
@@ -17,6 +23,13 @@
                         "label": "WebUI port",
                         "protocol": "tcp",
                         "ui": true
+                    },
+                    "8920": {
+                        "description": "Emby Server HTTPS port. Suggested default: 8920",
+                        "host_default": 8920,
+                        "label": "HTTPS port",
+                        "protocol": "tcp",
+                        "ui": false
                     }
                 },
                 "volumes": {
@@ -30,21 +43,29 @@
                     }
                 },
                 "environment": {
-                    "APP_UID": {
+                    "UID": {
                         "description": "Enter a valid UID of an existing user with permission to media shares to run Emby as.",
-                        "label": "UID to run Emby Server as.",
-                        "index": 1
+                        "label": "UID",
+                        "index": 1,
+                        "default":1000
                     },
-                    "APP_GID": {
-                        "description": "Enter a valid GID of an exisiting user with permission to media shares to run Emby as.",
-                        "label": "GID to run Emby Server as.",
-                        "index": 2
+                    "GID": {
+                        "description": "Enter a valid GID of an existing user with permission to media shares to run Emby as.",
+                        "label": "GID",
+                        "index": 2,
+                        "default":100
+                    },
+                    "GIDLIST": {
+                        "description": "Enter a comma-separated list of additional GIDs to run emby as",
+                        "label": "GIDList",
+                        "index": 3,
+                        "default":100
                     }
                 }
             }
         },
         "description": "Emby media server",
-        "more_info": "<h4>Adding media to Emby.</h4><p>You can add Shares(with media) to Emby from the settings wizard of this Rock-on. Then, from Emby WebUI, you can update and re-index your library.</p>",
+        "more_info": "<h4>Adding media to Emby.</h4><p>You can add Shares(with media) to Emby from the settings wizard of this Rock-on. Then, from Emby WebUI, you can update and re-index your library.</p><p> Visit https://hub.docker.com/r/emby/embyserver for description of each option.",
         "ui": {
             "slug": ""
         },

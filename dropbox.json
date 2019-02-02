@@ -35,7 +35,7 @@
 			}
 		},
 		"description": "Run Dropbox inside Docker. Fully working with local host folder mount or inter-container linking (via --volumes-from).",
-		"more_info": "After installed visit /var/logs/messages and look for a line similar to 'DATETIME HOSTNAME journal: Please visit https://www.dropbox.com/cli_link_nonce?nonce=CODE to link this device.'",
+		"more_info": "After installed visit /var/log/messages and look for a line similar to 'DATETIME HOSTNAME journal: Please visit https://www.dropbox.com/cli_link_nonce?nonce=CODE to link this device.'",
 		"website": "https://hub.docker.com/r/janeczku/dropbox/",
 		"version": "3.18.1"
 	}

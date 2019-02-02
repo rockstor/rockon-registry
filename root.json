@@ -25,6 +25,7 @@
     "MariaDB": "mariadb.json",
     "Muximux": "Muximux.json",
     "Mylar": "mylar.json",
+    "Netdata": "netdata.json",
     "NZBGet": "nzbget.json",
     "NZBHydra": "NZBHydra.json",
     "Ombi": "ombi.json",
