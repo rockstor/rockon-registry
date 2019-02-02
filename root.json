@@ -42,6 +42,7 @@
     "Rocket.Chat": "rocketchat.json",
     "Sickbeard": "sickbeard.json",
     "Sickrage": "sickrage.json",
+    "Medusa": "medusa.json",
     "Sonarr": "sonarr.json",
     "Subsonic": "subsonic.json",
     "Syncthing": "syncthing.json",
