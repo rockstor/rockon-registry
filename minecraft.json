@@ -1,0 +1,40 @@
+{
+    "Minecraft": {
+        "containers": {
+            "mc": {
+                "image": "itzg/minecraft-server",
+                "launch_order": 1,
+                "ports": {
+                    "25565": {
+                        "description": "Minecraft standard server port",
+                        "host_default": 25565,
+                        "label": "minecraft",
+                        "protocol": "tcp"
+                        }
+                    },
+                "environment": {
+		                "EULA": {
+			                   "description": "Must Accept the EULA for Minecraft for the server to run, type TRUE in the box to accept.",
+			                   "label": "EULA Accept",
+			                   "index": 1
+		                     }
+                     },
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a Share for the Minecraft server data, including configuration, mods, etc.",
+                        "label": "Data storage"
+                        }
+                    }
+                }
+            },
+            "description": "Minecraft server with selectable version",
+            "ui": {
+              "https": false,
+              "slug": ""
+              },
+        "volume_add_support": true,
+        "website": "https://hub.docker.com/r/itzg/minecraft-server/",
+	      "version": "1.0"
+      }
+
+}
