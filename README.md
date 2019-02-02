@@ -120,10 +120,14 @@ Each container object is key'd by it's name and nested within "containers" of th
   (optional)"environment": {
     "<env var1 name>": <env object representing one environment variable required by this container. see below>,
     "<env var2 name>": <another env object, if necessary. see below>, ...
+  },
+  (optional)"devices": {
+    "<device1 name>": <device object representing one device to be passed to this container. see below>,
+    "<device2 name>": <another device object, if necessary. see below>, ...
   }
 }
 ```
-As it is evident from above, a container object has nested objects for port and volume mappings, container options and environment variables. These are described below.
+As it is evident from above, a container object has nested objects for port and volume mappings, container options, environment variables, and devices. These are described below.
 
 ### Port object
 
@@ -174,3 +178,16 @@ Note that the opts field is a 2-d array, so the complete line for the above exam
   (optional)"index": <integer: 1 or above. order of this environment variable, if relevant>
 }
 ```
+
+
+### Devices object
+
+This optional object allows to pass a specific device to the Rock-on, and similarly to the Environment object, must have a "description" and "label".  
+```
+{
+  "description": "<Detailed description of the device and its intent or specificities. Eg: path to device (/dev/xxx)>",
+  "label": "Hardware encoding device",
+  (optional)"index": <integer: 1 or above. order of this environment variable, if relevant>
+}
+```
+Note that for the user, filling the fields corresponding to this object during the Rock-on installation is optional, allowing the users to leave the fields blank if not applicable to them.  
