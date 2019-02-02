@@ -18,7 +18,7 @@
                         "description": "Choose a Share for cops configuration. Eg: create a Share called cops-config for this purpose alone.",
                         "label": "Config Storage"
                     },
-                    "/movies": {
+                    "/books": {
                         "description": "Choose a Share for cops book library. Eg: create a Share called cops-library for this purpose alone.",
                         "label": "Books location"
                     }
