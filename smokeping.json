@@ -16,7 +16,8 @@
 						"description": "SmokePing WebUI port. Suggested default: 7878",
 						"host_default": 80,
 						"label": "WebUI port",
-						"protocol": "tcp"
+						"protocol": "tcp",
+						"ui": true
 					}
 				},
 				"volumes": {
