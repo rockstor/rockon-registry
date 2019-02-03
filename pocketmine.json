@@ -1,0 +1,36 @@
+{
+    "PocketMine": {
+        "containers": {
+            "pocketmine": {
+                "image": "magicalyak/pocketmine",
+                "launch_order": 1,
+		"ports": {
+                    "19132": {
+                        "description": "Port for incoming and discovery broadcasts. You may need to open it (protocol: tcp/udp) on your firewall.",
+                        "host_default": 19132,
+                        "label": "Listening port"
+                    }
+                },
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a Share for the configuration and persistent data.",
+                        "label": "Config Storage",
+                        "min_size": "1073741824"
+                    }
+                },
+                "custom_config": {
+                    "BEDROCK_DOWNLOAD_ZIP": {
+                        "description": "The URL for downloading the minecraft server https://minecraft.net/en-us/download/server/bedrock/",
+                        "label": "Download URL",
+                        "default": "https://minecraft.azureedge.net/bin-linux/bedrock-server-1.8.1.2.zip"
+                    }
+                }
+            }
+        },
+        "description": "MineCraft: Pocket Edition Server",
+        "volume_add_support": false,
+        "more_info": "<h4>Administration</h4><p>use the command line and run docker attach pocketmine, type help for options. press control-p, control-q to exit without stopping container",
+        "version": "1.8.1.2",
+        "website": "https://hub.docker.com/r/magicalyak/pocketmine/"
+    }
+}
