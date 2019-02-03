@@ -51,6 +51,7 @@
     "sabnzb": "sabnzb.json",
     "Sickbeard": "sickbeard.json",
     "Sickrage": "sickrage.json",
+    "SmokePing": "smokeping.json",
     "Sonarr": "sonarr.json",
     "Subsonic": "subsonic.json",
     "Syncthing": "syncthing.json",
