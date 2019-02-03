@@ -18,7 +18,7 @@
                         "min_size": "1073741824"
                     }
                 },
-                "custom_config": {
+                "environment": {
                     "BEDROCK_DOWNLOAD_ZIP": {
                         "description": "The URL for downloading the minecraft server https://minecraft.net/en-us/download/server/bedrock/",
                         "label": "Download URL",
