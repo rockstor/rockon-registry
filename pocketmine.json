@@ -8,6 +8,7 @@
                     "19132": {
                         "description": "Port for incoming and discovery broadcasts. You may need to open it (protocol: tcp/udp) on your firewall.",
                         "host_default": 19132,
+                        "protocol": "udp",
                         "label": "Listening port"
                     }
                 },
@@ -18,13 +19,12 @@
                         "min_size": "1073741824"
                     }
                 },
-                "environment": {
-                    "BEDROCK_DOWNLOAD_ZIP": {
-                        "description": "The URL for downloading the minecraft server https://minecraft.net/en-us/download/server/bedrock/",
-                        "label": "Download URL",
-                        "default": "https://minecraft.azureedge.net/bin-linux/bedrock-server-1.8.1.2.zip"
-                    }
-                }
+                "opts": [
+		    [
+			"-e",
+			"BEDROCK_DOWNLOAD_ZIP=https://minecraft.azureedge.net/bin-linux/bedrock-server-1.8.1.2.zip"
+		    ]
+                ]
             }
         },
         "description": "MineCraft: Pocket Edition Server",
