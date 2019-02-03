@@ -1,0 +1,48 @@
+{
+	"SmokePing": {
+		"website": "https://hub.docker.com/r/linuxserver/smokeping/",
+		"version": "1.0",
+		"description": "SmokePing is a network latency history monitor.",
+		"ui": {
+			"slug": "smokeping/smokeping.cgi"
+		},
+		"containers": {
+			"SmokePing": {
+				"image": "linuxserver/smokeping",
+				"launch_order": 1,
+				"volume_add_support": true,
+				"ports": {
+					"80": {
+						"description": "SmokePing WebUI port. Suggested default: 7878",
+						"host_default": 80,
+						"label": "WebUI port",
+						"protocol": "tcp"
+					}
+				},
+				"volumes": {
+					"/config": {
+						"description": "Choose a Share for SmokePing Configuration Files",
+						"label": "Config Storage"
+					},
+					"/data": {
+						"description": "Choose a Share for SmokePing Data Files",
+						"label": "Data location"
+					}
+				},
+				"environment": {
+					"PUID": {
+						"description": "Enter a valid UID to run SmokePing as. It must have full permissions to all Shares mapped in the previous step.",
+						"label": "UID to run SmokePing as.",
+						"index": 1
+					},
+					"PGID": {
+						"description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+						"label": "GID to run SmokePing as.",
+						"index": 2
+					}
+				}
+			}
+		},
+		"volume_add_support": true
+	}
+}
