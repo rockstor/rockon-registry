@@ -6,7 +6,6 @@
                 "opts": [
                     [
                         "--net=host",
-                        "-e=TZ=$(timedatectl status|grep -oP 'zone:\\s+[\\w/]+'",
                         ""
                     ]
                 ],
