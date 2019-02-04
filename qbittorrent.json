@@ -8,12 +8,16 @@
                     [
                         "-e",
                         "UMASK_SET=007"
+                    ],
+                    [
+                        -"e",
+                        "WEBUI_PORT=8090"
                     ]
                 ],
                 "ports": {
-                    "8080": {
-                        "description": "qBittorrent WebUI port. Suggested default: 8080.",
-                        "host_default": 8080,
+                    "8090": {
+                        "description": "qBittorrent WebUI port. When changing this you must also change environment \"WEBUI_PORT\" setting.",
+                        "host_default": 8090,
                         "label": "qBittorrent WebUI port",
                         "protocol": "tcp",
                         "ui": true
