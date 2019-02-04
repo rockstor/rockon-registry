@@ -1,7 +1,7 @@
 {
-    "Teamspeak3 Official": {
+    "Teamspeak3": {
         "containers": {
-            "Teamspeak3_official": {
+            "Teamspeak3": {
                 "image": "teamspeak",
                 "launch_order": 1,
                 "ports": {
@@ -42,10 +42,10 @@
                 }
             }
         },
-        "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalabilty up to thousands of simultaneous users.",
+        "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalabilty up to thousands of simultaneous users.<p>Based on the official Teamspeak docker image: <a href='https://hub.docker.com/_/teamspeak' target='_blank'>https://hub.docker.com/_/teamspeak</a>.",
     	"more_info": "<h4>You need to get the privileged key using system console to get serveradmin access</h4></p>1. Open system console (don't forget to start the service) or use SSH</p>2. docker logs Teamspeak3_official | grep loginname</p><br><p>If it's the second or more start of this Rock-on, please use the following instead:</p> docker exec Teamspeak3_official sh -c 'cat logs/*.log | grep token'</p>",
         "volume_add_support": false,
-	    "website": "https://hub.docker.com/_/teamspeak",
+	    "website": "https://teamspeak.com/en/",
 	    "version": "2.0"
     }
 }
