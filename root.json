@@ -45,6 +45,7 @@
     "Pi-Hole": "pi-hole.json",
     "Plex": "plex.json",
     "Plexpy": "plexpy.json",
+    "PocketMine": "pocketmine.json",
     "Radarr": "radarr.json",
     "Resilio Sync": "resilioSync.json",
     "Rocket.Chat": "rocketchat.json",
