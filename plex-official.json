@@ -42,7 +42,7 @@
                 }
             }
         },
-        "description": "Official Plex Media Server Docker Repo",
+        "description": "Official Plex Media Server docker repository",
         "more_info": "<h4>Adding more media to Plex.</h4><p>You can add more Shares(with media) to Plex from the settings wizard of this Rock-on. Then, from Plex WebUI, you can update and re-index your library.</p>",
         "ui": {
             "slug": "web"
