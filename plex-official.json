@@ -30,7 +30,7 @@
                 },
                 "environment": {
                     "PLEX_UID": {
-                        "description": "Enter a valid UID to run Plex with. It must have full permissions to all Shares mapped in the previous step.",
+                        "description": "Enter a valid UID to run Plex with. It must have full permissions to all shares mapped in the previous step.",
                         "label": "UID",
                         "index": 1
                     },
