@@ -20,7 +20,7 @@
                 },
                 "volumes": {
                     "/config": {
-                        "description": "Choose a Share for Plex configuration. Eg: create a Share called plex-config for this purpose alone.",
+                        "description": "Choose a share for Plex configuration. Eg: create a share called plex-config for this purpose alone.",
                         "label": "Config Storage"
                     },
                     "/data": {
