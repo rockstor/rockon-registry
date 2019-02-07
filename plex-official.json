@@ -24,7 +24,7 @@
                         "label": "Config Storage"
                     },
                     "/data": {
-                        "description": "Choose a Share for Plex content(your media). Eg: create a Share called plex-data for this purpose alone. You can also assign other media Shares on the system after installation.",
+                        "description": "Choose a share for Plex content (your media). Eg: create a share called plex-data for this purpose alone. You can also assign other media shares on the system after installation.",
                         "label": "Data Storage"
                     }
                 },
