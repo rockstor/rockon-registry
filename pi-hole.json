@@ -2,7 +2,7 @@
     "Pi-Hole": {
         "containers": {
             "pi-hole": {
-                "image": "pihole/piholei",
+                "image": "pihole/pihole",
                 "opts": [
                     [
                         "--cap-add",
