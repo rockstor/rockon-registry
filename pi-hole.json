@@ -78,7 +78,7 @@
             "slug": "admin"
         },
         "volume_add_support": false,
-        "website": "https://hub.docker.com/r/pihole/pihole/",
+        "website": "https://pi-hole.net/",
         "version": "2.0"
     }
 }
