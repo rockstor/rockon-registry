@@ -31,13 +31,15 @@
                 "environment": {
                     "PLEX_UID": {
                         "description": "Enter a valid UID to run Plex with. It must have full permissions to all shares mapped in the previous step.",
-                        "label": "UID",
-                        "index": 1
+                        "label": "UID"
                     },
                     "PLEX_GID": {
                         "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all shares mapped in the previous step.",
-                        "label": "GID",
-                        "index": 2
+                        "label": "GID"
+                    },
+                    "PLEX_CLAIM": {
+                        "description": "The claim token for the server to obtain a real server token. If not provided, server will not be automatically logged in. If server is already logged in, this parameter is ignored. You can obtain a claim token to login your server to your plex account by visiting https://www.plex.tv/claim. Leave blank to sign in via plex.tv.",
+			            "label": "claim token (https://wwww.plex.tv/claim) (optional)"
                     }
                 }
             }
