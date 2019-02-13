@@ -39,7 +39,7 @@
                     },
                     "PLEX_CLAIM": {
                         "description": "The claim token for the server to obtain a real server token. If not provided, server will not be automatically logged in. If server is already logged in, this parameter is ignored. You can obtain a claim token to login your server to your plex account by visiting https://www.plex.tv/claim. Leave blank to sign in via plex.tv.",
-			            "label": "claim token (https://wwww.plex.tv/claim) (optional)"
+			            "label": "token (https://wwww.plex.tv/claim)"
                     }
                 }
             }
