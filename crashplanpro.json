@@ -1,0 +1,39 @@
+{
+	"Crashplan-Pro": {
+        "containers": {
+            "crashplan-pro": {
+                "image": "jlesage/crashplan-pro",
+                "launch_order": 1,
+		"ports": {
+                    "5800": {
+                        "description": "WebUI port.",
+                        "host_default": 5800,
+                        "label": "WebUI port",
+                        "ui": true
+                    },
+                    "5900": {
+                        "description": "VNC port.",
+                        "host_default": 5900,
+                        "label": "VNC port"
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a share for the crashplan configuration & log files.",
+                        "label": "/config"
+                    }
+		},
+		"opts": [ 
+			[
+				"-v", 
+				"/mnt2:/storage"
+			]
+		]
+            }
+        },
+        "description": "Crashplan Pro rockon, container from jlesage/crashplan-pro",
+	"website": "https://hub.docker.com/r/jlesage/crashplan-pro/",
+        "volume_add_support": true,
+        "version": "beta"
+    }
+}
