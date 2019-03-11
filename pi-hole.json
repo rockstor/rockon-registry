@@ -43,7 +43,7 @@
                     },
 		    "/etc/dnsmasq.d": {
 			"description": "Choose a share for dnsmasq configuration. Eg: create a Share called dnsmasq-config for this purpose alone.",
-			"label": "dnsmasq config storage"
+			"label": "dnsmasq config"
 		    }
                 },
                 "environment": {
