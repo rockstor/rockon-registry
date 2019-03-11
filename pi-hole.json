@@ -52,22 +52,10 @@
                         "label": "Rockstor IP",
                         "index": 1
                     },
-                    "DNS1": {
-                        "description": "Enter Primary DNS server. Eg: 8.8.8.8",
-                        "label": "Primary DNS Server",
-                        "index": 2,
-                        "default": "8.8.8.8"
-                    },
-                    "DNS2": {
-                        "description": "Enter Secondary DNS server. Eg: 8.8.4.4",
-                        "label": "Secondary DNS Server (enter no if only one is to be used)",
-                        "index": 3,
-                        "default": "8.8.4.4"
-                    },
                     "WEBPASSWORD": {
                         "description": "Enter desired webpassword for pi-hole.",
                         "label": "Web-Password",
-                        "index": 4
+                        "index": 2
                     }
                 }
             }
