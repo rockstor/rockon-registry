@@ -39,7 +39,7 @@
                 "volumes": {
                     "/etc/pihole": {
                         "description": "Choose a share for Pi-Hole configuration. Eg: create a Share called pihole-config for this purpose alone.",
-                        "label": "Pi-Hole config storage"
+                        "label": "Pi-Hole config"
                     },
 		    "/etc/dnsmasq.d": {
 			"description": "Choose a share for dnsmasq configuration. Eg: create a Share called dnsmasq-config for this purpose alone.",
