@@ -1,17 +1,25 @@
 {
     "Pi-Hole": {
         "containers": {
-            "pi-hole-diginc": {
-                "image": "diginc/pi-hole",
+            "pi-hole": {
+                "image": "pihole/pihole",
                 "opts": [
                     [
                         "--cap-add",
                         "NET_ADMIN"
                     ],
                     [
-                	"--restart",
-                	"always"
-            	    ]
+			"--dns",
+			"127.0.0.1"
+                    ],
+		    [
+			"--dns",
+			"8.8.8.8"
+		    ],
+		    [
+			"-e",
+			"IPv6=False"
+		    ]
                 ],
                 "launch_order": 1,
                 "ports": {
@@ -30,9 +38,13 @@
                 },
                 "volumes": {
                     "/etc/pihole": {
-                        "description": "Choose a Share for Pi-Hole configuration. Eg: create a Share called pihole-config for this purpose alone.",
-                        "label": "Config Storage"
-                    }
+                        "description": "Choose a share for Pi-Hole configuration. Eg: create a Share called pihole-config for this purpose alone.",
+                        "label": "Pi-Hole config"
+                    },
+		    "/etc/dnsmasq.d": {
+			"description": "Choose a share for dnsmasq configuration. Eg: create a Share called dnsmasq-config for this purpose alone.",
+			"label": "dnsmasq config"
+		    }
                 },
                 "environment": {
                     "ServerIP": {
@@ -40,44 +52,21 @@
                         "label": "Rockstor IP",
                         "index": 1
                     },
-                    "VIRTUAL_HOST": {
-                        "description": "Enter IP of rockstor server.",
-                        "label": "Virtual Host",
-                        "index": 2
-                    },
-                    "DNS1": {
-                        "description": "Enter Primary DNS server. Eg: 8.8.8.8",
-                        "label": "Primary DNS Server",
-                        "index": 3,
-                        "default": "8.8.8.8"
-                    },
-                    "DNS2": {
-                        "description": "Enter Secondary DNS server. Eg: 8.8.4.4",
-                        "label": "Secondary DNS Server",
-                        "index": 4,
-                        "default": "8.8.4.4"
-                    },
-                    "IPv6": {
-                        "description": "Enable or Disable Pi-Hole IPv6 support. Enter: true or false",
-                        "label": "Enable IPv6",
-                        "index": 5,
-                        "default": "false"
-                    },
                     "WEBPASSWORD": {
                         "description": "Enter desired webpassword for pi-hole.",
                         "label": "Web-Password",
-                        "index": 6
+                        "index": 2
                     }
                 }
             }
         },
-        "description": "PI-Hole by DigInc",
+        "description": "DNS Server that acts as a black hole for Internet advertisements.<p>Based on the official Pi-Hole docker image: <a href='https://hub.docker.com/r/pihole/pihole' target='_blank'>https://hub.docker.com/r/pihole/pihole</a>.",
         "more_info": "<h4>PI-HOLE™: A BLACK HOLE FOR INTERNET ADVERTISEMENTS</h4><p><b>Admin page</b></p><p>To access admin interface go to URL: http://[SERVERIP]/Admin</p><p>If you have different port than 80 you need to specify that in the URL.</p><p><b>Block Over 100,000 Ad-serving Domains</b></p><p>Known ad-serving domains are pulled from third party sources and compiled into one list.</p><p><b>Block Advertisements On Any Device</b></p><p>Network-level blocking allows any device to block ads, regardless of hardware or OS.</p><p><b>Improve Overall Network Performance</b></p><p>Since ads are blocked before they are downloaded, your network will perform better.</p>",
         "ui": {
             "slug": "admin"
         },
         "volume_add_support": false,
-        "website": "https://hub.docker.com/r/diginc/pi-hole/",
-        "version": "1.0"
+        "website": "https://pi-hole.net/",
+        "version": "2.0"
     }
 }
