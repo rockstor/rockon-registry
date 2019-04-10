@@ -18,12 +18,6 @@
                         "label": "Storage",
                         "min_size": 1073741824
                     }
-                },
-                "environment": {
-                    "TIME_ZONE": {
-                         "description": "The TZ Database Name of your time zone, e.g. America/New_York",
-                         "label": "Time Zone"
-                    }
                 }
             }
         },
