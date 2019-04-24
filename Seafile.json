@@ -22,7 +22,7 @@
             }
         },
             "version": "latest",
-        "description": "Secure file sharing and hosting. <p>Based on the official Seafile docker image: <a href='https://hub.docker.com/seafileltd/seafile' target='_blank'>https://hub.docker.com/seafileltd/seafile</a>.",
+        "description": "Secure file sharing and hosting. <p>Based on the official Seafile docker image: <a href='https://hub.docker.com/r/seafileltd/seafile' target='_blank'>https://hub.docker.com/r/seafileltd/seafile</a>.",
         "icon": "https://avatars2.githubusercontent.com/u/1948782?s=400&v=4",
         "more_info": "<p>Default username for your Seafile UI is<code>me@example.com</code>and password is<code>asecret</code></p>",
         "ui": {
