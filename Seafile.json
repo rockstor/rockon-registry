@@ -1,5 +1,5 @@
 {
-    "Seafile-Official": {
+    "Seafile": {
         "containers": {
             "seafile": {
                 "image": "seafileltd/seafile",
