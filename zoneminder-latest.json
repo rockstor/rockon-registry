@@ -38,13 +38,13 @@
                 }
             }
         },
-        "description": "ZoneMinder: Free, open-source software to control IP, USB and Analog (CCTV) cameras (v1.33) - please note this runs as privileged in docker (to set shm to a higher amount)",
+        "description": "ZoneMinder: Free, open-source software to control IP, USB and Analog (CCTV) cameras (v1.32) - please note this runs as privileged in docker (to set shm to a higher amount)",
         "more_info": "</h4>Tips and Setup Instructions:</h4></p>        </p>        This container includes mysql, no need for a separate mysql/mariadb container</p>                    Important:</p>                    </p>                    The web gui will be available at http://serverip:port/zm</p>                    The default timezone for php is set as America/New_York if you would like to change it, edit the php.ini in the config folder. Here's a list of available timezone options: http://php.net/manual/en/timezones.php",
         "ui": {
             "slug": "/zm"
         },
         "volume_add_support": true,
-        "version": "1.33",
+        "version": "1.32",
         "website": "https://github.com/magicalyak/zmdocker"
     }
 }
