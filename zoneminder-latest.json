@@ -2,49 +2,79 @@
     "ZoneMinder-latest": {
         "containers": {
             "zoneminder-latest": {
-                "image": "magicalyak/zoneminder",
+                "image": "dlandon/zoneminder",
                 "launch_order": 1,
                 "opts": [
                          [
-                          "--shm-size",
-                          "512m"
+                          "--privileged=true",
+                          ""
                           ]
                          ],
+                "environment": {
+                    "PUID": {
+                        "description": "Enter a valid UID to run zoneminder with. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID",
+                        "index": 1	
+                    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the same UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID",
+                        "index": 2
+                    },
+                    "INSTALL_HOOK": {
+                        "description": "0=Disable or 1=Install hook processinging packages and run setup.py to prepare the hook processing",
+                        "label": "INSTALL_HOOK",
+                        "index": 3
+                    },
+                    "INSTALL_FACE": {
+                        "description": "0=Disable or 1=Install face recognition packages",
+                        "label": "INSTALL_FACE",
+                        "index": 4
+                    }
+                },
                 "ports": {
                     "80": {
-                        "description": "Port for running ZoneMinder. You shouldn't open this externally (it's unsecure). Do not use 80 (it will interfere with RockStor)",
+                        "description": "Insecure port for running ZoneMinder. You shouldn't open this externally (it's unsecure). Do not use 80 (it will interfere with RockStor)",
                         "host_default": 8080,
                         "protocol": "tcp",
-                        "label": "ZoneMinder Port",
+                        "label": "ZoneMinder Insecure Port"
+                    },
+                    "443": {
+                        "description": "Secure port for running ZoneMinder. This will use a self-signed SSL certificate for now.",
+                        "host_default": 8443,
+                        "protocol": "tcp",
+                        "label": "ZoneMinder Secure Port",
                         "ui": true
+                    },
+                    "9000": {
+                        "description": "zmninja monitoring port",
+                        "host_default": 9000,
+                        "protocol": "tcp",
+                        "label": "ZMNinja Port"
                     }
                 },
                 "volumes": {
-                    "/var/lib/zoneminder/events": {
-                        "description": "Choose a Share for the events.",
-                        "label": "Event Storage",
+                    "/config": {
+                        "description": "Choose a Share for the config.",
+                        "label": "ZoneMinder Config",
                         "min_size": "1073741824"
                     },
-                    "/var/lib/mysql": {
-                        "description": "Choose a Share for the database.",
-                        "label": "MySQL Storage",
-                        "min_size": "1073741824"
-                    },
-                    "/var/log/zm": {
-                        "description": "Choose a Share for the logs.",
-                        "label": "Logs Storage",
+                    "/var/cache/zoneminder": {
+                        "description": "Choose a Share for the cache.",
+                        "label": "ZoneMinder Cache",
                         "min_size": "1073741824"
                     }
                 }
             }
         },
         "description": "ZoneMinder: Free, open-source software to control IP, USB and Analog (CCTV) cameras (v1.32) - please note this runs as privileged in docker (to set shm to a higher amount)",
-        "more_info": "</h4>Tips and Setup Instructions:</h4></p>        </p>        This container includes mysql, no need for a separate mysql/mariadb container</p>                    Important:</p>                    </p>                    The web gui will be available at http://serverip:port/zm</p>                    The default timezone for php is set as America/New_York if you would like to change it, edit the php.ini in the config folder. Here's a list of available timezone options: http://php.net/manual/en/timezones.php",
+        "more_info": "</h4>Tips and Setup Instructions:</h4></p>        </p>        This container includes mysql, no need for a separate mysql/mariadb container</p>            All settings and library files are stored outside of the container and they are preserved when this docker is updated or re-installed (change the variable /path/to/config in the run command to a location of your choice)</p>                    Important:</p>                    </p>                    The web gui will be available at https://serverip:port/zm</p>                    On first start, open zoneminder settings, go to the paths tab and enter the following for PATH_ZMS: /zm/cgi-bin/nph-zms</p>                        The default timezone for php is set as America/New_York if you would like to change it, edit the php.ini in the config folder. Here's a list of available timezone options: http://php.net/manual/en/timezones.php",
         "ui": {
-            "slug": "/zm"
+            "https": true,
+            "slug": "zm"
         },
         "volume_add_support": true,
         "version": "1.32",
-        "website": "https://github.com/magicalyak/zmdocker"
+        "website": "https://github.com/dlandon/zoneminder"
     }
 }
