@@ -44,7 +44,7 @@
 				}
 			}
 		},
-		"description": "JDownloader 2 Rock-On using jlesage docker",
+              "description": "JDownloader 2 Rock-On using jlesage docker.<p>Based on the following docker image: <a href='https://github.com/jlesage/docker-jdownloader-2' target='_blank'>https://github.com/jlesage/docker-jdownloader-2</a>.",
 		"ui": {
 			"https": false,
 			"slug": ""
