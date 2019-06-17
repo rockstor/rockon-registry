@@ -50,7 +50,7 @@
 			"slug": ""
 		},
 		"volume_add_support": true,
-		"website": "https://github.com/jlesage/docker-jdownloader-2",
+                "website": "http://jdownloader.org/",
 		"version": "1.0"
 	}
 }
