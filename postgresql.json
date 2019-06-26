@@ -1,0 +1,34 @@
+{
+    "PostgreSQL":{
+        "containers":{
+            "postgresql":{
+                "image":"postgres:10.6",
+                "launch_order":1,
+                "ports":{
+                    "5432":{
+                        "description":"PostgreSQL port. Suggested default: 5432",
+                        "host_default":5433,
+                        "label":"PostgreSQL port",
+                        "protocol":"tcp",
+                        "ui":false
+                    }
+                },
+                "volumes":{
+                    "/var/lib/postgresql/data":{
+                        "description":"Choose a share where the database should be stored. Eg: create a share called postgresql-share1 for this purpose alone. ",
+                        "label":"Data Storage"
+                    }
+                }
+            }
+        },
+        "description":"PostgreSQL, open-source relational database management system.",
+        "ui":{
+            "slug":""
+        },
+        "volume_add_support":true,
+        "more_info": "<h4>Important locations</h4><p>Configuration file:<code>/var/lib/pgsql/data/pg_hba.conf</code></p> <p>Databases: <code>/var/lib/pgsql/data</code></p> <p>Logs: <code>/var/log/postgresql</code></p>",
+        "website":"https://registry.centos.org/centos/postgres/latest",
+        "host_default":5433,
+        "version":"1.0"
+    }
+}
