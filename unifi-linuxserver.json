@@ -2,7 +2,7 @@
     "Ubiquiti Unifi linuxserver.io": {
         "containers": {
             "unifi-linuxserver": {
-                "image": "linuxserver/unifi",
+                "image": "linuxserver/unifi-controller",
                 "launch_order": 1,
                 "ports": {
                     "3478": {
@@ -83,13 +83,13 @@
             }
         },
         "description": "Unifi Access Point controller",
-        "more_info": "This is a containerized version of Ubiquiti Networks Unifi Controller.",
+        "more_info": "This is a containerized version of Ubiquiti Networks Unifi Controller. To limit memory add MEM_LIMIT=1024M as a custom argument after install",
         "volume_add_support": false,
         "ui": {
             "https": true,
             "slug": ""
         },
-        "website": "https://hub.docker.com/r/linuxserver/unifi/",
-        "version": "1.0"
+        "website": "https://hub.docker.com/r/linuxserver/unifi-controller/",
+        "version": "1.1"
     }
 }
