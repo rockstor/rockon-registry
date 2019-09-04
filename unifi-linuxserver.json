@@ -1,7 +1,7 @@
 {
     "Ubiquiti Unifi linuxserver.io": {
         "containers": {
-            "unifi-linuxserver": {
+            "unifi-linuxserver.io": {
                 "image": "linuxserver/unifi-controller",
                 "launch_order": 1,
                 "ports": {
