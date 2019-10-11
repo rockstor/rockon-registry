@@ -25,6 +25,7 @@
     "Home Assistant": "home-assistant.json",
     "HTTP to HTTPS redirect": "redirect-http-to-https.json",
     "Jackett": "Jackett.json",
+    "JDownloader 2":"Jdownloader2.json",
     "JenkinsCI": "jenkins.json",
     "Koel": "koel.json",
     "LazyLibrarian": "lazylibrarian.json",
