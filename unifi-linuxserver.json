@@ -89,7 +89,7 @@
             "https": true,
             "slug": ""
         },
-        "website": "https://hub.docker.com/r/linuxserver/unifi-controller/",
+        "website": "https://www.ubnt.com/enterprise/#unifi",
         "version": "1.1"
     }
 }
