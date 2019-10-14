@@ -4,6 +4,12 @@
             "nextcloud-official": {
                 "image": "nextcloud",
                 "launch_order": 1,
+                "opts": [
+                    [
+                        "-e",
+                        "SQLITE_DATABASE=nextcloud-sqlite"
+                    ]
+                ],
                 "ports": {
                     "80": {
                         "description": "Nextcloud WebUI port. Suggested default: 8080",
@@ -15,26 +21,20 @@
                 "volumes": {
                     "/var/www/html": {
                         "description": "Choose a Share for Nextcloud. Eg: create a Share called nextcloud-all for this purpose alone.",
-                        "label": "App Storage",
+                        "label": "Storage",
                         "min_size": 1073741824
                     }
-                },
-                "environment": {
-					"SQLITE_DATABASE": {
-						"description": "Enter the name of the database you would like to create.",
-						"label": "SQLite DB Name",
-						"index": 1
-					}
-				}
+                }
             }
         },
 	    "version": "latest",
-        "description": "Next generation open source Enterprise File Sync and Share",
+        "description": "Next generation open source Enterprise File Sync and Share. <p>This rock-on uses a simple SQLite database and may thus be limited to <em>single-user or lightweight use</em>. Similarly, it does <strong>not</strong> use encryption.</p><p>Based on the official Nextcloud docker image: <a href='https://hub.docker.com/_/nextcloud' target='_blank'>https://hub.docker.com/_/nextcloud</a>.",
         "icon": "https://upload.wikimedia.org/wikipedia/commons/6/60/Nextcloud_Logo.svg",
         "more_info": "<p>No smbclient installed by default.  If you would like to enable this you can connect to your container and use <code>apt-get install smbclient -y</code> to install.</p>",
         "ui": {
             "slug": ""
         },
+        "volume_add_support": true,
         "website": "https://www.nextcloud.com/"
     }
 }
