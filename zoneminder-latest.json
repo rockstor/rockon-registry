@@ -67,7 +67,7 @@
                 }
             }
         },
-        "description": "ZoneMinder: Free, open-source software to control IP, USB and Analog (CCTV) cameras (v1.32) - please note this runs as privileged in docker (to set shm to a higher amount)",
+        "description": "ZoneMinder: Free, open-source software to control IP, USB and Analog (CCTV) cameras (v1.32) - please note this runs as privileged in docker (to set shm to a higher amount).<p>Based on the following docker image: <a href='https://github.com/dlandon/zoneminder' target='_blank'>https://github.com/dlandon/zoneminder</a></p>.",
         "more_info": "</h4>Tips and Setup Instructions:</h4></p>        </p>        This container includes mysql, no need for a separate mysql/mariadb container</p>            All settings and library files are stored outside of the container and they are preserved when this docker is updated or re-installed (change the variable /path/to/config in the run command to a location of your choice)</p>                    Important:</p>                    </p>                    The web gui will be available at https://serverip:port/zm</p>                    On first start, open zoneminder settings, go to the paths tab and enter the following for PATH_ZMS: /zm/cgi-bin/nph-zms</p>                        The default timezone for php is set as America/New_York if you would like to change it, edit the php.ini in the config folder. Here's a list of available timezone options: http://php.net/manual/en/timezones.php",
         "ui": {
             "https": true,
