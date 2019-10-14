@@ -82,7 +82,7 @@
                 }
             }
         },
-        "description": "Unifi Access Point controller",
+        "description": "Unifi Access Point controller. <p>Based on the LinuxServer.io Unifi-controller docker image: <a href='https://hub.docker.com/r/linuxserver/unifi-controller' target='_blank'>https://hub.docker.com/r/linuxserver/unifi-controller</a>.",
         "more_info": "This is a containerized version of Ubiquiti Networks Unifi Controller. To limit memory add MEM_LIMIT=1024M as a custom argument after install",
         "volume_add_support": false,
         "ui": {
