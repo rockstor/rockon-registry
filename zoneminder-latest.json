@@ -22,7 +22,7 @@
                         "index": 2
                     },
                     "INSTALL_HOOK": {
-                        "description": "0=Disable or 1=Install hook processinging packages and run setup.py to prepare the hook processing",
+                        "description": "0=Disable or 1=Install hook enable to run setup.py (you need this to be 1 if using INSTALL_FACE)",
                         "label": "INSTALL_HOOK",
                         "index": 3
                     },
