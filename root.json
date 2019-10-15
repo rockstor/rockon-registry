@@ -72,5 +72,6 @@
     "Zabbix-XXL": "zabbix-xxl.json",
     "ZeroNet": "ZeroNet.json",
     "ZoneMinder": "zoneminder.json",
-    "ZoneMinder-1.30": "zoneminder-1.30.json"
+    "ZoneMinder-1.30": "zoneminder-1.30.json",
+    "ZoneMinder-latest": "zoneminder-latest.json"
 }
