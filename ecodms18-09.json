@@ -63,7 +63,8 @@
             "slug": ""
         },
         "website": "https://www.ecodms.de/index.php/en/",
-	"version": "18.09 (apu)",
+        "volume_add_support": true,
+        "version": "18.09 (apu)",
         "icon": "https://hub.docker.com/v2/users/ecodms/avatar/"
     }
 }
