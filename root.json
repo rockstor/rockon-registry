@@ -14,6 +14,7 @@
     "DuckDNS": "duckdns.json",
     "Duplicati2-canary": "duplicati2-canary.json",
     "ecoDMS": "ecodms.json",
+    "ecoDMS 18.09": "ecodms18-09.json",
     "Emby server": "embyserver.json",
     "FreshRSS": "FreshRSS.json",
     "Ghost": "ghost.json",

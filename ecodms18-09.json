@@ -1,0 +1,69 @@
+{
+    "ecoDMS 18.09": {
+        "containers": {
+            "ecodms1809": {
+                "image": "ecodms/allinone-18.09",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "-e",
+                        "LANG=eng"
+                    ]
+                ],
+                "ports": {
+                    "17001": {
+                        "description": "Port for ecoDMS client connection",
+                        "host_default": 17001,
+                        "label": "Client",
+                        "protocol": "tcp"
+                    },
+                    "17002": {
+                        "description": "Port for ecoDMS database access",
+                        "host_default": 17002,
+                        "label": "Database",
+                        "protocol": "tcp"
+                    },
+                    "8080": {
+                        "description": "ecoDMS WebUI port. Disabled by default. Must be enabled in settings from the desktop client.",
+                        "host_default": 17004,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+                    "8180": {
+                        "description": "ecoDMS port used for external access via API.",
+                        "host_default": 17005,
+                        "label": "API port",
+                        "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/srv/data": {
+                        "description": "Choose a Share for data. Eg: create a Share called ecodms-data for this purpose alone.",
+                        "label": "Data Storage"
+                    },
+                    "/srv/scaninput": {
+                        "description": "Choose a Share for scan inputs. Eg: create a Share called ecodms-scaninput for this purpose alone.",
+                        "label": "Scans folder"
+                    },
+                    "/srv/backup": {
+                        "description": "Choose a Share as a location where backups from ecoDMS will be stored. Eg: create a Share called ecodms-backup for this purpose alone.",
+                        "label": "Backup storage"
+                    },
+                    "/srv/restore": {
+                        "description": "Choose a Share for restoring backups. A backup can put in here and can the be restored. Eg: create a Share called ecodms-restore for this purpose alone.",
+                        "label": "Restore folder"
+                    }
+                }
+            }
+        },
+        "description": "Electronic Document Manager System (eDMS), v18.09 (apu). Scanning, archiving, managing and retrieving all documents and information in line with auditing standards.<p>See the <em>more info</em> section for instructions to activate the webUI (optional).</p><p>For updates from ecoDMS v16.09, please refer to its installation documentation.</p><p>Based on the official ecoDMS docker image: <a href='https://hub.docker.com/r/ecodms/allinone-18.09' target='_blank'>https://hub.docker.com/r/ecodms/allinone-18.09</a>.</p>",
+        "more_info": "<h4>Note on webUI (optional):</h4>The webUI is disabled by default and need to be activated through one of the ecoDMS desktop clients (<a href='https://www.ecodms.de/index.php/en/download/ecodms-archive/ecodms-version-18-09-apu' target='_blank'>download page</a>).<h4>Default credentials:</h4>The defaults credentials for client connection are <em>ecodms</em> (login) and <em>ecodms</em> (password). Make sure to change them after that.",
+        "ui": {
+            "slug": ""
+        },
+        "website": "https://www.ecodms.de/index.php/en/",
+	"version": "18.09 (apu)",
+        "icon": "https://hub.docker.com/v2/users/ecodms/avatar/"
+    }
+}
