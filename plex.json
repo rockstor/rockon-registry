@@ -32,12 +32,8 @@
           "/data": {
             "description": "Choose a Share for Plex content(your media). E.g.: create a Share called plex-data for this purpose alone. You can also assign other media Shares on the system after installation. This share needs to at least have Read/Execute access for the User group specified later",
             "label": "Data Storage"
-          },
-          "/transcode": {
-            "description": "Especially for QuickSync, choose a share for HW transcoding. E.g.: create a Share called transcode for this purpose alone (ideally on an SSD). It is important that the owner/group specified later have full access to the share (R/W/E)",
-            "label": "Transcoding Directory"
           }
-
+   
         },
         "environment": {
           "VERSION": {
@@ -59,7 +55,7 @@
       }
     },
     "description": "Plex media server by Linuxserver.io - with added (optional) Intel QuickSync hardware transcoding (check your processor's documentation).",
-    "more_info": "<h4>Adding more media to Plex.</h4><p>You can add more Shares(with media) to Plex from the settings wizard of this Rock-on. Then, from Plex WebUI, you can update and re-index your library. Visit https://hub.docker.com/r/linuxserver/plex for a description of each option.</p>",
+    "more_info": "<h4>Adding more media to Plex.</h4><p>You can add more Shares later to Plex from the settings wizard of this Rock-on. If you have maintained a QuickSync Device during the initial setup, you need to add a transcoding share (preferrably on an SSD). Then, from Plex WebUI, you can update the transcode directory setting and for new media shares re-index your library. Visit https://hub.docker.com/r/linuxserver/plex for a description of each option.</p>",
     "ui": {
       "slug": "web"
     },
