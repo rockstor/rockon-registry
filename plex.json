@@ -30,7 +30,7 @@
             "label": "Config Storage"
           },
           "/data": {
-            "description": "Choose a Share for Plex content(your media). E.g.: create a Share called plex-data for this purpose alone. You can also assign other media Shares on the system after installation. This share needs to at least have Read/Execute access for the User group specified later",
+            "description": "Choose a Share for Plex content (your media). E.g.: create a Share called plex-data for this purpose alone. You can also assign other media Shares on the system after installation. This share needs to have at least Read/Execute access for the user and group specified later",
             "label": "Data Storage"
           }
    
