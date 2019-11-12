@@ -12,7 +12,7 @@
         "launch_order": 1,
         "devices": {
           "/dev/dri": {
-            "description": "optional: Device Path for enabling Intel QuickSync (check CPU documentation at at ark.intel.com for availability) (/dev/dri). Leave blank if not needed.",
+            "description": "optional device path for enabling Intel QuickSync (example: /dev/dri). Leave blank if not needed. Check CPU documentation at ark.intel.com to check for QuickSync support.",
             "label": "QuickSync device"
           }
         },
