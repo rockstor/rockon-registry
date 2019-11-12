@@ -1,7 +1,7 @@
 {
-  "Plex-QuickSync": {
+  "Plex": {
     "containers": {
-      "plex-linuxserver.io-qs": {
+      "plex-linuxserver.io": {
         "image": "linuxserver/plex",
         "opts": [
           [
