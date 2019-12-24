@@ -2,7 +2,8 @@
     "PostgreSQL":{
         "containers":{
             "postgresql":{
-                "image":"postgres:10.6",
+                "image": "postgres",
+                "tag": "10.6",
                 "launch_order":1,
                 "ports":{
                     "5432":{
