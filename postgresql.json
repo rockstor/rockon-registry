@@ -29,7 +29,6 @@
         "volume_add_support":true,
         "more_info": "<h4>Important locations</h4><p>Configuration file:<code>/var/lib/pgsql/data/pg_hba.conf</code></p> <p>Databases: <code>/var/lib/pgsql/data</code></p> <p>Logs: <code>/var/log/postgresql</code></p>",
         "website":"https://registry.centos.org/centos/postgres/latest",
-        "host_default":5433,
         "version":"1.0"
     }
 }
