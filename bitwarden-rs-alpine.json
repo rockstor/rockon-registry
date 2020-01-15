@@ -1,6 +1,6 @@
 {
     "Bitwarden-rs": {
-        "description": "Bitwarden password manager server in Rust.",
+        "description": "Bitwarden password manager server in Rust and on Alpine (speed, size). Uses <a href=\"https://hub.docker.com/r/bitwardenrs/server\">bitwardenrs/server</a>.",
         "version": "0.0.1",
         "website": "https://github.com/dani-garcia/bitwarden_rs",
         "more_info": "SSL/TLS certs and keys required. They go in /ssl/certs.pem and /ssl/key.pem, respectively. certs.pem can be a chain. Need a cert? Try mkcert or openssl.",
