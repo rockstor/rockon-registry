@@ -20,6 +20,7 @@
     "Gogs": "gogs.json",
     "Gollum": "gollum.json",
     "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
+    "Handbrake": "handbrake.json",
     "Headphones": "headphones.json",
     "Home Assistant": "home-assistant.json",
     "HTTP to HTTPS redirect": "redirect-http-to-https.json",
