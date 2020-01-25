@@ -1,0 +1,58 @@
+{
+	"Nginx-proxy-manager": {
+		"containers": {
+			"nginx-proxy": {
+				"image": "jlesage/nginx-proxy-manager",
+				"launch_order": 1,
+				"ports": {
+					"8181": {
+						"description": "Admin WebUI port",
+						"host_default": 8282,
+						"label": "WebUI Port",
+						"ui": true
+					},
+					"8080":{
+						"description": "Port where nginx will listen for http connections",
+						"host_default": 8080,
+						"label": "Http port",
+						"ui": false
+					},
+					"4443":{
+						"description": "Port where nginx will listen for https connections",
+						"host_default": 4443,
+						"label": "Https port",
+						"ui": false
+					}
+
+				},
+				"volumes": {
+					"/config": {
+						"description": "Choose a Share for configuration. Eg: create a Share called nginx-proxy-manager-config for this purpose alone.",
+						"label": "Config Storage",
+						"min_size": 1073741824
+					}
+				},
+				"environment": {
+					"PUID": {
+						"description": "UID to run Jdownloader ",
+						"label": "UID",
+						"index": 1
+					},
+					"PGID": {
+						"description": "Enter a valid GID to use along with the same UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+						"label": "GID",
+						"index": 2
+					}
+				}
+			}
+		},
+		"description": "Rockon based on jlesage Docker Image of jc21/nginx-proxy-manager application",
+		"ui": {
+			"https": false,
+			"slug": ""
+		},
+		"volume_add_support": true,
+		"website": "https://hub.docker.com/r/jlesage/nginx-proxy-manager/",
+		"version": "1.0"
+	}
+}
