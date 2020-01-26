@@ -46,7 +46,8 @@
 				}
 			}
 		},
-		"description": "Rockon based on jlesage Docker Image of jc21/nginx-proxy-manager application",
+		"description": "Managing Nginx proxy hosts with a simple, powerful interface. <p>Based on jlesage's docker image: <a href='https://hub.docker.com/r/jlesage/nginx-proxy-manager/' target='_blank'>https://hub.docker.com/r/jlesage/nginx-proxy-manager</a>.</p>",
+		"more_info": "<h4>First time login</h4><p>Default username is<code>admin@example.com</code>and password is<code>changeme</code>. Make sure to change both the username and password after the first login.</p>",
 		"ui": {
 			"https": false,
 			"slug": ""
