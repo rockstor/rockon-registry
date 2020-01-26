@@ -34,7 +34,7 @@
 				},
 				"environment": {
 					"PUID": {
-						"description": "UID to run Jdownloader ",
+						"description": "UID to run NGinxProxyManager as.",
 						"label": "UID",
 						"index": 1
 					},
