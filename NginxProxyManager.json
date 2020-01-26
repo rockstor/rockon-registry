@@ -53,7 +53,7 @@
 			"slug": ""
 		},
 		"volume_add_support": true,
-		"website": "https://hub.docker.com/r/jlesage/nginx-proxy-manager/",
+		"website": "https://nginxproxymanager.jc21.com/",
 		"version": "1.0"
 	}
 }
