@@ -34,7 +34,8 @@
 				},
 				"environment": {
 					"PUID": {
-						"description": "UID to run NGinxProxyManager as.",
+						"description": "UID to run NginxProxyManager as.",
+
 						"label": "UID",
 						"index": 1
 					},
