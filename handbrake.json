@@ -55,7 +55,7 @@
         "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HandBrake_Icon.png",
         "more_info": "<p>Additional volumes can be added to provide extra watch folders.</p><p>Documentation on how to access using VNC, adding security and configuring extra watch folders can be found here https://github.com/jlesage/docker-handbrake#accessing-the-gui</p>",
         "ui": {
-            "slug": "gui"
+            "slug": ""
         },
         "volume_add_support": true,
         "website": "https://hub.docker.com/r/jlesage/handbrake/",
