@@ -4,6 +4,12 @@
             "handbrake": {
                 "image": "jlesage/handbrake",
                 "launch_order": 1,
+                "devices": {
+                    "VAAPI": {
+                        "description": "<u>Optional:</u> path to hardware transcoding device (/dev/dri/renderD128). Leave blank if not needed.",
+                        "label": "VAAPI device"
+                    }
+                },
                 "ports": {
                     "5800": {
                         "description": "handbrake WebUI port. Suggested default: 5800",
@@ -51,14 +57,14 @@
                 }
             }
         },
-        "description": "Handbrake for converting video from nearly any format to a selection of modern, widely supported codecs. <p>This docker image makes handbrake accessible through your browser <strong>HOSTNAME:5900</strong> or VNC, see <em>more info</em> for details.</p><p>Based on the jlesage/handbrake docker image: <a href='https://hub.docker.com/r/jlesage/handbrake' target='_blank'>https://hub.docker.com/r/jlesage/handbrake</a>.</p>",
+        "description": "Handbrake for converting video from nearly any format to a selection of modern, widely supported codecs. <p>This docker image makes HandBrake accessible through your browser (<em>HandBrake UI</em> button) or VNC, see <em>more info</em> for details.</p><p>Based on the jlesage/handbrake docker image: <a href='https://hub.docker.com/r/jlesage/handbrake' target='_blank'>https://hub.docker.com/r/jlesage/handbrake</a>.</p>",
         "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HandBrake_Icon.png",
         "more_info": "<p>Additional volumes can be added to provide extra watch folders.</p><p>Documentation on how to access using VNC, adding security and configuring extra watch folders can be found here https://github.com/jlesage/docker-handbrake#accessing-the-gui</p>",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
-        "website": "https://hub.docker.com/r/jlesage/handbrake/",
+        "website": "https://handbrake.fr/",
         "version": "1.0"
     }
 }
