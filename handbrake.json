@@ -1,0 +1,70 @@
+{
+    "HandBrake": {
+        "containers": {
+            "handbrake": {
+                "image": "jlesage/handbrake",
+                "launch_order": 1,
+                "devices": {
+                    "VAAPI": {
+                        "description": "<u>Optional:</u> path to hardware transcoding device (/dev/dri/renderD128). Leave blank if not needed.",
+                        "label": "VAAPI device"
+                    }
+                },
+                "ports": {
+                    "5800": {
+                        "description": "handbrake WebUI port. Suggested default: 5800",
+                        "host_default": 5800,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    },
+                    "5900": {
+                        "description": "handbrake VNC port. Suggested default: 5900 (Optional)",
+                        "host_default": 5900,
+                        "label": "VNC port",
+                        "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for handbrake configuration. Eg: create a Share called handbrake-config for this purpose alone.",
+                        "label": "Config Storage"
+                    },
+                    "/storage": {
+                        "description": "Choose a Share for handbrake that contains files from your host that need to be accessible by the application Eg: create a Share called handbrake-storage for this purpose alone.",
+                        "label": "Movies location"
+                    },
+                    "/watch": {
+                        "description": "Choose a Share for handbrake videos to be automatically converted are located. Eg: create a Share called handbrake-watch for this purpose alone.",
+                        "label": "Watch Storage"
+                    },
+                    "/output": {
+                        "description": "Choose a Share for handbrake to automatically converted video files are written. Eg: create a Share called handbrake-output for this purpose alone.",
+                        "label": "Output Storage"
+                    }
+                },
+                "environment": {
+                    "USER_ID": {
+                        "description": "Enter a valid UID to run handbrake as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run handbrake as.",
+                        "index": 1
+                    },
+                    "GROUP_ID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run handbrake as.",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "Handbrake for converting video from nearly any format to a selection of modern, widely supported codecs. <p>This docker image makes HandBrake accessible through your browser (<em>HandBrake UI</em> button) or VNC, see <em>more info</em> for details.</p><p>Based on the jlesage/handbrake docker image: <a href='https://hub.docker.com/r/jlesage/handbrake' target='_blank'>https://hub.docker.com/r/jlesage/handbrake</a>.</p>",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HandBrake_Icon.png",
+        "more_info": "<p>Additional volumes can be added to provide extra watch folders.</p><p>Documentation on how to access using VNC and adding security can be found here <a href='https://github.com/jlesage/docker-handbrake#accessing-the-gui' target='_blank'>jlesage/docker-handbrake</a>, configuring extra volumes/watch folders can be found here <a href='http://rockstor.com/docs/docker-based-rock-ons/overview.html#add-storage' target='_blank'>Rock-ons Documentation</a></p>",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+        "website": "https://handbrake.fr/",
+        "version": "1.0"
+    }
+}
