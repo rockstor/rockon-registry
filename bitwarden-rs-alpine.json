@@ -1,16 +1,16 @@
 {
     "Bitwarden-rs": {
-        "description": "Bitwarden password manager server in Rust.",
+        "description": "Bitwarden password manager server in Rust and on Alpine (speed, size). <p>Based on the following docker image: <a href='https://hub.docker.com/r/bitwardenrs/server' target='_blank'>https://hub.docker.com/r/bitwardenrs/server</a></p>.",
         "version": "0.0.1",
         "website": "https://github.com/dani-garcia/bitwarden_rs",
-        "more_info": "SSL/TLS certs and keys required. If you have a root/intermediate cert already, or you know how to set up Let's Encrypt and you're public facing, then you should be good to go. Otherwise, check out <a href=\"https://jamielinux.com/docs/openssl-certificate-authority/\">this link to learn how to be your own certificate authority</a>, or <a href=\"https://github.com/FiloSottile/mkcert\">the program mkcert to deal with less commands.</a>",
+        "more_info": "SSL/TLS certs and keys required. They must be placed in the Rockstor share used as <em>Bitwarden-rs cert storage</em> during the rock-on's installation process:<br><ul><li><code>/mnt2/[share-name]/certs.pem</code></li><li><code>/mnt2/[share-name]/key.pem</code></li></ul><br>Of note, <code>certs.pem</code> can be a chain. Need a cert? Try <a href=\"https://github.com/FiloSottile/mkcert\" target=\"_blank\">mkcert</a> or openssl.",
         "ui": {
             "https": true,
             "slug": ""
         },
         "containers": {
             "bitwarden-rs": {
-                "image": "mprasil/bitwarden",
+                "image": "bitwardenrs/server",
                 "tag": "alpine",
                 "launch_order": 1,
                 "ports": {
