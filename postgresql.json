@@ -22,7 +22,7 @@
                 }
             }
         },
-        "description": "PostgreSQL v10.6, open-source relational database management system. <p>Based on the official PostgreSQL docker image: <a href='https://hub.docker.com/_/postgres' target='_blank'>https://hub.docker.com/_/postgres</a>.",
+        "description": "PostgreSQL v10.6, open-source relational database management system. <p><strong>Note: </strong>This rock-on requires Rockstor version 3.9.2-51 or later.</p><p>Based on the official PostgreSQL docker image: <a href='https://hub.docker.com/_/postgres' target='_blank'>https://hub.docker.com/_/postgres</a>.",
         "ui":{
             "slug":""
         },
