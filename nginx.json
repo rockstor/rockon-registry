@@ -1,10 +1,10 @@
 {
 	"nginx": {
-		"description": "Open source web server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a reverse proxy server.<p>Advanced users only: You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388'>add a default config file to your "Config Storage" share.</a>.</p><p>Based on the official Nginx docker image: <a href='https://hub.docker.com/_/nginx' target='_blank'>https://hub.docker.com/_/nginx</a>.</p>",
+		"description": "Open source web server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a reverse proxy server.<p>Advanced users only: You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388' target='_blank'>add a default config file to your Config Storage share.</a>.</p><p>Based on the official Nginx docker image: <a href='https://hub.docker.com/_/nginx' target='_blank'>https://hub.docker.com/_/nginx</a>.</p>",
 		"version": "1.0.0",
 		"website": "https://www.nginx.com/",
 		"icon": "https://cdn-1.wp.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.svg",
-		"more_info": "You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388'>create a default config file</a> in the Config Storage share before starting this Rockon, which you can extend with your own custom configuration.<br/>For advanced users, an example configuration file can be found <a href='https://www.nginx.com/resources/wiki/start/topics/examples/full/'>in the nginx wiki</a>. The config volume is mounted at <pre>/etc/nginx/conf.d/</pre>",
+		"more_info": "You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388' target='_blank'>create a default config file</a> in the Config Storage share before starting this Rockon, which you can extend with your own custom configuration.<br/>For advanced users, an example configuration file can be found <a href='https://www.nginx.com/resources/wiki/start/topics/examples/full/' target='_blank'>in the nginx wiki</a>.",
 		"containers": {
 			"nginx": {
 				"image": "nginx",
@@ -23,7 +23,6 @@
 						"host_default": 1443,
 						"label": "HTTPS port",
 						"protocol": "tcp",
-						"ui": true
 					}
 				},
 				"volumes": {
