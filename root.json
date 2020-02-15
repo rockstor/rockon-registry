@@ -38,6 +38,7 @@
     "Netdata": "netdata.json",
     "Nextcloud-Official": "nextcloud-official.json",
     "Nginx Proxy Manager": "NginxProxyManager.json",
+    "Nginx": "nginx.json",
     "NZBGet": "nzbget.json",
     "NZBHydra": "NZBHydra.json",
     "Ombi": "ombi.json",
