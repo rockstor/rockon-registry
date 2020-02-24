@@ -1,0 +1,37 @@
+{
+    "FileBot-Node": {
+        "description": "FileBot Node is a client-server application that'll allow you to run filebot commands.",
+        "version": "0.0.1",
+        "website": "http://www.filebot.net/",
+        "icon": "http://www.filebot.net/images/filebot.logo.svg",
+        "more_info": "FileBot Node is a server-side Node.js application that allows you to make filebot calls via a straight-forward ExtJS web application. Please refer to the <a href='https://www.filebot.net/forums/viewtopic.php?f=13&t=2733'>How To</a> manual if you need help getting started.",
+        "volume_add_support": true,
+        "ui": {
+            "slug": "filebot/"
+        },
+        "containers": {
+            "filebot": {
+                "image": "rednoah/filebot:node",
+                "launch_order": "1",
+                "ports": {
+                    "5452": {
+                        "description": "This is for the FileBot Node Client WebUI.",
+                        "label": "Web-UI port",
+                        "host_default": 5452,
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/volume1": {
+                        "description": "The base mount where input and output folders will be found.",
+                        "label": "Input folder"
+                    }
+                },
+                "opts": [
+                    [ "--net", "host" ]
+                ]
+            }
+        }
+    }
+}
