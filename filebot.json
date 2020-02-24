@@ -1,6 +1,6 @@
 {
     "FileBot-Node": {
-        "description": "FileBot Node is a client-server application that'll allow you to run filebot commands.",
+        "description": "FileBot Node is a client-server application that'll allow you to run filebot commands.<p>Based on the official FileBot docker image: <a href='https://hub.docker.com/r/rednoah/filebot' target='_blank'>https://hub.docker.com/r/rednoah/filebot</a>.",
         "version": "0.0.1",
         "website": "http://www.filebot.net/",
         "icon": "http://www.filebot.net/images/filebot.logo.svg",
