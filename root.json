@@ -50,6 +50,7 @@
     "Plex": "plex.json",
     "Plexpy": "plexpy.json",
     "PocketMine": "pocketmine.json",
+    "PostgreSQL 9.5": "postgres-9.5.json",
     "Radarr": "radarr.json",
     "Resilio Sync": "resilioSync.json",
     "Rocket.Chat": "rocketchat.json",
