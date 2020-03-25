@@ -1,5 +1,5 @@
 {
-  "PostgreSQL": {
+  "PostgreSQL 9.5": {
     "description": "PostgreSQL (9.5.21), open-source relational DBMS.<p>Based on the official PostgreSQL docker image: <a href='https://hub.docker.com/_/postgres' target='_blank'>https://hub.docker.com/_/postgres</a>.</p><p><strong>Note: </strong>This rock-on requires Rockstor version 3.9.2-53 or later.</p>",
     "version":"1.2",
     "website":"https://www.postgresql.org",
