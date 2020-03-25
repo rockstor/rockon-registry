@@ -20,7 +20,7 @@
         },
         "volumes": {
             "/var/lib/postgresql/data":{
-                "description":"Choose a share where the database should be stored. E.g.: create a share called postgresql-share1 for this purpose alone.",
+                "description":"Choose a share where the database should be stored. E.g.: create a share called postgresql95-data for this purpose alone.",
                 "label":"Data Storage"
             }
         },
