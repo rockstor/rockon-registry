@@ -6,7 +6,7 @@
         "more_info": "<h4>Important locations inside docker image:</h4><p>Config. file:<code>/var/lib/pgsql/data/pg_hba.conf</code></p> <p>Databases: <code>/var/lib/pgsql/data</code></p> <p>Logs: <code>/var/log/postgresql</code></p>",
         "volume_add_support": true,
         "containers": {
-            "postgresql": {
+            "postgresql-10.6": {
                 "image": "postgres",
                 "launch_order": 1,
                 "tag": "10.6",
