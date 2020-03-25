@@ -1,0 +1,34 @@
+{
+    "PostgreSQL":{
+        "containers":{
+            "postgresql":{
+                "image": "postgres",
+                "tag": "10.6",
+                "launch_order":1,
+                "ports":{
+                    "5432":{
+                        "description":"PostgreSQL port. Suggested default: 5433",
+                        "host_default":5433,
+                        "label":"PostgreSQL port",
+                        "protocol":"tcp",
+                        "ui":false
+                    }
+                },
+                "volumes":{
+                    "/var/lib/postgresql/data":{
+                        "description":"Choose a share where the database should be stored. Eg: create a share called postgresql-share1 for this purpose alone. ",
+                        "label":"Data Storage"
+                    }
+                }
+            }
+        },
+        "description": "PostgreSQL v10.6, open-source relational database management system. <p><strong>Note: </strong>This rock-on requires Rockstor version 3.9.2-51 or later.</p><p>Based on the official PostgreSQL docker image: <a href='https://hub.docker.com/_/postgres' target='_blank'>https://hub.docker.com/_/postgres</a>.",
+        "ui":{
+            "slug":""
+        },
+        "volume_add_support":true,
+        "more_info": "<h4>Important locations</h4><p>Configuration file:<code>/var/lib/pgsql/data/pg_hba.conf</code></p> <p>Databases: <code>/var/lib/pgsql/data</code></p> <p>Logs: <code>/var/log/postgresql</code></p>",
+        "website":"https://www.postgresql.org",
+        "version":"1.0"
+    }
+}
