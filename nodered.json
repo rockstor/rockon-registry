@@ -1,0 +1,31 @@
+{
+    "Node-Red": {
+        "containers": {
+            "nodered": {
+                "image": "nodered/node-red",
+                "launch_order": 1,
+                "ports": {
+                    "1880": {
+                        "description": "Node-Red WebUI port. Suggested default: 1880",
+                        "host_default": 1880,
+                        "label": "WebUI port",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/shared": {
+                        "description": "Choose a Share for Node-Red. Eg: create a Share called nodered-data for this purpose alone.",
+                        "label": "Storage",
+                        "min_size": 1073741824
+                    }
+                }
+            }
+        },
+            "version": "latest",
+        "description": "Low-code programming for event-driven applications",
+        "ui": {
+            "slug": ""
+        },
+        "website": "https://nodered.org"
+    }
+}
