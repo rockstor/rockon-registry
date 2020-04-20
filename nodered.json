@@ -1,8 +1,9 @@
 {
-    "Node-Red": {
+    "Node_red - by nodered.org":{
         "containers": {
             "nodered": {
                 "image": "nodered/node-red",
+                "tag": "latest",
                 "launch_order": 1,
                 "ports": {
                     "1880": {
@@ -22,7 +23,7 @@
             }
         },
             "version": "latest",
-        "description": "Low-code programming for event-driven applications",
+        "description": "Low-code programming for event-driven applications. Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.",
         "ui": {
             "slug": ""
         },
