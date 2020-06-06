@@ -1,0 +1,34 @@
+{
+    "Minecraft Bedrock Edition": {
+        "containers": {
+            "mcbe": {
+                "image": "itzg/minecraft-bedrock-server",
+                "launch_order": 1,
+                "ports": {
+                    "19132": {
+                        "description": "Minecraft Bedrock Edition standard server port",
+                        "host_default": 19132,
+                        "label": "minecraft bedrock edition",
+                        "protocol": "tcp"
+                        }
+                    },
+                "environment": {
+		                "EULA": {
+			                   "description": "Must Accept the EULA for Minecraft for the server to run, type TRUE in the box to accept.",
+			                   "label": "EULA Accept",
+			                   "index": 1
+		                     }
+                     },
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a Share for the Minecraft Bedrock Edition server data, including configuration, mods, etc.",
+                        "label": "Data storage"
+                        }
+                    }
+                }
+            },
+            "description": "Minecraft server with selectable version",
+            "ui": {
+              "https": false,
+              "slug": ""
+              },
