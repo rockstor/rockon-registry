@@ -2,7 +2,7 @@
     "Minecraft Bedrock Edition": {
         "containers": {
             "mcbe": {
-                "image": "itzg/docker-minecraft-bedrock-server",
+                "image": "itzg/minecraft-bedrock-server",
                 "launch_order": 1,
                 "ports": {
                     "19132": {
