@@ -32,3 +32,9 @@
               "https": false,
               "slug": ""
               },
+        "volume_add_support": true,
+        "website": "https://hub.docker.com/r/itzg/minecraft-bedrock-server/",
+	      "version": "1.0"
+      }
+
+}
