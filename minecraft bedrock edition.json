@@ -2,13 +2,13 @@
     "Minecraft Bedrock Edition": {
         "containers": {
             "mcbe": {
-                "image": "itzg/minecraft-bedrock-server",
+                "image": "itzg/docker-minecraft-bedrock-server",
                 "launch_order": 1,
                 "ports": {
                     "19132": {
-                        "description": "Minecraft Bedrock Edition standard server port",
+                        "description": "Minecraft-Bedrock-Edition-standard server port",
                         "host_default": 19132,
-                        "label": "minecraft bedrock edition",
+                        "label": "minecraft-bedrock-edition",
                         "protocol": "tcp"
                         }
                     },
