@@ -9,7 +9,7 @@
                         "description": "Minecraft-Bedrock-Edition-standard server port",
                         "host_default": 19132,
                         "label": "minecraft-bedrock-edition",
-                        "protocol": "tcp"
+                        "protocol": "udp"
                         }
                     },
                 "environment": {
