@@ -15,7 +15,8 @@
                 "launch_order": 1,
                 "opts": [
                     [
-                        "--net=host"
+                        "--net",
+                        "host"
                     ]
                 ],
                 "devices": {
