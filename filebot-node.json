@@ -1,14 +1,14 @@
 {
     "FileBot-Node": {
-        "description": "FileBot Node is a client-server application that'll allow you to run filebot commands.<p>Based on the official FileBot docker image: <a href='https://hub.docker.com/r/rednoah/filebot' target='_blank'>https://hub.docker.com/r/rednoah/filebot</a>.",
+        "description": "FileBot - The ultimate TV and Movie Renamer<p>FileBot is the ultimate tool for organizing and renaming your Movies, TV Shows and Anime as well as fetching subtitles and artwork. It's smart and just works.</p>",
+        "more_info": "FileBot Node is a server-side Node.js application that allows you to make filebot calls via a straight-forward ExtJS web application. Please refer to the <a href='https://www.filebot.net/forums/viewtopic.php?f=13&t=2733'>How To manual</a> if you need help getting started.",
         "version": "0.0.1",
-        "website": "http://www.filebot.net/",
+        "website": "https://www.filebot.net",
         "icon": "http://www.filebot.net/images/filebot.logo.svg",
-        "more_info": "FileBot Node is a server-side Node.js application that allows you to make filebot calls via a straight-forward ExtJS web application. Please refer to the <a href='https://www.filebot.net/forums/viewtopic.php?f=13&t=2733'>How To</a> manual if you need help getting started.",
-        "volume_add_support": true,
         "ui": {
             "slug": ""
         },
+        "volume_add_support": false,
         "containers": {
             "filebot": {
                 "image": "rednoah/filebot",
@@ -29,9 +29,7 @@
                         "label": "Input folder"
                     }
                 },
-                "opts": [
-                    [ "--net", "host" ]
-                ]
+                "opts": []
             }
         }
     }
