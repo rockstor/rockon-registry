@@ -1,6 +1,6 @@
 {
-    "Jellyfin server": {
-        "description": "Jellyfin media server: The Free Software Media System<br>Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.",
+    "Jellyfin": {
+        "description": "Jellyfin media server: The Free Software Media System<p>Jellyfin is the volunteer-built media solution that puts you in control of your media.<br>Stream to any device from your own server, with no strings attached.<br>Your media, your server, your way.</p><p>Based on the latest Linuxserver.io docker image: <a href='https://hub.docker.com/r/linuxserver/jellyfin' target='_blank'>https://hub.docker.com/r/linuxserver/jellyfin</a>.</p>",
         "more_info": "<h4>Adding media to Jellyfin.</h4><p>You can add Shares (with media) to Jellyfin from the settings wizard of this Rock-on. Then, from Jellyfin WebUI, you can update and re-index your library.</p><p> Visit https://hub.docker.com/r/linuxserver/jellyfin for description of each option.",
         "version": "0.0.1",
         "website": "https://jellyfin.org",
