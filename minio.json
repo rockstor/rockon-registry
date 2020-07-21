@@ -1,6 +1,6 @@
 {
     "Minio": {
-        "description": "Minio is an S3-compatible object storage server",
+        "description": "Minio is an S3-compatible object storage server.  Requires Rockstor 3.9.2-39 or later.",
         "version": "1.0",
         "website": "https://minio.io",
         "more_info": "This Rock-on uses the official Minio Docker image to implement a single Minio instance with a single object storage share, suitable for use on a private network.  If your connections traverse a network you do not control, consider using a VPN for encryption.",
