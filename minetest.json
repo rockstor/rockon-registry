@@ -34,11 +34,6 @@
                         "description": "Enter timezone e.g Europe/London these can be found ...",
                         "label": "Timezone to run minetest server in.",
                         "index": 3
-                    },
-                    "CLI_ARGS": {
-                        "description": "Optional args to pass.",
-                        "label": "CLI arguments to pass to minetest server",
-                        "index": 4
                     }
                 }
             }
