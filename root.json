@@ -67,6 +67,7 @@
     "Ubiquiti Unifi linuxserver.io": "unifi-linuxserver.json",
     "Unifi Controller": "unifi.json",
     "Vaultwarden": "vaultwarden.json",
+    "wallabag": "wallabag.json",
     "Watchtower official": "watchtower_official.json",
     "Web Service Discovery For Windows Networks": "wsdd.json",
     "YouTrack official": "youtrack-official.json",
