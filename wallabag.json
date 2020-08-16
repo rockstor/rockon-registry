@@ -1,0 +1,69 @@
+{
+    "wallabag": {
+        "description": "wallabag is a self hostable application for saving web pages.",
+        "ui": {
+            "slug": ""
+        },
+        "website": "https://wallabag.org/",
+        "version": "2.0",
+        "containers": {
+            "wallabag": {
+                "image": "wallabag/wallabag",
+                "launch_order": 1,
+                "volumes": {
+                    "/var/www/wallabag/data": {
+                        "description": "Choose a Share for the database. Eg: create a Share called wallabag-db for this purpose.",
+                        "label": "Database"
+                    },
+                    "/var/www/wallabag/web/assets/images": {
+                        "description": "Choose a Share for images and such. Eg: create a Share called wallabag-assets for this purpose.",
+                        "label": "Assets"
+                    }
+                },
+                "ports": {
+                    "80": {
+                        "description": "Wallabag webserver port. Defaults to 80",
+                        "label": "Web server",
+                        "host_default": 80,
+                        "ui": true
+                    }
+                },
+                "environment": {
+                    "SYMFONY__ENV__SECRET": {
+                        "label": "secret",
+                        "description": "Set a secret"
+                    },
+                    "SYMFONY__ENV__MAILER_HOST": {
+                        "label": "Mail host",
+                        "description": "defaults to 127.0.0.1, the SMTP host"
+                    },
+                    "SYMFONY__ENV__MAILER_USER": {
+                        "label": "Mail user",
+                        "description": "defaults to ~, the SMTP user"
+                    },
+                    "SYMFONY__ENV__MAILER_PASSWORD": {
+                        "label": "Mail password",
+                        "description": "defaults to ~, the SMTP password"
+                    },
+                    "SYMFONY__ENV__FROM_EMAIL": {
+                        "label": "Mail sender",
+                        "description": "defaults to wallabag@example.com, the address wallabag uses for outgoing emails"
+                    },
+                    "SYMFONY__ENV__TWOFACTOR_SENDER": {
+                        "label": "Twofactor email sender",
+                        "description": "defaults to no-reply@wallabag.org, the address wallabag uses for two-factor emails"
+                    },
+                    "SYMFONY__ENV__FOSUSER_REGISTRATION": {
+                        "label": "Allow user registration",
+                        "description": "Defaults to true. Set to false to disable public user registration"
+                    },
+                    "SYMFONY__ENV__DOMAIN_NAME": {
+                        "label": "Domain name",
+                        "description": "Public domain name wallabag should assume (including protocol)"
+                    }
+                }
+            }
+        },
+        "more_info": "<p>Default login is wallabag:wallabag.</p>"
+    }
+}
