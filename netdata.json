@@ -2,12 +2,16 @@
     "Netdata": {
         "containers": {
             "netdata": {
-                "image": "titpetric/netdata",
+                "image": "netdata/netdata",
                 "launch_order": 1,
                 "opts": [
                     [
                         "--cap-add=SYS_PTRACE",
                         ""
+                    ],
+                    [
+                        "--security-opt",
+                        "apparmor=unconfined"
                     ],
                     [
                         "--net=host",
@@ -24,6 +28,10 @@
                     [
                         "-v",
                         "/sys:/host/sys:ro"
+                    ],
+                    [
+                        "-v",
+                        "/etc/os-release:/etc/os-release:ro"
                     ]
                 ],
                 "ports": {
@@ -34,18 +42,20 @@
                         "ui": true
                     }
                 },
-                "volumes": {
-                    "/etc/netdata/override": {
-                        "description": "Choose a Share for Netdata configuration files. All configuration files for custom plugins and alerts placed here will override defaults.",
-                        "label": "Config Storage"
+                "environment": {
+                    "PGID": {
+                        "description": "GID of the docker group. Run `grep docker /etc/group | cut -d ':' -f 3` to find it.",
+                        "label": "PGID",
+                        "index": 1,
+                        "default":472
                     }
-                }
+				}
             }
         },
-        "description": "Netdata is a scalable, distributed, real-time, performance and health monitoring solution for Linux, FreeBSD and MacOS.<p>Out of the box, it collects 1k to 5k metrics per server per second. It is the corresponding of running top, vmstat, iostat, iotop, sar, systemd-cgtop and a dozen more console tools in parallel. netdata is very efficient in this: the daemon needs just 1% to 3% cpu of a single core.</p>",
+        "description": "Netdata is a scalable, distributed, real-time, performance and health monitoring solution for Linux, FreeBSD and MacOS.<p>Out of the box, it collects 1k to 5k metrics per server per second. It is the corresponding of running top, vmstat, iostat, iotop, sar, systemd-cgtop and a dozen more console tools in parallel. netdata is very efficient in this: the daemon needs just 1% to 3% cpu of a single core.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/netdata/netdata' target='_blank'>https://hub.docker.com/r/netdata/netdata</a>.</p>",
         "icon": "https://github.com/firehol/netdata/blob/master/web/images/seo-performance-64.png",
-        "more_info": "See https://github.com/firehol/netdata/wiki for more info.",
-        "website": "https://my-netdata.io/",
+        "more_info": "See https://learn.netdata.cloud/ for more info.",
+        "website": "https://www.netdata.cloud/",
         "ui": {
             "slug": ""
         },
