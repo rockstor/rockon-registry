@@ -1,0 +1,65 @@
+{
+   "Logitech Media Server 7.9.4":{
+      "containers":{
+         "lms_79x":{
+            "image":"doliana/logitech-media-server",
+			"tag":"latest-7.9.4",
+            "launch_order":1,
+            "opts":[
+               [
+                  "--net=host",
+                  ""
+               ]
+            ],
+            "ports":{
+               "9000":{
+                  "description":"WebUI port. Suggested default: 9000",
+                  "host_default":9000,
+                  "label":"WebUI port",
+                  "protocol":"tcp",
+                  "ui":true
+               },
+               "9090":{
+                  "description":"Command Line Interface (used for example by Android app Squeezer). Suggested Default: 9090",
+                  "host_default":9090,
+                  "label":"CLI port",
+                  "protocol":"tcp"
+               },
+               "3483":{
+                  "description":"Control channel for LMS (display, IR, etc.), tcp and udp (SB --> Slimserver discovery and for older SLIMP3 players). Suggested Default: 3483",
+                  "host_default":3483,
+                  "label":"Control Channel"
+               }
+            },
+            "volumes":{
+               "/srv/squeezebox":{
+                  "description":"Choose a Share for LMS configuration. E.g.: create a Share called lms-config for this purpose alone.",
+                  "label":"Config Storage"
+               },
+               "/srv/music":{
+                  "description":"Choose a Share for LMS content(your media). E.g.: create a Share called lms-music for this purpose alone. You can also assign other media Shares on the system after installation.",
+                  "label":"Data Storage"
+               }
+            },
+            "environment":{
+               "PUID":{
+                  "description":"Enter a valid UID to run LMS with. It must have full permissions to all Shares mapped in the previous step.",
+                  "label":"UID",
+                  "index":1
+               },
+               "PGID":{
+                  "description":"Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                  "label":"GID",
+                  "index":2
+               }
+            }
+         }
+      },
+      "description":"Logitech Media Server (aka Squeezebox, slimserver, etc.) stable version 7.9.4. <p>Uses custom docker image: <a href='https://hub.docker.com/r/doliana/logitech-media-server' target='_blank'>https://hub.docker.com/r/doliana/logitech-media-server</a></p>, available for amd64, arm32v7,arm64v8",
+      "ui":{
+         "slug":""
+      },
+      "website":"https://hub.docker.com/r/doliana/logitech-media-server",
+      "version":"2.0"
+   }
+}
