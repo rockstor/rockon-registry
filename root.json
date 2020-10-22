@@ -34,6 +34,7 @@
     "MariaDB": "mariadb.json",
     "Medusa": "medusa.json",
     "Minecraft": "minecraft.json",
+    "MinIO": "minio.json",
     "Muximux": "Muximux.json",
     "Mylar": "mylar.json",
     "Netdata": "netdata.json",
