@@ -33,33 +33,23 @@
             },
             "volumes":{
                "/srv/squeezebox":{
-                  "description":"Choose a Share for LMS configuration. E.g.: create a Share called lms-config for this purpose alone.",
+                  "description":"Choose a Share for LMS configuration. E.g.: create a Share called lms-config for this purpose alone. The share needs to have read/write access to the User corresponding to UID=1000 (check available Rockstor Users under the System Menu)",
                   "label":"Config Storage"
                },
                "/srv/music":{
-                  "description":"Choose a Share for LMS content(your media). E.g.: create a Share called lms-music for this purpose alone. You can also assign other media Shares on the system after installation.",
+                  "description":"Choose a Share for LMS content(your media). E.g.: create a Share called lms-music for this purpose alone.",
                   "label":"Data Storage"
                }
             },
-            "environment":{
-               "PUID":{
-                  "description":"Enter a valid UID to run LMS with. It must have full permissions to all Shares mapped in the previous step.",
-                  "label":"UID",
-                  "index":1
-               },
-               "PGID":{
-                  "description":"Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
-                  "label":"GID",
-                  "index":2
-               }
-            }
          }
       },
-      "description":"Logitech Media Server (aka Squeezebox, slimserver, etc.) stable version 7.9.4. <p>Uses custom docker image: <a href='https://hub.docker.com/r/doliana/logitech-media-server' target='_blank'>https://hub.docker.com/r/doliana/logitech-media-server</a></p>, available for amd64, arm32v7,arm64v8",
+      "description": "Logitech Media Server (aka Squeezebox, slimserver, etc.). Stable version 7.9.4.</p><p>Based on custom docker image: <a href='https://hub.docker.com/r/doliana/logitech-media-server' target='_blank'>https://hub.docker.com/r/doliana/logitech-media-server</a></p>, available for amd64, arm32v7,arm64v8"</p>,
+      "icon": "https://mysqueezebox.com/static/images/apple-touch-icon.png",
+      "more_info": "Logitech Media Server is a streaming audio server supported by Logitech (formerly Slim Devices), developed in particular to support their Squeezebox range of digital audio receivers. With the help of many plugins, Logitech Media Server can stream not only your local music collection, but content from many music services and internet radio stations to your players. See https://mysqueezebox.com/ for more information.",
+      "website":"https://mysqueezebox.com/",
       "ui":{
-         "slug":""
+          "slug":""
       },
-      "website":"https://hub.docker.com/r/doliana/logitech-media-server",
       "version":"2.0"
    }
 }
