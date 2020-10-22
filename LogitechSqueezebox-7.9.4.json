@@ -40,12 +40,12 @@
                   "description":"Choose a Share for LMS content(your media). E.g.: create a Share called lms-music for this purpose alone.",
                   "label":"Data Storage"
                }
-            },
+            }
          }
       },
-      "description": "Logitech Media Server (aka Squeezebox, slimserver, etc.). Stable version 7.9.4.</p><p>Based on custom docker image: <a href='https://hub.docker.com/r/doliana/logitech-media-server' target='_blank'>https://hub.docker.com/r/doliana/logitech-media-server</a></p>, available for amd64, arm32v7,arm64v8"</p>,
+      "description": "Logitech Media Server (aka Squeezebox, slimserver, etc.).<p>Stable version 7.9.4.</p><p>Based on custom docker image: <a href='https://hub.docker.com/r/doliana/logitech-media-server' target='_blank'>https://hub.docker.com/r/doliana/logitech-media-server</a>, available for amd64, arm32v7,arm64v8</p>",
       "icon": "https://mysqueezebox.com/static/images/apple-touch-icon.png",
-      "more_info": "Logitech Media Server is a streaming audio server supported by Logitech (formerly Slim Devices), developed in particular to support their Squeezebox range of digital audio receivers. With the help of many plugins, Logitech Media Server can stream not only your local music collection, but content from many music services and internet radio stations to your players. See https://mysqueezebox.com/ for more information.",
+      "more_info": "Logitech Media Server is a streaming audio server supported by Logitech (formerly Slim Devices), developed in particular to support their Squeezebox range of digital audio receivers. With the help of many plugins, Logitech Media Server can stream not only your local music collection, but content from many music services and internet radio stations to your players. See https://mysqueezebox.com/ and https://github.com/Logitech/slimserver for more information.",
       "website":"https://mysqueezebox.com/",
       "ui":{
           "slug":""
