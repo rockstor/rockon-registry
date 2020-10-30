@@ -53,6 +53,16 @@
                         "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
                         "label": "GID to run handbrake as.",
                         "index": 2
+                    },
+                    "AUTOMATED_CONVERSION_PRESET": {
+                        "description": "Optional: HandBrake preset used by the automatic video converter. Identification of a preset must follow the format <CATEGORY>/<PRESET NAME>. See the <a href='https://github.com/jlesage/docker-handbrake#automatic-video-conversion'>Automatic Video Conversion</a> section for more details",
+                        "label": "Automated Conversion Preset",
+                        "index": 3
+                    },
+                    "AUTOMATED_CONVERSION_FORMAT": {
+                        "description": "Optional: Video container format used by the automatic video converter for output files. This is typically the video filename extension. See the <a href='https://github.com/jlesage/docker-handbrake#automatic-video-conversion'>Automatic Video Conversion</a> section for more details",
+                        "label": "Automated Conversion Format",
+                        "index": 4
                     }
                 }
             }
