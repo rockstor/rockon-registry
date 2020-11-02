@@ -15,9 +15,9 @@
 						"/var/run/docker.sock:/var/run/docker.sock"
 					],
 					[
-                        "--privileged",
-                        ""
-                    ]
+                        			"--privileged",
+                        			""
+                    			]
 				],
 				"environment": {
 					"WATCHTOWER_LABEL_ENABLE": {
