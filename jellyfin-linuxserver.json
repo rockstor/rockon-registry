@@ -1,7 +1,7 @@
 {
     "Jellyfin": {
         "description": "Jellyfin media server: The Free Software Media System<p>Jellyfin is the volunteer-built media solution that puts you in control of your media.<br>Stream to any device from your own server, with no strings attached.<br>Your media, your server, your way.</p><p>Based on the latest Linuxserver.io docker image: <a href='https://hub.docker.com/r/linuxserver/jellyfin' target='_blank'>https://hub.docker.com/r/linuxserver/jellyfin</a>.</p>",
-        "more_info": "<h4>Adding media to Jellyfin.</h4><p>You can add Shares (with media) to Jellyfin from the settings wizard of this Rock-on. Then, from Jellyfin WebUI, you can update and re-index your library.</p><p> Visit https://hub.docker.com/r/linuxserver/jellyfin for description of each option.",
+        "more_info": "<h4>Adding media to Jellyfin.</h4><p>You can add Shares (with media) to Jellyfin from the settings wizard of this Rock-on. Then, from Jellyfin WebUI, you can update and re-index your library.</p><p> Visit https://hub.docker.com/r/linuxserver/jellyfin for description of each option.</p><p>NOTE: Due to some current <a href='https://github.com/rockstor/rockstor-core/issues/2209' target='_blank'>limitations in Rock-On networking</a>, this Rock-On cannot be installed at the same time as Emby, as they use the same port number, which must be 8096.</p>",
         "version": "0.0.1",
         "website": "https://jellyfin.org",
         "icon": "https://jellyfin.org/docs/images/header-icon.svg",
@@ -27,7 +27,7 @@
                 },
                 "ports": {
                     "8096": {
-                        "description": "Jellyfin WebUI port. Suggested default: 8096",
+                        "description": "Jellyfin WebUI port. This MUST be 8096 due to current networking limitations",
                         "host_default": 8096,
                         "label": "WebUI port",
                         "protocol": "tcp",
