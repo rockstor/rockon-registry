@@ -13,7 +13,7 @@
             ],
             "ports":{
                "9000":{
-                  "description":"WebUI port. Suggested default: 9000",
+                  "description":"WebUI port. This MUST be 9000 due to current networking limitations.",
                   "host_default":9000,
                   "label":"WebUI port",
                   "protocol":"tcp",
