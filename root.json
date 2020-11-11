@@ -74,6 +74,7 @@
     "Ubiquiti Unifi linuxserver.io": "unifi-linuxserver.json",
     "Unifi Controller": "unifi.json",
     "uTorrent": "uTorrent.json",
+    "wallabag": "wallabag.json",
     "Watchtower": "watchtower.json",
     "Xeoma Video Surveillance": "xeoma.json",
     "YouTrack official": "youtrack-official.json",
