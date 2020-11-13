@@ -1,23 +1,42 @@
 {
-  "Watchtower": {
-    "website": "https://hub.docker.com/r/v2tec/watchtower/",
-    "version": "1.0",
-    "description": "Watchtower watches your containers and automatically restarts & updates them whenever their image is refreshed.",
-    "containers": {
-      "watchtower": {
-        "image": "v2tec/watchtower",
-        "launch_order": 1,
-        "opts": [
-          [
-            "-v",
-            "/var/run/docker.sock:/var/run/docker.sock"
-          ],
-          [
-            "--privileged",
-            ""
-          ]
-        ]
-      }
-    }
-  }
+	"Watchtower": {
+		"website": "https://containrrr.github.io/watchtower",
+		"version": "2.0",
+		"description": "A process for automating Docker container base image updates.<p>Watchtower uses CRON expressions to schedule update checks (only 6 fields are considered, so no year recurrence). For a handy CRON expression generator see here: <a href='https://www.freeformatter.com/cron-expression-generator-quartz.html#crongenerator' target='_blank'>CRON Generator</a></p><p>Based on official docker image: <a href='https://hub.docker.com/r/containrrr/watchtower' target=_blank'> https://hub.docker.com/r/containrrr/watchtower</a>, available for amd64, arm32v7, arm64v8. </p>",
+		"more_info": "<h4>Tips for CRON expressions</h4><p>Watchtower uses CRON expressions to schedule update checks (only 6 fields are considered, so no year recurrence). For a handy CRON expression generator see here: <a href='https://www.freeformatter.com/cron-expression-generator-quartz.html#crongenerator' target='_blank'>Freeformatter.com: CRON Generator</a></p> <h4>Watchtower Container Labels</h4><p>In order to add labels to the containers to be watched by the Watchtower application (including Watchtower itself, if so desired), stop the corresponding container, and select the 'Add Label' under settings. The new label name must contain the entire flag setting, and should be entered like this:</p><p><code>com.centurylinklabs.watchtower.enable=true</code> if the value for <code>WATCHTOWER_LABEL_ENABLE</code> is set to true or</p><p><code>com.centurylinklabs.watchtower.enable=false</code> if the value is set to false.</p><p>More information can be found here: <a href='https://containrrr.dev/watchtower/container-selection/' target=_blank>Watchtower Container Selection</a></p>",
+		"containers": {
+			"watchtower": {
+				"image": "containrrr/watchtower",
+				"tag": "latest",
+				"launch_order": 1,
+				"opts": [
+					[
+						"-v",
+						"/var/run/docker.sock:/var/run/docker.sock"
+					],
+					[
+						"--privileged",
+						""
+                    ]
+				],
+				"environment": {
+					"WATCHTOWER_LABEL_ENABLE": {
+						"description": "If this flag is set to 'true', containers with a specific label string (see the 'More info' icon) will be updated (you can use the 'Add label' functionality to add labels after installing Rockons). If the flag is set to 'false', containers with the label will be excluded. It is recommended to set it to true during installation. Note: Only running containers will be considered.",
+						"label": "Filter by label enable",
+						"index": 1
+					},
+					"WATCHTOWER_SCHEDULE": {
+						"description": "CRON expression (6 fields) defining when and how often to check for new images.",
+						"label": "Scheduling (CRON format)",
+						"index": 2
+                    },
+                    "WATCHTOWER_CLEANUP": {
+						"description": "Removes old Images after updating. Setting the parameter to 'true' will remove old images, setting it to 'false' will keep old images untouched after the update. Recommended value is 'true' to avoid accumulation of old images, especially on regularly updated containers.",
+						"label": "Remove old images after update",
+						"index": 3
+                    }
+				}
+			}
+		}
+	}
 }
