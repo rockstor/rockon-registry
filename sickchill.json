@@ -23,7 +23,7 @@
 						"label": "Config"
 					},
 					"/tv": {
-						"description": "Choose a share to host shows (also known as parent folder). You can add additional shares later via the RockOn's settings menu. It is important that the owner/group specified later have full access to the share (R/W/E).",
+						"description": "Choose a share to host shows (also known as parent folder). You can add additional shares later via the rock-on's settings menu. It is important that the owner/group specified later have full access to the share (R/W/E).",
 						"label": "TV"
 					}
 				},
