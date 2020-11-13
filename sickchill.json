@@ -42,7 +42,7 @@
 			}
 		},
 		"description": "Automatic Video Library Manager for TV Shows.<p>Uses custom docker image by <a href='https://www.linuxserver.io/' target='_blank'>Linuxserver.io</a>: <a href='https://hub.docker.com/r/linuxserver/sickchill/' target='_blank'>https://hub.docker.com/r/linuxserver/sickchill/</a>, available for amd64, arm32v7 and arm64v8.</p>",
-		"more_info": "Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.<p>Uses custom docker image: <a href='https://hub.docker.com/r/linuxserver/sickchill/' target='_blank'>https://hub.docker.com/r/linuxserver/sickchill/</a>, available for amd64, arm32v7 and arm64v8.",
+		"more_info": "Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.<h4>Help and documentation</h4><p>Help and documentation on how to configure SickChill can be found on the project's <a href='https://github.com/SickChill/SickChill' target='_blank'>Github page</a>. In particular:<ul><li><a href='https://github.com/SickChill/SickChill/wiki' target='_blank'>Wiki pages</a></li><li><a href='https://github.com/SickChill/SickChill/wiki/FAQ%27s-and-Fixes' target='_blank'>Frequently Asked Questions</a></li></ul></p>",
 		"ui": {
 			"slug": ""
 		},
