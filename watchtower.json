@@ -26,7 +26,8 @@
 						"index": 1
 					},
 					"WATCHTOWER_SCHEDULE": {
-						"description": "CRON expression (6 fields) defining when and how often to check for new images.",
+						"description": "CRON expression (6 fields) defining when and how often to check for new images. To run Watchtower every month on the 1st, at noon: 0 0 12 1 * ?",
+
 						"label": "Scheduling (CRON format)",
 						"index": 2
                     },
