@@ -69,7 +69,7 @@
                 }
             }
         },
-        "description": "<p><a href='https://github.com/AnalogJ/scrutiny'>Scrutiny</a> WebUI for smartd S.M.A.R.T monitoring. Scrutiny is a Hard Drive Health Dashboard &amp; Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates from Backblaze.</p><p>Based on custom docker image: <a href='https://hub.docker.com/r/linuxserver/scrutiny'>https://hub.docker.com/r/linuxserver/scrutiny</a>, available for x86-64, arm64, and armhf</p>",
+        "description": "<p>WebUI for smartd S.M.A.R.T monitoring. Scrutiny is a Hard Drive Health Dashboard &amp; Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates from Backblaze.</p><p>Based on custom docker image: <a target='_blank' href='https://hub.docker.com/r/linuxserver/scrutiny'>https://hub.docker.com/r/linuxserver/scrutiny</a>, available for x86-64, arm64, and armhf</p>",
 		"more_info": "<p><strong>Note:</strong>This image is updating the stats only once a day, if you see: '<i>No Devices Detected!</i>' after the installation, just wait 24 hours. <br>This process can also be triggered manually from the shell by executing the following command: <code>docker exec scrutiny scrutiny-collector-metrics run</code><br>More documentation on this can be found here: <a href='https://github.com/AnalogJ/scrutiny#usage'>Scrutiny GitHub</a></p>",
 		"ui": {
 			"https": false,
