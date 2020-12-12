@@ -38,6 +38,7 @@
     "MinIO": "minio.json",
     "Muximux": "Muximux.json",
     "Mylar": "mylar.json",
+    "Netdata (official)": "netdata-official.json",
     "Nextcloud-Official": "nextcloud-official.json",
     "Nginx Proxy Manager": "NginxProxyManager.json",
     "Nginx": "nginx.json",
