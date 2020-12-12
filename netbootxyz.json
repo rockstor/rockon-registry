@@ -1,5 +1,5 @@
 {
-    "netbootxyz": {
+    "Netbootxyz": {
         "containers": {
             "netbootxyz": {
                 "image": "linuxserver/netbootxyz",
@@ -12,37 +12,37 @@
                         "protocol": "tcp",
                         "ui": false
                     },
-		    "69": {
-			"description": "TFTP server port. Suggested port: 69",
-			"host_default": 69,
-			"label": "TFTP server port",
-			"protocol": "udp",
-			"ui": false
-		    },
-		    "3000": {
-			"description": "Web application for customization. Suggested port: 3000",
-			"host_default": 3000,
-			"protocol": "tcp",
-			"label": "Web management port",
-			"ui": true
-		    }
+                    "69": {
+                        "description": "TFTP server port. Suggested port: 69",
+                        "host_default": 69,
+                        "label": "TFTP server port",
+                        "protocol": "udp",
+                        "ui": false
+                    },
+                    "3000": {
+                        "description": "Web application for customization. Suggested port: 3000",
+                        "host_default": 3000,
+                        "protocol": "tcp",
+                        "label": "Web management port",
+                        "ui": true
+                    }
                 },
                 "volumes": {
-		    "/config": {
-                    	"description": "Choose a Share for config storage. Eg: create a Share called netboot-config for this purpose alone.",
-                    	"label": "Config Storage"
+                    "/config": {
+                        "description": "Choose a Share for config storage. Eg: create a Share called netboot-config for this purpose alone.",
+                        "label": "Config Storage"
                     },
-		    "/assets": {
-			"description": "Choose a Share for asset storage. Eg: create a Share called netboot-assets for this purpose alone",
-			"label": "Asset Storage"
-		    }
+                    "/assets": {
+                        "description": "Choose a Share for asset storage. Eg: create a Share called netboot-assets for this purpose alone",
+                        "label": "Asset Storage"
+                    }
                 },
                 "environment": {
                     "PUID": {
-		        "description": "Enter a valid UID to run container as. It must have full permissions to all Shares mapped in the previous step.",
+                        "description": "Enter a valid UID to run container as. It must have full permissions to all Shares mapped in the previous step.",
                         "label": "UID to run as",
                         "index": 1
-		    },
+                    },
                     "PGID": {
                         "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
                         "label": "GID to run as",
@@ -51,12 +51,12 @@
                 }
             }
         },
-        "description": "LinuxServer.io netbootxyz image for creating a iPXE boot server",
+        "description": "LinuxServer.io netbootxyz image for creating a iPXE boot server. <p>Uses custom docker image by <a href='https://www.linuxserver.io/' target='_blank'>Linuxserver.io</a>: <a href='https://hub.docker.com/r/linuxserver/netbootxyz/' target='_blank'>https://hub.docker.com/r/linuxserver/netbootxyz/</a>, available for amd64, arm32v7 and arm64v8.</p>",
         "ui": {
             "slug": ""
         },
         "volume_add_support": false,
-	"website": "https://hub.docker.com/r/linuxserver/netbootxyz",
-	"version": "1.0"
+        "website": "https://netboot.xyz/",
+        "version": "1.0"
     }
 }
