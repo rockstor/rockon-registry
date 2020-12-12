@@ -1,5 +1,5 @@
 {
-    "Netdata": {
+    "Netdata (official)": {
         "containers": {
             "netdata": {
                 "image": "netdata/netdata",
@@ -36,7 +36,7 @@
                 ],
                 "ports": {
                     "19999": {
-                        "description": "port used to access the webUI port",
+                        "description": "Port used to access the webUI port. MUST be 19999.",
                         "host_default": 19999,
                         "label": "webUI port",
                         "ui": true
@@ -44,12 +44,12 @@
                 },
                 "environment": {
                     "PGID": {
-                        "description": "GID of the docker group. Run `grep docker /etc/group | cut -d ':' -f 3` to find it.",
+                        "description": "GID of the 'docker' group. See System - Identity - Groups in Rockstor's UI to find it.",
                         "label": "PGID",
                         "index": 1,
-                        "default":472
+                        "default": 472
                     }
-				}
+                }
             }
         },
         "description": "Netdata is a scalable, distributed, real-time, performance and health monitoring solution for Linux, FreeBSD and MacOS.<p>Out of the box, it collects 1k to 5k metrics per server per second. It is the corresponding of running top, vmstat, iostat, iotop, sar, systemd-cgtop and a dozen more console tools in parallel. netdata is very efficient in this: the daemon needs just 1% to 3% cpu of a single core.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/netdata/netdata' target='_blank'>https://hub.docker.com/r/netdata/netdata</a>, available on x86_64/amd64, and aarch64/arm64.</p>",
@@ -59,6 +59,6 @@
         "ui": {
             "slug": ""
         },
-	    "version": "1.0"
+        "version": "1.0"
     }
 }
