@@ -1,0 +1,54 @@
+{
+    "MinIO": {
+        "description": "MinIO is an S3-compatible object storage server. This rock-on requires Rockstor 3.9.2-39 or later and is compatible with x86_64/amd64 machines only.<p>Based on the official MinIO docker image: <a href='https://hub.docker.com/r/minio/minio' target='_blank'>https://hub.docker.com/r/minio/minio</a>.",
+        "version": "1.0",
+        "website": "https://minio.io",
+        "more_info": "This Rock-on uses the official MinIO Docker image to implement a single MinIO instance with a single object storage share, suitable for use on a private network.  If your connections traverse a network you do not control, consider using a VPN for encryption.",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "volume_add_support": false,
+        "containers": {
+            "MinIO": {
+                "image": "minio/minio",
+                "launch_order": 1,
+                "ports": {
+                    "9000": {
+                        "description": "API and Portal access, default 9000",
+                        "host_default": 9000,
+                        "label": "MinIO API and Portal",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a share for MinIO object storage",
+                        "label": "MinIO Object Storage"
+                    }
+                },
+                "cmd_arguments": [
+                    [
+                        "server",
+                        "/data"
+                    ]
+                ],
+                "environment": {
+                    "MINIO_ACCESS_KEY": {
+                        "description": "MinIO Access Key (admin username), 1 to 128 alphanumeric characters",
+                        "label": "MinIO Access Key"
+                    },
+                    "MINIO_SECRET_KEY": {
+                        "description": "MinIO Secret Key (admin password), 1 to 128 alphanumeric characters",
+                        "label": "MinIO Secret Key"
+                    },
+                    "MINIO_BROWSER": {
+                        "description": "Web Portal admin access, on to enable, off to disable",
+                        "label": "Web Portal Access"
+                    }
+                }
+            }
+        }
+    }
+}

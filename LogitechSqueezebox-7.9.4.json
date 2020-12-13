@@ -1,0 +1,55 @@
+{
+   "Logitech Media Server 7.9.4":{
+      "containers":{
+         "lms_79x":{
+            "image":"doliana/logitech-media-server",
+			"tag":"latest-7.9.4",
+            "launch_order":1,
+            "opts":[
+               [
+                  "--net=host",
+                  ""
+               ]
+            ],
+            "ports":{
+               "9000":{
+                  "description":"WebUI port. This MUST be 9000 due to current networking limitations.",
+                  "host_default":9000,
+                  "label":"WebUI port",
+                  "protocol":"tcp",
+                  "ui":true
+               },
+               "9090":{
+                  "description":"Command Line Interface (used for example by Android app Squeezer). Suggested Default: 9090",
+                  "host_default":9090,
+                  "label":"CLI port",
+                  "protocol":"tcp"
+               },
+               "3483":{
+                  "description":"Control channel for LMS (display, IR, etc.), tcp and udp (SB --> Slimserver discovery and for older SLIMP3 players). Suggested Default: 3483",
+                  "host_default":3483,
+                  "label":"Control Channel"
+               }
+            },
+            "volumes":{
+               "/srv/squeezebox":{
+                  "description":"Choose a Share for LMS configuration. E.g.: create a Share called lms-config for this purpose alone. The share needs to have read/write access to the User corresponding to UID=1000 (check available Rockstor Users under the System Menu)",
+                  "label":"Config Storage"
+               },
+               "/srv/music":{
+                  "description":"Choose a Share for LMS content(your media). E.g.: create a Share called lms-music for this purpose alone.",
+                  "label":"Data Storage"
+               }
+            }
+         }
+      },
+      "description": "Logitech Media Server (aka Squeezebox, slimserver, etc.).<p>Stable version 7.9.4.</p><p>Based on custom docker image: <a href='https://hub.docker.com/r/doliana/logitech-media-server' target='_blank'>https://hub.docker.com/r/doliana/logitech-media-server</a>, available for amd64, arm32v7, and arm64v8</p>",
+      "icon": "https://mysqueezebox.com/static/images/apple-touch-icon.png",
+      "more_info": "Logitech Media Server is a streaming audio server supported by Logitech (formerly Slim Devices), developed in particular to support their Squeezebox range of digital audio receivers. With the help of many plugins, Logitech Media Server can stream not only your local music collection, but content from many music services and internet radio stations to your players. See <a href='https://mysqueezebox.com/' target='_blank'>https://mysqueezebox.com/</a> and <a href='https://github.com/Logitech/slimserver' target='_blank'>https://github.com/Logitech/slimserver</a> for more information.<h4>Note about UI port</h4><p>Due to some current <a href='https://github.com/rockstor/rockstor-core/issues/2209' target='_blank'>limitations in rock-on networking</a>, the web UI port of this rock-on must be set as 9000 and will thus prevent the installation of other rock-ons needing this port. Alternatively, the web UI can be accessed manually at http://rockstor-ip:9000</p>",
+      "website":"https://mysqueezebox.com/",
+      "ui":{
+          "slug":""
+      },
+      "version":"2.0"
+   }
+}
