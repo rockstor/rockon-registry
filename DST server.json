@@ -1,5 +1,5 @@
 {
-    "Don't Starve Together Dedicated Server": {
+    "Dont Starve Together Dedicated Server": {
         "containers": {
             "dts": {
                 "image": "jamesits/dst-server:latest",
@@ -7,7 +7,7 @@
                 "ports": {
                     "12346-12347": {
                          "description": "DST-standard server port",
-                         "host_default": 12347,
+                         "host_default": 12346,12347,
                          "label": "minecraft-bedrock-edition",
                          "protocol": "udp"
                      },
