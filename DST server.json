@@ -7,17 +7,17 @@
                 "ports": {
                     "10999-11000": {
                         "description": "DST-standard server port",
-                        "host_default": 10999-11000,
+                        "host_default": 11000,
                         "label": "minecraft-bedrock-edition",
                         "protocol": "udp"
                         }
                      },
                      "12346-12347": {
                          "description": "DST-standard server port",
-                         "host_default": 12346-12347,
+                         "host_default": 12347,
                          "label": "minecraft-bedrock-edition",
                          "protocol": "udp"
-                     },   
+                     },
                 "volumes": {
                     "/.klei/DoNotStarveTogether:/data": {
                         "description": "Choose a Share for the DST server data, including configuration, mods, etc.",
