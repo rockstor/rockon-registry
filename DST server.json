@@ -17,6 +17,7 @@
                          "host_default": 12346-12347,
                          "label": "minecraft-bedrock-edition",
                          "protocol": "udp"
+                     },   
                 "volumes": {
                     "/.klei/DoNotStarveTogether:/data": {
                         "description": "Choose a Share for the DST server data, including configuration, mods, etc.",
