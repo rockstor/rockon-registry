@@ -5,14 +5,7 @@
                 "image": "jamesits/dst-server:latest",
                 "launch_order": 1,
                 "ports": {
-                    "10999-11000": {
-                        "description": "DST-standard server port",
-                        "host_default": 11000,
-                        "label": "minecraft-bedrock-edition",
-                        "protocol": "udp"
-                        }
-                     },
-                     "12346-12347": {
+                    "12346-12347": {
                          "description": "DST-standard server port",
                          "host_default": 12347,
                          "label": "minecraft-bedrock-edition",
