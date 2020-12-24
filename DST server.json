@@ -11,25 +11,25 @@
                         "label": "Master port",
                         "protocol": "udp"
                         }
-                     },
+                    },
                      "11000": {
                          "description": "Caves",
                          "host_default": 11000,
                          "label": "Caves port",
                          "protocol": "udp"
-                     },
+                    },
                      "12346": {
                          "description": "Steam Conection1",
                          "host_default": 12346,
                          "label": "Steam conect1",
                          "protocol": "udp"
-                     },
+                    },
                      "12347": {
                          "description": "Steam Conection2",
                          "host_default": 12347,
                          "label": "Steam conect2",
                          "protocol": "udp"
-                     },
+                    },
                 "volumes": {
                     "/.klei/DoNotStarveTogether:/data": {
                         "description": "Choose a Share for the DST server data, including configuration, mods, etc.",
