@@ -47,6 +47,7 @@
     "NZBGet": "nzbget.json",
     "NZBHydra": "NZBHydra.json",
     "Ombi": "ombi.json",
+    "Ombi-V4/Dev": "Ombi-V4.json",
     "OpenVPN": "openvpn.json",
     "OwnCloud": "owncloud.json",
     "OwnCloud-Official": "owncloud-official.json",
