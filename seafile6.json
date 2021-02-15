@@ -22,7 +22,7 @@
             }
         },
             "version": "latest",
-        "description": "Secure file sharing and hosting. <p>Based on the official Seafile docker image: <a href='https://hub.docker.com/r/seafileltd/seafile' target='_blank'>https://hub.docker.com/r/seafileltd/seafile</a>.",
+        "description": "<strong>Important:</strong> This rock-on runs an out-of-date Seafile version (v6) and will be removed in the near future. We recommend switching to the Seafile v7+ rock-on instead. See the official <a href='https://manual.seafile.com/docker/6.3%20upgrade%20to%207.0/' target='_blank'>migration guide</a> to convert your shared volume and create an associated MariaDB volume.</p><p>Secure file sharing and hosting, based on the official Seafile docker image: <a href='https://hub.docker.com/r/seafileltd/seafile' target='_blank'>https://hub.docker.com/r/seafileltd/seafile</a>.",
         "icon": "https://avatars2.githubusercontent.com/u/1948782?s=400&v=4",
         "more_info": "<p>Default username for your Seafile UI is<code>me@example.com</code>and password is<code>asecret</code></p>",
         "ui": {
@@ -31,4 +31,3 @@
         "website": "https://www.seafile.com/"
     }
 }
-
