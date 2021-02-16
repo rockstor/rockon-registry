@@ -18,7 +18,7 @@
                         "label": "Config Storage"
                     },
                     "/plex-config": {
-                        "description": "Choose a Share that holds your Plex log files. This is typically the share that was selected to hold the plex configuration.This will allow Tautulli to read the Plex log files.",
+                        "description": "Select the Share holding your Plex log files. This is typically the share that was selected to hold the Plex configuration. This will allow Tautulli to read the Plex log files.",
                         "label": "Plex Config"
                     }
                 },
