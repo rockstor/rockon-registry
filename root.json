@@ -69,7 +69,6 @@
     "Sonarr": "sonarr.json",
     "Subsonic": "subsonic.json",
     "Syncthing": "syncthing.json",
-    "Tautulli":  "tautulli.json",
     "TeamSpeak3": "teamspeak3.json",
     "TFTP server": "tftpserver.json",
     "Transmission with OpenVPN": "transmission-with-openvpn.json",
