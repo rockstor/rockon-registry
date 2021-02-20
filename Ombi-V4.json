@@ -1,7 +1,7 @@
 {
   "Ombi-V4/Dev": {
     "containers": {
-      "ombi-v4": {
+      "ombi-v4/dev": {
         "image": "linuxserver/ombi",
         "tag": "development",
         "launch_order": 1,
