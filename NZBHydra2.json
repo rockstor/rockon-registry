@@ -5,11 +5,10 @@
                 "image": "linuxserver/nzbhydra2",
                 "launch_order": 1,
                 "ports": {
-                    "5075": {
-                        "description": "NZBHydra2 WebUI port. Suggested default: 5075",
-                        "host_default": 5075,
+                    "5076": {
+                        "description": "NZBHydra2 WebUI port. Suggested default: 5076",
+                        "host_default": 5076,
                         "label": "WebUI port",
-                        "protocol": "tcp",
                         "ui": true
                     }
                 },
@@ -26,12 +25,12 @@
                 "environment": {
                     "PUID": {
                         "description": "Enter a valid UID to run nzbhydra as. It must have full permissions to all Shares mapped in the previous step.",
-                        "label": "UID to run nzbhydra as.",
+                        "label": "UID to run NZBHydra as.",
                         "index": 1
                     },
                     "PGID": {
-                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
-                        "label": "GID to run nzbhydra as.",
+                        "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run NZBHydra as.",
                         "index": 2
                     }
                 }
