@@ -37,7 +37,7 @@
                 }
             }
         },
-        "description": "NZBHydra is a meta search for NZB indexers. <p><strong>Important</strong>The docker image used by this rock-on has been deprecated by its authors and will thus be removed from Rockstor in the near future. We recommend you to use the NZBHydra2 rock-on instead.</p>",
+        "description": "NZBHydra is a meta search for NZB indexers. <p><strong>Important</strong> The docker image used by this rock-on has been deprecated by its authors and will thus be removed from Rockstor in the near future. We recommend you to use the NZBHydra2 rock-on instead.</p>",
         "ui": {
             "slug": ""
         },
