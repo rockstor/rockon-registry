@@ -55,7 +55,7 @@
                         "index": 2
                     },
                     "AUTOMATED_CONVERSION_PRESET": {
-                        "description": "Optional: HandBrake preset used by the automatic video converter. Identification of a preset must follow the format <CATEGORY>/<PRESET NAME>. See the <a href='https://github.com/jlesage/docker-handbrake#automatic-video-conversion'>Automatic Video Conversion</a> section for more details",
+                        "description": "HandBrake preset used by the automatic video converter. All presets must follow the format <CATEGORY>/<PRESET NAME>. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. Defaults to General/Very Fast 1080p30",
                         "label": "Automated Conversion Preset",
                         "index": 3
                     },
