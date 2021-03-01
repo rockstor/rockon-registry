@@ -31,7 +31,7 @@
                         "index": 2
                     },
                     "TZ": {
-                        "description": "Enter timezone e.g Europe/London these can be found ...",
+                        "description": "Enter timezone e.g Europe/London (see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).",
                         "label": "Timezone to run minetest server in.",
                         "index": 3
                     }
