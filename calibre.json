@@ -1,6 +1,6 @@
 {
-  "Calibre Server": {
-    "description": "Calibre is an open source e-Book management program.<p>The Calibre server allows the management of e-Books across devices.</p>",
+  "Calibre": {
+    "description": "Calibre is an open source e-Book management program.<p>Calibre allows for the management of e-Books and syncing across devices using the content server.</p><p>For more information visit<a href='https://calibre-ebook.com/'>Calibre's Official Site.</a></p>",
     "more_info": "",
     "version": "0.0.1",
     "website": "https://calibre-ebook.com/",
@@ -9,7 +9,7 @@
     },
     "volume_add_support": true,
     "containers": {
-      "calibreserver": {
+      "calibre": {
         "image": "linuxserver/calibre",
         "launch_order": 1,
         "opts": [
@@ -27,9 +27,9 @@
             "ui": true
           },
           "8081": {
-            "description": "Calibre HTTPS port?",
+            "description": "Calibre Server port.",
             "host_default": 8081,
-            "label": "HTTPS port",
+            "label": "Server Port",
             "protocol": "tcp",
             "ui": true
           }
@@ -39,20 +39,20 @@
             "description": "Choose a Share for the Calibre configuration data. Eg: create a Share called calibre-config.",
             "label": "Config Storage"
           },
-          "/media": {
-            "description": "Choose a Share with e-Book content. Eg: create a Share called ebook-media for this purpose alone or use an existing share. It will be available as /media. You can also add $,
-            "label": "Media Storage"
+          "/books": {
+            "description": "Choose a Share with e-Book content. Eg: create a Share called ebook-media for this purpose alone or use an existing share. It will be available as /books. You can also add more shares later.",
+            "label": "e-Book Storage"
           }
         },
         "environment": {
           "PUID": {
-            "description": "Enter a valid UID of an existing user with permission to media shares to run Calibre as.",
+            "description": "Enter a valid UID of an existing user with permission to e-Book shares to run Calibre as.",
             "label": "UID",
             "index": 1,
             "default": 1000
           },
           "PGID": {
-            "description": "Enter a valid GID of an existing user with permission to media shares to run Calibre as.",
+            "description": "Enter a valid GID of an existing user with permission to e-Book shares to run Calibre as.",
             "label": "GID",
             "index": 2,
             "default": 1000
