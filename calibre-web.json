@@ -1,0 +1,59 @@
+{
+  "Calibre Web": {
+    "description": "Calibre Web is an open source web interface for the e-Book management program Calibre.<p>The Web interface allows user logins and the management of e-Books through a clean web interface.</p></br>During initial configuration, use the directory '/config/Calibre Library' as your database location.",
+    "more_info": "",
+    "version": "0.0.1",
+    "website": "https://github.com/janeczku/calibre-web",
+    "ui": {
+      "slug": ""
+    },
+    "volume_add_support": true,
+    "containers": {
+      "calibreWeb": {
+        "image": "linuxserver/calibre-web",
+        "launch_order": 1,
+        "opts": [
+          [
+            "-v",
+            "/config",
+            "-v",
+            "/books"
+          ]
+        ],
+        "ports": {
+          "8083": {
+            "description": "Calibre-web UI port.",
+            "host_default": 8083,
+            "label": "WebUI port",
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/config": {
+            "description": "Choose the Share where you store Calibre configuration data. Eg: The Share called calibre-config.",
+            "label": "Config Storage"
+          },
+          "/books": {
+            "description": "Choose the Share with e-Book content. Eg: Select the share where Calibre reads ebooks from. It will be available as /media. You can also add more shares later.",
+            "label": "Media Storage"
+          }
+        },
+        "environment": {
+          "PUID": {
+            "description": "Enter a valid UID of an existing user with permission to media shares to run Calibre as.",
+            "label": "UID",
+            "index": 1,
+            "default": 1000
+          },
+          "PGID": {
+            "description": "Enter a valid GID of an existing user with permission to media shares to run Calibre as.",
+            "label": "GID",
+            "index": 2,
+            "default": 1000
+          }
+        }
+      }
+    }
+  }
+}
