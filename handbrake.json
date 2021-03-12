@@ -53,13 +53,23 @@
                         "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
                         "label": "GID to run handbrake as.",
                         "index": 2
+                    },
+                    "AUTOMATED_CONVERSION_PRESET": {
+                        "description": "HandBrake preset used by the automatic video converter. All presets must follow the format <CATEGORY>/<PRESET NAME>. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. Defaults to General/Very Fast 1080p30",
+                        "label": "Automated Conversion Preset",
+                        "index": 3
+                    },
+                    "AUTOMATED_CONVERSION_FORMAT": {
+                        "description": "Video container format used by the automatic video converter for output files. This is typically the video filename extension. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. Defaults to mp4",
+                        "label": "Automated Conversion Format",
+                        "index": 4
                     }
                 }
             }
         },
-        "description": "Handbrake for converting video from nearly any format to a selection of modern, widely supported codecs. <p>This docker image makes HandBrake accessible through your browser (<em>HandBrake UI</em> button) or VNC, see <em>more info</em> for details.</p><p>Based on the jlesage/handbrake docker image: <a href='https://hub.docker.com/r/jlesage/handbrake' target='_blank'>https://hub.docker.com/r/jlesage/handbrake</a>.</p>",
+        "description": "Handbrake for converting video from nearly any format to a selection of modern, widely supported codecs. This rock-on is compatible with x86_64/amd64 machines only. <p>This docker image makes HandBrake accessible through your browser (<em>HandBrake UI</em> button) or VNC, see <em>more info</em> for details.</p><p>Based on the jlesage/handbrake docker image: <a href='https://hub.docker.com/r/jlesage/handbrake' target='_blank'>https://hub.docker.com/r/jlesage/handbrake</a>.</p>",
         "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HandBrake_Icon.png",
-        "more_info": "<p>Additional volumes can be added to provide extra watch folders (see <a href='http://rockstor.com/docs/docker-based-rock-ons/overview.html#add-storage' target='_blank'>Rockstor's documentation</a>).</p><p>Documentation on how to access using VNC and adding security can be found here: <a href='https://github.com/jlesage/docker-handbrake#accessing-the-gui' target='_blank'>jlesage/docker-handbrake</a>.</p>",
+        "more_info": "<p>The full documentation for this rock-on can be found at <a href='https://github.com/jlesage/docker-handbrake' target='_blank'>https://github.com/jlesage/docker-handbrake</a>.</p><p>Additional volumes can be added to provide extra watch folders (see <a href='http://rockstor.com/docs/docker-based-rock-ons/overview.html#add-storage' target='_blank'>Rockstor's documentation</a>).</p><p>Documentation on how to access using VNC and adding security can be found here: <a href='https://github.com/jlesage/docker-handbrake#accessing-the-gui' target='_blank'>jlesage/docker-handbrake</a>.</p><p>Documentation on the automatic conversion presets can be found here: <a href='https://github.com/jlesage/docker-handbrake#automatic-video-conversion' target='_blank'>https://github.com/jlesage/docker-handbrake#automatic-video-conversion</a>.</p>",
         "ui": {
             "slug": ""
         },
