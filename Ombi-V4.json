@@ -35,7 +35,7 @@
         }
       }
     },
-    "description": "Ombi allows you to host your own Plex Request and user management system.  This Rockon loads the newer V4 branch of Ombi which is still in development.",
+    "description": "Ombi allows you to host your own Plex Request and user management system.  This Rockon loads the newer V4 branch of Ombi which is still in development.<p>For more information visit <a href='https://ombi.io/' target='_blank' rel='noopener noreferrer'>Ombi's Official Site. </a> and <a href='https://hub.docker.com/r/linuxserver/ombi/' target='_blank' rel='noopener noreferrer'>the Docker container page.</a></p>",
     "ui": {
       "slug": ""
     },
