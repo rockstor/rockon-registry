@@ -1,6 +1,6 @@
 {
   "Calibre Web": {
-    "description": "Calibre-Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.<p>The Web interface allows user logins and the management and download of e-Books through a clean web interface.</p><p>For more information please see <a href='https://github.com/janeczku/calibre-web'>the oficial Github page</a> and <a href='https://hub.docker.com/r/linuxserver/calibre-web'>the Docker container page.</a></p></br>If linking to the Calibre Rockon use the directory '/config/Calibre Library' as your database location during configuration in the WebUI.",
+    "description": "Calibre-Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.<p>The Web interface allows user logins and the management and download of e-Books through a clean web interface.</p><p>For more information please see <a href='https://github.com/janeczku/calibre-web' target='_blank' rel='noopener noreferrer'>the oficial Github page</a> and <a href='https://hub.docker.com/r/linuxserver/calibre-web' target='_blank' rel='noopener noreferrer'>the Docker container page.</a></p></br>If linking to the Calibre Rockon use the directory '/config/Calibre Library' as your database location during configuration in the WebUI.",
     "more_info": "",
     "version": "0.0.1",
     "website": "https://github.com/janeczku/calibre-web",
