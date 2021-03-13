@@ -1,6 +1,6 @@
 {
   "Calibre Web": {
-    "description": "Calibre Web is an open source web interface for the e-Book management program Calibre.<p>The Web interface allows user logins and the management of e-Books through a clean web interface.</p></br>During initial configuration, use the directory '/config/Calibre Library' as your database location.",
+    "description": "Calibre-Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.<p>The Web interface allows user logins and the management and download of e-Books through a clean web interface.</p><p>For more information please see <a href='https://github.com/janeczku/calibre-web'>the oficial Github page</a> and <a href='https://hub.docker.com/r/linuxserver/calibre-web'>the Docker container page.</a></p></br>If linking to the Calibre Rockon use the directory '/config/Calibre Library' as your database location during configuration.",
     "more_info": "",
     "version": "0.0.1",
     "website": "https://github.com/janeczku/calibre-web",
@@ -31,11 +31,11 @@
         },
         "volumes": {
           "/config": {
-            "description": "Choose the Share where you store Calibre configuration data. Eg: The Share called calibre-config.",
+            "description": "Choose the Share where you store Calibre configuration data. Eg: The Share called calibre-config.<p>If using the Calibre rockon, this must be the configuration share of Calibre.  When configuring Calibre-Web, use '/config/Calibre Library' as the database location.</p>",
             "label": "Config Storage"
           },
           "/books": {
-            "description": "Choose the Share with e-Book content. Eg: Select the share where Calibre reads ebooks from. It will be available as /media. You can also add more shares later.",
+            "description": "Choose the Share with e-Book content. Eg: Select the share where Calibre reads ebooks from. It will be available as /media. You can also add more shares later.<p>If using the Calibre Rockon, you must select the same shares that were used when configuring that rockon or the books will not be accessible.</p>",
             "label": "Media Storage"
           }
         },
