@@ -22,6 +22,7 @@
     "Gollum": "gollum.json",
     "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
     "HandBrake": "handbrake.json",
+	"HDHomeRun DVR Engine": "hdhomerun_dvr.json"
     "Headphones": "headphones.json",
     "Home Assistant": "home-assistant.json",
     "HTTP to HTTPS redirect": "redirect-http-to-https.json",
