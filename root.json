@@ -18,6 +18,7 @@
     "FreshRSS": "FreshRSS.json",
     "Ghost": "ghost.json",
     "GitLab CE": "gitlab-rc.json",
+    "Gmvault": "gmvault.json",
     "Gogs": "gogs.json",
     "Gollum": "gollum.json",
     "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
