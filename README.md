@@ -25,7 +25,7 @@ If you like to share your app with rest of the Rockstor community, open a pull r
 1. One Rock-On per pull request please. If you are working on multiple apps, separate them out. It will make testing and merging a lot more manageable.
 
 2. Add a comment to your pull request detailing how you've tested it out. More details the better as it will help ensure quality and benefit the whole community!
-3. We are trying to offer Rock-ons that are based on a multi-architecture docker image, i.e., it is available for the amd64 (Intel/AMD CPUs), armv7 and arm64 (e.g., Raspberry Pi devices). While that might not always be possible, depending on the app you're interested, please keep it in mind and see whether you can select a docker image that has a multi-architecture manifest. When submitting, please add the supported architectures to the description (take a look at some of the more recent Rock-on submissions).
+3. We are trying to offer Rock-ons that are based on a multi-architecture docker image, i.e., it is available for the amd64 (Intel/AMD CPUs), armv7 and arm64 (ARM-based devices). While that might not always be possible, depending on the app you're interested, please keep it in mind and see whether you can select a docker image that has a multi-architecture manifest. When submitting, please add the supported architectures to the description (take a look at some of the more recent Rock-on submissions).
 
 ## Adding vs. updating a Rock-on you want to submit to the repository
 While there are no hard and fast rules, you can follow these guidelines to decide whether it is better to update an existing rockon or submit a new one that contains substantial changes:
