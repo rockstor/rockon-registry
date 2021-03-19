@@ -8,7 +8,7 @@
 			"slug": ""
 		},
 		"containers": {
-			"lms8": {
+			"lms_latest": {
 				"image": "doliana/logitech-media-server",
 				"tag": "latest",
 				"launch_order": 1,
