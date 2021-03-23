@@ -4,6 +4,12 @@
 			"nginx-proxy": {
 				"image": "jlesage/nginx-proxy-manager",
 				"launch_order": 1,
+				"opts": [
+					[
+						"-e",
+						"DISABLE_IPV6=true"
+					]
+				],
 				"ports": {
 					"8181": {
 						"description": "Admin WebUI port",
