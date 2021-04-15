@@ -31,6 +31,7 @@ If you like to share your app with rest of the Rockstor community, open a pull r
 ## Adding vs. updating a Rock-on you want to submit to the repository
 
 While there are no hard and fast rules, you can follow these guidelines to decide whether it is better to update an existing Rock-on or submit a new one that contains substantial changes:
+
 1. If no Rock-on exists for your app already, create a new one. The obvious choice.
 2. Create a new Rock-on if one already exists for this project, but the new one will use a different docker image. E.g., an existing Rock-on uses an image from linuxserver.io, while the one you are interested in submitting uses an image created by the owner of the project. You can subsequently submit a proposal to deprecate the existing Rock-on. Reasons for that could be that the underlying docker container has not been maintained in a long time, or the new Rockon will have the same or more functionality and is more popular with the community.
 3. Update the existing Rock-on if the changes do not include the use of a different image. E.g., the Handbrake Rock-on was expanded with a few useful user parameters over time, but continued to use the same underlying docker image. Here it made more sense to update the existing Rock-on instead of submitting a new version.
