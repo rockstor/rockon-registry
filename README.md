@@ -1,7 +1,7 @@
 # rockon-registry
 
-This repository consists of Rock-on(Docker based apps) configuration profiles
-formatted in JSON files. The Rock-On framework of Rockstor parses a well
+This repository consists of Rock-on (Docker based apps) configuration profiles
+formatted in JSON files. The Rock-on framework of Rockstor parses a well
 formatted profiles and provides a generic management and workflow such as
 install, uninstall, update, start and stop.
 
@@ -14,15 +14,15 @@ Look at any <name>.json file in this repository. A simpler example is
 
 If you are familiar with Docker and know how to run apps by hand, you can create a Rock-on for the same with a little bit of craft. There are three broad steps.
 
-1. Configure the Rock-On service on your Rockstor system. Follow this [doc](http://rockstor.com/docs/docker-based-rock-ons/overview.html).
+1. Configure the Rock-on service on your Rockstor system. Follow this [doc](http://rockstor.com/docs/docker-based-rock-ons/overview.html).
 
 2. Create your Rock-on profile file, [app].json following the clues in this readme.
 
-3. Upload the file to /opt/rockstor/rockons-metastore/[app].json. Hit update in the Web-UI and install your brand new Rock-On!
+3. Upload the file to /opt/rockstor/rockons-metastore/[app].json. Hit update in the Web-UI and install your brand new Rock-on!
 
 If you like to share your app with rest of the Rockstor community, open a pull request in this repository. Please follow these guidelines when opening a pull request.
 
-1. One Rock-On per pull request please. If you are working on multiple apps, separate them out. It will make testing and merging a lot more manageable.
+1. One Rock-on per pull request please. If you are working on multiple apps, separate them out. It will make testing and merging a lot more manageable.
 
 2. Add a comment to your pull request detailing how you've tested it out. More details the better as it will help ensure quality and benefit the whole community!
 
@@ -93,8 +93,8 @@ it's a big mass of JSON with nested objects, arrays and values.
 ### Top level structure
 ```
 {
-    "<Rock-On name. eg: LSIO-Plex>": {
-      "description": "<description of the Rock-On. Eg: Plex brought to you by Linuxserver.io>",
+    "<Rock-on name. eg: LSIO-Plex>": {
+      "description": "<description of the Rock-on. Eg: Plex brought to you by Linuxserver.io>",
       "version": "<arbitrary version string>",
       "website": "<Underlying app website>",
       (optional)"icon": "<link to icon, if any>",
