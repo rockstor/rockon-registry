@@ -1,14 +1,14 @@
 # rockon-registry
 
 This repository consists of Rock-on (Docker based apps) configuration profiles
-formatted in JSON files. The Rock-on framework of Rockstor parses a well
-formatted profiles and provides a generic management and workflow such as
+formatted as JSON files. The Rock-on framework of Rockstor parses a well
+formatted profile and provides a generic management and workflow such as
 install, uninstall, update, start and stop.
 
 ## Can You Show Me an Example??
 
 Look at any <name>.json file in this repository. A simpler example is
-[syncthing.json](https://github.com/rockstor/rockon-registry/blob/master/syncthing.json). The structure is intuitive(though cumbersome) and with the help of examples and below description, you can add your own apps with some effort.
+[syncthing.json](https://github.com/rockstor/rockon-registry/blob/master/syncthing.json). The structure is intuitive (though cumbersome) and with the help of examples and below description, you can add your own apps with some effort.
 
 ## How Can I Add My Own App?
 
@@ -73,13 +73,13 @@ Checkout a new/separate branch for your Rock-on
 git checkout -b rockon_name
 ```
 
-Add and commit your rockon to git. Say you are working on Syncthing Rock-on and have the syncthing.json tested and ready to go. First copy the file over to your repo. Next,
+Add and commit your Rock-on to git. Say you are working on Syncthing Rock-on and have the syncthing.json tested and ready to go. First copy the file over to your repo. Next,
 ```
 git add syncthing.json
 git commit -m 'add synctthing rock-on'
 ```
 
-Push your rockon to github. <branch_name> is from two steps ago.
+Push your Rock-on to github. <branch_name> is from two steps ago.
 ```
 git push origin <branch_name>
 ```
