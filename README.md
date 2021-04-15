@@ -5,12 +5,12 @@ formatted in JSON files. The Rock-on framework of Rockstor parses a well
 formatted profiles and provides a generic management and workflow such as
 install, uninstall, update, start and stop.
 
-## Can you show me an example?
+## Can You Show Me an Example??
 
 Look at any <name>.json file in this repository. A simpler example is
 [syncthing.json](https://github.com/rockstor/rockon-registry/blob/master/syncthing.json). The structure is intuitive(though cumbersome) and with the help of examples and below description, you can add your own apps with some effort.
 
-## How can I add my own app?
+## How Can I Add My Own App?
 
 If you are familiar with Docker and know how to run apps by hand, you can create a Rock-on for the same with a little bit of craft. There are three broad steps.
 
@@ -28,7 +28,7 @@ If you like to share your app with rest of the Rockstor community, open a pull r
 
 3. We are trying to offer Rock-ons that are based on a multi-architecture docker image, _i.e._, it is available for the amd64 (Intel/AMD CPUs), armv7 and arm64 (ARM-based devices). While that might not always be possible, depending on the app in which you're interested, please keep that in mind and see whether you can select a docker image that has a multi-architecture manifest. When submitting, please add the supported architectures to the description (take a look at some of the more recent Rock-on submissions).
 
-## Adding vs. updating a Rock-on you want to submit to the repository
+## Adding vs. Updating a Rock-on You Want to Submit to the Repository
 
 While there are no hard and fast rules, you can follow these guidelines to decide whether it is better to update an existing Rock-on or submit a new one that contains substantial changes:
 
@@ -38,7 +38,7 @@ While there are no hard and fast rules, you can follow these guidelines to decid
 
 3. Update the existing Rock-on if the changes do not include the use of a different image. E.g., the Handbrake Rock-on was expanded with a few useful user parameters over time, but continued to use the same underlying docker image. Here it made more sense to update the existing Rock-on instead of submitting a new version.
 
-## One time setup before opening pull requests.
+## One Time Setup Before Opening Pull Requests
 
 Go to [rockon-registry repo](https://github.com/rockstor/rockon-registry) and click on the <b>Fork</b> button. This will fork the repository into your profile which serves as your private git remote called origin. The next few git steps are demonstrated on a Linux terminal. 
 
@@ -59,7 +59,7 @@ git remote add upstream https://github.com/rockstor/rockon-registry.git
 ```
 Above 4 steps help you setup your local environment. If you are familiar with git and use an IDE like Eclipse, you can achieve the same outcome in a different way. Here, we listed the simple terminal way of setting it up.
 
-## Steps to Contribute a Rock-on with a pull request
+## Steps to Contribute a Rock-on with a Pull Request
 
 Rebase your master branch before making your own changes.
 ```
@@ -86,11 +86,11 @@ git push origin <branch_name>
 
 Now go to github and open a pull request. Thanks!
 
-## What is the structure of a Rock-on profile file?
+## What Is the Structure of a Rock-on Profile File?
 
 it's a big mass of JSON with nested objects, arrays and values.
 
-### Top level structure
+### Top Level Structure
 ```
 {
     "<Rock-on name. eg: LSIO-Plex>": {
@@ -111,7 +111,7 @@ it's a big mass of JSON with nested objects, arrays and values.
     }
 }
 ``` 
-### Structure of a container object
+### Structure of a Container Object
 
 Each container object is key'd by it's name and nested within "containers" of the top level structure above. A typical container object has the following structure
 
@@ -143,7 +143,7 @@ Each container object is key'd by it's name and nested within "containers" of th
 
 As it is evident from above, a container object has nested objects for port and volume mappings, container options, command arguments, and environment variables. These are described below.
 
-### Port object
+### Port Object
 
 ```
 {
@@ -156,7 +156,7 @@ As it is evident from above, a container object has nested objects for port and 
 ```
 Note that protocol is optional and if it's not present, both tcp and udp ports are mapped simultaneously. So if you wish to allow both tcp and udp, just don't specify protocol in the Port object.
 
-### Volume object
+### Volume Object
 
 ```
 {
@@ -166,7 +166,7 @@ Note that protocol is optional and if it's not present, both tcp and udp ports a
 }
 ```
 
-### Options object
+### Options Object
 
 An options object is a list of exactly two elements. (This needs to be improved or deprecated in favor of more specific design.)
 
@@ -182,7 +182,7 @@ Note that the opts field is a 2-d array, so the complete line for the above exam
 "opts": [ ["--net", "host"] ],
 ```
 
-### Command arguments object
+### Command Arguments Object
 
 A command arguments object is a list of exactly two elements detailing specific arguments to be passed onto the `docker run` command. As these arguments will simply be appended to the `docker run` command, they need to follow the same syntax and order. For instance, 
 
@@ -198,7 +198,7 @@ Note that, as for the options object, the cmd_arguments field is a 2-d array, so
 "cmd_arguments": [ ["argument1", "argument2="text2"] ],
 ```
 
-### Environment object
+### Environment Object
 
 ```
 {
@@ -209,7 +209,7 @@ Note that, as for the options object, the cmd_arguments field is a 2-d array, so
 ```
 
 
-### Devices object
+### Devices Object
 
 This optional object allows to pass a specific device to the Rock-on, and similarly to the Environment object, must have a "description" and "label".  
 ```
