@@ -86,7 +86,7 @@ git push origin <branch_name>
 
 Now go to github and open a pull request. Thanks!
 
-## What is the structure of a Rock-On profile file?
+## What is the structure of a Rock-on profile file?
 
 it's a big mass of JSON with nested objects, arrays and values.
 
