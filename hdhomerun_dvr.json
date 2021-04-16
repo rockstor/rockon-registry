@@ -21,20 +21,15 @@
           }
         },
         "environment": {
-          "VERSION": {
-            "description": "Choose version of plex: Unless you know which version to try, just type latest",
-            "label": "VERSION",
-            "index": 1
-          },
           "PUID": {
             "description": "Enter a valid UID to run the HDHomeRun DVR engine with. It must have full permissions to all Shares mapped in the previous step.",
             "label": "UID",
-            "index": 2
+            "index": 1
           },
           "PGID": {
             "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID",
-            "index": 3
+            "index": 2
           }
         }
       }
