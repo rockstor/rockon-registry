@@ -1,0 +1,51 @@
+{
+    "Jottacloud": {
+        "containers": {
+            "jottacloud": {
+                "image": "jaco1960/jottacloud",
+                "launch_order": 1,
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a share for the jottacloud configuration. NOTE: you can add shares for backup later",
+                        "label": "Config"
+                    }
+	    	},
+                "environment": {
+					"JOTTA_USERNAME": {
+		                    "description": "Enter the username to login to jottacloud.",
+                        "label": "Jottacloud username",
+                        "index": 1
+		                },
+					"JOTTA_PASSWORD": {
+		                    "description": "Enter the password to login to jottacloud.",
+                        "label": "Jottacloud password",
+                        "index": 2
+		                },
+					"JOTTA_DEVICE": {
+		                    "description": "Enter the devicename under which the backup are stred in Jottacloud",
+                        "label": "Jottacloud device name",
+                        "index": 3
+		                },
+                    "PUID": {
+		                    "description": "Enter a valid UID to run jottacloud. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID",
+                        "index": 4
+		                },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID",
+                        "index": 5
+                    }
+                }
+            }
+        },
+        "description": "Backup your Rockstor volumes to <a href='https://www.jottacloud.com/'>Jottacloud</a> using the <a href='https://docs.jottacloud.com/jottacloud-command-line-tool'>jotta-cli command line tool</a>.<br>You can add multiple Rockstor volumes. See the detailed information panel for instructions.<br><br>Jottacloud is a Norwegion service providing storage and backup services. Jottacloud unlimited subscription makes an interesting backup option for Rockstor.",
+        "more_info": "<H3>Adding your backup folders.</H3><br>The /backup directory is the default Jotta backup target. To add Rockstor volumes for backup, follow below steps:<ul><li>Stop the Jottacloud Rock-on</li><li>Open the Jottacloud configuration options using the 'wrench' icon</li><li>Click the 'Add Storage' button</li><li>Select a volume to backup</li><li>Enter a path for your volume prepended with <kbd>/backup/</kbd> as the Rock-on directory, e.g. if you have a volume <em>MyStorage</em> enter <kbd>/backup/MyStorage</kbd></li><li>Restart the rock-on</li></ul>To add more volumes repeat this procedure<br><br>You can exclude files and folders from the backup by editing the jotta-cli <kbd>.ignore</kbd> file in the configuration volume. For more information on how to use this file and other options you can set in the <kbd>jottacloud.json</kbd> preferences file, see <a href='https://docs.jottacloud.com/jottacloud-command-line-tool'>jotta-cli command line tool</a>",
+        "ui": {
+            "slug": "https://www.jottacloud.com"
+        },
+        "volume_add_support": true,
+        "website": "https://cloud.docker.com/repository/docker/jaco1960/jottacloud",
+        "version": "alpha"
+    }
+}
