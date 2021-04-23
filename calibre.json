@@ -1,6 +1,6 @@
 {
   "Calibre": {
-    "description": "Calibre is an open source e-Book management program.<p>Calibre allows for the management of e-Books and syncing across devices using the content server.</p><p>For more information visit <a href='https://calibre-ebook.com/' target='_blank' rel='noopener noreferrer'>Calibre's Official Site</a> and <a href='https://hub.docker.com/r/linuxserver/calibre' target='_blank' rel='noopener noreferrer'>the Docker container page.</a></p>",
+    "description": "Calibre is an open source e-Book management program, allowing for the management of e-Books and syncing across devices using the content server. This Rock-On is compatible with x86_64/amd64 machines only.</p><p>For more information visit <a href='https://calibre-ebook.com/' target='_blank' rel='noopener noreferrer'>Calibre's Official Site</a>.</p><p><p>Based on the docker image provided by Linuxserver.io: <a href='https://hub.docker.com/r/linuxserver/calibre' target='_blank' rel='noopener noreferrer'>https://hub.docker.com/r/linuxserver/calibre'</a>.</p>",
     "more_info": "",
     "version": "0.0.1",
     "website": "https://calibre-ebook.com/",
