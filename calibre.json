@@ -1,0 +1,58 @@
+{
+  "Calibre": {
+    "description": "Calibre is an open source e-Book management program, allowing for the management of e-Books and syncing across devices using the content server. This Rock-On is compatible with x86_64/amd64 machines only.</p><p>For more information visit <a href='https://calibre-ebook.com/' target='_blank' rel='noopener noreferrer'>Calibre's Official Site</a>.</p><p><p>Based on the docker image provided by Linuxserver.io: <a href='https://hub.docker.com/r/linuxserver/calibre' target='_blank' rel='noopener noreferrer'>https://hub.docker.com/r/linuxserver/calibre'</a>.</p>",
+    "more_info": "",
+    "version": "0.0.1",
+    "website": "https://calibre-ebook.com/",
+    "ui": {
+      "slug": ""
+    },
+    "volume_add_support": true,
+    "containers": {
+      "calibre": {
+        "image": "linuxserver/calibre",
+        "launch_order": 1,
+        "ports": {
+          "8080": {
+            "description": "Calibre WebUI port.",
+            "host_default": 8080,
+            "label": "WebUI port",
+            "protocol": "tcp",
+            "ui": true
+          },
+          "8081": {
+            "description": "Calibre Server port.",
+            "host_default": 8081,
+            "label": "Server Port",
+            "protocol": "tcp",
+            "ui": false
+          }
+        },
+        "volumes": {
+          "/config": {
+            "description": "Choose a Share for the Calibre configuration data. Eg: create a Share called calibre-config.",
+            "label": "Config Storage"
+          },
+          "/books": {
+            "description": "Choose a Share with e-Book content. Eg: create a Share called ebook-media for this purpose alone or use an existing share. It will be available as /books. You can also add more shares later.",
+            "label": "e-Book Storage"
+          }
+        },
+        "environment": {
+          "PUID": {
+            "description": "Enter a valid UID of an existing user with permission to e-Book shares to run Calibre as.",
+            "label": "UID",
+            "index": 1,
+            "default": 1000
+          },
+          "PGID": {
+            "description": "Enter a valid GID of an existing user with permission to e-Book shares to run Calibre as.",
+            "label": "GID",
+            "index": 2,
+            "default": 100
+          }
+        }
+      }
+    }
+  }
+}
