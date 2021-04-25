@@ -50,7 +50,7 @@
             "description": "Enter a valid GID of an existing user with permission to media shares to run Calibre-web as.",
             "label": "GID",
             "index": 2,
-            "default": 1000
+            "default": 100
           }
         }
       }
