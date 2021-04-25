@@ -12,14 +12,6 @@
       "calibreWeb": {
         "image": "linuxserver/calibre-web",
         "launch_order": 1,
-        "opts": [
-          [
-            "-v",
-            "/config",
-            "-v",
-            "/books"
-          ]
-        ],
         "ports": {
           "8083": {
             "description": "Calibre-web UI port.",
