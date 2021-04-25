@@ -41,7 +41,7 @@
         },
         "environment": {
           "PUID": {
-            "description": "Enter a valid UID of an existing user with permission to media shares to run Calibre as.",
+            "description": "Enter a valid UID of an existing user with permission to media shares to run Calibre-web as.",
             "label": "UID",
             "index": 1,
             "default": 1000
