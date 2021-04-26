@@ -27,7 +27,7 @@
             "label": "Config Storage"
           },
           "/books": {
-            "description": "Choose the Share with e-Book content. Eg: Select the share where Calibre reads ebooks from. It will be available as /media. You can also add more shares later.<p>If using the Calibre Rockon, you must select the same shares that were used when configuring that rockon or the books will not be accessible.</p>",
+            "description": "Choose the Share with e-Book content. If using the Calibre Rock-On, you must select the same share that was used for its media storage.  It will be linked under /media.",
             "label": "Media Storage"
           }
         },
