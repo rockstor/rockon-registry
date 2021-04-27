@@ -1,7 +1,7 @@
 {
   "Calibre Web": {
     "description": "Calibre-Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.<p><strong><em>Note:</em></strong> if using the Calibre Rock-On as database, select the same share used as Media Storage as for the Calibre Rock-On.</p><p>For more information please see <a href='https://github.com/janeczku/calibre-web' target='_blank' rel='noopener noreferrer'>the official Github page</a>. Based on the image provided by Linuxserver.io: <a href='https://hub.docker.com/r/linuxserver/calibre-web' target='_blank' rel='noopener noreferrer'>https://hub.docker.com/r/linuxserver/calibre-web</a>, available for x86-64/amd64, armhf/arm32v7, and arm64/arm64v8.</p>",
-    "more_info": "",
+    "more_info": "<h4>Using Calibre-web in combination with the Calibre Rock-On</h4><p>Calibre-web needs access to your E-books library and Calibre database file used by the Calibre Rock-On. To do so, during the Calibre-web Rock-On installation wizard, make sure to choose the same shares used for media and Calibre config for <em>Media Storage</em> and <em>Config Storage</em> as the ones chosen for the Calibre Rock-on.</p><h4>First login configuration</h4><p>On the initial Calibre-web setup screen, enter <code>/books</code> as your calibre library location and <code>/config/Calibre Library</code> as the Calibre database location.</p><p>The default admin login username is <code>admin</code>, and its password is <code>admin123</code>.</p>",
     "version": "0.0.1",
     "website": "https://github.com/janeczku/calibre-web",
     "ui": {
