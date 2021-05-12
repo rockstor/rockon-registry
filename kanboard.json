@@ -1,0 +1,46 @@
+{
+  "kanboard": {
+    "containers": {
+      "kanboard": {
+        "image": "kanboard/kanboard",
+        "launch_order": 1,
+        "ports": {
+          "80": {
+            "description": "Kanboard HTTP port. You may need to open it on your firewall if you want access from outside your local network. Suggested default: 8080.",
+            "host_default": 8080,
+            "label": "HTTP port",
+            "procotol": "tcp",
+            "ui": true
+          },
+          "443": {
+            "description": "Kanboard HTTPS port. Suggested default: 4443",
+            "host_default": 4443,
+            "label": "HTTPS port",
+            "protocol": "tcp"
+          }
+        },
+        "volumes": {
+          "/var/www/app/data": {
+            "description": "Choose a Share for Kanboard Application data (sqlite database, attachments).",
+            "label": "Data Storage"
+          },
+          "/var/www/app/plugins": {
+            "description": "Choose a Share for any kanboard plugins.",
+            "label": "Plugin Storage"
+          },
+          "/etc/nginx/ssl": {
+            "description": "Choose a Share for your SSL certificate (if using one).",
+            "label": "SSL Certificate Storage"
+          }
+        }
+      }
+    },
+    "description": "Kanboard is a free and open source Kanban project management software.<p>Based on the official docker image: <a href='https://hub.docker.com/r/kanboard/kanboard' target='_blank'>https://hub.docker.com/r/kanboard/kanboard</a>, available for x86-64, arm64, arm/v7 and arm/v6.",
+    "more_info": "Initial username/password is set up as admin/admin.",
+    "ui": {
+      "slug": ""
+    },
+    "website": "https://kanboard.org/",
+    "version": "1.0"
+  }
+}
