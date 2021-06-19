@@ -1,11 +1,11 @@
 {
     "Gotify": {
-        "description": "a simple server for sending and receiving messages",
+        "description": "A simple server for sending and receiving messages. <p>Based on the official Gotify x86 docker image: <a href='https://hub.docker.com/r/gotify/server' target='_blank'>https://hub.docker.com/r/gotify/server</a>.</p>",
         "ui": {
             "slug": ""
         },
         "website": "https://gotify.net/",
-        "version": "1.0",
+        "version": "latest",
         "containers": {
             "gotify": {
                 "image": "gotify/server",
@@ -34,6 +34,6 @@
                 }
             }
         },
-        "more_info": "<p>Default username is <code>admin</code> and password is <code>admin</code>. For usage instructions visit <a href=\"https://gotify.net/docs/first-login\">the gotify Getting Started guide</a></p>"
+        "more_info": "<p>Default username is <code>admin</code> and password is <code>admin</code>. For usage instructions visit <a href=\"https://gotify.net/docs/first-login\" target=\"_blank\">the gotify Getting Started guide</a></p>"
     }
 }
