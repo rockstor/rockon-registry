@@ -20,6 +20,7 @@
     "GitLab CE": "gitlab-rc.json",
     "Gogs": "gogs.json",
     "Gollum": "gollum.json",
+    "Gotify": "Gotify.json",
     "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
     "HandBrake": "handbrake.json",
     "Headphones": "headphones.json",
