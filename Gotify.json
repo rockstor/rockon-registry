@@ -1,0 +1,39 @@
+{
+    "Gotify": {
+        "description": "a simple server for sending and receiving messages",
+        "ui": {
+            "slug": ""
+        },
+        "website": "https://gotify.net/",
+        "version": "1.0",
+        "containers": {
+            "gotify": {
+                "image": "gotify/server",
+                "launch_order": 1,
+                "ports": {
+                    "80": {
+                        "description": "Gotify server port. Suggested default: 80",
+                        "host_default": 80,
+                        "label": "Server port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/var/gotify/data": {
+                        "description": "Choose a Share for the database, plugins and images for applications.  Eg: create a Share called gotify for this purpose.",
+                        "label": "Database and App Images",
+                        "min_size": 1073741824
+                    }
+                },
+                "environment": {
+                    "TZ": {
+                        "label": "Timezone",
+                        "description": "Example: Europe/Berlin"
+                    }
+                }
+            }
+        },
+        "more_info": "<p>Default username is <code>admin</code> and password is <code>admin</code>. For usage instructions visit <a href=\"https://gotify.net/docs/first-login\">the gotify Getting Started guide</a></p>"
+    }
+}
