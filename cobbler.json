@@ -1,0 +1,59 @@
+{
+  "Cobbler": {
+    "description": "Cobbler, open-source PXE, DHCP, and TFTP server with webui and wide configuration manager and infrastructure as code support.  Docker image uses supervisord, not systemd, so container requires no privileged access to host.",
+    "version": "3.1.2",
+    "website": "https://cobbler.github.io/",
+    "more_info": "<h4>Important locations inside docker image:</h4><p>Config. file:<code>/etc/dhcp/dhcpd.conf</code></p> <p>Data: <code>/data</code></p> <p>Logs: <code>/var/log/cobbler</code></p>",
+    "volume_add_support": true,
+    "containers": {
+      "cobbler": {
+        "image": "shadwell/docker-cobbler-supervisord",
+        "launch_order": 1,
+        "tag": "0.0.3",
+        "opts": [
+          ["--net", "host"]
+        ],
+        "volumes": {
+          "/data": {
+            "description": "Choose a share where the disk images (ISOs) and Cobbler data should be stored.",
+            "label": "Data Storage"
+          }
+        },
+        "environment": {
+          "COBBLER_SERVER_PORT": {
+            "description": "Webui port",
+            "label": "COBBLER_SERVER_PORT"
+          },
+          "COBBLER_SERVER_HOST": {
+            "description": "IP address of this Rockstor NAS",
+            "label": "COBBLER_SERVER_HOST"
+          },
+          "COBBLER_NEXT_SERVER_HOST": {
+            "description": "IP address of TFTP server (usually this Rockstor NAS)",
+            "label": "COBBLER_NEXT_SERVER_HOST"
+          },
+          "COBBLER_SUBNET": {
+            "description": "The subnet of the network where machines will receive DHCP addresses, eg 192.168.0.0 exclude the /# since we define the subnet mask elsewhere",
+            "label": "COBBLER_SUBNET"
+          },
+          "COBBLER_NETMASK": {
+            "description": "The subnet of the network where machines will receive DHCP addresses, eg 255.255.255.0",
+            "label": "COBBLER_NETMASK"
+          },
+          "COBBLER_ROUTERS": {
+            "description": "Router on the network where machines will receive DHCP addresses, eg  192.168.0.1",
+            "label": "COBBLER_ROUTERS"
+          },
+          "COBBLER_NAMESERVERS": {
+            "description": "DNS nameservers, comma delimit a list eg 1.1.1.1,8.8.8.8",
+            "label": "COBBLER_NAMESERVERS"
+          },
+          "COBBLER_DHCP_RANGE": {
+            "description": "First and last IPs in range, space delimited, eg 192.168.0.100 192.168.0.200",
+            "label": "COBBLER_DHCP_RANGE"
+          }
+        }
+      }
+    }
+  }
+}
