@@ -14,7 +14,7 @@
                     }
                 },
                 "volumes": {
-                    "/shared": {
+                    "/data": {
                         "description": "Choose a Share for Node-RED. Eg: create a Share called nodered-data for this purpose alone.",
                         "label": "Storage",
                         "min_size": 1073741824
