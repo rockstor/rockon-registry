@@ -1,0 +1,58 @@
+{
+        "qBittorrent": {
+                "website": "http://www.qbittorrent.org/",
+                "version": "1.0",
+                "description": "Docker container running the qBittorrent client with a WebUI. Advantage over the transmission bittorrent client is that qBittorrent also supports sequential downloading. Uses https://hub.docker.com/r/linuxserver/qbittorrent as the image.",
+                "volume_add_support": true,
+                "containers": {
+                        "qbittorrent": {
+                                "image": "linuxserver/qbittorrent",
+                                "launch_order": 1,
+                                "opts": [
+                                        [
+                                                "-v",
+                                                "/etc/localtime:/etc/localtime:ro"
+                                        ]
+                                ],
+                                "volumes": {
+                                        "/config": {
+                                                "description": "Configuration for qbittorrent",
+                                                "label": "Configuration for qbittorrent"
+                                        },
+                                        "/downloads": {
+                                                "description": "Primary share used for downloads. You can add more after this guide",
+                                                "label": "Data storage"
+                                        }
+                                },
+                                "ports": {
+                                        "8080": {
+                                                "description": "qBittorrent web ui port",
+                                                "host_default": 8080,
+                                                "label": "WebUI port",
+                                                "protocol": "tcp",
+                                                "ui": true
+                                        },
+                                        "6881": {
+                                          "description": "qBittorrent Torrent port",
+                                          "host_default": 6881,
+                                          "label": "Torrent Port"
+                                        }
+                                },
+                                "environment": {
+                                        "PUID": {
+                                                "description": "Enter a valid UID of an existing user with permission to media shares to run qBittorrent as.",
+                                                "label": "UID",
+                                                "index": 1,
+                                                "default":1000
+                                        },
+                                        "PGID": {
+                                                "description": "Enter a valid GID of an existing user with permission to media shares to run qBittorrent as.",
+                                                "label": "GID",
+                                                "index": 2,
+                                                "default":1000
+                                        }
+                                }
+                        }
+                }
+        }
+}
