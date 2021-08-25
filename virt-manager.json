@@ -1,0 +1,69 @@
+{
+  "virt-manager": {
+    "description": "An interface for managing virtual machines through libvirt. This Rock-on runs libvirtd in docker in one container, and exposes a HTML5 WebUI using GTK+ Broadway with no need for remote desktop or special viewer software",
+    "ui": {
+      "slug": ""
+    },
+    "volume_add_support": true,
+    "website": "https://github.com/m-bers/docker-virt-manager",
+    "version": "1.0",
+    "containers": {
+      "libvirtd": {
+        "image": "xtruder/libvirtd",
+        "launch_order": 1,
+        "opts": [
+          ["--cap-add", "NET_ADMIN"],
+          ["--cap-add", "SYS_ADMIN"],
+          ["--cap-add", "SYS_NICE"],
+          ["--cap-add", "SYS_RAWIO"],
+          ["--device", "/dev/kvm"],
+          ["--device", "/dev/mem"],
+          ["--device", "/dev/net/tun"],
+          ["--security-opt", "apparmor=unconfined"],
+          ["-v", "/dev/serial:/dev/serial"],
+          ["-v", "/run/libvirt:/run/libvirt"],
+          ["-v", "/sys/bus/usb:/sys/bus/usb"],
+          ["-v", "/sys/fs/cgroup:/sys/fs/cgroup:rw"]
+        ],
+        "ports": {
+          "16509": {
+            "description": "libvirt port",
+            "host_default": 16509,
+            "label": "libvirt"
+          },
+          "22": {
+            "description": "SSH port",
+            "host_default": 10022,
+            "label": "SSH"
+          },
+          "5900": {
+            "description": "VNC port",
+            "host_default": 15900,
+            "label": "VNC"
+          }
+        },
+        "volumes": {
+          "/etc/libvirt/qemu": {"description": "Libvirt config store", "label": "libvirt configuration"},
+          "/var/lib/libvirt": {"description": "Libvirt data store", "label": "libvirt storage"}
+        }
+      },
+      "virt-manager": {
+        "image": "mber5/virt-manager",
+        "launch_order": 2,
+        "opts": [
+          ["-e", "HOSTS=['qemu:///system']"],
+          ["-v", "/run/libvirt:/run/libvirt"]
+        ],
+        "ports": {
+          "80": {
+            "description": "virt-manager html5 port. Suggested default: 8185",
+            "host_default": 8185,
+            "label": "WebUI port",
+            "protocol": "tcp",
+            "ui": true
+          }
+        }
+      }
+    }
+  }
+}
