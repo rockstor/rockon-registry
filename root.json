@@ -73,6 +73,7 @@
     "Tautulli": "tautulli.json",
     "TeamSpeak3": "teamspeak3.json",
     "TFTP server": "tftpserver.json",
+    "Traefik": "traefik.json",
     "Transmission with OpenVPN": "transmission-with-openvpn.json",
     "Transmission": "transmission.json",
     "Ubiquiti Unifi linuxserver.io": "unifi-linuxserver.json",
