@@ -20,7 +20,7 @@
                     }
                 },
                 "volumes": {
-                    "/var/gotify/data": {
+                    "/app/data": {
                         "description": "Choose a Share for the database, plugins and images for applications.  Eg: create a Share called gotify for this purpose.",
                         "label": "Database and App Images",
                         "min_size": 1073741824
