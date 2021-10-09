@@ -1,5 +1,5 @@
 {
-  "kanboard": {
+  "Kanboard": {
     "containers": {
       "kanboard": {
         "image": "kanboard/kanboard",
