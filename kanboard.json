@@ -25,7 +25,7 @@
             "label": "Data Storage"
           },
           "/var/www/app/plugins": {
-            "description": "Choose a Share for any kanboard plugins.",
+            "description": "Choose a Share for any Kanboard plugins.",
             "label": "Plugin Storage"
           },
           "/etc/nginx/ssl": {
