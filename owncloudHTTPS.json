@@ -2,7 +2,7 @@
 "owncloudHTTPS": {
         "containers": {
             "owncloudHTTPS": {
-                "image": "owncloud",
+                "image": "owncloud/server",
                 "launch_order": 1,
                 "ports": {
                     "443": {
