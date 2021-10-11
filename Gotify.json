@@ -25,12 +25,6 @@
                         "label": "Database and App Images",
                         "min_size": 1073741824
                     }
-                },
-                "environment": {
-                    "TZ": {
-                        "label": "Timezone",
-                        "description": "Example: Europe/Berlin"
-                    }
                 }
             }
         },
