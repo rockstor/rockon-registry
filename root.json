@@ -1,6 +1,5 @@
 {
     "Bitcoin": "bitcoind.json",
-    "Bitwarden-rs": "bitwarden-rs-alpine.json",
     "Booksonic": "booksonic.json",
     "Cardigann": "cardigann.json",
     "Collabora Online": "collabora-online.json",
@@ -81,6 +80,7 @@
     "Ubiquiti Unifi linuxserver.io": "unifi-linuxserver.json",
     "Unifi Controller": "unifi.json",
     "uTorrent": "uTorrent.json",
+    "Vaultwarden": "vaultwarden-alpine.json",
     "Watchtower offical": "watchtower_official.json",
     "Xeoma Video Surveillance": "xeoma.json",
     "YouTrack official": "youtrack-official.json",
