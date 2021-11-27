@@ -1,6 +1,6 @@
 {
     "wallabag": {
-        "description": "<p>wallabag is a self hostable application for saving web pages.</p><p>Based on the official wallabag docker image: <a href='https://hub.docker.com/r/wallabag/wallabag/' target='_blank'>https://hub.docker.com/r/wallabag/wallabag/</a>.</p>",
+        "description": "<p>wallabag is a self hostable application for saving web pages.</p><p>This rock-on relies on having a dedicated domain name for proper operation.</p><p>Based on the official wallabag docker image: <a href='https://hub.docker.com/r/wallabag/wallabag/' target='_blank'>https://hub.docker.com/r/wallabag/wallabag/</a>.</p>",
         "ui": {
             "slug": ""
         },
