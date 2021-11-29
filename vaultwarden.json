@@ -11,7 +11,7 @@
         "containers": {
             "vaultwarden": {
                 "image": "vaultwarden/server",
-                "tag": "alpine",
+                "tag": "latest",
                 "launch_order": 1,
                 "ports": {
                     "80": {
