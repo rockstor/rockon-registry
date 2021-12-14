@@ -1,5 +1,5 @@
 {
-  "Web Service Discovery (wsdd) For Windows Networks": {
+  "Web Service Discovery For Windows Networks": {
     "containers": {
       "wsdd_daemon": {
         "image": "kosdk/wsdd",
