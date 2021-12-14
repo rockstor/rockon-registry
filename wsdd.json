@@ -25,7 +25,7 @@
         }
       }
     },
-    "description": "A simple container for Linux systems running samba, so that Windows 10 version 1511 or higher will display the Rockstor host in the Network folder.<p>This version is geared towards local network workgroup setups only.</p><p>Based on the custom docker image: <a href='https://hub.docker.com/r/kosdk/wsdd target=_blank> https://hub.docker.com/r/kosdk/wsdd</a>, available for amd64, arm32v7 and arm64v8.</p>",
+    "description": "A simple container for Linux systems running samba, so that Windows 10 version 1511 or higher will display the Rockstor host in the Network folder.<p>This version is geared towards local network workgroup setups only.</p><p>Based on the custom docker image: <a href='https://hub.docker.com/r/kosdk/wsdd' target='_blank'> https://hub.docker.com/r/kosdk/wsdd</a>, available for amd64, arm32v7 and arm64v8.</p>",
     "ui": {
       "https": false,
       "slug": ""
