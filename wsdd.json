@@ -17,7 +17,7 @@
             "index": 1
           },
           "WORKGROUP": {
-            "description": "Set the workgroup name.",
+            "description": "Set the workgroup name. This should be the same name used during the setup of the Samba service on the Rockstor appliance",
             "label": "Work group",
             "default": "WORKGROUP",
             "index": 2
