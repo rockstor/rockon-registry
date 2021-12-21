@@ -19,7 +19,7 @@
 				],
 				"ports": {
 					"8123": {
-						"description": "Home Assistant UI port. You may need to open the same port on your firewall (protocol: tcp).",
+						"description": "Home Assistant UI port. Because host network mode is used, this must be set to port 8123. You may need to open the same port on your firewall (protocol: tcp).",
 						"host_default": 8123,
 						"label": "Server port",
 						"protocol": "tcp",
