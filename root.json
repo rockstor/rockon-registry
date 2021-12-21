@@ -22,7 +22,6 @@
     "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
     "HandBrake": "handbrake.json",
     "Headphones": "headphones.json",
-    "Home Assistant": "home-assistant.json",
     "Home Assistant by Linuxserver.io": "home-assistant-linuxserver.json",
     "HTTP to HTTPS redirect": "redirect-http-to-https.json",
     "Jackett": "Jackett.json",
