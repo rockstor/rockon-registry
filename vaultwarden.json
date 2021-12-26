@@ -1,6 +1,6 @@
 {
     "Vaultwarden": {
-        "description": "Alternative implementation of the Bitwarden password manager server API written in Rust and on Alpine (speed, size). <p>Based on the following docker image: <a href='https://hub.docker.com/r/vaultwarden/server' target='_blank'>https://hub.docker.com/r/vaultwarden/server</a> compatible with amd64 and arm64 architectures.</p>",
+        "description": "Alternative implementation of the Bitwarden password manager server API written in Rust. <p>Based on the following docker image: <a href='https://hub.docker.com/r/vaultwarden/server' target='_blank'>https://hub.docker.com/r/vaultwarden/server</a> compatible with amd64 and arm64 architectures.</p>",
         "version": "0.0.1",
         "website": "https://github.com/dani-garcia/vaultwarden",
         "more_info": "SSL/TLS certs and keys required. They must be placed in the Rockstor share used as <em>Vaultwarden cert storage</em> during the rock-on's installation process:<br><ul><li><code>/mnt2/[share-name]/certs.pem</code></li><li><code>/mnt2/[share-name]/key.pem</code></li></ul><br>Of note, <code>certs.pem</code> can be a chain. Need a cert? Try <a href=\"https://github.com/FiloSottile/mkcert\" target=\"_blank\">mkcert</a> or openssl.",
