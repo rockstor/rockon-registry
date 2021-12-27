@@ -1,6 +1,5 @@
 {
     "Bitcoin": "bitcoind.json",
-    "Bitwarden-rs": "bitwarden-rs-alpine.json",
     "Booksonic": "booksonic.json",
     "Collabora Online": "collabora-online.json",
     "COPS": "cops.json",
@@ -75,6 +74,7 @@
     "Ubiquiti Unifi linuxserver.io": "unifi-linuxserver.json",
     "Unifi Controller": "unifi.json",
     "uTorrent": "uTorrent.json",
+    "Vaultwarden": "vaultwarden.json",
     "Watchtower offical": "watchtower_official.json",
     "Web Service Discovery For Windows Networks": "wsdd.json",
     "Xeoma Video Surveillance": "xeoma.json",
