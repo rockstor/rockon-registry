@@ -1,0 +1,70 @@
+{
+  "Stash": {
+    "containers": {
+      "stash": {
+        "image": "stashapp/stash",
+        "launch_order": 1,
+	"opts": [
+	    ["-e", "STASH_STASH=/data/"],
+	    ["-e", "STASH_GENERATED=/generated/"],
+	    ["-e", "STASH_METADATA=/metadata/"],
+	    ["-e", "STASH_CACHE=/cache/"]
+	  ],
+        "ports": {
+          "9999": {
+            "description": "WebUI port. Suggested default: 9999",
+            "host_default": 9999,
+            "label": "WebUI port",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/data": {
+            "description": "Location of your porn.",
+            "label": "Data Storage, ie: /stash_data"
+          },
+          "/generated": {
+            "description": "Thumbnails, clips, etc.",
+            "label": "Generated Content, ie /stash_generated"
+          },
+          "/metadata": {
+            "description": "Database",
+            "label": "Stash's metadata share, ie: /stash_metadata"
+          },
+          "/root/.stash": {
+            "description": "Configuration Files",
+            "label": "Config Storage, ie: /stash_config"
+          },
+          "/cache": {
+            "description": "Cache Files",
+            "label": "Cache content, ie: /stash_cache"
+          }
+        },
+        "environment": {
+          "VERSION": {
+            "description": "Choose version of stash: Unless you know which version to try, just type latest",
+            "label": "VERSION",
+            "index": 1
+          },
+          "PUID": {
+            "description": "Enter a valid UID to run Stash with. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID",
+            "index": 2
+          },
+          "PGID": {
+            "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "label": "GID",
+            "index": 3
+          }
+        }
+      }
+    },
+    "description": "Stash is a self-hosted webapp written in Go which organizes and serves your porn.<br><br> Stash gathers information about videos in your collection from the internet, and is extensible through the use of community-built plugins for a large number of content producers and sites.<br> Stash supports a wide variety of both video and image formats.<br> You can tag videos and find them later.<br> Stash provides statistics about performers, tags, studios and more.",
+    "ui": {
+      "slug": ""
+    },
+    "volume_add_support": true,
+    "website": "https://github.com/stashapp/stash",
+    "version": "1.0"
+  }
+}
