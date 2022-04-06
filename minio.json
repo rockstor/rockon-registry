@@ -1,6 +1,6 @@
 {
     "MinIO": {
-        "description": "MinIO is an S3-compatible object storage server.",
+        "description": "MinIO is an S3-compatible object storage server.  This Rock-on is based on the official MinIO Docker image <a href='https://hub.docker.com/r/minio/minio' target='_blank'>https://hub.docker.com/r/minio/minio</a>.",
         "version": "1.1",
         "website": "https://minio.io",
         "more_info": "This Rock-on uses the official MinIO Docker image to implement a single MinIO instance with a single object storage share, suitable for use on a private network.  If your connections traverse a network you do not control, consider using a VPN for encryption.  IMPORTANT: Read and understand the MinIO Rock-on documentation concerning port selection before installing this Rock-on.",
@@ -18,7 +18,7 @@
                         "description": "Port for API access, default 9000",
                         "host_default": 9000,
                         "label": "MinIO API Port",
-                        "ui": true
+                        "ui": false
                     },
                     "9001": {
                         "description": "Port for Admin Portal access, default 9001",
@@ -38,11 +38,11 @@
                  ],
                 "environment": {
                     "MINIO_ROOT_USER": {
-                        "description": "MinIO Administrator Username, 1 to 128 alphanumeric characters",
+                        "description": "MinIO Administrator Username, 3 to 128 alphanumeric characters",
                         "label": "MinIO Admin User"
                     },
                     "MINIO_ROOT_PASSWORD": {
-                        "description": "MinIO Administrator Password, 1 to 128 alphanumeric characters",
+                        "description": "MinIO Administrator Password, 8 to 128 alphanumeric characters",
                         "label": "MinIO Admin Password"
                     },
                     "MINIO_CONSOLE_ADDRESS": {
