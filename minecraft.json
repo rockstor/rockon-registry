@@ -27,14 +27,14 @@
                     }
                 }
             },
-            "description": "Minecraft server with selectable version",
+            "description": "Minecraft server with selectable version.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/itzg/minecraft-server' target='_blank'>https://hub.docker.com/r/itzg/minecraft-server</a>, available for amd64 and arm64 architecture.</p>",
             "ui": {
               "https": false,
               "slug": ""
               },
         "volume_add_support": true,
         "website": "https://hub.docker.com/r/itzg/minecraft-server/",
-	      "version": "1.0"
+	      "version": "1.1"
       }
 
 }

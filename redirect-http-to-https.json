@@ -14,12 +14,12 @@
                 }
             }
         },
-        "description": "Access the Rockstor Admin Web UI without having to remember to type https://",
+        "description": "Access the Rockstor Admin Web UI without having to remember to type https://. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/geldim/https-redirect' target='_blank'>https://hub.docker.com/r/geldim/https-redirect</a>, available for amd64 architecture only.</p>",
         "ui": {
             "https": false,
             "slug": ""
         },
-        "website": "https://hub.docker.com/r/geldim/https-redirect/",
-        "version": "1.0"
+        "website": "https://github.com/geldim/docker-https-redirect/",
+        "version": "1.1"
     }
 }

@@ -1,11 +1,11 @@
 {
   "Home Assistant": {
-    "description": "Home Assistant is an open-source home automation platform running on Python 3. Track and control all devices at home and automate control.",
+    "description": "Home Assistant is an open-source home automation platform running on Python 3. Track and control all devices at home and automate control.<p>Based on the official docker image: <a href='https://hub.docker.com/r/homeassistant/home-assistant' target='_blank'>https://hub.docker.com/r/homeassistant/home-assistant</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "slug": ""
     },
     "website": "https://home-assistant.io/",
-    "version": "1.0",
+    "version": "1.1",
     "containers": {
       "home-assistant": {
         "image": "homeassistant/home-assistant",

@@ -53,13 +53,13 @@
         }
       }
     },
-    "description": "Organize and stream your personal media collection of movies, TV, music, and photos anywhere on all your devices. This rock-on supports hardware transcoding (optional) via Intel QuickSync -- see <a href='https://ark.intel.com/content/www/us/en/ark/search/featurefilter.html?productType=873&0_QuickSyncVideo=True' target='_blank'>Intel ark</a> to check your processor's compatibility.<p>Additional <a href='http://rockstor.com/docs/docker-based-rock-ons/plex-media-server.html#plex-server-rock-on' target='_blank'>documentation</a> is available for this rock-on.</p><p>Based on the docker image provided by Linuxserver.io: <a href='https://hub.docker.com/r/linuxserver/plex/' target='_blank'>https://hub.docker.com/r/linuxserver/plex/</a>.</p>",
+    "description": "Organize and stream your personal media collection of movies, TV, music, and photos anywhere on all your devices. This rock-on supports hardware transcoding (optional) via Intel QuickSync -- see <a href='https://ark.intel.com/content/www/us/en/ark/search/featurefilter.html?productType=873&0_QuickSyncVideo=True' target='_blank'>Intel ark</a> to check your processor's compatibility.<p>Additional <a href='http://rockstor.com/docs/docker-based-rock-ons/plex-media-server.html#plex-server-rock-on' target='_blank'>documentation</a> is available for this rock-on.</p><p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/plex' target='_blank'>https://hub.docker.com/r/linuxserver/plex</a>, available for amd64 and arm64 architecture.</p>",
     "more_info": "<h4>Adding more media to Plex</h4><p>First, add the share(s) containing your additional media to this rock-on using its settings wizard. Then, from Plex webUI, you can add this/these share(s) and re-index your library. See <a href='http://rockstor.com/docs/docker-based-rock-ons/plex-media-server.html#adding-shares-to-plex' target='_blank'>Rockstor's documentation</a> for detailed instructions.</p> <h4>Hardware transcoding using Intel QuickSync</h4>If you have a compatible processor and filled the <em>QuickSync device</em> field during the rock-on installation, please note that you also need to add a dedicated share (named <em>plex-transcoding</em>, for instance) mapped as <code>/transcode</code> that will be used for transcoding only. Then, from Plex WebUI, you can update the <strong>transcode</strong> directory setting.</p>",
     "ui": {
       "slug": "web"
     },
     "volume_add_support": true,
     "website": "https://www.plex.tv",
-    "version": "1.0"
+    "version": "1.1"
   }
 }

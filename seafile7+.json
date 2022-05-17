@@ -49,8 +49,8 @@
         ]
       }
     },
-    "version": "latest",
-    "description": "Secure file sharing and hosting. <p>Based on the official <a href='https://hub.docker.com/r/seafileltd/seafile-mc' target='_blank'>Seafile multi-container image</a> for versions 7 and above, available for amd64/x86_64 architecture only. Use MariaDB and Memcached as separate container.</p> <p>HTTP only, to add HTTPS, you can use Nginx-proxy-manager.</p>",
+    "version": "1.1",
+    "description": "Secure file sharing and hosting.<p>HTTP only, to add HTTPS, you can use Nginx-proxy-manager.</p><p>Multi-container Rockon based on the official docker images: <a href='https://hub.docker.com/r/seafileltd/seafile-mc' target='_blank'>https://hub.docker.com/r/seafileltd/seafile-mc</a>, <a href='https://hub.docker.com/_/memcached' target='_blank'>https://hub.docker.com/_/memcached</a>, and <a href='https://hub.docker.com/_/mariadb' target='_blank'>https://hub.docker.com/_/mariadb</a>, available for amd64 and arm64 architecture.</p>",
     "icon": "https://avatars2.githubusercontent.com/u/1948782?s=400&v=4",
     "more_info": "<p>Default username for your Seafile UI is<code>me@example.com</code>and password is<code>asecret</code></p>",
     "ui": {

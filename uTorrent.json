@@ -42,13 +42,13 @@
                 }
 			}
 		},
-		"description": "BitTorrent Client by [dbarton and Mahmoud87]",
+		"description": "BitTorrent Client by [dbarton and Mahmoud87].<p>Based on a custom docker image: <a href='https://hub.docker.com/r/dbarton/utorrent' target='_blank'>https://hub.docker.com/r/dbarton/utorrent</a>, available for amd64 architecture only.</p>",
 		"more_info": "<h2><font color=#9ACD32><strong>uTorrent WebUI Logins</strong></font></h2><p><strong><u>Username:</u></strong> admin<br> <u><strong>Password:</strong></u> (Leave it blank)<br> You can always change the logins after your first sign in, go to settings >> WebUI.</p>",
 		"ui": {
 			"slug": "gui"
 		},
 		"volume_add_support": true,
-		"website": "https://hub.docker.com/r/dbarton/utorrent/",
-		"version": "1.0"
+		"website": "http://www.utorrent.com/",
+		"version": "1.1"
 	}
 }

@@ -41,13 +41,13 @@
                 }
             }
         },
-        "description": "couchpotato is a movie downloader for usenet and bittorrent users.",
+        "description": "couchpotato is a movie downloader for usenet and bittorrent users. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/couchpotato' target='_blank'>https://hub.docker.com/r/linuxserver/couchpotato</a>, available for amd64 and arm64 architecture.</p>",
 		"more_info": "<h4>Default username: couchpotato</p>Default password: couchpotato",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
-	"website": "https://hub.docker.com/r/linuxserver/couchpotato/",
-	"version": "1.0"
+	"website": "https://couchpota.to/",
+	"version": "1.1"
     }
 }

@@ -21,8 +21,8 @@
                 }
             }
         },
-            "version": "latest",
-        "description": "Secure file sharing and hosting",
+            "version": "1.1",
+        "description": "Secure file sharing and hosting. <p>Based on the official docker image: <a href='https://hub.docker.com/_/owncloud' target='_blank'>https://hub.docker.com/_/owncloud</a>, available for amd64 architecture.</p>",
         "icon": "https://owncloud.org/wp-content/themes/owncloudorgnew/assets/img/common/logo_owncloud.svg",
         "more_info": "<p>To set up owncloud with SSL follow <a href='https://forum.rockstor.com/t/owncloud-ssl-offical-image-guide' target='_blank'>this guide.</a> <br> Please notice, that you can't access the Web-GUI of owncloud before you have completed the setup described in the Guide!</p>",
         "ui": {
