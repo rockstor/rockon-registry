@@ -67,7 +67,7 @@
                 }
             }
         },
-        "description": "ZoneMinder: Free, open-source software to control IP, USB and Analog (CCTV) cameras (v1.34) - please note this runs as privileged in docker (to set shm to a higher amount).<p>Based on a custom docker image: <a href='https://hub.docker.com/r/dlandon/zoneminder' target='_blank'>https://hub.docker.com/r/dlandon/zoneminder</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "ZoneMinder: Free, open-source software to control IP, USB and Analog (CCTV) cameras (v1.34) - please note this runs as privileged in docker (to set shm to a higher amount).<p>Based on a custom docker image: <a href='https://hub.docker.com/r/dlandon/zoneminder' target='_blank'>https://hub.docker.com/r/dlandon/zoneminder</a>, available for amd64 architecture only.</p>",
         "more_info": "<h4>Tips and Setup Instructions:</h4><p>This container includes mysql, no need for a separate mysql/mariadb container</p><p>All settings and library files are stored outside of the container and are preserved when this docker is updated or re-installed. They can be found in the share used for 'ZoneMinder Config' during installation.</p><h4>Important:</h4><p>On first start, open zoneminder settings, go to the paths tab and enter the following for <code>PATH_ZMS</code>: <code>/zm/cgi-bin/nph-zms</code></p>",
         "ui": {
             "https": true,
