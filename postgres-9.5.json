@@ -1,6 +1,6 @@
 {
   "PostgreSQL 9.5": {
-    "description": "PostgreSQL (9.5.21), open-source relational DBMS.<p>Based on the official docker image: <a href='https://hub.docker.com/_/postgres' target='_blank'>https://hub.docker.com/_/postgres</a>, available for amd64 architecture only.</p><p><strong>Note: </strong>This rock-on requires Rockstor version 3.9.2-53 or later.</p>",
+    "description": "PostgreSQL (9.5.21), open-source relational DBMS.<p>Based on the official docker image: <a href='https://hub.docker.com/_/postgres' target='_blank'>https://hub.docker.com/_/postgres</a>, available for amd64 and arm64 architecture.</p><p><strong>Note: </strong>This rock-on requires Rockstor version 3.9.2-53 or later.</p>",
     "version":"1.3",
     "website":"https://www.postgresql.org",
     "more_info": "<h4>Important locations inside docker image:</h4><p>Config. file:<code>/var/lib/pgsql/data/pg_hba.conf</code></p> <p>Databases: <code>/var/lib/pgsql/data</code></p> <p>Logs: <code>/var/log/postgresql</code></p>",
