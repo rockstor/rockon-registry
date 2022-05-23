@@ -18,7 +18,6 @@
     "Gogs": "gogs.json",
     "Gollum": "gollum.json",
     "Gotify": "Gotify.json",
-    "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
     "HandBrake": "handbrake.json",
     "Headphones": "headphones.json",
     "Home Assistant": "home-assistant.json",
