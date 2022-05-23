@@ -26,7 +26,7 @@ If you like to share your app with rest of the Rockstor community, open a pull r
 
 2. Add a comment to your pull request detailing how you've tested it out. More details the better as it will help ensure quality and benefit the whole community!
 
-3. We are trying to offer Rock-ons that are based on a multi-architecture docker image, _i.e._, it is available for amd64 (Intel/AMD CPUs) and arm64 (ARM-based) devices. While that might not always be possible, depending on the app in which you're interested, please keep that in mind and see whether you can select a docker image that has a multi-architecture manifest. When submitting, please add the supported architectures to the description (take a look at the descriptions of some of the more recent Rock-on submissions) in a separate line using the &lt;p&gt; and &lt;/p&gt; tags.
+3. We are trying to offer Rock-ons that are based on a multi-architecture docker image, _i.e._, it is available for amd64 (Intel/AMD CPUs) and arm64 (ARM-based) devices. While that might not always be possible, depending on the app in which you're interested, please keep that in mind and see whether you can select a docker image that has a multi-architecture manifest. When submitting, please add the supported architectures to the end of the Rockon description using the &lt;p&gt; and &lt;/p&gt; tags (take a look at the descriptions of some of the more recent Rock-on submissions).
 
 ## Adding vs. Updating a Rock-on You Want to Submit to the Repository
 
@@ -34,7 +34,7 @@ While there are no hard and fast rules, you can follow these guidelines to decid
 
 1. If no Rock-on exists for your app already, create a new one. The obvious choice.
 
-2. Create a new Rock-on if one already exists for this project, but the new one will use a different docker image. E.g., an existing Rock-on uses an image from linuxserver.io, while the one you are interested in submitting uses an image created by the owner of the project. You can subsequently submit a proposal to deprecate the existing Rock-on. Reasons for that could be that the underlying docker container has not been maintained in a long time, or the new Rock-on will have the same or more functionality and is more popular with the community. Note: ensure that the container name
+2. Create a new Rock-on if one already exists for this project, but the new one will use a different docker image. E.g., an existing Rock-on uses an image from linuxserver.io, while the one you are interested in submitting uses an image created by the owner of the project. You can subsequently submit a proposal to deprecate the existing Rock-on. Reasons for that could be that the underlying docker container has not been maintained in a long time, or the new Rock-on will have the same or more functionality and is more popular with the community.
 
 3. Update the existing Rock-on if the changes do not include the use of a different image. E.g., the Handbrake Rock-on was expanded with a few useful user parameters over time, but continued to use the same underlying docker image. Here it made more sense to update the existing Rock-on instead of submitting a new version.
 
