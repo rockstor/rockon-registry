@@ -38,12 +38,12 @@
             "environment": {
               "PUID": {
                 "description": "Enter a valid UID to run Mylar as. It must have full permissions to all Shares mapped in the previous step.",
-                "label": "UID to run Mylar as.",
+                "label": "UID to run Mylar as",
                 "index": 1
               },
               "PGID": {
                 "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
-                "label": "GID to run Mylar as.",
+                "label": "GID to run Mylar as",
                 "index": 2
           }
         }
