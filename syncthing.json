@@ -50,13 +50,13 @@
 		}
             }
         },
-        "description": "Continuous File Synchronization by Linuxserver.io",
+        "description": "Private & Secure continuous File Synchronization. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/syncthing' target='_blank'>https://hub.docker.com/r/linuxserver/syncthing</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "https": true,
             "slug": ""
         },
         "volume_add_support": true,
         "website": "https://syncthing.net/",
-	"version": "1.0"
+	"version": "1.1"
     }
 }

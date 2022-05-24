@@ -57,12 +57,12 @@
                 }
             }
         },
-        "description": "Electronic Document Manager System (eDMS), v18.09 (apu). Scanning, archiving, managing and retrieving all documents and information in line with auditing standards.<p>See the <em>more info</em> section for instructions to activate the webUI (optional).</p><p>For updates from ecoDMS v16.09, please refer to its installation documentation.</p><p>Based on the official ecoDMS docker image: <a href='https://hub.docker.com/r/ecodms/allinone-18.09' target='_blank'>https://hub.docker.com/r/ecodms/allinone-18.09</a>.</p>",
+        "description": "Electronic Document Manager System (eDMS), v18.09 (apu). Scanning, archiving, managing and retrieving all documents and information in line with auditing standards.<p>See the <em>more info</em> section for instructions to activate the webUI (optional).</p><p>For updates from ecoDMS v16.09, please refer to its installation documentation.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/ecodms/allinone-18.09' target='_blank'>https://hub.docker.com/r/ecodms/allinone-18.09</a>, available for amd64 architecture only.</p>",
         "more_info": "<h4>Note on webUI (optional):</h4>The webUI is disabled by default and need to be activated through one of the ecoDMS desktop clients (<a href='https://www.ecodms.de/index.php/en/download/ecodms-archive/ecodms-version-18-09-apu' target='_blank'>download page</a>).<h4>Default credentials:</h4>The defaults credentials for client connection are <em>ecodms</em> (login) and <em>ecodms</em> (password). Make sure to change them after that.",
         "ui": {
             "slug": ""
         },
-        "website": "https://www.ecodms.de/index.php/en/",
+        "website": "https://www.ecodms.de/",
         "volume_add_support": true,
         "version": "18.09 (apu)",
         "icon": "https://hub.docker.com/v2/users/ecodms/avatar/"

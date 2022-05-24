@@ -1,11 +1,11 @@
 {
     "Transmission": {
-        "description": "Open Source BitTorrent client",
+        "description": "Open Source BitTorrent client.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/dperson/transmission' target='_blank'>https://hub.docker.com/r/dperson/transmission</a>, available for amd64 and arm64 architecture.</p>",
         "volume_add_support": true,
         "ui": {
             "slug": ""
         },
-        "version": "1.0",
+        "version": "1.1",
         "website": "http://www.transmissionbt.com/",
         "containers": {
             "transmission": {

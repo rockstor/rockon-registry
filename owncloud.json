@@ -58,8 +58,8 @@
                 "label": "DB User"
             }
         },
-	"version": "8.2.1",
-        "description": "Secure file sharing and hosting",
+	"version": "8.2.2",
+        "description": "Secure file sharing and hosting. <p>Multi-container Rockon based on a custom docker image: <a href='https://hub.docker.com/r/pschmitt/owncloud' target='_blank'>https://hub.docker.com/r/pschmitt/owncloud</a> and the official docker image: <a href='https://hub.docker.com/_/postgres' target='_blank'>https://hub.docker.com/_/postgres</a>, available for amd64 and arm64 architecture.</p>",
         "icon": "https://owncloud.org/wp-content/themes/owncloudorgnew/assets/img/common/logo_owncloud.svg",
         "more_info": "<p>Default username for your OwnCloud UI is<code>admin</code>and password is<code>changeme</code></p>",
         "ui": {

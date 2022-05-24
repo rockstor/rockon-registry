@@ -43,12 +43,12 @@
                 }
             }
         },
-        "description": "The best usenet downloader.",
+        "description": "The best free and easy binary newsreader. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/sabnzbd' target='_blank'>https://hub.docker.com/r/linuxserver/sabnzbd</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
-        "website": "https://hub.docker.com/r/linuxserver/sabnzbd/",
-	"version": "1.0"
+        "website": "http://sabnzbd.org/",
+	"version": "1.1"
     }
 }

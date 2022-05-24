@@ -53,7 +53,7 @@
 				}
 			}
 		},
-		"description": "Managing Nginx proxy hosts with a simple, powerful interface. <p>Based on jlesage's docker image: <a href='https://hub.docker.com/r/jlesage/nginx-proxy-manager/' target='_blank'>https://hub.docker.com/r/jlesage/nginx-proxy-manager</a>.</p>",
+		"description": "Managing Nginx proxy hosts with a simple, powerful interface.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/jlesage/nginx-proxy-manager/' target='_blank'>https://hub.docker.com/r/jlesage/nginx-proxy-manager</a>, available for amd64 architecture only.</p>",
 		"more_info": "<h4>First time login</h4><p>Default username is<code>admin@example.com</code>and password is<code>changeme</code>. Make sure to change both the username and password after the first login.</p>",
 		"ui": {
 			"https": false,
@@ -61,6 +61,6 @@
 		},
 		"volume_add_support": true,
 		"website": "https://nginxproxymanager.jc21.com/",
-		"version": "1.0"
+		"version": "1.1"
 	}
 }

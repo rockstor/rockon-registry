@@ -24,9 +24,9 @@
         }
       }
     },
-    "description": "Xeoma Video Surveillance",
+    "description": "Xeoma Video Surveillance.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/coppit/xeoma' target='_blank'>https://hub.docker.com/r/coppit/xeoma</a>, available for amd64 architecture only.</p>",
     "volume_add_support": true,
-    "website": "http://felenasoft.com/xeoma/",
-    "version": "1.0"
+    "website": "https://felenasoft.com/xeoma/en/",
+    "version": "1.1"
   }
 }
