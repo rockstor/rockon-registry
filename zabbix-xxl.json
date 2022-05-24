@@ -102,7 +102,7 @@
                 "environment": {}
             }
         },
-        "description": "Compiled Zabbix Server (and proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix web UI based on CentOS 7, Supervisor, Nginx, PHP.",
+        "description": "Compiled Zabbix Server (and proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix web UI based on CentOS 7, Supervisor, Nginx, PHP.<p>Multi-container Rockon based on the custom docker images: <a href='https://hub.docker.com/r/monitoringartist/zabbix-db-mariadb' target='_blank'>https://hub.docker.com/r/monitoringartist/zabbix-db-mariadb</a> and <a href='https://hub.docker.com/r/monitoringartist/zabbix-xxl' target='_blank'>https://hub.docker.com/r/monitoringartist/zabbix-xxl</a> and the official docker image: <a href='https://hub.docker.com/_/busybox' target='_blank'>https://hub.docker.com/_/mongo</a>, available for amd64 architecture only.</p>",
         "ui": {
             "https": false,
             "slug": ""
@@ -110,6 +110,6 @@
         "volume_add_support": true,
         "more_info": "<h4>More Information</h4><p>please check the link for backups and troubleshooting if needed</p>",
         "website": "https://hub.docker.com/r/monitoringartist/zabbix-xxl/",
-        "version": "1.0"
+        "version": "1.1"
     }
 }

@@ -46,12 +46,12 @@
                 }
             }
         },
-        "description": "Subsonic music server",
+        "description": "Subsonic music server. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/hurricane/subsonic' target='_blank'>https://hub.docker.com/r/hurricane/subsonic</a>, available for amd64 architecture only.</p>",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
         "website": "http://www.subsonic.org",
-        "version": "1.0"
+        "version": "1.1"
     }
 }

@@ -43,13 +43,13 @@
                 }
             }
         },
-        "description": "The most efficient usenet downloader.",
+        "description": "The most efficient usenet downloader.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/nzbget' target='_blank'>https://hub.docker.com/r/linuxserver/nzbget</a>, available for amd64 and arm64 architecture.</p>",
 		"more_info": "<h4>Default username: nzbget</p>Default password: tegbzn6789",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
         "website": "http://nzbget.net/",
-	"version": "1.0"
+	"version": "1.1"
     }
 }

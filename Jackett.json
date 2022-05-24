@@ -37,12 +37,12 @@
                 }
             }
         },
-        "description": "Jackett works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc).",
+        "description": "Jackett works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc). <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/jackett' target='_blank'>https://hub.docker.com/r/linuxserver/jackett</a>, available for amd64 and arm64 architecture.",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
-	"website": "https://hub.docker.com/r/linuxserver/jackett/",
-	"version": "1.0"
+	"website": "https://github.com/Jackett/Jackett",
+	"version": "1.1"
     }
 }

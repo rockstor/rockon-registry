@@ -1,8 +1,8 @@
 {
 	"SmokePing": {
-		"website": "https://hub.docker.com/r/linuxserver/smokeping/",
-		"version": "1.0",
-		"description": "SmokePing is a network latency history monitor.",
+		"website": "https://oss.oetiker.ch/smokeping/",
+		"version": "1.1",
+		"description": "SmokePing is a network latency history monitor.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/smokeping' target='_blank'>https://hub.docker.com/r/linuxserver/smokeping</a>, available for amd64 and arm64 architecture.</p>",
 		"ui": {
 			"slug": "smokeping/smokeping.cgi"
 		},

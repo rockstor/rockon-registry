@@ -82,7 +82,7 @@
                 }
             }
         },
-        "description": "Unifi Access Point controller. <p>Based on the LinuxServer.io Unifi-controller docker image: <a href='https://hub.docker.com/r/linuxserver/unifi-controller' target='_blank'>https://hub.docker.com/r/linuxserver/unifi-controller</a>.",
+        "description": "Unifi Access Point controller.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/unifi-controller' target='_blank'>https://hub.docker.com/r/linuxserver/unifi-controller</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "This is a containerized version of Ubiquiti Networks Unifi Controller. To limit memory add MEM_LIMIT=1024M as a custom argument after install",
         "volume_add_support": false,
         "ui": {
@@ -90,6 +90,6 @@
             "slug": ""
         },
         "website": "https://www.ubnt.com/enterprise/#unifi",
-        "version": "1.1"
+        "version": "1.2"
     }
 }

@@ -41,13 +41,13 @@
         }
       }
     },
-    "description": "lazylibrarian is an automated ebook downloader for NZB and Torrent.",
+    "description": "lazylibrarian is an automated ebook downloader for NZB and Torrent.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/lazylibrarian' target='_blank'>https://hub.docker.com/r/linuxserver/lazylibrarian</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "slug": ""
     },
     "volume_add_support": true,
     "more_info": "<h4>Setting up the application</h4><p>Go to the web interface to configure your lazylibrarian installation.</p>",
     "website": "https://hub.docker.com/r/linuxserver/lazylibrarian/",
-    "version": "37"
+    "version": "38"
   }
 }

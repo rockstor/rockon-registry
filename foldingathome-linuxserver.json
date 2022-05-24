@@ -1,8 +1,8 @@
 {
     "Folding@home Linuxserver.io": {
-        "version": "1.0",
-        "description": "Folding@home (FAH or F@h) is a distributed computing project for simulating protein dynamics. Be One in a Million: every little helps.<p>Based on the latest Linuxserver.io docker image: <a href='https://hub.docker.com/r/linuxserver/foldingathome' target='_blank'>https://hub.docker.com/r/linuxserver/foldingathome</a>.",
-        "more_info": "<h4>Installation notes</h4><p>This Rock-on is CPU only by default. GPU folding capability requires: Rockstor4 or above (docker 19.03+) with Nvidia drivers & nvidia-docker installed (untested). See <a href='https://github.com/NVIDIA/nvidia-docker' target='_blank'>https://github.com/NVIDIA/nvidia-docker</a></p><p><i>It may take a few minutes for your instance to begin contributing, & a few more for the details of the project to appear. </i><br>After Rock-on install no further configuration is required for normal function.</p>",
+        "version": "1.1",
+        "description": "Folding@home (FAH or F@h) is a distributed computing project for simulating protein dynamics. Be One in a Million: every little helps.<p>Based on custom docker image: <a href='https://hub.docker.com/r/linuxserver/foldingathome' target='_blank'>https://hub.docker.com/r/linuxserver/foldingathome</a>, available for amd64 and arm64 architecture.",
+        "more_info": "<h4>Installation notes</h4><p>This Rockon is CPU only by default. GPU folding capability requires: Rockstor4 or above (docker 19.03+) with Nvidia drivers & nvidia-docker installed (untested). See <a href='https://github.com/NVIDIA/nvidia-docker' target='_blank'>https://github.com/NVIDIA/nvidia-docker</a></p><p><i>It may take a few minutes for your instance to begin contributing, & a few more for the details of the project to appear. </i><br>After Rock-on install no further configuration is required for normal function.</p>",
         "website": "https://foldingathome.org/",
         "icon": "",
         "ui": {

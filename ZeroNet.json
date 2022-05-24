@@ -33,12 +33,12 @@
 		}
             }
         },
-        "description": "Decentralized websites using Bitcoin crypto and the BitTorrent network - https://zeronet.io",
+        "description": "Decentralized websites using Bitcoin crypto and the BitTorrent network.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/nofish/zeronet' target='_blank'>https://hub.docker.com/r/nofish/zeronet</a>, available for amd64 architecture only.</p>",
         "ui": {
             "https": false,
             "slug": ""
         },
         "website": "https://zeronet.io",
-	"version": "1.0"
+	"version": "1.1"
     }
 }

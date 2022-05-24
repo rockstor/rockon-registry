@@ -1,8 +1,8 @@
 {
 	"DuckDNS": {
-		"website": "https://hub.docker.com/r/linuxserver/duckdns/",
-		"version": "1.0",
-        "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence.",
+		"website": "https://www.duckdns.org/",
+		"version": "1.1",
+        "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/duckdns' target='_blank'>https://hub.docker.com/r/linuxserver/duckdns</a>, available for amd64 and arm64 architecture.</p>",
 		"containers": {
 			"duckdns": {
 				"image": "linuxserver/duckdns",

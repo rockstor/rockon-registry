@@ -60,7 +60,7 @@
                 }
             }
         },
-        "description": "DNS Server that acts as a black hole for Internet advertisements.<p>Based on the official Pi-Hole docker image: <a href='https://hub.docker.com/r/pihole/pihole' target='_blank'>https://hub.docker.com/r/pihole/pihole</a>.",
+        "description": "DNS Server that acts as a black hole for Internet advertisements.<p>Based on the official docker image: <a href='https://hub.docker.com/r/pihole/pihole' target='_blank'>https://hub.docker.com/r/pihole/pihole</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "<h4>PI-HOLE™: A BLACK HOLE FOR INTERNET ADVERTISEMENTS</h4><p><b>Admin page</b></p><p>To access admin interface go to URL: http://[SERVERIP]/Admin</p><p>If you have different port than 80 you need to specify that in the URL.</p><p><b>Block Over 100,000 Ad-serving Domains</b></p><p>Known ad-serving domains are pulled from third party sources and compiled into one list.</p><p><b>Block Advertisements On Any Device</b></p><p>Network-level blocking allows any device to block ads, regardless of hardware or OS.</p><p><b>Improve Overall Network Performance</b></p><p>Since ads are blocked before they are downloaded, your network will perform better.</p>",
         "ui": {
             "slug": "admin"

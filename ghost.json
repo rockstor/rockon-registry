@@ -22,13 +22,13 @@
                 }
             }
         },
-        "description": "ghost: A publishing platform for professional bloggers",
+        "description": "ghost: A publishing platform for professional bloggers.<p>Based on the official docker image: <a href='https://hub.docker.com/_/ghost' target='_blank'>https://hub.docker.com/_/ghost</a>, available for amd64 and arm64 architecture.</p>",
         "volume_add_support": false,
         "more_info": "navigate to the ui link for the admin site or go to the base url for the public facing site",
         "ui": {
             "slug": "ghost"
         },
-        "version": "1.0",
+        "version": "1.1",
         "website": "https://ghost.org"
     }
 }

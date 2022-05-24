@@ -44,7 +44,7 @@
                 "environment": {}
             }
         },
-        "description": "Rocket.Chat",
+        "description": "Rocket.Chat. Let every conversation flow without compromise.<p>Multi-container Rockon based on a custom docker image: <a href='https://hub.docker.com/r/rocketchat/rocket.chat' target='_blank'>https://hub.docker.com/r/rocketchat/rocket.chat</a> and the official docker image: <a href='https://hub.docker.com/_/mongo' target='_blank'>https://hub.docker.com/_/mongo</a>, available for amd64 architecture only.</p>",
         "ui": {
             "https": false,
             "slug": ""
@@ -52,6 +52,6 @@
         "volume_add_support": true,
         "more_info": "<h4>Setting up the application</h4><p>Go after installation to the Rocket.Chat web interface for administration of your RocketChat installation.</p>",
         "website": "https://rocket.chat/",
-        "version": "0.54.2"
+        "version": "0.54.3"
     }
 }
