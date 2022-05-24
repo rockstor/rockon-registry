@@ -1,7 +1,7 @@
 {
     "Gollum": {
-        "description": "A Git Based Wiki on Alpine",
-        "version": "0.0.1",
+        "description": "A Git Based Wiki on Alpine. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/adtac/gollum-alpine' target='_blank'>https://hub.docker.com/r/adtac/gollum-alpine</a>, available for amd64 architecture only.</p>",
+        "version": "0.0.2",
         "website": "https://github.com/gollum/gollum",
         "containers": {
             "gollum-alpine": {

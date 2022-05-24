@@ -47,12 +47,12 @@
                 }
             }
         },
-        "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.",
+        "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/sonarr' target='_blank'>https://hub.docker.com/r/linuxserver/sonarr</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
-	"website": "https://hub.docker.com/r/linuxserver/sonarr/",
-	"version": "1.0"
+	"website": "https://sonarr.tv/",
+	"version": "1.1"
     }
 }

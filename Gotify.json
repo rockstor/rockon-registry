@@ -1,11 +1,11 @@
 {
     "Gotify": {
-        "description": "A simple server for sending and receiving messages. <p>Based on the official Gotify Docker image: <a href='https://hub.docker.com/r/gotify/server' target='_blank'>https://hub.docker.com/r/gotify/server</a> available for x86_64 architecture only.</p>",
+        "description": "A simple server for sending and receiving messages. <p>Based on the official docker image: <a href='https://hub.docker.com/r/gotify/server' target='_blank'>https://hub.docker.com/r/gotify/server</a>, available for amd64 architecture only.</p>",
+        "website": "https://gotify.net/",
+        "version": "1.1",
         "ui": {
             "slug": ""
         },
-        "website": "https://gotify.net/",
-        "version": "latest",
         "containers": {
             "gotify": {
                 "image": "gotify/server",

@@ -46,13 +46,13 @@
                 }
             }
         },
-        "description": "Booksonic by Linuxserver.io",
-        "more_info": "Booksonic is a server and an app for streaming your audiobooks to any pc or android phone. Most of the functionality is also availiable on other platforms that have apps for subsonic.",
+        "description": "Booksonic is a server and an app for streaming your audiobooks to any pc or android phone.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/booksonic' target='_blank'>https://hub.docker.com/r/linuxserver/booksonic</a>, available for amd64 and arm64 architecture.</p>",
+        "more_info": "Most of the functionality is also availiable on other platforms that have apps for subsonic.",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
-        "website": "https://hub.docker.com/r/linuxserver/booksonic/",
-        "version": "1.0"
+        "website": "https://booksonic.org/",
+        "version": "1.2"
     }
 }

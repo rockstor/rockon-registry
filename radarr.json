@@ -1,8 +1,8 @@
 {
 	"Radarr": {
-		"website": "https://hub.docker.com/r/linuxserver/radarr/",
-		"version": "1.0",
-        "description": "Radarr is a PVR for Movies on Usenet and Torrents",
+		"website": "https://radarr.video/",
+		"version": "1.1",
+        "description": "Radarr is a PVR for Movies on Usenet and Torrents.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/radarr' target='_blank'>https://hub.docker.com/r/linuxserver/radarr</a>, available for amd64 and arm64 architecture.</p>",
 		"containers": {
 			"radarr": {
 				"image": "linuxserver/radarr",

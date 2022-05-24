@@ -34,12 +34,12 @@
                 }
             }
         },
-        "description": "Ombi allows you to host your own Plex Request and user management system",
+        "description": "Ombi allows you to host your own Plex Request and user management system.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/ombi' target='_blank'>https://hub.docker.com/r/linuxserver/ombi</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
-	"website": "https://hub.docker.com/r/linuxserver/ombi/",
-	"version": "1.0"
+	"website": "https://ombi.io/",
+	"version": "1.1"
     }
 }

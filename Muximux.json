@@ -33,12 +33,12 @@
                 }
             }
         },
-        "description": "This is a lightweight portal to view & manage your HTPC apps.",
+        "description": "This is a lightweight portal to view & manage your HTPC apps. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/muximux' target='_blank'>https://hub.docker.com/r/linuxserver/muximux</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "slug": ""
         },
         "volume_add_support": true,
-	"website": "https://hub.docker.com/r/linuxserver/muximux/",
-	"version": "1.0"
+	"website": "https://github.com/mescon/Muximux",
+	"version": "1.1"
     }
 }
