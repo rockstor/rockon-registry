@@ -26,7 +26,7 @@ If you like to share your app with rest of the Rockstor community, open a pull r
 
 2. Add a comment to your pull request detailing how you've tested it out. More details the better as it will help ensure quality and benefit the whole community!
 
-3. We are trying to offer Rock-ons that are based on a multi-architecture docker image, _i.e._, it is available for the amd64 (Intel/AMD CPUs), armv7 and arm64 (ARM-based devices). While that might not always be possible, depending on the app in which you're interested, please keep that in mind and see whether you can select a docker image that has a multi-architecture manifest. When submitting, please add the supported architectures to the description (take a look at some of the more recent Rock-on submissions).
+3. We are trying to offer Rock-ons that are based on a multi-architecture docker image, _i.e._, it is available for amd64 (Intel/AMD CPUs) and arm64 (ARM-based) devices. While that might not always be possible, depending on the app in which you're interested, please keep that in mind and see whether you can select a docker image that has a multi-architecture manifest. When submitting, please add the supported architectures to the end of the Rockon description using the &lt;p&gt; and &lt;/p&gt; tags (take a look at the descriptions of some of the more recent Rock-on submissions).
 
 ## Adding vs. Updating a Rock-on You Want to Submit to the Repository
 
@@ -110,10 +110,11 @@ it's a big mass of JSON with nested objects, arrays and values.
       (optional)"custom_config": <custom configuration object that a special install handler of this Rock-on expects>
     }
 }
-``` 
+```
+_N.B. on the container names. If you are adding a net new Rockon that is a newer version of an existing one, or in a multi-container scenario uses a container for which a Rockon already exists (e.g. mariadb), ensure that the container name in your new Rockon is slightly different, otherwise a duplicate error will be thrown when the final json file is imported._
 ### Structure of a Container Object
 
-Each container object is key'd by it's name and nested within "containers" of the top level structure above. A typical container object has the following structure
+Each container object is key'd by its name and nested within "containers" of the top level structure above. A typical container object has the following structure
 
 ```
 {
