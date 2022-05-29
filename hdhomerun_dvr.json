@@ -1,0 +1,42 @@
+{
+  "HDHomeRun DVR Engine": {
+    "containers": {
+      "hdhomerun_dvr_engine": {
+        "image": "jackdock96/hdh_dvr",
+        "opts": [
+          [
+            "--net=host",
+            ""
+          ]
+        ],
+        "launch_order": 1,
+        "volumes": {
+          "/dvrdata": {
+            "description": "Choose a Share for HomeRun DVR engine configuration. E.g.: create a Share called hdh-config for this purpose alone. It is important that the owner/group specified later have full access to the share (R/W/E). Recommended size is a few MB if quotas are used",
+            "label": "Config Storage"
+          },
+          "/dvrrec": {
+            "description": "Choose a Share for storing the DVR recordings and the Live TV stream buffering (for pausing). E.g.: create a Share called hdh-rec for this purpose alone. This share needs to have full (R/W/E) access for the user and group specified later. If the recordings are to be managed/organized by another Rockon, e.g. Plex or jellyfin, ensure that the User/Group matches theirs.",
+            "label": "Data Storage"
+          }
+        },
+        "environment": {
+          "PUID": {
+            "description": "Enter a valid UID to run the HDHomeRun DVR engine with. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID",
+            "index": 1
+          },
+          "PGID": {
+            "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "label": "GID",
+            "index": 2
+          }
+        }
+      }
+    },
+    "description": "Dockerized version of the HDHomeRun DVR program. Requires recent HDHomeRun hardware and DVR subscription for discovery and recording enablement.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/jackdock96/hdh_dvr' target='_blank'>https://hub.docker.com/r/jackdock96/hdh_dvr</a>, available for amd64 and arm64 architecture.</p>",
+    "more_info": "Your HDHomerun DVR subscription must be activated as documented in the Silicondust Forum. All rules and policies from Silicondust must be followed. For enabling the use of the beta version of the recording engine, change the 'BetaEngine' flag in the dvr.conf file after the first Rockon start.  If using an existing share but planning on posting recordings to a specific directory, add the sub-folder to the dvr.conf file RecordingPath (but keep the first folder name as is). For each change to the dvr.conf file restart the Rockon. Port 65001 (udp/tcp) will be used for discovery, and udp ports 5002 and 5004 for recording and buffering. This version will utilize the host network stack, due to dynamic port assignments by the engine at this time.",
+    "website": "https://silicondust.com",
+    "version": "1.0"
+  }
+}

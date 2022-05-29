@@ -20,6 +20,7 @@
     "Gotify": "Gotify.json",
     "HAProxy-Letsencrypt": "haproxy-letsencrypt.json",
     "HandBrake": "handbrake.json",
+    "HDHomeRun DVR":"hdhomerun_dvr.json",
     "Headphones": "headphones.json",
     "Home Assistant by Linuxserver.io": "home-assistant-linuxserver.json",
     "HTTP to HTTPS redirect": "redirect-http-to-https.json",
