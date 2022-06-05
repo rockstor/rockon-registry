@@ -25,7 +25,7 @@
 				},
 				"environment": {
                     "PUID": {
-		        		"description": "Enter a valid PUID to run pwigo as. It must have full permissions to all Shares mapped in the previous step.",
+		        		"description": "Enter a valid PUID to run piwigo as. It must have full permissions to all Shares mapped in the previous step.",
                         "label": "PUID.",
                         "index": 1
 		    		},
