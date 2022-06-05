@@ -1,7 +1,7 @@
 {
 	"piwigo": {
 		"containers": {
-			"utorrent": {
+			"piwigo": {
 				"image": "lscr.io/linuxserver/piwigo:latest",
 				"launch_order": 1,
 				"ports": {
