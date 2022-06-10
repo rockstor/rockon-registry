@@ -54,6 +54,7 @@
     "PocketMine": "pocketmine.json",
     "PostgreSQL 9.5": "postgres-9.5.json",
     "PostgreSQL 10.6": "postgres-10.6.json",
+    "qBittorrent": "qbittorrent_lsio.json",
     "Radarr": "radarr.json",
     "Resilio Sync": "resilioSync.json",
     "Rocket.Chat": "rocketchat.json",
