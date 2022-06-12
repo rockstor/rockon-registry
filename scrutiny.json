@@ -2,7 +2,8 @@
     "Scrutiny": {
         "containers": {
             "scrutiny": {
-                "image": "ghcr.io/linuxserver/scrutiny",
+                "image": "ghcr.io/analogj/scrutiny",
+                "tag": "master-omnibus",
                 "launch_order": 1,
                 "opts": [
                     [
@@ -28,7 +29,7 @@
                 ],
                 "ports" : {
                     "8080": {
-                        "description": "Port for scrutiny's web interface and API.",
+                        "description": "Port for Scrutiny's web interface and API.",
                         "host_default": 8080,
                         "label": "WebUI HTTP port",
                         "ui": true
@@ -36,47 +37,27 @@
                 },
                 "volumes": {
                     "/config": {
-                        "description": "Choose a Share for Scrutiny config files. Eg: create a Share called Scrutiny-Share-Config for this purpose alone.",
+                        "description": "Choose a Share for Scrutiny's configuration files. Eg: create a Share called scrutiny-conf for this purpose alone.",
                         "label": "Config share"
                     }
                 },
                 "environment": {
-                    "PUID": {
-                        "description": "Enter a valid system UserID for Scrutiny. Must have full permissions on the previous Share.",
-                        "label": "UID",
+                    "COLLECTOR_CRON_SCHEDULE": {
+                        "description": "Crontab entry (env: COLLECTOR_CRON_SCHEDULE) MIN(0-59) HOUR(0-23) DOM(1-31) MOY(1-12) DAW(0-6). Default (midnight): \"0 0 * * *\" [must include quotation marks].",
+                        "label": "Stats Schedule",
                         "index": 1
-                    },
-                    "PGID": {
-                        "description": "Enter a valid system GroupID for Scrutiny. This group or the above UserID must have full permissions on the previous Share.",
-                        "label": "GID",
-                        "index": 2
-                    },
-                    "SCRUTINY_API_ENDPOINT": {
-                        "description": "API endpoint of the scrutiny UI. Do not change unless using as a remote collector. Default: 'http://localhost:8080'",
-                        "label": "SCRUTINY_API_ENDPOINT",
-                        "index": 3
-                    },
-                    "SCRUTINY_WEB": {
-                        "description": "Run the web service. Default: 'true'",
-                        "label": "SCRUTINY_WEB",
-                        "index": 4
-                    },
-                    "SCRUTINY_COLLECTOR": {
-                        "description": "Run the metrics collector. Default: 'true'",
-                        "label": "SCRUTINY_COLLECTOR",
-                        "index": 5
                     }
                 }
             }
         },
-        "description": "<p>WebUI for smartd S.M.A.R.T monitoring. Scrutiny is a Hard Drive Health Dashboard &amp; Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates from Backblaze.</p><p><strong>Note: </strong>In order to access the devices, this container will run with privileged capabilities. More info can be found <a href='https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities' target='_blank'>here</a>.</p><p>Based on a custom docker image: <a target='_blank' href='https://hub.docker.com/r/linuxserver/scrutiny'>https://hub.docker.com/r/linuxserver/scrutiny</a>, available for amd64 and arm64 architecture.</p>",
-		"more_info": "<p><strong>Note:</strong>This image is updating the stats only once a day, if you see: '<i>No Devices Detected!</i>' after the installation, just wait 24 hours. <br>This process can also be triggered manually from the shell by executing the following command: <code>docker exec scrutiny scrutiny-collector-metrics run</code><br>More documentation on this can be found here: <a href='https://github.com/AnalogJ/scrutiny#usage' target='_blank'>Scrutiny GitHub</a></p>",
-		"ui": {
-			"https": false,
-			"slug": ""
-		},
-		"volume_add_support": false,
-		"website": "https://github.com/AnalogJ/scrutiny",
-		"version": "1.1"
+        "description": "<p>WebUI for smartd S.M.A.R.T monitoring. Scrutiny is a Hard Drive Health Dashboard &amp; Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates from Backblaze.</p><p><strong>Warning: </strong>In order to access devices, this container runs with privileged capabilities. See: <a href='https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities' target='_blank'>https://docs.docker.com/engine/reference/run/</a>.</p><p>Based on the official docker image: <a target='_blank' href='https://ghcr.io/analogj/scrutiny:master-omnibus'>https://ghcr.io/analogj/scrutiny:master-omnibus</a>, available for amd64 and arm64 architecture.</p>",
+        "more_info": "<p><strong>Note:</strong>This image updates it's stats once a day, you may see: '<i>No Devices Detected!</i>' before the first collector cron schedule. <br>Command line stats refresh via: <code>docker exec scrutiny scrutiny-collector-metrics run</code><br>For documentation see: <a href='https://github.com/AnalogJ/scrutiny#usage' target='_blank'>Scrutiny GitHub</a></p>",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "volume_add_support": false,
+        "website": "https://github.com/AnalogJ/scrutiny",
+        "version": "1.2"
     }
 }
