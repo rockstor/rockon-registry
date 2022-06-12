@@ -36,7 +36,7 @@
                     }
                 },
                 "volumes": {
-                    "/config": {
+                    "/opt/scrutiny/config": {
                         "description": "Choose a Share for Scrutiny's configuration files. Eg: create a Share called scrutiny-conf for this purpose alone.",
                         "label": "Config share"
                     }
