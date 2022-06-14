@@ -2,7 +2,8 @@
 	"qBittorrent": {
 		"website": "http://www.qBittorrent.org/",
 		"version": "1.1",
-		"description": "qBittorrent client with a WebUI.<p>Note: Ensure that the WebUI Port is the same as the WEBUI_PORT to avoid issues with the Cross-Site Request Forgery (CSRF) protection that qBittorrent has implemented.<p>The initial WebUI user is <code>admin</code> and initial password is <code>adminadmin</code>. This can then be adjusted in the Settings Menu later.</p><p>For a more detailed description, check here <a href='WebUI Port and CSRF' target='_blank'>https://docs.linuxserver.io/images/docker-qbittorrent#webui_port-variable</a>.</p><p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/qbittorrent' target='_blank'>https://hub.docker.com/r/linuxserver/qbittorrent</a>, available for amd64 and arm64 architecture.",
+		"description": "qBittorrent client with a WebUI.<p>Note: Ensure that the WebUI Port is the same as the WEBUI_PORT to avoid issues with the Cross-Site Request Forgery (CSRF) protection that qBittorrent has implemented.<p>The initial WebUI user is <code>admin</code> and initial password is <code>adminadmin</code>. This can then be adjusted in the Settings Menu later.</p><p>For a more detailed description, check here <a href='https://docs.linuxserver.io/images/docker-qbittorrent#webui_port-variable' target='_blank'>WebUI Port and CSRF</a>.</p><p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/qbittorrent' target='_blank'>https://hub.docker.com/r/linuxserver/qbittorrent</a>, available for amd64 and arm64 architecture.",
+
 		"ui": {
 			"slug": ""
 		},
