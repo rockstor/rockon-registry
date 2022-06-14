@@ -2,8 +2,7 @@
 	"qBittorrent": {
 		"website": "http://www.qBittorrent.org/",
 		"version": "1.1",
-		"description": "qBittorrent client with a WebUI.<p>Note: Ensure that the WebUI Port is the same as the WEBUI_PORT to avoid issues with the Cross-Site Request Forgery (CSRF) protection that qBittorrent has implemented.<p>The initial WebUI user is <code>admin</code> and initial password is <code>adminadmin</code>. This can then be adjusted in the Settings Menu later.</p><p>For a more detailed description, check here <a href='https://docs.linuxserver.io/images/docker-qbittorrent#webui_port-variable' target='_blank'>WebUI Port and CSRF</a>.</p><p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/qbittorrent' target='_blank'>https://hub.docker.com/r/linuxserver/qbittorrent</a>, available for amd64 and arm64 architecture.",
-
+		"description": "qBittorrent client with a WebUI.<p>Note: Ensure that the WebUI Port is set to 5345 to prevent issues with the Cross-Site Request Forgery (CSRF) protection that qBittorrent has implemented (see <a href='https://docs.linuxserver.io/images/docker-qbittorrent#webui_port-variable' target='_blank'>WebUI Port and CSRF</a> for a more detailed description).</p><p>The initial WebUI user is <code>admin</code> and initial password is <code>adminadmin</code>. This can be adjusted in the Settings Menu after first login.</p><p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/qbittorrent' target='_blank'>https://hub.docker.com/r/linuxserver/qbittorrent</a>, available for amd64 and arm64 architecture.",
 		"ui": {
 			"slug": ""
 		},
@@ -12,6 +11,12 @@
 			"qBittorrent": {
 				"image": "linuxserver/qbittorrent",
 				"launch_order": 1,
+				"opts": [
+					[
+						"-e",
+						"WEBUI_PORT=5345"
+					]
+				],
 				"volumes": {
 					"/config": {
 						"description": "Configuration for qBittorrent. Ensure the write permissions correspond to the UID/GID entered later for this Rockon.",
@@ -23,9 +28,9 @@
 					}
 				},
 				"ports": {
-					"8080": {
-						"description": "qBittorrent WebUI port. Ensure that the WebUI Port is the same as the WEBUI_PORT to avoid issues with the Cross-Site Request Forgery (CSRF) protection that qBittorrent has implemented.",
-						"host_default": 8080,
+					"5345": {
+						"description": "qBittorrent WebUI port. The WebUI port has to be set to 5345 to prevent issues with the Cross-Site Request Forgery (CSRF) protection that qBittorrent has implemented.",
+						"host_default": 5345,
 						"label": "External WebUI port",
 						"protocol": "tcp",
 						"ui": true
@@ -37,20 +42,15 @@
 					}
 				},
 				"environment": {
-					"WEBUI_PORT": {
-						"description": "Explicitly enter the same port number maintained above for the WebUI port (e.g., 8080 is usually the suggested default for the WebUI port if it is not used in any other Rockon). See the description of WebUI setting for more details.",
-						"label": "WEBUI_PORT",
-						"index": 1
-					},
 					"PUID": {
 						"description": "Enter a valid UID of an existing user with permissions to the download and configuration shares used for qBittorrent.",
 						"label": "UID",
-						"index": 2
+						"index": 1
 					},
 					"PGID": {
 						"description": "Enter a valid GID of an existing user with permissions to the download and configuration shares used for qBittorrent.",
 						"label": "GID",
-						"index": 3
+						"index": 2
 					}
 				}
 			}
