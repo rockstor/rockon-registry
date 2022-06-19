@@ -43,15 +43,15 @@
                 },
                 "volumes": {
                     "/opt/tplink/EAPController/data": {
-                        "description": "Choose a DATA Share for Omada Controller files. Eg: create a Share called omada-controller for this purpose alone.",
+                        "description": "Choose a DATA Share for Omada Controller files. Eg: create a Share called omada-controller-data for this purpose alone.",
                         "label": "EAPController DATA Storage"
                     },
                     "/opt/tplink/EAPController/work": {
-                        "description": "Choose a WORK Share for Omada Controller files. Eg: create a Share called omada-controller for this purpose alone.",
+                        "description": "Choose a WORK Share for Omada Controller files. Eg: create a Share called omada-controller-work for this purpose alone.",
                         "label": "EAPController WORK Storage"
                     },
                     "/opt/tplink/EAPController/logs": {
-                        "description": "Choose a LOGS Share for Omada Controller files. Eg: create a Share called omada-controller for this purpose alone.",
+                        "description": "Choose a LOGS Share for Omada Controller files. Eg: create a Share called omada-controller-logs for this purpose alone.",
                         "label": "EAPController LOGS Storage"
                     }
                 },
