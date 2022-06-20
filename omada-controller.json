@@ -64,7 +64,7 @@
                 }
             }
         },
-        "description": "Omada Access Point controller.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>https://hub.docker.com/r/mbentley/omada-controller</a>, available for amd64, armv71, and arm64 architecture.</p>",
+        "description": "Omada Access Point controller.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>https://hub.docker.com/r/mbentley/omada-controller</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "This is a containerized version of TP-Link Network's Omada Controller.",
         "volume_add_support": false,
         "ui": {
