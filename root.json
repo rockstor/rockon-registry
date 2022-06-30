@@ -49,6 +49,7 @@
     "OwnCloud": "owncloud.json",
     "OwnCloud-Official": "owncloud-official.json",
     "OwnCloudHTTPS": "owncloudHTTPS.json",
+    "PiGallery2": "pigallery2.json",
     "Pi-Hole": "pi-hole.json",
     "Plex": "plex.json",
     "PocketMine": "pocketmine.json",

@@ -1,0 +1,56 @@
+{
+    "PiGallery2": {
+        "containers": {
+            "pigallery2": {
+                "image": "bpatrik/pigallery2",
+                "launch_order": 1,
+                "ports": {
+                    "4001": {
+                        "description": "PiGallery2 WebUI port",
+                        "host_default": 4001,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for configuration",
+                        "label": "Config Storage"
+                    },
+                    "/db": {
+                        "description": "Choose a Share to save app database",
+                        "label": "DB Storage"
+                    },
+                    "/tmp": {
+                        "description": "Choose a Share for temporary files",
+                        "label": "Temp Storage"
+                    },
+                    "/images": {
+                        "description": "Choose a Share for Media",
+                        "label": "Media Storage"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+                        "description": "Enter a valid UID to run Ombi as. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID to run Ombi as.",
+                        "index": 1
+		            },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID to run Ombi as.",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "A fast directory-first photo gallery website, with rich UI, optimized for running on low resource servers (especially on raspberry pi) <a href='https://hub.docker.com/r/bpatrik/pigallery2' target='_blank'>https://hub.docker.com/r/bpatrik/pigallery2</a>, available for amd64 and arm64 architecture.</p>",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+	"website": "https://bpatrik.github.io/pigallery2/",
+	"version": "1.0"
+    }
+}
