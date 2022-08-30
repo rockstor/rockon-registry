@@ -38,7 +38,7 @@
                 }
             }
         },
-        "description": "An open source voxel game engine clone of the popular Minecraft, see <em>more info</em> for details.</p><p>Based on the docker image by <a href='https://www.linuxserver.io/' target='_blank'>Linuxserver.io</a>: <a href='https://hub.docker.com/r/linuxserver/minetest' target='_blank'>https://hub.docker.com/r/linuxserver/minetest</a>, available for amd64, arm32v7 and arm64v8.</p>",
+        "description": "An open source voxel game engine clone of the popular Minecraft, see <em>more info</em> for details.</p><p>Based on the docker image by <a href='https://www.linuxserver.io/' target='_blank'>Linuxserver.io</a>: <a href='https://hub.docker.com/r/linuxserver/minetest' target='_blank'>https://hub.docker.com/r/linuxserver/minetest</a>, available for amd64 and arm64 architecture.</p>",
         "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Minetest-logo.svg/110px-Minetest-logo.svg.png",
         "more_info": "<p>Documentation on how to configure minetest server can be found here: <a href='https://wiki.minetest.net/Setting_up_a_server' target='_blank'>wiki.minetest.net/Setting_up_a_server</a>.</p>",
         "ui": {
