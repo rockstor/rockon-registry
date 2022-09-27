@@ -55,13 +55,6 @@
                         "label": "EAPController LOGS Storage"
                     }
                 },
-                "environment": {
-                    "TZ": {
-                    "description": "Timezone for the controller.",
-                    "label": "TZ",
-                    "index": 1	
-                    }
-                }
             }
         },
         "description": "Omada Access Point controller.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>https://hub.docker.com/r/mbentley/omada-controller</a>, available for amd64 and arm64 architecture.</p>",
