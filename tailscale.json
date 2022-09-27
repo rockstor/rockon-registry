@@ -1,0 +1,34 @@
+{
+    "Tailscale": {
+        "containers": {
+            "launch_order": 1,
+            "tailscaled": {
+                "image": "tailscale/tailscale",
+                "tag": "stable",
+                "opts": [
+                    [
+                        "--net=host",
+                        ""
+                    ],
+                    [
+                        "--privileged",
+                        ""
+                    ],
+                    [
+                        "-v",
+                        "/var/lib:/var/lib"
+                    ],
+                    [
+                        "-v",
+                        "/dev/net/tun:/dev/net/tun"
+                    ]
+                ]
+            }
+        },
+        "description": "Zero config VPN based on the open source WireGuard protocol. Access your devices and applications from anywhere.<p>Note: this container uses host networking, allowing privileged network access.<p>Based on the official stable docker image: <a href='https://hub.docker.com/r/tailscale/tailscale' target='_blank'>https://hub.docker.com/r/tailscale/tailscale</a>, available for amd64 and arm64 architecture.</p>",
+        "version": "1.0",
+        "website": "https://tailscale.com/",
+        "icon": "https://tailscale.com/files/images/og-image.png",
+        "more_info": "Default <a href='https://tailscale.com/kb/1028/key-expiry/' target='_blank'>Key Expiry</a> is 180 days. Temporary extension possible."
+    }
+}

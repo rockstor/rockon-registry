@@ -60,6 +60,7 @@
     "SmokePing": "smokeping.json",
     "Sonarr": "sonarr.json",
     "Syncthing": "syncthing.json",
+    "Tailscale": "tailscale.json",
     "Tautulli": "tautulli.json",
     "TeamSpeak3": "teamspeak3.json",
     "Transmission with OpenVPN": "transmission-with-openvpn.json",
