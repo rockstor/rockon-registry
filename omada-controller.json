@@ -54,7 +54,7 @@
                         "description": "Choose a LOGS Share for Omada Controller files. Eg: create a Share called omada-controller-logs for this purpose alone.",
                         "label": "EAPController LOGS Storage"
                     }
-                },
+                }
             }
         },
         "description": "Omada Access Point controller.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>https://hub.docker.com/r/mbentley/omada-controller</a>, available for amd64 and arm64 architecture.</p>",
