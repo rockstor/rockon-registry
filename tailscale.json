@@ -1,10 +1,10 @@
 {
     "Tailscale": {
         "containers": {
-            "launch_order": 1,
             "tailscaled": {
                 "image": "tailscale/tailscale",
                 "tag": "stable",
+                "launch_order": 1,
                 "opts": [
                     [
                         "--net=host",
@@ -22,13 +22,28 @@
                         "-v",
                         "/dev/net/tun:/dev/net/tun"
                     ]
-                ]
+                ],
+                "environment": {
+                    "TS_AUTH_KEY": {
+                        "description": "Pre-authorized key generated from Tailscale Settings->Keys",
+                        "label": "Auth key"
+                    }
+                },
+                "ports": {
+                    "8088": {
+                        "description": "Tailscale local configuration WebUI port. Suggested port: 8088",
+                        "host_default": 8088,
+                        "label": "Web-UI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                }
             }
         },
-        "description": "Zero config VPN based on the open source WireGuard protocol. Access your devices and applications from anywhere.<p>Note: this container uses host networking, allowing privileged network access.<p>Based on the official stable docker image: <a href='https://hub.docker.com/r/tailscale/tailscale' target='_blank'>https://hub.docker.com/r/tailscale/tailscale</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Zero config VPN using WireGuard. Access your devices securely from anywhere.<p>Note: uses host networking with privileged network access.<p><p>Requires the generation of a tailnet <a href='https://tailscale.com/kb/1085/auth-keys/' target='_blank'>Auth Key:</a> via Tailscale <a href='https://login.tailscale.com/admin/settings/keys' target='_blank'>Settings->Keys</a><p>Based on the official stable docker image: <a href='https://hub.docker.com/r/tailscale/tailscale' target='_blank'>https://hub.docker.com/r/tailscale/tailscale</a>, available for amd64 and arm64 architecture.</p>",
         "version": "1.0",
         "website": "https://tailscale.com/",
         "icon": "https://tailscale.com/files/images/og-image.png",
-        "more_info": "Default <a href='https://tailscale.com/kb/1028/key-expiry/' target='_blank'>Key Expiry</a> is 180 days. Temporary extension possible."
+        "more_info": "Default <a href='https://tailscale.com/kb/1028/key-expiry/' target='_blank'>Key Expiry</a> is 180 days. Temporary extension possible.<p> Web interface enable as root <code>docker exec tailscaled tailscale web</code>"
     }
 }
