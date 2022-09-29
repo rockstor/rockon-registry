@@ -21,12 +21,21 @@
                     [
                         "-v",
                         "/dev/net/tun:/dev/net/tun"
+                    ],
+                    [
+                        "-e",
+                        "TS_WEBUI=true"
+                    ],
+                    [
+                        "-e",
+                        "TS_STATE_DIR=/statedir"
                     ]
                 ],
-                "environment": {
-                    "TS_AUTH_KEY": {
-                        "description": "Pre-authorized key generated from Tailscale Settings->Keys",
-                        "label": "Auth key"
+                "volumes": {
+                    "/statedir": {
+                        "description": "Choose a Share for Tailscale's local configuration. Eg: create a Share called tailscale-config for this purpose alone.",
+                        "label": "Config Storage",
+                        "min_size": 1073741824
                     }
                 },
                 "ports": {
@@ -40,7 +49,7 @@
                 }
             }
         },
-        "description": "Zero config VPN using WireGuard. Access your devices securely from anywhere.<p>Note: uses host networking with privileged network access.<p><p>Requires the generation of a tailnet <a href='https://tailscale.com/kb/1085/auth-keys/' target='_blank'>Auth Key:</a> via Tailscale <a href='https://login.tailscale.com/admin/settings/keys' target='_blank'>Settings->Keys</a><p>Based on the official stable docker image: <a href='https://hub.docker.com/r/tailscale/tailscale' target='_blank'>https://hub.docker.com/r/tailscale/tailscale</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Zero config VPN using WireGuard. Access your devices securely from anywhere.<p>Note: uses host networking with privileged network access.<p>Based on the official stable docker image: <a href='https://hub.docker.com/r/tailscale/tailscale' target='_blank'>https://hub.docker.com/r/tailscale/tailscale</a>, available for amd64 and arm64 architecture.</p>",
         "version": "1.0",
         "website": "https://tailscale.com/",
         "icon": "https://tailscale.com/files/images/og-image.png",
