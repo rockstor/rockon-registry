@@ -56,7 +56,7 @@
                 }
             }
         },
-        "description": "Airsonic music server. <p>Based on a linuxserver docker image: <a href='https://hub.docker.com/r/linuxserver/airsonic-advanced' target='_blank'>https://hub.docker.com/r/linuxserver/airsonic-advanced</a>, available for x86-64 and arm64 architectures.</p>",
+        "description": "Airsonic music server. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/airsonic-advanced' target='_blank'>https://hub.docker.com/r/linuxserver/airsonic-advanced</a>, available for x86-64 and arm64 architectures.</p>",
         "ui": {
             "slug": ""
         },
