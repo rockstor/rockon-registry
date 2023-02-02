@@ -78,7 +78,7 @@
                         "index": 1
                     },
                     "PGID": {
-                        "description": "Enter the valid GID 'omada' process group ID to use along with the same UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "description": "Enter an existing Group ID (GID) to run this Rock-on. This group (or prior UID) must already have full permissions to Shares used by this Rock-on.",
                         "label": "GID",
                         "index": 2
                     },
