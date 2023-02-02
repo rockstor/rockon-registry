@@ -73,7 +73,7 @@
                 },
                 "environment": {
                     "PUID": {
-                        "description": "Enter the valid UID 'omada' process user ID. It must have full permissions to all Shares mapped in the previous step. Suggested default: 508.",
+                        "description": "Enter an existing User ID (UID) to run this Rock-on. They must already have full permissions to Shares used by this Rock-on.",
                         "label": "UID",
                         "index": 1
                     },
