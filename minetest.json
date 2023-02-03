@@ -1,0 +1,51 @@
+{
+    "Minetest": {
+        "containers": {
+            "minetest": {
+                "image": "linuxserver/minetest",
+                "launch_order": 1,
+                "ports": {
+                    "30000": {
+                        "description": "Minetest port. Suggested default: 30000",
+                        "host_default": 30000,
+                        "label": "Minetest port",
+                        "protocol": "udp",
+                        "ui": false
+                    }
+                },
+                "volumes": {
+                    "/config/.minetest": {
+                        "description": "Choose a Share for minetest configuration. Eg: create a Share called minetest-config for this purpose alone.",
+                        "label": "Config Storage"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+                        "description": "Enter a valid UID to run minetest as. It must have full permissions to the Share mapped in the previous step.",
+                        "label": "UID to run minetest as.",
+                        "index": 1
+                    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to the Share mapped in the previous step.",
+                        "label": "GID to run minetest as.",
+                        "index": 2
+                    },
+                    "TZ": {
+                        "description": "Enter timezone e.g Europe/London (see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).",
+                        "label": "Timezone to run minetest server in.",
+                        "index": 3
+                    }
+                }
+            }
+        },
+        "description": "An open source voxel game engine clone of the popular Minecraft, see <em>more info</em> for details.</p><p>Based on the docker image by <a href='https://www.linuxserver.io/' target='_blank'>Linuxserver.io</a>: <a href='https://hub.docker.com/r/linuxserver/minetest' target='_blank'>https://hub.docker.com/r/linuxserver/minetest</a>, available for amd64 and arm64 architecture.</p>",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Minetest-logo.svg/110px-Minetest-logo.svg.png",
+        "more_info": "<p>Documentation on how to configure minetest server can be found here: <a href='https://wiki.minetest.net/Setting_up_a_server' target='_blank'>wiki.minetest.net/Setting_up_a_server</a>.</p>",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": false,
+        "website": "http://minetest.net/",
+        "version": "1.0"
+    }
+}
