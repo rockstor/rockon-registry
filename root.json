@@ -45,6 +45,7 @@
     "Node-Red": "nodered.json",
     "NZBGet": "nzbget.json",
     "NZBHydra2": "NZBHydra2.json",
+    "Omada Controller": "omada-controller.json",    
     "Ombi": "ombi.json",
     "OpenVPN": "openvpn.json",
     "OwnCloud": "owncloud.json",
