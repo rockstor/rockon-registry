@@ -51,7 +51,7 @@
 						"index": 1
 					},
 					"WEB_PORT": {
-						"description": "Enter the Port Name for the WebUI. Web-port. Recommended: 80. This port has to be the same as the Rockon UI Link port, configured earlier. This ensures that the admin pages for pi-hole are accessible via Web Browser",
+						"description": "Enter the WebUI Web-port number. Recommended: 80. This port has to be the same as the Rockon UI Link port, configured earlier. This ensures that the admin pages for pi-hole are accessible via Web Browser",
 						"label": "Web-Port",
 						"index": 2
 					},
