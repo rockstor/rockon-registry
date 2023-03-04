@@ -46,7 +46,7 @@
 				},
 				"environment": {
 					"FTLCONF_LOCAL_IPV4": {
-						"description": "Enter ip4v adress of rockstor server. If not specified, it will default to internal docker IP and it will not work.",
+						"description": "Enter IPv4 adress of rockstor server. If not specified, it will default to internal docker IP and it will not work.",
 						"label": "Rockstor IP",
 						"index": 1
 					},
