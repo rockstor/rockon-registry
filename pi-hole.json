@@ -1,72 +1,75 @@
 {
-    "Pi-Hole": {
-        "containers": {
-            "pi-hole": {
-                "image": "pihole/pihole",
-                "opts": [
-                    [
-                        "--cap-add",
-                        "NET_ADMIN"
-                    ],
-                    [
-			"--dns",
-			"127.0.0.1"
-                    ],
-		    [
-			"--dns",
-			"8.8.8.8"
-		    ],
-		    [
-			"-e",
-			"IPv6=False"
-		    ]
-                ],
-                "launch_order": 1,
-                "ports": {
-                    "53": {
-                        "description": "DNS port. Required: 53",
-                        "host_default": 53,
-                        "label": "DNS-Port",
-                        "ui": false
-                    },
+	"Pi-Hole": {
+		"containers": {
+			"pi-hole": {
+				"image": "pihole/pihole",
+				"opts": [
+					[
+						"--cap-add",
+						"NET_ADMIN"
+					],
+					[
+						"--dns",
+						"127.0.0.1"
+					],
+					[
+						"--dns",
+						"8.8.8.8"
+					],
+					[
+						"--net",
+						"host"
+					],
+					[
+						"-e",
+						"IPv6=False"
+					]
+				],
+				"launch_order": 1,
+				"ports": {
                     "80": {
-                        "description": "Web-port. Recommended: 80. If other port than 80 is used some blocked sites will not show correctly.",
+                        "description": "Rockon UI Link Port. Recommended: 80. This port has to be the same as the subsequent Web-port later in the configuration, so the admin pages can be accessed from within the Rockon page.",
                         "host_default": 80,
-                        "label": "Web-Port",
+                        "label": "Rockon_Web-Port",
                         "ui": true
                     }
                 },
-                "volumes": {
-                    "/etc/pihole": {
-                        "description": "Choose a share for Pi-Hole configuration. Eg: create a Share called pihole-config for this purpose alone.",
-                        "label": "Pi-Hole config"
-                    },
-		    "/etc/dnsmasq.d": {
-			"description": "Choose a share for dnsmasq configuration. Eg: create a Share called dnsmasq-config for this purpose alone.",
-			"label": "dnsmasq config"
-		    }
-                },
-                "environment": {
-                    "ServerIP": {
-                        "description": "Enter IP-adress of rockstor server. If not specified it will default to internal docker IP and it will not work.",
-                        "label": "Rockstor IP",
-                        "index": 1
-                    },
-                    "WEBPASSWORD": {
-                        "description": "Enter desired webpassword for pi-hole.",
-                        "label": "Web-Password",
-                        "index": 2
-                    }
-                }
-            }
-        },
-        "description": "DNS Server that acts as a black hole for Internet advertisements.<p>Based on the official docker image: <a href='https://hub.docker.com/r/pihole/pihole' target='_blank'>https://hub.docker.com/r/pihole/pihole</a>, available for amd64 and arm64 architecture.</p>",
-        "more_info": "<h4>PI-HOLE™: A BLACK HOLE FOR INTERNET ADVERTISEMENTS</h4><p><b>Admin page</b></p><p>To access admin interface go to URL: http://[SERVERIP]/Admin</p><p>If you have different port than 80 you need to specify that in the URL.</p><p><b>Block Over 100,000 Ad-serving Domains</b></p><p>Known ad-serving domains are pulled from third party sources and compiled into one list.</p><p><b>Block Advertisements On Any Device</b></p><p>Network-level blocking allows any device to block ads, regardless of hardware or OS.</p><p><b>Improve Overall Network Performance</b></p><p>Since ads are blocked before they are downloaded, your network will perform better.</p>",
-        "ui": {
-            "slug": "admin"
-        },
-        "volume_add_support": false,
-        "website": "https://pi-hole.net/",
-        "version": "2.0"
-    }
+				"volumes": {
+					"/etc/pihole": {
+						"description": "Choose a share for Pi-Hole configuration. E.g.: create a Share called pihole-config for this purpose alone.",
+						"label": "Pi-Hole config"
+					},
+					"/etc/dnsmasq.d": {
+						"description": "Choose a share for dnsmasq configuration. E.g.: create a Share called dnsmasq-config for this purpose alone.",
+						"label": "dnsmasq config"
+					}
+				},
+				"environment": {
+					"FTLCONF_LOCAL_IPV4": {
+						"description": "Enter the IPv4 address of the Rockstor host. If not specified, it will default to the internal docker IP and will not work.",
+						"label": "Rockstor IP",
+						"index": 1
+					},
+					"WEB_PORT": {
+						"description": "Enter the WebUI Web-port number. Recommended: 80. This port has to be the same as the Rockon UI Link port, configured earlier. This ensures that the admin pages for pi-hole are accessible via Web Browser",
+						"label": "Web-Port",
+						"index": 2
+					},
+					"WEBPASSWORD": {
+						"description": "Enter desired password for the pi-hole Web administration.",
+						"label": "Web-Password",
+						"index": 3
+					}
+				}
+			}
+		},
+		"description": "DNS Server that acts as a black hole for Internet advertisements.<p>Based on the official docker image: <a href='https://hub.docker.com/r/pihole/pihole' target='_blank'>https://hub.docker.com/r/pihole/pihole</a>, available for amd64 and arm64 architecture.</p>",
+		"more_info": "<h4>PI-HOLE™: A BLACK HOLE FOR INTERNET ADVERTISEMENTS</h4><p><b>Admin page</b></p><p>To access admin interface go to URL: http://[SERVERIP]:[Web-Port]/Admin</p><p><b>Block Over 100,000 Ad-serving Domains</b></p><p>Known ad-serving domains are pulled from third party sources and compiled into one list.</p><p><b>Block Advertisements On Any Device</b></p><p>Network-level blocking allows any device to block ads, regardless of hardware or OS.</p><p><b>Improve Overall Network Performance</b></p><p>Since ads are blocked before they are downloaded, your network will perform better.</p><p>Note: this Rockon uses the net=host option to allow for use of the dhcp functionality.",
+		"volume_add_support": false,
+        	"ui": {
+            	"slug": "admin"
+        	},		
+		"website": "https://pi-hole.net/",
+		"version": "2.5"
+	}
 }
