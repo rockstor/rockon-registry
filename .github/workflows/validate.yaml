@@ -1,0 +1,15 @@
+name: rockon-validator
+on: [pull_request]
+jobs:
+  validate:
+    name: runner / suggester / validator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: go install github.com/StephenBrown2/rockon-validator@latest
+      - run: rockon-validator -w .
+      - uses: reviewdog/action-suggester@v1
+        with:
+          tool_name: rockon-validator
+          filter_mode: nofilter
+          fail_on_error: true
