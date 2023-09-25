@@ -8,87 +8,16 @@ install, uninstall, update, start and stop.
 ## Can You Show Me an Example??
 
 Look at any <name>.json file in this repository. A simpler example is
-[syncthing.json](https://github.com/rockstor/rockon-registry/blob/master/syncthing.json). The structure is intuitive (though cumbersome) and with the help of examples and below description, you can add your own apps with some effort.
+[syncthing.json](https://github.com/rockstor/rockon-registry/blob/master/syncthing.json). The structure is fairly intuitive though cumbersome. Using existing examples and the description below of the `json` structure should make it clearer on how this framework is organized.
 
-## How Can I Add My Own App?
+## How Can I Add My Own Rock-on?
 
-If you are familiar with Docker and know how to run apps by hand, you can create a Rock-on for the same with a little bit of craft. There are three broad steps.
-
-1. Configure the Rock-on service on your Rockstor system. Follow this [doc](http://rockstor.com/docs/docker-based-rock-ons/overview.html).
-
-2. Create your Rock-on profile file, [app].json following the clues in this readme.
-
-3. Upload the file to /opt/rockstor/rockons-metastore/[app].json. Hit update in the Web-UI and install your brand new Rock-on!
-
-If you like to share your app with rest of the Rockstor community, open a pull request in this repository. Please follow these guidelines when opening a pull request.
-
-1. One Rock-on per pull request please. If you are working on multiple apps, separate them out. It will make testing and merging a lot more manageable.
-
-2. Add a comment to your pull request detailing how you've tested it out. More details the better as it will help ensure quality and benefit the whole community!
-
-3. We are trying to offer Rock-ons that are based on a multi-architecture docker image, _i.e._, it is available for amd64 (Intel/AMD CPUs) and arm64 (ARM-based) devices. While that might not always be possible, depending on the app in which you're interested, please keep that in mind and see whether you can select a docker image that has a multi-architecture manifest. When submitting, please add the supported architectures to the end of the Rockon description using the &lt;p&gt; and &lt;/p&gt; tags (take a look at the descriptions of some of the more recent Rock-on submissions).
-
-## Adding vs. Updating a Rock-on You Want to Submit to the Repository
-
-While there are no hard and fast rules, you can follow these guidelines to decide whether it is better to update an existing Rock-on or submit a new one that contains substantial changes:
-
-1. If no Rock-on exists for your app already, create a new one. The obvious choice.
-
-2. Create a new Rock-on if one already exists for this project, but the new one will use a different docker image. E.g., an existing Rock-on uses an image from linuxserver.io, while the one you are interested in submitting uses an image created by the owner of the project. You can subsequently submit a proposal to deprecate the existing Rock-on. Reasons for that could be that the underlying docker container has not been maintained in a long time, or the new Rock-on will have the same or more functionality and is more popular with the community.
-
-3. Update the existing Rock-on if the changes do not include the use of a different image. E.g., the Handbrake Rock-on was expanded with a few useful user parameters over time, but continued to use the same underlying docker image. Here it made more sense to update the existing Rock-on instead of submitting a new version.
-
-## One Time Setup Before Opening Pull Requests
-
-Go to [rockon-registry repo](https://github.com/rockstor/rockon-registry) and click on the <b>Fork</b> button. This will fork the repository into your profile which serves as your private git remote called origin. The next few git steps are demonstrated on a Linux terminal. 
-
-Create a local clone of your fork.
-```
-git clone git@github.com:your_github_username/rockon-registry.git
-```
-Configure this new git repo with your name and email address. This is required to accurately record collaboration.
-```
-cd rockon-registry
-git config user.name "Firstname Lastname"
-git config user.email your_email_address
-```
-
-Add a remote called upstream to periodically rebase your local repository with changes in the upstream made by other contributors.
-```
-git remote add upstream https://github.com/rockstor/rockon-registry.git
-```
-Above 4 steps help you setup your local environment. If you are familiar with git and use an IDE like Eclipse, you can achieve the same outcome in a different way. Here, we listed the simple terminal way of setting it up.
-
-## Steps to Contribute a Rock-on with a Pull Request
-
-Rebase your master branch before making your own changes.
-```
-cd rockon-registry
-git checkout master
-git pull --rebase upstream master
-```
-
-Checkout a new/separate branch for your Rock-on
-```
-git checkout -b rockon_name
-```
-
-Add and commit your Rock-on to git. Say you are working on Syncthing Rock-on and have the syncthing.json tested and ready to go. First copy the file over to your repo. Next,
-```
-git add syncthing.json
-git commit -m 'add synctthing rock-on'
-```
-
-Push your Rock-on to github. <branch_name> is from two steps ago.
-```
-git push origin <branch_name>
-```
-
-Now go to github and open a pull request. Thanks!
+If you are familiar with Docker and know how to deploy docker containers using the command line, you can create a Rock-on for the same with little effort.
+You can find instructions in the [Rockstor Documentation](https://rockstor.com/docs/contribute/contribute_rockons.html) both for running your own Rock-on locally, as well as how to contribute to the existing public repository of available Rock-ons
 
 ## What Is the Structure of a Rock-on Profile File?
 
-it's a big mass of JSON with nested objects, arrays and values.
+It is a big mass of JSON with nested objects, arrays and values.
 
 ### Top Level Structure
 ```
