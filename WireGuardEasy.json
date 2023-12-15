@@ -1,0 +1,94 @@
+{
+	"WireGuard Easy": {
+		"containers": {
+			"WireGuardEasy": {
+				"image": "weejewel/wg-easy",
+				"launch_order": 1,
+				"opts": [
+					[
+						"--cap-add",
+						"NET_ADMIN"
+					],
+					[
+						"--cap-add",
+						"SYS_MODULE"
+					],
+					[
+						"--sysctl",
+						"net.ipv4.conf.all.src_valid_mark=1"
+					],
+					[
+						"--sysctl",
+						"net.ipv4.ip_forward=1"
+					]
+				],
+				"ports": {
+					"51820": {
+						"description": "Wireguard port. Suggested default: 51820",
+						"host_default": 51820,
+						"label": "Wireguard Port (udp)",
+						"protocol": "udp",
+						"ui": false
+					},
+					"51821": {
+						"description": "Wireguard WebUI port. Suggested default: 51821",
+						"host_default": 51821,
+						"label": "Wireguard WebUI Port (tcp)",
+						"protocol": "tcp",
+						"ui": true
+					}
+				},
+				"volumes": {
+					"/etc/wireguard": {
+						"description": "Choose a Share to store the WireGuard configuration. E.g.: create a Share called wireguard-config for this purpose alone.",
+						"label": "Wireguard Easy Config Storage"
+					}
+				},
+				"environment": {
+					"WG_HOST": {
+						"description": "Enter your WAN IP (externally visible IP), or a Dynamic DNS hostname (e.g.: vpn.myserver.com)",
+						"label": "WAN IP",
+						"index": 1
+					},
+					"PASSWORD": {
+						"description": "Enter an administrator password to log into the WebUI",
+						"label": "WebUI Password",
+						"index": 2
+					},
+					"WG_DEVICE": {
+						"description": "Ethernet device the wireguard traffic should be forwarded through (e.g.: ens6f0). For default enter value: eth0",
+						"label": "Ethernet Device",
+						"index": 3
+					},
+					"WG_DEFAULT_ADDRESS": {
+						"description": "Clients' IP address range, using x for the last octet (e.g.: 10.6.0.x). For default enter value: 10.8.0.x",
+						"label": "Client Address Space",
+						"index": 4
+					},
+					"WG_DEFAULT_DNS": {
+						"description": "DNS server(s) clients will use, separated by commas (e.g.: 8.8.8.8, 8.8.4.4). For default enter value: 1.1.1.1",
+						"label": "Default DNS Server",
+						"index": 5
+					},
+					"WG_ALLOWED_IPS": {
+						"description": "Allowed IPs clients will use, separated by commas (e.g.: 192.168.15.0/24, 10.0.1.0/24). For no restrictions enter values: 0.0.0.0/0, ::/0",
+						"label": "Allowed IP address ranges",
+						"index": 6
+					},
+					"WG_PERSISTENT_KEEPALIVE": {
+						"description": "Value in seconds to keep the connection open. If this value is set to 0, then the PersistenKeepalive functionality is turned off. For default enter value: 0.",
+						"label": "Persistent Keepalive (second)",
+						"index": 7
+					}
+				}
+			}
+		},
+		"description": "<p>The easiest way to run WireGuard VPN + Web-based Admin UI.</p><p>Based on the custom docker image by <a href='https://github.com/WeeJeWel' target='_blank'>Emile Nijssen</a>: <a href='https://hub.docker.com/r/weejewel/wg-easy' target='_blank'>https://hub.docker.com/r/weejewel/wg-easy</a>, available for amd64 and arm64 architecture.</p>",
+		"ui": {
+			"slug": ""
+		},
+		"volume_add_support": false,
+		"website": "https://www.wireguard.com/",
+		"version": "1.0"
+	}
+}
