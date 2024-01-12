@@ -2,7 +2,7 @@
 	"WireGuard Easy": {
 		"containers": {
 			"WireGuardEasy": {
-				"image": "weejewel/wg-easy",
+				"image": "ghcr.io/wg-easy/wg-easy",
 				"launch_order": 1,
 				"opts": [
 					[
@@ -83,12 +83,12 @@
 				}
 			}
 		},
-		"description": "<p>The easiest way to run WireGuard VPN + Web-based Admin UI.</p><p>Based on the custom docker image by <a href='https://github.com/WeeJeWel' target='_blank'>Emile Nijssen</a>: <a href='https://hub.docker.com/r/weejewel/wg-easy' target='_blank'>https://hub.docker.com/r/weejewel/wg-easy</a>, available for amd64 and arm64 architecture.</p>",
+		"description": "<p>The easiest way to run WireGuard VPN + Web-based Admin UI.</p><p>Based on the custom docker image by <a href='https://github.com/WeeJeWel' target='_blank'>Emile Nijssen</a>: <a href='https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy' target='_blank'>https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy</a>, available for amd64 and arm64 architecture.</p>",
 		"ui": {
 			"slug": ""
 		},
 		"volume_add_support": false,
 		"website": "https://www.wireguard.com/",
-		"version": "1.0"
+		"version": "1.1"
 	}
 }
