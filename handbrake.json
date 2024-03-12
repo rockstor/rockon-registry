@@ -8,7 +8,11 @@
                     "quicksync": {
                         "description": "Optional: path to hardware transcoding device for Intel Quick Sync (/dev/dri). Leave blank if not needed.",
                         "label": "Intel Quick Sync device"
-                    }
+                    },
+                    "opticaldrive": {
+                        "description": "Optional: path to optical drive device (e.g., DVD drive at /dev/sr0).Optical drives usually have /dev/srX as device. E.g., the first drive is /dev/sr0, the second /dev/sr1, etc. Leave blank if not needed.",
+                        "label": "Optical Drive"
+                    }					
                 },
                 "ports": {
                     "5800": {
@@ -27,20 +31,20 @@
                 },
                 "volumes": {
                     "/config": {
-                        "description": "Choose a Share for handbrake configuration. Eg: create a Share called handbrake-config for this purpose alone.",
-                        "label": "Config Storage"
+                        "description": "Choose a Share for handbrake configuration. E.g.: create a Share called handbrake-config for this purpose alone.",
+                        "label": "01 Config Storage"
                     },
                     "/storage": {
-                        "description": "Choose a Share for handbrake that contains files from your host that need to be accessible by the application Eg: create a Share called handbrake-storage for this purpose alone.",
-                        "label": "Movies location"
+                        "description": "Choose a Share for handbrake that contains files from your host that need to be accessible by the application. E.g.: create a Share called handbrake-storage for this purpose alone.",
+                        "label": "02 Storage location"
                     },
                     "/watch": {
-                        "description": "Choose a Share for handbrake videos to be automatically converted are located. Eg: create a Share called handbrake-watch for this purpose alone.",
-                        "label": "Watch Storage"
+                        "description": "Choose a Share for handbrake videos to be automatically converted are located. E.g.: create a Share called handbrake-watch for this purpose alone.",
+                        "label": "03 Watch Storage"
                     },
                     "/output": {
-                        "description": "Choose a Share for handbrake to automatically converted video files are written. Eg: create a Share called handbrake-output for this purpose alone.",
-                        "label": "Output Storage"
+                        "description": "Choose a Share for handbrake to automatically converted video files are written. E.g.: create a Share called handbrake-output for this purpose alone.",
+                        "label": "04 Output Storage"
                     }
                 },
                 "environment": {
@@ -50,17 +54,17 @@
                         "index": 1
                     },
                     "GROUP_ID": {
-                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
                         "label": "GID to run handbrake as.",
                         "index": 2
                     },
                     "AUTOMATED_CONVERSION_PRESET": {
-                        "description": "HandBrake preset used by the automatic video converter. All presets must follow the format <CATEGORY>/<PRESET NAME>. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. Defaults to General/Very Fast 1080p30",
+                        "description": "HandBrake preset used by the automatic video converter. All presets must follow the format <CATEGORY>/<PRESET NAME>. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. For default enter: General/Very Fast 1080p30",
                         "label": "Automated Conversion Preset",
                         "index": 3
                     },
                     "AUTOMATED_CONVERSION_FORMAT": {
-                        "description": "Video container format used by the automatic video converter for output files. This is typically the video filename extension. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. Defaults to mp4",
+                        "description": "Video container format used by the automatic video converter for output files. This is typically the video filename extension. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. For default enter: mp4",
                         "label": "Automated Conversion Format",
                         "index": 4
                     }
@@ -75,6 +79,6 @@
         },
         "volume_add_support": true,
         "website": "https://handbrake.fr/",
-        "version": "1.1"
+        "version": "1.2"
     }
 }
