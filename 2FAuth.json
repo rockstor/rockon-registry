@@ -1,0 +1,51 @@
+{
+    "2FAuth": {
+        "containers": {
+            "2fauth": {
+                "image": "2fauth/2fauth",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "-e",
+                        "AUTHENTICATION_GUARD=web-guard"
+                    ]
+                ],
+                "ports": {
+                    "8000": {
+                        "description": "2FAuth WebUI port. Suggested default: 18000",
+                        "host_default": 18000,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/2fauth": {
+                        "description": "Choose a Share to store 2FAuth related files. Ensure that the share provides Read/Write for UID/GID 1000/1000. E.g.: create a Share called 2FAuth-config for this purpose alone.",
+                        "label": "Config Storage"
+                    }
+                },
+                "environment": {
+                    "APP_URL": {
+                        "description": "Enter http://<myservername>:<UI Port>, using the 2FAuth WebUI port defined before.",
+                        "label": "APP_URL",
+                        "index": 1
+                    },
+                    "ASSET_URL": {
+                        "description": "Enter http://<myservername>:<UI Port>, using the 2FAuth WebUI port defined before.",
+                        "label": "ASSET_URL",
+                        "index": 2
+                    }
+                }
+            }
+        },
+        "description": "2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop. Note, that the container runs with UID/GID 1000/1000, so the configured share must provide the corresponding access.<p>Based on official docker image: <a href='https://hub.docker.com/r/2fauth/2fauth' target='_blank'>https://hub.docker.com/r/2fauth/2fauth</a>, available for amd64 and arm64 architecture</p>",
+        "icon": "https://github.com/Bubka/2FAuth/blob/master/public/favicon.png",
+        "more_info": "The full documentation for this rock-on can be found at <a href='https://docs.2fauth.app/' target='_blank'>https://docs.2fauth.app/</a>.",
+        "ui": {
+            "slug": ""
+        },
+        "website": "https://docs.2fauth.app/",
+        "version": "1.0"
+    }
+}
