@@ -27,7 +27,7 @@
                   "index": 1
                },
                "PGID": {
-                  "description": "Enter a valid UID of an existing user with permission to shares.",
+                  "description": "Enter a valid GID of an existing group with permission to shares.",
                   "label": "PGID",
                   "index": 2
                }
