@@ -65,7 +65,7 @@
                         "default":1000
                     },
                     "DOCKER_MODS": {
-                        "description": "(Optional) Docker mods for Jellyfin to support hardware accelleration in specific cases. For OpenCL based DV, HDR10 and HLG tone-mapping use \"linuxserver/mods:jellyfin-opencl-intel\". See https://github.com/linuxserver/docker-jellyfin?tab=readme-ov-file#docker-mods for more details.",
+                        "description": "(Optional) Docker mods for Jellyfin to support hardware accelleration in specific cases. For OpenCL based DV, HDR10 and HLG tone-mapping use \"linuxserver/mods:jellyfin-opencl-intel\". See https://github.com/linuxserver/docker-jellyfin?tab=readme-ov-file#docker-mods for more details. For default enter: \"\"",
                         "label": "DOCKER_MODS",
                         "index": 3,
                         "default": ""
