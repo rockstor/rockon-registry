@@ -1,0 +1,74 @@
+{
+  "BareOS-server-set": {
+    "description": "BareOS Director/Catalogue/Storage server set.<p>Based on custom docker images: <a href='https://hub.docker.com/u/barcus/' target='_blank'>https://hub.docker.com/u/barcus/</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "0.0.1",
+    "website": "https://www.bareos.org/",
+    "container_links": {
+      "bareos-director": [
+        {
+          "name": "bareos-director-to-db",
+          "source_container": "bareos-db"
+        },
+        {
+          "name": "bareos-director-to-storage",
+          "source_container": "bareos-storage"
+        }
+      ]
+    },
+    "containers": {
+      "bareos-db": {
+        "image": "postgres",
+        "tag": "14",
+        "launch_order": 1,
+        "volumes": {
+          "/var/lib/postgresql/data": {
+            "description": "BareOS Catalog (Postgres DB) Share.",
+            "label": "Catalog Storage [e.g. bareos-catalog]"
+          }
+        },
+        "environment": {
+          "POSTGRES_PASSWORD": {
+            "description": "Set a password for the Postgres Super User.",
+            "label": "SuperUser password"
+          },
+          "opts": [
+            [
+              "-e",
+              "POSTGRES_INITDB_ARGS=--encoding=SQL_ASCII"
+            ]
+          ]
+        }
+      },
+      "bareos-director": {
+        "image": "barcus/bareos-director",
+        "tag": "latest",
+        "launch_order": 2,
+        "volumes": {
+          "/etc/bareos": {
+            "description": "BareOS Director Configuration Share.",
+            "label": "BareOS Director Config [e.g. bareos-dir-config]"
+          },
+          "/var/lib/bareos": {
+            "description": "BareOS Catalog-backup Share",
+            "label": "BareOS Catalog-backup Share [e.g. bareos-catalog-backup]"
+          }
+        }
+      },
+      "bareos-storage": {
+        "image": "barcus/bareos-storage",
+        "tag": "latest",
+        "launch_order": 3,
+        "volumes": {
+          "/etc/bareos": {
+            "description": "BareOS Storage configuration Share.",
+            "label": "BareOS Storage config [e.g. bareos-storage-config]"
+          },
+          "/var/lib/bareos/storage": {
+            "description": "BareOS Storage Share.",
+            "label": "BareOS Backups [e.g. bareos-backups]"
+          }
+        }
+      }
+    }
+  }
+}
