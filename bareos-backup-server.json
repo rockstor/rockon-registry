@@ -1,0 +1,208 @@
+{
+  "Bareos Backup Server": {
+    "description": "Network-based '<strong>Ba</strong>ckup and <strong>Re</strong>covery <strong>O</strong>pen <strong>S</strong>ource software' for all major operating systems. Director/Catalog/Storage and director-local (catalog/config backups) File services. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/bareos-backup-server.html' target='_blank'>Rock-on guide</a>.<p><strong>Before install run: </strong><code>groupadd --system --gid 105 bareos</code> && <code>useradd --system --uid 105 --comment 'bareos' --home-dir /var/lib/bareos -g bareos -G disk,tape --shell /bin/false bareos</code><p><strong>After install requirement:</strong> click 'i' icon for instructions.<p>Based on <a href='https://codeberg.org/phillxnet/-/packages' target='_blank'>custom docker images</a> from the Rockstor maintainers, available for amd64 architecture only.</p>",
+    "more_info": "<h4>Required post-install configuration</h4><ol><li>System - Network - Add Connection (Name=BareosFdToStorage Type=docker).</li><li>This Rock-on's spanner icon - Networking - Rocknets - select BareosFdToStorage for bareos-fd & bareos-storage.</li><ol>",
+    "ui": {
+      "slug": "bareos-webui"
+    },
+    "version": "0.0.1",
+    "website": "https://www.bareos.org/",
+    "container_links": {
+      "bareos-dir": [
+        {
+          "name": "BareosDirToDB",
+          "source_container": "bareos-db"
+        },
+        {
+          "name": "BareosDirToStorage",
+          "source_container": "bareos-storage"
+        },
+        {
+          "name": "BareosDirToFd",
+          "source_container": "bareos-fd"
+        },
+        {
+          "name": "BareosDirToWebui",
+          "source_container": "bareos-webui"
+        }
+      ]
+    },
+    "containers": {
+      "bareos-db": {
+        "image": "postgres",
+        "tag": "16",
+        "launch_order": 1,
+        "volumes": {
+          "/var/lib/postgresql/data": {
+            "description": "'Catalog' storage (Postgres DB).",
+            "label": "'Catalog' data [e.g. bareos-catalog]"
+          }
+        },
+        "environment": {
+          "POSTGRES_PASSWORD": {
+            "description": "Set password for `postgres` super-user.",
+            "label": "'postgres' super-user password"
+          }
+        },
+        "opts": [
+          [
+            "-e",
+            "POSTGRES_INITDB_ARGS=--encoding=SQL_ASCII"
+          ]
+        ]
+      },
+      "bareos-dir": {
+        "image": "codeberg.org/phillxnet/bareos-director",
+        "tag": "latest",
+        "launch_order": 2,
+        "uid": 105,
+        "volumes": {
+          "/etc/bareos": {
+            "description": "'Director' configuration (bareos:bareos).",
+            "label": "'Director' config [e.g. bareos-dir-config]"
+          },
+          "/var/lib/bareos": {
+            "description": "'Director' data/state (bareos:bareos).",
+            "label": "'Director' data [e.g. bareos-dir-data]"
+          }
+        },
+        "ports": {
+          "9101": {
+            "description": "'Director' communications port.",
+            "host_default": 9101,
+            "label": "'Director' port [must be 9101]",
+            "protocol": "tcp",
+            "ui": false
+          }
+        },
+        "environment": {
+          "DB_ADMIN_PASSWORD": {
+            "description": "Re-enter `postgres` super-user password.",
+            "label": "Re-enter 'postgres' super-user password"
+          },
+          "DB_PASSWORD": {
+            "description": "Set password for the `bareos` DB user.",
+            "label": "Catalog's `bareos` user password"
+          },
+          "BAREOS_SD_PASSWORD": {
+            "description": "Set 'Storage' service password.",
+            "label": "'Storage' password"
+          },
+          "BAREOS_FD_PASSWORD": {
+            "description": "Set Director's local 'File'/Client service (bareos-fd) password.",
+            "label": "Director's local 'File' password"
+          },
+          "BAREOS_WEBUI_PASSWORD": {
+            "description": "Set Bareos WebUI 'admin' user password.",
+            "label": "WebUI 'admin' user's password"
+          },
+          "SMTP_HOST": {
+            "description": "Set email relay hostname or IP - example uses Rockstor's Email Alerts.",
+            "label": "SMTP relay host [e.g. Rockstor's IP]"
+          },
+          "SENDER_EMAIL": {
+            "description": "'From:' email address - sending Bareos notifications.",
+            "label": "Sender email [see Email Alerts]"
+          },
+          "RECEIVER_EMAIL": {
+            "description": "'To:' email address - receives Bareos notifications.",
+            "label": "Receiver email [see Email Alerts]"
+          }
+        },
+        "opts": [
+          [
+            "-e",
+            "DB_INIT=true"
+          ],
+          [
+            "-e",
+            "DB_NAME=bareos"
+          ],
+          [
+            "-e",
+            "DB_USER=bareos"
+          ],
+          [
+            "-e",
+            "DB_ADMIN_USER=postgres"
+          ],
+          [
+            "-e",
+            "DB_HOST=bareos-db"
+          ],
+          [
+            "-e",
+            "DB_PORT=5432"
+          ],
+          [
+            "-e",
+            "BAREOS_SD_HOST=bareos-storage"
+          ],
+          [
+            "-e",
+            "BAREOS_FD_HOST=bareos-fd"
+          ]
+        ]
+      },
+      "bareos-storage": {
+        "image": "codeberg.org/phillxnet/bareos-storage",
+        "tag": "latest",
+        "launch_order": 3,
+        "uid": 105,
+        "volumes": {
+          "/var/lib/bareos/storage": {
+            "description": "'Storage' for all backups (bareos:bareos).",
+            "label": "Backups data [e.g. bareos-backups]"
+          }
+        },
+        "ports": {
+          "9103": {
+            "description": "'Storage' communications port.",
+            "host_default": 9103,
+            "label": "'Storage' port [must be 9103]",
+            "protocol": "tcp",
+            "ui": false
+          }
+        },
+        "opts": [
+          [
+            "--volumes-from",
+            "bareos-dir"
+          ]
+        ]
+      },
+      "bareos-fd": {
+        "image": "codeberg.org/phillxnet/bareos-file",
+        "tag": "latest",
+        "launch_order": 4,
+        "uid": 105,
+        "opts": [
+          [
+            "--volumes-from",
+            "bareos-dir"
+          ]
+        ]
+      },
+      "bareos-webui": {
+        "image": "codeberg.org/phillxnet/bareos-webui",
+        "tag": "latest",
+        "launch_order": 5,
+        "volumes": {
+          "/etc/bareos-webui": {
+            "description": "'WebUI' configuration.",
+            "label": "'WebUI' config [e.g. bareos-webui]"
+          }
+        },
+        "ports": {
+          "80": {
+            "description": "Bareos Web Interface.",
+            "host_default": 9100,
+            "label": "WebUI port [e.g. 9100]",
+            "protocol": "tcp",
+            "ui": true
+          }
+        }
+      }
+    }
+  }
+}
