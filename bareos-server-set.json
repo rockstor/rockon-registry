@@ -12,6 +12,10 @@
         {
           "name": "bareos-director-to-storage",
           "source_container": "bareos-storage"
+        },
+        {
+          "name": "bareos-director-to-webui",
+          "source_container": "bareos-webui"
         }
       ]
     },
@@ -28,16 +32,16 @@
         },
         "environment": {
           "POSTGRES_PASSWORD": {
-            "description": "Set a password for the Postgres Super User.",
-            "label": "SuperUser password"
-          },
-          "opts": [
-            [
-              "-e",
-              "POSTGRES_INITDB_ARGS=--encoding=SQL_ASCII"
-            ]
+            "description": "Set password for `postgres` Super-User.",
+            "label": "Super-User password"
+          }
+        },
+        "opts": [
+          [
+            "-e",
+            "POSTGRES_INITDB_ARGS=--encoding=SQL_ASCII"
           ]
-        }
+        ]
       },
       "bareos-director": {
         "image": "barcus/bareos-director",
@@ -49,10 +53,59 @@
             "label": "BareOS Director Config [e.g. bareos-dir-config]"
           },
           "/var/lib/bareos": {
-            "description": "BareOS Catalog-backup Share",
+            "description": "BareOS Catalog-Backup Share",
             "label": "BareOS Catalog-backup Share [e.g. bareos-catalog-backup]"
           }
-        }
+        },
+        "ports": {
+          "9101": {
+            "descriptinon": "BareOS Director communications port (must be 9101)",
+            "host_default": 9101,
+            "label": "Director port",
+            "protocol": "tcp",
+            "ui": false
+          }
+        },
+        "environment": {
+          "DB_ADMIN_PASSWORD": {
+            "description": "Re-enter `postgres` Super-User Password.",
+            "label": "Postgres Super-User password"
+          },
+          "DB_PASSWORD": {
+            "description": "Set password for the `bareos` DB user.",
+            "label": "Calatog `bareos` user password"
+          },
+          "BAREOS_WEBUI_PASSWORD": {
+            "description": "Set BareOS Web-UI password.",
+            "label": "Web-UI password"
+          }
+        },
+        "opts": [
+          [
+            "-e",
+            "DB_INIT=true"
+          ],
+          [
+            "-e",
+            "DB_NAME=bareos"
+          ],
+          [
+            "-e",
+            "DB_USER=bareos"
+          ],
+          [
+            "-e",
+            "DB_ADMIN_USER=postgres"
+          ],
+          [
+            "-e",
+            "DB_HOST=bareos-db"
+          ],
+          [
+            "-e",
+            "DB_PORT=5432"
+          ]
+        ]
       },
       "bareos-storage": {
         "image": "barcus/bareos-storage",
@@ -64,10 +117,45 @@
             "label": "BareOS Storage config [e.g. bareos-storage-config]"
           },
           "/var/lib/bareos/storage": {
-            "description": "BareOS Storage Share.",
+            "description": "BareOS Storage Share - for all Backup jobs.",
             "label": "BareOS Backups [e.g. bareos-backups]"
           }
+        },
+        "ports": {
+          "9103": {
+            "descriptinon": "BareOS Storage communications port (must be 9103)",
+            "host_default": 9103,
+            "label": "Storage port",
+            "protocol": "tcp",
+            "ui": false
+          }
         }
+      },
+      "bareos-webui": {
+        "image": "barcus/bareos-webui",
+        "tag": "latest",
+        "launch_order": 4,
+        "volumes": {
+          "/etc/bareos-webui": {
+            "description": "BareOS WebUI configuration Share.",
+            "label": "BareOS WebUI [e.g. bareos-webui-config]"
+          }
+        },
+        "ports": {
+          "9100": {
+            "description": "BareOS Web Interface (Suggested default:9100)",
+            "host_default": 9100,
+            "label": "WebUI port",
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "opts": [
+          [
+            "-e",
+            "SERVER_STATS=yes"
+          ]
+        ]
       }
     }
   }
