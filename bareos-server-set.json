@@ -1,6 +1,6 @@
 {
   "BareOS-server-set": {
-    "description": "BareOS Director/Catalogue/Storage server set.<p>Based on custom docker images: <a href='https://hub.docker.com/u/barcus/' target='_blank'>https://hub.docker.com/u/barcus/</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "BareOS Director/Catalogue/Storage server set. A comprehensive network-based open-source backup and recovery solution for all major operating systems.<p>Based on custom docker images: <a href='https://hub.docker.com/u/barcus/' target='_blank'>https://hub.docker.com/u/barcus/</a>, available for amd64 and arm64 architecture.</p>",
     "version": "0.0.1",
     "website": "https://www.bareos.org/",
     "container_links": {
@@ -59,7 +59,7 @@
         },
         "ports": {
           "9101": {
-            "descriptinon": "BareOS Director communications port (must be 9101)",
+            "description": "BareOS Director communications port (must be 9101)",
             "host_default": 9101,
             "label": "Director port",
             "protocol": "tcp",
@@ -123,7 +123,7 @@
         },
         "ports": {
           "9103": {
-            "descriptinon": "BareOS Storage communications port (must be 9103)",
+            "description": "BareOS Storage communications port (must be 9103)",
             "host_default": 9103,
             "label": "Storage port",
             "protocol": "tcp",
