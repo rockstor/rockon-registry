@@ -26,14 +26,14 @@
         "launch_order": 1,
         "volumes": {
           "/var/lib/postgresql/data": {
-            "description": "BareOS Catalog (Postgres DB) Share.",
-            "label": "Catalog Storage [e.g. bareos-catalog]"
+            "description": "BareOS 'Catalog' (Postgres DB) Share.",
+            "label": "'Catalog' data [e.g. bareos-catalog]"
           }
         },
         "environment": {
           "POSTGRES_PASSWORD": {
-            "description": "Set password for `postgres` Super-User.",
-            "label": "Super-User password"
+            "description": "Set password for `postgres` Super-user.",
+            "label": "'postgres' Super-user password"
           }
         },
         "opts": [
@@ -49,35 +49,35 @@
         "launch_order": 2,
         "volumes": {
           "/etc/bareos": {
-            "description": "BareOS Director Configuration Share.",
-            "label": "BareOS Director Config [e.g. bareos-dir-config]"
+            "description": "BareOS 'Director' configuration Share.",
+            "label": "'Director' config [e.g. bareos-dir-config]"
           },
           "/var/lib/bareos": {
             "description": "BareOS Catalog-Backup Share",
-            "label": "BareOS Catalog-backup Share [e.g. bareos-catalog-backup]"
+            "label": "Catalog-backup data [e.g. bareos-catalog-backup]"
           }
         },
         "ports": {
           "9101": {
-            "description": "BareOS Director communications port (must be 9101)",
+            "description": "BareOS 'Director' communications port.",
             "host_default": 9101,
-            "label": "Director port",
+            "label": "Director port [must be 9101]",
             "protocol": "tcp",
             "ui": false
           }
         },
         "environment": {
           "DB_ADMIN_PASSWORD": {
-            "description": "Re-enter `postgres` Super-User Password.",
-            "label": "Postgres Super-User password"
+            "description": "Re-enter `postgres` Super-user password.",
+            "label": "'postgres' Super-user password"
           },
           "DB_PASSWORD": {
             "description": "Set password for the `bareos` DB user.",
             "label": "Calatog `bareos` user password"
           },
           "BAREOS_WEBUI_PASSWORD": {
-            "description": "Set BareOS Web-UI password.",
-            "label": "Web-UI password"
+            "description": "Set BareOS Web-UI 'admin' user password.",
+            "label": "Web-UI 'admin' user's password"
           }
         },
         "opts": [
@@ -113,19 +113,19 @@
         "launch_order": 3,
         "volumes": {
           "/etc/bareos": {
-            "description": "BareOS Storage configuration Share.",
-            "label": "BareOS Storage config [e.g. bareos-storage-config]"
+            "description": "BareOS 'Storage' configuration Share.",
+            "label": "'Storage' config [e.g. bareos-storage-config]"
           },
           "/var/lib/bareos/storage": {
-            "description": "BareOS Storage Share - for all Backup jobs.",
-            "label": "BareOS Backups [e.g. bareos-backups]"
+            "description": "BareOS 'Storage' Share for all backups.",
+            "label": "Backups data [e.g. bareos-backups]"
           }
         },
         "ports": {
           "9103": {
-            "description": "BareOS Storage communications port (must be 9103)",
+            "description": "BareOS 'Storage' communications port.",
             "host_default": 9103,
-            "label": "Storage port",
+            "label": "Storage port [must be 9103]",
             "protocol": "tcp",
             "ui": false
           }
@@ -137,15 +137,15 @@
         "launch_order": 4,
         "volumes": {
           "/etc/bareos-webui": {
-            "description": "BareOS WebUI configuration Share.",
-            "label": "BareOS WebUI [e.g. bareos-webui-config]"
+            "description": "BareOS 'WebUI' configuration Share.",
+            "label": "'WebUI' config [e.g. bareos-webui-config]"
           }
         },
         "ports": {
           "9100": {
-            "description": "BareOS Web Interface (Suggested default:9100)",
+            "description": "BareOS Web Interface.",
             "host_default": 9100,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 9100]",
             "protocol": "tcp",
             "ui": true
           }
