@@ -32,8 +32,8 @@
         },
         "environment": {
           "POSTGRES_PASSWORD": {
-            "description": "Set password for `postgres` Super-user.",
-            "label": "'postgres' Super-user password"
+            "description": "Set password for `postgres` super-user.",
+            "label": "'postgres' super-user password"
           }
         },
         "opts": [
@@ -68,12 +68,12 @@
         },
         "environment": {
           "DB_ADMIN_PASSWORD": {
-            "description": "Re-enter `postgres` Super-user password.",
-            "label": "'postgres' Super-user password"
+            "description": "Re-enter `postgres` super-user password.",
+            "label": "Re-enter 'postgres' super-user password"
           },
           "DB_PASSWORD": {
             "description": "Set password for the `bareos` DB user.",
-            "label": "Calatog `bareos` user password"
+            "label": "Catalog `bareos` user password"
           },
           "BAREOS_WEBUI_PASSWORD": {
             "description": "Set BareOS Web-UI 'admin' user password.",
