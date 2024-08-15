@@ -27,7 +27,7 @@
                         "ui": true
                     },
                     "9090": {
-                        "description": "Command Line Interface (used for example by Android app Squeezer). Suggested Default: 9090",
+                        "description": "Command Line Interface (used for example by Android app Squeezer). This MUST be set to 9090",
                         "host_default": 9090,
                         "label": "CLI port",
                         "protocol": "tcp"
