@@ -1,4 +1,5 @@
 {
+    "BareOS-server-set": "bareos-server-set.json",
     "Bitcoin": "bitcoind.json",
     "Booksonic": "booksonic.json",
     "Collabora Online": "collabora-online.json",
