@@ -54,7 +54,7 @@
                 },
                 "environment": {
                     "PUID": {
-                        "description": "Enter a valid User ID (UID) to run Home Assistant with. It must have full permissions to all Shares mapped in the previous step.",
+                        "description": "Enter a valid User ID (UID) to run Lyrion Media Server with. It must have full permissions to all Shares mapped in the previous step.",
                         "label": "UID",
                         "index": 1
                     },
