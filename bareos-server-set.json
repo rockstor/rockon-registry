@@ -16,6 +16,10 @@
         {
           "name": "bareos-director-to-webui",
           "source_container": "bareos-webui"
+        },
+        {
+          "name": "bareos-director-to-webui-php-fpm",
+          "source_container": "bareos-webui-php-fpm"
         }
       ]
     },
@@ -145,20 +149,29 @@
         "environment": {
           "BAREOS_SD_PASSWORD": {
             "description": "Re-enter BareOS Storage service password.",
-            "label": "Re-enter BareOS Storage service password"
+            "label": "Re-enter BareOS Storage password"
           }
         }
       },
-      "bareos-webui": {
-        "image": "barcus/bareos-webui",
+      "bareos-webui-php-fpm": {
+        "image": "barcus/php-fpm-alpine",
         "tag": "latest",
         "launch_order": 4,
         "volumes": {
           "/etc/bareos-webui": {
             "description": "BareOS 'WebUI' configuration Share.",
             "label": "'WebUI' config [e.g. bareos-webui-config]"
+          },
+          "/usr/share/bareos-webui": {
+            "description": "BareOS 'WebUI' data Share.",
+            "label": "'WebUI' data [e.g. bareos-webui-data]"
           }
-        },
+        }
+      },
+      "bareos-webui": {
+        "image": "barcus/bareos-webui",
+        "tag": "latest",
+        "launch_order": 5,
         "ports": {
           "9100": {
             "description": "BareOS Web Interface.",
@@ -172,6 +185,18 @@
           [
             "-e",
             "BAREOS_DIR_HOST=bareos-director"
+          ],
+          [
+            "-e",
+            "PHP_FPM_HOST=bareos-webui-php-fpm"
+          ],
+          [
+            "-e",
+            "PHP_FPM_PORT=9000"
+          ],
+          [
+            "--volumes-from",
+            "bareos-webui-php-fpm"
           ],
           [
             "-e",
