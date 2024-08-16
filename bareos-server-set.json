@@ -75,6 +75,10 @@
             "description": "Set password for the `bareos` DB user.",
             "label": "Catalog `bareos` user password"
           },
+          "BAREOS_SD_PASSWORD": {
+            "description": "Set BareOS Storage service password.",
+            "label": "BareOS Storage password"
+          },
           "BAREOS_WEBUI_PASSWORD": {
             "description": "Set BareOS Web-UI 'admin' user password.",
             "label": "Web-UI 'admin' user's password"
@@ -104,6 +108,14 @@
           [
             "-e",
             "DB_PORT=5432"
+          ],
+          [
+            "-e",
+            "ADMIN_MAIL=root@localhost"
+          ],
+          [
+            "-e",
+            "WEBHOOK_NOTIFICATION=true"
           ]
         ]
       },
@@ -129,6 +141,12 @@
             "protocol": "tcp",
             "ui": false
           }
+        },
+        "environment": {
+          "BAREOS_SD_PASSWORD": {
+            "description": "Re-enter BareOS Storage service password.",
+            "label": "Re-enter BareOS Storage service password"
+          }
         }
       },
       "bareos-webui": {
@@ -151,6 +169,10 @@
           }
         },
         "opts": [
+          [
+            "-e",
+            "BAREOS_DIR_HOST=bareos-director"
+          ],
           [
             "-e",
             "SERVER_STATS=yes"
