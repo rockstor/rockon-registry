@@ -1,0 +1,56 @@
+{
+	"Lyrion Media Server - DEV": {
+		"description": "The LMS Community⁠'s Docker image for Lyrion Music Server⁠ (Dockerfile⁠), formerly known as Logitech Media Server. Also known as Squeezebox server.",
+		"more_info": "<p>For unknown reasons, as of 2024-08, the repo won't let Rockstor pull the LATEST image, only DEv. So, for now, this is a brave, post-Logitech (#GraciasTotales), new world, and we'd rather try DEV, and hope for the best.
+		(the following text left as is from the original LMS rockon) <h4>Update to newer version</h4><p>Due to some current <a href='https://github.com/rockstor/rockstor-core/issues/2209' target='_blank'>limitations in rock-on networking</a>, the web UI port of this rock-on must be set as 9000 and will thus prevent the installation of other rock-ons needing this port. Alternatively, the web UI can be accessed manually at http://rockstor-ip:9000</p><p>After first installation: to update to a newer stable version, either uninstall/reinstall the Rockon or use the Watchtower Rockon to manage the update of the underlying Media Server image, as it does not automatically update itself during a stop/restart of the Rockon like some other Rockons do. Don't use the update option within the LMS!</p><p>The LMS configuration files will remain in place on the volumes that were specified during the initial installation</p>",
+		"website": "https://mysqueezebox.com/",
+		"version": "0.5",
+		"ui": {
+			"slug": ""
+		},
+		"VolumeAddSupport": true, 
+		"containers": {
+			"lyrion_dev": {
+				"image": "lmscommunity/lyrionmusicserver",
+				"tag": "dev",
+				"launch_order": 1,
+				"opts": [
+					[
+						"--net",
+						"host"
+					]
+				],
+				"ports": {
+					"9000": {
+						"description": "WebUI port. This MUST be set to 9000",
+						"host_default": 9000,
+						"label": "WebUI port",
+						"protocol": "tcp",
+						"ui": true
+					},
+					"9090": {
+						"description": "Command Line Interface (used for example by Android app Squeezer). Suggested Default: 9090",
+						"host_default": 9090,
+						"label": "CLI port",
+						"protocol": "tcp"
+					},
+					"3483": {
+						"description": "control channel for LMS (display, IR, etc.), tcp and udp (SB --> Slimserver discovery and for older SLIMP3 players). Suggested Default: 3483",
+						"host_default": 3483,
+						"label": "Control Channel"
+					}
+				},
+				"volumes": {
+					"/mnt/squeezebox": {
+						"description": "Choose a Share for LMS configuration. E.g.: create a Share called lms-config for this purpose alone.",
+						"label": "Config Storage"
+					},
+					"/mnt/music": {
+						"description": "Choose a Share for LMS content(your media). E.g.: create a Share called lms-music for this purpose alone. You can also assign other media Shares on the system after installation.",
+						"label": "Data Storage"
+					}
+				}
+			}
+		}
+	}
+}
