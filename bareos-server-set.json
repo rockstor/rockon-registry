@@ -158,15 +158,21 @@
         "tag": "latest",
         "launch_order": 4,
         "volumes": {
+          "/usr/share/bareos-webui": {
+            "description": "BareOS 'WebUI' data Share.",
+            "label": "'WebUI' data [must be bareos-webui-data]"
+          },
           "/etc/bareos-webui": {
             "description": "BareOS 'WebUI' configuration Share.",
             "label": "'WebUI' config [e.g. bareos-webui-config]"
-          },
-          "/usr/share/bareos-webui": {
-            "description": "BareOS 'WebUI' data Share.",
-            "label": "'WebUI' data [e.g. bareos-webui-data]"
           }
-        }
+        },
+        "opts": [
+          [
+            "-v",
+            "/mnt2/bareos-webui-data:/var/www/html"
+          ]
+        ]
       },
       "bareos-webui": {
         "image": "barcus/bareos-webui",
