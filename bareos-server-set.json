@@ -16,9 +16,11 @@
         {
           "name": "bareos-director-to-webui",
           "source_container": "bareos-webui"
-        },
+        }
+      ],
+      "bareos-webui": [
         {
-          "name": "bareos-director-to-webui-php-fpm",
+          "name": "bareos-webui-to-webui-php-fpm",
           "source_container": "bareos-webui-php-fpm"
         }
       ]
