@@ -23,6 +23,12 @@
           "name": "bareos-webui-to-webui-php-fpm",
           "source_container": "bareos-webui-php-fpm"
         }
+      ],
+      "bareos-webui-php-fpm": [
+        {
+          "name": "bareos-webui-php-fpm-to-director",
+          "source_container": "bareos-director"
+        }
       ]
     },
     "containers": {
