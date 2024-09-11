@@ -1,0 +1,270 @@
+{
+  "BareOS-server-set": {
+    "description": "BareOS Director/Catalog/Storage/File server set. A comprehensive network-based open-source backup and recovery solution for all major operating systems.<p>Based on custom docker images: <a href='https://hub.docker.com/u/barcus/' target='_blank'>https://hub.docker.com/u/barcus/</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "0.0.1",
+    "website": "https://www.bareos.org/",
+    "container_links": {
+      "bareos-director": [
+        {
+          "name": "bareos-director-to-db",
+          "source_container": "bareos-db"
+        },
+        {
+          "name": "bareos-director-to-storage",
+          "source_container": "bareos-storage"
+        },
+        {
+          "name": "bareos-director-to-webui",
+          "source_container": "bareos-webui"
+        },
+        {
+          "name": "bareos-director-to-file",
+          "source_container": "bareos-fd"
+        }
+      ],
+      "bareos-webui": [
+        {
+          "name": "bareos-webui-to-webui-php-fpm",
+          "source_container": "bareos-webui-php-fpm"
+        }
+      ],
+      "bareos-webui-php-fpm": [
+        {
+          "name": "bareos-webui-php-fpm-to-director",
+          "source_container": "bareos-director"
+        }
+      ]
+    },
+    "containers": {
+      "bareos-db": {
+        "image": "postgres",
+        "tag": "14",
+        "launch_order": 1,
+        "volumes": {
+          "/var/lib/postgresql/data": {
+            "description": "'Catalog' storage (Postgres DB) Share.",
+            "label": "'Catalog' data [e.g. bareos-catalog]"
+          }
+        },
+        "environment": {
+          "POSTGRES_PASSWORD": {
+            "description": "Set password for `postgres` super-user.",
+            "label": "'postgres' super-user password"
+          }
+        },
+        "opts": [
+          [
+            "-e",
+            "POSTGRES_INITDB_ARGS=--encoding=SQL_ASCII"
+          ]
+        ]
+      },
+      "bareos-director": {
+        "image": "barcus/bareos-director",
+        "tag": "latest",
+        "launch_order": 2,
+        "volumes": {
+          "/etc/bareos": {
+            "description": "'Director' configuration Share.",
+            "label": "'Director' config [e.g. bareos-dir-config]"
+          },
+          "/var/lib/bareos": {
+            "description": "'Director' data/state Share.",
+            "label": "'Director' data [e.g. bareos-dir-data]"
+          },
+          "/var/lib/bareos-director": {
+            "description": "'Catalog' backup Share",
+            "label": "Catalog-backup [must be bareos-catalog-backup]"
+          }
+        },
+        "ports": {
+          "9101": {
+            "description": "'Director' communications port.",
+            "host_default": 9101,
+            "label": "'Director' port [must be 9101]",
+            "protocol": "tcp",
+            "ui": false
+          }
+        },
+        "environment": {
+          "DB_ADMIN_PASSWORD": {
+            "description": "Re-enter `postgres` super-user password.",
+            "label": "Re-enter 'postgres' super-user password"
+          },
+          "DB_PASSWORD": {
+            "description": "Set password for the `bareos` DB user.",
+            "label": "Catalog's `bareos` user password"
+          },
+          "BAREOS_SD_PASSWORD": {
+            "description": "Set 'Storage' service password.",
+            "label": "'Storage' password"
+          },
+          "BAREOS_FD_PASSWORD": {
+            "description": "Set Director's local 'File'/Client service (bareos-fd) password.",
+            "label": "Director's local 'File' password"
+          },
+          "BAREOS_WEBUI_PASSWORD": {
+            "description": "Set BareOS Web-UI 'admin' user password.",
+            "label": "Web-UI 'admin' user's password"
+          }
+        },
+        "opts": [
+          [
+            "-e",
+            "DB_INIT=true"
+          ],
+          [
+            "-e",
+            "DB_NAME=bareos"
+          ],
+          [
+            "-e",
+            "DB_USER=bareos"
+          ],
+          [
+            "-e",
+            "DB_ADMIN_USER=postgres"
+          ],
+          [
+            "-e",
+            "DB_HOST=bareos-db"
+          ],
+          [
+            "-e",
+            "DB_PORT=5432"
+          ],
+          [
+            "-e",
+            "BAREOS_SD_HOST=bareos-storage"
+          ],
+          [
+            "-e",
+            "BAREOS_FD_HOST=bareos-fd"
+          ],
+          [
+            "-e",
+            "ADMIN_MAIL=root@localhost"
+          ],
+          [
+            "-e",
+            "WEBHOOK_NOTIFICATION=true"
+          ]
+        ]
+      },
+      "bareos-storage": {
+        "image": "barcus/bareos-storage",
+        "tag": "latest",
+        "launch_order": 3,
+        "volumes": {
+          "/etc/bareos": {
+            "description": "'Storage' service configuration Share.",
+            "label": "'Storage' config [e.g. bareos-storage-config]"
+          },
+          "/var/lib/bareos/storage": {
+            "description": "'Storage' data Share for all backups.",
+            "label": "Backups data [e.g. bareos-backups]"
+          }
+        },
+        "ports": {
+          "9103": {
+            "description": "'Storage' communications port.",
+            "host_default": 9103,
+            "label": "'Storage' port [must be 9103]",
+            "protocol": "tcp",
+            "ui": false
+          }
+        },
+        "environment": {
+          "BAREOS_SD_PASSWORD": {
+            "description": "Re-enter 'Storage' service password.",
+            "label": "Re-enter 'Storage' password"
+          }
+        }
+      },
+      "bareos-fd": {
+        "image": "barcus/bareos-client",
+        "tag": "latest",
+        "launch_order": 4,
+        "volumes": {
+          "/etc/bareos": {
+            "description": "Director's local 'File'/Client service configuration Share.",
+            "label": "Director's local 'File' config [e.g. bareos-file-config]"
+          }
+        },
+        "environment": {
+          "BAREOS_FD_PASSWORD": {
+            "description": "Re-enter Director's local 'File'/client service (bareos-fd) password.",
+            "label": "Re-enter Director's local 'File' password"
+          }
+        },
+        "opts": [
+          [
+            "-v",
+            "/mnt2/bareos-catalog-backup:/var/lib/bareos-director"
+          ],
+          [
+            "-e",
+            "FORCE_ROOT=false"
+          ]
+        ]
+      },
+      "bareos-webui-php-fpm": {
+        "image": "barcus/php-fpm-alpine",
+        "tag": "latest",
+        "launch_order": 5,
+        "volumes": {
+          "/usr/share/bareos-webui": {
+            "description": "BareOS 'WebUI' data Share.",
+            "label": "'WebUI' data [must be bareos-webui-data]"
+          },
+          "/etc/bareos-webui": {
+            "description": "BareOS 'WebUI' configuration Share.",
+            "label": "'WebUI' config [e.g. bareos-webui-config]"
+          }
+        },
+        "opts": [
+          [
+            "-v",
+            "/mnt2/bareos-webui-data:/var/www/html"
+          ]
+        ]
+      },
+      "bareos-webui": {
+        "image": "barcus/bareos-webui",
+        "tag": "latest",
+        "launch_order": 6,
+        "ports": {
+          "9100": {
+            "description": "BareOS Web Interface.",
+            "host_default": 9100,
+            "label": "WebUI port [e.g. 9100]",
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "opts": [
+          [
+            "-e",
+            "BAREOS_DIR_HOST=bareos-director"
+          ],
+          [
+            "-e",
+            "PHP_FPM_HOST=bareos-webui-php-fpm"
+          ],
+          [
+            "-e",
+            "PHP_FPM_PORT=9000"
+          ],
+          [
+            "--volumes-from",
+            "bareos-webui-php-fpm"
+          ],
+          [
+            "-e",
+            "SERVER_STATS=yes"
+          ]
+        ]
+      }
+    }
+  }
+}
