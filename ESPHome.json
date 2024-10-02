@@ -1,0 +1,55 @@
+{
+    "ESPHome": {
+        "description": "<p>ESPHome is the perfect solution for creating custom firmwares for your ESP8266/ESP32 boards. This Rockon contains the standalone ESPHome Command Line and Web Dashboard (HomeAssistant is a separate Rockon, whose docker image does not allow for installing add-ons like this). The WebUI is accessible through the configured port, the ESPHome command line can be used by connecting to the docker image via <code>docker exec -it esphome /bin/bash</code>.</p><p><b>Note:</b><i> this Rockon requires the <code>net=host</code> option to enable device connections for ESP firmware updates; it also requires to be run in <code>privileged</code> status according to the documentation. Typically, this Rockon would be run during firmware development or updating of devices and, when not needed, be stopped again. It's not necessary to be active for ESP devices  to be recognized by Home Assistant.</i></p><p>Based on the official docker image: <a href='https://github.com/esphome/esphome/pkgs/container/esphome' target=_blank> ghcr.io/esphome/esphome</a>, available for amd64, arm32v7 and arm64v8.</p>",
+        "more_info": "For updates of the application, consider installing the Watchtower Rock-on and run it periodically.</p>",
+        "website": "https://esphome.io/",
+        "version": "1.0",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": false,
+        "containers": {
+            "esphome": {
+                "image": "ghcr.io/esphome/esphome",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "--net=host",
+                        ""
+                    ],
+                    [
+                        "--privileged=true",
+                        ""
+                    ]
+                ],
+                "ports": {
+                    "6052": {
+                        "description": "ESPHome Web Port: must be set to 6052, so the UI can be launched from Rockon WebUI.",
+                        "host_default": 6052,
+                        "label": "ESPHome Dashboard port (http)",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Choose a Share for ESPHome configuration. E.g.: create a Share called esphome-config for this purpose alone.",
+                        "label": "ESPHome Config Storage"
+                    }
+                },
+                "environment": {
+                    "USERNAME": {
+                        "description": "Enter a admin username",
+                        "label": "User Name",
+                        "index": 1
+                    },
+                    "PASSWORD": {
+                        "description": "Enter Password, change it later.",
+                        "label": "password",
+                        "index": 2
+                    }
+                }
+            }
+        }
+    }
+}
