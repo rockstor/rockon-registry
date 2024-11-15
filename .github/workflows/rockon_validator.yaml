@@ -1,0 +1,37 @@
+# Use rockon-validator repo to validate style and completeness of new Rockon submissions
+# Thanks to @StephenBrown2 for donating original validation repository to the Rockstor project.
+
+name: rockon-validator
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # This workflow contains a single job called "validate"
+  validate:
+    name: runner / suggester / validator
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # install the latest version of Rockon validator
+      - name: Setup latest Rockon validator
+      - run: go install github.com/rockstor/rockon-validator@latest
+
+      # Runs a set of commands using the runners shell
+      - name: run validation (no rewrite)
+      - run: rockon-validator -w .
+      - uses: reviewdog/action-suggester@v1
+        with:
+          tool_name: rockon-validator
+          filter_mode: nofilter
+          fail_on_error: true
