@@ -77,5 +77,6 @@
     "WireGuard Easy": "WireGuardEasy.json",
     "YouTrack official": "youtrack-official.json",
     "Zabbix-XXL": "zabbix-xxl.json",
-    "ZeroNet": "ZeroNet.json"
+    "ZeroNet": "ZeroNet.json",
+    "Paperless-ngx": "paperless-ngx.json"
 }
