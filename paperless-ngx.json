@@ -39,7 +39,7 @@
                     },
                     "PAPERLESS_DBHOST": {
                         "description": "Set to db. Hostname of the PostgreSQL database container.",
-                        "value": "db",
+                        "value": "paperless-db",
                         "label": "Database Host"
                     },
                     "PAPERLESS_TIME_ZONE": {
@@ -60,7 +60,7 @@
                     }
                 }
             },
-            "db": {
+            "paperless-db": {
                 "image": "docker.io/library/postgres",
                 "tag": "16",
                 "launch_order": 2,
