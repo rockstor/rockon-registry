@@ -38,7 +38,7 @@
                         "label": "Redis URL"
                     },
                     "PAPERLESS_DBHOST": {
-                        "description": "Set to db. Hostname of the PostgreSQL database container.",
+                        "description": "Set to paperless-db. Hostname of the PostgreSQL database container.",
                         "value": "paperless-db",
                         "label": "Database Host"
                     },
