@@ -51,6 +51,7 @@
     "Omada Controller": "omada-controller.json",    
     "Ombi": "ombi.json",
     "OpenVPN": "openvpn.json",
+    "Paperless-ngx": "paperless-ngx.json",
     "Pi-Hole": "pi-hole.json",
     "Plex": "plex.json",
     "PocketMine": "pocketmine.json",
@@ -77,6 +78,5 @@
     "WireGuard Easy": "WireGuardEasy.json",
     "YouTrack official": "youtrack-official.json",
     "Zabbix-XXL": "zabbix-xxl.json",
-    "ZeroNet": "ZeroNet.json",
-    "Paperless-ngx": "paperless-ngx.json"
+    "ZeroNet": "ZeroNet.json"
 }
