@@ -47,17 +47,51 @@
                     "PAPERLESS_REDIS": {
                         "description": "Set to redis://paperless-broker:6379.Redis connection URL. Do not change unless you know what you are doing.",
                         "value": "redis://paperless-broker:6379",
-                        "label": "Redis URL"
+                        "label": "Redis URL",
+                        "index": 1
                     },
                     "PAPERLESS_DBHOST": {
                         "description": "Set to paperless-db. Hostname of the PostgreSQL database container.",
                         "value": "paperless-db",
-                        "label": "Database Host"
+                        "label": "Database Hostname",
+                        "index": 2
+                    },
+                    "PAPERLESS_DBNAME": {
+                        "description": "Enter the name of the PostgreSQL database.",
+                        "label": "PostgreSQL Database name",
+                        "index": 3
+                    },
+                    "PAPERLESS_DBUSER": {
+                        "description": "Enter the username for the PostgreSQL database.",
+                        "label": "Database User name",
+                        "index": 4
+                    },
+                    "PAPERLESS_DBPASS": {
+                        "description": "Enter the Database password for PostgreSQL",
+                        "label": "Database User password for PostgreSQL",
+                        "index": 5
+                    },
+                    "PAPERLESS_ADMIN_USER": {
+                        "description": "Enter the username for the paperless-ngx superuser.",
+                        "value": "root",
+                        "label": "Superuser username",
+                        "index": 6
+                    },
+                    "PAPERLESS_ADMIN_MAIL": {
+                        "description": "Specify superuser email address.",
+                        "value": "root@localhost",
+                        "label": "Superuser Mailaddress",
+                        "index": 7
+                    },
+                    "PAPERLESS_ADMIN_PASSWORD": {
+                        "description": "This will be the password of the automatically created superuser.",
+                        "label": "Superuser password",
+                        "index": 8
                     },
                     "PAPERLESS_TIME_ZONE": {
                         "description": "Enter timezone",
-                        "value": "Europe/Berlin",
-                        "label": "Timezone"
+                        "label": "Timezone",
+                        "index": 9
                     }
                 }
             },
@@ -84,30 +118,30 @@
                 },
                 "environment": {
                     "POSTGRES_DB": {
-                        "description": "Enter the database name for Paperless.",
-                        "label": "Database Name",
+                        "description": "Enter the PostgreSQL database name.",
+                        "label": "PostgreSQL Database Name",
                         "index": 1
                     },
                     "POSTGRES_USER": {
                         "description": "Enter the username for the PostgreSQL database.",
-                        "label": "Database Username",
+                        "label": "PostgreSQL Database Username",
                         "index": 2
                     },
                     "POSTGRES_PASSWORD": {
                         "description": "Enter the password for the PostgreSQL database user.",
-                        "label": "Database Password",
+                        "label": "PostgreSQL Database Password",
                         "index": 3
                     }
                 }
             }
         },
-        "description": "Paperless DMS - Private & Secure document management system. <p>Based on a Docker image: <a href='https://github.com/paperless-ngx/paperless-ngx/tree/main'>GitHub Repository</a>. Available for amd64 and arm64 architectures.</p> <p> Create User like shown here (#7): <a href='https://docs.paperless-ngx.com/setup/#docker_hub'>https://docs.paperless-ngx.com/setup/#docker_hub</a> </p>",
+        "description": "Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.. <p>Based on a Docker image: <a href='https://github.com/paperless-ngx/paperless-ngx/tree/main'>Paperless-ngx</a>. Available for amd64 and arm64 architectures.</p>",
         "ui": {
             "https": false,
             "slug": ""
         },
         "volume_add_support": true,
         "website": "https://docs.paperless-ngx.com/",
-        "version": "1.2"
+        "version": "1.4"
     }
 }
