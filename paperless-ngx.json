@@ -1,5 +1,17 @@
 {
     "Paperless-ngx": {
+        "container_links": {
+            "paperless": [
+                {
+                    "name": "paperless-to-broker",
+                    "source_container": "paperless-broker"
+                },
+                {
+                    "name": "paperless-to-paperless-db",
+                    "source_container": "paperless-db"
+                }
+            ]
+        },
         "containers": {
             "paperless": {
                 "image": "ghcr.io/paperless-ngx/paperless-ngx",
@@ -33,8 +45,8 @@
                 },
                 "environment": {
                     "PAPERLESS_REDIS": {
-                        "description": "Set to redis://broker:6379.Redis connection URL. Do not change unless you know what you are doing.",
-                        "value": "redis://broker:6379",
+                        "description": "Set to redis://paperless-broker:6379.Redis connection URL. Do not change unless you know what you are doing.",
+                        "value": "redis://paperless-broker:6379",
                         "label": "Redis URL"
                     },
                     "PAPERLESS_DBHOST": {
@@ -49,7 +61,7 @@
                     }
                 }
             },
-            "broker": {
+            "paperless-broker": {
                 "image": "docker.io/library/redis",
                 "tag": "7",
                 "launch_order": 1,
