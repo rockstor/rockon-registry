@@ -120,6 +120,20 @@
                 "image": "docker.io/library/postgres",
                 "tag": "16",
                 "launch_order": 2,
+                "opts": [
+                    [
+                        "-e",
+                        "POSTGRES_DB=paperless"
+                    ],
+                    [
+                        "-e",
+                        "POSTGRES_USER=paperless"
+                    ],
+                    [
+                        "-e",
+                        "POSTGRES_PASSWORD=paperless"
+                    ]
+                ],
                 "volumes": {
                     "/var/lib/postgresql/data": {
                         "description": "Choose a Share for PostgreSQL database storage.",
