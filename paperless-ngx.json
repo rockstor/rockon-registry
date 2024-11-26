@@ -16,6 +16,16 @@
             "paperless": {
                 "image": "ghcr.io/paperless-ngx/paperless-ngx",
                 "launch_order": 3,
+"opts": [
+                    [
+                        "-e",
+                        "PAPERLESS_DBHOST=paperless-db"
+                    ],
+                    [
+                        "-e",
+                        "PAPERLESS_REDIS=redis://paperless-broker:6379"
+                    ]
+                ],
                 "ports": {
                     "8000": {
                         "description": "Port for web interface. Suggested default: 8420.",
