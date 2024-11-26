@@ -16,7 +16,7 @@
             "paperless": {
                 "image": "ghcr.io/paperless-ngx/paperless-ngx",
                 "launch_order": 3,
-"opts": [
+                "opts": [
                     [
                         "-e",
                         "PAPERLESS_DBHOST=paperless-db"
@@ -54,54 +54,22 @@
                     }
                 },
                 "environment": {
-                    "PAPERLESS_REDIS": {
-                        "description": "Set to redis://paperless-broker:6379.Redis connection URL. Do not change unless you know what you are doing.",
-                        "value": "redis://paperless-broker:6379",
-                        "label": "Redis URL",
-                        "index": 1
-                    },
-                    "PAPERLESS_DBHOST": {
-                        "description": "Set to paperless-db. Hostname of the PostgreSQL database container.",
-                        "value": "paperless-db",
-                        "label": "Database Hostname",
-                        "index": 2
-                    },
-                    "PAPERLESS_DBNAME": {
-                        "description": "Enter the name of the PostgreSQL database.",
-                        "label": "PostgreSQL Database name",
-                        "index": 3
-                    },
-                    "PAPERLESS_DBUSER": {
-                        "description": "Enter the username for the PostgreSQL database.",
-                        "label": "Database User name",
-                        "index": 4
-                    },
-                    "PAPERLESS_DBPASS": {
-                        "description": "Enter the Database password for PostgreSQL",
-                        "label": "Database User password for PostgreSQL",
-                        "index": 5
-                    },
                     "PAPERLESS_ADMIN_USER": {
                         "description": "Enter the username for the paperless-ngx superuser.",
                         "value": "root",
                         "label": "Superuser username",
-                        "index": 6
+                        "index": 1
                     },
                     "PAPERLESS_ADMIN_MAIL": {
                         "description": "Specify superuser email address.",
                         "value": "root@localhost",
                         "label": "Superuser Mailaddress",
-                        "index": 7
+                        "index": 2
                     },
                     "PAPERLESS_ADMIN_PASSWORD": {
                         "description": "This will be the password of the automatically created superuser.",
                         "label": "Superuser password",
-                        "index": 8
-                    },
-                    "PAPERLESS_TIME_ZONE": {
-                        "description": "Enter timezone",
-                        "label": "Timezone",
-                        "index": 9
+                        "index": 3
                     }
                 }
             },
@@ -139,33 +107,16 @@
                         "description": "Choose a Share for PostgreSQL database storage.",
                         "label": "PostgreSQL Storage"
                     }
-                },
-                "environment": {
-                    "POSTGRES_DB": {
-                        "description": "Enter the PostgreSQL database name.",
-                        "label": "PostgreSQL Database Name",
-                        "index": 1
-                    },
-                    "POSTGRES_USER": {
-                        "description": "Enter the username for the PostgreSQL database.",
-                        "label": "PostgreSQL Database Username",
-                        "index": 2
-                    },
-                    "POSTGRES_PASSWORD": {
-                        "description": "Enter the password for the PostgreSQL database user.",
-                        "label": "PostgreSQL Database Password",
-                        "index": 3
-                    }
                 }
             }
         },
-        "description": "Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.. <p>Based on a Docker image: <a href='https://github.com/paperless-ngx/paperless-ngx/tree/main'>Paperless-ngx</a>. Available for amd64 and arm64 architectures.</p>",
+        "description": "Paperless DMS - a private & secure Document Management System. <p>Based on the official Docker image: <a href='https://github.com/paperless-ngx/paperless-ngx/pkgs/container/paperless-ngx' target=_blank>ghcr.io/paperless-ngx/paperless-ngx</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "https": false,
             "slug": ""
         },
         "volume_add_support": true,
         "website": "https://docs.paperless-ngx.com/",
-        "version": "1.4"
+        "version": "1.5"
     }
 }
