@@ -51,6 +51,7 @@
     "Omada Controller": "omada-controller.json",    
     "Ombi": "ombi.json",
     "OpenVPN": "openvpn.json",
+    "Paperless-ngx": "paperless-ngx.json",
     "Pi-Hole": "pi-hole.json",
     "Plex": "plex.json",
     "PocketMine": "pocketmine.json",
