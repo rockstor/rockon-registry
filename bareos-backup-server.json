@@ -1,10 +1,10 @@
 {
   "Bareos-backup-server": {
-    "description": "BareOS Director/Catalog/Storage and Director-local (Catalog backup) File services. A comprehensive network-based open-source backup and recovery solution for all major operating systems.<p>Based on custom docker images from the Rockstor maintainers, available for amd64 architecture only.</p>",
+    "description": "Bareos Director/Catalog/Storage and Director-local (Catalog backup) File services. Network-based open-source backup and recovery for all major operating systems.<p><strong>Before install run: </strong><code>groupadd --system --gid 105 bareos</code> && <code>useradd --system --uid 105 --comment 'bareos' --home-dir /var/lib/bareos -g bareos -G disk,tape --shell /bin/false bareos</code><p>Based on custom docker images from the Rockstor maintainers, available for amd64 architecture only.</p>",
     "version": "0.0.1",
     "website": "https://www.bareos.org/",
     "container_links": {
-      "bareosnet": [
+      "bareos-dir": [
         {
           "name": "bareos-dir-to-db",
           "source_container": "bareos-db"
@@ -30,7 +30,7 @@
         "launch_order": 1,
         "volumes": {
           "/var/lib/postgresql/data": {
-            "description": "'Catalog' storage (Postgres DB) Share.",
+            "description": "'Catalog' storage (Postgres DB).",
             "label": "'Catalog' data [e.g. bareos-catalog]"
           }
         },
@@ -53,11 +53,11 @@
         "launch_order": 2,
         "volumes": {
           "/etc/bareos": {
-            "description": "'Director' configuration Share.",
+            "description": "'Director' configuration (bareos:bareos).",
             "label": "'Director' config [e.g. bareos-dir-config]"
           },
           "/var/lib/bareos": {
-            "description": "'Director' data/state Share.",
+            "description": "'Director' data/state (bareos:bareos).",
             "label": "'Director' data [e.g. bareos-dir-data]"
           }
         },
@@ -133,7 +133,7 @@
         "launch_order": 3,
         "volumes": {
           "/var/lib/bareos/storage": {
-            "description": "'Storage' Share for all backups.",
+            "description": "'Storage' for all backups (bareos:bareos).",
             "label": "Backups data [e.g. bareos-backups]"
           }
         },
@@ -151,14 +151,14 @@
             "description": "Re-enter 'Storage' service password.",
             "label": "Re-enter 'Storage' password"
           }
-        }
-      },
-      "opts": [
-        [
-          "--volumes-from",
-          "bareos-dir"
+        },
+        "opts": [
+          [
+            "--volumes-from",
+            "bareos-dir"
+          ]
         ]
-      ],
+      },
       "bareos-fd": {
         "image": "ghcr.io/phillxnet/bareos-file",
         "tag": "main",
@@ -182,8 +182,8 @@
         "launch_order": 5,
         "volumes": {
           "/etc/bareos-webui": {
-            "description": "BareOS 'WebUI' configuration Share.",
-            "label": "'WebUI' config [e.g. bareos-webui-config]"
+            "description": "'WebUI' configuration.",
+            "label": "'WebUI' config [e.g. bareos-webui]"
           }
         },
         "ports": {
