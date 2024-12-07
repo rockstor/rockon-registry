@@ -32,6 +32,7 @@
     "JenkinsCI": "jenkins.json",
     "Kanboard": "kanboard.json",
     "LazyLibrarian": "lazylibrarian.json",
+    "Linkwarden": "linkwarden.json",
     "Logitech Media Server - Latest Stable": "lms_latest.json",
     "MariaDB": "mariadb.json",
     "Medusa": "medusa.json",
