@@ -77,6 +77,6 @@
         },
         "description": "AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that. <p>Based on the official Image: <a href='https://hub.docker.com/r/adguard/adguardhome' target='_blank'>https://hub.docker.com/r/adguard/adguardhome</a>, available for amd64 and arm64 architecture.</p> <p>Create a macvlan to avoid overlapping of ports which are needed by Adguard like 443 & 80. E.g., <code>docker network create -d macvlan --subnet=192.168.178.0/24 --ip-range=192.168.178.58/32 --gateway=192.168.178.1 -o parent=eth0 adguard-home</code></p><p>The docker network has to be named <code>adguard-home!</code></p>",
         "website": "https://hub.docker.com/r/adguard/adguardhome",
-        "version": "1.2"
+        "version": "1.0"
     }
 }
