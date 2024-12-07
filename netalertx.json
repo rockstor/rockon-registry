@@ -12,7 +12,7 @@
                                 "launch_order": 1,
                                 "ports": {
                                     "20211": {
-                                        "description": "Rockon UI Link Port. Recommended: 20211. This port has to be the same as the subsequent Web-port later in the configuration, so the admin pages can be accessed from within the Rocko
+                                        "description": "Rockon UI Link Port. Recommended: 20211. This port has to be the same as the subsequent Web-port later in the configuration, so the admin pages can be accessed from within the Rockon page.",
                                         "host_default": 20211,
                                         "label": "Rockon_Web-Port",
                                         "ui": true
@@ -30,14 +30,14 @@
                                 },
                                 "environment": {
                                         "PORT": {
-                                                "description": "Enter the WebUI Web-port number. Recommended: 20211. This port has to be the same as the Rockon UI Link port, configured earlier. This ensures that the admin pages for pi-ho
+                                                "description": "Enter the WebUI Web-port number. Recommended: 20211. This port has to be the same as the Rockon UI Link port, configured earlier. This ensures that the admin pages for NetAlertX are accessible via Web Browser",
                                                 "label": "Web-Port",
                                                 "index": 1
                                         }
                                 }
                         }
                 },
-                "description": "NetAlertX is an intrusion detection system (IDS).<p>Easily visualize all your networks in one place, enhance security with real-time alerts, and enjoy seamless integration with your smart home—no matter wh
+                "description": "NetAlertX is an intrusion detection system (IDS).<p>Easily visualize all your networks in one place, enhance security with real-time alerts, and enjoy seamless integration with your smart home—no matter what hardware you use.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/jokobsk/netalertx' target='_blank'>https://hub.docker.com/r/jokobsk/netalertx</a>, available for amd64, arm64, armv7 and armv6 architecture.</p>",
                 "more_info": "<h4>NetAlertX</h4><p><b>Admin page</b></p><p>To access admin interface go to URL: http://[SERVERIP]:[Web-Port]</p><p>Note: this Rockon uses the net=host option.",
                 "volume_add_support": true,
                 "website": "https://netalertx.com/",
