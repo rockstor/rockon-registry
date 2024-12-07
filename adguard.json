@@ -1,0 +1,82 @@
+{
+    "Adguard-home": {
+        "containers": {
+            "adguard": {
+                "image": "adguard/adguardhome",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "--net=adguard-home",
+                        ""
+                    ]
+                ],
+                "ports": {
+                    "53": {
+                        "description": "DNS port",
+                        "label": "DNS Port",
+                        "host_default": 53
+                    },
+                    "67": {
+                        "description": "DHCP port",
+                        "label": "DHCP Port",
+                        "host_default": 67,
+                        "protocol": "udp"
+                    },
+                    "68": {
+                        "description": "DHCP port",
+                        "label": "DHCP Port",
+                        "host_default": 68,
+                        "protocol": "udp"
+                    },
+                    "80": {
+                        "description": "Admin WebUI port no ssl",
+                        "host_default": 80,
+                        "protocol": "tcp",
+                        "label": "WebUI Port no ssl",
+                        "ui": true
+                    },
+                    "443": {
+                        "description": "Admin WebUI port ssl",
+                        "host_default": 443,
+                        "label": "WebUI Port ssl",
+                        "ui": true
+                    },
+                    "3000": {
+                        "description": "WebUI Config port",
+                        "host_default": 3000,
+                        "label": "Port for initial Config",
+                        "ui": true
+                    },
+                    "853": {
+                        "description": "DNS over TLS Port",
+                        "host_default": 853,
+                        "label": "DNS over TLS Port"
+                    },
+                    "784": {
+                        "description": "DNS over Quic Port",
+                        "host_default": 784,
+                        "label": "DNS over Quic Port"
+                    },
+                    "5443": {
+                        "description": "DNSCrypt port",
+                        "host_default": 5443,
+                        "label": "DNSCrypt Port"
+                    }
+                },
+                "volumes": {
+                    "/conf": {
+                        "description": "Choose a Share for Adguard config.",
+                        "label": "Choose a Share for Adguard config."
+                    },
+                    "/work": {
+                        "description": "Choose a Share for Adguard data.",
+                        "label": "Choose a Share for Adguard data."
+                    }
+                }
+            }
+        },
+        "description": "Adguard Home using offical Image. <p> <a href='https://hub.docker.com/r/adguard/adguardhome' target='_blank'>https://hub.docker.com/r/adguard/adguardhome</a>, available for amd64 and arm64 architecture.</p> <p>create macvlan to avoid overlapping of port with are needed by adguard like 443 & 80. E.g. <code>docker network create -d macvlan --subnet=192.168.178.0/24 --ip-range=192.168.178.58/32 --gateway=192.168.178.1 -o parent=eth0 adguard-home</code></p> <p>The docker network has to be named <code>adguard-home!</code> </p>",
+        "website": "https://hub.docker.com/r/adguard/adguardhome",
+        "version": "1.2"
+    }
+}
