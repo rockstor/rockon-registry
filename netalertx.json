@@ -37,7 +37,7 @@
                                 }
                         }
                 },
-                "description": "NetAlertX is an intrusion detection system (IDS).<p>Easily visualize all your networks in one place, enhance security with real-time alerts, and enjoy seamless integration with your smart home—no matter what hardware you use.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/jokobsk/netalertx' target='_blank'>https://hub.docker.com/r/jokobsk/netalertx</a>, available for amd64, arm64, armv7 and armv6 architecture.</p>",
+                "description": "NetAlertX is an intrusion detection system (IDS).<p>Easily visualize all your networks in one place, enhance security with real-time alerts, and enjoy seamless integration with your smart home — no matter what hardware you use.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/jokobsk/netalertx' target='_blank'>https://hub.docker.com/r/jokobsk/netalertx</a>, available for amd64 and arm64 architecture.</p>",
                 "more_info": "<h4>NetAlertX</h4><p><b>Admin page</b></p><p>To access admin interface go to URL: http://[SERVERIP]:[Web-Port]</p><p>Note: this Rockon uses the net=host option.",
                 "volume_add_support": true,
                 "website": "https://netalertx.com/",
