@@ -31,7 +31,7 @@
                                 "environment": {
                                         "PORT": {
                                                 "description": "Enter the WebUI Web-port number. Recommended: 20211. This port has to be the same as the Rockon UI Link port, configured earlier. This ensures that the admin pages for NetAlertX are accessible via Web Browser",
-                                                "label": "Web-Port",
+                                                "label": "NetAlertX Web Port",
                                                 "index": 1
                                         }
                                 }
