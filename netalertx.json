@@ -14,7 +14,7 @@
                                     "20211": {
                                         "description": "Rockon UI Link Port. Recommended: 20211. This port has to be the same as the subsequent Web-port later in the configuration, so the admin pages can be accessed from within the Rockon page.",
                                         "host_default": 20211,
-                                        "label": "Rockon_Web-Port",
+                                        "label": "Rockon Web Port",
                                         "ui": true
                                     }
                                 },
