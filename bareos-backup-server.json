@@ -54,6 +54,7 @@
         "image": "ghcr.io/phillxnet/bareos-director",
         "tag": "main",
         "launch_order": 2,
+        "uid": 105,
         "volumes": {
           "/etc/bareos": {
             "description": "'Director' configuration (bareos:bareos).",
@@ -134,6 +135,7 @@
         "image": "ghcr.io/phillxnet/bareos-storage",
         "tag": "main",
         "launch_order": 3,
+        "uid": 105,
         "volumes": {
           "/var/lib/bareos/storage": {
             "description": "'Storage' for all backups (bareos:bareos).",
@@ -166,6 +168,7 @@
         "image": "ghcr.io/phillxnet/bareos-file",
         "tag": "main",
         "launch_order": 4,
+        "uid": 105,
         "environment": {
           "BAREOS_FD_PASSWORD": {
             "description": "Re-enter Director's local 'File'/client service (bareos-fd) password.",
