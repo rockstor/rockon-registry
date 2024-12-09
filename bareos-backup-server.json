@@ -24,12 +24,6 @@
           "name": "bareos-dir-to-webui",
           "source_container": "bareos-webui"
         }
-      ],
-      "bareos-fd": [
-        {
-          "name": "bareos-fd-to-storage",
-          "source_container": "bareos-storage"
-        }
       ]
     },
     "containers": {
