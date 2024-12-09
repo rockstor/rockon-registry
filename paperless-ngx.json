@@ -36,19 +36,19 @@
                     }
                 },
                 "volumes": {
-                    "/data": {
+                    "/usr/src/paperless/data": {
                         "description": "Choose a Share for data file storage.",
                         "label": "Config paperless Data - Storage"
                     },
-                    "/media": {
+                    "/usr/src/paperless/media": {
                         "description": "Choose a Share for media storage.",
                         "label": "Config paperless Media - Storage"
                     },
-                    "/export": {
+                    "/usr/src/paperless/export": {
                         "description": "Choose a Share for exported documents.",
                         "label": "Config paperless Export - Storage"
                     },
-                    "/consume": {
+                    "/usr/src/paperless/consume": {
                         "description": "Choose a Share for importing documents.",
                         "label": "Config paperless Import - Storage"
                     }
@@ -70,6 +70,21 @@
                         "description": "This will be the password of the automatically created superuser.",
                         "label": "Superuser password",
                         "index": 3
+                    },
+                    "PAPERLESS_SECRET_KEY": {
+                        "description": "Adjust this key if you plan to make paperless available publicly.",
+                        "label": "Paperless Secretkey",
+                        "index": 4                        
+                    },
+                    "PAPERLESS_URL" : {
+                        "description": "This is required if you will be exposing Paperless-ngx on a public domain. E.g. https://paperless.domain.com",
+                        "label": "Paperless URL",
+                        "index": 5  
+                    },
+                    "PAPERLESS_CSRF_TRUSTED_ORIGINS" : {
+                        "description": "Set to the value of Paperless URL",
+                        "label": "CSRF Trusted Origins",
+                        "index": 6                          
                     }
                 }
             },
