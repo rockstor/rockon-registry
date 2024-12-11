@@ -34,7 +34,7 @@
                         "index": 2
                     },
                     "NEXTAUTH_URL": {
-                        "description": "Base URL for Linkwarden. Set to: http://localhost:3000/api/v1/auth",
+                        "description": "Base URL for Linkwarden. Set to: http://localhost:<Web UI port defined earlier>/api/v1/auth",
                         "label": "NextAuth URL.",
                         "index": 1
                     }
