@@ -36,19 +36,19 @@
                     }
                 },
                 "volumes": {
-                    "/data": {
+                    "/usr/src/paperless/data": {
                         "description": "Choose a Share for data file storage.",
                         "label": "Config paperless Data - Storage"
                     },
-                    "/media": {
+                    "/usr/src/paperless/media": {
                         "description": "Choose a Share for media storage.",
                         "label": "Config paperless Media - Storage"
                     },
-                    "/export": {
+                    "/usr/src/paperless/export": {
                         "description": "Choose a Share for exported documents.",
                         "label": "Config paperless Export - Storage"
                     },
-                    "/consume": {
+                    "/usr/src/paperless/consume": {
                         "description": "Choose a Share for importing documents.",
                         "label": "Config paperless Import - Storage"
                     }
