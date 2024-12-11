@@ -1,6 +1,6 @@
 {
   "Bareos-backup-server": {
-    "description": "Bareos Director/Catalog/Storage and Director-local (Catalog backup) File services. Network-based open-source backup and recovery for all major operating systems.<p><strong>Before install run: </strong><code>groupadd --system --gid 105 bareos</code> && <code>useradd --system --uid 105 --comment 'bareos' --home-dir /var/lib/bareos -g bareos -G disk,tape --shell /bin/false bareos</code><p>Based on custom docker images from the Rockstor maintainers, available for amd64 architecture only.</p>",
+    "description": "Network-based open-source backup and recovery for all major operating systems. All-in-one Director/Catalog/Storage and Director-local (Catalog backup) File services.<p><strong>Before install run: </strong><code>groupadd --system --gid 105 bareos</code> && <code>useradd --system --uid 105 --comment 'bareos' --home-dir /var/lib/bareos -g bareos -G disk,tape --shell /bin/false bareos</code><p>Based on custom docker images from the Rockstor maintainers, available for amd64 architecture only.</p>",
     "ui": {
       "slug": "bareos-webui"
     },
@@ -151,12 +151,6 @@
             "ui": false
           }
         },
-        "environment": {
-          "BAREOS_SD_PASSWORD": {
-            "description": "Re-enter 'Storage' service password.",
-            "label": "Re-enter 'Storage' password"
-          }
-        },
         "opts": [
           [
             "--volumes-from",
@@ -169,12 +163,6 @@
         "tag": "main",
         "launch_order": 4,
         "uid": 105,
-        "environment": {
-          "BAREOS_FD_PASSWORD": {
-            "description": "Re-enter Director's local 'File'/client service (bareos-fd) password.",
-            "label": "Re-enter Director's local 'File' password"
-          }
-        },
         "opts": [
           [
             "--volumes-from",
