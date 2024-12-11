@@ -52,7 +52,7 @@
                 },
                 "environment": {
                     "POSTGRES_PASSWORD": {
-                        "description": "Enter the password for the PostgreSQL 'postgres' super-user.",
+                        "description": "Enter the password for the PostgreSQL 'postgres' super-user that was entered previously as part of the 'PostgreSQL URL'",
                         "label": "PostgreSQL Password"
                     }
                 }
