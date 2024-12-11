@@ -18,7 +18,7 @@
                 },
                 "volumes": {
                     "/data/data": {
-                        "description": "Choose a Share for Linkwarden data storage.",
+                        "description": "Choose a Share for Linkwarden data storage. E.g., create a share named linkwarden-data.",
                         "label": "Linkwarden Data Storage"
                     }
                 },
