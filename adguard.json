@@ -32,20 +32,17 @@
                         "description": "Admin WebUI port no ssl",
                         "host_default": 80,
                         "protocol": "tcp",
-                        "label": "WebUI Port no ssl",
-                        "ui": true
+                        "label": "WebUI Port no ssl"
                     },
                     "443": {
                         "description": "Admin WebUI port ssl",
                         "host_default": 443,
-                        "label": "WebUI Port ssl",
-                        "ui": true
+                        "label": "WebUI Port ssl"
                     },
                     "3000": {
                         "description": "WebUI Config port",
                         "host_default": 3000,
-                        "label": "Port for initial Config",
-                        "ui": true
+                        "label": "Port for initial Config"
                     },
                     "853": {
                         "description": "DNS over TLS Port",
@@ -75,7 +72,7 @@
                 }
             }
         },
-        "description": "AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that. <p>Based on the official Image: <a href='https://hub.docker.com/r/adguard/adguardhome' target='_blank'>https://hub.docker.com/r/adguard/adguardhome</a>, available for amd64 and arm64 architecture.</p> <p>Create a macvlan to avoid overlapping of ports which are needed by Adguard like 443 & 80. E.g., <code>docker network create -d macvlan --subnet=192.168.178.0/24 --ip-range=192.168.178.58/32 --gateway=192.168.178.1 -o parent=eth0 adguard-home</code></p><p>The docker network has to be named <code>adguard-home</code>!</p>",
+        "description": "AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that. <p>Based on the official Image: <a href='https://hub.docker.com/r/adguard/adguardhome' target='_blank'>https://hub.docker.com/r/adguard/adguardhome</a>, available for amd64 and arm64 architecture.</p> <p>Create a macvlan to avoid overlapping of ports which are needed by Adguard like 443 & 80. E.g., <code>docker network create -d macvlan --subnet=192.168.178.0/24 --ip-range=192.168.178.58/32 --gateway=192.168.178.1 -o parent=eth0 adguard-home</code></p><p>The docker network has to be named <code>adguard-home</code>!</p> <p>The UI is reachable under the IP-Adress definded in the maxvlan. E.g.: <code>--ip-range=192.168.178</code> and the WebUI-Config Port. E.g.: <code>http://192.168.178.58:3000</code> </p>",
         "website": "https://hub.docker.com/r/adguard/adguardhome",
         "version": "1.0"
     }
