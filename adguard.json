@@ -10,56 +10,6 @@
                         ""
                     ]
                 ],
-                "ports": {
-                    "53": {
-                        "description": "DNS port",
-                        "label": "DNS Port",
-                        "host_default": 53
-                    },
-                    "67": {
-                        "description": "DHCP port",
-                        "label": "DHCP Port",
-                        "host_default": 67,
-                        "protocol": "udp"
-                    },
-                    "68": {
-                        "description": "DHCP port",
-                        "label": "DHCP Port",
-                        "host_default": 68,
-                        "protocol": "udp"
-                    },
-                    "80": {
-                        "description": "Admin WebUI port no ssl",
-                        "host_default": 80,
-                        "protocol": "tcp",
-                        "label": "WebUI Port no ssl"
-                    },
-                    "443": {
-                        "description": "Admin WebUI port ssl",
-                        "host_default": 443,
-                        "label": "WebUI Port ssl"
-                    },
-                    "3000": {
-                        "description": "WebUI Config port",
-                        "host_default": 3000,
-                        "label": "Port for initial Config"
-                    },
-                    "853": {
-                        "description": "DNS over TLS Port",
-                        "host_default": 853,
-                        "label": "DNS over TLS Port"
-                    },
-                    "784": {
-                        "description": "DNS over Quic Port",
-                        "host_default": 784,
-                        "label": "DNS over Quic Port"
-                    },
-                    "5443": {
-                        "description": "DNSCrypt port",
-                        "host_default": 5443,
-                        "label": "DNSCrypt Port"
-                    }
-                },
                 "volumes": {
                     "/opt/adguardhome/conf": {
                         "description": "Choose a Share for Adguard config.",
