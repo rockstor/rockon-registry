@@ -29,13 +29,13 @@
                         "index": 3
                     },
                     "NEXTAUTH_SECRET": {
-                        "description": "A secure secret phrase.",
-                        "label": "NextAuth Secret",
+                        "description": "Set an alphanumeric secret phrase for Linkwarden's authentication mechanism. This is not a user password but internal to Linkwarden.",
+                        "label": "Linkwarden Secret",
                         "index": 2
                     },
                     "NEXTAUTH_URL": {
-                        "description": "Base URL for Linkwarden. Set to: http://localhost:<Web UI port defined earlier>/api/v1/auth",
-                        "label": "NextAuth URL.",
+                        "description": "Base URL for Linkwarden. Set to: http://<Rockstor IP address or server name>:<Web UI port defined earlier>/api/v1/auth",
+                        "label": "Linkwarden Base URL",
                         "index": 1
                     }
                 }
