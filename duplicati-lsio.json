@@ -39,7 +39,7 @@
             }
          }
       },
-      "description":"Duplicati is a backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/duplicati' target='_blank'>https://hub.docker.com/r/linuxserver/duplicati</a>, available for amd64 and arm64 architecture.</p>",
+      "description":"Duplicati is a backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/duplicati' target='_blank'>https://hub.docker.com/r/linuxserver/duplicati</a>, available for amd64 and arm64 architecture.</p><p>For first login, use password <code>changeme</code> and then change the password via the Duplicati settings menu.</p>",
       "more_info": "<h4>Make other Rockstor shares accessible</h4><p>While Duplicati can be used to backup any Rockstor share, they must first be made accessible to this rock-on. To do so, simply open its settings (little wrench icon), then click on 'Add Storage' and add any share you would like to backup. See <a href='http://rockstor.com/docs/docker-based-rock-ons/overview.html#add-storage' target='_blank'>Rockstor documentation</a> for instructions.</p><h4>Rock-on update</h4><p>While Duplicati can be updated from within its own UI, it is <strong>not</strong> recommended to do so in order to prevent any conflict upon re-installation. Instead, it is recommended to uninstall the rock-on, and re-install it using the same shares (no data will be lost), or use the Watchtower Rockon to manage container updates.</p>",
       "ui":{
          "slug":""
