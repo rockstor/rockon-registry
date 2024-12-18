@@ -94,6 +94,10 @@
           "BAREOS_WEBUI_PASSWORD": {
             "description": "Set BareOS Web-UI 'admin' user password.",
             "label": "Web-UI 'admin' user's password"
+          },
+          "SMTP_HOST": {
+            "description": "Set email relay hostname or IP - example uses Rockstor's Email Alerts.",
+            "label": "SMTP relay host [e.g. Rockstor's IP]"
           }
         },
         "opts": [
