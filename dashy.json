@@ -22,12 +22,12 @@
                 "environment": {
                     "UID": {
                         "description": "User ID",
-                        "label": "Uid",
+                        "label": "UID",
                         "index": 1
                     },
-                    "GUID": {
+                    "GID": {
                         "description": "Usergroup ID.",
-                        "label": "Guid",
+                        "label": "GID",
                         "index": 2
                     }
                 },
