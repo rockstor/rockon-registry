@@ -19,18 +19,6 @@
                         "ui": true
                     }
                 },
-                "environment": {
-                    "UID": {
-                        "description": "User ID",
-                        "label": "UID",
-                        "index": 1
-                    },
-                    "GID": {
-                        "description": "Usergroup ID.",
-                        "label": "GID",
-                        "index": 2
-                    }
-                },
                 "volumes": {
                     "/app/user-data/": {
                         "description": "Location of Dashy's configuration files on the host.",
