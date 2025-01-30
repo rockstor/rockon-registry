@@ -1,15 +1,15 @@
 {
     "Lyrion Media Server - Latest Stable": {
-        "description": "Lyrion Media Server (formerly known as Logitech Media Server, Squeezebox, slimserver, etc.). Latest stable version. For future updates see more information icon after first installation.<p>Based on a official community docker image: <a href='https://hub.docker.com/r/lmscommunity/logitechmediaserver' target='_blank'>https://hub.docker.com/r/lmscommunity/logitechmediaserver</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Lyrion Media Server (formerly known as Logitech Media Server, Squeezebox, slimserver, etc.). Latest stable version. For future updates see more information icon after first installation.<p>Based on a official community docker image: <a href='https://hub.docker.com/r/lmscommunity/lyrionmusicserver' target='_blank'>https://hub.docker.com/r/lmscommunity/lyrionmusicserver</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "<h4>Update to newer version</h4><p>Due to some current <a href='https://github.com/rockstor/rockstor-core/issues/2209' target='_blank'>limitations in rock-on networking</a>, the web UI port of this rock-on must be set as 9000 and will thus prevent the installation of other rock-ons needing this port. Alternatively, the web UI can be accessed manually at http://rockstor-ip:9000</p><p>After first installation: to update to a newer stable version, either uninstall/reinstall the Rockon or use the Watchtower Rockon to manage the update of the underlying Media Server image, as it does not automatically update itself during a stop/restart of the Rockon like some other Rockons do. Don't use the update option within the LMS!</p><p>The LMS configuration files will remain in place on the volumes that were specified during the initial installation</p>",
         "website": "https://lyrion.org/",
-        "version": "2.4",
+        "version": "2.5",
         "ui": {
             "slug": ""
         },
         "containers": {
             "lms_latest": {
-                "image": "lmscommunity/logitechmediaserver",
+                "image": "lmscommunity/lyrionmusicserver",
                 "tag": "latest",
                 "launch_order": 1,
                 "opts": [

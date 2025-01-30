@@ -1,0 +1,122 @@
+{
+    "Paperless-ngx": {
+        "container_links": {
+            "paperless": [
+                {
+                    "name": "paperless-to-broker",
+                    "source_container": "paperless-broker"
+                },
+                {
+                    "name": "paperless-to-paperless-db",
+                    "source_container": "paperless-db"
+                }
+            ]
+        },
+        "containers": {
+            "paperless": {
+                "image": "ghcr.io/paperless-ngx/paperless-ngx",
+                "launch_order": 3,
+                "opts": [
+                    [
+                        "-e",
+                        "PAPERLESS_DBHOST=paperless-db"
+                    ],
+                    [
+                        "-e",
+                        "PAPERLESS_REDIS=redis://paperless-broker:6379"
+                    ]
+                ],
+                "ports": {
+                    "8000": {
+                        "description": "Port for web interface. Suggested default: 8420.",
+                        "host_default": 8420,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/usr/src/paperless/data": {
+                        "description": "Choose a Share for data file storage.",
+                        "label": "Config paperless Data - Storage"
+                    },
+                    "/usr/src/paperless/media": {
+                        "description": "Choose a Share for media storage.",
+                        "label": "Config paperless Media - Storage"
+                    },
+                    "/usr/src/paperless/export": {
+                        "description": "Choose a Share for exported documents.",
+                        "label": "Config paperless Export - Storage"
+                    },
+                    "/usr/src/paperless/consume": {
+                        "description": "Choose a Share for importing documents.",
+                        "label": "Config paperless Import - Storage"
+                    }
+                },
+                "environment": {
+                    "PAPERLESS_ADMIN_USER": {
+                        "description": "Enter the username for the paperless-ngx superuser.",
+                        "value": "root",
+                        "label": "Superuser username",
+                        "index": 1
+                    },
+                    "PAPERLESS_ADMIN_MAIL": {
+                        "description": "Specify superuser email address.",
+                        "value": "root@localhost",
+                        "label": "Superuser Mailaddress",
+                        "index": 2
+                    },
+                    "PAPERLESS_ADMIN_PASSWORD": {
+                        "description": "This will be the password of the automatically created superuser.",
+                        "label": "Superuser password",
+                        "index": 3
+                    }
+                }
+            },
+            "paperless-broker": {
+                "image": "docker.io/library/redis",
+                "tag": "7",
+                "launch_order": 1,
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a Share for Redis data.",
+                        "label": "Redis Data Share"
+                    }
+                }
+            },
+            "paperless-db": {
+                "image": "docker.io/library/postgres",
+                "tag": "16",
+                "launch_order": 2,
+                "opts": [
+                    [
+                        "-e",
+                        "POSTGRES_DB=paperless"
+                    ],
+                    [
+                        "-e",
+                        "POSTGRES_USER=paperless"
+                    ],
+                    [
+                        "-e",
+                        "POSTGRES_PASSWORD=paperless"
+                    ]
+                ],
+                "volumes": {
+                    "/var/lib/postgresql/data": {
+                        "description": "Choose a Share for PostgreSQL database storage.",
+                        "label": "PostgreSQL Storage"
+                    }
+                }
+            }
+        },
+        "description": "Paperless DMS - a private & secure Document Management System. <p>Based on the official Docker image: <a href='https://github.com/paperless-ngx/paperless-ngx/pkgs/container/paperless-ngx' target=_blank>ghcr.io/paperless-ngx/paperless-ngx</a>, available for amd64 and arm64 architecture.</p>",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "volume_add_support": true,
+        "website": "https://docs.paperless-ngx.com/",
+        "version": "1.5"
+    }
+}

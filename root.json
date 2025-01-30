@@ -32,14 +32,15 @@
     "JenkinsCI": "jenkins.json",
     "Kanboard": "kanboard.json",
     "LazyLibrarian": "lazylibrarian.json",
+    "Linkwarden": "linkwarden.json",
     "Logitech Media Server - Latest Stable": "lms_latest.json",
     "MariaDB": "mariadb.json",
     "Medusa": "medusa.json",
     "Minecraft": "minecraft.json",
     "Minetest": "minetest.json",
     "MinIO": "minio.json",
-    "Muximux": "Muximux.json",
     "Mylar": "mylar3.json",
+    "NetAlertX": "netalertx.json",
     "Netbootxyz": "netbootxyz.json",
     "Netdata (official)": "netdata-official.json",
     "Nextcloud-Official": "nextcloud-official.json",
@@ -51,6 +52,7 @@
     "Omada Controller": "omada-controller.json",    
     "Ombi": "ombi.json",
     "OpenVPN": "openvpn.json",
+    "Paperless-ngx": "paperless-ngx.json",
     "Pi-Hole": "pi-hole.json",
     "Plex": "plex.json",
     "PocketMine": "pocketmine.json",
@@ -76,6 +78,5 @@
     "Web Service Discovery For Windows Networks": "wsdd.json",
     "WireGuard Easy": "WireGuardEasy.json",
     "YouTrack official": "youtrack-official.json",
-    "Zabbix-XXL": "zabbix-xxl.json",
-    "ZeroNet": "ZeroNet.json"
+    "Zabbix-XXL": "zabbix-xxl.json"
 }
