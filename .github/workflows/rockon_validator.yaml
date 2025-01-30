@@ -19,6 +19,9 @@ jobs:
     name: rockon validator
     runs-on: ubuntu-latest
 
+    env:
+      GOPATH: ${{ github.workspace }}    
+
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
