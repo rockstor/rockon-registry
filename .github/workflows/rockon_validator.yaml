@@ -7,9 +7,14 @@ on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
     branches: [ "master" ]
+    paths:
+    - '*.json'
+    
   pull_request:
     branches: [ "master" ]
-
+    paths:
+    - '*.json'
+    
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -19,22 +24,34 @@ jobs:
     name: rockon validator
     runs-on: ubuntu-latest
 
-    env:
-      GOPATH: ${{ github.workspace }}    
-
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # install the latest version of Rockon validator
-      #- name: Setup latest Rockon validator
-      - run: go install github.com/rockstor/rockon-validator@latest
-
-      # Runs a set of commands using the runners shell
-      #- name: run validation (no rewrite)
-      - run: rockon-validator -w .
-      - uses: reviewdog/action-suggester@v1
+      - name: Set up Go
+        uses: actions/setup-go@v4
         with:
-          tool_name: rockon-validator
-          filter_mode: nofilter
-          fail_on_error: true
+          go-version: '1.20'
+
+      # install the latest version of Rockon validator
+      - name: Setup latest Rockon validator
+        run: |
+         go install github.com/rockstor/rockon-validator@latest 
+
+      - name: Get all changed json files
+        id: changed-json-files
+        uses: tj-actions/changed-files@v45
+        with:
+          # json files
+          files: |
+            **.json
+
+# show differentials based on ideal Rockon schema and whether it's in the root.json file
+      - name: Process all changed json files
+        if: steps.changed-json-files.outputs.any_changed == 'true'
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-json-files.outputs.all_changed_files }}
+        run: |
+          for jsonfile in ${ALL_CHANGED_FILES}; do
+            rockon-validator -d $jsonfile
+          done
