@@ -1,0 +1,29 @@
+{
+    "Adguard-home": {
+        "containers": {
+            "adguard": {
+                "image": "adguard/adguardhome",
+                "launch_order": 1,
+                "opts": [
+                    [
+                        "--net=adguard-home",
+                        ""
+                    ]
+                ],
+                "volumes": {
+                    "/opt/adguardhome/conf": {
+                        "description": "Choose a Share for Adguard config.",
+                        "label": "Choose a Share for Adguard config."
+                    },
+                    "/opt/adguardhome/work": {
+                        "description": "Choose a Share for Adguard data.",
+                        "label": "Choose a Share for Adguard data."
+                    }
+                }
+            }
+        },
+        "description": "AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that. <p>Based on the official Image: <a href='https://hub.docker.com/r/adguard/adguardhome' target='_blank'>https://hub.docker.com/r/adguard/adguardhome</a>, available for amd64 and arm64 architecture.</p> <p>Installation instructions for this Rock-on can be found <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/adguard-home.html' target='_blank' rel='noopener noreferrer'>here</a>.</p>",
+        "website": "https://hub.docker.com/r/adguard/adguardhome",
+        "version": "1.0"
+    }
+}
