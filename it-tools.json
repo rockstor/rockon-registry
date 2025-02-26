@@ -1,0 +1,27 @@
+{
+    "it-tools": {
+        "description": "Locally hosted collection of handy online tools for developers and people working in IT (tools for cryptography, conversion, network, etc.). Based on the official docker image <a href='https://hub.docker.com/r/corentinth/it-tools/' target='_blank'>https://hub.docker.com/r/corentinth/it-tools/</a>, available for amd64 and arm64 architecture.</p>",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "volume_add_support": false,
+        "website": "https://it-tools.tech/",
+        "version": "1.0",
+        "containers": {
+            "it-tools": {
+                "image": "corentinth/it-tools",
+                "launch_order": 1,
+                "ports": {
+                    "80": {
+                        "description": "it-tools UI WebUI port. Suggested default: 18088.",
+                        "host_default": 18088,
+                        "label": "WebUI port",
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                }
+            }
+        }
+    }
+}
