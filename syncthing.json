@@ -4,6 +4,12 @@
             "syncthing": {
                 "image": "linuxserver/syncthing",
                 "launch_order": 1,
+                "opts": [
+                    [
+                        "--net",
+                        "host"
+                    ]
+                ],
                 "ports": {
                     "21027": {
                         "description": "Port for discovery broadcasts. You may need to open it(protocol: udp) on your firewall. Suggested default: 21027.",
@@ -27,36 +33,35 @@
                 },
                 "volumes": {
                     "/config": {
-                        "description": "Choose a Share for configuration. Eg: create a Share called syncthing-config for this purpose alone.",
+                        "description": "Choose a Share for configuration. E.g.: create a Share called syncthing-config for this purpose alone. Minimum Size: 1 Gigabyte",
                         "label": "Config Storage",
                         "min_size": 1073741824
                     },
-                    "/home/syncthing/Sync": {
-                        "description": "Choose a Share for all incoming data. Eg: create a Share called syncthing-data for this purpose alone.",
+                    "/config/Sync": {
+                        "description": "Choose a Share for all incoming data. E.g.: create a Share called syncthing-data for this purpose alone. After the Rockon has been installed, additional shares can be added.",
                         "label": "Data Storage"
                     }
                 },
-		"environment": {
-		    "PUID": {
-			"description": "Enter a valid UID to run Syncthing with. It must have full permissions to all Shares mapped in the previous step.",
-			"label": "UID",
-			"index": 1	
-		    },
-		    "PGID": {
-			"description": "Enter a valid GID to use along with the same UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
-			"label": "GID",
-			"index": 2
-		    }
-		}
+                "environment": {
+                    "PUID": {
+                        "description": "Enter a valid UID to run Syncthing with. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID",
+                        "index": 1    
+                    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the same UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID",
+                        "index": 2
+                    }
+                }
             }
         },
-        "description": "Private & Secure continuous File Synchronization. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/syncthing' target='_blank'>https://hub.docker.com/r/linuxserver/syncthing</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Open Source Continuous File Synchronization, private, secure and easy to use. <p>Based on the custom docker image: <a href='https://hub.docker.com/r/linuxserver/syncthing' target='_blank'>https://hub.docker.com/r/linuxserver/syncthing</a>, available for amd64 and arm64 architecture. </p><p>Note this containers uses the net=host option to enable local IP addresses to be discovered as well.</p>",
         "ui": {
             "https": true,
             "slug": ""
         },
         "volume_add_support": true,
         "website": "https://syncthing.net/",
-	"version": "1.1"
+    "version": "1.2"
     }
-}
