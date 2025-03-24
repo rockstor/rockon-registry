@@ -1,7 +1,7 @@
 {
-    "Pi-Hole": {
+    "Pi-Holev6": {
         "containers": {
-            "pi-hole": {
+            "pi-holev6": {
                 "image": "pihole/pihole",
                 "opts": [
                     [
@@ -15,6 +15,10 @@
                     [
                         "-e",
                         "FTLCONF_misc_etc_dnsmasq_d=true"
+                    ],
+                    [
+                        "-e",
+                        "DNSMASQ_USER=root"
                     ]
                 ],
                 "launch_order": 1,
@@ -32,7 +36,7 @@
                         "label": "Pi-Hole config"
                     },
                     "/etc/dnsmasq.d": {
-                        "description": "Choose a share for dnsmasq configuration. E.g.: create a Share called dnsmasq-config for this purpose alone.",
+                        "description": "Choose a share for dnsmasq configuration. E.g.: create a Share called dnsmasq-config for this purpose alone. The share needs to have full access for a user with a corresponding UID=1000",
                         "label": "dnsmasq config"
                     }
                 },
@@ -46,12 +50,22 @@
                         "description": "Enter desired password for the pi-hole Web administration.",
                         "label": "Web Password",
                         "index": 2
-                    }
+                    },
+                    "PIHOLE_UID": {
+                         "description": "Enter a valid UID to run pi-hole with. It must have full permissions to the Pi-Hole configuration share mapped in the previous step.",
+                         "label": "pi-hole UID",
+                         "index": 3
+                   },
+                    "PIHOLE_GID": {
+                         "description": "Enter a valid GID to run pi-hole with. It must have full permissions to the pi-hole configuration share mapped in the previous step.",
+                         "label": "pi-hole GID",
+                         "index": 4
+                   }
                 }
             }
         },
         "description": "DNS Server that acts as a black hole for Internet advertisements.<p>Based on the official docker image: <a href='https://hub.docker.com/r/pihole/pihole' target='_blank'>https://hub.docker.com/r/pihole/pihole</a>, available for amd64 and arm64 architecture.</p>",
-        "more_info": "<h4>PI-HOLE™: A BLACK HOLE FOR INTERNET ADVERTISEMENTS</h4><p><p><b>Block Over 100,000 Ad-serving Domains</b></p><p>Known ad-serving domains are pulled from third party sources and compiled into one list.</p><p><b>Block Advertisements On Any Device</b></p><p>Network-level blocking allows any device to block ads, regardless of hardware or OS.</p><p><b>Improve Overall Network Performance</b></p><p>Since ads are blocked before they are downloaded, your network will perform better.</p><p>Note: this Rockon uses the net=host option to allow for use of the dhcp functionality.",
+        "more_info": "<h4>PI-HOLE™: A BLACK HOLE FOR INTERNET ADVERTISEMENTS</h4><p><p><b>Block Over 100,000 Ad-serving Domains</b></p><p>Known ad-serving domains are pulled from third party sources and compiled into one list.</p><p><b>Block Advertisements On Any Device</b></p><p>Network-level blocking allows any device to block ads, regardless of hardware or OS.</p><p><b>Improve Overall Network Performance</b></p><p>Since ads are blocked before they are downloaded, your network will perform better.</p><p>Note: this Rockon uses the net=host option to allow for use of the dhcp functionality. Also the dnsmasq user runs as root so it is able to access additional configuration in the dnsmasq.d directory",
         "volume_add_support": false,
             "ui": {
                 "slug": "admin"
