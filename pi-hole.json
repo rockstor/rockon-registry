@@ -36,7 +36,7 @@
                         "label": "Pi-Hole config"
                     },
                     "/etc/dnsmasq.d": {
-                        "description": "Choose a share for dnsmasq configuration. E.g.: create a Share called dnsmasq-config for this purpose alone. The share needs to have full access for a user with a corresponding UID=1000",
+                        "description": "Choose a share for dnsmasq configuration. E.g.: create a Share called dnsmasq-config for this purpose alone and place any specific dnsmasq confguration you want to preset without using the WebUI.",
                         "label": "dnsmasq config"
                     }
                 },
