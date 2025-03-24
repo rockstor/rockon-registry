@@ -1,7 +1,7 @@
 {
-    "Pi-Holev6": {
+    "Pi-Hole": {
         "containers": {
-            "pi-holev6": {
+            "pi-hole": {
                 "image": "pihole/pihole",
                 "opts": [
                     [
