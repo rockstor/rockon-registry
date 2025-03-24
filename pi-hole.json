@@ -14,7 +14,7 @@
                     ],
                     [
                         "-e",
-                        "FTLCONF_misc_etc_dnsmasq_d: 'true'"
+                        "FTLCONF_misc_etc_dnsmasq_d=true"
                     ]
                 ],
                 "launch_order": 1,
