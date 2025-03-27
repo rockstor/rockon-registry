@@ -1,8 +1,8 @@
 {
     "Folding@home Linuxserver.io": {
-        "version": "1.1",
+        "version": "8.4",
         "description": "Folding@home (FAH or F@h) is a distributed computing project for simulating protein dynamics. Be One in a Million: every little helps.<p>Based on custom docker image: <a href='https://hub.docker.com/r/linuxserver/foldingathome' target='_blank'>https://hub.docker.com/r/linuxserver/foldingathome</a>, available for amd64 and arm64 architecture.",
-        "more_info": "<h4>Installation notes</h4><p>This Rockon is CPU only by default. GPU folding capability requires: Rockstor4 or above (docker 19.03+) with Nvidia drivers & nvidia-docker installed (untested). See <a href='https://github.com/NVIDIA/nvidia-docker' target='_blank'>https://github.com/NVIDIA/nvidia-docker</a></p><p><i>It may take a few minutes for your instance to begin contributing, & a few more for the details of the project to appear. </i><br>After Rock-on install no further configuration is required for normal function.</p>",
+        "more_info": "<h4>Installation notes</h4><p>Starting with version 8.0 the UI is not incorporated into the FAH client, but can now be managed via one's user account. For the installation, a user account is required (and an account token).</p><p>This Rockon is CPU only by default. GPU folding capability requires: Nvidia drivers & nvidia-docker installed (untested). See <a href='https://github.com/NVIDIA/nvidia-docker' target='_blank'>https://github.com/NVIDIA/nvidia-docker</a>as well as linuxserver's docker page</p><p><i>It may take a few minutes for your instance to begin contributing & a few more for the details of the project to appear. </i><br>After Rock-on install no further configuration is required for normal function.</p>",
         "website": "https://foldingathome.org/",
         "icon": "",
         "ui": {
@@ -21,20 +21,15 @@
                 ],
                 "ports": {
                     "7396": {
-                        "description": "Folding@Home WebUI port. Suggested default: 7396",
+                        "description": "Folding@home web gui (redirects to https://app.foldingathome.org. Suggested default: 7396",
                         "host_default": 7396,
                         "label": "WebUI port",
                         "ui": true
-                    },
-                    "36330": {
-                        "description": "Optional port for FAHControl app (no password). Suggested default: 36330",
-                        "host_default": 36330,
-                        "label": "FAHControl app port"
                     }
                 },
                 "volumes": {
                     "/config": {
-                        "description": "Choose a share for Folding@home to use. Eg: create a share called foldingathome for this purpose alone.",
+                        "description": "Choose a share for Folding@home to use. E.g.: create a share called foldingathome for this purpose alone.",
                         "label": "Config"
                     }
                 },
@@ -48,6 +43,16 @@
                         "description": "Enter a valid system GroupID for Folding@home. This group or the above UserID must have full permissions on the previous Share.",
                         "label": "PGID",
                         "index": 2
+                    },
+                    "ACCOUNT_TOKEN": {
+                        "description": "Register for an account on https://app.foldingathome.org and retrieve account token in Settings. Required on first start.",
+                        "label": "Account Token",
+                        "index": 3
+                    },
+                    "MACHINE_NAME": {
+                        "description": "Assign a friendly name to this instance (no spaces).",
+                        "label": "Machine Name",
+                        "index": 4
                     }
                 }
             }
