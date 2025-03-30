@@ -1,7 +1,7 @@
 {
     "Transmission - OpenVPN": {
-        "website": "https://hub.docker.com/r/haugene/transmission-openvpn/",
-        "version": "1.1",
+        "website": "https://haugene.github.io/docker-transmission-openvpn/",
+        "version": "1.2",
         "description": "Docker container running Transmission torrent client with WebUI while connecting to OpenVPN.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/haugene/transmission-openvpn' target='_blank'>https://hub.docker.com/r/haugene/transmission-openvpn</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "<p>See the container's documentation for a list of included VPN provider profiles. If your provider isn't included, set it up as a custom provider, by putting the relevant files in the <code>Custom profile</code> share.</p>",
         "containers": {
