@@ -72,15 +72,20 @@
                         "label": "LOCAL_NETWORK",
                         "index": 6
                     },
+                    "TRANSMISSION_WEB_UI": {
+                        "description": "Alternative web UI to use; Use 'default' to leave the default Transmission UI, other options are: combustion, kettu, transmission-web-control, flood-for-transmission, shift or transmissionic.",
+                        "label": "TRANSMISSION_WEB_UI",
+                        "index": 7
+                    },
                     "PUID": {
                         "description": "Choose a User ID to run Transmission as",
                         "label": "User ID",
-                        "index": 7
+                        "index": 8
                     },
                     "PGID": {
                         "description": "Choose a Group ID to run Transmission as",
                         "label": "Group ID",
-                        "index": 8
+                        "index": 9
                     }
                 }
             }
