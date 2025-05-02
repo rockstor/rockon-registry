@@ -1,0 +1,63 @@
+{
+    "Transmission LS": {
+        "description": "Open source bittorrent client powered by linuxserver.io",
+        "version": "2025.1",
+        "website": "https://transmissionbt.com/",
+        "containers": {
+            "transmission-ls": {
+                "image": "linuxserver/transmission",
+                "launch_order": 1,
+                "ports": {
+                    "51413": {
+                        "label": "Sharing port",
+                        "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall. Suggested default: 51413.",
+                        "host_default": 51413
+                    },
+                    "9091": {
+                        "label": "WebUI port",
+                        "description": "Transmission WebUI port. Suggested default: 9091",
+                        "host_default": 9091,
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Share used for storing configuration",
+                        "label": "Configuration"
+                    },
+                    "/downloads": {
+                        "description": "Share used for storing downloads",
+                        "label": "Downloads"
+                    },
+                    "/watch": {
+                        "description": "Share used for automatically starting a download when new torrent files are added",
+                        "label": "Watch"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+                        "label": "UID",
+                        "description": "User ID to run Transmission as"
+                    },
+                    "PGID": {
+                        "label": "GUID",
+                        "description": "Group ID to run Transmission as"
+                    },
+                    "TZ": {
+                        "label": "TZ",
+                        "description": "Timezone. e.g. Etc/UTC"
+                    },
+                    "USER": {
+                        "label": "Web UI username",
+                        "description": "Username to authenticate on web ui"
+                    },
+                    "PASS": {
+                        "label": "Web UI password",
+                        "description": "Password to use on the web ui"
+                    }
+                }
+            }
+        }
+    }
+}
