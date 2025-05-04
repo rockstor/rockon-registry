@@ -46,7 +46,7 @@
                     },
                     "USER": {
                         "label": "Web UI username",
-                        "description": "Username to authenticate on web ui"
+                        "description": "Username to authenticate on the web ui"
                     },
                     "PASS": {
                         "label": "Web UI password",
