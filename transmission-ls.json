@@ -10,7 +10,7 @@
                 "ports": {
                     "51413": {
                         "label": "Sharing port",
-                        "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall. Suggested default: 51413.",
+                        "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall & router. Suggested default: 51413.",
                         "host_default": 51413
                     },
                     "9091": {
