@@ -74,6 +74,7 @@
     "TeamSpeak3": "teamspeak3.json",
     "Transmission with OpenVPN": "transmission-with-openvpn.json",
     "Transmission": "transmission.json",
+    "Transmission LS": "transmission-ls.json",
     "Ubiquiti Unifi linuxserver.io": "unifi-linuxserver.json",
     "Unifi Controller": "unifi.json",
     "Vaultwarden": "vaultwarden.json",
