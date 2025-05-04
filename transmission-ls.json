@@ -28,7 +28,7 @@
                     },
                     "/downloads": {
                         "description": "Share used for storing downloads",
-                        "label": "Downloads"
+                        "label": "Downloads [e.g.: transmission-downloads]"
                     },
                     "/watch": {
                         "description": "Share used for automatically starting a download when new torrent files are added",
