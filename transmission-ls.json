@@ -24,7 +24,7 @@
                 "volumes": {
                     "/config": {
                         "description": "Share used for storing configuration",
-                        "label": "Configuration"
+                        "label": "Configuration [e.g.: transmission-config]"
                     },
                     "/downloads": {
                         "description": "Share used for storing downloads",
