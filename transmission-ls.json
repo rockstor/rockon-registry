@@ -1,6 +1,6 @@
 {
     "Transmission LS": {
-        "description": "Open source bittorrent client powered by linuxserver.io",
+        "description": "Open source bittorrent client powered by linuxserver.io.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/transmission' target='_blank'>https://hub.docker.com/r/linuxserver/transmission</a>, available for amd64 and arm64 architecture.</p>",
         "version": "2025.1",
         "website": "https://transmissionbt.com/",
         "containers": {
