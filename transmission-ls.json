@@ -32,7 +32,7 @@
                     },
                     "/watch": {
                         "description": "Share used for automatically starting a download when new torrent files are added",
-                        "label": "Watch"
+                        "label": "Watch [e.g.: transmission-watch]"
                     }
                 },
                 "environment": {
