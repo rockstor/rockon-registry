@@ -1,0 +1,50 @@
+{
+    "rest-server": {
+        "containers": {
+            "rest-server": {
+                "image": "restic/rest-server",
+                "tag": "latest",
+                "launch_order": 99,
+                "ports": {
+                    "8000": {
+                        "description": "Incoming REST server port. The Restic rest-server default (TCP 8000) is already taken so TCP 9000 is used here.",
+                        "host_default": 9000,
+                        "label": "REST server port",
+                        "protocol": "tcp"
+                    }
+                },
+                "volumes": {
+                    "/data": {
+                        "description": "Choose a share for the Restic backup data repository. This share is mapped to /data within the container.",
+                        "label": "Restic Data"                    
+                    }
+                },
+                "environment": {
+                    "PUID": {
+                        "description": "Enter a valid UID to run rest-server with. It must have full permissions to all Shares mapped in the previous step.",
+                        "label": "UID",
+                        "index": 1    
+                    },
+                    "PGID": {
+                        "description": "Enter a valid GID to use along with the same UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+                        "label": "GID",
+                        "index": 2
+                    },
+                    "OPTIONS": {
+                        "description": "Enter rest-server specific options",
+                        "label": "OPTIONS",
+                        "index": 3
+                    }
+                }
+            }
+        },
+        "description": "<p>Rest Server is a high performance HTTP server that implements <a href='https://restic.net'>restic's</a> REST backend API. It provides secure and efficient way to backup data remotely, using restic backup client via the REST URL.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/restic/rest-server'>https://hub.docker.com/r/restic/rest-server</a> available for amd64 and arm64 architecture.</p>",
+        "more_info": "<p>rest-server usage: <a href='https://github.com/restic/rest-server/blob/master/README.md#usage'>https://github.com/restic/rest-server/blob/master/README.md#usage</a></p>htpass<p>If not running rest-server with the <i>--no-auth</i> option, create a .htpasswd file in the Restic /data share before starting container: <i>htpasswd -B -c .htpasswd username</i></p><p>Initialise the Restic repo <a href='ttps://restic.readthedocs.io/en/stable/030_preparing_a_new_repo.html#rest-server'>https://restic.readthedocs.io/en/stable/030_preparing_a_new_repo.html#rest-server</a></p><p>The rest-server documentation can be found <a href='https://github.com/restic/rest-server/blob/master/README.md'>here</a>.</p>",
+        "ui": {
+            "slug": ""
+        },
+        "volume_add_support": true,
+        "website": "https://github.com/restic/rest-server",
+        "version": "1.0"
+    }
+}
