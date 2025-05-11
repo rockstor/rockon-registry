@@ -40,9 +40,6 @@
         },
         "description": "<p>Rest Server is a high performance HTTP server that implements <a href='https://restic.net'>restic's</a> REST backend API. It provides secure and efficient way to backup data remotely, using restic backup client via the REST URL.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/restic/rest-server'>https://hub.docker.com/r/restic/rest-server</a> available for amd64 and arm64 architecture.</p>",
         "more_info": "<p>rest-server usage: <a href='https://github.com/restic/rest-server/blob/master/README.md#usage'>https://github.com/restic/rest-server/blob/master/README.md#usage</a></p>htpass<p>If not running rest-server with the <i>--no-auth</i> option, create a .htpasswd file in the Restic /data share before starting container: <i>htpasswd -B -c .htpasswd username</i></p><p>Initialise the Restic repo <a href='ttps://restic.readthedocs.io/en/stable/030_preparing_a_new_repo.html#rest-server'>https://restic.readthedocs.io/en/stable/030_preparing_a_new_repo.html#rest-server</a></p><p>The rest-server documentation can be found <a href='https://github.com/restic/rest-server/blob/master/README.md'>here</a>.</p>",
-        "ui": {
-            "slug": ""
-        },
         "volume_add_support": true,
         "website": "https://github.com/restic/rest-server",
         "version": "1.0"
