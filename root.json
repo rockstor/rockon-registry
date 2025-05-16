@@ -62,6 +62,7 @@
     "qBittorrent": "qbittorrent_lsio.json",
     "Radarr": "radarr.json",
     "Resilio Sync": "resilioSync.json",
+    "Restic rest-server": "rest-server.json",
     "sabnzb": "sabnzb.json",
     "Scrutiny": "scrutiny.json",
     "Seafile v12": "seafile12.json",
