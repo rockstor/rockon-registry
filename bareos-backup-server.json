@@ -51,8 +51,8 @@
         ]
       },
       "bareos-dir": {
-        "image": "ghcr.io/phillxnet/bareos-director",
-        "tag": "main",
+        "image": "codeberg.org/phillxnet/bareos-director",
+        "tag": "latest",
         "launch_order": 2,
         "uid": 105,
         "volumes": {
@@ -136,8 +136,8 @@
         ]
       },
       "bareos-storage": {
-        "image": "ghcr.io/phillxnet/bareos-storage",
-        "tag": "main",
+        "image": "codeberg.org/phillxnet/bareos-storage",
+        "tag": "latest",
         "launch_order": 3,
         "uid": 105,
         "volumes": {
@@ -163,8 +163,8 @@
         ]
       },
       "bareos-fd": {
-        "image": "ghcr.io/phillxnet/bareos-file",
-        "tag": "main",
+        "image": "codeberg.org/phillxnet/bareos-file",
+        "tag": "latest",
         "launch_order": 4,
         "uid": 105,
         "opts": [
@@ -175,8 +175,8 @@
         ]
       },
       "bareos-webui": {
-        "image": "ghcr.io/phillxnet/bareos-webui",
-        "tag": "main",
+        "image": "codeberg.org/phillxnet/bareos-webui",
+        "tag": "latest",
         "launch_order": 5,
         "volumes": {
           "/etc/bareos-webui": {
