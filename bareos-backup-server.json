@@ -1,6 +1,7 @@
 {
   "Bareos-backup-server": {
-    "description": "Network-based open-source backup and recovery for all major operating systems. All-in-one Director/Catalog/Storage and Director-local (Catalog backup) File services.<p><strong>Before install run: </strong><code>groupadd --system --gid 105 bareos</code> && <code>useradd --system --uid 105 --comment 'bareos' --home-dir /var/lib/bareos -g bareos -G disk,tape --shell /bin/false bareos</code><p>Based on custom docker images from the Rockstor maintainers, available for amd64 architecture only.</p>",
+    "description": "Network-based open-source backup and recovery for all major operating systems. All-in-one Director/Catalog/Storage and Director-local (Catalog backup) File services.<p><strong>Before install run: </strong><code>groupadd --system --gid 105 bareos</code> && <code>useradd --system --uid 105 --comment 'bareos' --home-dir /var/lib/bareos -g bareos -G disk,tape --shell /bin/false bareos</code><p><strong>After install requirement:</strong> click 'i' icon for instructions.<p>Based on custom docker images from the Rockstor maintainers, available for amd64 architecture only.</p>",
+    "more_info": "<h4>Required post-install configuration</h4><ol><li>System - Network - Add Connection (Name=BareosFileToStorage Type=docker).</li><li>This Rock-on's spanner icon - Networking - Rocknets - select BareosFileToStorage for bareos-fd & bareos-storage.</li><ol>",
     "ui": {
       "slug": "bareos-webui"
     },
