@@ -29,7 +29,7 @@
     "containers": {
       "bareos-db": {
         "image": "postgres",
-        "tag": "14",
+        "tag": "16",
         "launch_order": 1,
         "volumes": {
           "/var/lib/postgresql/data": {
