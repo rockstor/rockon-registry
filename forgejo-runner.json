@@ -1,0 +1,58 @@
+{
+  "Forgejo Runner": {
+    "description": "Forgejo Actions runner. Self-host a CI runner for Forgejo instances such as <a href='https://codeberg.org' target='_blank'>codeberg.org</a>.<p>Based on a <a href='https://codeberg.org/phillxnet/forgejo-runner-wrapper' target='_blank'>custom docker image</a> from the Rockstor maintainers. Available for amd64 architecture only.",
+    "more_info": "Intended as a Docker-in-Docker (dind) capable instance.<p>Auto enables privileged mode, and automount re host docker service.<p>Auto configures: <code>-v /var/run/docker.sock:/var/run/docker.sock </code>",
+    "version": "0.7",
+    "website": "https://forgejo.org/docs/latest/user/actions/",
+    "containers": {
+      "forgejo-runner": {
+        "image": "codeberg.org/phillxnet/forgejo-runner-wrapper",
+        "launch_order": 1,
+        "tag": "latest",
+        "uid": 0,
+        "volumes": {
+          "/data": {
+            "description": "Runner workspace & config (1000:docker).",
+            "label": "Workspace [e.g. runner-data]"
+          }
+        },
+        "environment": {
+          "INSTANCE": {
+            "description": "Associated Forgejo instance.",
+            "label": "Forgejo instance [e.g. https://codeberg.org]"
+          },
+          "TOKEN": {
+            "description": "Token from the Forgejo instance: Settings - Actions - Runners - 'Create new runner'",
+            "label": "Registration 'TOKEN'"
+          },
+          "NAME": {
+            "description": "Display name (no spaces) within the Forgejo instance.",
+            "label": "Runner name [e.g. SelfHosted]"
+          },
+          "LABELS": {
+            "description": "Label to define this runner (runs-on-ref:type:specifics).",
+            "label": "Runner label [e.g. ubuntu-22.04:docker://node:20-bullseye]"
+          },
+          "PGID": {
+            "description": "'docker' Group ID on this install: required for Docker-in-Docker.",
+            "label": "Docker PGID [SYSTEM - GROUPS 'docker']"
+          }
+        },
+        "opts": [
+          [
+            "-v",
+            "/var/run/docker.sock:/var/run/docker.sock"
+          ],
+          [
+            "-e",
+            "AUTOMOUNT=true"
+          ],
+          [
+            "-e",
+            "PRIVILEGED=true"
+          ]
+        ]
+      }
+    }
+  }
+}
