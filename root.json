@@ -17,6 +17,7 @@
     "FileBot Node": "filebot-node.json",
     "Filebrowser": "filebrowser.json",
     "Folding@home Linuxserver.io": "foldingathome-linuxserver.json",
+    "Forgejo Runner": "forgejo-runner.json",
     "FreshRSS": "FreshRSS.json",
     "Ghost": "ghost.json",
     "GitLab CE": "gitlab-rc.json",
