@@ -99,6 +99,14 @@
           "SMTP_HOST": {
             "description": "Set email relay hostname or IP - example uses Rockstor's Email Alerts.",
             "label": "SMTP relay host [e.g. Rockstor's IP]"
+          },
+          "SENDER_EMAIL": {
+            "description": "'From:' email address - sending Bareos notifications.",
+            "label": "Sender email [see Email Alerts]"
+          },
+          "RECEIVER_EMAIL": {
+            "description": "'To:' email address - receives Bareos notifications.",
+            "label": "Receiver email [see Email Alerts]"
           }
         },
         "opts": [
