@@ -1,6 +1,6 @@
 {
-  "Bareos-backup-server": {
-    "description": "Network-based open-source backup and recovery for all major operating systems. All-in-one Director/Catalog/Storage and Director-local (Catalog backup) File services.<p><strong>Before install run: </strong><code>groupadd --system --gid 105 bareos</code> && <code>useradd --system --uid 105 --comment 'bareos' --home-dir /var/lib/bareos -g bareos -G disk,tape --shell /bin/false bareos</code><p><strong>After install requirement:</strong> click 'i' icon for instructions.<p>Based on custom docker images from the Rockstor maintainers, available for amd64 architecture only.</p>",
+  "Bareos Backup Server": {
+    "description": "Network-based '<strong>Ba</strong>ckup and <strong>Re</strong>covery <strong>O</strong>pen <strong>S</strong>ource software' for all major operating systems. Director/Catalog/Storage and director-local (catalog/config backups) File services .<p><strong>Before install run: </strong><code>groupadd --system --gid 105 bareos</code> && <code>useradd --system --uid 105 --comment 'bareos' --home-dir /var/lib/bareos -g bareos -G disk,tape --shell /bin/false bareos</code><p><strong>After install requirement:</strong> click 'i' icon for instructions.<p>Based on custom docker images from the Rockstor maintainers, available for amd64 architecture only.</p>",
     "more_info": "<h4>Required post-install configuration</h4><ol><li>System - Network - Add Connection (Name=BareosFileToStorage Type=docker).</li><li>This Rock-on's spanner icon - Networking - Rocknets - select BareosFileToStorage for bareos-fd & bareos-storage.</li><ol>",
     "ui": {
       "slug": "bareos-webui"
@@ -93,7 +93,7 @@
             "label": "Director's local 'File' password"
           },
           "BAREOS_WEBUI_PASSWORD": {
-            "description": "Set BareOS Web-UI 'admin' user password.",
+            "description": "Set Bareos Web-UI 'admin' user password.",
             "label": "Web-UI 'admin' user's password"
           },
           "SMTP_HOST": {
@@ -195,7 +195,7 @@
         },
         "ports": {
           "80": {
-            "description": "BareOS Web Interface.",
+            "description": "Bareos Web Interface.",
             "host_default": 9100,
             "label": "WebUI port [e.g. 9100]",
             "protocol": "tcp",
