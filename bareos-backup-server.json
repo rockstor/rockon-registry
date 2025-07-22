@@ -1,7 +1,7 @@
 {
   "Bareos Backup Server": {
     "description": "Network-based '<strong>Ba</strong>ckup and <strong>Re</strong>covery <strong>O</strong>pen <strong>S</strong>ource software' for all major operating systems. Director/Catalog/Storage and director-local (catalog/config backups) File services .<p><strong>Before install run: </strong><code>groupadd --system --gid 105 bareos</code> && <code>useradd --system --uid 105 --comment 'bareos' --home-dir /var/lib/bareos -g bareos -G disk,tape --shell /bin/false bareos</code><p><strong>After install requirement:</strong> click 'i' icon for instructions.<p>Based on custom docker images from the Rockstor maintainers, available for amd64 architecture only.</p>",
-    "more_info": "<h4>Required post-install configuration</h4><ol><li>System - Network - Add Connection (Name=BareosFileToStorage Type=docker).</li><li>This Rock-on's spanner icon - Networking - Rocknets - select BareosFileToStorage for bareos-fd & bareos-storage.</li><ol>",
+    "more_info": "<h4>Required post-install configuration</h4><ol><li>System - Network - Add Connection (Name=BareosFdToStorage Type=docker).</li><li>This Rock-on's spanner icon - Networking - Rocknets - select BareosFdToStorage for bareos-fd & bareos-storage.</li><ol>",
     "ui": {
       "slug": "bareos-webui"
     },
@@ -10,19 +10,19 @@
     "container_links": {
       "bareos-dir": [
         {
-          "name": "bareos-dir-to-db",
+          "name": "BareosDirToDB",
           "source_container": "bareos-db"
         },
         {
-          "name": "bareos-dir-to-storage",
+          "name": "BareosDirToStorage",
           "source_container": "bareos-storage"
         },
         {
-          "name": "bareos-dir-to-file",
+          "name": "BareosDirToFd",
           "source_container": "bareos-fd"
         },
         {
-          "name": "bareos-dir-to-webui",
+          "name": "BareosDirToWebui",
           "source_container": "bareos-webui"
         }
       ]
