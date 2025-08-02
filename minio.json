@@ -14,18 +14,6 @@
                 "image": "minio/minio",
                 "launch_order": 1,
                 "ports": {
-                    "9000": {
-                        "description": "Port for API access, default 9000",
-                        "host_default": 9000,
-                        "label": "MinIO API Port",
-                        "ui": false
-                    },
-                    "9001": {
-                        "description": "Port for Admin Portal access, default 9001",
-                        "host_default": 9001,
-                        "label": "MinIO Admin Portal Port",
-                        "ui": true
-                    }
                 },
                 "volumes": {
                     "/data": {
@@ -33,8 +21,13 @@
                         "label": "MinIO Object Storage"
                     }
                 },
+                "opts": [
+                    [ "--publish" , "9000:9000" ],
+                    [ "--publish" , "9001:9001" ]
+                 ],
                 "cmd_arguments": [
-                    [ "server" , "/data" ]
+                    [ "server" , "/data" ],
+                    [ "--console-address=:9001" , "" ]
                  ],
                 "environment": {
                     "MINIO_ROOT_USER": {
@@ -44,10 +37,6 @@
                     "MINIO_ROOT_PASSWORD": {
                         "description": "MinIO Administrator Password, 8 to 128 alphanumeric characters",
                         "label": "MinIO Admin Password"
-                    },
-                    "MINIO_CONSOLE_ADDRESS": {
-                        "description": "MinIO Console Address, for example, \":9001\".  Must be the same port as \"MinIO Admin Portal Port\".",
-                        "label": "MinIO Console Address"
                     }
                 }
             }
