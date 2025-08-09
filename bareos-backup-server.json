@@ -93,8 +93,8 @@
             "label": "Director's local 'File' password"
           },
           "BAREOS_WEBUI_PASSWORD": {
-            "description": "Set Bareos Web-UI 'admin' user password.",
-            "label": "Web-UI 'admin' user's password"
+            "description": "Set Bareos WebUI 'admin' user password.",
+            "label": "WebUI 'admin' user's password"
           },
           "SMTP_HOST": {
             "description": "Set email relay hostname or IP - example uses Rockstor's Email Alerts.",
