@@ -1,6 +1,6 @@
 {
-  "forgejo": {
-    "description": "forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.<p><p>Based on the official docker image: <a href='https://codeberg.org/forgejo/-/packages/container/forgejo/12' target=_blank>https://codeberg.org/forgejo/-/packages/container/forgejo/12</a>, available for amd64 and arm64 architecture.</p>",
+  "Forgejo": {
+    "description": "Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.<p><p>Based on the official docker image: <a href='https://codeberg.org/forgejo/-/packages/container/forgejo/12' target=_blank>https://codeberg.org/forgejo/-/packages/container/forgejo/12</a>, available for amd64 and arm64 architecture.</p>",
     "more_info": "",
     "ui": {
       "slug": ""
@@ -18,12 +18,12 @@
     "containers": {
       "forgejo-db": {
         "image": "postgres",
-        "tag": "latest",
+        "tag": "16",
         "launch_order": 1,
         "volumes": {
           "/var/lib/postgresql/data": {
-            "description": "forgejo database location. E.g.: create a Share called forgejo-d for this purpose alone.",
-            "label": "forgejo db [e.g. forgejo-db]"
+            "description": "Forgejo database location. E.g.: create a Share called forgejo-d for this purpose alone.",
+            "label": "Forgejo db [e.g. forgejo-db]"
           }
         },
         "opts": [
@@ -48,19 +48,19 @@
         "volumes": {
           "/data": {
             "description": "Choose a Share for forgejo data. E.g.: create a Share called forgejo-data for this purpose alone.",
-            "label": "forgejo data [e.g. forgejo-data]"
+            "label": "Forgejo data [e.g. forgejo-data]"
           }
         },
         "ports": {
           "3000": {
-            "description": "forgejo WebUI port.",
+            "description": "Forgejo WebUI port.",
             "host_default": 3000,
-            "label": "WebUI port [default 3000]",
+            "label": "WebUI port [e.g. 3000]",
             "protocol": "tcp",
             "ui": true
           },
           "22": {
-            "description": "forgejo ssh port.",
+            "description": "Forgejo SSH port.",
             "host_default": 222,
             "label": "SSH port [e.g. 222]",
             "protocol": "tcp",
@@ -69,13 +69,13 @@
         },
         "environment": {
           "USER_UID": {
-            "description": "Enter a valid UID to run forgejo with. It must have full permissions to the share mapped in the previous step.",
-            "label": "UID [e.g.: 1000]",
+            "description": "Enter a valid UID to run Forgejo with. It must have full permissions to the share mapped in the previous step.",
+            "label": "UID [e.g. 1000]",
             "index": 1
           },
           "USER_GID": {
-            "description": "Enter a valid GID to run forgejo with. It must have full permissions to the share mapped in the previous step.",
-            "label": "GID [e.g.: 1000]",
+            "description": "Enter a valid GID to run Forgejo with. It must have full permissions to the share mapped in the previous step.",
+            "label": "GID [e.g. 1000]",
             "index": 2
           }
         },
