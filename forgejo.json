@@ -10,7 +10,7 @@
     "container_links": {
       "forgejo": [
         {
-          "name": "forgejo",
+          "name": "ForgejoToDB",
           "source_container": "forgejo-db"
         }
       ]
