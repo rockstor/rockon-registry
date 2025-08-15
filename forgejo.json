@@ -62,7 +62,7 @@
           "22": {
             "description": "forgejo ssh port.",
             "host_default": 222,
-            "label": "ssh port [default: 222]",
+            "label": "SSH port [e.g. 222]",
             "protocol": "tcp",
             "ui": false
           }
