@@ -1,7 +1,7 @@
 {
     "YouTrack official": {
         "version": "1.1",
-        "description": "Issue tracker designed for development teams. This rock-on installs YouTrack v2019.2.58831.<p><strong><em>Important:</em></strong> See <a href='http://rockstor.com/docs/docker-based-rock-ons/youtrack.html#pre-install-requirements' target='_blank'>Rockstor documentation</a> for special installation requirements and upgrade from previous version.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/jetbrains/youtrack' target='_blank'>https://hub.docker.com/r/jetbrains/youtrack</a>, available for amd64 architecture only.</p>",
+        "description": "Issue tracker designed for development teams. This rock-on installs YouTrack v2025.2.94372.<p><strong><em>Important:</em></strong> See <a href='http://rockstor.com/docs/docker-based-rock-ons/youtrack.html#pre-install-requirements' target='_blank'>Rockstor documentation</a> as well as the 'info' icon after the installation for special pre-requisites and upgrade from previous versions.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/jetbrains/youtrack' target='_blank'>https://hub.docker.com/r/jetbrains/youtrack</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "<h4>Installation requirements</h4><p>This rock-on has specific share ownership requirements. See <a href='http://rockstor.com/docs/docker-based-rock-ons/youtrack.html#pre-install-requirements' target='_blank'>Rockstor documentation</a> for instructions, and <a href='https://www.jetbrains.com/help/youtrack/standalone/youtrack-docker-installation.html#create-and-configure-directories' target='_blank'>YouTrack documentation</a> for details.</p><h4>First-time setup token</h4><p>Upon first access to the webUI, YouTrack requires a specific token generated during the rock-on install. To retrieve this token, you can run:<br><code>cat /mnt2/SHARE-USED-FOR-CONF/internal/services/configurationWizard/wizard_token.txt</code></p></h4><h4>Upgrade from previous versions</h4><p>Upgrading from a previous version is possible by restoring data from a previous backup. See YouTrack documentation for <a href='https://www.jetbrains.com/help/youtrack/standalone/upgrade-with-docker-image.html#youtrack-zip-msi-to-docker' target='_blank'>step by step instructions</a> (you can ignore steps 2 to 4).</p>",
         "website": "https://www.jetbrains.com/youtrack/",
         "icon": "https://upload.wikimedia.org/wikipedia/commons/4/48/Icon_YouTrack.png",
@@ -11,7 +11,7 @@
         "containers": {
             "youtrack-official": {
                 "image": "jetbrains/youtrack",
-                "tag": "2019.2.58831",
+                "tag": "2025.2.94372",
                 "launch_order": 1,
                 "ports": {
                     "8080": {
@@ -23,20 +23,20 @@
                 },
                 "volumes": {
                     "/opt/youtrack/data": {
-                        "description": "Choose a share for data storage. Eg: create a share called youtrack-data for this purpose alone.",
-                        "label": "Data"
+                        "description": "Choose a share for storing your data.",
+                        "label": "Data [e.g.: youtrack-data]"
                     },
                     "/opt/youtrack/conf": {
-                        "description": "Choose a share for storage  of configuration files. Eg: create a share called youtrack-conf for this purpose alone.",
-                        "label": "Config"
+                        "description": "Choose a share for storing configuration files.",
+                        "label": "Config [e.g.: youtrack-conf]"
                     },
                     "/opt/youtrack/logs": {
-                        "description": "Choose a share for logs storage. Eg: create a share called youtrack-logs for this purpose alone.",
-                        "label": "Logs"
+                        "description": "Choose a share for storing log files.",
+                        "label": "Logs [e.g.: youtrack-logs]"
                     },
                     "/opt/youtrack/backups": {
-                        "description": "Choose a share for storing Backups. Eg: create a share called youtrack-backup for this purpose alone.",
-                        "label": "Backup"
+                        "description": "Choose a share for storing backups.",
+                        "label": "Backup [youtrack-backups]"
                     }
                 }
             }
