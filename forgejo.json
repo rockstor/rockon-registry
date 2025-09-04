@@ -22,7 +22,7 @@
         "launch_order": 1,
         "volumes": {
           "/var/lib/postgresql/data": {
-            "description": "Forgejo database location. E.g.: create a Share called forgejo-d for this purpose alone.",
+            "description": "Forgejo database location. E.g.: create a Share called forgejo-db for this purpose alone.",
             "label": "Forgejo db [e.g. forgejo-db]"
           }
         },
