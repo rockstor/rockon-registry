@@ -1,5 +1,5 @@
 {
-    "audiobookshelf": {
+    "Audiobookshelf": {
         "description": "Audiobookshelf is an open-source self-hosted media server for your audiobooks and podcasts.<p>Based the official docker image: <a href='https://hub.docker.com/r/advplyr/audiobookshelf' target='_blank'>https://hub.docker.com/r/advplyr/audiobookshelf</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "After installation more media shares can be added.",
         "ui": {
@@ -23,19 +23,19 @@
                 "volumes": {
                     "/config": {
                         "description": "Choose a Share for the configuration data. It will contain the database (users/books/libraries/settings).",
-                        "label": "Config Storage [e.g.: audiobookshelf-config]"
+                        "label": "Config Storage [e.g. audiobookshelf-config]"
                     },
                     "/audiobooks": {
                         "description": "Choose a Share for audiobooks.",
-                        "label": "Audiobooks Storage [e.g.: audiobookshelf-books]"
+                        "label": "Audiobooks Storage [e.g. audiobookshelf-books]"
                     },
                     "/podcasts": {
                         "description": "Choose a Share for podcasts.",
-                        "label": "Podcasts Storage [e.g.: audiobookshelf-podcasts]"
+                        "label": "Podcasts Storage [e.g. audiobookshelf-podcasts]"
                     },
                     "/metadata": {
                         "description": "Choose a Share for metadata (cache/streams/covers/downloads/backups/logs).",
-                        "label": "Metadata Storage [e.g.: audiobookshelf-metadata]"
+                        "label": "Metadata Storage [e.g. audiobookshelf-metadata]"
                     }
                 }
             }
