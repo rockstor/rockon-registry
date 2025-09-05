@@ -24,19 +24,19 @@
                 "volumes": {
                     "/opt/youtrack/data": {
                         "description": "Choose a share for storing your data.",
-                        "label": "Data [e.g.: youtrack-data]"
+                        "label": "Data [e.g. youtrack-data]"
                     },
                     "/opt/youtrack/conf": {
                         "description": "Choose a share for storing configuration files.",
-                        "label": "Config [e.g.: youtrack-conf]"
+                        "label": "Config [e.g. youtrack-conf]"
                     },
                     "/opt/youtrack/logs": {
                         "description": "Choose a share for storing log files.",
-                        "label": "Logs [e.g.: youtrack-logs]"
+                        "label": "Logs [e.g. youtrack-logs]"
                     },
                     "/opt/youtrack/backups": {
                         "description": "Choose a share for storing backups.",
-                        "label": "Backup [youtrack-backups]"
+                        "label": "Backup [e.g. youtrack-backups]"
                     }
                 }
             }
