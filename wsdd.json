@@ -1,36 +1,32 @@
 {
-  "Web Service Discovery For Windows Networks": {
-    "containers": {
-      "wsdd_daemon": {
-        "image": "kosdk/wsdd",
-        "opts": [
-          [
-            "--net=host",
-            ""
-          ]
-        ],
-        "launch_order": 1,
-        "environment": {
-          "HOST_NAME": {
-            "description": "Set the host name Rockstor uses.",
-            "label": "Host Name",
-            "index": 1
-          },
-          "WORKGROUP": {
-            "description": "Set the workgroup name. This should be the same name used during the setup of the Samba service on the Rockstor appliance",
-            "label": "Work group",
-            "default": "WORKGROUP",
-            "index": 2
-          }
+    "Web Service Discovery For Windows Networks (wsdd-native)": {
+        "description": "A simple container for Rockstor running samba, so that Windows 10 version 1511 or higher will display the Rockstor host in their Network folder.<p>This version is geared towards local network workgroup setups only. <p>Based on the  <a href='https://hub.docker.com/r/gershnik/wsddn' target='_blank'> official docker image</a>, available for amd64 and arm64 architecture.</p>",
+        "website": "https://github.com/gershnik/wsdd-native",
+        "version": "2.0",
+        "containers": {
+            "wsdd_daemon": {
+                "image": "gershnik/wsddn",
+                "opts": [
+                    [
+                        "--net=host",
+                        ""
+                    ]
+                ],
+                "launch_order": 1,
+                "environment": {
+                    "WSDDN_HOSTNAME": {
+                        "description": "Set the host name Rockstor uses.",
+                        "label": "Host Name",
+                        "index": 1
+                    },
+                    "WSDDN_WORKGROUP": {
+                        "description": "Set the workgroup name. This should be the same name used during the setup of the Samba service on the Rockstor appliance",
+                        "label": "Workgroup",
+                        "default": "WORKGROUP",
+                        "index": 2
+                    }
+                }
+            }
         }
-      }
-    },
-    "description": "A simple container for Linux systems running samba, so that Windows 10 version 1511 or higher will display the Rockstor host in the Network folder.<p>This version is geared towards local network workgroup setups only.</p><p>Based on a custom docker image: <a href='https://hub.docker.com/r/kosdk/wsdd' target='_blank'> https://hub.docker.com/r/kosdk/wsdd</a>, available for amd64 and arm64 architecture.</p>",
-    "ui": {
-      "https": false,
-      "slug": ""
-    },
-    "website": "https://hub.docker.com/r/kosdk/wsdd",
-    "version": "1.1"
-  }
+    }
 }
