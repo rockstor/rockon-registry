@@ -23,19 +23,19 @@
                 },
                 "volumes": {
                     "/opt/youtrack/data": {
-                        "description": "Choose a share for storing your data.",
+                        "description": "Choose a share for storing your data. The owner UID:GID must be 13001:13001.",
                         "label": "Data [e.g. youtrack-data]"
                     },
                     "/opt/youtrack/conf": {
-                        "description": "Choose a share for storing configuration files.",
+                        "description": "Choose a share for storing configuration files. The owner UID:GID must be 13001:13001.",
                         "label": "Config [e.g. youtrack-conf]"
                     },
                     "/opt/youtrack/logs": {
-                        "description": "Choose a share for storing log files.",
+                        "description": "Choose a share for storing log files. The owner UID:GID owner must be 13001:13001.",
                         "label": "Logs [e.g. youtrack-logs]"
                     },
                     "/opt/youtrack/backups": {
-                        "description": "Choose a share for storing backups.",
+                        "description": "Choose a share for storing backups. The UID:GID owner must be 13001:13001.",
                         "label": "Backup [e.g. youtrack-backups]"
                     }
                 }
