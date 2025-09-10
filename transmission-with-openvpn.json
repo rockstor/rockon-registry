@@ -1,7 +1,7 @@
 {
     "Transmission - OpenVPN": {
-        "website": "https://hub.docker.com/r/haugene/transmission-openvpn/",
-        "version": "1.1",
+        "website": "https://haugene.github.io/docker-transmission-openvpn/",
+        "version": "1.2",
         "description": "Docker container running Transmission torrent client with WebUI while connecting to OpenVPN.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/haugene/transmission-openvpn' target='_blank'>https://hub.docker.com/r/haugene/transmission-openvpn</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "<p>See the container's documentation for a list of included VPN provider profiles. If your provider isn't included, set it up as a custom provider, by putting the relevant files in the <code>Custom profile</code> share.</p>",
         "containers": {
@@ -25,11 +25,11 @@
                 "volumes": {
                     "/data": {
                         "description": "Choose a Share where Transmission will save all of it's config and data files including your downloads. Eg: create a Share called transmission-data.",
-                        "label": "Data Storage"
+                        "label": "Data Storage [e.g. transmission-data]"
                     },
                     "/etc/openvpn/custom": {
                         "description": "Choose a Share where a set of custom OpenVPN profile files can be found. This can be an empty share if you use one of the included provider profiles.",
-                        "label": "OpenVPN config"
+                        "label": "OpenVPN config [e.g.: ovpn-config]"
                     }
                 },
                 "ports": {
@@ -68,19 +68,24 @@
                         "index": 5
                     },
                     "LOCAL_NETWORK": {
-                        "description": "IP range (in CIDR notation, e.g. 192.168.0.0/24) to consider 'local'; this range is added to the routing, so that the web UI can be used.",
+                        "description": "IP range(s) (in CIDR notation, e.g. 192.168.0.0/24) to consider 'local'; this range is added to the routing, so that the web UI can be used. Multiple networks can be specified, comma-separated.",
                         "label": "LOCAL_NETWORK",
                         "index": 6
+                    },
+                    "TRANSMISSION_WEB_UI": {
+                        "description": "Alternative web UI to use; Use 'default' to leave the default Transmission UI, other options are (enter in lowercase): combustion, kettu, transmission-web-control, flood-for-transmission, shift or transmissionic.",
+                        "label": "TRANSMISSION_WEB_UI",
+                        "index": 7
                     },
                     "PUID": {
                         "description": "Choose a User ID to run Transmission as",
                         "label": "User ID",
-                        "index": 7
+                        "index": 8
                     },
                     "PGID": {
                         "description": "Choose a Group ID to run Transmission as",
                         "label": "Group ID",
-                        "index": 8
+                        "index": 9
                     }
                 }
             }

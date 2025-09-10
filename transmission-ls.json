@@ -1,0 +1,59 @@
+{
+    "Transmission LS": {
+        "description": "Open source bittorrent client powered by linuxserver.io.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/transmission' target='_blank'>https://hub.docker.com/r/linuxserver/transmission</a>, available for amd64 and arm64 architecture.</p>",
+        "version": "2025.1",
+        "website": "https://transmissionbt.com/",
+        "containers": {
+            "transmission-ls": {
+                "image": "linuxserver/transmission",
+                "launch_order": 1,
+                "ports": {
+                    "51413": {
+                        "label": "Sharing port",
+                        "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall & router. Suggested default: 51413.",
+                        "host_default": 51413
+                    },
+                    "9091": {
+                        "label": "WebUI port",
+                        "description": "Transmission WebUI port. Suggested default: 9091",
+                        "host_default": 9091,
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/config": {
+                        "description": "Share used for storing configuration",
+                        "label": "Configuration [e.g.: transmission-config]"
+                    },
+                    "/downloads": {
+                        "description": "Share used for storing downloads",
+                        "label": "Downloads [e.g.: transmission-downloads]"
+                    },
+                    "/watch": {
+                        "description": "Share used for automatically starting a download when new torrent files are added",
+                        "label": "Watch [e.g.: transmission-watch]"
+                    }
+                },
+                "environment": {
+                    "PUID": {
+                        "label": "UID",
+                        "description": "User ID to run Transmission as"
+                    },
+                    "PGID": {
+                        "label": "GUID",
+                        "description": "Group ID to run Transmission as"
+                    },
+                    "USER": {
+                        "label": "Web UI username",
+                        "description": "Username to authenticate on the web ui"
+                    },
+                    "PASS": {
+                        "label": "Web UI password",
+                        "description": "Password to use on the web ui"
+                    }
+                }
+            }
+        }
+    }
+}
