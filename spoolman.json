@@ -17,7 +17,7 @@
                 "ports": {
                     "8000": {
                         "description": "Enter the port number you would like to use for the Spoolman Web interface.",
-                        "label": "Web interface port",
+                        "label": "Web interface port [e.g. 7912]",
                         "host_default": 7912,
                         "protocol": "tcp",
                         "ui": true
