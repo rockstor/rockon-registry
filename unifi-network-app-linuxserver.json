@@ -1,7 +1,7 @@
 {
     "UniFi Network Application by linuxserver.io": {
         "description": "The UniFi Network Application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.</p><p>Prior to installation: ensure that a share named 'unifi-db' is created where a bash script file 'init-mongo.sh' is created with the content outlined <a href='https://github.com/linuxserver/docker-unifi-network-application?tab=readme-ov-file#setting-up-your-external-database' target='_blank'>here</a>.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/unifi-controller' target='_blank'>custom docker image</a>, available for amd64 and arm64 architecture.</p>",
-        "more_info": "To limit memory add MEM_LIMIT=1024M as a custom argument after install",
+        "more_info": "To limit memory add MEM_LIMIT=1024M as a custom argument after install.",
         "website": "https://ui.com/",
         "version": "1.0",
         "ui": {
