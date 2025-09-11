@@ -28,13 +28,6 @@
                         "description": "Choose a share for Spoolman database storage",
                         "label": "Spoolman Database Storage [e.g. spoolman-db]"
                     }
-                },
-                "environment": {
-                    "TZ": {
-                        "description": "Enter a valid tzdata-format timezone, for example \"America/New_York\".",
-                        "label": "Timezone",
-                        "index": 1
-                    }
                 }
             }
         }
