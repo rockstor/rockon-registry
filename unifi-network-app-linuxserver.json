@@ -167,7 +167,7 @@
                         "label": "GID"
                     },
                     "MONGO_PASS": {
-                        "description": "Enter password for MongoDB database user (unifi).",
+                        "description": "Enter the MongoDB unifi user password.",
                         "label": "DB Password [same as for Mongo unifi user]"
                     }
                 }
