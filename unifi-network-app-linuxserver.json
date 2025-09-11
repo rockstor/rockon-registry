@@ -56,7 +56,7 @@
                         "label": "DB user root password"
                     },
                     "MONGO_PASS": {
-                        "description": "Enter password for MongoDB database user (unifi)",
+                        "description": "Enter a password for the MongoDB unifi user.",
                         "label": "DB user unifi password"
                     }
                 }
