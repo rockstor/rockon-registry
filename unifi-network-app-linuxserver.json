@@ -168,7 +168,7 @@
                     },
                     "MONGO_PASS": {
                         "description": "Enter the MongoDB unifi user password.",
-                        "label": "DB Password [same as for Mongo unifi user]"
+                        "label": "DB Password [same as DB unifi user]"
                     }
                 }
             }
