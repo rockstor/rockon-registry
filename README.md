@@ -108,11 +108,12 @@ A typical container object has the following structure
 
 ### `uid` element
 
-The 'uid' element represents the `--user` option in the `docker run` command that underlies the Rockon execution.
+The optional 'uid' element represents the `--user` option in the `docker run` command that underlies the Rockon execution.
 Unless the container image was specifically developed to run with a non-root user, it will automatically be started with it.
 This element allows for specifying a user with which the main process or other commands inside the container will be run.
 
 The available combinations are:
+- set to `"uid"=""` or omitted, then no overriding action is taken and the container is started with its default user (typically `root`).
 - UID (which can be found running `id <username>` at the command line or via the `Users` page in the WebUI.
 - `-1` this indicates to the Rockon service that the UID of the owner from the first share, defined in the `volume` object, is used for the `--user` option.
 In future releases, this will be extended to be able to take advantage of the full scope that the `--user` option allows.
