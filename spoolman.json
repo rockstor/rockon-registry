@@ -1,5 +1,5 @@
 {
-    "spoolman": {
+    "Spoolman": {
         "description": "Spoolman is a self-hosted Web service and database to manage your 3D printer filament spools.  <a href='https://github.com/Donkie/Spoolman' target='_blank'>https://github.com/Donkie/Spoolman</a>",
         "version": "1.0",
         "website": "https://github.com/Donkie/Spoolman",
