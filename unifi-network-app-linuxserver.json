@@ -53,7 +53,7 @@
                 "environment": {
                     "MONGO_INITDB_ROOT_PASSWORD": {
                         "description": "Enter a password for the MongoDB root user.",
-                        "label": "DB user root password"
+                        "label": "DB root user password"
                     },
                     "MONGO_PASS": {
                         "description": "Enter a password for the MongoDB unifi user.",
