@@ -1,6 +1,6 @@
 {
     "Spoolman": {
-        "description": "Spoolman is a self-hosted Web service and database to manage your 3D printer filament spools.  <a href='https://github.com/Donkie/Spoolman' target='_blank'>https://github.com/Donkie/Spoolman</a>",
+        "description": "Spoolman is a self-hosted Web service and database to manage your 3D printer filament spools.</p><p>Based on the <a href='https://hub.docker.com/r/donkieyo/spoolman' target='_blank'> official docker image</a>, available for amd64 and arm64 architecture.</p>", 
         "version": "1.0",
         "website": "https://github.com/Donkie/Spoolman",
         "more_info": "This Rock-on uses the official Spoolman Docker image from Docker Hub, a muiltiarch image supporting amd64, arm64, and armhf architectures.</p>",
