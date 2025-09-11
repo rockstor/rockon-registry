@@ -46,7 +46,7 @@
                 ],
                 "volumes": {
                     "/data": {
-                        "description": "Choose a share for the database files and initial startup script",
+                        "description": "Choose a share for the database files and initial startup script.",
                         "label": "DB storage [must be unifi-db]"
                     }
                 },
