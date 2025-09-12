@@ -75,8 +75,10 @@ allowing for multi-directional communication._
 
 ### Structure of a Container Object
 
-_N.B. on the container names. If you are adding a net new Rockon that is a newer version of an existing one, or in a multi-container scenario uses a container for which a Rockon already exists (e.g. mariadb),
-ensure that the container name in your new Rockon is slightly different, otherwise a duplicate error will be thrown when the final json file is imported._
+_N.B. on the container names.
+If you are adding a net new Rockon that is a newer version of an existing one, or in a multi-container scenario uses a container for which a Rockon already exists (e.g. mariadb),
+ensure that the container name in your new Rockon is slightly different,
+otherwise a duplicate error will be thrown when the final json file is imported._
 
 Each container object is key'd by its name and nested within "containers" of the top level structure above.
 A typical container object has the following structure
