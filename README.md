@@ -5,7 +5,8 @@ The Rock-on framework of Rockstor parses a well formatted profile and provides a
 
 ## Can You Show Me an Example??
 
-Look at any <name>.json file in this repository. A simpler example is [syncthing.json](https://github.com/rockstor/rockon-registry/blob/master/syncthing.json).
+Look at any <name>.json file in this repository.
+A simpler example is [syncthing.json](https://github.com/rockstor/rockon-registry/blob/master/syncthing.json).
 The structure is fairly intuitive though cumbersome.
 Using existing examples and the description below of the `json` structure should make it clearer on how this framework is organized.
 
