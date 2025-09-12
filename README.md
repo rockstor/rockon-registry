@@ -15,7 +15,7 @@ Using existing examples and the description below of the `json` structure should
 If you are familiar with Docker and know how to deploy docker containers using the command line, you can create a Rock-on for the same with little effort.
 You can find instructions in the [Rockstor Documentation](https://rockstor.com/docs/contribute/contribute_rockons.html) both for running your own Rock-on locally, as well as how to contribute to the existing public repository of available Rock-ons
 
-## What Is the Structure of a Rock-on Profile File?
+## What is the structure of a Rock-on profile file?
 
 It is a big mass of JSON with nested objects, arrays and values.
 
