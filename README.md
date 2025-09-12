@@ -3,14 +3,14 @@
 This repository consists of Rock-on (Docker based apps) configuration profiles formatted as JSON files.
 The Rock-on framework of Rockstor parses a well formatted profile and provides a generic management and workflow such as install, uninstall, update, start and stop.
 
-## Can You Show Me an Example??
+## Can you show me an example??
 
 Look at any <name>.json file in this repository.
 A simpler example is [syncthing.json](https://github.com/rockstor/rockon-registry/blob/master/syncthing.json).
 The structure is fairly intuitive though cumbersome.
 Using existing examples and the description below of the `json` structure should make it clearer on how this framework is organized.
 
-## How Can I Add My Own Rock-on?
+## How can I add my own Rock-on?
 
 If you are familiar with Docker and know how to deploy docker containers using the command line, you can create a Rock-on for the same with little effort.
 You can find instructions in the [Rockstor Documentation](https://rockstor.com/docs/contribute/contribute_rockons.html) both for running your own Rock-on locally, as well as how to contribute to the existing public repository of available Rock-ons
@@ -19,7 +19,7 @@ You can find instructions in the [Rockstor Documentation](https://rockstor.com/d
 
 It is a big mass of JSON with nested objects, arrays and values.
 
-### Top Level Structure
+### Top level structure
 ```
 {
     "<Rock-on name. eg: LSIO-Plex>": {
@@ -73,7 +73,7 @@ This essentially provides only a point-to-point connection._
 _In future releases this constraint will be removed, so, like with Rocknets, the network becomes the center and any container defined in the Rockon can be connected to it,
 allowing for multi-directional communication._
 
-### Structure of a Container Object
+### Structure of a `container` object
 
 _N.B. on the container names.
 If you are adding a net new Rockon that is a newer version of an existing one, or in a multi-container scenario uses a container for which a Rockon already exists (e.g. mariadb),
@@ -151,7 +151,7 @@ This optional object allows the mapping of Rockstor shares onto volume paths exp
 }
 ```
 
-### `options` Object
+### `options` object
 
 An (optional) options object is a list of exactly two elements.
 (This needs to be improved or deprecated in favor of more specific design.)
@@ -168,7 +168,7 @@ Note that the `opts` field is a 2-d array, so the complete line for the above ex
 "opts": [ ["--net", "host"] ],
 ```
 
-### `cmd` Object
+### `cmd` object
 
 The optional `cmd` (command arguments) object is a list of exactly two elements detailing specific arguments to be passed onto the `docker run` command.
 As these arguments will simply be appended to the `docker run` command, they need to follow the same syntax and order.
@@ -186,7 +186,7 @@ Note that, as for the options object, the cmd_arguments field is a 2-d array, so
 "cmd_arguments": [ ["argument1", "argument2="text2"] ],
 ```
 
-### `environment` Object
+### `environment` object
 This optional object allows to pass environment variables that are exposed by the container image into the container
 
 ```
@@ -198,7 +198,7 @@ This optional object allows to pass environment variables that are exposed by th
 ```
 
 
-### `devices` Object
+### `devices` object
 
 This optional object allows to pass a specific device to the Rock-on, and similarly to the Environment object, must have a "description" and "label".  
 
