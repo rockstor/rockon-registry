@@ -1,0 +1,35 @@
+{
+    "Spoolman": {
+        "description": "Spoolman is a self-hosted Web service and database to manage your 3D printer filament spools. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/spoolman.html' target='_blank'>Rock-on guide</a>.</p><p>Based on the <a href='https://hub.docker.com/r/donkieyo/spoolman' target='_blank'> official docker image</a>, available for amd64 and arm64 architecture. </p>", 
+        "version": "1.0",
+        "website": "https://github.com/Donkie/Spoolman",
+        "more_info": "",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "volume_add_support": false,
+        "containers": {
+            "spoolman": {
+                "image": "donkieyo/spoolman",
+                "tag":"edge",
+                "launch_order": 1,
+                "ports": {
+                    "8000": {
+                        "description": "Enter the port number you would like to use for the Spoolman Web interface.",
+                        "label": "Web interface port [e.g. 7912]",
+                        "host_default": 7912,
+                        "protocol": "tcp",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/home/app/.local/share/spoolman": {
+                        "description": "Choose a share for Spoolman database storage",
+                        "label": "Spoolman Database Storage [e.g. spoolman-db]"
+                    }
+                }
+            }
+        }
+    }
+}
