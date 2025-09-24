@@ -22,8 +22,8 @@ It is a big mass of JSON with nested objects, arrays and values.
 ### Top level structure
 ```
 {
-    "<Rock-on name. eg: LSIO-Plex>": {
-      "description": "<description of the Rock-on. Eg: Plex brought to you by Linuxserver.io>",
+    "<Rock-on name. e.g. `LSIO-Plex`>": {
+      "description": "<description of the Rock-on. E.g. `Plex brought to you by Linuxserver.io`>",
       "version": "<arbitrary version string>",
       "website": "<Underlying app website>",
       (optional)"icon": "<link to icon, if any>",
@@ -31,12 +31,12 @@ It is a big mass of JSON with nested objects, arrays and values.
       (optional)"ui":{
                 "slug":"gui", link to webui becomes ROCKSTOR_IP:PORT/gui with slug value gui
       },
-      (optional)"volume_add_support": true, If the app allows arbitrary Shares to be mapped to the main container>,
-      (optional)"container_links": { <network object representing links between containers using separate docker networks, see below>
+      (optional)"volume_add_support": <true, If the app allows arbitrary Shares to be mapped to the main container>,
+      (optional)"container_links": { <network object representing links between containers using separate docker networks, See below.>
       },
       "containers": {
-        "<container1 name>": <container object representing the main container. see below>,
-        "<container2 name>": <container object representing the second container, if any. see below>, ...
+        "<container1 name>": <container object representing the main container. See below.>,
+        "<container2 name>": <container object representing the second container, if any. See below.>, ...
       },
       (optional)"custom_config": <custom configuration object that a special install handler of this Rock-on expects>
     }
@@ -45,7 +45,7 @@ It is a big mass of JSON with nested objects, arrays and values.
 
 ### Structure of the container_links object
 
-The basic structure of the optional `container_links` is:
+The basic structure of the optional `container_links` object is:
 
 ```
 {
@@ -86,33 +86,33 @@ A typical container object has the following structure
 ```
 {
   "image": "<docker image. eg: linuxserver/plex>",
-  (optional)"tag": "tag of the docker image, if any. latest is used by default.>",
+  (optional)"tag": "tag of the docker image, if any. "latest" is used by default.>",
   "launch_order": "1 or above. If there are multiple containers and they must be started in order, specify here.>",
-  (optional) "uid": <user>[:<group>] that's used to execute a command or entrypoint inside the container. see below>, 
+  (optional) "uid": <UID: user id that is going to be used to execute a command or entrypoint inside the container. See below.>, 
   (optional)"ports": {
-    "<container side port number1>": <port object represending a port mapping between host and container. see below>,
-    "<port number2>": <another port object, if necessary. see below>, ...
+    "<container side port number1>": <port object represending a port mapping between host and container. See below.>,
+    "<port number2>": <another port object, if necessary. See below.>, ...
   },
   (optional)"volumes": {
-    "<path1 inside container>": <volume object representing a Share<->directory mapping in the container. see below>,
-    "<path2 inside container>": <another volume object, if necessary. see below>, ...
+    "<path1 inside container>": <volume object representing a Share<->directory mapping in the container. See below.>,
+    "<path2 inside container>": <another volume object, if necessary. See below.>, ...
   },
-  (optional)"opts": [ An array of option objects that represent container options such as --net=host etc.. see below],
-  (optional)"cmd_arguments": [ An array of cmd_arguments objects that represent arguments to pass to the 'docker run' command. See below],
+  (optional)"opts": [ An array of option objects that represent container options such as --net=host etc. See below.],
+  (optional)"cmd_arguments": [ An array of cmd_arguments objects that represent arguments to pass to the 'docker run' command. See below.],
   (optional)"environment": {
-    "<env var1 name>": <env object representing one environment variable required by this container. see below>,
-    "<env var2 name>": <another env object, if necessary. see below>, ...
+    "<env var1 name>": <env object representing one environment variable required by this container. See below.>,
+    "<env var2 name>": <another env object, if necessary. See below.>, ...
   },
   (optional)"devices": {
-    "<device1 name>": <device object representing one device to be passed to this container. see below>,
-    "<device2 name>": <another device object, if necessary. see below>, ...
+    "<device1 name>": <device object representing one device to be passed to this container. See below.>,
+    "<device2 name>": <another device object, if necessary. See below.>, ...
   }
 }
 ```
 
 ### `uid` element
 
-The optional 'uid' element represents the `--user` option in the `docker run` command that underlies the Rockon execution.
+The optional `uid` element represents the `--user` option in the `docker run` command that underlies the Rockon execution.
 Unless the container image was specifically developed to run with a non-root user, it will automatically be started with it.
 This element allows for specifying a user with which the main process or other commands inside the container will be run.
 
@@ -130,9 +130,9 @@ This optional object can be used for mapping of external ports onto the ports pu
 
 ```
 {
-  "description": "<A detailed description of this port mapping, why it's for etc..>",
-  "label": "<A short label for this mapping. eg: Web-UI port>",
-  "host_default": <integer: suggested port number on the host. eg: 8080>,
+  "description": "<A detailed description of this port mapping, what it is for, etc.>",
+  "label": "<A short label for this mapping. e.g. Web-UI port>",
+  "host_default": <integer: suggested port number on the host. e.g. 8080>,
   (optional)"protocol": "<tcp or udp>",
   (optional)"ui":true,  not needed if false
 }
@@ -145,16 +145,15 @@ If you wish to allow both tcp and udp, just don't specify protocol in the Port o
 This optional object allows the mapping of Rockstor shares onto volume paths exposed by the container image.
 ```
 {
-  "description": "<A detailed description. Eg: This is where all incoming syncthing data will be stored>",
-  "label": "<A short label. eg: Data Storage>",
+  "description": "<A detailed description. E.g. 'This is where all incoming syncthing data will be stored'>",
+  "label": "<A short label, e.g. 'Data Storage [e.g. syncthing-storage]'>",
   (optional)"min_size": <integer: suggested minimum size of the Share, in KB>
 }
 ```
 
 ### `options` object
 
-An (optional) options object is a list of exactly two elements.
-(This needs to be improved or deprecated in favor of more specific design.)
+An (optional) `options` object is a list of exactly two elements (This needs to be improved or deprecated in favor of a more specific design).
 
 `--net=host` would be represented as:
 
@@ -162,7 +161,7 @@ An (optional) options object is a list of exactly two elements.
 ["--net", "host"]
 ```
 
-Note that the `opts` field is a 2-d array, so the complete line for the above example looks like
+Note that the `opts` field is a 2-d array, so the complete line for the above example looks like this:
 
 ```
 "opts": [ ["--net", "host"] ],
@@ -170,7 +169,7 @@ Note that the `opts` field is a 2-d array, so the complete line for the above ex
 
 ### `cmd` object
 
-The optional `cmd` (command arguments) object is a list of exactly two elements detailing specific arguments to be passed onto the `docker run` command.
+The optional `cmd` (command arguments) object is a list of exactly two elements detailing specific arguments to be passed to the `docker run` command itself.
 As these arguments will simply be appended to the `docker run` command, they need to follow the same syntax and order.
 For instance, 
 
@@ -180,20 +179,20 @@ For instance,
 ["argument1", "argument2="text2"]
 ```
 
-Note that, as for the options object, the cmd_arguments field is a 2-d array, so the complete line for the above example looks like
+Note that, as for the `options` object, the `cmd_arguments` field is a 2-d array, so the complete line for the above example appears like this:
 
 ```
 "cmd_arguments": [ ["argument1", "argument2="text2"] ],
 ```
 
 ### `environment` object
-This optional object allows to pass environment variables that are exposed by the container image into the container
+This optional object allows to pass environment variables that are exposed by the container image into the container.
 
 ```
 {
-  "description": "<Detailed description. Eg: Login username for Syncthing UI>",
+  "description": "<Detailed description. E.g. 'Login username for Syncthing UI'>",
   "label": "Web-UI username",
-  (optional)"index": <integer: 1 or above. order of this environment variable, if relevant>
+  (optional)"index": <integer: 1 or above. Order of this environment variable, if relevant.>
 }
 ```
 
@@ -204,9 +203,9 @@ This optional object allows to pass a specific device to the Rock-on, and simila
 
 ```
 {
-  "description": "<Detailed description of the device and its intent or specificities. Eg: path to device (/dev/xxx)>",
+  "description": "<Detailed description of the device and its intent or specificities. E.g. 'path to device (/dev/xxx)'>",
   "label": "Hardware encoding device",
-  (optional)"index": <integer: 1 or above. order of this environment variable, if relevant>
+  (optional)"index": <integer: 1 or above. Order of this environment variable, if relevant>
 }
 ```
 Note that for the user, filling the fields corresponding to this object during the Rock-on installation is optional, allowing the users to leave the fields blank if not applicable to them.  
