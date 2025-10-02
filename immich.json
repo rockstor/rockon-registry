@@ -1,0 +1,123 @@
+{
+  "Immich": {
+    "description": "Immich is a high-performance self-hosted photo and video backup solution with official mobile apps and 3rd-party smart TV apps. <p>Includes multiple custom docker images: Immich server, Immich machine-learning server, Redis and Postgres.</p> <p>Based on the official Docker Compose <a href='https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml' target='_blank'>configuration file</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.0.0",
+    "website": "https://immich.app",
+    "icon": "https://immich.app/img/logomark-light.svg",
+    "volume_add_support": true,
+    "container_links": {
+      "immich-server": [
+        {
+          "name": "ImmichServerToRedis",
+          "source_container": "redis"
+        },
+        {
+          "name": "ImmichServerToDatabase",
+          "source_container": "database"
+        }
+      ]
+    },    
+    "containers": {
+      "database": {
+        "image": "ghcr.io/immich-app/postgres",
+        "tag": "14-vectorchord0.4.3-pgvectors0.2.0",
+        "launch_order": 1,
+        "volumes": {
+          "/var/lib/postgresql/data": {
+            "description": "Choose a Database Share for Immich.",
+            "label": "Database Share [e.g. immich-db]"
+          }
+        },
+        "opts": [
+          [ "--shm-size", "128mb" ],
+          [ "--restart", "always" ],
+          [ "-e", "POSTGRES_USER=postgres" ],
+          [ "-e", "POSTGRES_PASSWORD=postgres" ],
+          [ "-e", "POSTGRES_DB=immich" ],
+          [ "-e", "POSTGRES_INITDB_ARGS=--data-checksums" ]
+        ]
+      },
+      "redis": {
+        "image": "valkey/valkey",
+        "tag": "8-bookworm",
+        "launch_order": 2,
+        "opts": [
+          [ "--restart", "always" ]
+        ]
+      },
+      "immich-machine-learning": {
+        "image": "ghcr.io/immich-app/immich-machine-learning",
+        "tag": "release",
+        "launch_order": 3,
+        "environment": {
+          "UPLOAD_LOCATION": {
+              "description": "The location where your uploaded photos/videos are stored. Has to be the same as Library Share.",
+              "label": "Upload location [e.g. /mnt2/immich-library]"
+          },
+          "DB_DATA_LOCATION": {
+              "description": "The location where your database files are stored. Has to be the same as Database Share.",
+              "label": "Database location [e.g. /mnt2/immich-db]"
+          }
+        },
+        "volumes": {
+          "/cache": {
+            "description": "Choose a Cache Share for the machine-learning models.",
+            "label": "Cache Share [e.g. immich-cache]"
+          }
+        },
+        "opts": [
+          [ "--restart", "always" ],
+          [ "-e", "DB_USERNAME=postgres" ],
+          [ "-e", "DB_PASSWORD=postgres" ],
+          [ "-e", "DB_DATABASE_NAME=immich" ]          
+        ]
+      },
+      "immich-server": {
+        "image": "ghcr.io/immich-app/immich-server",
+        "tag": "release",
+        "launch_order": 4,
+        "ports": {
+          "2283": {
+            "description": "Immich API/Server port.",
+            "label": "Web interface port [e.g. 2283]",
+            "host_default": 2283,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "environment": {
+          "UPLOAD_LOCATION": {
+              "description": "The location where your uploaded photos/videos are stored. Has to be the same as Library Share.",
+              "label": "Upload location [e.g. /mnt2/immich-library]",
+              "index": 1
+          },
+          "DB_DATA_LOCATION": {
+              "description": "The location where your database files are stored. Has to be the same as Database Share.",
+              "label": "Database location [e.g. /mnt2/immich-db]",
+              "index": 2
+          },
+          "IMMICH_LOG_LEVEL": {
+              "description": "Log level (verbose, debug, log, warn, error).",
+              "label": "Log level [e.g. log]",
+              "index": 3
+          },
+          "IMMICH_IGNORE_MOUNT_CHECK_ERRORS": {
+              "description": "When Immich starts, it checks if it can read and write to the storage volume mounts. Set to true to disable checks.",
+              "label": "Ignore error checks [e.g. false]",
+              "index": 4
+          }
+        },
+        "volumes": {
+          "/data": {
+            "description": "Choose a Library Share, where Immich stores uploaded photos/videos.",
+            "label": "Library Share [e.g. immich-library]"
+          }
+        },
+        "opts": [
+          [ "-v", "/etc/localtime:/etc/localtime:ro" ],
+          [ "--restart", "always" ]
+        ]
+      }
+    }
+  }
+}
