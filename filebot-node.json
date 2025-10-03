@@ -13,7 +13,7 @@
             "filebot": {
                 "image": "rednoah/filebot",
                 "tag": "node",
-                "launch_order": "1",
+                "launch_order": 1,
                 "ports": {
                     "5452": {
                         "description": "This is for the FileBot Node Client WebUI.",

@@ -16,7 +16,7 @@
                     "/data": {
                         "description": "Choose a Share for the configuration and persistent data.",
                         "label": "Config Storage (may need to be 777)",
-                        "min_size": "1073741824"
+                        "min_size": 1073741824
                     }
                 },
 		"opts": [
