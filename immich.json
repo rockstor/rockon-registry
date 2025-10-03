@@ -34,7 +34,6 @@
         },
         "opts": [
           [ "--shm-size", "128mb" ],
-          [ "--restart", "always" ],
           [ "-e", "POSTGRES_USER=postgres" ],
           [ "-e", "POSTGRES_PASSWORD=postgres" ],
           [ "-e", "POSTGRES_DB=immich" ],
@@ -45,10 +44,7 @@
       "redis": {
         "image": "valkey/valkey",
         "tag": "8-bookworm",
-        "launch_order": 2,
-        "opts": [
-          [ "--restart", "always" ]
-        ]
+        "launch_order": 2
       },
       "immich-machine-learning": {
         "image": "ghcr.io/immich-app/immich-machine-learning",
@@ -71,7 +67,6 @@
           }
         },
         "opts": [
-          [ "--restart", "always" ],
           [ "-e", "DB_USERNAME=postgres" ],
           [ "-e", "DB_PASSWORD=postgres" ],
           [ "-e", "DB_DATABASE_NAME=immich" ]
@@ -117,11 +112,7 @@
             "description": "Choose a Library Share, where Immich stores uploaded photos/videos.",
             "label": "Library Share [e.g. immich-library]"
           }
-        },
-        "opts": [
-          [ "-v", "/etc/localtime:/etc/localtime:ro" ],
-          [ "--restart", "always" ]
-        ]
+        }
       }
     }
   }
