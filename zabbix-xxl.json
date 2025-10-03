@@ -25,7 +25,7 @@
                     "/var/lib/mysql": {
                         "description": "Choose a Share for Zabbix Database. (create a share called zabbix-db for this purpose)",
                         "label": "Zabbix Database",
-                        "min_size": "1073741824"
+                        "min_size": 1073741824
                     }
                 }
             },
@@ -36,7 +36,7 @@
                     "/backups": {
                         "description": "Choose a Share for Zabbix Backups. (create a share called zabbix-backups for this purpose)",
                         "label": "Zabbix Backups",
-                        "min_size": "1073741824"
+                        "min_size": 1073741824
                     }
                 },
                 "opts": [

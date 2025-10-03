@@ -86,8 +86,8 @@ A typical container object has the following structure
 ```
 {
   "image": "<docker image. eg: linuxserver/plex>",
-  (optional)"tag": "tag of the docker image, if any. "latest" is used by default.>",
-  "launch_order": "1 or above. If there are multiple containers and they must be started in order, specify here.>",
+  (optional)"tag": "<tag of the docker image, if any. "latest" is used by default.>",
+  "launch_order": "<integer: 1 or above. If there are multiple containers and they must be started in order, specify here.>",
   (optional) "uid": <UID: user id that is going to be used to execute a command or entrypoint inside the container. See below.>, 
   (optional)"ports": {
     "<container side port number1>": <port object represending a port mapping between host and container. See below.>,
@@ -147,7 +147,7 @@ This optional object allows the mapping of Rockstor shares onto volume paths exp
 {
   "description": "<A detailed description. E.g. 'This is where all incoming syncthing data will be stored'>",
   "label": "<A short label, e.g. 'Data Storage [e.g. syncthing-storage]'>",
-  (optional)"min_size": <integer: suggested minimum size of the Share, in KB>
+  (optional)"min_size": <integer: suggested minimum size of the Share, in Bytes>
 }
 ```
 

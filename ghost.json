@@ -17,7 +17,7 @@
                     "/var/lib/ghost/content": {
                         "description": "Choose a share for your blog data.",
                         "label": "Blog Storage",
-                        "min_size": "1073741824"
+                        "min_size": 1073741824
                     }
                 }
             }
