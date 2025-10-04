@@ -92,7 +92,7 @@
               "index": 1
           },
           "DB_DATA_LOCATION": {
-              "description": "The location where your database files are stored. Has to be the same as Database Share.",
+              "description": "The location where your database files are stored. Has to be the same as Database Share. Note: enter the full path to the share.",
               "label": "Database location [e.g. /mnt2/immich-db]",
               "index": 2
           },
