@@ -87,7 +87,7 @@
         },
         "environment": {
           "UPLOAD_LOCATION": {
-              "description": "The location where your uploaded photos/videos are stored. Has to be the same as Library Share.",
+              "description": "The location where your uploaded photos/videos are stored. Has to be the same as Library Share. Note: enter the full path to the share.",
               "label": "Upload location [e.g. /mnt2/immich-library]",
               "index": 1
           },
