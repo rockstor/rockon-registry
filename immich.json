@@ -13,7 +13,7 @@
         },
         {
           "name": "ImmichToDatabase",
-          "source_container": "database"
+          "source_container": "immich-database"
         },
         {
           "name": "ImmichToMachineLearning",
