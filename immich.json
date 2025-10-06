@@ -41,7 +41,7 @@
           [ "-e", "DB_STORAGE_TYPE=HDD" ]        
         ]
       },
-      "redis": {
+      "immich-redis": {
         "image": "valkey/valkey",
         "tag": "8-bookworm",
         "launch_order": 2
