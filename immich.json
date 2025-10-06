@@ -22,7 +22,7 @@
       ]
     },    
     "containers": {
-      "database": {
+      "immich-database": {
         "image": "ghcr.io/immich-app/postgres",
         "tag": "14-vectorchord0.4.3-pgvectors0.2.0",
         "launch_order": 1,
