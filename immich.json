@@ -9,7 +9,7 @@
       "immich-server": [
         {
           "name": "ImmichToRedis",
-          "source_container": "redis"
+          "source_container": "immich-redis"
         },
         {
           "name": "ImmichToDatabase",
