@@ -44,7 +44,10 @@
       "immich-redis": {
         "image": "valkey/valkey",
         "tag": "8-bookworm",
-        "launch_order": 2
+        "launch_order": 2,
+        "opts": [
+          [ "-e", "REDIS_HOSTNAME=immich-redis" ]
+        ]
       },
       "immich-machine-learning": {
         "image": "ghcr.io/immich-app/immich-machine-learning",
@@ -69,7 +72,8 @@
         "opts": [
           [ "-e", "DB_USERNAME=postgres" ],
           [ "-e", "DB_PASSWORD=postgres" ],
-          [ "-e", "DB_DATABASE_NAME=immich" ]
+          [ "-e", "DB_DATABASE_NAME=immich" ],
+          [ "-e", "DB_HOSTNAME=immich-database" ]
         ]
       },
       "immich-server": {
@@ -112,7 +116,12 @@
             "description": "Choose a Library Share, where Immich stores uploaded photos/videos.",
             "label": "Library Share [e.g. immich-library]"
           }
-        }
+        },
+        "opts": [
+          [ "-e", "REDIS_HOSTNAME=immich-redis" ],
+          [ "-e", "DB_HOSTNAME=immich-database" ]
+        ]
+
       }
     }
   }
