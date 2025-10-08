@@ -90,25 +90,13 @@
           }
         },
         "environment": {
-          "UPLOAD_LOCATION": {
-              "description": "The location where your uploaded photos/videos are stored. Has to be the same as Library Share. Note: enter the full path to the share.",
-              "label": "Upload location [e.g. /mnt2/immich-library]",
-              "index": 1
-          },
-          "DB_DATA_LOCATION": {
-              "description": "The location where your database files are stored. Has to be the same as Database Share. Note: enter the full path to the share.",
-              "label": "Database location [e.g. /mnt2/immich-db]",
-              "index": 2
-          },
           "IMMICH_LOG_LEVEL": {
               "description": "Log level (verbose, debug, log, warn, error).",
-              "label": "Log level [e.g. log]",
-              "index": 3
+              "label": "Log level [e.g. log]"
           },
           "IMMICH_IGNORE_MOUNT_CHECK_ERRORS": {
               "description": "When Immich starts, it checks if it can read and write to the storage volume mounts. Set to true to disable checks.",
-              "label": "Ignore error checks [e.g. false]",
-              "index": 4
+              "label": "Ignore error checks [e.g. false]"
           }
         },
         "volumes": {
