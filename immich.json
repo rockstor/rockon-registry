@@ -53,16 +53,6 @@
         "image": "ghcr.io/immich-app/immich-machine-learning",
         "tag": "release",
         "launch_order": 3,
-        "environment": {
-          "UPLOAD_LOCATION": {
-              "description": "The location where your uploaded photos/videos are stored. Has to be the same as Library Share. Note: enter the full path to the share.",
-              "label": "Upload location [e.g. /mnt2/immich-library]"
-          },
-          "DB_DATA_LOCATION": {
-              "description": "The location where your database files are stored. Has to be the same as Database Share. Note: enter the full path to the share.",
-              "label": "Database location [e.g. /mnt2/immich-db]"
-          }
-        },
         "volumes": {
           "/cache": {
             "description": "Choose a Cache Share for the machine-learning models.",
