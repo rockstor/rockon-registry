@@ -31,6 +31,7 @@
     "Headphones": "headphones.json",
     "Home Assistant by Linuxserver.io": "home-assistant-linuxserver.json",
     "HTTP to HTTPS redirect": "redirect-http-to-https.json",
+    "Immich": "immich.json",
     "IT Tools": "it-tools.json",
     "Jackett": "Jackett.json",
     "JDownloader 2": "Jdownloader2.json",
