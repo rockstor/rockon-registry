@@ -1,0 +1,60 @@
+{
+  "N8N": {
+    "containers": {
+      "n8n": {
+        "image": "n8nio/n8n",
+        "launch_order": 1,
+        "ports": {
+          "5678": {
+            "description": "n8n web UI (accessed via Traefik on port 443)",
+            "label": "Web UI (Direct Access)",
+            "host_default": 5678,
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/home/node/.n8n": {
+            "description": "Persistent n8n data (workflow definitions, credentials, etc.)",
+            "label": "Share"
+          }
+        },
+        "environment": {
+          "N8N_HOST": {
+            "description": "Hostname for n8n",
+            "label": "N8N Hostname",
+            "index": 1
+         },
+          "N8N_PROTOCOL": {
+            "description": "Protocol - use https when behind Proxy like traefik, else http",
+            "label": "Protocol",
+            "index": 2
+          },
+          "WEBHOOK_URL": {
+            "description": "Public webhook URL for n8n. (Use N8N_HOST value.)",
+            "label": "Webhook URL",
+            "index": 3
+          },
+          "N8N_SECURE_COOKIE": {
+            "description": "Set to false if having cookie issues behind e.g. traefik, else set to true",
+            "label": "Secure Cookie",
+            "index": 4
+          },
+          "N8N_EDITOR_BASE_URL": {
+            "description": "Base URL for the n8n editor (e.g. https://n8n.domain.tld)",
+            "label": "Editor Base URL",
+            "index": 5
+          }
+        }
+      }
+    },
+    "description": "n8n workflow automation tool.",
+    "more_info": "Official Docker image: <a href=\"https://hub.docker.com/r/n8nio/n8n\" target=\"_blank\">n8nio/n8n</a>. Access via https://n8n.kautz.cloud",
+    "ui": {
+      "slug": "",
+      "https": true
+    },
+    "volume_add_support": false,
+    "website": "https://n8n.io",
+    "version": "1.0"
+  }
+}
