@@ -1,0 +1,114 @@
+{
+  "Observability Starter Kit": {
+    "description": "An observability stack featuring OpenTelemetry (Collector contrib), VictoriaMetrics, and Grafana, that makes it easier to get started with open-source monitoring on Rockstor. <p>In comparison with Netdata, it is 100% open-source and requires no cloud account to access all of its features. Netdata is an all-in-one solution that has auto-discovery and zero-configuration features which requires much less time setting-up a monitoring solution. This rock-on consists of three different open-source products working in tandem, each requiring correct configuration so that they can function with eachother.</p> <p>Includes multiple custom docker images: <a href='https://hub.docker.com/r/victoriametrics/victoria-metrics/' target='_blank'>VictoriaMetrics</a>, <a href='https://hub.docker.com/r/otel/opentelemetry-collector-contrib' target='_blank'>OpenTelemetry Collector (contrib)</a> and <a href='https://hub.docker.com/r/grafana/grafana' target='_blank'>Grafana</a>.</p> <p>Inspired by <a href='https://grafana.com/docs/opentelemetry/docker-lgtm/' target='_blank'>Grafana's docker-otel-lgtm</a> project, available for amd64 and arm64 architecture.</p> <p>TODO: link to write-up.</p> ",
+    "version": "1.0.0",
+    "website": "TODO https://opentelemetry.io/ ??",
+    "container_links": {
+      "osk-grafana": [
+        {
+          "name": "osk-grafana-to-victoria-metrics",
+          "source_container": "osk-victoria-metrics"
+        }
+      ]
+    }, 
+    "containers": {
+      "osk-victoria-metrics": {
+        "image": "victoriametrics/victoria-metrics",
+        "tag": "latest",
+        "launch_order": 1,
+        "ports": {
+          "8428": {
+            "description": "VictoriaMetrics UI port for query troubleshooting and exploration.",
+            "label": "VictoriaMetrics HTTP port [e.g. 18428]",
+            "host_default": 18428,
+            "protocol": "tcp"
+          }
+        },
+        "volumes": {
+          "/victoria-metrics-data": {
+            "description": "Persistent storage for VictoriaMetrics data.",
+            "label": "VictoriaMetrics Data Share [e.g. osk-victoria-metrics]"
+          }
+        }
+      },
+      "osk-opentelemetry-collector": {
+        "image": "otel/opentelemetry-collector-contrib",
+        "tag": "latest",
+        "launch_order": 3,
+        "ports": {
+          "4317": {
+            "description": "OTLP gRPC receiver port.",
+            "label": "OTLP gRPC endpoint port [e.g. 14317]",
+            "host_default": 14317,
+            "protocol": "tcp"
+          },
+          "4318": {
+            "description": "OTLP HTTP receiver port.",
+            "label": "OTLP HTTP endpoint port [e.g. 14318]",
+            "host_default": 14318,
+            "protocol": "tcp"
+          }
+        },
+        "environment": {
+          "OTEL_LOG_LEVEL": {
+            "description": "OpenTelemetry log level (none, error, warn, info, debug, verbose, all).",
+            "label": "OpenTelemetry log level [e.g. info]"
+          }          
+        },
+        "volumes": {
+          "/etc/otelcol-contrib": {
+            "description": "Path to the OpenTelemetry Collector configuration file. Map a Share that contains a working config.yaml here.",
+            "label": "OpenTelemetry config file [e.g. osk-opentelemetry-config]"
+          }
+        },        
+        "opts": [
+          [ "-v", "/:/hostfs:ro" ],
+          [ "-v", "/var/run/docker.sock:/var/run/docker.sock:ro" ],
+          [ "--security-opt", "systempaths=unconfined" ],
+          [ "--network", "host" ],
+          [ "--user", "10001:480" ]          
+        ]
+      },
+      "osk-grafana": {
+        "image": "grafana/grafana",
+        "tag": "latest",        
+        "launch_order": 4,
+        "ports": {
+          "3000": {
+            "description": "Grafana web UI for dashboards and visualization.",
+            "label": "Grafana Web UI [e.g. 13000]",
+            "host_default": 13000,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/var/lib/grafana": {
+            "description": "Persistent storage for Grafana configuration and data.",
+            "label": "Grafana Configuration and Data Share [e.g. osk-grafana-data]"
+          }
+        },
+        "environment": {
+          "GF_LOG_LEVEL": {
+            "description": "Grafana log level (debug, info, warn, error).",
+            "label": "Grafana log level [e.g. info]"
+          }        
+        },
+        "opts": [
+          [ "-e", "GF_ANALYTICS_REPORTING_ENABLED=false" ],
+          [ "-e", "GF_ANALYTICS_CHECK_FOR_UPDATES=true" ],
+          [ "-e", "GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES=true" ],
+          [ "-e", "GF_SECURITY_DISABLE_GRAVATAR=true" ],         
+          [ "-e", "GF_DASHBOARD_CLEANUP_INTERVAL=1m" ],
+          [ "-e", "GF_NEWS_NEWS_FEED_ENABLED=false" ],
+          [ "-e", "GF_SERVER_ENABLE_GZIP=true" ],
+          [ "-e", "GF_PLUGINS_PREINSTALL=victoriametrics-metrics-datasource" ],
+          [ "-e", "GF_DATE_FORMATS_FULL_DATE=DD-MM-YYYY HH:mm:ss" ],
+          [ "-e", "GF_DATE_FORMATS_INTERVAL_HOUR=DD-MM HH:mm" ],
+          [ "-e", "GF_DATE_FORMATS_INTERVAL_DAY=DD-MM" ],
+          [ "-e", "GF_DATE_FORMATS_INTERVAL_MONTH=MM-YYYY" ]
+        ]
+      }
+    }
+  }
+}
