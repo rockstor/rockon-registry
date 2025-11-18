@@ -64,7 +64,6 @@
         },        
         "opts": [
           [ "-v", "/:/hostfs:ro" ],
-          [ "-v", "/var/run/docker.sock:/var/run/docker.sock:ro" ],
           [ "--security-opt", "systempaths=unconfined" ],
           [ "--network", "host" ]
         ]
