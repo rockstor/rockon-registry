@@ -1,8 +1,8 @@
 {
   "Observability Starter Kit": {
-    "description": "An observability stack featuring OpenTelemetry (Collector contrib), VictoriaMetrics, and Grafana, that makes it easier to get started with monitoring on Rockstor. <p>Includes multiple official docker images: <a href='https://hub.docker.com/r/otel/opentelemetry-collector-contrib' target='_blank'>OpenTelemetry Collector (contrib)</a>, <a href='https://hub.docker.com/r/victoriametrics/victoria-metrics/' target='_blank'>VictoriaMetrics</a> and <a href='https://hub.docker.com/r/grafana/grafana' target='_blank'>Grafana</a>.</p> <p>Inspired by <a href='https://grafana.com/docs/opentelemetry/docker-lgtm/' target='_blank'>Grafana's docker-otel-lgtm</a> project, available for amd64 and arm64 architecture.</p>",
+    "description": "An observability stack featuring OpenTelemetry (Collector contrib), VictoriaMetrics, and Grafana, that makes it easier to get started with monitoring on Rockstor. <strong>Before install perform additional steps described in the <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/observability-starter-kit.html' target='_blank'>Rock-on guide</a></strong>. <p>Includes multiple official docker images: <a href='https://hub.docker.com/r/otel/opentelemetry-collector-contrib' target='_blank'>OpenTelemetry Collector (contrib)</a>, <a href='https://hub.docker.com/r/victoriametrics/victoria-metrics/' target='_blank'>VictoriaMetrics</a> and <a href='https://hub.docker.com/r/grafana/grafana' target='_blank'>Grafana</a>.</p> <p>Inspired by Grafana's <a href='https://grafana.com/docs/opentelemetry/docker-lgtm/' target='_blank'>docker-otel-lgtm</a> project, available for amd64 and arm64 architecture.</p>",
     "version": "1.0.0",
-    "website": "TODO:link to writeup",
+    "website": "https://opentelemetry.io/",
     "container_links": {
       "osk-grafana": [
         {
