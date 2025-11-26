@@ -1,7 +1,7 @@
 {
-  "n8n-test": {
+  "n8n": {
     "containers": {
-      "n8n-test": {
+      "n8n": {
         "image": "n8nio/n8n",
         "launch_order": 1,
         "ports": {
@@ -26,7 +26,8 @@
           ["-e", "N8N_RUNNERS_ENABLED=true"],
           ["-e", "N8N_DIAGNOSTICS_ENABLED=false"],
           ["-e", "N8N_VERSION_NOTIFICATIONS_ENABLED=false"],
-          ["-e", "N8N_GIT_NODE_DISABLE_BARE_REPOS=true"]
+          ["-e", "N8N_GIT_NODE_DISABLE_BARE_REPOS=true"],
+          ["-e", "N8N_SECURE_COOKIE=false"]
          ]
       }
     },
