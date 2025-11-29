@@ -1,172 +1,194 @@
 {
-    "Omada Controller": {
-        "containers": {
-            "omada-controller": {
-                "image": "mbentley/omada-controller",
-                "launch_order": 1,
-                "ports": {
-                    "8088": {
-                        "description": "Management and User web portal HTTP port. Suggested default: 8088.",
-                        "host_default": 8088,
-                        "label": "Management + User HTTP",
-                        "protocol": "tcp"
-                    },
-                    "8043": {
-                        "description": "Management web portal HTTPS port. Suggested default: 8043.",
-                        "host_default": 8043,
-                        "label": "Management HTTPS",
-                        "protocol": "tcp",
-                        "ui": true
-                    },
-                    "8843": {
-                        "description": "User web portal HTTPS port. Suggested default: 8843.",
-                        "host_default": 8843,
-                        "label": "User HTTPS",
-                        "protocol": "tcp"
-                    },                   
-                    "27001": {
-                        "description": "Omada Controller can be discovered by the Omada app through this port. Suggested default: 27001.",
-                        "host_default": 27001,
-                        "label": "App discovery",
-                        "protocol": "udp"
-                    },
-                    "29810": {
-                        "description": "Omada Controller and Omada Discovery Utility discover Omada devices through this port. Suggested default: 29810.",
-                        "host_default": 29810,
-                        "label": "Device discovery",
-                        "protocol": "udp"
-                    },
-                    "29811": {
-                        "description": "Omada Controller and Omada Discovery Utility manage Omada devices running firmware fully adapted to Omada Controller v4*. Suggested default: 29811.",
-                        "host_default": 29811,
-                        "label": "Device managing (v4)",
-                        "protocol": "tcp"                    
-                    },
-                    "29812": {
-                        "description": "Omada Controller and Omada Discovery Utility manage/adopt Omada devices running firmware fully adapted to Omada Controller v4*. Suggested default: 29812.",
-                        "host_default": 29812,
-                        "label": "Device adoption (v4)",
-                        "protocol": "tcp"                    
-                    },
-                    "29813": {
-                        "description": "When upgrading the firmware for the Omada devices running firmware fully adapted to Omada Controller v4*. Suggested default: 29813.",
-                        "host_default": 29813,
-                        "label": "Firmware upgrade (v4)",
-                        "protocol": "tcp"                    
-                    },
-                    "29814": {
-                        "description": "Omada Controller and Omada Discovery Utility manage Omada devices running firmware fully adapted to Omada Controller v5*. Suggested default: 29814.",
-                        "host_default": 29814,
-                        "label": "Device managing (v5)",
-                        "protocol": "tcp"                    
-                    }  
-                },
-                "volumes": {
-                    "/opt/tplink/EAPController/data": {
-                        "description": "Choose a DATA and CONFIG Share for Omada Controller files. Eg: create a Share called omada-controller-data for this purpose alone.",
-                        "label": "Controller DATA + CONFIG Storage"
-                    },
-                    "/opt/tplink/EAPController/logs": {
-                        "description": "Choose a LOGS Share for Omada Controller files. Eg: create a Share called omada-controller-logs for this purpose alone.",
-                        "label": "Controller LOGS Storage"
-                    }  
-                },
-                "environment": {
-                    "PUID": {
-                        "description": "Enter an existing User ID (UID) to run this Rock-on. They must already have full permissions to Shares used by this Rock-on.",
-                        "label": "UID",
-                        "index": 1
-                    },
-                    "PGID": {
-                        "description": "Enter an existing Group ID (GID) to run this Rock-on. This group (or prior UID) must already have full permissions to Shares used by this Rock-on.",
-                        "label": "GID",
-                        "index": 2
-                    },
-                    "MANAGE_HTTP_PORT": {
-                        "description": "Management and User web portal HTTP port. Suggested default: 8088.",
-                        "label": "Management HTTP port",
-                        "index": 3
-                    },
-                    "MANAGE_HTTPS_PORT": {
-                        "description": "Management web portal HTTPS port. Suggested default: 8043.",
-                        "label": "Management HTTPS port",
-                        "index": 4
-                    },                                    
-                    "PORTAL_HTTP_PORT": {
-                        "description": "User web portal HTTP port. Suggested default: 8088.",
-                        "label": "User HTTP port",
-                        "index": 5
-                    },
-                    "PORTAL_HTTPS_PORT": {
-                        "description": "User web portal HTTPS port. Suggested default: 8843.",
-                        "label": "User HTTPS port",
-                        "index": 6
-                    },
-                    "PORT_ADOPT_V1": {
-                        "description": "Omada Controller and Omada Discovery Utility manage/adopt Omada devices running firmware fully adapted to Omada Controller v4*. Suggested default: 29812.",
-                        "label": "Device managing (v4)",
-                        "index": 7
-                    },
-                    "PORT_APP_DISCOVERY": {
-                        "description": "Omada Controller can be discovered by the Omada app through this port. Suggested default: 27001.",
-                        "label": "App discovery",
-                        "index": 8
-                    },
-                    "PORT_DISCOVERY": {
-                        "description": "Omada Controller and Omada Discovery Utility discover Omada devices through this port. Suggested default: 29810.",
-                        "label": "Device discovery",
-                        "index": 9
-                    },
-                    "PORT_MANAGER_V1": {
-                        "description": "Omada Controller and Omada Discovery Utility manage Omada devices running firmware fully adapted to Omada Controller v4*. Suggested default: 29811.",
-                        "label": "Device managing (v4)",
-                        "index": 10
-                    },
-                    "PORT_MANAGER_V2": {
-                        "description": "Omada Controller and Omada Discovery Utility manage Omada devices running firmware fully adapted to Omada Controller v5*. Suggested default: 29814.",
-                        "label": "Device managing (v5)",
-                        "index": 11
-                    },
-                    "PORT_UPGRADE_V1": {
-                        "description": "When upgrading the firmware for the Omada devices running firmware fully adapted to Omada Controller v4*. Suggested default: 29813.",
-                        "label": "Firmware upgrade (v4)",
-                        "index": 12
-                    },
-                    "SHOW_SERVER_LOGS": {
-                        "description": "Outputs Omada Controller logs to STDOUT at runtime. Suggested default: true.",
-                        "label": "Show server logs",
-                        "index": 13
-                    },
-                    "SHOW_MONGODB_LOGS": {
-                        "description": "Outputs MongoDB logs to STDOUT at runtime. Suggested default: false.",
-                        "label": "Show MongoDB logs",
-                        "index": 14
-                    },
-                    "SSL_CERT_NAME": {
-                        "description": "Name of the public certificate chain mounted to /cert. Suggested default: tls.crt.",
-                        "label": "SSL certificate name",
-                        "index": 15
-                    },
-                    "SSL_KEY_NAME": {
-                        "description": "Name of the private certificate mounted to /cert. Suggested default: tls.key.",
-                        "label": "SSL key name",
-                        "index": 16
-                    },
-                    "TLS_1_11_ENABLED": {
-                        "description": "Re-enables TLS 1.0 and 1.1 if set to true. Suggested default: false.",
-                        "label": "Enable unsecure TLS versions",
-                        "index": 17
-                    }                    
-                }
-            }
+  "Omada Controller": {
+    "containers": {
+      "omada-controller": {
+        "image": "mbentley/omada-controller",
+        "launch_order": 1,
+        "ports": {
+          "8043": {
+            "description": "Management web portal HTTPS port.",
+            "host_default": 8043,
+            "label": "Management HTTPS [e.g. 8043]",
+            "protocol": "tcp",
+            "ui": true
+          },
+          "8088": {
+            "description": "Management and User web portal HTTP port.",
+            "host_default": 8088,
+            "label": "Management + User HTTP [e.g. 8088]",
+            "protocol": "tcp"
+          },
+          "8843": {
+            "description": "User web portal HTTPS port.",
+            "host_default": 8843,
+            "label": "User HTTPS [e.g. 8843]",
+            "protocol": "tcp"
+          },
+          "27001": {
+            "description": "Omada Controller can be discovered by the Omada app through this port.",
+            "host_default": 27001,
+            "label": "App discovery [e.g. 27001]",
+            "protocol": "udp"
+          },
+          "29810": {
+            "description": "Omada Controller and Omada Discovery Utility discover Omada devices through this port.",
+            "host_default": 29810,
+            "label": "Device discovery [e.g. 29810]",
+            "protocol": "udp"
+          },
+          "29811": {
+            "description": "Omada Controller and Omada Discovery Utility manage Omada devices running firmware fully adapted to Omada Controller v4.",
+            "host_default": 29811,
+            "label": "Device managing (v4) [e.g. 29811]",
+            "protocol": "tcp"
+          },
+          "29812": {
+            "description": "Omada Controller and Omada Discovery Utility manage/adopt Omada devices running firmware fully adapted to Omada Controller v4.",
+            "host_default": 29812,
+            "label": "Device adoption (v4) [e.g. 29812]",
+            "protocol": "tcp"
+          },
+          "29813": {
+            "description": "When upgrading the firmware for the Omada devices running firmware fully adapted to Omada Controller v4.",
+            "host_default": 29813,
+            "label": "Firmware upgrade (v4) [e.g. 29813]",
+            "protocol": "tcp"
+          },
+          "29814": {
+            "description": "Omada Controller and Omada Discovery Utility manage Omada devices running firmware fully adapted to Omada Controller v5.",
+            "host_default": 29814,
+            "label": "Device managing (v5) [e.g. 29814]",
+            "protocol": "tcp"
+          },
+          "29815": {
+            "description": "Omada Controller receives Device Info and Packet Capture files from the Omada devices.",
+            "host_default": 29815,
+            "label": "Device info (v5) [e.g. 29815]",
+            "protocol": "tcp"
+          },
+          "29816": {
+            "description": "Omada Controller establishes the remote control terminal session with the Omada devices.",
+            "host_default": 29816,
+            "label": "Remote control (v5) [e.g. 29816]",
+            "protocol": "tcp"
+          }
         },
-        "description": "TP-Link Omada Controller. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>https://hub.docker.com/r/mbentley/omada-controller</a>, available for amd64 and arm64 architecture.</p>",
-        "ui": {
-            "https": true,
-            "slug": ""
+        "volumes": {
+          "/opt/tplink/EAPController/data": {
+            "description": "Choose a DATA and CONFIG Share for Omada Controller files.",
+            "label": "Controller DATA + CONFIG Storage [e.g. omada-data]"
+          },
+          "/opt/tplink/EAPController/logs": {
+            "description": "Choose a LOGS Share for Omada Controller files.",
+            "label": "Controller LOGS Storage [e.g. omada-logs]"
+          }
         },
-        "volume_add_support": false,
-        "website": "https://www.tp-link.com/us/support/download/omada-software-controller/",
-        "version": "1.0"
-    }
+        "environment": {
+          "PUID": {
+            "description": "Enter an existing User ID (UID) to run this Rock-on. They must already have full permissions to Shares used by this Rock-on.",
+            "label": "UID",
+            "index": 1
+          },
+          "PGID": {
+            "description": "Enter an existing Group ID (GID) to run this Rock-on. This group (or prior UID) must already have full permissions to Shares used by this Rock-on.",
+            "label": "GID",
+            "index": 2
+          },
+          "MANAGE_HTTP_PORT": {
+            "description": "Management and User web portal HTTP port.",
+            "label": "Management HTTP port [e.g. 8088]",
+            "index": 3
+          },
+          "MANAGE_HTTPS_PORT": {
+            "description": "Management web portal HTTPS port.",
+            "label": "Management HTTPS port [e.g. 8043]",
+            "index": 4
+          },
+          "PORTAL_HTTP_PORT": {
+            "description": "User web portal HTTP port.",
+            "label": "User HTTP port [e.g. 8088]",
+            "index": 5
+          },
+          "PORTAL_HTTPS_PORT": {
+            "description": "User web portal HTTPS port.",
+            "label": "User HTTPS port [e.g. 8843]",
+            "index": 6
+          },
+          "PORT_ADOPT_V1": {
+            "description": "Omada Controller and Omada Discovery Utility manage/adopt Omada devices running firmware fully adapted to Omada Controller v4.",
+            "label": "Device managing (v4) [e.g. 29812]",
+            "index": 7
+          },
+          "PORT_APP_DISCOVERY": {
+            "description": "Omada Controller can be discovered by the Omada app through this port.",
+            "label": "App discovery [e.g. 27001]",
+            "index": 8
+          },
+          "PORT_DISCOVERY": {
+            "description": "Omada Controller and Omada Discovery Utility discover Omada devices through this port.",
+            "label": "Device discovery [e.g. 29810]",
+            "index": 9
+          },
+          "PORT_MANAGER_V1": {
+            "description": "Omada Controller and Omada Discovery Utility manage Omada devices running firmware fully adapted to Omada Controller v4.",
+            "label": "Device managing (v4) [e.g. 29811]",
+            "index": 10
+          },
+          "PORT_MANAGER_V2": {
+            "description": "Omada Controller and Omada Discovery Utility manage Omada devices running firmware fully adapted to Omada Controller v5.",
+            "label": "Device managing (v5) [e.g. 29814]",
+            "index": 11
+          },
+          "PORT_UPGRADE_V1": {
+            "description": "When upgrading the firmware for the Omada devices running firmware fully adapted to Omada Controller v4.",
+            "label": "Firmware upgrade (v4) [e.g. 29813]",
+            "index": 12
+          },
+          "PORT_TRANSFER_V2": {
+            "description": "Omada Controller receives Device Info and Packet Capture files from the Omada devices.",
+            "label": "Device info (v5) [e.g. 29815]",
+            "index": 13
+          },
+          "PORT_RTTY": {
+            "description": "Omada Controller establishes the remote control terminal session with the Omada devices.",
+            "label": "Remote control (v5) [e.g. 29816]",
+            "index": 14
+          },
+          "SHOW_SERVER_LOGS": {
+            "description": "Outputs Omada Controller logs to STDOUT at runtime.",
+            "label": "Show server logs [e.g. true]",
+            "index": 15
+          },
+          "SHOW_MONGODB_LOGS": {
+            "description": "Outputs MongoDB logs to STDOUT at runtime.",
+            "label": "Show MongoDB logs [e.g. false]",
+            "index": 16
+          },
+          "SSL_CERT_NAME": {
+            "description": "Name of the public certificate chain mounted to /cert.",
+            "label": "SSL certificate name [e.g. tls.crt]",
+            "index": 17
+          },
+          "SSL_KEY_NAME": {
+            "description": "Name of the private certificate mounted to /cert.",
+            "label": "SSL key name [e.g. tls.key]",
+            "index": 18
+          },
+          "TLS_1_11_ENABLED": {
+            "description": "Re-enables TLS 1.0 and 1.1 if set to true.",
+            "label": "Enable unsecure TLS versions [e.g. false]",
+            "index": 19
+          }
+        }
+      }
+    },
+    "description": "TP-Link Omada Controller. <p><strong>Note: in case of adoption failures, <a href='https://github.com/mbentley/docker-omada-controller/blob/master/KNOWN_ISSUES.md#devices-fail-to-adopt' target='_blank'>read this!</a></strong></p> <p>Based on a custom docker image: <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>https://hub.docker.com/r/mbentley/omada-controller</a>, available for amd64 and arm64 architecture.</p>",
+    "ui": {
+      "https": true,
+      "slug": ""
+    },
+    "volume_add_support": false,
+    "website": "https://www.tp-link.com/us/support/download/omada-software-controller/",
+    "version": "1.1"
+  }
 }
