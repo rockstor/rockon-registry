@@ -16,7 +16,7 @@
         "volumes": {
           "/home/node/.n8n": {
             "description": "Persistent n8n data (workflows, credentials, settings)",
-            "label": "n8n Data"
+            "label": "n8n Data [e.g. n8n-data]"
           }
         },
         "opts": [
@@ -31,12 +31,12 @@
          ]
       }
     },
-    "description": "n8n is a fair-code licensed workflow automation tool. It allows you to connect apps and services, automate tasks, and create complex workflows with a visual editor.",
-    "more_info": "<h4>n8n Workflow Automation</h4><p>n8n is a powerful, extendable workflow automation tool that can connect to hundreds of services. Perfect for automating business processes, data synchronization, and integrations.</p><h4>First-time Setup:</h4><ul><li>Access the web UI at the configured port</li><li>Create your first user account</li><li>Start building workflows!</li></ul><h4>Security Notes:</h4><ul><li>Enable basic auth for production use</li><li>Consider setting up SSL/TLS reverse proxy</li><li>Keep credentials secure in n8n's encrypted storage</li></ul><h4>Resources:</h4><ul><li><a href='https://docs.n8n.io' target='_blank'>Official Documentation</a></li><li><a href='https://n8n.io/workflows' target='_blank'>Workflow Templates</a></li></ul>",
+    "description": "n8n is a workflow automation tool. It allows you to connect apps and services, automate tasks, and create complex workflows with a visual editor. Available for amd64 amd arm architecture",
+    "more_info": "",
     "ui": {
       "slug": ""
     },
-    "volume_add_support": false,
+    "volume_add_support": true,
     "website": "https://n8n.io",
     "version": "1.0",
     "icon": "https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-icon.png"
