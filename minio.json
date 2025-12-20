@@ -17,7 +17,7 @@
         },
         "volumes": {
           "/data": {
-            "description": "Choose a share for MinIO object storage",
+            "description": "Choose a share for MinIO object storage that can be accessed by the Rock-on's user [e.g. create a group clngroup with GID=102 and create a user clnstrt with UID=180802 assigned to the previously created group].",
             "label": "Object Storage [e.g. minio-obj-store]"
           }
         },
