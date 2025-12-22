@@ -36,7 +36,7 @@
             "ui": true
           },
           "6881": {
-            "description": "Torrent port [e.g. 6881]",
+            "description": "Torrent port",
             "host_default": 6881,
             "label": "Torrent Port  [e.g. 6881]"
           }
