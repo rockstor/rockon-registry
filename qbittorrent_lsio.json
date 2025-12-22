@@ -38,7 +38,7 @@
           "6881": {
             "description": "Torrent port [e.g. 6881]",
             "host_default": 6881,
-            "label": "Torrent Port"
+            "label": "Torrent Port  [e.g. 6881]"
           }
         },
         "environment": {
