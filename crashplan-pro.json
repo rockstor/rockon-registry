@@ -1,0 +1,56 @@
+{
+  "CrashPlan-Pro": {
+    "description": "CrashPlan PRO/Small Business client. Requires a paid subscription. Uses the jlesage/crashplan-pro container and is accessed via a web-based VNC client (port 5800).",
+    "website": "https://hub.docker.com/r/jlesage/crashplan-pro/",
+    "volume_add_support": true,
+    "version": "1.0",
+    "containers": {
+      "crashplan-pro": {
+        "image": "jlesage/crashplan-pro",
+        "launch_order": 1,
+        "ports": {
+          "5800": {
+            "description": "WebUI port (VNC over HTTP). Access the CrashPlan interface here.",
+            "host_default": 5800,
+            "label": "WebUI/Console Port",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/config": {
+            "description": "Choose a share for the container's configuration files, logs, and cache.",
+            "label": "Configuration Share"
+          },
+          "/storage": {
+            "description": "This is where all your shares/data to be backed up should be mounted (e.g., set this to the parent share containing all your data). **NOTE: CrashPlan must be able to read this data.**",
+            "label": "Data to Backup Volume (Read Only)",
+            "readonly": true,
+            "min_size": 10240
+          }
+        },
+        "environment": {
+          "USER_ID": {
+            "description": "User ID that the application will run as (e.g., 1000). Must have permissions to read the data in the /storage volume.",
+            "value": "1006",
+            "label": "User ID"
+          },
+          "GROUP_ID": {
+            "description": "Group ID that the application will run as (e.g., 1000).",
+            "value": "1006",
+            "label": "Group ID"
+          },
+          "DISPLAY_WIDTH": {
+            "description": "Width of the VNC display (default: 1920).",
+            "value": "1920",
+            "label": "Display Width"
+          },
+          "DISPLAY_HEIGHT": {
+            "description": "Height of the VNC display (default: 1080).",
+            "value": "1080",
+            "label": "Display Height"
+          }
+        }
+      }
+    }
+  }
+}
