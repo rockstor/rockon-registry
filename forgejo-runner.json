@@ -9,7 +9,8 @@
         "image": "codeberg.org/phillxnet/forgejo-runner-wrapper",
         "launch_order": 1,
         "tag": "latest",
-        "uid": 0,
+        "uid": 1000,
+        "gid": -2,
         "volumes": {
           "/data": {
             "description": "Runner workspace & config (1000:docker).",
@@ -32,10 +33,6 @@
           "LABELS": {
             "description": "Label to define this runner (runs-on-ref:type:specifics).",
             "label": "Runner label [e.g. ubuntu-22.04:docker://node:20-bullseye]"
-          },
-          "PGID": {
-            "description": "'docker' Group ID on this install: required for Docker-in-Docker.",
-            "label": "Docker PGID [SYSTEM - GROUPS 'docker']"
           }
         },
         "opts": [
