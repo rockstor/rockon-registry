@@ -23,7 +23,7 @@
             "label": "Forgejo instance [e.g. https://codeberg.org]"
           },
           "TOKEN": {
-            "description": "Token from the Forgejo instance: Settings - Actions - Runners - 'Create new runner'",
+            "description": "Token from the Forgejo instance: Settings - Actions - Runners - 'Create new runner'.",
             "label": "Registration 'TOKEN'"
           },
           "NAME": {
