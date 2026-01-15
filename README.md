@@ -129,7 +129,7 @@ E.g. a container has an internal user named "runner" (USER runner) setup beforeh
 Docker maps this container user to the host user (Rockstor user) with the same UID.
 Rockstor's UID 1000 user is normally created during the
 [Rockstor Setup and EULA](https://rockstor.com/docs/installation/installer-howto.html#rockstor-setup-and-eula) stage.
-** I.e. an unprivaledged linux user with UID=1000 & GID=100 (1000:100). ** 
+** I.e. an unprivileged linux user with UID=1000 & GID=100 (1000:100). ** 
 
 For a Rockstor user's UID, see the SYSTEM -> `Users` page within in the WebUI.
 Or run `id <username>` at the command line for both UID and GID information.
