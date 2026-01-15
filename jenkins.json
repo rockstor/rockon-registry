@@ -1,38 +1,39 @@
 {
     "JenkinsCI": {
-        "description": "Jenkins is an open source automation server. Reliably build, test, and deploy software.<p>Based on the official docker image: <a href='https://hub.docker.com/r/jenkins/jenkins' target='_blank'>https://hub.docker.com/r/jenkins/jenkins</a>, available for amd64 and arm64 architecture.</p>",
-        "more_info": "Initial Web-UI visit gives location of admin password within the chosen share.<p>Click spanner icon for share name and associated mapping.<p>Note: potential Firefox incompatibility (Blank Web-UI) post initial setup.<p>Note: if 'Save and Continue' while creating first admin user fails, skip using 'Continue as admin'.",
+        "description": "Jenkins is an open source automation server. Reliably build, test, and deploy software.<p>Based on the official docker image: <a href='https://hub.docker.com/r/jenkins/jenkins' target='_blank'>https://hub.docker.com/r/jenkins/jenkins</a>, available for amd64 and arm64 architecture. Rockstor V5.5.0 or later.</p>",
+        "more_info": "Initial Web-UI visit gives location of admin password within the chosen share.<p>Click spanner icon for share name and associated mapping.",
         "ui": {
             "slug": ""
         },
         "website": "https://jenkins.io/",
         "icon": "http://ftp-nyc.osuosl.org/pub/jenkins/art/jenkins-logo/128x128/logo.png",
-        "version": "2.0",
+        "version": "2.528.3",
         "containers": {
             "jenkins": {
                 "image": "jenkins/jenkins",
                 "tag": "lts",
                 "launch_order": 1,
                 "uid": -1,
+                "gid": -1,
                 "ports": {
                     "8080": {
-                        "description": "Jenkins UI port (default 8080). You may need to open this port (protocol: tcp) on your firewall if remote access is required.",
+                        "description": "Jenkins UI port.",
                         "host_default": 8080,
-                        "label": "Server port",
+                        "label": "Server port [e.g. 8080]",
                         "protocol": "tcp",
                         "ui": true
                     },
                     "50000": {
-                        "description": "JNLP (Jave Web Start) Build executors port (default 50000) for slave agents not using SSH.",
+                        "description": "JNLP (Jave Web Start) Build executors port for slave agents not using SSH.",
                         "host_default": 50000,
-                        "label": "Agent port",
+                        "label": "Agent port [e.g. 50000]",
                         "protocol": "tcp"
                     }
                 },
                 "volumes": {
                     "/var/jenkins_home": {
-                        "description": "Choose a share for Jenkins home, e.g named 'jenkins_home', solely for this purpose. Jenkins will run as the same user that owns this share. It is recommended to set the owner to a non-root user",
-                        "label": "Jenkins Home"
+                        "description": "Jenkins storage. Jenkins will run as the user:group of this share e.g. (1000:1000).",
+                        "label": "Jenkins Home [e.g. jenkins-home]"
                     }
                 }
             }
