@@ -80,49 +80,68 @@ If you are adding a net new Rockon that is a newer version of an existing one, o
 ensure that the container name in your new Rockon is slightly different,
 otherwise a duplicate error will be thrown when the final json file is imported._
 
-Each container object is key'd by its name and nested within "containers" of the top level structure above.
-A typical container object has the following structure
+Each container object is keyed by its name and nested within "containers" of the top level structure above.
+A typical container object has the following structure; elements detailed later as required.
 
 ```
 {
   "image": "<docker image. eg: linuxserver/plex>",
   (optional)"tag": "<tag of the docker image, if any. "latest" is used by default.>",
   "launch_order": "<integer: 1 or above. If there are multiple containers and they must be started in order, specify here.>",
-  (optional) "uid": <UID: user id that is going to be used to execute a command or entrypoint inside the container. See below.>, 
+  (optional) "uid": <integer: for `--user uid` container execution: users default groups are implied.>,
+  (optional) "gid": <integer: for `--user uid:gid` container execution: ignored if no uid is defined.>,
   (optional)"ports": {
-    "<container side port number1>": <port object represending a port mapping between host and container. See below.>,
-    "<port number2>": <another port object, if necessary. See below.>, ...
+    "<container side port number1>": <port object represending a port mapping between host and container.>,
+    "<port number2>": <another port object, if necessary.>, ...
   },
   (optional)"volumes": {
-    "<path1 inside container>": <volume object representing a Share<->directory mapping in the container. See below.>,
-    "<path2 inside container>": <another volume object, if necessary. See below.>, ...
+    "<path1 inside container>": <volume object representing a Share<->directory mapping in the container.>,
+    "<path2 inside container>": <another volume object, if necessary.>, ...
   },
-  (optional)"opts": [ An array of option objects that represent container options such as --net=host etc. See below.],
+  (optional)"opts": [ An array of option objects that represent container options such as --net=host etc.],
   (optional)"cmd_arguments": [ An array of cmd_arguments objects that represent arguments to pass to the 'docker run' command. See below.],
   (optional)"environment": {
-    "<env var1 name>": <env object representing one environment variable required by this container. See below.>,
-    "<env var2 name>": <another env object, if necessary. See below.>, ...
+    "<env var1 name>": <env object representing one environment variable required by this container.>,
+    "<env var2 name>": <another env object, if necessary.>, ...
   },
   (optional)"devices": {
-    "<device1 name>": <device object representing one device to be passed to this container. See below.>,
-    "<device2 name>": <another device object, if necessary. See below.>, ...
+    "<device1 name>": <device object representing one device to be passed to this container.>,
+    "<device2 name>": <another device object, if necessary.>, ...
   }
 }
 ```
 
-### `uid` element
+### `uid` & `gid` elements
 
-The optional `uid` element represents the `--user` option in the `docker run` command that underlies the Rockon execution.
-Unless the container image was specifically developed to run with a non-root user, it will automatically be started with it.
-This element allows for specifying a user with which the main process or other commands inside the container will be run.
+These optional elements control the `--user` directive in the `docker run` command for the given container.
+The `gid` element depends on the existence of a `uid` element.
+
+Unless a container image was specifically developed to run with a non-root user, it will run as the root user initially.
+This is often required to enable such containers to change their own UID or GID via environmental variables,
+if they offer this option.
+Otherwise, a container's own USER uid:gid (Dockerfile) directives are directly mapped by UID:GID not name,
+to the host system.
+
+The `--user` directive overrides the UID (default group/s) or UID:GID (specific GID) for container execution;
+enabling desired user, or user:group mapping to, for example, Share ownership.
+I.e. `--user` (via the `uid` & `gid` Rock-on elements) overrides Dockerfile defaults for the USER directive.
+E.g. a container has an internal user named "runner" (USER runner) setup beforehand within the container with UID=1000.
+Docker maps this container user to the host user (Rockstor user) with the same UID.
+Rockstor's UID 1000 user is normally created during the
+[Rockstor Setup and EULA](https://rockstor.com/docs/installation/installer-howto.html#rockstor-setup-and-eula) stage.
+** I.e. an unprivileged linux user with UID=1000 & GID=100 (1000:100). ** 
+
+For a Rockstor user's UID, see the SYSTEM -> `Users` page within in the WebUI.
+Or run `id <username>` at the command line for both UID and GID information.
 
 The available combinations are:
-- set to `"uid"=""` or omitted, then no overriding action is taken and the container is started with its default user (typically `root`).
-- UID (which can be found running `id <username>` at the command line or via the `Users` page in the WebUI.
-- `-1` this indicates to the Rockon service that the UID of the owner from the first share, defined in the `volume` object, is used for the `--user` option.
-In future releases, this will be extended to be able to take advantage of the full scope that the `--user` option allows.
+- No `uid` element: no `--user` directive/override is used; respective of `gid` value.
+- `uid: -1`: run as the owner of the first `volume` object / Share.
+- `gid: -1`: run as the group of the first `volume` object / Share. N.B. requires a `uid` entry.
+- `gid: -2`: run as the **docker** host GID. N.B. requires a `uid` entry. **Rockstor 5.5.0-0 onwards.**
 
-As it is evident from above, a `container` object also has nested objects for port and volume mappings, container options, command arguments, and environment variables.
+A `container` object also has nested objects for;
+ports, volume mappings, container options, command arguments, and environment variables.
 These are described below.
 
 ### `ports` Object
