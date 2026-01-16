@@ -19,6 +19,33 @@ You can find instructions in the [Rockstor Documentation](https://rockstor.com/d
 
 It is a big mass of JSON with nested objects, arrays and values.
 
+### Format & Norms
+
+We have a developing standard regarding normalisation of the Rock-on format.
+This is progressively being encoded into our developer utility know as the
+[Rockon-validator](https://github.com/rockstor/rockon-validator).
+When preparing a new Rock-on, consider using the rockon-validator tool to ensure compliance.
+
+Example Expectations:
+- JSON indent by 2 spaces.
+- The **Rock-on name** (top-level element) should use
+  [Title Case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case).
+  Whilst honouring mark capitalisation such as in "ESPHome" & "2FAuth".
+- **description & more_info** values must be in sentence or multi sentence form.
+- **description** (top level) must contain either:
+- - "... available for amd64 architecture only." or
+- - "... available for amd64 and arm64 architecture.".
+- **description** (top level) can contain for example: "Rockstor V5.5.0 or later." to indicate minimum compatibility.
+- **description** (top level) indicate any external requirement e.g. "3rd-Party / Cloud account required|optional".
+- **uid, gid, & launch_order** values are integer only; i.e. no quotes.
+- **label** values for *Shares* and *Ports* must end with `[e.g. runner-data]` or `[must be 9100]`.
+- **environment** labels should, if possible, provide guidance: i.e. end with `[e.g. Rockstor's IP]` or `[see Email Alerts]`.
+- The **root.json** file is alphabetically sorted by the key elements (lower-case **Rock-on names**).  
+
+*The above "Norms" are [in-developemnt](https://github.com/rockstor/rockon-registry/issues/465).*
+
+**Each subsection below also details further expectations.** 
+
 ### Top level structure
 ```
 {
@@ -114,7 +141,7 @@ A typical container object has the following structure; elements detailed later 
 ### `uid` & `gid` elements
 
 These optional elements control the `--user` directive in the `docker run` command for the given container.
-The `gid` element depends on the existence of a `uid` element.
+The `gid` element depends on the existence of a `uid` element and requires **Rockstor 5.5.0-0 onwards.**
 
 Unless a container image was specifically developed to run with a non-root user, it will run as the root user initially.
 This is often required to enable such containers to change their own UID or GID via environmental variables,
@@ -135,7 +162,7 @@ For a Rockstor user's UID, see the SYSTEM -> `Users` page within in the WebUI.
 Or run `id <username>` at the command line for both UID and GID information.
 
 The available combinations are:
-- No `uid` element: no `--user` directive/override is used; respective of `gid` value.
+- No `uid` element: no `--user` directive/override is used; irrespective of `gid` value.
 - `uid: -1`: run as the owner of the first `volume` object / Share.
 - `gid: -1`: run as the group of the first `volume` object / Share. N.B. requires a `uid` entry.
 - `gid: -2`: run as the **docker** host GID. N.B. requires a `uid` entry. **Rockstor 5.5.0-0 onwards.**
@@ -144,7 +171,7 @@ A `container` object also has nested objects for;
 ports, volume mappings, container options, command arguments, and environment variables.
 These are described below.
 
-### `ports` Object
+### `ports` object
 This optional object can be used for mapping of external ports onto the ports published by the container image.
 
 ```
@@ -160,11 +187,16 @@ This optional object can be used for mapping of external ports onto the ports pu
 _Note that protocol is optional and if it's not present, both tcp and udp ports are mapped simultaneously.
 If you wish to allow both tcp and udp, just don't specify protocol in the Port object._
 
-### `volumes` Object
-This optional object allows the mapping of Rockstor shares onto volume paths exposed by the container image.
+### `volumes` object
+This optional object allows the mapping of Rockstor Shares onto volume paths exposed by the container image.
+When Shares require, or may benefit from a specific owner:group,
+specify this at the end of the Share's *"description"* via name or ID,
+e.g. "... must be (1000:docker)." or "... e.g. (13001:13001)." or "... (bareos:bareos)".
+Docker can only map IDs irrespective, but with for example (bareos:bareos),
+the docs instruct on creating a host to in-container uid:gid mapping.
 ```
 {
-  "description": "<A detailed description. E.g. 'This is where all incoming syncthing data will be stored'>",
+  "description": "<A brief description. E.g. 'This is where all incoming syncthing data will be stored (1000:1000).'>",
   "label": "<A short label, e.g. 'Data Storage [e.g. syncthing-storage]'>",
   (optional)"min_size": <integer: suggested minimum size of the Share, in Bytes>
 }
