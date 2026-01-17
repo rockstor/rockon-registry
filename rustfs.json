@@ -1,0 +1,48 @@
+{
+  "RustFS": {
+    "description": "RustFS is an S3-compatible object storage server based on the <a href='https://hub.docker.com/r/rustfs/rustfs' target='_blank'>official multi-arch Docker image</a>.  After installation, in order to access the built-in RustFS Web Management Portal visit <code>http://rockstor-server-address:9001</code>.",
+    "version": "1.0",
+    "website": "https://rustfs.com",
+    "more_info": "This Rock-on uses the official RustFS Docker image to implement a single RustFS instance with a single object storage share, suitable for use on a private network. If your connections traverse a network you do not control, consider using a VPN for encryption.",
+    "ui": {
+      "https": false,
+      "slug": ""
+    },
+    "volume_add_support": false,
+    "containers": {
+      "rustfs": {
+        "image": "rustfs/rustfs",
+        "launch_order": 1,
+        "ports": {
+        },
+        "volumes": {
+          "/data": {
+            "description": "Choose a share for RustFS object storage that can be accessed by the Rock-on's user [e.g. create a group rfsgroup with GID=10001 and create a user rfsuser with UID=10001 assigned to the previously created group].",
+            "label": "RustFS Object Storage [e.g. rustfs-obj-store]"
+          }
+        },
+        "opts": [
+          [ "--publish" , "9000:9000" ],
+          [ "--publish" , "9001:9001" ]
+         ],
+        "cmd_arguments": [
+          [ "--address=:9000" , "/data" ]
+         ],
+        "environment": {
+          "RUSTFS_ACCESS_KEY": {
+            "description": "RustFS Access Key",
+            "label": "Access Key [8-128 alphanumeric char.]"
+          },
+          "RUSTFS_SECRET_KEY": {
+            "description": "RustFS Secret Key",
+            "label": "Secret Key [8-128 alphanumeric char.]"
+          },
+          "RUSTFS_CONSOLE_ENABLE": {
+            "description": "Enable RustFS Web management interface (true or false)",
+            "label": "RUSTFS_CONSOLE_ENABLE"
+          }
+        }
+      }
+    }
+  }
+}
