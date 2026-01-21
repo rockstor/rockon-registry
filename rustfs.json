@@ -38,8 +38,8 @@
             "label": "Secret Key [8-128 alphanumerics]"
           },
           "RUSTFS_CONSOLE_ENABLE": {
-            "description": "Enable RustFS Web management interface (true or false)",
-            "label": "RUSTFS_CONSOLE_ENABLE"
+            "description": "Enable RustFS Web management interface (true or false).",
+            "label": "Enable Console (e.g. true)"
           }
         }
       }
