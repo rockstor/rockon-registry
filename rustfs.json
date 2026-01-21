@@ -30,8 +30,8 @@
          ],
         "environment": {
           "RUSTFS_ACCESS_KEY": {
-            "description": "RustFS Access Key",
-            "label": "Access Key [8-128 alphanumeric char.]"
+            "description": "RustFS Access Key.",
+            "label": "Access Key [8-128 alphanumerics]"
           },
           "RUSTFS_SECRET_KEY": {
             "description": "RustFS Secret Key",
