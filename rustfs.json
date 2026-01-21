@@ -34,8 +34,8 @@
             "label": "Access Key [8-128 alphanumerics]"
           },
           "RUSTFS_SECRET_KEY": {
-            "description": "RustFS Secret Key",
-            "label": "Secret Key [8-128 alphanumeric char.]"
+            "description": "RustFS Secret Key.",
+            "label": "Secret Key [8-128 alphanumerics]"
           },
           "RUSTFS_CONSOLE_ENABLE": {
             "description": "Enable RustFS Web management interface (true or false)",
