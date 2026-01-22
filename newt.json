@@ -1,6 +1,6 @@
 {
     "Newt": {
-        "description": "<p>Newt is a fully user space WireGuard tunnel client and TCP/UDP proxy, designed to securely expose private resources controlled by Pangolin. By using Newt, you don't need to manage complex WireGuard tunnels and NATing.</p><p>Can be used with Pangolin cloud or with your own self-hosted Pangolin instance.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/fosrl/newt' target='_blank'> https://hub.docker.com/r/fosrl/newt</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "<p>Newt is a fully user space WireGuard tunnel client and TCP/UDP proxy, designed to securely expose private resources controlled by Pangolin. By using Newt, you don't need to manage complex WireGuard tunnels and NATing.</p><p>Can be used with Pangolin cloud or with your own self-hosted Pangolin instance.</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/fosrl/newt' target='_blank'>https://hub.docker.com/r/fosrl/newt</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "slug": ""
         },
