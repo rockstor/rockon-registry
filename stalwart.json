@@ -1,0 +1,66 @@
+{
+    "Stalwart": {
+        "description": "<p>Stalwart is an open-source mail & collaboration server with JMAP, IMAP4, POP3, SMTP, CalDAV, CardDAV and WebDAV support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.</p><p>Use <code>docker logs Stalwart</code> for admin setup. See https://stalw.art/docs/install/platform/docker#log-in-to-the-web-interface for more</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/stalwartlabs/stalwart' target='_blank'>https://hub.docker.com/r/stalwartlabs/stalwart</a>, available for amd64 and arm64 architecture.</p>",
+        "ui": {
+            "slug": ""
+        },
+        "website": "https://stalw.art/",
+        "version": "0.15.4",
+        "containers": {
+            "Stalwart": {
+                "image": "stalwartlabs/stalwart",
+                "launch_order": 1,
+                "ports": {
+                    "443": {
+                        "description": "A critical port used for multiple secure web-based services, including web administration, JMAP, REST API, OAuth, TLS certificate provisioning (ACME challenges), autoconfig, and MTA-STS. This port must remain open in nearly all deployments. Suggested default: 10443",
+                        "host_default": 10443,
+                        "label": "HTTPS",
+                        "ui": false
+                    },
+                    "8080": {
+                        "description": "Provided mainly for initial setup. It is strongly recommended to disable this port after setup is complete to prevent unauthenticated, unencrypted access. Suggested default: 18080",
+                        "host_default": 18080,
+                        "label": "HTTP",
+                        "ui": true
+                    },
+                    "25": {
+                        "description": "Used for receiving email from other mail servers. This port must remain open for your domain to receive external email traffic reliably. Suggested default: 10025",
+                        "host_default": 10025,
+                        "label": "SMTP"
+                    },
+                    "465": {
+                        "description": "Handles email submission with implicit TLS encryption. Recommended for securely sending outgoing mail from user clients. It is best to keep this port open and use it in preference to port (10)587. Suggested default: 10465",
+                        "host_default": 10465,
+                        "label": "SMTPS"
+                    },
+                    "993": {
+                        "description": "IMAP over implicit TLS. Required for secure email access via IMAP clients. Keep this port open to allow encrypted mail retrieval. Suggested default: 10993",
+                        "host_default": 10993,
+                        "label": "IMAPS"
+                    },
+                    "587": {
+                        "description": "Handles email submission using STARTTLS. If all your clients are configured to use port (10)465 with implicit TLS, port (10)587 can be disabled for simplicity and security. Suggested default: 10587",
+                        "host_default": 10587,
+                        "label": "SMTP Submission"
+                    },
+                    "143": {
+                        "description": "The standard IMAP port without encryption. This port should generally be disabled in favor of the encrypted IMAPS port ((10)993). Suggested default: 10143",
+                        "host_default": 10143,
+                        "label": "IMAP4"
+                    },
+                    "4190": {
+                        "description": "Used to manage Sieve scripts remotely. Only keep this port open if your users actively use Sieve for email filtering rules. Suggested default: 104190",
+                        "host_default": 14190,
+                        "label": "ManageSieve"
+                    }
+                },
+                "volumes": {
+                    "/opt/stalwart": {
+                        "description": "Choose a Share for all Stalwart data. Eg: create a Share called stallwart-all for this purpose.",
+                        "label": "Storage"
+                    }
+                }
+            }
+        }
+    }
+}
