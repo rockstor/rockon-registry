@@ -14,7 +14,7 @@
           },
           "NEWT_ID": {
             "description": "Obtained from Pangolin server. The ID represents the site connection type in the system. Every Newt site has an ID.",
-            "label": "ID [e.g.ln8yqs6w85la5zg]"
+            "label": "ID [e.g. ln8yqs6w85la5zg]"
           },
           "NEWT_SECRET": {
             "description": "Obtained from Pangolin server. The secret represents the “password” of the site. This secret must match the secret hashed in the system for the relevant ID.",
