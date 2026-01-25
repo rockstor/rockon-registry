@@ -35,7 +35,7 @@
             "host_default": 10465
           },
           "587": {
-            "description": "Handles email submission using STARTTLS. If all your clients are configured to use port (10)465 with implicit TLS, port (10)587 can be disabled for simplicity and security.",
+            "description": "Handles email submission using STARTTLS. If all your clients are configured to use port (10)465 with implicit TLS, port 10587 can be disabled for simplicity and security.",
             "label": "SMTP Submission [e.g. 10587]",
             "host_default": 10587
           },
