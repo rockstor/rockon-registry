@@ -1,6 +1,6 @@
 {
   "Stalwart": {
-    "description": "<p>Stalwart is an open-source mail & collaboration server with JMAP, IMAP4, POP3, SMTP, CalDAV, CardDAV and WebDAV support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.</p><p>Use <code>docker logs Stalwart</code> for admin setup. See https://stalw.art/docs/install/platform/docker#log-in-to-the-web-interface for more</p><p>Based on the official docker image: <a href='https://hub.docker.com/r/stalwartlabs/stalwart' target='_blank'>https://hub.docker.com/r/stalwartlabs/stalwart</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "<p>Stalwart is an open-source mail & collaboration server with JMAP, IMAP4, POP3, SMTP, CalDAV, CardDAV and WebDAV support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.</p><p>Use <code>docker logs Stalwart</code> for admin setup. See https://stalw.art/docs/install/platform/docker#log-in-to-the-web-interface for more</p><p>Based on the <a href='https://hub.docker.com/r/stalwartlabs/stalwart' target='_blank'>official docker image</a>, available for amd64 and arm64 architecture.</p>",
     "version": "0.15.4",
     "website": "https://stalw.art/",
     "containers": {
