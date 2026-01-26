@@ -31,7 +31,7 @@
         },
         "volumes": {
           "/data": {
-            "description": "Choose a share for RustFS object storage that can be accessed by the Rock-on's user [e.g. create a group rfsgroup with GID=10001 and create a user rfsuser with UID=10001 assigned to the previously created group].",
+            "description": "RustFS object storage, must be (10001:10001).",
             "label": "RustFS Object Storage [e.g. rustfs-obj-store]"
           }
         },
