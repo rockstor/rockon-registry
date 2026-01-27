@@ -66,6 +66,7 @@
   "qbittorrent": "qbittorrent_lsio.json",
   "radarr": "radarr.json",
   "resilio sync": "resilioSync.json",
+  "rustfs": "rustfs.json",
   "sabnzb": "sabnzb.json",
   "scrutiny": "scrutiny.json",
   "seafile v12": "seafile12.json",
