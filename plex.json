@@ -12,32 +12,32 @@
         "launch_order": 1,
         "devices": {
           "/dev/dri": {
-            "description": "optional device path for enabling Intel QuickSync (example: /dev/dri). Leave blank if not needed. Check CPU documentation at ark.intel.com to check for QuickSync support.",
-            "label": "QuickSync device"
+            "description": "Optional device path for enabling Intel QuickSync. Leave blank if not needed.",
+            "label": "QuickSync device [e.g. /dev/dri]"
           }
         },
         "ports": {
           "32400": {
-            "description": "WebUI port. Suggested default: 32400",
+            "description": "Web-UI port.",
             "host_default": 32400,
-            "label": "WebUI port",
+            "label": "Web-UI port [e.g. 32400]",
             "ui": true
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for Plex configuration. E.g.: create a Share called plex-config for this purpose alone. It is important that the owner/group specified later have full access to the share (R/W/E)",
-            "label": "Config Storage"
+            "description": "Plex configuration. It is important that the owner/group specified later have full access to the share (R/W/E)",
+            "label": "Config Storage [e.g. plex-config]"
           },
           "/data": {
-            "description": "Choose a Share for Plex content (your media). E.g.: create a Share called plex-data for this purpose alone. You can also assign other media Shares on the system after installation. This share needs to have at least Read/Execute access for the user and group specified later",
-            "label": "Data Storage"
+            "description": "Plex content (your media). You can also assign other media Shares on the system after installation. This share needs to have at least Read/Execute access for the user and group specified later",
+            "label": "Data Storage [e.g. plex-data]"
           }
         },
         "environment": {
           "VERSION": {
-            "description": "Choose version of plex: Unless you know which version to try, just type latest",
-            "label": "VERSION",
+            "description": "Enter version of Plex.",
+            "label": "VERSION [e.g. latest]",
             "index": 1
           },
           "PUID": {
@@ -53,7 +53,7 @@
         }
       }
     },
-    "description": "Organize and stream your personal media collection of movies, TV, music, and photos anywhere on all your devices. This rock-on supports hardware transcoding (optional) via Intel QuickSync -- see <a href='https://ark.intel.com/content/www/us/en/ark/search/featurefilter.html?productType=873&0_QuickSyncVideo=True' target='_blank'>Intel ark</a> to check your processor's compatibility.<p>Additional <a href='http://rockstor.com/docs/docker-based-rock-ons/plex-media-server.html#plex-server-rock-on' target='_blank'>documentation</a> is available for this rock-on.</p><p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/plex' target='_blank'>https://hub.docker.com/r/linuxserver/plex</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Organize and stream your personal media collection of movies, TV, music, and photos anywhere on all your devices. <a href='http://rockstor.com/docs/docker-based-rock-ons/plex-media-server.html' target='_blank'>Rock-on guide</a>.<p>This rock-on supports hardware transcoding (optional) via Intel QuickSync -- see <a href='https://ark.intel.com/content/www/us/en/ark/search/featurefilter.html?productType=873&0_QuickSyncVideo=True' target='_blank'>Intel ark</a> to check your processor's compatibility.</p><p><b>Note:</b> uses `net=host` to enable local detection.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/plex' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "more_info": "<h4>Adding more media to Plex</h4><p>First, add the share(s) containing your additional media to this rock-on using its settings wizard. Then, from Plex webUI, you can add this/these share(s) and re-index your library. See <a href='http://rockstor.com/docs/docker-based-rock-ons/plex-media-server.html#adding-shares-to-plex' target='_blank'>Rockstor's documentation</a> for detailed instructions.</p> <h4>Hardware transcoding using Intel QuickSync</h4>If you have a compatible processor and filled the <em>QuickSync device</em> field during the rock-on installation, please note that you also need to add a dedicated share (named <em>plex-transcoding</em>, for instance) mapped as <code>/transcode</code> that will be used for transcoding only. Then, from Plex WebUI, you can update the <strong>transcode</strong> directory setting.</p>",
     "ui": {
       "slug": "web"

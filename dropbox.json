@@ -1,42 +1,46 @@
 {
-	"dropbox": {
-		"containers": {
-			"dropbox": {
-				"image": "janeczku/dropbox",
-				"opts": [ ["--net", "host"] ],
-				"launch_order": 1,
-				"volumes": {
-					"/dbox/Dropbox": {
-						"description": "Directory for your dropbox folder.",
-						"label": "Dropbox folder"
-					},
-						"/dbox/.dropbox": {
-						"description": "Directory for your dropbox configuration.",
-						"label": "dropbox config folder"
-					}
-				},
-				"environment": {
-                    "DBOX_UID": {
-		        		"description": "Enter a valid UID to run dropbox as. It must have full permissions to all Shares mapped in the previous step.",
-                        "label": "UID to run dropbox as.",
-                        "index": 1
-		    		},
-                    "DBOX_GID": {
-                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
-                        "label": "GID to run dropbox as.",
-                        "index": 2
-                    },
-                    "$DBOX_SKIP_UPDATE": {
-		        		"description": "Set this to true to skip updating to the latest Dropbox version on contrainer start. Default should be False. Accepts only True or False (case sensitive).",
-                        "label": "Skip updating dropbox?",
-                        "index": 3
-		    		}
-                }
-			}
-		},
-		"description": "Run Dropbox inside Docker. Fully working with local host folder mount or inter-container linking (via --volumes-from).<p>Based on a custom docker image: <a href='https://hub.docker.com/r/janeczku/dropbox' target='_blank'>https://hub.docker.com/r/janeczku/dropbox</a>, available for amd64 architecture only.</p> ",
-		"more_info": "After installed visit /var/log/messages and look for a line similar to 'DATETIME HOSTNAME journal: Please visit https://www.dropbox.com/cli_link_nonce?nonce=CODE to link this device.'",
-		"website": "https://hub.docker.com/r/janeczku/dropbox/",
-		"version": "3.18.1"
-	}
+  "Dropbox": {
+    "containers": {
+      "dropbox": {
+        "image": "janeczku/dropbox",
+        "opts": [
+          [
+            "--net",
+            "host"
+          ]
+        ],
+        "launch_order": 1,
+        "volumes": {
+          "/dbox/Dropbox": {
+            "description": "Share for Dropbox data must be (1000:1000).",
+            "label": "Dropbox data [e.g. dropbox-data]"
+          },
+          "/dbox/.dropbox": {
+            "description": "Share for Dropbox Configuration must be (1000:1000).",
+            "label": "Dropbox config [e.g. dropbox-config]"
+          }
+        },
+        "environment": {
+          "DBOX_UID": {
+            "description": "Enter a valid UID to run dropbox as. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID to run dropbox as.",
+            "index": 1
+          },
+          "DBOX_GID": {
+            "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "label": "GID to run dropbox as.",
+            "index": 2
+          },
+          "$DBOX_SKIP_UPDATE": {
+            "description": "Set this to 'True' to skip updating to the latest Dropbox version on contrainer start. 'True' or 'False' (case sensitive).",
+            "label": "Skip updating dropbox? [e.g. False]",
+            "index": 3
+          }
+        }
+      }
+    },
+    "description": "Dropbox containerised. Runs as UID:GID (1000:1000): ensure mapped Shares are compatible.<p><b>Note:</b> uses `net=host` for core functionality.</p><p><b>After installed:</b> use `journalctl` and look for the 'Please visit url-here...` info to link this instance.'</p><p>Based on a <a href='https://hub.docker.com/r/janeczku/dropbox' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p> ",
+    "website": "https://hub.docker.com/r/janeczku/dropbox/",
+    "version": "3.18.1"
+  }
 }

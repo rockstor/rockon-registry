@@ -1,70 +1,70 @@
 {
-    "Linkwarden": {
-        "description": "<p>Linkwarden is a self-hosted, open-source collaborative bookmark manager for organizing and archiving webpages.</p><p>Based on the official image from <a href='https://github.com/linkwarden/linkwarden' target='_blank'>Linkwarden</a>, available for amd64 and arm64 architecture.</p>",
-        "version": "0.9",
-        "website": "https://linkwarden.app/",
-        "containers": {
-            "linkwarden": {
-                "image": "ghcr.io/linkwarden/linkwarden",
-                "tag": "latest",
-                "launch_order": 2,
-                "ports": {
-                    "3000": {
-                        "description": "The port for accessing the Linkwarden Web UI.",
-                        "label": "Web UI Port",
-                        "host_default": 3000,
-                        "ui": true
-                    }
-                },
-                "volumes": {
-                    "/data/data": {
-                        "description": "Choose a Share for Linkwarden data storage. E.g., create a share named linkwarden-data.",
-                        "label": "Linkwarden Data Storage"
-                    }
-                },
-                "environment": {
-                    "DATABASE_URL": {
-                        "description": "PostgreSQL connection string. Set to postgresql://postgres:<password>@linkwarden-postgres:5432/linkwarden",
-                        "label": "PostgreSQL URL",
-                        "index": 3
-                    },
-                    "NEXTAUTH_SECRET": {
-                        "description": "Set an alphanumeric secret phrase for Linkwarden's authentication mechanism. This is not a user password but internal to Linkwarden.",
-                        "label": "Linkwarden Secret",
-                        "index": 2
-                    },
-                    "NEXTAUTH_URL": {
-                        "description": "Base URL for Linkwarden. Set to: http://<Rockstor IP address or server name>:<Web UI port defined earlier>/api/v1/auth",
-                        "label": "Linkwarden Base URL",
-                        "index": 1
-                    }
-                }
-            },
-            "linkwarden-postgres": {
-                "image": "postgres",
-                "tag": "17-alpine",
-                "launch_order": 1,
-                "volumes": {
-                    "/var/lib/postgresql/data": {
-                        "description": "Choose a Share for PostgreSQL database storage.",
-                        "label": "PostgreSQL Storage"
-                    }
-                },
-                "environment": {
-                    "POSTGRES_PASSWORD": {
-                        "description": "Enter the password for the PostgreSQL 'postgres' super-user that was entered previously as part of the 'PostgreSQL URL'",
-                        "label": "PostgreSQL Password"
-                    }
-                }
-            }
+  "Linkwarden": {
+    "description": "<p>A self-hosted, open-source collaborative bookmark manager for organizing and archiving webpages.</p><p>Based on the <a href='https://github.com/linkwarden/linkwarden' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "0.9",
+    "website": "https://linkwarden.app/",
+    "containers": {
+      "linkwarden": {
+        "image": "ghcr.io/linkwarden/linkwarden",
+        "tag": "latest",
+        "launch_order": 2,
+        "ports": {
+          "3000": {
+            "description": "The port for accessing the Linkwarden WebUI.",
+            "label": "WebUI Port [e.g. 3000]",
+            "host_default": 3000,
+            "ui": true
+          }
         },
-        "container_links": {
-            "linkwarden": [
-                {
-                    "name": "linkwarden-to-linkwarden-postgres",
-                    "source_container": "linkwarden-postgres"
-                }
-            ]
+        "volumes": {
+          "/data/data": {
+            "description": "Share for Linkwarden data storage.",
+            "label": "Linkwarden Data [e.g. linkwarden-data]"
+          }
+        },
+        "environment": {
+          "DATABASE_URL": {
+            "description": "PostgreSQL connection string. Set to postgresql://postgres:<password>@linkwarden-postgres:5432/linkwarden",
+            "label": "PostgreSQL URL",
+            "index": 3
+          },
+          "NEXTAUTH_SECRET": {
+            "description": "Set an alphanumeric secret phrase for Linkwarden's authentication mechanism. This is not a user password but internal to Linkwarden.",
+            "label": "Linkwarden Secret",
+            "index": 2
+          },
+          "NEXTAUTH_URL": {
+            "description": "Base URL for Linkwarden. Set to: http://<Rockstor IP address or server name>:<Web UI port defined earlier>/api/v1/auth",
+            "label": "Linkwarden Base URL",
+            "index": 1
+          }
         }
+      },
+      "linkwarden-postgres": {
+        "image": "postgres",
+        "tag": "17-alpine",
+        "launch_order": 1,
+        "volumes": {
+          "/var/lib/postgresql/data": {
+            "description": "Share for PostgreSQL database storage.",
+            "label": "DB Storage [e.g linkwarden-db]"
+          }
+        },
+        "environment": {
+          "POSTGRES_PASSWORD": {
+            "description": "Enter the password for the PostgreSQL 'postgres' super-user that was entered previously as part of the 'PostgreSQL URL'",
+            "label": "DB Password"
+          }
+        }
+      }
+    },
+    "container_links": {
+      "linkwarden": [
+        {
+          "name": "linkwarden-to-linkwarden-postgres",
+          "source_container": "linkwarden-postgres"
+        }
+      ]
     }
+  }
 }

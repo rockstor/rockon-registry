@@ -6,57 +6,57 @@
                 "launch_order": 1,
                 "ports": {
                     "4040": {
-                        "description": "Webserver Port. Required default: 4040.",
+                        "description": "Webserver Port.",
                         "host_default": 4040,
-                        "label": "Webserver port",
+                        "label": "Webserver port [e.g. 4040]",
                         "protocol": "tcp",
                         "ui": true
                     }
                 },
                 "volumes": {
                     "/config": {
-                        "description": "Choose a Share for Airsonic configuration. Eg: create a Share called airsonic-config for this purpose alone.",
-                        "label": "Config Storage",
+                        "description": "Share for Airsonic configuration.",
+                        "label": "Config Storage [e.g. airsonic-config]",
                         "min_size": 1073741824
                     },
                     "/music": {
-                        "description": "Select the Share containing your Media",
-                        "label": "Music Storage",
+                        "description": "Share containing your Media.",
+                        "label": "Music Storage [e.g. airsonic-media]",
                         "min_size": 1073741824
                     },
                     "/playlists": {
-                        "description": "Choose a Share for Airsonic playlists. Eg: create a Share called airsonic-playlists for this purpose alone.",
-                        "label": "Playlist Storage",
+                        "description": "Share for Airsonic playlists.",
+                        "label": "Playlist Storage [e.g. airsonic-playlists]",
                         "min_size": 1073741824
                     },
                     "/podcasts": {
-                        "description": "Select the Share to store podcasts",
-                        "label": "Podcast Storage",
+                        "description": "Share to store podcasts.",
+                        "label": "Podcast Storage [e.g. airsonic-podcasts]",
                         "min_size": 1073741824
                     }
                 },
                 "environment": {
                     "MAX_MEM": {
-                        "description": "This environment variable is used to set the maximum Java heap size in megabytes - 150 is a good default",
-                        "label": "MAX_MEM",
+                        "description": "This environment variable is used to set the maximum Java heap size in megabytes.",
+                        "label": "MAX_MEM [e.g. 150]",
                         "index": 1
                     },
                     "PUID": {
-                        "description": "Enter a valid UID of an existing user with permission to media shares to run Airsonic as (default: 1001).",
-                        "label": "UID",
+                        "description": "Enter a valid UID of an existing user with permission to media shares to run Airsonic as..",
+                        "label": "UID [e.g. 1001]",
                         "index": 2,
                         "default": 1001
                     },
                     "PGID": {
-                        "description": "Enter a valid GID of an existing user with permission to media shares to run Airsonic as (default: 100.",
-                        "label": "GID",
+                        "description": "Enter a valid GID of an existing user with permission to media shares to run Airsonic as..",
+                        "label": "GID [e.g. 100]",
                         "index": 3,
                         "default": 100
                     }
                 }
             }
         },
-        "description": "Airsonic music server. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/airsonic-advanced' target='_blank'>https://hub.docker.com/r/linuxserver/airsonic-advanced</a>, available for x86-64 and arm64 architectures.</p>",
+        "description": "Airsonic music server. <p>Based on a <a href='https://hub.docker.com/r/linuxserver/airsonic-advanced' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architectures.</p>",
         "ui": {
             "slug": ""
         },

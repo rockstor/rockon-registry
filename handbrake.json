@@ -1,84 +1,84 @@
 {
-    "HandBrake": {
-        "containers": {
-            "handbrake": {
-                "image": "jlesage/handbrake",
-                "launch_order": 1,
-                "devices": {
-                    "quicksync": {
-                        "description": "Optional: path to hardware transcoding device for Intel Quick Sync (/dev/dri). Leave blank if not needed.",
-                        "label": "Intel Quick Sync device"
-                    },
-                    "opticaldrive": {
-                        "description": "Optional: path to optical drive device (e.g., DVD drive at /dev/sr0).Optical drives usually have /dev/srX as device. E.g., the first drive is /dev/sr0, the second /dev/sr1, etc. Leave blank if not needed.",
-                        "label": "Optical Drive"
-                    }					
-                },
-                "ports": {
-                    "5800": {
-                        "description": "handbrake WebUI port. Suggested default: 5800",
-                        "host_default": 5800,
-                        "label": "WebUI port",
-                        "protocol": "tcp",
-                        "ui": true
-                    },
-                    "5900": {
-                        "description": "handbrake VNC port. Suggested default: 5900 (Optional)",
-                        "host_default": 5900,
-                        "label": "VNC port",
-                        "protocol": "tcp"
-                    }
-                },
-                "volumes": {
-                    "/config": {
-                        "description": "Choose a Share for handbrake configuration. E.g.: create a Share called handbrake-config for this purpose alone.",
-                        "label": "01 Config Storage"
-                    },
-                    "/storage": {
-                        "description": "Choose a Share for handbrake that contains files from your host that need to be accessible by the application. E.g.: create a Share called handbrake-storage for this purpose alone.",
-                        "label": "02 Storage location"
-                    },
-                    "/watch": {
-                        "description": "Choose a Share for handbrake videos to be automatically converted are located. E.g.: create a Share called handbrake-watch for this purpose alone.",
-                        "label": "03 Watch Storage"
-                    },
-                    "/output": {
-                        "description": "Choose a Share for handbrake to automatically converted video files are written. E.g.: create a Share called handbrake-output for this purpose alone.",
-                        "label": "04 Output Storage"
-                    }
-                },
-                "environment": {
-                    "USER_ID": {
-                        "description": "Enter a valid UID to run handbrake as. It must have full permissions to all Shares mapped in the previous step.",
-                        "label": "UID to run handbrake as.",
-                        "index": 1
-                    },
-                    "GROUP_ID": {
-                        "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
-                        "label": "GID to run handbrake as.",
-                        "index": 2
-                    },
-                    "AUTOMATED_CONVERSION_PRESET": {
-                        "description": "HandBrake preset used by the automatic video converter. All presets must follow the format <CATEGORY>/<PRESET NAME>. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. For default enter: General/Very Fast 1080p30",
-                        "label": "Automated Conversion Preset",
-                        "index": 3
-                    },
-                    "AUTOMATED_CONVERSION_FORMAT": {
-                        "description": "Video container format used by the automatic video converter for output files. This is typically the video filename extension. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. For default enter: mp4",
-                        "label": "Automated Conversion Format",
-                        "index": 4
-                    }
-                }
-            }
+  "HandBrake": {
+    "containers": {
+      "handbrake": {
+        "image": "jlesage/handbrake",
+        "launch_order": 1,
+        "devices": {
+          "quicksync": {
+            "description": "Optional: path to hardware transcoding device for Intel Quick Sync (/dev/dri). Leave blank if not needed.",
+            "label": "Intel Quick Sync device"
+          },
+          "opticaldrive": {
+            "description": "Optional: path to optical drive device (e.g., DVD drive at /dev/sr0).Optical drives usually have /dev/srX as device. E.g., the first drive is /dev/sr0, the second /dev/sr1, etc. Leave blank if not needed.",
+            "label": "Optical Drive"
+          }
         },
-        "description": "Handbrake for converting video from nearly any format to a selection of modern, widely supported codecs.<p>This docker image makes HandBrake accessible through your browser (<em>HandBrake UI</em> button) or VNC, see <em>more info</em> for details.</p><p>Based on custom docker image: <a href='https://hub.docker.com/r/jlesage/handbrake' target='_blank'>https://hub.docker.com/r/jlesage/handbrake</a>, available for amd64 architecture only.</p>",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HandBrake_Icon.png",
-        "more_info": "<p>The full documentation for this rock-on can be found at <a href='https://github.com/jlesage/docker-handbrake' target='_blank'>https://github.com/jlesage/docker-handbrake</a>.</p><p>Additional volumes can be added to provide extra watch folders (see <a href='http://rockstor.com/docs/docker-based-rock-ons/overview.html#add-storage' target='_blank'>Rockstor's documentation</a>).</p><p>Documentation on how to access using VNC and adding security can be found here: <a href='https://github.com/jlesage/docker-handbrake#accessing-the-gui' target='_blank'>jlesage/docker-handbrake</a>.</p><p>Documentation on the automatic conversion presets can be found here: <a href='https://github.com/jlesage/docker-handbrake#automatic-video-conversion' target='_blank'>https://github.com/jlesage/docker-handbrake#automatic-video-conversion</a>.</p>",
-        "ui": {
-            "slug": ""
+        "ports": {
+          "5800": {
+            "description": "handbrake WebUI port.",
+            "host_default": 5800,
+            "label": "WebUI port [e.g. 5800]",
+            "protocol": "tcp",
+            "ui": true
+          },
+          "5900": {
+            "description": "handbrake VNC port (optional).",
+            "host_default": 5900,
+            "label": "VNC port [e.g. 5900]",
+            "protocol": "tcp"
+          }
         },
-        "volume_add_support": true,
-        "website": "https://handbrake.fr/",
-        "version": "1.2"
-    }
+        "volumes": {
+          "/config": {
+            "description": "Share for handbrake configuration.",
+            "label": "01 Config Storage [e.g. handbrake-config]"
+          },
+          "/storage": {
+            "description": "Share for handbrake that contains files from your host that need to be accessible by the application.",
+            "label": "02 Storage location [e.g. handbrake-storage]"
+          },
+          "/watch": {
+            "description": "Share for handbrake videos to be automatically converted are located.",
+            "label": "03 Watch Storage [e.g. handbrake-watch]"
+          },
+          "/output": {
+            "description": "Share for handbrake to automatically converted video files are written.",
+            "label": "04 Output Storage [e.g. handbrake-output]"
+          }
+        },
+        "environment": {
+          "USER_ID": {
+            "description": " UID to run handbrake as. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID to run handbrake as.",
+            "index": 1
+          },
+          "GROUP_ID": {
+            "description": "GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "label": "GID to run handbrake as.",
+            "index": 2
+          },
+          "AUTOMATED_CONVERSION_PRESET": {
+            "description": "HandBrake preset used by the automatic video converter. All presets must follow the format <CATEGORY>/<PRESET NAME>. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. For default enter: General/Very Fast 1080p30",
+            "label": "Automated Conversion Preset",
+            "index": 3
+          },
+          "AUTOMATED_CONVERSION_FORMAT": {
+            "description": "Video container format used by the automatic video converter for output files. This is typically the video filename extension. See https://github.com/jlesage/docker-handbrake#automatic-video-conversion for more details. For default enter: mp4",
+            "label": "Automated Conversion Format",
+            "index": 4
+          }
+        }
+      }
+    },
+    "description": "Handbrake for converting video from nearly any format to a selection of modern, widely supported codecs.<p>This OCI image makes HandBrake accessible through your browser (<em>HandBrake UI</em> button) or VNC, see <em>more info</em> for details.</p><p>Based on a <a href='https://hub.docker.com/r/jlesage/handbrake' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p>",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HandBrake_Icon.png",
+    "more_info": "<p>The full documentation for this rock-on can be found at <a href='https://github.com/jlesage/docker-handbrake' target='_blank'>https://github.com/jlesage/docker-handbrake</a>.</p><p>Additional volumes can be added to provide extra watch folders (see <a href='http://rockstor.com/docs/docker-based-rock-ons/overview.html#add-storage' target='_blank'>Rockstor's documentation</a>).</p><p>Documentation on how to access using VNC and adding security can be found here: <a href='https://github.com/jlesage/docker-handbrake#accessing-the-gui' target='_blank'>jlesage/docker-handbrake</a>.</p><p>Documentation on the automatic conversion presets can be found here: <a href='https://github.com/jlesage/docker-handbrake#automatic-video-conversion' target='_blank'>https://github.com/jlesage/docker-handbrake#automatic-video-conversion</a>.</p>",
+    "ui": {
+      "slug": ""
+    },
+    "volume_add_support": true,
+    "website": "https://handbrake.fr/",
+    "version": "1.2"
+  }
 }
