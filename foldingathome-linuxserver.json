@@ -1,7 +1,7 @@
 {
-    "Folding@home Linuxserver.io": {
+    "Folding@home": {
         "version": "8.4",
-        "description": "Folding@home (FAH or F@h) is a distributed computing project for simulating protein dynamics. Be One in a Million: every little helps.<p>Based on custom OCI image: <a href='https://hub.docker.com/r/linuxserver/foldingathome' target='_blank'>https://hub.docker.com/r/linuxserver/foldingathome</a>, available for amd64 and arm64 architecture.",
+        "description": "Folding@home (FAH or F@h) is a distributed computing project for simulating protein dynamics. Be One in a Million: every little helps.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/foldingathome' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.",
         "more_info": "<h4>Installation notes</h4><p>Starting with version 8.0 the UI is not incorporated into the FAH client, but can now be managed via one's user account. For the installation, a user account is required (and an account token).</p><p>This Rockon is CPU only by default. GPU folding capability requires: Nvidia drivers & nvidia-OCI installed (untested). See <a href='https://github.com/NVIDIA/nvidia-docker' target='_blank'>https://github.com/NVIDIA/nvidia-docker</a>as well as linuxserver's OCI page</p><p><i>It may take a few minutes for your instance to begin contributing & a few more for the details of the project to appear. </i><br>After Rock-on install no further configuration is required for normal function.</p>",
         "website": "https://foldingathome.org/",
         "icon": "",
