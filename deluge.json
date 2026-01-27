@@ -44,7 +44,7 @@
                 }
             }
         },
-        "description": "Deluge is a movie downloader for bittorrent users.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/deluge' target='_blank'>https://hub.docker.com/r/linuxserver/deluge</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Deluge is a movie downloader for bittorrent users.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/deluge' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "Default username: admin<br>Default password: deluge.",
         "ui": {
             "slug": ""

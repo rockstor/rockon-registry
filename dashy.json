@@ -27,7 +27,7 @@
                 }
             }
         },
-        "description": "<p>Dashy - A self-hostable personal dashboard. Organize your web bookmarks in a neat way.</p> <p>Based on the offical OCI image: <a href='https://github.com/Lissy93/dashy' target='_blank'>https://github.com/Lissy93/dashy</a>, available for amd64 and arm64 architecture.</p> <p>After the first start it is necessary to use the <strong>Save to Disk</strong> option.  Dashy will then create the conf.yml on the defined share volume.</p>",
+        "description": "<p>Dashy - A self-hostable personal dashboard. Organize your web bookmarks in a neat way.</p><p>After the first start it is necessary to use the <strong>Save to Disk</strong> option.  Dashy will then create the conf.yml on the defined share volume.</p><p>Based on the <a href='https://github.com/Lissy93/dashy' target='_blank'>offical OCI image</a>, available for amd64 and arm64 architecture.</p>",
         "more_info" : "Documentation under: <a href='https://dashy.to/docs' target='_blank'>https://dashy.to/docs</a>",
         "version": "1.0",
         "ui": {
