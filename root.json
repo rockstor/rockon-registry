@@ -75,6 +75,7 @@
   "sonarr": "sonarr.json",
   "speedtest by openspeedtest": "OpenSpeedTest.json",
   "spoolman": "spoolman.json",
+  "stalwart": "stalwart.json",
   "syncthing": "syncthing.json",
   "tautulli": "tautulli.json",
   "teamspeak3": "teamspeak3.json",
