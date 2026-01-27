@@ -83,7 +83,7 @@
                 }
             }
         },
-        "description": "<p>The easiest way to run WireGuard VPN + Web-based Admin UI.</p><p>Based on the custom docker image by <a href='https://github.com/WeeJeWel' target='_blank'>Emile Nijssen</a>: <a href='https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy' target='_blank'>ghcr.io/wg-easy/wg-easy</a>, available for amd64 and arm64 architecture.</p><p>Note that an administrator password hash is needed instead of using a clear text password during the Rockon configuration. Use instructions found <a href='https://github.com/wg-easy/wg-easy/blob/master/How_to_generate_an_bcrypt_hash.md' target='_blank'>here</a> to generate a bcrypt password hash based on your own WebUI administrator password  and enter the resulting password hash without quotes.</p>",
+        "description": "<p>The easiest way to run WireGuard VPN + Web-based Admin UI.</p><p>Based on the custom OCI image by <a href='https://github.com/WeeJeWel' target='_blank'>Emile Nijssen</a>: <a href='https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy' target='_blank'>ghcr.io/wg-easy/wg-easy</a>, available for amd64 and arm64 architecture.</p><p>Note that an administrator password hash is needed instead of using a clear text password during the Rockon configuration. Use instructions found <a href='https://github.com/wg-easy/wg-easy/blob/master/How_to_generate_an_bcrypt_hash.md' target='_blank'>here</a> to generate a bcrypt password hash based on your own WebUI administrator password  and enter the resulting password hash without quotes.</p>",
         "ui": {
             "slug": ""
         },

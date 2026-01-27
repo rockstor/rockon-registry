@@ -1,6 +1,6 @@
 {
     "Audiobookshelf": {
-        "description": "Audiobookshelf is an open-source self-hosted media server for your audiobooks and podcasts.<p>Based the official docker image: <a href='https://hub.docker.com/r/advplyr/audiobookshelf' target='_blank'>https://hub.docker.com/r/advplyr/audiobookshelf</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Audiobookshelf is an open-source self-hosted media server for your audiobooks and podcasts.<p>Based the official OCI image: <a href='https://hub.docker.com/r/advplyr/audiobookshelf' target='_blank'>https://hub.docker.com/r/advplyr/audiobookshelf</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "After installation more media shares can be added.",
         "ui": {
             "slug": ""

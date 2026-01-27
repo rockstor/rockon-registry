@@ -1,9 +1,9 @@
 {
   "MinIO": {
-    "description": "MinIO is an S3-compatible object storage server.<p>Based on a <a href='https://hub.docker.com/r/cleanstart/minio' target='_blank'>custom docker image</a>, available for amd64 and arm64 architecture.</p><p>After installation, In order to access the built-in MinIO Admin Portal visit <code>http://ROCKSTOR_IP:9001</code>.</p>",
+    "description": "MinIO is an S3-compatible object storage server.<p>Based on a <a href='https://hub.docker.com/r/cleanstart/minio' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p><p>After installation, In order to access the built-in MinIO Admin Portal visit <code>http://ROCKSTOR_IP:9001</code>.</p>",
     "version": "1.3",
     "website": "https://minio.io",
-    "more_info": "This Rock-on uses a custom MinIO Docker image to implement a single MinIO instance with a single object storage share, suitable for use on a private network. If your connections traverse a network you do not control, consider using a VPN for encryption.",
+    "more_info": "This Rock-on uses a custom MinIO OCI image to implement a single MinIO instance with a single object storage share, suitable for use on a private network. If your connections traverse a network you do not control, consider using a VPN for encryption.",
     "ui": {
       "https": false,
       "slug": ""

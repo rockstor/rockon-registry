@@ -31,7 +31,7 @@
         }
       }
     },
-    "description": "Go Git Service, a lightweight Git version control server and front end. <p>Based on the official docker image: <a href='https://hub.docker.com/r/gogs/gogs' target='_blank'>https://hub.docker.com/r/gogs/gogs</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Go Git Service, a lightweight Git version control server and front end. <p>Based on the official OCI image: <a href='https://hub.docker.com/r/gogs/gogs' target='_blank'>https://hub.docker.com/r/gogs/gogs</a>, available for amd64 and arm64 architecture.</p>",
     "more_info": "<h4>Authentication</h4><p>Gogs will take you through its configuration when first run. You can set an admin username and password then; otherwise, the first user to register will automatically get administrator rights.</p><h4>Configuration</h4><p>Change Domain to reflect your Rockstor server name or IP address. The SSH Port is used for git<code>ssh</code>access and should be changed to the port you configured (3022 by default). Similarly, the HTTP Port (3000 by default) may also require changing. Finally, the Application URL is used for git<code>http</code>access and should reflect the Rockstor server and Gogs Rock-on port.</p><p>Use the SQLite3 database if you don't want to use an external database. Do <em>not</em> change the repository root path (<code>/data/git/gogs-repositories</code>) or the git storage share won't work.</p><h4>Afterwards</h4><p>You can inspect and where necessary modify your configuration in <code>gogs/conf/app.ini</code> on the gogs configuration Share.</p><p>The git Share will host all your git repositories in standard (bare) format, and repositories for any wikis that you create.<p>",
     "ui": {
       "slug": ""

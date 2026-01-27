@@ -1,6 +1,6 @@
 {
     "it-tools": {
-        "description": "Locally hosted collection of handy online tools for developers and people working in IT (tools for cryptography, conversion, network, etc.). Based on the official docker image <a href='https://hub.docker.com/r/corentinth/it-tools/' target='_blank'>https://hub.docker.com/r/corentinth/it-tools/</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Locally hosted collection of handy online tools for developers and people working in IT (tools for cryptography, conversion, network, etc.). Based on the official OCI image <a href='https://hub.docker.com/r/corentinth/it-tools/' target='_blank'>https://hub.docker.com/r/corentinth/it-tools/</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "https": false,
             "slug": ""

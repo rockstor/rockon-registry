@@ -14,7 +14,7 @@
                 }
             }
         },
-        "description": "Access the Rockstor Admin Web UI without having to remember to type https://. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/geldim/https-redirect' target='_blank'>https://hub.docker.com/r/geldim/https-redirect</a>, available for amd64 architecture only.</p>",
+        "description": "Access the Rockstor Admin Web UI without having to remember to type https://. <p>Based on a custom OCI image: <a href='https://hub.docker.com/r/geldim/https-redirect' target='_blank'>https://hub.docker.com/r/geldim/https-redirect</a>, available for amd64 architecture only.</p>",
         "ui": {
             "https": false,
             "slug": ""

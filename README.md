@@ -1,6 +1,6 @@
 # rockon-registry
 
-This repository consists of Rock-on (Docker based apps) configuration profiles formatted as JSON files.
+This repository consists of Rock-on (OCI based apps) configuration profiles formatted as JSON files.
 The Rock-on framework of Rockstor parses a well formatted profile and provides a generic management and workflow such as install, uninstall, update, start and stop.
 
 ## Can you show me an example??
@@ -12,7 +12,7 @@ Using existing examples and the description below of the `json` structure should
 
 ## How can I add my own Rock-on?
 
-If you are familiar with Docker and know how to deploy docker containers using the command line, you can create a Rock-on for the same with little effort.
+If you are familiar with OCI and know how to deploy OCI containers using the command line, you can create a Rock-on for the same with little effort.
 You can find instructions in the [Rockstor Documentation](https://rockstor.com/docs/contribute/contribute_rockons.html) both for running your own Rock-on locally, as well as how to contribute to the existing public repository of available Rock-ons
 
 ## What is the structure of a Rock-on profile file?
@@ -59,7 +59,7 @@ Example Expectations:
                 "slug":"gui", link to webui becomes ROCKSTOR_IP:PORT/gui with slug value gui
       },
       (optional)"volume_add_support": <true, If the app allows arbitrary Shares to be mapped to the main container>,
-      (optional)"container_links": { <network object representing links between containers using separate docker networks, See below.>
+      (optional)"container_links": { <network object representing links between containers using separate OCI networks, See below.>
       },
       "containers": {
         "<container1 name>": <container object representing the main container. See below.>,
@@ -78,11 +78,11 @@ The basic structure of the optional `container_links` object is:
 {
   "<target container": [
     {
-      "name": "<Name of new docker network 1 to be created",
+      "name": "<Name of new OCI network 1 to be created",
       "source_container": "<source container 1 that should connect to target container>"
     },
     {
-      "name": "<Name of new docker network 2 to be created",
+      "name": "<Name of new OCI network 2 to be created",
       "source_container": "bareos-storage"
     },
     {
@@ -94,7 +94,7 @@ The basic structure of the optional `container_links` object is:
 
 _N.B. Current restrictions: a source/destination/network combination is considered a unique entry:_
 
-_A destination container can have multiple sources, but each of these connections will generate its own docker network.
+_A destination container can have multiple sources, but each of these connections will generate its own OCI network.
 This essentially provides only a point-to-point connection._
 
 _In future releases this constraint will be removed, so, like with Rocknets, the network becomes the center and any container defined in the Rockon can be connected to it,
@@ -112,8 +112,8 @@ A typical container object has the following structure; elements detailed later 
 
 ```
 {
-  "image": "<docker image. eg: linuxserver/plex>",
-  (optional)"tag": "<tag of the docker image, if any. "latest" is used by default.>",
+  "image": "<OCI image. eg: linuxserver/plex>",
+  (optional)"tag": "<tag of the OCI image, if any. "latest" is used by default.>",
   "launch_order": "<integer: 1 or above. If there are multiple containers and they must be started in order, specify here.>",
   (optional) "uid": <integer: for `--user uid` container execution: users default groups are implied.>,
   (optional) "gid": <integer: for `--user uid:gid` container execution: ignored if no uid is defined.>,
@@ -126,7 +126,7 @@ A typical container object has the following structure; elements detailed later 
     "<path2 inside container>": <another volume object, if necessary.>, ...
   },
   (optional)"opts": [ An array of option objects that represent container options such as --net=host etc.],
-  (optional)"cmd_arguments": [ An array of cmd_arguments objects that represent arguments to pass to the 'docker run' command. See below.],
+  (optional)"cmd_arguments": [ An array of cmd_arguments objects that represent arguments to pass to the 'OCI run' command. See below.],
   (optional)"environment": {
     "<env var1 name>": <env object representing one environment variable required by this container.>,
     "<env var2 name>": <another env object, if necessary.>, ...
@@ -140,7 +140,7 @@ A typical container object has the following structure; elements detailed later 
 
 ### `uid` & `gid` elements
 
-These optional elements control the `--user` directive in the `docker run` command for the given container.
+These optional elements control the `--user` directive in the `OCI run` command for the given container.
 The `gid` element depends on the existence of a `uid` element and requires **Rockstor 5.5.0-0 onwards.**
 
 Unless a container image was specifically developed to run with a non-root user, it will run as the root user initially.
@@ -153,7 +153,7 @@ The `--user` directive overrides the UID (default group/s) or UID:GID (specific 
 enabling desired user, or user:group mapping to, for example, Share ownership.
 I.e. `--user` (via the `uid` & `gid` Rock-on elements) overrides Dockerfile defaults for the USER directive.
 E.g. a container has an internal user named "runner" (USER runner) setup beforehand within the container with UID=1000.
-Docker maps this container user to the host user (Rockstor user) with the same UID.
+OCI maps this container user to the host user (Rockstor user) with the same UID.
 Rockstor's UID 1000 user is normally created during the
 [Rockstor Setup and EULA](https://rockstor.com/docs/installation/installer-howto.html#rockstor-setup-and-eula) stage.
 ** I.e. an unprivileged linux user with UID=1000 & GID=100 (1000:100). ** 
@@ -192,7 +192,7 @@ This optional object allows the mapping of Rockstor Shares onto volume paths exp
 When Shares require, or may benefit from a specific owner:group,
 specify this at the end of the Share's *"description"* via name or ID,
 e.g. "... must be (1000:docker)." or "... e.g. (13001:13001)." or "... (bareos:bareos)".
-Docker can only map IDs irrespective, but with for example (bareos:bareos),
+OCI can only map IDs irrespective, but with for example (bareos:bareos),
 the docs instruct on creating a host to in-container uid:gid mapping.
 ```
 {
@@ -220,11 +220,11 @@ Note that the `opts` field is a 2-d array, so the complete line for the above ex
 
 ### `cmd` object
 
-The optional `cmd` (command arguments) object is a list of exactly two elements detailing specific arguments to be passed to the `docker run` command itself.
-As these arguments will simply be appended to the `docker run` command, they need to follow the same syntax and order.
+The optional `cmd` (command arguments) object is a list of exactly two elements detailing specific arguments to be passed to the `OCI run` command itself.
+As these arguments will simply be appended to the `OCI run` command, they need to follow the same syntax and order.
 For instance, 
 
-`docker run <...> image/name argument1 argument2="text2"` would be represented as:
+`OCI run <...> image/name argument1 argument2="text2"` would be represented as:
 
 ```
 ["argument1", "argument2="text2"]

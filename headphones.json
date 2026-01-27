@@ -41,7 +41,7 @@
                 }
             }
         },
-        "description":"Headphones is an automated music downloader for NZB and Torrent.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/headphones' target='_blank'>https://hub.docker.com/r/linuxserver/headphones</a>, available for amd64 and arm64 architecture.</p>",
+        "description":"Headphones is an automated music downloader for NZB and Torrent.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/headphones' target='_blank'>https://hub.docker.com/r/linuxserver/headphones</a>, available for amd64 and arm64 architecture.</p>",
         "ui":{
             "slug":""
         },

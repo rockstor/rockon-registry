@@ -1,6 +1,6 @@
 {
     "FileBot-Node": {
-        "description": "FileBot - The ultimate TV and Movie Renamer<p>FileBot is the ultimate tool for organizing and renaming your Movies, TV Shows and Anime as well as fetching subtitles and artwork. It's smart and just works.</p><p>Based on the official FileBot docker image: <a href='https://hub.docker.com/r/rednoah/filebot' target='_blank'>https://hub.docker.com/r/rednoah/filebot</a>.",
+        "description": "FileBot - The ultimate TV and Movie Renamer<p>FileBot is the ultimate tool for organizing and renaming your Movies, TV Shows and Anime as well as fetching subtitles and artwork. It's smart and just works.</p><p>Based on the official image: <a href='https://hub.docker.com/r/rednoah/filebot' target='_blank'>https://hub.docker.com/r/rednoah/filebot</a>.",
         "more_info": "FileBot Node is a server-side Node.js application that allows you to make filebot calls via a straight-forward ExtJS web application. Please refer to the <a href='https://www.filebot.net/forums/viewtopic.php?f=13&t=2733'>How To manual</a> if you need help getting started.<br>Note: You will also need a license for full functionality. Purchase one here: https://www.filebot.net/#purchase",
         "version": "0.0.1",
         "website": "https://www.filebot.net",

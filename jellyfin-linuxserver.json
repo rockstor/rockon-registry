@@ -1,6 +1,6 @@
 {
     "Jellyfin": {
-        "description": "Jellyfin media server: The Free Software Media System<p>Jellyfin is the volunteer-built media solution that puts you in control of your media.<br>Stream to any device from your own server, with no strings attached.<br>Your media, your server, your way.</p><p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/jellyfin' target='_blank'>https://hub.docker.com/r/linuxserver/jellyfin</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Jellyfin media server: The Free Software Media System<p>Jellyfin is the volunteer-built media solution that puts you in control of your media.<br>Stream to any device from your own server, with no strings attached.<br>Your media, your server, your way.</p><p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/jellyfin' target='_blank'>https://hub.docker.com/r/linuxserver/jellyfin</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "<h4>Adding media to Jellyfin.</h4><p>You can add Shares (with media) to Jellyfin from the settings wizard of this Rock-on. Then, from Jellyfin WebUI, you can update and re-index your library.</p><p> Visit https://hub.docker.com/r/linuxserver/jellyfin for description of each option.</p><p>NOTE: Due to some current <a href='https://github.com/rockstor/rockstor-core/issues/2209' target='_blank'>limitations in Rock-On networking</a>, this Rock-On cannot be installed at the same time as Emby, as they use the same port number, which must be 8096.</p>",
         "version": "0.0.2",
         "website": "https://jellyfin.org",
@@ -65,7 +65,7 @@
                         "default":1000
                     },
                     "DOCKER_MODS": {
-                        "description": "(Optional) Docker mods for Jellyfin to support hardware accelleration in specific cases. For OpenCL based DV, HDR10 and HLG tone-mapping use \"linuxserver/mods:jellyfin-opencl-intel\". See https://github.com/linuxserver/docker-jellyfin?tab=readme-ov-file#docker-mods for more details. For default enter: \"\"",
+                        "description": "(Optional) OCI mods for Jellyfin to support hardware accelleration in specific cases. For OpenCL based DV, HDR10 and HLG tone-mapping use \"linuxserver/mods:jellyfin-opencl-intel\". See https://github.com/linuxserver/docker-jellyfin?tab=readme-ov-file#docker-mods for more details. For default enter: \"\"",
                         "label": "DOCKER_MODS",
                         "index": 3,
                         "default": ""

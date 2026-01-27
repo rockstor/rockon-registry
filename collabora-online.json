@@ -1,6 +1,6 @@
 {
     "collabora-online": {
-        "description": "Collabora Online is a LibreOffice-based online office suite that can be integrated with owncloud/nextcloud. <p>Based on the official docker image: <a href='https://hub.docker.com/r/collabora/code' target='_blank'>https://hub.docker.com/r/collabora/code</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Collabora Online is a LibreOffice-based online office suite that can be integrated with owncloud/nextcloud. <p>Based on the official OCI image: <a href='https://hub.docker.com/r/collabora/code' target='_blank'>https://hub.docker.com/r/collabora/code</a>, available for amd64 and arm64 architecture.</p>",
         "version": "1.1",
         "website": "https://www.collaboraoffice.com/code/",
         "more_info": "",
@@ -20,7 +20,7 @@
                 },
                 "environment": {
                     "domain": {
-                        "description": "Hostname(s) that your own Nextcloud/Owncloud runs on. Also make sure to escape all dots with double backslashes (\\), since this string will be evaluated as a regular expression (and your bash 'eats' the first backslash.) If you want to use the docker container with more than one Nextcloud, you'll need to use 'domain=cloud\\\\.nextcloud\\\\.com\\|second\\\\.nexcloud\\\\.com' instead. (All hosts seperated by \\|.)",
+                        "description": "Hostname(s) that your own Nextcloud/Owncloud runs on. Also make sure to escape all dots with double backslashes (\\), since this string will be evaluated as a regular expression (and your bash 'eats' the first backslash.) If you want to use the OCI container with more than one Nextcloud, you'll need to use 'domain=cloud\\\\.nextcloud\\\\.com\\|second\\\\.nexcloud\\\\.com' instead. (All hosts seperated by \\|.)",
                         "label": "Own-/Nextcloud hostname(s)"
                     }
                 }

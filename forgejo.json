@@ -1,6 +1,6 @@
 {
   "Forgejo": {
-    "description": "Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.<p><p>Based on the official docker image: <a href='https://codeberg.org/forgejo/-/packages/container/forgejo/12' target=_blank>https://codeberg.org/forgejo/-/packages/container/forgejo/12</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.<p><p>Based on the official OCI image: <a href='https://codeberg.org/forgejo/-/packages/container/forgejo/12' target=_blank>https://codeberg.org/forgejo/-/packages/container/forgejo/12</a>, available for amd64 and arm64 architecture.</p>",
     "more_info": "",
     "ui": {
       "slug": ""

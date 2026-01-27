@@ -27,7 +27,7 @@
         }
       }
     },
-    "description": "Fast, private file sharing for teams and individuals.<p>Based on the official docker image: <a href='https://hub.docker.com/r/resilio/sync' target='_blank'>https://hub.docker.com/r/resilio/sync</a>, available for amd64 architecture only.</p>",
+    "description": "Fast, private file sharing for teams and individuals.<p>Based on the official OCI image: <a href='https://hub.docker.com/r/resilio/sync' target='_blank'>https://hub.docker.com/r/resilio/sync</a>, available for amd64 architecture only.</p>",
     "more_info": "<h4>Note about mapping Rockstor Shares</h4><p>Resilio Sync supports mapping more Shares into the Rock-On via the Add Storage button. But, the Rock-on Directory must be a subdirectory of /mnt/mounted_folders. Eg: /mnt/mounted_folders/Photos. Shares mapped to other directories will not be visible.</p>",
     "ui": {
       "slug": ""

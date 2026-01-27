@@ -14,7 +14,7 @@
 		}
       }
     },
-    "description": "<p>SpeedTest by OpenSpeedTest™ is a free and open-source HTML5 network performance estimation tool. Written in vanilla Javascript it only uses built-in Web APIs like XMLHttpRequest (XHR), HTML, CSS, JS, &amp; SVG. No third-party frameworks or libraries are required.<p>Based on the official docker image: <a href='https://hub.docker.com/r/openspeedtest/latest' target='_blank'> https://hub.docker.com/r/openspeedtest/latest/</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "<p>SpeedTest by OpenSpeedTest™ is a free and open-source HTML5 network performance estimation tool. Written in vanilla Javascript it only uses built-in Web APIs like XMLHttpRequest (XHR), HTML, CSS, JS, &amp; SVG. No third-party frameworks or libraries are required.<p>Based on the official OCI image: <a href='https://hub.docker.com/r/openspeedtest/latest' target='_blank'> https://hub.docker.com/r/openspeedtest/latest/</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "https": false,
       "slug": ""

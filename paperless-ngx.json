@@ -110,7 +110,7 @@
                 }
             }
         },
-        "description": "Paperless DMS - a private & secure Document Management System. <p>Based on the official Docker image: <a href='https://github.com/paperless-ngx/paperless-ngx/pkgs/container/paperless-ngx' target=_blank>ghcr.io/paperless-ngx/paperless-ngx</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Paperless DMS - a private & secure Document Management System. <p>Based on the official OCI image: <a href='https://github.com/paperless-ngx/paperless-ngx/pkgs/container/paperless-ngx' target=_blank>ghcr.io/paperless-ngx/paperless-ngx</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "https": false,
             "slug": ""

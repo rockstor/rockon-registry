@@ -56,7 +56,7 @@
                 }
             }
         },
-        "description": "Open Source Continuous File Synchronization, private, secure and easy to use. <p>Based on the custom docker image: <a href='https://hub.docker.com/r/linuxserver/syncthing' target='_blank'>https://hub.docker.com/r/linuxserver/syncthing</a>, available for amd64 and arm64 architecture. </p><p>Note this containers uses the net=host option to enable local IP addresses to be discovered as well.</p>",
+        "description": "Open Source Continuous File Synchronization, private, secure and easy to use. <p>Based on the custom OCI image: <a href='https://hub.docker.com/r/linuxserver/syncthing' target='_blank'>https://hub.docker.com/r/linuxserver/syncthing</a>, available for amd64 and arm64 architecture. </p><p>Note this containers uses the net=host option to enable local IP addresses to be discovered as well.</p>",
         "ui": {
             "https": true,
             "slug": ""

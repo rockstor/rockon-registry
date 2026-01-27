@@ -36,7 +36,7 @@
                 }
             }
         },
-        "description": "Tautulli is a python based web application for monitoring, analytics and notifications for Plex Media Server (which needs to be installed separately).<p>Based on the official docker image: <a href='https://hub.docker.com/r/tautulli/tautulli' target=_blank> https://hub.docker.com/r/tautulli/tautulli</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Tautulli is a python based web application for monitoring, analytics and notifications for Plex Media Server (which needs to be installed separately).<p>Based on the official OCI image: <a href='https://hub.docker.com/r/tautulli/tautulli' target=_blank> https://hub.docker.com/r/tautulli/tautulli</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "For updates of the application, consider installing the Watchtower rock-on and run it periodically.</p>",
 		"ui": {
             "slug": ""

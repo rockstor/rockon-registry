@@ -1,9 +1,9 @@
 {
   "Forgejo Runner": {
-    "description": "Forgejo Actions runner. Self-host a CI runner for Forgejo instances such as <a href='https://codeberg.org' target='_blank'>codeberg.org</a>.<p>Based on a <a href='https://codeberg.org/phillxnet/forgejo-runner-wrapper' target='_blank'>custom docker image</a> from the Rockstor maintainers. Available for amd64 architecture only. Rockstor V5.5.0 or later.",
+    "description": "Forgejo Actions runner. Self-host a CI runner for Forgejo instances such as <a href='https://codeberg.org' target='_blank'>codeberg.org</a>.<p>Based on a <a href='https://codeberg.org/phillxnet/forgejo-runner-wrapper' target='_blank'>custom OCI image</a> from the Rockstor maintainers. Available for amd64 architecture only. Rockstor V5.5.0 or later.",
     "version": "12.5.2",
     "website": "https://forgejo.org/docs/latest/user/actions/",
-    "more_info": "Intended to shares the host docker instance.<p>Auto enables privileged mode, and automount re host docker service.<p>Auto configures: <code>-v /var/run/docker.sock:/var/run/docker.sock </code><p>Enabling sibling rather than child container creation for running workflows.",
+    "more_info": "Intended to shares the host OCI instance.<p>Auto enables privileged mode, and automount re host OCI service.<p>Auto configures: <code>-v /var/run/docker.sock:/var/run/docker.sock </code><p>Enabling sibling rather than child container creation for running workflows.",
     "containers": {
       "forgejo-runner": {
         "image": "codeberg.org/phillxnet/forgejo-runner-wrapper",

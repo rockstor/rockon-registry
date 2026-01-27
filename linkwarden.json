@@ -1,6 +1,6 @@
 {
     "Linkwarden": {
-        "description": "<p>Linkwarden is a self-hosted, open-source collaborative bookmark manager for organizing and archiving webpages.</p><p>Based on the official image from <a href='https://github.com/linkwarden/linkwarden' target='_blank'>Linkwarden</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "<p>Linkwarden is a self-hosted, open-source collaborative bookmark manager for organizing and archiving webpages.</p><p>Based on the official OCI image from <a href='https://github.com/linkwarden/linkwarden' target='_blank'>Linkwarden</a>, available for amd64 and arm64 architecture.</p>",
         "version": "0.9",
         "website": "https://linkwarden.app/",
         "containers": {

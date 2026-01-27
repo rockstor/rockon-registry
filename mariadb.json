@@ -38,7 +38,7 @@
                 }
             }
         },
-        "description":"MariaDB, relational database management system.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/mariadb' target='_blank'>https://hub.docker.com/r/linuxserver/mariadb</a>, available for amd64 and arm64 architecture.</p>",
+        "description":"MariaDB, relational database management system.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/mariadb' target='_blank'>https://hub.docker.com/r/linuxserver/mariadb</a>, available for amd64 and arm64 architecture.</p>",
         "ui":{
             "slug":""
         },

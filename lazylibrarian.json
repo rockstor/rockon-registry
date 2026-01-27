@@ -41,7 +41,7 @@
         }
       }
     },
-    "description": "lazylibrarian is an automated ebook downloader for NZB and Torrent.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/lazylibrarian' target='_blank'>https://hub.docker.com/r/linuxserver/lazylibrarian</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "lazylibrarian is an automated ebook downloader for NZB and Torrent.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/lazylibrarian' target='_blank'>https://hub.docker.com/r/linuxserver/lazylibrarian</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "slug": ""
     },

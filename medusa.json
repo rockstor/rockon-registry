@@ -41,7 +41,7 @@
                 }
             }
         },
-        "description": "Automatic Video Library Manager for TV Shows.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/medusa' target='_blank'>https://hub.docker.com/r/linuxserver/medusa</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Automatic Video Library Manager for TV Shows.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/medusa' target='_blank'>https://hub.docker.com/r/linuxserver/medusa</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.",
         "ui": {
             "slug": ""

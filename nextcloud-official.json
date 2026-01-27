@@ -28,7 +28,7 @@
             }
         },
 	"version": "1.1",
-        "description": "Next generation open source Enterprise File Sync and Share. <p>This rock-on uses a simple SQLite database and may thus be limited to <em>single-user or lightweight use</em>. Similarly, it does <strong>not</strong> use encryption.</p><p>Based on the official docker image: <a href='https://hub.docker.com/_/nextcloud' target='_blank'>https://hub.docker.com/_/nextcloud</a>, available for amd64 architecture only.</p>",
+        "description": "Next generation open source Enterprise File Sync and Share. <p>This rock-on uses a simple SQLite database and may thus be limited to <em>single-user or lightweight use</em>. Similarly, it does <strong>not</strong> use encryption.</p><p>Based on the official OCI image: <a href='https://hub.docker.com/_/nextcloud' target='_blank'>https://hub.docker.com/_/nextcloud</a>, available for amd64 architecture only.</p>",
         "icon": "https://upload.wikimedia.org/wikipedia/commons/6/60/Nextcloud_Logo.svg",
         "more_info": "<p>No smbclient installed by default.  If you would like to enable this you can connect to your container and use <code>apt-get install smbclient -y</code> to install.</p>",
         "ui": {

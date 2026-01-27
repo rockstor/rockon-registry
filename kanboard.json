@@ -35,7 +35,7 @@
         }
       }
     },
-    "description": "Kanboard is a free and open source Kanban project management software.<p>Based on the official docker image: <a href='https://hub.docker.com/r/kanboard/kanboard' target='_blank'>https://hub.docker.com/r/kanboard/kanboard</a>, available for amd64 and arm64 architecture.",
+    "description": "Kanboard is a free and open source Kanban project management software.<p>Based on the official OCI image: <a href='https://hub.docker.com/r/kanboard/kanboard' target='_blank'>https://hub.docker.com/r/kanboard/kanboard</a>, available for amd64 and arm64 architecture.",
     "more_info": "Initial username/password is set up as admin/admin.",
     "ui": {
       "slug": ""

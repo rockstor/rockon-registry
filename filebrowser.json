@@ -42,7 +42,7 @@
         }
       }
     },
-    "description": "Filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory. It can be used as a standalone app.<p>Based on the standard docker image: <a href='https://hub.docker.com/r/filebrowser/filebrowser' target='_blank'>https://hub.docker.com/r/filebrowser/filebrowser</a>, available for amd64 and arm64 architecture.</p><p>For more installation details visit <a href='https://filebrowser.org/installation' target='_blank'>https://filebrowser.org/installation</a></p>",
+    "description": "Filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory. It can be used as a standalone app.<p>Based on the standard OCI image: <a href='https://hub.docker.com/r/filebrowser/filebrowser' target='_blank'>https://hub.docker.com/r/filebrowser/filebrowser</a>, available for amd64 and arm64 architecture.</p><p>For more installation details visit <a href='https://filebrowser.org/installation' target='_blank'>https://filebrowser.org/installation</a></p>",
     "ui": {
       "slug": ""
     },

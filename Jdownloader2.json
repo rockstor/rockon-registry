@@ -44,7 +44,7 @@
 				}
 			}
 		},
-              "description": "JDownloader is a free, open-source download management tool with a huge community of developers that makes downloading as easy and fast as it should be. Users can start, stop or pause downloads, set bandwith limitations, auto-extract archives and much more. It's an easy-to-extend framework that can save hours of your valuable time every day!<p>Based on a custom docker image: <a href='https://hub.docker.com/r/jlesage/jdownloader-2' target='_blank'>https://hub.docker.com/r/jlesage/jdownloader-2</a>, available for amd64 architecture only.</p>",
+              "description": "JDownloader is a free, open-source download management tool with a huge community of developers that makes downloading as easy and fast as it should be. Users can start, stop or pause downloads, set bandwith limitations, auto-extract archives and much more. It's an easy-to-extend framework that can save hours of your valuable time every day!<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/jlesage/jdownloader-2' target='_blank'>https://hub.docker.com/r/jlesage/jdownloader-2</a>, available for amd64 architecture only.</p>",
 		"ui": {
 			"https": false,
 			"slug": ""
