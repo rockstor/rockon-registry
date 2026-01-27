@@ -22,7 +22,7 @@
                 }
             }
         },
-        "description": "AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that.<p><a href='https://rockstor.com/docs/interface/docker-based-rock-ons/adguard-home.html' target='_blank' rel='noopener noreferrer'>Rock-on guide.</a></p><p>Based on the official OCI Image: <a href='https://hub.docker.com/r/adguard/adguardhome' target='_blank'>https://hub.docker.com/r/adguard/adguardhome</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/adguard-home.html' target='_blank'>Rock-on guide.</a></p><p>Based on the <a href='https://hub.docker.com/r/adguard/adguardhome' target='_blank'>official OCI Image</a>, available for amd64 and arm64 architecture.</p>",
         "website": "https://hub.docker.com/r/adguard/adguardhome",
         "version": "1.0"
     }
