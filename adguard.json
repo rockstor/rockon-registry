@@ -1,5 +1,5 @@
 {
-    "Adguard-home": {
+    "AdGuard Home": {
         "containers": {
             "adguard": {
                 "image": "adguard/adguardhome",

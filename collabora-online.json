@@ -1,5 +1,5 @@
 {
-    "collabora-online": {
+    "Collabora Online": {
         "description": "Collabora Online is a LibreOffice-based online office suite that can be integrated with owncloud/nextcloud. <p>Based on the <a href='https://hub.docker.com/r/collabora/code' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
         "version": "1.1",
         "website": "https://www.collaboraoffice.com/code/",
