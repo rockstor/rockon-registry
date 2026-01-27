@@ -43,7 +43,7 @@
 			}
 		    }
 		},
-		"description": "Git repository hosting and collaboration.<p>Based on the official OCI image: <a href='https://hub.docker.com/r/gitlab/gitlab-ce' target='_blank'>https://hub.docker.com/r/gitlab/gitlab-ce</a>, available for amd64 architecture only.</p>",
+		"description": "Git repository hosting and collaboration.<p>Based on the <a href='https://hub.docker.com/r/gitlab/gitlab-ce' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
 		"website": "https://about.gitlab.com/",
 		"icon": "https://about.gitlab.com/images/wordmark.png",
 		"more_info": "<p>Default username for your GitLab UI is<code>root</code>and password is<code>5iveL!fe</code></p><p>HTTPS is not enabled by defautt, please see: <a href='https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/nginx.md#enable-https'> https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/nginx.md#enable-https</a></p>",
