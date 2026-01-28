@@ -1,5 +1,5 @@
 {
-  "SpeedTest by OpenSpeedTest": {
+  "OpenSpeedTest": {
     "containers": {
       "speedtest": {
         "image": "openspeedtest/latest",
@@ -14,7 +14,7 @@
         }
       }
     },
-    "description": "SpeedTest by OpenSpeedTest™ is a free and open-source HTML5 network performance estimation tool. Written in vanilla Javascript it only uses built-in Web APIs like XMLHttpRequest (XHR), HTML, CSS, JS, &amp; SVG. No third-party frameworks or libraries are required.<p>Based on the <a href='https://hub.docker.com/r/openspeedtest/latest' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "A free and open-source HTML5 network performance estimation tool. Written in vanilla Javascript it only uses built-in Web APIs like XMLHttpRequest (XHR), HTML, CSS, JS, &amp; SVG. No third-party frameworks or libraries are required.<p>Based on the <a href='https://hub.docker.com/r/openspeedtest/latest' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "https": false,
       "slug": ""
