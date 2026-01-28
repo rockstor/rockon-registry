@@ -26,7 +26,7 @@
                 "volumes": {
                     "/home/app/.local/share/spoolman": {
                         "description": "Choose a share for Spoolman database storage",
-                        "label": "Spoolman Database Storage [e.g. spoolman-db]"
+                        "label": "Spoolman DB [e.g. spoolman-db]"
                     }
                 }
             }
