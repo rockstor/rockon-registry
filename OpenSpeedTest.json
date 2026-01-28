@@ -3,18 +3,18 @@
     "containers": {
       "speedtest": {
         "image": "openspeedtest/latest",
-		"launch_order": 1,
-		"ports": {
-			"3000": {
-				"description": "SpeedTest http WebUI port. Suggested Default: 3000",
-				"host_default": 3000,
-				"label": "http WebUI port",
-				"ui": true
-			}
-		}
+        "launch_order": 1,
+        "ports": {
+          "3000": {
+            "description": "SpeedTest http WebUI port.",
+            "host_default": 3000,
+            "label": "http WebUI port [e.g. 3000]",
+            "ui": true
+          }
+        }
       }
     },
-    "description": "<p>SpeedTest by OpenSpeedTest™ is a free and open-source HTML5 network performance estimation tool. Written in vanilla Javascript it only uses built-in Web APIs like XMLHttpRequest (XHR), HTML, CSS, JS, &amp; SVG. No third-party frameworks or libraries are required.<p>Based on the official OCI image: <a href='https://hub.docker.com/r/openspeedtest/latest' target='_blank'> https://hub.docker.com/r/openspeedtest/latest/</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "SpeedTest by OpenSpeedTest™ is a free and open-source HTML5 network performance estimation tool. Written in vanilla Javascript it only uses built-in Web APIs like XMLHttpRequest (XHR), HTML, CSS, JS, &amp; SVG. No third-party frameworks or libraries are required.<p>Based on the <a href='https://hub.docker.com/r/openspeedtest/latest' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "https": false,
       "slug": ""

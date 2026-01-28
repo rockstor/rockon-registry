@@ -15,8 +15,8 @@
                 },
                 "volumes":{
                     "/config":{
-                        "description":"Choose a share where the database should be stored. Eg: create a share called mariadb-server1 for this purpose alone. ",
-                        "label":"Data Storage"
+                        "description":"Choose a share where the database should be stored.",
+                        "label":"Data Storage [e.g. mariadb-server1]"
                     }
                 },
                 "environment":{
@@ -31,20 +31,20 @@
                         "index":2
                     },
                     "MYSQL_ROOT_PASSWORD":{
-                        "description":"Enter a root password for the MariaDB server (minimum 4 characters).",
-                        "label":"Root password.",
+                        "description":"Enter a root password for the MariaDB server.",
+                        "label":"Root password [min 4 alphanumerics]",
                         "index":3
                     }
                 }
             }
         },
-        "description":"MariaDB, relational database management system.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/mariadb' target='_blank'>https://hub.docker.com/r/linuxserver/mariadb</a>, available for amd64 and arm64 architecture.</p>",
+        "description":"MariaDB, relational database management system.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/mariadb' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
         "ui":{
             "slug":""
         },
         "volume_add_support":true,
         "more_info": "<h4>Important locations</h4><p>Configuration file:<code>/config/custom.cnf</code></p> <p>Databases: <code>/config/databases</code></p> <p>Logs: <code>/config/log/mysql/</code></p>",
-        "website":"https://hub.docker.com/r/linuxserver/mariadb/",
+        "website":"https://mariadb.org/",
         "version":"1.1"
     }
 }
