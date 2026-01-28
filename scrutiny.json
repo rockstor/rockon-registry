@@ -31,27 +31,27 @@
                     "8080": {
                         "description": "Port for Scrutiny's web interface and API.",
                         "host_default": 8080,
-                        "label": "WebUI HTTP port",
+                        "label": "WebUI HTTP port [e.g. 8080]",
                         "ui": true
                     }
                 },
                 "volumes": {
                     "/opt/scrutiny/config": {
-                        "description": "Choose a Share for Scrutiny's configuration files. Eg: create a Share called scrutiny-conf for this purpose alone.",
-                        "label": "Config share"
+                        "description": "Scrutiny's configuration files.",
+                        "label": "Config share [e.g. scrutiny-conf]"
                     }
                 },
                 "environment": {
                     "COLLECTOR_CRON_SCHEDULE": {
                         "description": "Crontab entry (env: COLLECTOR_CRON_SCHEDULE) MIN(0-59) HOUR(0-23) DOM(1-31) MOY(1-12) DAW(0-6). Default (midnight): \"0 0 * * *\" [must include quotation marks].",
-                        "label": "Stats Schedule",
+                        "label": "Stats Schedule [e.g. \"0 0 * * *\"]",
                         "index": 1
                     }
                 }
             }
         },
-        "description": "<p>WebUI for smartd S.M.A.R.T monitoring. Scrutiny is a Hard Drive Health Dashboard &amp; Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates from Backblaze. Install requires 5 part <a href='https://crontab-generator.com/' target='_blank'>crontab.</a></p><p><strong>Warning: </strong>In order to access devices, this container runs with privileged capabilities. See: <a href='https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities' target='_blank'>https://docs.docker.com/engine/reference/run/</a>.</p><p>Based on the official OCI image: <a target='_blank' href='https://ghcr.io/analogj/scrutiny:master-omnibus'>https://ghcr.io/analogj/scrutiny:master-omnibus</a>, available for amd64 and arm64 architecture.</p>",
-        "more_info": "<p><strong>Note:</strong>This image updates its stats once a day, you may see: '<i>No Devices Detected!</i>' before the first collector cron schedule. <br>Command line stats refresh via: <code>OCI exec scrutiny scrutiny-collector-metrics run</code><br>For documentation see: <a href='https://github.com/AnalogJ/scrutiny#usage' target='_blank'>Scrutiny GitHub</a></p>",
+        "description": "<p>WebUI for smartd S.M.A.R.T monitoring. Scrutiny is a Hard Drive Health Dashboard &amp; Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates from Backblaze. Install requires 5 part <a href='https://crontab-generator.com/' target='_blank'>crontab.</a></p><p><strong>Warning: </strong>In order to access devices, this container runs with <a href='https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities' target='_blank'>privileged capabilities</a>.</p><p>Based on the <a target='_blank' href='https://ghcr.io/analogj/scrutiny:master-omnibus'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+        "more_info": "<p><strong>Note:</strong>This image updates its stats once a day, you may see: '<i>No Devices Detected!</i>' before the first collector cron schedule. <br>Command line stats refresh via: <code>docker exec scrutiny scrutiny-collector-metrics run</code><br>For documentation see: <a href='https://github.com/AnalogJ/scrutiny#usage' target='_blank'>Scrutiny GitHub</a></p>",
         "ui": {
             "https": false,
             "slug": ""

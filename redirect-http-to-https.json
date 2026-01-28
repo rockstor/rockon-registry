@@ -8,13 +8,13 @@
                     "80": {
                         "description": "Set this to port 80 to accept HTTP connections. It will automatically redirect to HTTPS, where the admin UI is hosted (port 443)",
                         "host_default": 80,
-                        "label": "HTTP port",
+                        "label": "HTTP port [must be 80]",
                         "protocol": "tcp"
                     }
                 }
             }
         },
-        "description": "Access the Rockstor Admin Web UI without having to remember to type https://. <p>Based on a custom OCI image: <a href='https://hub.docker.com/r/geldim/https-redirect' target='_blank'>https://hub.docker.com/r/geldim/https-redirect</a>, available for amd64 architecture only.</p>",
+        "description": "Access the Rockstor Admin Web UI without having to remember to type https://. <p>Based on a <a href='https://hub.docker.com/r/geldim/https-redirect' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p>",
         "ui": {
             "https": false,
             "slug": ""
