@@ -1,36 +1,36 @@
 {
-    "PocketMine": {
-        "containers": {
-            "pocketmine": {
-                "image": "magicalyak/pocketmine",
-                "launch_order": 1,
-		"ports": {
-                    "19132": {
-                        "description": "Port for incoming and discovery broadcasts. You may need to open it (protocol: tcp/udp) on your firewall.",
-                        "host_default": 19132,
-                        "protocol": "udp",
-                        "label": "Listening port"
-                    }
-                },
-                "volumes": {
-                    "/data": {
-                        "description": "Choose a Share for the configuration and persistent data.",
-                        "label": "Config Storage (may need to be 777)",
-                        "min_size": 1073741824
-                    }
-                },
-		"opts": [
-		    [
-			"-it",
-			""
-		    ]
-		]
-            }
+  "PocketMine": {
+    "containers": {
+      "pocketmine": {
+        "image": "magicalyak/pocketmine",
+        "launch_order": 1,
+        "ports": {
+          "19132": {
+            "description": "Port for incoming and discovery broadcasts. You may need to open it (protocol: tcp/udp) on your firewall.",
+            "host_default": 19132,
+            "protocol": "udp",
+            "label": "Listening port [must be 19132]"
+          }
         },
-        "description": "MineCraft: Pocket Edition Server.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/magicalyak/pocketmine' target='_blank'>https://hub.docker.com/r/magicalyak/pocketmine</a>, available for amd64 architecture only.</p>",
-        "volume_add_support": false,
-        "more_info": "<h4>Administration</h4><p>use the command line and run OCI attach pocketmine, type help for options. press control-p, control-q to exit without stopping container",
-        "version": "1.8.1.3",
-        "website": "https://www.pocketmine.net/"
-    }
+        "volumes": {
+          "/data": {
+            "description": "Choose a Share for the configuration and persistent data.",
+            "label": "Config Storage [e.g. PocketMine]",
+            "min_size": 1073741824
+          }
+        },
+        "opts": [
+          [
+            "-it",
+            ""
+          ]
+        ]
+      }
+    },
+    "description": "MineCraft: Pocket Edition Server.<p>Based on a <a href='https://hub.docker.com/r/magicalyak/pocketmine' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p>",
+    "volume_add_support": false,
+    "more_info": "<h4>Administration</h4><p>use the command line and run docker attach pocketmine, type help for options. press control-p, control-q to exit without stopping container",
+    "version": "1.8.1.3",
+    "website": "https://www.pocketmine.net/"
+  }
 }

@@ -32,11 +32,14 @@ Example Expectations:
   [Title Case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case).
   Whilst honouring mark capitalisation such as in "ESPHome" & "2FAuth".
 - **description & more_info** values must be in sentence or multi sentence form.
-- **description** (top level) must contain either:
-- - "... available for amd64 architecture only." or
-- - "... available for amd64 and arm64 architecture.".
-- **description** (top level) can contain for example: "Rockstor V5.5.0 or later." to indicate minimum compatibility.
+- **description** (top level) first paragraph should end with link text "Rock-on guide" if available.
 - **description** (top level) indicate any external requirement e.g. "3rd-Party / Cloud account required|optional".
+- **description** (top level) last paragraph must begin with either:
+- - "Based on a custom OCI image" (last 3 words as link text) or
+- - "Based on the official OCI image" (last 3 words as link text) then continue with either:
+- - ", available for amd64 architecture only." or
+- - ", available for amd64 and arm64 architecture.".
+- - Optionally ending with for example: "Rockstor V5.5.0 or later." to indicate minimum compatibility.
 - **uid, gid, & launch_order** values are integer only; i.e. no quotes.
 - **label** values for *Shares* and *Ports* must end with `[e.g. runner-data]` or `[must be 9100]`.
 - **environment** labels should, if possible, provide guidance: i.e. end with `[e.g. Rockstor's IP]` or `[see Email Alerts]`.
