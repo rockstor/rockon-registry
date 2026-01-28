@@ -1,6 +1,6 @@
 {
-	"Home Assistant Linuxserver.io": {
-		"description": "Open source home automation that puts local control and privacy first.<p>Note that this container uses host networking to allow for multi-cast and uPnP functionality that Home Assistant provides. This version also using a non-root user.</p><p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/homeassistant' target='_blank'>https://hub.docker.com/r/linuxserver/homeassistant</a>, available for amd64 and arm64 architecture.</p>",
+	"Home Assistant": {
+		"description": "Open source home automation that puts local control and privacy first.<p>Note that this container uses host networking to allow for multi-cast and uPnP functionality that Home Assistant provides. This version also using a non-root user.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/homeassistant' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
 		"ui": {
 			"slug": ""
 		},
