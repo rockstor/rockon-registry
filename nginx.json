@@ -1,6 +1,6 @@
 {
 	"nginx": {
-		"description": "Open source web server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a reverse proxy server.<p>Advanced users only: You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388' target='_blank'>add a default config file</a> to your Config Storage share.</p><p>Based on the official docker image: <a href='https://hub.docker.com/_/nginx' target='_blank'>https://hub.docker.com/_/nginx</a>, available for amd64 architecture only.</p>",
+		"description": "Open source web server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a reverse proxy server.<p>Advanced users only: You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388' target='_blank'>add a default config file</a> to your Config Storage share.</p><p>Based on the official OCI image: <a href='https://hub.docker.com/_/nginx' target='_blank'>https://hub.docker.com/_/nginx</a>, available for amd64 architecture only.</p>",
 		"version": "1.0.1",
 		"website": "https://www.nginx.com/",
 		"icon": "https://cdn-1.wp.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.svg",

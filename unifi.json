@@ -56,7 +56,7 @@
                 }
             }
         },
-        "description": "Unifi Access Point controller.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/jacobalberty/unifi' target='_blank'>https://hub.docker.com/r/jacobalberty/unifi</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Unifi Access Point controller.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/jacobalberty/unifi' target='_blank'>https://hub.docker.com/r/jacobalberty/unifi</a>, available for amd64 and arm64 architecture.</p>",
         "more_info": "This is a containerized version of Ubiquiti Network's Unifi Controller.",
         "volume_add_support": false,
         "ui": {

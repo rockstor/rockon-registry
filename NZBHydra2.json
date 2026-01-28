@@ -36,7 +36,7 @@
                 }
             }
         },
-        "description": "NZBHydra2 is a meta search for NZB indexers. <p>Based on a custom docker image: <a href='https://www.linuxserver.io/' target='_blank'>Linuxserver.io</a>: <a href='https://hub.docker.com/r/linuxserver/nzbhydra2' target='_blank'>https://hub.docker.com/r/linuxserver/nzbhydra2</a>, available for amd64 and arm64.</p>",
+        "description": "NZBHydra2 is a meta search for NZB indexers. <p>Based on a custom OCI image: <a href='https://www.linuxserver.io/' target='_blank'>Linuxserver.io</a>: <a href='https://hub.docker.com/r/linuxserver/nzbhydra2' target='_blank'>https://hub.docker.com/r/linuxserver/nzbhydra2</a>, available for amd64 and arm64.</p>",
         "ui": {
             "slug": ""
         },

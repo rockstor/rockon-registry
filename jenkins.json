@@ -1,6 +1,6 @@
 {
-  "JenkinsCI": {
-    "description": "Jenkins is an open source automation server. Reliably build, test, and deploy software.<p>Based on the official docker image: <a href='https://hub.docker.com/r/jenkins/jenkins' target='_blank'>https://hub.docker.com/r/jenkins/jenkins</a>, available for amd64 and arm64 architecture. Rockstor V5.5.0 or later.</p>",
+  "Jenkins": {
+    "description": "Jenkins is an open source automation server. Reliably build, test, and deploy software. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/jenkins.html' target='_blank'>Rock-on guide</a>.<p>Based on the <a href='https://hub.docker.com/r/jenkins/jenkins' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture. Rockstor V5.5.0 or later.</p>",
     "version": "2.528.3",
     "website": "https://jenkins.io/",
     "icon": "http://ftp-nyc.osuosl.org/pub/jenkins/art/jenkins-logo/128x128/logo.png",

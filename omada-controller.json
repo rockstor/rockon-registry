@@ -182,7 +182,7 @@
         }
       }
     },
-    "description": "TP-Link Omada Controller. <p><strong>Note: in case of adoption failures, <a href='https://github.com/mbentley/docker-omada-controller/blob/master/KNOWN_ISSUES.md#devices-fail-to-adopt' target='_blank'>read this!</a></strong></p> <p>Based on a custom docker image: <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>https://hub.docker.com/r/mbentley/omada-controller</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "TP-Link Omada Controller. <p><strong>Note: in case of adoption failures, <a href='https://github.com/mbentley/docker-omada-controller/blob/master/KNOWN_ISSUES.md#devices-fail-to-adopt' target='_blank'>read this!</a></strong></p> <p>Based on a custom OCI image: <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>https://hub.docker.com/r/mbentley/omada-controller</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "https": true,
       "slug": ""

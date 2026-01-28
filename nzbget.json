@@ -43,7 +43,7 @@
                 }
             }
         },
-        "description": "The most efficient usenet downloader.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/nzbget' target='_blank'>https://hub.docker.com/r/linuxserver/nzbget</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "The most efficient usenet downloader.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/nzbget' target='_blank'>https://hub.docker.com/r/linuxserver/nzbget</a>, available for amd64 and arm64 architecture.</p>",
 		"more_info": "<h4>Default username: nzbget</p>Default password: tegbzn6789",
         "ui": {
             "slug": ""

@@ -27,7 +27,7 @@
                     }
                 }
             },
-            "description": "Minecraft server with selectable version.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/itzg/minecraft-server' target='_blank'>https://hub.docker.com/r/itzg/minecraft-server</a>, available for amd64 and arm64 architecture.</p>",
+            "description": "Minecraft server with selectable version.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/itzg/minecraft-server' target='_blank'>https://hub.docker.com/r/itzg/minecraft-server</a>, available for amd64 and arm64 architecture.</p>",
             "ui": {
               "https": false,
               "slug": ""

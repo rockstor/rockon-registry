@@ -51,7 +51,7 @@
                 }
             }
         },
-        "description": "LinuxServer.io netbootxyz image for creating a iPXE boot server. <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/netbootxyz' target='_blank'>https://hub.docker.com/r/linuxserver/netbootxyz</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "LinuxServer.io netbootxyz image for creating a iPXE boot server. <p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/netbootxyz' target='_blank'>https://hub.docker.com/r/linuxserver/netbootxyz</a>, available for amd64 and arm64 architecture.</p>",
         "ui": {
             "slug": ""
         },
