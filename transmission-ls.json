@@ -1,6 +1,6 @@
 {
     "Transmission LS": {
-        "description": "Open source bittorrent client powered by linuxserver.io.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/transmission' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Open source bittorrent client powered by linuxserver.io. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/transmission-bittorrent.html' target='_blank'>Rock-on guide</a><p>Based on a <a href='https://hub.docker.com/r/linuxserver/transmission' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
         "version": "2025.1",
         "website": "https://transmissionbt.com/",
         "containers": {
@@ -23,34 +23,34 @@
                 },
                 "volumes": {
                     "/config": {
-                        "description": "Share used for storing configuration",
+                        "description": "Share for storing configuration.",
                         "label": "Configuration [e.g.: transmission-config]"
                     },
                     "/downloads": {
-                        "description": "Share used for storing downloads",
+                        "description": "Share for storing downloads.",
                         "label": "Downloads [e.g.: transmission-downloads]"
                     },
                     "/watch": {
-                        "description": "Share used for automatically starting a download when new torrent files are added",
+                        "description": "Automatically start downloads when new torrent files are added.",
                         "label": "Watch [e.g.: transmission-watch]"
                     }
                 },
                 "environment": {
                     "PUID": {
                         "label": "UID",
-                        "description": "User ID to run Transmission as"
+                        "description": "Run Transmission as this user."
                     },
                     "PGID": {
-                        "label": "GUID",
-                        "description": "Group ID to run Transmission as"
+                        "label": "GID",
+                        "description": "Run Transmission as this group."
                     },
                     "USER": {
-                        "label": "Web UI username",
-                        "description": "Username to authenticate on the web ui"
+                        "label": "Web-UI username",
+                        "description": "Set Username for the Web-UI."
                     },
                     "PASS": {
-                        "label": "Web UI password",
-                        "description": "Password to use on the web ui"
+                        "label": "Web-UI password",
+                        "description": "Set Password for the Web-UI:"
                     }
                 }
             }

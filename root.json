@@ -83,7 +83,7 @@
   "ubiquiti unifi": "unifi.json",
   "unifi network application by linuxserver.io": "unifi-network-app-linuxserver.json",
   "vaultwarden": "vaultwarden.json",
-  "watchtower official": "watchtower_official.json",
+  "watchtower": "watchtower_official.json",
   "web service discovery for windows networks (wsdd-native)": "wsdd.json",
   "wireguard easy": "WireGuardEasy.json",
   "youtrack official": "youtrack-official.json",
