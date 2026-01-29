@@ -56,7 +56,7 @@
         }
       }
     },
-    "description": "Open Source continuous file synchronization; private, secure and easy to use. <p>Note: this container uses the `net=host` option to enable local IP addresses to be discovered as well.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/syncthing' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Open Source continuous file synchronization; private, secure and easy to use.  <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/syncthing.html' target='_blank'>Rock-on guide</a><p>Note: this container uses the `net=host` option to enable local IP addresses to be discovered as well.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/syncthing' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "https": true,
       "slug": ""

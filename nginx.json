@@ -1,43 +1,43 @@
 {
-	"nginx": {
-		"description": "Open source web server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a reverse proxy server.<p>Advanced users only: You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388' target='_blank'>add a default config file</a> to your Config Storage share.</p><p>Based on the official OCI image: <a href='https://hub.docker.com/_/nginx' target='_blank'>https://hub.docker.com/_/nginx</a>, available for amd64 architecture only.</p>",
-		"version": "1.0.1",
-		"website": "https://www.nginx.com/",
-		"icon": "https://cdn-1.wp.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.svg",
-		"more_info": "You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388' target='_blank'>create a default config file</a> in the Config Storage share before starting this Rockon, which you can extend with your own custom configuration.<br/>For advanced users, an example configuration file can be found <a href='https://www.nginx.com/resources/wiki/start/topics/examples/full/' target='_blank'>in the nginx wiki</a>.",
-		"containers": {
-			"nginx": {
-				"image": "nginx",
-				"tag": "latest",
-				"launch_order": 1,
-				"ports": {
-					"80": {
-						"description": "HTTP port",
-						"host_default": 1080,
-						"label": "HTTP port",
-						"protocol": "tcp",
-						"ui": true
-					},
-					"443": {
-						"description": "HTTPS port.",
-						"host_default": 1443,
-						"label": "HTTPS port",
-						"protocol": "tcp"
-					}
-				},
-				"volumes": {
-					"/etc/nginx/conf.d": {
-						"description": "Choose a Share for the nginx configuration. Eg: create a Share called nginx-config for this purpose alone.",
-						"label": "Config Storage",
-						"min_size": 10240
-					},
-					"/usr/share/nginx/html": {
-						"description": "Choose a Share for the files that nginx will serve (HTML, JavaScript, etc.). Eg: create a share called nginx-data for this purpose alone.",
-						"label": "Served Content Storage",
-						"min_size": 102400
-					}
-				}
-			}
-		}
-	}
+  "nginx": {
+    "description": "Open source web server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a reverse proxy server. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/nginx.html' target='_blank'>Rock-on guide</a><p>Advanced users only: You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388' target='_blank'>add a default config file</a> to your Nginx Config [e.g. nginx-config] Share.</p><p>Based on the <a href='https://hub.docker.com/_/nginx' target='_blank'>official OCI image</a>, available for amd64 architecture only.</p>",
+    "version": "1.0.1",
+    "website": "https://www.nginx.com/",
+    "icon": "https://cdn-1.wp.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.svg",
+    "more_info": "You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388' target='_blank'>create a default config file</a> in the Config Storage share before starting this Rockon, which you can extend with your own custom configuration.<br/>For advanced users, an example configuration file can be found <a href='https://www.nginx.com/resources/wiki/start/topics/examples/full/' target='_blank'>in the nginx wiki</a>.",
+    "containers": {
+      "nginx": {
+        "image": "nginx",
+        "tag": "latest",
+        "launch_order": 1,
+        "ports": {
+          "80": {
+            "description": "HTTP port.",
+            "host_default": 1080,
+            "label": "HTTP port (e.g. 1080)",
+            "protocol": "tcp",
+            "ui": true
+          },
+          "443": {
+            "description": "HTTPS port.",
+            "host_default": 1443,
+            "label": "HTTPS port (e.g. 1443)",
+            "protocol": "tcp"
+          }
+        },
+        "volumes": {
+          "/etc/nginx/conf.d": {
+            "description": "Nginx configuration.",
+            "label": "Nginx Config [e.g. nginx-config]",
+            "min_size": 10240
+          },
+          "/usr/share/nginx/html": {
+            "description": "Document root for HTML, JavaScript, etc.",
+            "label": "Served Content [e.g. nginx-data]",
+            "min_size": 102400
+          }
+        }
+      }
+    }
+  }
 }
