@@ -1,6 +1,6 @@
 {
     "Transmission LS": {
-        "description": "Open source bittorrent client powered by linuxserver.io.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/transmission' target='_blank'>https://hub.docker.com/r/linuxserver/transmission</a>, available for amd64 and arm64 architecture.</p>",
+        "description": "Open source bittorrent client powered by linuxserver.io.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/transmission' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
         "version": "2025.1",
         "website": "https://transmissionbt.com/",
         "containers": {
@@ -9,13 +9,13 @@
                 "launch_order": 1,
                 "ports": {
                     "51413": {
-                        "label": "Sharing port",
-                        "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall & router. Suggested default: 51413.",
+                        "label": "Sharing port [e.g. 51413]",
+                        "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall & router.",
                         "host_default": 51413
                     },
                     "9091": {
-                        "label": "WebUI port",
-                        "description": "Transmission WebUI port. Suggested default: 9091",
+                        "label": "WebUI port [e.g. 9091]",
+                        "description": "Transmission WebUI port.",
                         "host_default": 9091,
                         "protocol": "tcp",
                         "ui": true
