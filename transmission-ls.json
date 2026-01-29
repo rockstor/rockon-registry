@@ -1,59 +1,59 @@
 {
-    "Transmission LS": {
-        "description": "Open source bittorrent client powered by linuxserver.io. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/transmission-bittorrent.html' target='_blank'>Rock-on guide</a><p>Based on a <a href='https://hub.docker.com/r/linuxserver/transmission' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
-        "version": "2025.1",
-        "website": "https://transmissionbt.com/",
-        "containers": {
-            "transmission-ls": {
-                "image": "linuxserver/transmission",
-                "launch_order": 1,
-                "ports": {
-                    "51413": {
-                        "label": "Sharing port [e.g. 51413]",
-                        "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall & router.",
-                        "host_default": 51413
-                    },
-                    "9091": {
-                        "label": "WebUI port [e.g. 9091]",
-                        "description": "Transmission WebUI port.",
-                        "host_default": 9091,
-                        "protocol": "tcp",
-                        "ui": true
-                    }
-                },
-                "volumes": {
-                    "/config": {
-                        "description": "Share for storing configuration.",
-                        "label": "Configuration [e.g.: transmission-config]"
-                    },
-                    "/downloads": {
-                        "description": "Share for storing downloads.",
-                        "label": "Downloads [e.g.: transmission-downloads]"
-                    },
-                    "/watch": {
-                        "description": "Automatically start downloads when new torrent files are added.",
-                        "label": "Watch [e.g.: transmission-watch]"
-                    }
-                },
-                "environment": {
-                    "PUID": {
-                        "label": "UID",
-                        "description": "Run Transmission as this user."
-                    },
-                    "PGID": {
-                        "label": "GID",
-                        "description": "Run Transmission as this group."
-                    },
-                    "USER": {
-                        "label": "Web-UI username",
-                        "description": "Set Username for the Web-UI."
-                    },
-                    "PASS": {
-                        "label": "Web-UI password",
-                        "description": "Set Password for the Web-UI:"
-                    }
-                }
-            }
+  "Transmission LS": {
+    "description": "Open source bittorrent client powered by linuxserver.io. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/transmission-bittorrent.html' target='_blank'>Rock-on guide</a><p>Based on a <a href='https://hub.docker.com/r/linuxserver/transmission' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "2025.1",
+    "website": "https://transmissionbt.com/",
+    "containers": {
+      "transmission-ls": {
+        "image": "linuxserver/transmission",
+        "launch_order": 1,
+        "ports": {
+          "51413": {
+            "label": "Sharing port [e.g. 51413]",
+            "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall & router.",
+            "host_default": 51413
+          },
+          "9091": {
+            "label": "WebUI port [e.g. 9091]",
+            "description": "Transmission WebUI port.",
+            "host_default": 9091,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/config": {
+            "description": "Share for storing configuration.",
+            "label": "Configuration [e.g.: transmission-config]"
+          },
+          "/downloads": {
+            "description": "Share for storing downloads.",
+            "label": "Downloads [e.g.: transmission-downloads]"
+          },
+          "/watch": {
+            "description": "Automatically start downloads when new torrent files are added.",
+            "label": "Watch [e.g.: transmission-watch]"
+          }
+        },
+        "environment": {
+          "PUID": {
+            "label": "UID",
+            "description": "Run Transmission as this user."
+          },
+          "PGID": {
+            "label": "GID",
+            "description": "Run Transmission as this group."
+          },
+          "USER": {
+            "label": "Web-UI username",
+            "description": "Set Username for the Web-UI."
+          },
+          "PASS": {
+            "label": "Web-UI password",
+            "description": "Set Password for the Web-UI:"
+          }
         }
+      }
     }
+  }
 }

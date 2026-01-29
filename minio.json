@@ -22,13 +22,25 @@
           }
         },
         "opts": [
-          [ "--publish" , "9000:9000" ],
-          [ "--publish" , "9001:9001" ]
-         ],
+          [
+            "--publish",
+            "9000:9000"
+          ],
+          [
+            "--publish",
+            "9001:9001"
+          ]
+        ],
         "cmd_arguments": [
-          [ "server" , "/data" ],
-          [ "--console-address=:9001" , "" ]
-         ],
+          [
+            "server",
+            "/data"
+          ],
+          [
+            "--console-address=:9001",
+            ""
+          ]
+        ],
         "environment": {
           "MINIO_ROOT_USER": {
             "description": "MinIO Administrator Username [3 to 128 alphanumeric characters]",

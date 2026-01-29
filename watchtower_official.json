@@ -17,7 +17,7 @@
           [
             "--privileged",
             ""
-                    ]
+          ]
         ],
         "environment": {
           "WATCHTOWER_LABEL_ENABLE": {
@@ -29,12 +29,12 @@
             "description": "CRON expression (6 fields) defining when and how often to check for new images. The example expression will have Watchtower check every month on the 1st day at noon.",
             "label": "Scheduling [e.g. 0 0 12 1 * ?]",
             "index": 2
-                    },
-                    "WATCHTOWER_CLEANUP": {
+          },
+          "WATCHTOWER_CLEANUP": {
             "description": "Removes old Images after updating. Setting the parameter to 'true' will remove old images, setting it to 'false' will keep old images untouched after the update. Recommended value is 'true' to avoid accumulation of old images, especially on regularly updated containers.",
             "label": "Remove old images after update [e.g. true]",
             "index": 3
-                    }
+          }
         }
       }
     }

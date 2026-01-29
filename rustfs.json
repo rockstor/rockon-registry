@@ -36,10 +36,13 @@
           }
         },
         "opts": [
-         ],
+        ],
         "cmd_arguments": [
-          [ "--address=:9000" , "/data" ]
-         ],
+          [
+            "--address=:9000",
+            "/data"
+          ]
+        ],
         "environment": {
           "RUSTFS_ACCESS_KEY": {
             "description": "RustFS Access Key.",

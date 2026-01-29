@@ -1,29 +1,29 @@
 {
-    "Gollum": {
-        "description": "A Git Based Wiki.<p>Note, that the container runs with UID/GID 1000/1000, so the configured share must provide the corresponding access</p><p>Based on the <a href='https://hub.docker.com/r/gollumwiki/gollum' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
-        "version": "1.2",
-        "website": "https://github.com/gollum/gollum",
-        "containers": {
-            "gollum": {
-                "image": "gollumwiki/gollum",
-                "tag": "master",
-                "launch_order": 1,
-                "ports": {
-                    "4567": {
-                        "description": "Website Port",
-                        "label": "Gollum Port",
-                        "host_default": 4567,
-                        "protocol": "tcp",
-                        "ui": true
-                    }
-                },
-                "volumes": {
-                    "/wiki": {
-                        "description": "Choose a share for wiki storage. E.g. a create a share called gollum-wiki-storage, with the owner corresponding to UID=1000 and GID=1000 to avoid permission errors.",
-                        "label": "Wiki storage"
-                    }
-                }
-            }
+  "Gollum": {
+    "description": "A Git Based Wiki.<p>Note, that the container runs with UID/GID 1000/1000, so the configured share must provide the corresponding access</p><p>Based on the <a href='https://hub.docker.com/r/gollumwiki/gollum' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.2",
+    "website": "https://github.com/gollum/gollum",
+    "containers": {
+      "gollum": {
+        "image": "gollumwiki/gollum",
+        "tag": "master",
+        "launch_order": 1,
+        "ports": {
+          "4567": {
+            "description": "Website Port",
+            "label": "Gollum Port",
+            "host_default": 4567,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/wiki": {
+            "description": "Choose a share for wiki storage. E.g. a create a share called gollum-wiki-storage, with the owner corresponding to UID=1000 and GID=1000 to avoid permission errors.",
+            "label": "Wiki storage"
+          }
         }
+      }
     }
+  }
 }
