@@ -1,41 +1,44 @@
 {
-    "Vaultwarden": {
-        "description": "Alternative implementation of the Bitwarden password manager server API written in Rust. <p>Based on a custom OCI image: <a href='https://hub.docker.com/r/vaultwarden/server' target='_blank'>https://hub.docker.com/r/vaultwarden/server</a>, available for amd64 and arm64 architecture.</p>",
-        "version": "0.0.2",
-        "website": "https://github.com/dani-garcia/vaultwarden",
-        "more_info": "SSL/TLS certs and keys required. They must be placed in the Rockstor share used as <em>Vaultwarden cert storage</em> during the rock-on's installation process:<br><ul><li><code>/mnt2/[share-name]/certs.pem</code></li><li><code>/mnt2/[share-name]/key.pem</code></li></ul><br>Of note, <code>certs.pem</code> can be a chain. Need a cert? Try <a href=\"https://github.com/FiloSottile/mkcert\" target=\"_blank\">mkcert</a> or openssl.",
-        "ui": {
-            "https": true,
-            "slug": ""
+  "Vaultwarden": {
+    "description": "Alternative implementation of the Bitwarden password manager server API written in Rust.<p>SSL/TLS certs & keys required. To be placed in the Rockstor share used as <em>Vaultwarden cert storage</em> before installation.</p><p>Based on a <a href='https://hub.docker.com/r/vaultwarden/server' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "0.0.2",
+    "website": "https://github.com/dani-garcia/vaultwarden/wiki",
+    "more_info": "<br><ul><li><code>/mnt2/[share-name]/certs.pem</code></li><li><code>/mnt2/[share-name]/key.pem</code></li></ul><br>Of note, <code>certs.pem</code> can be a chain. Need a cert? Try <a href=\"https://github.com/FiloSottile/mkcert\" target=\"_blank\">mkcert</a> or openssl.",
+    "ui": {
+      "https": true,
+      "slug": ""
+    },
+    "containers": {
+      "vaultwarden": {
+        "image": "vaultwarden/server",
+        "tag": "latest",
+        "launch_order": 1,
+        "ports": {
+          "80": {
+            "description": "Web-UI Admin interface port.",
+            "label": "Web-UI [e.g. 8888]",
+            "host_default": 8888,
+            "protocol": "tcp",
+            "ui": true
+          }
         },
-        "containers": {
-            "vaultwarden": {
-                "image": "vaultwarden/server",
-                "tag": "latest",
-                "launch_order": 1,
-                "ports": {
-                    "80": {
-                        "description": "Admin interface",
-                        "label": "Admin interface",
-                        "host_default": 80,
-                        "protocol": "tcp",
-                        "ui": true
-                    }
-                },
-                "volumes": {
-                    "/data": {
-                        "description": "Where all vaultwarden data will be stored",
-                        "label": "Vaultwarden storage"
-                    },
-                    "/ssl": {
-                        "description": "SSL cert/key location to enable ssl",
-                        "label": "Vaultwarden cert storage"
-                    }
-                },
-                "opts": [
-                    ["-e", "ROCKET_TLS={certs=\"/ssl/certs.pem\",key=\"/ssl/key.pem\"}"]
-                ]
-            }
-        }
+        "volumes": {
+          "/data": {
+            "description": "Where all vaultwarden data will be stored",
+            "label": "Vaultwarden data [e.g. vw-data]"
+          },
+          "/ssl": {
+            "description": "SSL cert/key location to enable ssl",
+            "label": "Vaultwarden cert [e.g. vw-ssl]"
+          }
+        },
+        "opts": [
+          [
+            "-e",
+            "ROCKET_TLS={certs=\"/ssl/certs.pem\",key=\"/ssl/key.pem\"}"
+          ]
+        ]
+      }
     }
+  }
 }
