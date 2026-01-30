@@ -1,6 +1,6 @@
 {
   "Collabora Online": {
-    "description": "Collabora Online is a LibreOffice-based online office suite that can be integrated with owncloud/nextcloud. <p>Based on the <a href='https://hub.docker.com/r/collabora/code' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "'CODE' Development Edition of the LibreOffice-based online office suite that can be integrated with owncloud/nextcloud. <p>Based on the <a href='https://hub.docker.com/r/collabora/code' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "version": "1.1",
     "website": "https://www.collaboraoffice.com/code/",
     "more_info": "",
@@ -11,9 +11,9 @@
         "launch_order": 1,
         "ports": {
           "9980": {
-            "description": "",
+            "description": "Web-UI port.",
             "host_default": 9980,
-            "label": "Http port",
+            "label": "Web-UI [e.g. 9980]",
             "protocol": "tcp",
             "ui": true
           }
