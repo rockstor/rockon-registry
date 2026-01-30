@@ -13,21 +13,21 @@
         ],
         "ports": {
           "8080": {
-            "description": "Dashy's web UI. Port number.",
+            "description": "Dashy's Web-UI port number.",
             "host_default": 8080,
-            "label": "Web UI Port",
+            "label": "Web UI [e.g. 8080]",
             "ui": true
           }
         },
         "volumes": {
           "/app/user-data/": {
             "description": "Location of Dashy's configuration files on the host.",
-            "label": "Config Directory"
+            "label": "Config Directory [e.g. dashy-config]"
           }
         }
       }
     },
-    "description": "<p>Dashy - A self-hostable personal dashboard. Organize your web bookmarks in a neat way.</p><p>After the first start it is necessary to use the <strong>Save to Disk</strong> option.  Dashy will then create the conf.yml on the defined share volume.</p><p>Based on the <a href='https://github.com/Lissy93/dashy' target='_blank'>offical OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "<p>A self-hostable personal dashboard. Organize your web bookmarks in a neat way.</p><p>After the first start it is necessary to use the <strong>Save to Disk</strong> option.  Dashy will then create the conf.yml on the defined share volume.</p><p>Based on the <a href='https://github.com/Lissy93/dashy' target='_blank'>offical OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "more_info": "Documentation under: <a href='https://dashy.to/docs' target='_blank'>https://dashy.to/docs</a>",
     "version": "1.0",
     "ui": {

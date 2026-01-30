@@ -12,12 +12,12 @@
         "launch_order": 1,
         "volumes": {
           "/dbox/Dropbox": {
-            "description": "Directory for your dropbox folder.",
-            "label": "Dropbox folder"
+            "description": "Share for Dropbox data.",
+            "label": "Dropbox data [e.g. dropbox-data]"
           },
           "/dbox/.dropbox": {
-            "description": "Directory for your dropbox configuration.",
-            "label": "dropbox config folder"
+            "description": "Share for Dropbox Configuration.",
+            "label": "Dropbox config [e.g. dropbox-config]"
           }
         },
         "environment": {
@@ -32,8 +32,8 @@
             "index": 2
           },
           "$DBOX_SKIP_UPDATE": {
-            "description": "Set this to true to skip updating to the latest Dropbox version on contrainer start. Default should be False. Accepts only True or False (case sensitive).",
-            "label": "Skip updating dropbox?",
+            "description": "Set this to 'True' to skip updating to the latest Dropbox version on contrainer start. 'True' or 'False' (case sensitive).",
+            "label": "Skip updating dropbox? [e.g. False]",
             "index": 3
           }
         }

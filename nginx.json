@@ -1,5 +1,5 @@
 {
-  "nginx": {
+  "Nginx": {
     "description": "Open source web server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a reverse proxy server. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/nginx.html' target='_blank'>Rock-on guide</a><p>Advanced users only: You must <a href='https://gist.github.com/JasonTarka/63d632b5633fb0840cdfb3b56a14d388' target='_blank'>add a default config file</a> to your Nginx Config [e.g. nginx-config] Share.</p><p>Based on the <a href='https://hub.docker.com/_/nginx' target='_blank'>official OCI image</a>, available for amd64 architecture only.</p>",
     "version": "1.0.1",
     "website": "https://www.nginx.com/",

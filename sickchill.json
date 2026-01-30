@@ -15,16 +15,16 @@
         },
         "volumes": {
           "/download": {
-            "description": "Choose a share to download to (also known as the sickchill monitor folder). It is important that the owner/group specified later have full access to the share (R/W/E).",
-            "label": "Download"
+            "description": "Downloads Share (also known as the sickchill monitor folder). UID:GID specified later must have full access.",
+            "label": "Download [e.g. sickchill-downloads]"
           },
           "/config": {
-            "description": "Choose a share to host the configuration settings for SickChill. It is important that the owner/group specified later have full access to the share (R/W/E).",
-            "label": "Config"
+            "description": "Configuration storage. UID:GID specified later must have full access.",
+            "label": "Config [e.g. sickchill-config]"
           },
           "/tv": {
-            "description": "Choose a share to host shows (also known as parent folder). You can add additional shares later via the rock-on's settings menu. It is important that the owner/group specified later have full access to the share (R/W/E).",
-            "label": "TV"
+            "description": "Share for shows (also known as parent folder). Shares can be added later. UID:GID specified later must have full access.",
+            "label": "TV [e.g. sickchill-shows]"
           }
         },
         "environment": {
@@ -34,7 +34,7 @@
             "index": 1
           },
           "PGID": {
-            "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID",
             "index": 2
           }

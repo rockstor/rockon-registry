@@ -56,28 +56,28 @@
             "index": 2
           },
           "WG_DEVICE": {
-            "description": "Ethernet device the wireguard traffic should be forwarded through (e.g.: ens6f0). For default enter value: eth0",
-            "label": "Ethernet Device",
+            "description": "Ethernet device the wireguard traffic should be forwarded through.",
+            "label": "Ethernet Device [e.g. eth0]",
             "index": 3
           },
           "WG_DEFAULT_ADDRESS": {
-            "description": "Clients' IP address range, using x for the last octet (e.g.: 10.6.0.x). For default enter value: 10.8.0.x",
-            "label": "Client Address Space",
+            "description": "Clients' IP address range, using x for the last octet.",
+            "label": "Client Address Space [e.g. 10.8.0.x]",
             "index": 4
           },
           "WG_DEFAULT_DNS": {
-            "description": "DNS server(s) clients will use, separated by commas (e.g.: 8.8.8.8, 8.8.4.4). For default enter value: 1.1.1.1",
-            "label": "Default DNS Server",
+            "description": "DNS server(s) clients will use, separated by commas.",
+            "label": "Default DNS Server [e.g. 1.1.1.1]",
             "index": 5
           },
           "WG_ALLOWED_IPS": {
-            "description": "Allowed IPs clients will use, separated by commas (e.g.: 192.168.15.0/24, 10.0.1.0/24). For no restrictions enter values: 0.0.0.0/0, ::/0",
-            "label": "Allowed IP address ranges",
+            "description": "Allowed client IPs; comma separated e.g. (192.168.15.0/24, 10.0.1.0/24). For no restrictions enter (0.0.0.0/0, ::/0).",
+            "label": "Allowed IP ranges [e.g. 192.168.15.0/24]",
             "index": 6
           },
           "WG_PERSISTENT_KEEPALIVE": {
-            "description": "Value in seconds to keep the connection open. If this value is set to 0, then the PersistenKeepalive functionality is turned off. For default enter value: 0.",
-            "label": "Persistent Keepalive (second)",
+            "description": "Seconds to keep the connection open. If 0 the PersistenKeepalive functionality is enabled.",
+            "label": "Persistent Keepalive (e.g. 0)",
             "index": 7
           }
         }

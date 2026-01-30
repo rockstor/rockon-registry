@@ -6,17 +6,17 @@
         "launch_order": 1,
         "ports": {
           "3579": {
-            "description": "Ombi WebUI port. Suggested default: 3579",
+            "description": "Ombi WebUI port.",
             "host_default": 3579,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 3579]",
             "protocol": "tcp",
             "ui": true
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for Ombi configuration. Eg: create a Share called Ombi-config for this purpose alone.",
-            "label": "Config Storage"
+            "description": "Share for Ombi configuration.",
+            "label": "Config Storage [e.g. Ombi-config]"
           }
         },
         "environment": {
@@ -33,7 +33,7 @@
         }
       }
     },
-    "description": "Ombi allows you to host your own Plex Request and user management system.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/linuxserver/ombi' target='_blank'>https://hub.docker.com/r/linuxserver/ombi</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Host your own Plex Request and user management system.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/ombi' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "slug": ""
     },
