@@ -30,31 +30,31 @@
         },
         "ports": {
           "8080": {
-            "description": "Calibre Desktop (Backend) Access using http. Suggested default is 8080",
+            "description": "Calibre Desktop (Backend) Access using http.",
             "host_default": 8080,
-            "label": "Desktop port (http)",
+            "label": "Desktop port [e.g 8080]",
             "protocol": "tcp",
             "ui": true
           },
           "8181": {
-            "description": "Calibre Desktop (Backend) Access using https. Suggested default is 8181",
+            "description": "Calibre Desktop (Backend) Access using https.",
             "host_default": 8181,
-            "label": "Desktop port (https)",
+            "label": "Desktop port [e.g. 8181]",
             "protocol": "tcp",
             "ui": false
           },
           "8081": {
-            "description": "Calibre Web Server access port. Suggested default: 8081",
+            "description": "Calibre Web Server access port.",
             "host_default": 8081,
-            "label": "Web Server port",
+            "label": "Web Server port [e.g. 8081]",
             "protocol": "tcp",
             "ui": false
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for the Calibre configuration. E.g.: create a Share called Calibre-config for this purpose alone.",
-            "label": "Config Storage"
+            "description": "Share for the Calibre configuration.",
+            "label": "Config Storage [e.g. Calibre-config]"
           }
         },
         "environment": {
@@ -65,14 +65,14 @@
             "default": 1000
           },
           "PGID": {
-            "description": "Enter a valid GID of an existing user with permission to the config share assigned above.",
+            "description": "Enter a valid GID of an existing group with permission to the config share assigned above.",
             "label": "GID",
             "index": 2,
             "default": 1000
           },
           "LC_ALL": {
-            "description": "Define which locale to start Calibre in, using utf8 (e.g., zh_CN.UTF-8). If in US English, enter 'en_US.UTF-8'. The language can still be adjusted within Calibre's startup wizard.",
-            "label": "Locale installs",
+            "description": "Which locale to start Calibre in, using utf8 (e.g., zh_CN.UTF-8). If in US English, enter 'en_US.UTF-8'. The language can still be adjusted within Calibre's startup wizard.",
+            "label": "Locale installs [e.g. en_US.UTF-8]",
             "index": 3,
             "default": "en_US.UTF-8"
           }

@@ -62,7 +62,7 @@
   "paperless-ngx": "paperless-ngx.json",
   "pi-hole": "pi-hole.json",
   "plex": "plex.json",
-  "pocketmine": "pocketmine.json",
+  "pocketmine-mp": "pocketmine.json",
   "qbittorrent": "qbittorrent_lsio.json",
   "radarr": "radarr.json",
   "resilio sync": "resilioSync.json",

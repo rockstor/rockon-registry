@@ -14,9 +14,9 @@
         "launch_order": 1,
         "ports": {
           "80": {
-            "description": "WebUI port. Suggested default: 13378",
+            "description": "WebUI port.",
             "host_default": 13378,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 13378]",
             "ui": true
           }
         },

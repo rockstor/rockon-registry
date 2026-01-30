@@ -12,12 +12,12 @@
         ],
         "volumes": {
           "/opt/adguardhome/conf": {
-            "description": "Choose a Share for Adguard config.",
-            "label": "Choose a Share for Adguard config."
+            "description": "Share for Adguard config.",
+            "label": "Adguard config [e.g. adguard-config]"
           },
           "/opt/adguardhome/work": {
-            "description": "Choose a Share for Adguard data.",
-            "label": "Choose a Share for Adguard data."
+            "description": "Share for Adguard data.",
+            "label": "Adguard data [e.g. adguard-config]"
           }
         }
       }
