@@ -64,7 +64,7 @@
         }
       }
     },
-    "description": "Emby media server. <p>Based on the <a href='https://hub.docker.com/r/emby/embyserver' target='_blank'>official OCI image</a>, available for amd64 architecture only.</p>",
+    "description": "Emby media server.<p>Note: uses `net=host` to enable core functionality.</p><p>Based on the <a href='https://hub.docker.com/r/emby/embyserver' target='_blank'>official OCI image</a>, available for amd64 architecture only.</p>",
     "more_info": "<h4>Adding media to Emby.</h4><p>You can add Shares(with media) to Emby from the settings wizard of this Rock-on. Then, from Emby WebUI, you can update and re-index your library.</p><p> Visit https://hub.docker.com/r/emby/embyserver for description of each option.",
     "ui": {
       "slug": ""

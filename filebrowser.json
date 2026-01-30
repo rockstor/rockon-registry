@@ -7,25 +7,25 @@
         "launch_order": 1,
         "ports": {
           "80": {
-            "description": "filebrowser Webui port, Default: 8090",
+            "description": "Webui port.",
             "host_default": 8090,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 8090]",
             "protocol": "tcp",
             "ui": true
           }
         },
         "volumes": {
           "/srv": {
-            "description": "Choose a Share where the files are located that filemanager should have access to. E.g.: select the share where all your files are located",
-            "label": "Data Storage"
+            "description": "Share to view in filemanager.",
+            "label": "Viewed Storage [e.g. filemanager-view]"
           },
           "/config": {
-            "description": "Choose a Share for the filebrowser configuration. E.g.: create a share called fb-config for this purpose alone.",
-            "label": "Config Storage"
+            "description": "Share for filebrowser configuration.",
+            "label": "Config [e.g. filebrowser-config]"
           },
           "/database": {
-            "description": "Choose a Share for filebrowser's database file. E.g.: create a Share called fb-db for this purpose alone. Important: For the first install ensure that the share contains an empty file named `filebrowser.db` to avoid errors during the initial installation.",
-            "label": "Database Location"
+            "description": "Share for the filebrowser database. Important: initially must contain only a empty file named `filebrowser.db` to avoid errors during the initial installation.",
+            "label": "Database Location [e.g. filebrowser-db]"
           }
         },
         "environment": {
@@ -42,7 +42,7 @@
         }
       }
     },
-    "description": "Filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory. It can be used as a standalone app.<p>For more installation details visit <a href='https://filebrowser.org/installation' target='_blank'>https://filebrowser.org/installation</a></p><p>Based on the <a href='https://hub.docker.com/r/filebrowser/filebrowser' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Filebrowser provides a file managing interface within a specified Share: upload, delete, preview, rename, and edit the Shares files. Multi-users support/management: each user has their own directory with the mapped Share.<p>Based on the <a href='https://hub.docker.com/r/filebrowser/filebrowser' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "slug": ""
     },
