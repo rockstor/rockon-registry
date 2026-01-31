@@ -1,5 +1,5 @@
 {
-  "Node-RED by nodered.org": {
+  "Node-RED": {
     "containers": {
       "nodered": {
         "image": "nodered/node-red",
@@ -7,24 +7,23 @@
         "launch_order": 1,
         "ports": {
           "1880": {
-            "description": "Node-RED WebUI port. Suggested default: 1880",
+            "description": "Node-RED WebUI port.",
             "host_default": 1880,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 1880]",
             "ui": true
           }
         },
         "volumes": {
           "/data": {
-            "description": "Choose a Share for Node-RED. Eg: create a Share called nodered-data for this purpose alone.",
-            "label": "Storage",
+            "description": "Share for Node-RED data.",
+            "label": "Storage [e.g. nodered-data]",
             "min_size": 1073741824
           }
         }
       }
     },
     "version": "1.1",
-    "description": "Low-code programming for event-driven applications. Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways. <p>Based on the official OCI image: <a href='https://hub.docker.com/r/nodered/node-red' target='_blank'>https://hub.docker.com/r/nodered/node-red</a>, available for amd64 and arm64 architecture.",
-    "more_info": "Browser-based flow editing that makes it easy to wire together flows using the wide range of nodes in the palette. Javascript functions can be created within the editor. A built-in editor allows you to save useful functions.",
+    "description": "Low-code programming for event-driven applications. Node-RED is a programming tool for wiring together hardware devices, APIs, and online services in new and interesting ways. <p>Based on the <a href='https://hub.docker.com/r/nodered/node-red' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.",
     "ui": {
       "slug": ""
     },
