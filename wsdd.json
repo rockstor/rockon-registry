@@ -15,12 +15,12 @@
         "launch_order": 1,
         "environment": {
           "WSDDN_HOSTNAME": {
-            "description": "Set to your Rockstor's hostname.",
+            "description": "Enter your Rockstor's hostname.",
             "label": "Host Name [e.g. myrockstor.lan]",
             "index": 1
           },
           "WSDDN_WORKGROUP": {
-            "description": "Set the workgroup name. Must be the same name used during the setup of the Samba service on the Rockstor appliance.",
+            "description": "Enter the workgroup name. Must be the same name used during the setup of the Samba service on the Rockstor appliance.",
             "label": "Workgroup [e.g. WORKGROUP]",
             "default": "WORKGROUP",
             "index": 2

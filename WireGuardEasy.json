@@ -47,7 +47,7 @@
         "environment": {
           "WG_HOST": {
             "description": "Enter your WAN IP (externally visible IP), or a Dynamic DNS hostname.",
-            "label": "WAN IP [e.g. vpn.myserver.com]",
+            "label": "WAN IP [e.g. yourname.no-ip.info]",
             "index": 1
           },
           "PASSWORD_HASH": {
