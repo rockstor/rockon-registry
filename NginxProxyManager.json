@@ -1,5 +1,5 @@
 {
-  "Nginx-proxy-manager": {
+  "Nginx proxy manager": {
     "containers": {
       "nginx-proxy": {
         "image": "jlesage/nginx-proxy-manager",
@@ -13,27 +13,27 @@
         "ports": {
           "8181": {
             "description": "Admin WebUI port",
-            "host_default": 8282,
-            "label": "WebUI Port",
+            "host_default": 8181,
+            "label": "WebUI Port [e.g. 8181]",
             "ui": true
           },
           "8080": {
             "description": "Port where nginx will listen for http connections",
             "host_default": 8080,
-            "label": "Http port",
+            "label": "Http port [e.g. 8080]",
             "ui": false
           },
           "4443": {
             "description": "Port where nginx will listen for https connections",
             "host_default": 4443,
-            "label": "Https port",
+            "label": "Https port [e.g. 4443]",
             "ui": false
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for configuration. Eg: create a Share called nginx-proxy-manager-config for this purpose alone.",
-            "label": "Config Storage",
+            "description": "Share for configuration.",
+            "label": "Config Storage [e.g. nginx-proxy-manager-config]",
             "min_size": 1073741824
           }
         },
@@ -51,14 +51,14 @@
         }
       }
     },
-    "description": "Managing Nginx proxy hosts with a simple, powerful interface.<p>Based on a custom OCI image: <a href='https://hub.docker.com/r/jlesage/nginx-proxy-manager/' target='_blank'>https://hub.docker.com/r/jlesage/nginx-proxy-manager</a>, available for amd64 architecture only.</p>",
+    "description": "Managing Nginx proxy hosts with a simple, powerful interface.<p>Based on a <a href='https://hub.docker.com/r/jlesage/nginx-proxy-manager/' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "more_info": "<h4>First time login</h4><p>Default username is<code>admin@example.com</code>and password is<code>changeme</code>. Make sure to change both the username and password after the first login.</p>",
     "ui": {
       "https": false,
       "slug": ""
     },
     "volume_add_support": true,
-    "website": "https://nginxproxymanager.jc21.com/",
+    "website": "https://nginxproxymanager.com/",
     "version": "1.1"
   }
 }
