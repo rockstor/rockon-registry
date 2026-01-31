@@ -29,11 +29,6 @@
             "description": "Valid GID to use along with the above UID. It (or the above UID) must have full permissions to the Share mapped in the previous step.",
             "label": "GID",
             "index": 2
-          },
-          "TZ": {
-            "description": "Enter timezone to use e.g Europe/London (see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).",
-            "label": "Timezone [e.g. Europe/London]",
-            "index": 3
           }
         }
       }
