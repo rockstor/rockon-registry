@@ -6,20 +6,20 @@
         "launch_order": 1,
         "ports": {
           "5076": {
-            "description": "NZBHydra2 WebUI port. Suggested default: 5076",
+            "description": "NZBHydra2 WebUI port.",
             "host_default": 5076,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 5076]",
             "ui": true
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for NZBHydra2 configuration. Eg: create a Share called nzbhydra-config for this purpose alone.",
-            "label": "Config Storage"
+            "description": "Share for NZBHydra2 configuration.",
+            "label": "Config Storage [e.g. nzbhydra-config]"
           },
           "/downloads": {
-            "description": "Choose a Share for NZBHydra downloads. Eg: create a Share called nzbhydra-downloads for this purpose alone.",
-            "label": "Download Storage"
+            "description": "Share for NZBHydra downloads.",
+            "label": "Download Storage [e.g. nzbhydra-downloads]"
           }
         },
         "environment": {
@@ -36,7 +36,7 @@
         }
       }
     },
-    "description": "NZBHydra2 is a meta search for NZB indexers. <p>Based on a custom OCI image: <a href='https://www.linuxserver.io/' target='_blank'>Linuxserver.io</a>: <a href='https://hub.docker.com/r/linuxserver/nzbhydra2' target='_blank'>https://hub.docker.com/r/linuxserver/nzbhydra2</a>, available for amd64 and arm64.</p>",
+    "description": "NZBHydra2 is a meta search app for NZB indexers, the spiritual successor to NZBmegasearcH. <p>Based on a <a href='https://hub.docker.com/r/linuxserver/nzbhydra2' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "slug": ""
     },

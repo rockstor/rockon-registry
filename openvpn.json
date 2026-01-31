@@ -37,7 +37,7 @@
     "custom_config": {
       "servername": {
         "description": "Your Rockstor system's public ip address or FQDN.",
-        "label": "Server address []"
+        "label": "Server address [yourname.no-ip.info]"
       }
     },
     "description": "Open Source VPN server. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/openvpn-server.html' target='_blank'>Rock-on guide</a><p>Based on a <a href='https://hub.docker.com/r/kylemanna/openvpn' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p>",
