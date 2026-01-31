@@ -52,7 +52,7 @@
   "netdata (official)": "netdata-official.json",
   "nextcloud-official": "nextcloud-official.json",
   "nginx": "nginx.json",
-  "nginx-proxy-manager": "NginxProxyManager.json",
+  "nginx proxy manager": "NginxProxyManager.json",
   "node-red by nodered.org": "nodered.json",
   "nzbget": "nzbget.json",
   "nzbhydra2": "NZBHydra2.json",

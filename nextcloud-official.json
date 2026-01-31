@@ -12,25 +12,25 @@
         ],
         "ports": {
           "80": {
-            "description": "Nextcloud WebUI port. Suggested default: 8080",
+            "description": "Nextcloud WebUI port.",
             "host_default": 8888,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 8888]",
             "ui": true
           }
         },
         "volumes": {
           "/var/www/html": {
-            "description": "Choose a Share for Nextcloud. Eg: create a Share called nextcloud-all for this purpose alone.",
-            "label": "Storage",
+            "description": "Share for Nextcloud's data.",
+            "label": "Storage [e.g. nextcloud-data]",
             "min_size": 1073741824
           }
         }
       }
     },
     "version": "1.1",
-    "description": "Next generation open source Enterprise File Sync and Share. <p>This rock-on uses a simple SQLite database and may thus be limited to <em>single-user or lightweight use</em>. Similarly, it does <strong>not</strong> use encryption.</p><p>Based on the official OCI image: <a href='https://hub.docker.com/_/nextcloud' target='_blank'>https://hub.docker.com/_/nextcloud</a>, available for amd64 architecture only.</p>",
+    "description": "Next generation open source Enterprise File Sync and Share. <p>This rock-on uses a simple SQLite database and may thus be limited to <em>single-user or lightweight use</em>. Similarly, it does <strong>not</strong> use encryption.</p><p>Based on <a href='https://hub.docker.com/_/nextcloud' target='_blank'>the official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/6/60/Nextcloud_Logo.svg",
-    "more_info": "<p>No smbclient installed by default.  If you would like to enable this you can connect to your container and use <code>apt-get install smbclient -y</code> to install.</p>",
+    "more_info": "<p>No smbclient installed by default. If you would like to enable this you can connect to your container and use <code>apt-get install smbclient -y</code> to install.</p>",
     "ui": {
       "slug": ""
     },
