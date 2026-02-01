@@ -106,7 +106,7 @@
         "environment": {}
       }
     },
-    "description": "Compiled Zabbix Server (and proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix Web UI based on CentOS 7, Supervisor, Nginx, PHP.<p>Based on the <a href='https://hub.docker.com/r/monitoringartist/zabbix-db-mariadb' target='_blank'>custom OCI image</a> and <a href='https://hub.docker.com/r/monitoringartist/zabbix-xxl' target='_blank'>zabbix-xxl</a> and the <a href='https://hub.docker.com/_/busybox' target='_blank'>busybox</a>, available for amd64 architecture only.</p>",
+    "description": "Compiled Zabbix Server (and proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix Web UI based on CentOS 7, Supervisor, Nginx, PHP.<p>Based on the <a href='https://hub.docker.com/r/monitoringartist/zabbix-db-mariadb' target='_blank'>custom OCI image</a> and <a href='https://hub.docker.com/r/monitoringartist/zabbix-xxl' target='_blank'>zabbix-xxl</a> and <a href='https://hub.docker.com/_/busybox' target='_blank'>busybox</a>, available for amd64 architecture only.</p>",
     "ui": {
       "https": false,
       "slug": ""

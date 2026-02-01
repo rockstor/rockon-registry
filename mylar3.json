@@ -2,7 +2,7 @@
   "Mylar 3": {
     "website": "https://mylarcomics.com/",
     "version": "1.1",
-    "description": "Mylar3 is an automated Comic Book (cbr/cbz) downloader program heavily-based on the Headphones template and logic.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/mylar3' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Mylar3 is an automated Comic Book (cbr/cbz) downloader program built on the Headphones template and logic.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/mylar3' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "icon": "https://raw.githubusercontent.com/evilhero/mylar/master/data/images/favicon.ico",
     "containers": {
       "mylar3": {
