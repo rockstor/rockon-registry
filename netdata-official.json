@@ -52,7 +52,7 @@
         }
       }
     },
-    "description": "Netdata is a scalable, distributed, real-time, performance and health monitoring solution for Linux, FreeBSD and MacOS. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/netdata_official.html' target='_blank'>Rock-on guide</a><p>Out of the box, it collects 1k to 5k metrics per server per second. It is the corresponding of running top, vmstat, iostat, iotop, sar, systemd-cgtop and a dozen more console tools in parallel. netdata is very efficient in this: the daemon needs just 1% to 3% cpu of a single core.</p><p>Based on the <a href='https://hub.docker.com/r/netdata/netdata' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Netdata is a scalable, distributed, real-time, performance and health monitoring solution for Linux, FreeBSD and MacOS. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/netdata_official.html' target='_blank'>Rock-on guide</a><p><b>Note:</b> uses `net=host` for core functionality.</p><p>Based on the <a href='https://hub.docker.com/r/netdata/netdata' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "icon": "https://github.com/firehol/netdata/blob/master/web/images/seo-performance-64.png",
     "more_info": "See <a href='https://learn.netdata.cloud/' target='_blank'>https://learn.netdata.cloud/</a> for more info.",
     "website": "https://www.netdata.cloud/",

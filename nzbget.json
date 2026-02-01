@@ -43,7 +43,7 @@
         }
       }
     },
-    "description": "The Ultimate NZB Downloader for Usenet. <strong>Web-UI login:</strong> after install click 'i' icon for initial username & pass.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/nzbget' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "The Ultimate NZB Downloader for Usenet. <strong>Web-UI login:</strong> after install click 'i' icon for initial username & pass.</p><p><b>Note:</b> uses `net=host` for core functionality.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/nzbget' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "more_info": "Default username: nzbget<p>Default password: tegbzn6789</p>",
     "ui": {
       "slug": ""
