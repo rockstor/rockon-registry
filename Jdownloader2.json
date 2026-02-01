@@ -6,16 +6,16 @@
         "launch_order": 1,
         "ports": {
           "5800": {
-            "description": "WebUI Port",
+            "description": "WebUI Port.",
             "host_default": 5800,
-            "label": "Data Port",
+            "label": "WebUI [e.g. 5800]",
             "protocol": "tcp",
             "ui": true
           },
           "3129": {
-            "description": "MyJdownloader Port",
+            "description": "MyJdownloader Port TCP.",
             "host_default": 3129,
-            "label": "MyJdownloader Port",
+            "label": "Port [e.g. 3129]",
             "protocol": "tcp"
           }
         },
@@ -37,7 +37,7 @@
             "index": 1
           },
           "PGID": {
-            "description": "Enter a valid GID to use along with the same UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "description": "GID to use along with the same UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID",
             "index": 2
           }

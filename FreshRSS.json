@@ -8,25 +8,25 @@
           "80": {
             "description": "FreshRSS Web UI Port",
             "host_default": 3093,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 3093]",
             "protocol": "tcp",
             "ui": true
           }
         },
         "volumes": {
           "/config": {
-            "description": "local storage for freshrss site files",
-            "label": "Config"
+            "description": "FreshRSS site files.",
+            "label": "Storage [e.g. freshrss-data]"
           }
         },
         "environment": {
           "PUID": {
-            "description": "Enter a valid UID to run as. It must have full permissions to all Shares mapped in the previous step.",
+            "description": "UID to run as. It must have full permissions to all Shares mapped in the previous step.",
             "label": "UID",
             "index": 1
           },
           "PGID": {
-            "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "description": "GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID",
             "index": 2
           }

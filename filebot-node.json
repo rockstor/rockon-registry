@@ -17,7 +17,7 @@
         "ports": {
           "5452": {
             "description": "This is for the FileBot Node Client WebUI.",
-            "label": "Web-UI port",
+            "label": "Web-UI port [e.g. 5452]",
             "host_default": 5452,
             "protocol": "tcp",
             "ui": true
@@ -26,7 +26,7 @@
         "volumes": {
           "/volume1": {
             "description": "The base mount where input and output folders will be found.",
-            "label": "Input folder"
+            "label": "Target [e.g. filebot-target]"
           }
         }
       }

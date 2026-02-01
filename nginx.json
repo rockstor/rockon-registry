@@ -14,14 +14,14 @@
           "80": {
             "description": "HTTP port.",
             "host_default": 1080,
-            "label": "HTTP port (e.g. 1080)",
+            "label": "HTTP port [e.g. 1080]",
             "protocol": "tcp",
             "ui": true
           },
           "443": {
             "description": "HTTPS port.",
             "host_default": 1443,
-            "label": "HTTPS port (e.g. 1443)",
+            "label": "HTTPS port [e.g. 1443]",
             "protocol": "tcp"
           }
         },

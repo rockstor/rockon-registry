@@ -10,8 +10,8 @@
         "launch_order": 1,
         "ports": {
           "4567": {
-            "description": "Website Port",
-            "label": "Gollum Port",
+            "description": "WebUI Port.",
+            "label": "WebUI [e.g. 4567]",
             "host_default": 4567,
             "protocol": "tcp",
             "ui": true

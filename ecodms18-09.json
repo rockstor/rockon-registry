@@ -12,28 +12,28 @@
         ],
         "ports": {
           "17001": {
-            "description": "Port for ecoDMS client connection",
+            "description": "Port for ecoDMS client connection.",
             "host_default": 17001,
-            "label": "Client",
+            "label": "Client [e.g. 17001]",
             "protocol": "tcp"
           },
           "17002": {
-            "description": "Port for ecoDMS database access",
+            "description": "Port for ecoDMS database access.",
             "host_default": 17002,
-            "label": "Database",
+            "label": "Database [e.g. 17002]",
             "protocol": "tcp"
           },
           "8080": {
             "description": "ecoDMS WebUI port. Disabled by default. Must be enabled in settings from the desktop client.",
             "host_default": 17004,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 17004]",
             "protocol": "tcp",
             "ui": true
           },
           "8180": {
             "description": "ecoDMS port used for external access via API.",
             "host_default": 17005,
-            "label": "API port",
+            "label": "API port [e.g. 17005]",
             "protocol": "tcp"
           }
         },
