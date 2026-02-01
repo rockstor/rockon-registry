@@ -153,17 +153,17 @@
         },
         "volumes": {
           "/config": {
-            "description": "Choose a share to store the configuration for the Unifi Controller.",
+            "description": "Share for Unifi Controller configuration.",
             "label": "Config Storage [e.g. unifi-config]"
           }
         },
         "environment": {
           "PUID": {
-            "description": "Enter a valid UID to run Unifi. It must have full permissions to the share mapped in the previous step.",
+            "description": " UID to run Unifi. It must have full permissions to the share mapped in the previous step.",
             "label": "UID"
           },
           "PGID": {
-            "description": "Enter a valid GID to use along with the UID. It must have full permissions to the unifi share mapped in the previous step.",
+            "description": "GID to use along with the UID. It must have full permissions to the unifi share mapped in the previous step.",
             "label": "GID"
           },
           "MONGO_PASS": {

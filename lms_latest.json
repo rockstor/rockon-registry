@@ -40,16 +40,16 @@
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for LMS configuration.",
-            "label": "Config Storage [e.g. lms-config ]"
+            "description": "Share for LMS configuration.",
+            "label": "Config [e.g. lms-config ]"
           },
           "/music": {
-            "description": "Choose a Share for LMS content, i.e. your media. You can also assign other media Shares on the system after installation.",
-            "label": "Media Storage [e.g. lms-music]"
+            "description": "Share for LMS content, i.e. your media. You can also assign other media Shares on the system after installation.",
+            "label": "Media [e.g. lms-music]"
           },
           "/playlist": {
-            "description": "Choose a Share for LMS Playlists. You can also assign other media Shares on the system after installation.",
-            "label": "Playlist Storage [e.g. lms-playlist]"
+            "description": "Share for LMS Playlists. You can also assign other media Shares on the system after installation.",
+            "label": "Playlist [e.g. lms-playlist]"
           }
         },
         "environment": {

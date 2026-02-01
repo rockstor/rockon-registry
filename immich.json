@@ -28,7 +28,7 @@
         "launch_order": 1,
         "volumes": {
           "/var/lib/postgresql/data": {
-            "description": "Choose a Database Share for Immich.",
+            "description": "Database Share for Immich.",
             "label": "Database Share [e.g. immich-db]"
           }
         },
@@ -76,7 +76,7 @@
         "launch_order": 3,
         "volumes": {
           "/cache": {
-            "description": "Choose a Cache Share for the machine-learning models.",
+            "description": "Share for the machine-learning models.",
             "label": "Cache Share [e.g. immich-cache]"
           }
         },
@@ -124,7 +124,7 @@
         },
         "volumes": {
           "/data": {
-            "description": "Choose a Library Share, where Immich stores uploaded photos/videos.",
+            "description": "Library Share, where Immich stores uploaded photos/videos.",
             "label": "Library Share [e.g. immich-library]"
           }
         },

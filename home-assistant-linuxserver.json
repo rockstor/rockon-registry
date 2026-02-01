@@ -19,17 +19,17 @@
         ],
         "ports": {
           "8123": {
-            "description": "Home Assistant UI port. Because host network mode is used, this must be set to port 8123. You may need to open the same port on your firewall (protocol: tcp).",
+            "description": "Home Assistant UI port. You may need to open the same port on your firewall (tcp).",
             "host_default": 8123,
-            "label": "Server port",
+            "label": "Server port [must be 8123]",
             "protocol": "tcp",
             "ui": true
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for configuration. E.g.: create a Share called ha-config for this purpose alone.",
-            "label": "Home Assistant Config Share"
+            "description": "Share for configuration.",
+            "label": "Config Share [e.g. ha-config]"
           }
         },
         "environment": {

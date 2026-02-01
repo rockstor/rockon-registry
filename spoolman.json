@@ -17,7 +17,7 @@
         "ports": {
           "8000": {
             "description": "Port number you would like to use for the Spoolman Web interface.",
-            "label": "Web interface port [e.g. 7912]",
+            "label": "WebUI port [e.g. 7912]",
             "host_default": 7912,
             "protocol": "tcp",
             "ui": true
@@ -25,7 +25,7 @@
         },
         "volumes": {
           "/home/app/.local/share/spoolman": {
-            "description": "Choose a share for Spoolman database storage",
+            "description": "Share for Spoolman database storage",
             "label": "Spoolman DB [e.g. spoolman-db]"
           }
         }

@@ -6,25 +6,25 @@
         "launch_order": 1,
         "ports": {
           "5299": {
-            "description": "Web server port. Suggested default: 5299",
+            "description": "Web server port.",
             "host_default": 5299,
-            "label": "Port for the web interface",
+            "label": "WebUI [e.g. 5299]",
             "protocol": "tcp",
             "ui": true
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a share where the config file should be stored. Eg: create a share called lazylibrarian-config for this purpose alone. ",
-            "label": "Config storage"
+            "description": "Share for the config files.",
+            "label": "Config storage [e.g. lazylibrarian-config]"
           },
           "/downloads": {
-            "description": "Choose a share where the books will be downloaded to. ",
-            "label": "Download storage"
+            "description": "Share for downloaded books.",
+            "label": "Download storage [e.g. lazylibrarian-downloads]"
           },
           "/books": {
-            "description": "Choose a share where the book library is located. ",
-            "label": "Book library"
+            "description": "Share for the book library.",
+            "label": "Book library [e.g. lazylibrarian-library]"
           }
         },
         "environment": {

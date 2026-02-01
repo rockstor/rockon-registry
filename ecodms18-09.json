@@ -39,20 +39,20 @@
         },
         "volumes": {
           "/srv/data": {
-            "description": "Choose a Share for data. Eg: create a Share called ecodms-data for this purpose alone.",
-            "label": "Data Storage"
+            "description": "Share for data.",
+            "label": "Data [e.g. ecodms-data]"
           },
           "/srv/scaninput": {
-            "description": "Choose a Share for scan inputs. Eg: create a Share called ecodms-scaninput for this purpose alone.",
-            "label": "Scans folder"
+            "description": "Share for scan inputs.",
+            "label": "Scans [ecodms-scaninput]"
           },
           "/srv/backup": {
-            "description": "Choose a Share as a location where backups from ecoDMS will be stored. Eg: create a Share called ecodms-backup for this purpose alone.",
-            "label": "Backup storage"
+            "description": "Share for backups.",
+            "label": "Backup storage [e.g. ecodms-backup]"
           },
           "/srv/restore": {
-            "description": "Choose a Share for restoring backups. A backup can put in here and can the be restored. Eg: create a Share called ecodms-restore for this purpose alone.",
-            "label": "Restore folder"
+            "description": "Share for restoring backups. A backup can put in here and can then be restored.",
+            "label": "Restore folder [e.g. ecodms-restore]"
           }
         }
       }

@@ -10,16 +10,16 @@
         "launch_order": 2,
         "ports": {
           "3000": {
-            "description": "The port for accessing the Linkwarden Web UI.",
-            "label": "Web UI Port",
+            "description": "The port for accessing the Linkwarden WebUI.",
+            "label": "WebUI Port [e.g. 3000]",
             "host_default": 3000,
             "ui": true
           }
         },
         "volumes": {
           "/data/data": {
-            "description": "Choose a Share for Linkwarden data storage. E.g., create a share named linkwarden-data.",
-            "label": "Linkwarden Data Storage"
+            "description": "Share for Linkwarden data storage.",
+            "label": "Linkwarden Data [e.g. linkwarden-data]"
           }
         },
         "environment": {
@@ -46,14 +46,14 @@
         "launch_order": 1,
         "volumes": {
           "/var/lib/postgresql/data": {
-            "description": "Choose a Share for PostgreSQL database storage.",
-            "label": "PostgreSQL Storage"
+            "description": "Share for PostgreSQL database storage.",
+            "label": "DB Storage [e.g linkwarden-db]"
           }
         },
         "environment": {
           "POSTGRES_PASSWORD": {
             "description": "Enter the password for the PostgreSQL 'postgres' super-user that was entered previously as part of the 'PostgreSQL URL'",
-            "label": "PostgreSQL Password"
+            "label": "DB Password"
           }
         }
       }

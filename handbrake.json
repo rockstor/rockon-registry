@@ -16,45 +16,45 @@
         },
         "ports": {
           "5800": {
-            "description": "handbrake WebUI port. Suggested default: 5800",
+            "description": "handbrake WebUI port.",
             "host_default": 5800,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 5800]",
             "protocol": "tcp",
             "ui": true
           },
           "5900": {
-            "description": "handbrake VNC port. Suggested default: 5900 (Optional)",
+            "description": "handbrake VNC port (optional).",
             "host_default": 5900,
-            "label": "VNC port",
+            "label": "VNC port [e.g. 5900]",
             "protocol": "tcp"
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for handbrake configuration. E.g.: create a Share called handbrake-config for this purpose alone.",
-            "label": "01 Config Storage"
+            "description": "Share for handbrake configuration.",
+            "label": "01 Config Storage [e.g. handbrake-config]"
           },
           "/storage": {
-            "description": "Choose a Share for handbrake that contains files from your host that need to be accessible by the application. E.g.: create a Share called handbrake-storage for this purpose alone.",
-            "label": "02 Storage location"
+            "description": "Share for handbrake that contains files from your host that need to be accessible by the application.",
+            "label": "02 Storage location [e.g. handbrake-storage]"
           },
           "/watch": {
-            "description": "Choose a Share for handbrake videos to be automatically converted are located. E.g.: create a Share called handbrake-watch for this purpose alone.",
-            "label": "03 Watch Storage"
+            "description": "Share for handbrake videos to be automatically converted are located.",
+            "label": "03 Watch Storage [e.g. handbrake-watch]"
           },
           "/output": {
-            "description": "Choose a Share for handbrake to automatically converted video files are written. E.g.: create a Share called handbrake-output for this purpose alone.",
-            "label": "04 Output Storage"
+            "description": "Share for handbrake to automatically converted video files are written.",
+            "label": "04 Output Storage [e.g. handbrake-output]"
           }
         },
         "environment": {
           "USER_ID": {
-            "description": "Enter a valid UID to run handbrake as. It must have full permissions to all Shares mapped in the previous step.",
+            "description": " UID to run handbrake as. It must have full permissions to all Shares mapped in the previous step.",
             "label": "UID to run handbrake as.",
             "index": 1
           },
           "GROUP_ID": {
-            "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "description": "GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID to run handbrake as.",
             "index": 2
           },

@@ -21,26 +21,26 @@
         ],
         "ports": {
           "7396": {
-            "description": "Folding@home web gui (redirects to https://app.foldingathome.org. Suggested default: 7396",
+            "description": "Folding@home WebUI (redirects to https://app.foldingathome.org.",
             "host_default": 7396,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 7396]",
             "ui": true
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a share for Folding@home to use. E.g.: create a share called foldingathome for this purpose alone.",
-            "label": "Config"
+            "description": "Share for Folding@home work-space.",
+            "label": "Config [e.g. foldingathome]"
           }
         },
         "environment": {
           "PUID": {
-            "description": "Enter a valid system UserID for Folding@home. Must have full permissions on the previous Share.",
+            "description": "Valid UserID for Folding@home. Must have full permissions on the previous Share.",
             "label": "PUID",
             "index": 1
           },
           "PGID": {
-            "description": "Enter a valid system GroupID for Folding@home. This group or the above UserID must have full permissions on the previous Share.",
+            "description": "Valid GroupID for Folding@home. This group or the above UserID must have full permissions on the previous Share.",
             "label": "PGID",
             "index": 2
           },

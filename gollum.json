@@ -19,8 +19,8 @@
         },
         "volumes": {
           "/wiki": {
-            "description": "Choose a share for wiki storage. E.g. a create a share called gollum-wiki-storage, with the owner corresponding to UID=1000 and GID=1000 to avoid permission errors.",
-            "label": "Wiki storage"
+            "description": "Share for wiki storage. Must be UID:GID (1000:1000).",
+            "label": "Wiki storage [e.g. gollum-wiki-storage]"
           }
         }
       }

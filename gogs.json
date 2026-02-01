@@ -6,27 +6,27 @@
         "launch_order": 1,
         "ports": {
           "22": {
-            "description": "Gogs ssh port. You may need to open it on your firewall if you want access from outside your local network. Suggested default: 3022.",
+            "description": "Gogs SSH port. You may need to open it on your firewall if you want access from outside your local network. Suggested default: 3022.",
             "host_default": 3022,
-            "label": "ssh port",
+            "label": "SSH port [e.g. 3022]",
             "procotol": "tcp"
           },
           "3000": {
-            "description": "Gogs WebUI port. Suggested default: 3000",
+            "description": "Gogs WebUI port.",
             "host_default": 3000,
-            "label": "WebUI port",
+            "label": "WebUI port [e.g. 3000]",
             "protocol": "tcp",
             "ui": true
           }
         },
         "volumes": {
           "/data": {
-            "description": "Choose a Share for gogs configuration and database.",
-            "label": "Config Storage"
+            "description": "Share for gogs configuration and database.",
+            "label": "Config Storage [e.g. gogs-config]"
           },
           "/data/git/gogs-repositories": {
-            "description": "Choose a Share for your git repositories.",
-            "label": "Git Storage"
+            "description": "Share for your git repositories.",
+            "label": "Git Storage [e.g. gogs-repos]"
           }
         }
       }

@@ -21,13 +21,13 @@
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for configuration. Eg: create a Share called jdownloader-config for this purpose alone.",
-            "label": "Config Storage",
+            "description": "Share for configuration.",
+            "label": "Config Storage [e.g. jdownloader-config]",
             "min_size": 1073741824
           },
           "/output": {
-            "description": "Share where all the downloads will be",
-            "label": "Data Storage"
+            "description": "Share for the downloads storage.",
+            "label": "Data Storage [e.g. jdownloader-downloads]"
           }
         },
         "environment": {

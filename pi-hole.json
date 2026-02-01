@@ -32,11 +32,11 @@
         },
         "volumes": {
           "/etc/pihole": {
-            "description": "Choose a share for Pi-hole configuration.",
+            "description": "Share for Pi-hole configuration.",
             "label": "Pi-hole config [e.g. pihole-config]"
           },
           "/etc/dnsmasq.d": {
-            "description": "Choose a share for dnsmasq configuration. Place any specific dnsmasq configuration you want to preset without using the WebUI.",
+            "description": "Share for dnsmasq configuration. Place any specific dnsmasq configuration you want to preset without using the WebUI.",
             "label": "dnsmasq config [e.g. dnsmasq-config]"
           }
         },

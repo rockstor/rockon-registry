@@ -24,17 +24,17 @@
         ],
         "ports": {
           "6052": {
-            "description": "ESPHome Web Port: must be set to 6052, so the UI can be launched from Rockon WebUI.",
+            "description": "ESPHome Web Port (http).",
             "host_default": 6052,
-            "label": "ESPHome Dashboard port (http)",
+            "label": "Dashboard [must be 6052]",
             "protocol": "tcp",
             "ui": true
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for ESPHome configuration. E.g.: create a Share called esphome-config for this purpose alone.",
-            "label": "ESPHome Config Storage"
+            "description": "Share for ESPHome configuration.",
+            "label": "ESPHome Config Storage [e.g. esphome-config]"
           }
         },
         "environment": {

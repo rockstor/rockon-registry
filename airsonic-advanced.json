@@ -25,12 +25,12 @@
                         "min_size": 1073741824
                     },
                     "/playlists": {
-                        "description": "Choose a Share for Airsonic playlists.",
+                        "description": "Share for Airsonic playlists.",
                         "label": "Playlist Storage [e.g. airsonic-playlists]",
                         "min_size": 1073741824
                     },
                     "/podcasts": {
-                        "description": "Select the Share to store podcasts.",
+                        "description": "Share to store podcasts.",
                         "label": "Podcast Storage [e.g. airsonic-podcasts]",
                         "min_size": 1073741824
                     }

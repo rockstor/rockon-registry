@@ -23,7 +23,7 @@
             "label": "Config [e.g. medusa-config ]"
           },
           "/tv": {
-            "description": "Choose a share to host shows.",
+            "description": "Share to store shows.",
             "label": "TV [e.g. medusa-shows]"
           }
         },

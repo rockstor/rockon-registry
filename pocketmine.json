@@ -6,7 +6,7 @@
         "launch_order": 1,
         "ports": {
           "19132": {
-            "description": "Port for incoming and discovery broadcasts. You may need to open it (protocol: tcp/udp) on your firewall.",
+            "description": "Port for incoming and discovery broadcasts. You may need to open it (tcp/udp) on your firewall.",
             "host_default": 19132,
             "protocol": "udp",
             "label": "Listening port [must be 19132]"
@@ -14,7 +14,7 @@
         },
         "volumes": {
           "/data": {
-            "description": "Choose a Share for the configuration and persistent data.",
+            "description": "Share for configuration and persistent data.",
             "label": "Config Storage [e.g. PocketMine]",
             "min_size": 1073741824
           }

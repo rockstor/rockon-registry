@@ -22,19 +22,19 @@
         },
         "volumes": {
           "/config": {
-            "description": "Choose a Share for the configuration data. It will contain the database (users/books/libraries/settings).",
+            "description": "Share for the configuration data. It will contain the database (users/books/libraries/settings).",
             "label": "Config Storage [e.g. audiobookshelf-config]"
           },
           "/audiobooks": {
-            "description": "Choose a Share for audiobooks.",
+            "description": "Share for audiobooks.",
             "label": "Audiobooks Storage [e.g. audiobookshelf-books]"
           },
           "/podcasts": {
-            "description": "Choose a Share for podcasts.",
+            "description": "Share for podcasts.",
             "label": "Podcasts Storage [e.g. audiobookshelf-podcasts]"
           },
           "/metadata": {
-            "description": "Choose a Share for metadata (cache/streams/covers/downloads/backups/logs).",
+            "description": "Share for metadata (cache/streams/covers/downloads/backups/logs).",
             "label": "Metadata Storage [e.g. audiobookshelf-metadata]"
           }
         }
