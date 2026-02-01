@@ -39,7 +39,7 @@
         }
       }
     },
-    "description": "A Web-UI enabled self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.<p>Note: runs as UID:GID (1000:1000): mapped Share must provide access accordingly.</p><p>Based on the <a href='https://hub.docker.com/r/2fauth/2fauth' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture</p>",
+    "description": "A Web-UI enabled self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.<p><b>Note:</b> runs as UID:GID (1000:1000): mapped Share must provide access accordingly.</p><p>Based on the <a href='https://hub.docker.com/r/2fauth/2fauth' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture</p>",
     "icon": "https://github.com/Bubka/2FAuth/blob/master/public/favicon.png",
     "more_info": "The full documentation for this rock-on can be found at <a href='https://docs.2fauth.app/' target='_blank'>https://docs.2fauth.app/</a>.",
     "ui": {

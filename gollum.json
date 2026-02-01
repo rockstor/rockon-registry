@@ -1,6 +1,6 @@
 {
   "Gollum": {
-    "description": "A Git Based Wiki.<p>Note, that the container runs with UID/GID 1000/1000, so the configured share must provide the corresponding access</p><p>Based on the <a href='https://hub.docker.com/r/gollumwiki/gollum' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "A Git Based Wiki.<p><b>Note:</b> runs with UID:GID (1000:1000), so the configured share must provide the corresponding access.</p><p>Based on the <a href='https://hub.docker.com/r/gollumwiki/gollum' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "version": "1.2",
     "website": "https://github.com/gollum/gollum",
     "containers": {

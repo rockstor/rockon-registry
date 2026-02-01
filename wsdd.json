@@ -1,6 +1,6 @@
 {
   "Web Service Discovery For Windows Networks (wsdd-native)": {
-    "description": "A simple container for Rockstor running samba, so that Windows 10 version 1511 or higher will display the Rockstor host in their Network folder.<p>This version is geared towards local network workgroup setups only.<p>Note: uses `net=host` to enable network functionality.</p><p>Based on the <a href='https://hub.docker.com/r/gershnik/wsddn' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Samba (SMB) Network folder visibility in Windows 10 v1511 or later. Intended for local network workgroup setups only.<p><b>Note:</b> uses `net=host` to enable core functionality.</p><p>Based on the <a href='https://hub.docker.com/r/gershnik/wsddn' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "website": "https://github.com/gershnik/wsdd-native",
     "version": "2.0",
     "containers": {
@@ -20,7 +20,7 @@
             "index": 1
           },
           "WSDDN_WORKGROUP": {
-            "description": "Enter the workgroup name. Must be the same name used during the setup of the Samba service on the Rockstor appliance.",
+            "description": "Workgroup name. Must be the same name used during the setup of the Samba service on the Rockstor appliance.",
             "label": "Workgroup [e.g. WORKGROUP]",
             "default": "WORKGROUP",
             "index": 2
