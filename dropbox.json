@@ -39,7 +39,7 @@
         }
       }
     },
-    "description": "Dropbox containerised. Runs as UID:GID (1000:1000): ensure mapped Shares are compatible.<p><b>Note:</b> uses `net=host` for core functionality.</p><p><b>After installed:</b> see `/var/log/messages` for a line with 'Please visit url-here` to link this instance.'</p><p>Based on a <a href='https://hub.docker.com/r/janeczku/dropbox' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p> ",
+    "description": "Dropbox containerised. Runs as UID:GID (1000:1000): ensure mapped Shares are compatible.<p><b>Note:</b> uses `net=host` for core functionality.</p><p><b>After installed:</b> use `journalctl` and look for the 'Please visit url-here...` info to link this instance.'</p><p>Based on a <a href='https://hub.docker.com/r/janeczku/dropbox' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p> ",
     "website": "https://hub.docker.com/r/janeczku/dropbox/",
     "version": "3.18.1"
   }
