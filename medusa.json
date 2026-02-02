@@ -34,7 +34,7 @@
             "index": 1
           },
           "PGID": {
-            "description": "GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+"description": "GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID",
             "index": 2
           }
