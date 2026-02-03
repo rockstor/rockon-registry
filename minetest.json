@@ -33,7 +33,7 @@
         }
       }
     },
-    "description": "Formerly know as Minetest. An open source voxel game engine clone of the popular Minecraft. <a href='https://docs.luanti.org/' target='_blank'>Luanti Docs</a>.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/luanti' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Formerly known as Minetest. An open source voxel game engine clone of the popular Minecraft. <a href='https://docs.luanti.org/' target='_blank'>Luanti Docs</a>.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/luanti' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "slug": ""
     },
