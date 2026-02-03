@@ -10,7 +10,7 @@
         "launch_order": 2,
         "ports": {
           "3000": {
-            "description": "The port for accessing the Linkwarden WebUI.",
+            "description": "Port for accessing the Linkwarden WebUI.",
             "label": "WebUI Port [e.g. 3000]",
             "host_default": 3000,
             "ui": true
