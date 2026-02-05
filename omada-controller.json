@@ -75,12 +75,12 @@
         },
         "volumes": {
           "/opt/tplink/EAPController/data": {
-            "description": "Choose a DATA and CONFIG Share for Omada Controller files.",
-            "label": "Controller DATA + CONFIG Storage [e.g. omada-data]"
+            "description": "DATA and CONFIG Share for Omada Controller files.",
+            "label": "DATA + CONFIG Storage [e.g. omada-data]"
           },
           "/opt/tplink/EAPController/logs": {
-            "description": "Choose a LOGS Share for Omada Controller files.",
-            "label": "Controller LOGS Storage [e.g. omada-logs]"
+            "description": "LOGS Share for Omada Controller files.",
+            "label": "LOGS Storage [e.g. omada-logs]"
           }
         },
         "environment": {
@@ -182,13 +182,13 @@
         }
       }
     },
-    "description": "TP-Link Omada Controller. <p><strong>Note: in case of adoption failures, <a href='https://github.com/mbentley/docker-omada-controller/blob/master/KNOWN_ISSUES.md#devices-fail-to-adopt' target='_blank'>read this!</a></strong></p> <p>Based on a custom docker image: <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>https://hub.docker.com/r/mbentley/omada-controller</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "TP-Link Omada Controller. <p><strong>Note:</strong> in case of adoption failures <a href='https://github.com/mbentley/docker-omada-controller/blob/master/KNOWN_ISSUES.md#devices-fail-to-adopt' target='_blank'>read this!</a></p><p>Based on a <a href='https://hub.docker.com/r/mbentley/omada-controller' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "https": true,
       "slug": ""
     },
     "volume_add_support": false,
-    "website": "https://www.tp-link.com/us/support/download/omada-software-controller/",
+    "website": "https://support.omadanetworks.com/us/product/omada-software-controller/",
     "version": "1.1"
   }
 }

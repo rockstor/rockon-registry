@@ -1,55 +1,55 @@
 {
-    "NZBGet": {
-        "containers": {
-            "nzbget": {
-                "image": "linuxserver/nzbget",
-                "launch_order": 1,
-                "opts": [
-                    [
-                        "--net=host",
-                        ""
-                    ]
-                ],
-                "ports": {
-                    "6789": {
-                        "description": "NZBGet WebUI port. Suggested default: 6789",
-                        "host_default": 6789,
-                        "label": "WebUI port",
-                        "protocol": "tcp",
-                        "ui": true
-                    }
-                },
-                "volumes": {
-                    "/config": {
-                        "description": "Choose a Share for NZBGet configuration. Eg: create a Share called nzb-config for this purpose alone.",
-                        "label": "Config Storage"
-                    },
-                    "/downloads": {
-                        "description": "Choose a Share for NZBGet downloads. Eg: create a Share called nzbget-downloads for this purpose alone. You can also assign other media Shares on the system after installation.",
-                        "label": "Download Storage"
-                    }
-                },
-                "environment": {
-                    "PUID": {
-		        "description": "Enter a valid UID to run NZBGet as. It must have full permissions to all Shares mapped in the previous step.",
-                        "label": "UID to run NZBGet as.",
-                        "index": 1
-		    },
-                    "PGID": {
-                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
-                        "label": "GID to run NZBGet as.",
-                        "index": 2
-                    }
-                }
-            }
+  "NZBGet": {
+    "containers": {
+      "nzbget": {
+        "image": "linuxserver/nzbget",
+        "launch_order": 1,
+        "opts": [
+          [
+            "--net=host",
+            ""
+          ]
+        ],
+        "ports": {
+          "6789": {
+            "description": "NZBGet WebUI port.",
+            "host_default": 6789,
+            "label": "WebUI port [e.g. 6789]",
+            "protocol": "tcp",
+            "ui": true
+          }
         },
-        "description": "The most efficient usenet downloader.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/nzbget' target='_blank'>https://hub.docker.com/r/linuxserver/nzbget</a>, available for amd64 and arm64 architecture.</p>",
-		"more_info": "<h4>Default username: nzbget</p>Default password: tegbzn6789",
-        "ui": {
-            "slug": ""
+        "volumes": {
+          "/config": {
+            "description": "Share for NZBGet configuration.",
+            "label": "Config Storage [e.g. called nzb-config]"
+          },
+          "/downloads": {
+            "description": "Share for NZBGet downloads. Other media Shares can be assigned after installation.",
+            "label": "Download Storage [e.g. nzbget-downloads]"
+          }
         },
-        "volume_add_support": true,
-        "website": "http://nzbget.net/",
-	"version": "1.1"
-    }
+        "environment": {
+          "PUID": {
+            "description": "Enter a valid UID to run NZBGet as. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID to run NZBGet as.",
+            "index": 1
+          },
+          "PGID": {
+            "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "label": "GID to run NZBGet as.",
+            "index": 2
+          }
+        }
+      }
+    },
+    "description": "The Ultimate NZB Downloader for Usenet. <strong>Web-UI login:</strong> after install click 'i' icon for initial username & pass.</p><p><b>Note:</b> uses `net=host` for core functionality.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/nzbget' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "more_info": "Default username: nzbget<p>Default password: tegbzn6789</p>",
+    "ui": {
+      "slug": ""
+    },
+    "volume_add_support": true,
+    "website": "https://nzbget.com/",
+    "version": "1.1"
+  }
 }

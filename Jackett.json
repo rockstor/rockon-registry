@@ -1,48 +1,48 @@
 {
-    "Jackett": {
-        "containers": {
-            "jackett": {
-                "image": "linuxserver/jackett",
-                "launch_order": 1,
-                "ports": {
-                    "9117": {
-                        "description": "Jackett WebUI port. Suggested default: 9117",
-                        "host_default": 9117,
-                        "label": "WebUI port",
-                        "protocol": "tcp",
-                        "ui": true
-                    }
-                },
-                "volumes": {
-                    "/config": {
-                        "description": "Choose a Share for jackett configuration. Eg: create a Share called jackett-config for this purpose alone.",
-                        "label": "Config Storage"
-                    },
-					"/downloads": {
-                    "description": "Choose a Share for jackett downloads. Eg: create a Share called jackett-downloads for this purpose alone.",
-                    "label": "Download Storage"
-                    }
-                },
-                "environment": {
-                    "PUID": {
-		        "description": "Enter a valid UID to run jackett as. It must have full permissions to all Shares mapped in the previous step.",
-                        "label": "UID to run jackett as.",
-                        "index": 1
-		    },
-                    "PGID": {
-                        "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
-                        "label": "GID to run jackett as.",
-                        "index": 2
-                    }
-                }
-            }
+  "Jackett": {
+    "containers": {
+      "jackett": {
+        "image": "linuxserver/jackett",
+        "launch_order": 1,
+        "ports": {
+          "9117": {
+            "description": "Jackett WebUI port.",
+            "host_default": 9117,
+            "label": "WebUI port [e.g. 9117]",
+            "protocol": "tcp",
+            "ui": true
+          }
         },
-        "description": "Jackett works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc). <p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/jackett' target='_blank'>https://hub.docker.com/r/linuxserver/jackett</a>, available for amd64 and arm64 architecture.",
-        "ui": {
-            "slug": ""
+        "volumes": {
+          "/config": {
+            "description": "Share for Jackett configuration.",
+            "label": "Config Storage [e.g. jackett-config]"
+          },
+          "/downloads": {
+            "description": "Share for Jackett downloads.",
+            "label": "Download Storage [e.g. jackett-downloads]"
+          }
         },
-        "volume_add_support": true,
-	"website": "https://github.com/Jackett/Jackett",
-	"version": "1.1"
-    }
+        "environment": {
+          "PUID": {
+            "description": "UID to run jackett as. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID to run jackett as.",
+            "index": 1
+          },
+          "PGID": {
+            "description": "GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
+            "label": "GID to run jackett as.",
+            "index": 2
+          }
+        }
+      }
+    },
+    "description": "Jackett works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc).<p>Based on a <a href='https://hub.docker.com/r/linuxserver/jackett' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.",
+    "ui": {
+      "slug": ""
+    },
+    "volume_add_support": true,
+    "website": "https://github.com/Jackett/Jackett",
+    "version": "1.1"
+  }
 }

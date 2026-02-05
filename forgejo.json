@@ -1,6 +1,6 @@
 {
   "Forgejo": {
-    "description": "Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.<p><p>Based on the official docker image: <a href='https://codeberg.org/forgejo/-/packages/container/forgejo/12' target=_blank>https://codeberg.org/forgejo/-/packages/container/forgejo/12</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.<p><p>Based on the <a href='https://codeberg.org/forgejo/-/packages/container/forgejo/12' target=_blank>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "more_info": "",
     "ui": {
       "slug": ""
@@ -47,7 +47,7 @@
         "launch_order": 2,
         "volumes": {
           "/data": {
-            "description": "Choose a Share for forgejo data. E.g.: create a Share called forgejo-data for this purpose alone.",
+            "description": "Share for forgejo data. E.g.: create a Share called forgejo-data for this purpose alone.",
             "label": "Forgejo data [e.g. forgejo-data]"
           }
         },
@@ -69,12 +69,12 @@
         },
         "environment": {
           "USER_UID": {
-            "description": "Enter a valid UID to run Forgejo with. It must have full permissions to the share mapped in the previous step.",
+            "description": "UID to run Forgejo with. It must have full permissions to the share mapped in the previous step.",
             "label": "UID [e.g. 1000]",
             "index": 1
           },
           "USER_GID": {
-            "description": "Enter a valid GID to run Forgejo with. It must have full permissions to the share mapped in the previous step.",
+            "description": "GID to run Forgejo with. It must have full permissions to the share mapped in the previous step.",
             "label": "GID [e.g. 1000]",
             "index": 2
           }

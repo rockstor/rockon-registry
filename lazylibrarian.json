@@ -6,25 +6,25 @@
         "launch_order": 1,
         "ports": {
           "5299": {
-            "description": "Web server port. Suggested default: 5299",
+            "description": "Web server port.",
             "host_default": 5299,
-            "label": "Port for the web interface",
+            "label": "WebUI [e.g. 5299]",
             "protocol": "tcp",
             "ui": true
           }
         },
         "volumes": {
           "/config": {
-            "description": "Choose a share where the config file should be stored. Eg: create a share called lazylibrarian-config for this purpose alone. ",
-            "label": "Config storage"
+            "description": "Share for the config files.",
+            "label": "Config storage [e.g. lazylibrarian-config]"
           },
           "/downloads": {
-            "description": "Choose a share where the books will be downloaded to. ",
-            "label": "Download storage"
+            "description": "Share for downloaded books.",
+            "label": "Download storage [e.g. lazylibrarian-downloads]"
           },
           "/books": {
-            "description": "Choose a share where the book library is located. ",
-            "label": "Book library"
+            "description": "Share for the book library.",
+            "label": "Book library [e.g. lazylibrarian-library]"
           }
         },
         "environment": {
@@ -41,13 +41,13 @@
         }
       }
     },
-    "description": "lazylibrarian is an automated ebook downloader for NZB and Torrent.<p>Based on a custom docker image: <a href='https://hub.docker.com/r/linuxserver/lazylibrarian' target='_blank'>https://hub.docker.com/r/linuxserver/lazylibrarian</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "An automated ebook downloader for NZB and Torrent.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/lazylibrarian' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "slug": ""
     },
     "volume_add_support": true,
-    "more_info": "<h4>Setting up the application</h4><p>Go to the web interface to configure your lazylibrarian installation.</p>",
-    "website": "https://hub.docker.com/r/linuxserver/lazylibrarian/",
+    "more_info": "<h4>Setting up the application</h4><p>Go to the web interface to configure your LazyLibrarian installation.</p>",
+    "website": "https://lazylibrarian.gitlab.io/",
     "version": "38"
   }
 }
