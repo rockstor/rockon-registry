@@ -1,13 +1,36 @@
 {
   "Transmission - OpenVPN": {
-    "website": "https://haugene.github.io/docker-transmission-openvpn/",
-    "version": "1.2",
     "description": "OCI container running Transmission torrent client with Web-UI while connecting to OpenVPN.<p>Based on a <a href='https://hub.docker.com/r/haugene/transmission-openvpn' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.2",
+    "website": "https://haugene.github.io/docker-transmission-openvpn/",
     "more_info": "<p>See the container's documentation for a list of included VPN provider profiles. If your provider isn't included, set it up as a custom provider, by putting the relevant files in the <code>Custom profile</code> share.</p>",
     "containers": {
       "transmission-openvpn": {
         "image": "haugene/transmission-openvpn",
         "launch_order": 1,
+        "ports": {
+          "9091": {
+            "description": "Transmission web UI port (proxied)",
+            "label": "WebUI port [e.g. 9091]",
+            "host_default": 9091,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/config": {
+            "description": "Share for config files.",
+            "label": "Config Storage [e.g. transmission-config]"
+          },
+          "/data": {
+            "description": "Share for data files, including downloads.",
+            "label": "Data Storage [e.g. transmission-data]"
+          },
+          "/etc/openvpn/custom": {
+            "description": "Share for custom OpenVPN profile files. This can be an empty share if you use one of the included provider profiles.",
+            "label": "OpenVPN config [e.g. ovpn-config]"
+          }
+        },
         "opts": [
           [
             "--cap-add",
@@ -18,59 +41,36 @@
             "/dev/net/tun"
           ]
         ],
-        "volumes": {
-          "/data": {
-            "description": "Share for data files, including downloads.",
-            "label": "Data Storage [e.g. transmission-data]"
-          },
-          "/config": {
-            "description": "Share for config files.",
-            "label": "Config Storage [e.g. transmission-config]"
-          },
-          "/etc/openvpn/custom": {
-            "description": "Share for custom OpenVPN profile files. This can be an empty share if you use one of the included provider profiles.",
-            "label": "OpenVPN config [e.g. ovpn-config]"
-          }
-        },
-        "ports": {
-          "9091": {
-            "description": "Transmission web UI port (proxied)",
-            "host_default": 9091,
-            "label": "WebUI port [e.g. 9091]",
-            "protocol": "tcp",
-            "ui": true
-          }
-        },
         "environment": {
-          "OPENVPN_PROVIDER": {
-            "description": "OpenVPN Provider, in uppercase.",
-            "label": "OPENVPN_PROVIDER [e.g. PIA or CUSTOM]",
-            "index": 1
+          "LOCAL_NETWORK": {
+            "description": "IP range(s) (in CIDR notation) to consider 'local'; this range is added to the routing so that the Web-UI can be used. Multiple networks can be specified, comma-separated.",
+            "label": "LOCAL_NETWORK [e.g. 192.168.0.0/24]",
+            "index": 6
           },
           "OPENVPN_CONFIG": {
             "description": "Provider config name.",
             "label": "OPENVPN_CONFIG [e.g. 'default']",
             "index": 2
           },
-          "OPENVPN_USERNAME": {
-            "description": "Your VPN username.",
-            "label": "OPENVPN_USERNAME [e.g. your-vpn-user]",
-            "index": 3
+          "OPENVPN_OPTS": {
+            "description": "OpenVPN options.",
+            "label": "OPENVPN_OPTS [e.g. '--inactive 3600 --ping 10 --ping-exit 60']",
+            "index": 5
           },
           "OPENVPN_PASSWORD": {
             "description": "Your VPN password.",
             "label": "OPENVPN_PASSWORD [e.g. your-vpn-pass]",
             "index": 4
           },
-          "OPENVPN_OPTS": {
-            "description": "OpenVPN options.",
-            "label": "OPENVPN_OPTS [e.g. '--inactive 3600 --ping 10 --ping-exit 60']",
-            "index": 5
+          "OPENVPN_PROVIDER": {
+            "description": "OpenVPN Provider, in uppercase.",
+            "label": "OPENVPN_PROVIDER [e.g. PIA or CUSTOM]",
+            "index": 1
           },
-          "LOCAL_NETWORK": {
-            "description": "IP range(s) (in CIDR notation) to consider 'local'; this range is added to the routing so that the Web-UI can be used. Multiple networks can be specified, comma-separated.",
-            "label": "LOCAL_NETWORK [e.g. 192.168.0.0/24]",
-            "index": 6
+          "OPENVPN_USERNAME": {
+            "description": "Your VPN username.",
+            "label": "OPENVPN_USERNAME [e.g. your-vpn-user]",
+            "index": 3
           },
           "TRANSMISSION_WEB_UI": {
             "description": "Alternative Web-UI to use; other options are: combustion, kettu, transmission-web-control, flood-for-transmission, shift, and transmissionic.",

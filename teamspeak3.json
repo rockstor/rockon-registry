@@ -1,30 +1,31 @@
 {
   "Teamspeak3": {
+    "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalabilty up to thousands of simultaneous users.<p>Based on the <a href='https://hub.docker.com/_/teamspeak' target='_blank'>official OCI image</a>, available for amd64 architecture only.",
+    "version": "2.1",
+    "website": "https://teamspeak.com/en/",
+    "more_info": "<h4>You need to get the privileged key using system console to get serveradmin access</h4></p>1. Open system console (don't forget to start the service) or use SSH</p>2. docker logs Teamspeak3 | grep loginname</p><br><p>If it's the second or more start of this Rock-on, please use the following instead:</p> docker exec Teamspeak3 sh -c 'cat logs/*.log | grep token'</p>",
     "containers": {
       "Teamspeak3": {
         "image": "teamspeak",
         "launch_order": 1,
         "ports": {
-          "9987": {
-            "description": "Teamspeak3 Voice port (udp).",
-            "host_default": 9987,
-            "label": "Voice port [e.g. 9987]",
-            "protocol": "udp",
-            "ui": false
-          },
           "10011": {
             "description": "Teamspeak3 Listening port (tcp).",
-            "host_default": 10011,
             "label": "Listening port [e.g. 10011]",
-            "protocol": "tcp",
-            "ui": false
+            "host_default": 10011,
+            "protocol": "tcp"
           },
           "30033": {
             "description": "Teamspeak3 File-Transfer port (tcp).",
-            "host_default": 30033,
             "label": "File-Transfer port [e.g. 30033]",
-            "protocol": "tcp",
-            "ui": false
+            "host_default": 30033,
+            "protocol": "tcp"
+          },
+          "9987": {
+            "description": "Teamspeak3 Voice port (udp).",
+            "label": "Voice port [e.g. 9987]",
+            "host_default": 9987,
+            "protocol": "udp"
           }
         },
         "volumes": {
@@ -41,11 +42,6 @@
           }
         }
       }
-    },
-    "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalabilty up to thousands of simultaneous users.<p>Based on the <a href='https://hub.docker.com/_/teamspeak' target='_blank'>official OCI image</a>, available for amd64 architecture only.",
-    "more_info": "<h4>You need to get the privileged key using system console to get serveradmin access</h4></p>1. Open system console (don't forget to start the service) or use SSH</p>2. docker logs Teamspeak3 | grep loginname</p><br><p>If it's the second or more start of this Rock-on, please use the following instead:</p> docker exec Teamspeak3 sh -c 'cat logs/*.log | grep token'</p>",
-    "volume_add_support": false,
-    "website": "https://teamspeak.com/en/",
-    "version": "2.1"
+    }
   }
 }

@@ -4,11 +4,6 @@
     "version": "1.0",
     "website": "https://rustfs.com",
     "more_info": "This Rock-on uses the official RustFS OCI image to implement a single RustFS instance with a single object storage share, suitable for use on a private network. If your connections traverse a network you do not control, consider using a VPN for encryption.",
-    "ui": {
-      "https": false,
-      "slug": ""
-    },
-    "volume_add_support": false,
     "containers": {
       "rustfs": {
         "image": "rustfs/rustfs",
@@ -16,15 +11,14 @@
         "ports": {
           "9000": {
             "description": "RustFS API port.",
-            "host_default": 9000,
             "label": "API port [e.g. 9000]",
-            "protocol": "tcp",
-            "ui": false
+            "host_default": 9000,
+            "protocol": "tcp"
           },
           "9001": {
             "description": "Enable RustFS Web management port.",
-            "host_default": 9001,
             "label": "Web UI port [e.g. 9001]",
+            "host_default": 9001,
             "protocol": "tcp",
             "ui": true
           }
@@ -35,8 +29,6 @@
             "label": "RustFS Object Storage [e.g. rustfs-obj-store]"
           }
         },
-        "opts": [
-        ],
         "cmd_arguments": [
           [
             "--address=:9000",
@@ -48,13 +40,13 @@
             "description": "RustFS Access Key.",
             "label": "Access Key [8-128 alphanumerics]"
           },
-          "RUSTFS_SECRET_KEY": {
-            "description": "RustFS Secret Key.",
-            "label": "Secret Key [8-128 alphanumerics]"
-          },
           "RUSTFS_CONSOLE_ENABLE": {
             "description": "Enable RustFS Web management interface (true or false).",
             "label": "Enable Console [e.g. true]"
+          },
+          "RUSTFS_SECRET_KEY": {
+            "description": "RustFS Secret Key.",
+            "label": "Secret Key [8-128 alphanumerics]"
           }
         }
       }

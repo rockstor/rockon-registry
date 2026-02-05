@@ -9,13 +9,13 @@
         "launch_order": 1,
         "ports": {
           "51413": {
-            "label": "Sharing port [e.g. 51413]",
             "description": "Port used to share the file being downloaded. You may need to open it (protocol: tcp and udp) on your firewall & router.",
+            "label": "Sharing port [e.g. 51413]",
             "host_default": 51413
           },
           "9091": {
-            "label": "WebUI port [e.g. 9091]",
             "description": "Transmission WebUI port.",
+            "label": "WebUI port [e.g. 9091]",
             "host_default": 9091,
             "protocol": "tcp",
             "ui": true
@@ -36,21 +36,21 @@
           }
         },
         "environment": {
-          "PUID": {
-            "label": "UID",
-            "description": "Run Transmission as this user."
+          "PASS": {
+            "description": "Set Password for the Web-UI:",
+            "label": "Web-UI password"
           },
           "PGID": {
-            "label": "GID",
-            "description": "Run Transmission as this group."
+            "description": "Run Transmission as this group.",
+            "label": "GID"
+          },
+          "PUID": {
+            "description": "Run Transmission as this user.",
+            "label": "UID"
           },
           "USER": {
-            "label": "Web-UI username",
-            "description": "Set Username for the Web-UI."
-          },
-          "PASS": {
-            "label": "Web-UI password",
-            "description": "Set Password for the Web-UI:"
+            "description": "Set Username for the Web-UI.",
+            "label": "Web-UI username"
           }
         }
       }

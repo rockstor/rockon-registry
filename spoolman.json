@@ -3,12 +3,6 @@
     "description": "Spoolman is a self-hosted Web service and database to manage your 3D printer filament spools. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/spoolman.html' target='_blank'>Rock-on guide</a>.</p><p>Based on the <a href='https://hub.docker.com/r/donkieyo/spoolman' target='_blank'> official OCI image</a>, available for amd64 and arm64 architecture. </p>",
     "version": "1.0",
     "website": "https://github.com/Donkie/Spoolman",
-    "more_info": "",
-    "ui": {
-      "https": false,
-      "slug": ""
-    },
-    "volume_add_support": false,
     "containers": {
       "spoolman": {
         "image": "donkieyo/spoolman",

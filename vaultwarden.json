@@ -5,8 +5,7 @@
     "website": "https://github.com/dani-garcia/vaultwarden/wiki",
     "more_info": "<br><ul><li><code>/mnt2/[share-name]/certs.pem</code></li><li><code>/mnt2/[share-name]/key.pem</code></li></ul><br>Of note, <code>certs.pem</code> can be a chain. Need a cert? Try <a href=\"https://github.com/FiloSottile/mkcert\" target=\"_blank\">mkcert</a> or openssl.",
     "ui": {
-      "https": true,
-      "slug": ""
+      "https": true
     },
     "containers": {
       "vaultwarden": {

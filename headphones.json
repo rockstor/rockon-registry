@@ -1,5 +1,10 @@
 {
   "Headphones": {
+    "description": "Headphones is an automated music downloader for NZB and Torrent.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/headphones' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.1",
+    "website": "https://github.com/rembo10/headphones",
+    "more_info": "<h4>Setting up the application</h4><p>Go after installation to the Headphones web interface to configure your Headphones installation.</p>",
+    "volume_add_support": true,
     "containers": {
       "linuxserver-headphones": {
         "image": "linuxserver/headphones",
@@ -7,8 +12,8 @@
         "ports": {
           "8181": {
             "description": "Web server port.",
-            "host_default": 8181,
             "label": "WebUI [e.g. 8181]",
+            "host_default": 8181,
             "protocol": "tcp",
             "ui": true
           }
@@ -28,26 +33,18 @@
           }
         },
         "environment": {
-          "PUID": {
-            "description": "UID",
-            "label": "UID to run Headphones as",
-            "index": 1
-          },
           "PGID": {
             "description": "GID",
             "label": "GID to run Muximux as",
             "index": 2
+          },
+          "PUID": {
+            "description": "UID",
+            "label": "UID to run Headphones as",
+            "index": 1
           }
         }
       }
-    },
-    "description": "Headphones is an automated music downloader for NZB and Torrent.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/headphones' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "ui": {
-      "slug": ""
-    },
-    "volume_add_support": true,
-    "more_info": "<h4>Setting up the application</h4><p>Go after installation to the Headphones web interface to configure your Headphones installation.</p>",
-    "website": "https://github.com/rembo10/headphones",
-    "version": "1.1"
+    }
   }
 }

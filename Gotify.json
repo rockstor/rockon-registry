@@ -1,11 +1,9 @@
 {
   "Gotify": {
     "description": "A simple server for sending and receiving messages. <p>Based on the <a href='https://hub.docker.com/r/gotify/server' target='_blank'>official OCI image</a>, available for amd64 architecture only.</p>",
-    "website": "https://gotify.net/",
     "version": "1.1",
-    "ui": {
-      "slug": ""
-    },
+    "website": "https://gotify.net/",
+    "more_info": "<p>Default username is <code>admin</code> and password is <code>admin</code>. For usage instructions visit <a href=\"https://gotify.net/docs/first-login\" target=\"_blank\">the gotify Getting Started guide</a></p>",
     "containers": {
       "gotify": {
         "image": "gotify/server",
@@ -13,8 +11,8 @@
         "ports": {
           "80": {
             "description": "Gotify server port.",
-            "host_default": 8100,
             "label": "Server port [e.g. 8100]",
+            "host_default": 8100,
             "protocol": "tcp",
             "ui": true
           }
@@ -27,7 +25,6 @@
           }
         }
       }
-    },
-    "more_info": "<p>Default username is <code>admin</code> and password is <code>admin</code>. For usage instructions visit <a href=\"https://gotify.net/docs/first-login\" target=\"_blank\">the gotify Getting Started guide</a></p>"
+    }
   }
 }

@@ -1,37 +1,53 @@
 {
   "Zabbix-XXL": {
-    "container_links": {
-      "zabbix": [
-        {
-          "name": "zabbox.db",
-          "source_container": "zabbix-db"
-        }
-      ],
-      "zabbix-db": [
-        {
-          "name": "zabbix-db-storage",
-          "source_container": "zabbix-db-storage"
-        }
-      ]
-    },
+    "description": "Compiled Zabbix Server (and proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix Web UI based on CentOS 7, Supervisor, Nginx, PHP.<p>Based on the <a href='https://hub.docker.com/r/monitoringartist/zabbix-db-mariadb' target='_blank'>custom OCI image</a> and <a href='https://hub.docker.com/r/monitoringartist/zabbix-xxl' target='_blank'>zabbix-xxl</a> and <a href='https://hub.docker.com/_/busybox' target='_blank'>busybox</a>, available for amd64 architecture only.</p>",
+    "version": "1.1",
+    "website": "https://hub.docker.com/r/monitoringartist/zabbix-xxl/",
+    "more_info": "<h4>More Information</h4><p>please check the link for backups and troubleshooting if needed</p>",
+    "volume_add_support": true,
     "containers": {
-      "zabbix-db-storage": {
-        "image": "busybox",
-        "label": "latest",
-        "launch_order": 1,
+      "zabbix": {
+        "image": "monitoringartist/zabbix-xxl",
+        "launch_order": 3,
+        "ports": {
+          "10051": {
+            "description": "Zabbix Server API Port.",
+            "label": "API Port [e.g. 10051]",
+            "host_default": 10051,
+            "protocol": "tcp"
+          },
+          "80": {
+            "description": "Zabbix Server Web Interface.",
+            "label": "WebUI port [e.g. 8080]",
+            "host_default": 8080,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/etc/custom-config": {
+            "description": "Share for custom config files.",
+            "label": "Zabbix Custom Config [e.g. zabbix-config]"
+          }
+        },
         "opts": [
           [
-            "--restart",
-            "no"
+            "-e",
+            "ZS_DBHost=zabbix.db"
+          ],
+          [
+            "-e",
+            "ZS_DBUser=zabbix"
+          ],
+          [
+            "-e",
+            "ZS_DBPassword=766a2bb5d24bddae466c572bcabca3ee"
+          ],
+          [
+            "--link",
+            "zabbix-db:zabbix.db"
           ]
-        ],
-        "volumes": {
-          "/var/lib/mysql": {
-            "description": "Share for the Zabbix Database.",
-            "label": "Zabbix Database [e.g. zabbix-db]",
-            "min_size": 1073741824
-          }
-        }
+        ]
       },
       "zabbix-db": {
         "image": "monitoringartist/zabbix-db-mariadb",
@@ -56,64 +72,39 @@
             "--volumes-from",
             "zabbix-db-storage"
           ]
-        ],
-        "environment": {}
+        ]
       },
-      "zabbix": {
-        "image": "monitoringartist/zabbix-xxl",
-        "label": "latest",
-        "launch_order": 3,
+      "zabbix-db-storage": {
+        "image": "busybox",
+        "launch_order": 1,
         "volumes": {
-          "/etc/custom-config": {
-            "description": "Share for custom config files.",
-            "label": "Zabbix Custom Config [e.g. zabbix-config]"
-          }
-        },
-        "ports": {
-          "80": {
-            "description": "Zabbix Server Web Interface.",
-            "host_default": 8080,
-            "label": "WebUI port [e.g. 8080]",
-            "protocol": "tcp",
-            "ui": true
-          },
-          "10051": {
-            "description": "Zabbix Server API Port.",
-            "host_default": 10051,
-            "label": "API Port [e.g. 10051]",
-            "protocol": "tcp",
-            "ui": false
+          "/var/lib/mysql": {
+            "description": "Share for the Zabbix Database.",
+            "label": "Zabbix Database [e.g. zabbix-db]",
+            "min_size": 1073741824
           }
         },
         "opts": [
           [
-            "-e",
-            "ZS_DBHost=zabbix.db"
-          ],
-          [
-            "-e",
-            "ZS_DBUser=zabbix"
-          ],
-          [
-            "-e",
-            "ZS_DBPassword=766a2bb5d24bddae466c572bcabca3ee"
-          ],
-          [
-            "--link",
-            "zabbix-db:zabbix.db"
+            "--restart",
+            "no"
           ]
-        ],
-        "environment": {}
+        ]
       }
     },
-    "description": "Compiled Zabbix Server (and proxy, agent, java gateway, snmpd daemon) with almost all features (MySQL support, Java, SNMP, Curl, Ipmi, SSH, fping) and Zabbix Web UI based on CentOS 7, Supervisor, Nginx, PHP.<p>Based on the <a href='https://hub.docker.com/r/monitoringartist/zabbix-db-mariadb' target='_blank'>custom OCI image</a> and <a href='https://hub.docker.com/r/monitoringartist/zabbix-xxl' target='_blank'>zabbix-xxl</a> and <a href='https://hub.docker.com/_/busybox' target='_blank'>busybox</a>, available for amd64 architecture only.</p>",
-    "ui": {
-      "https": false,
-      "slug": ""
-    },
-    "volume_add_support": true,
-    "more_info": "<h4>More Information</h4><p>please check the link for backups and troubleshooting if needed</p>",
-    "website": "https://hub.docker.com/r/monitoringartist/zabbix-xxl/",
-    "version": "1.1"
+    "container_links": {
+      "zabbix": [
+        {
+          "name": "zabbox.db",
+          "source_container": "zabbix-db"
+        }
+      ],
+      "zabbix-db": [
+        {
+          "name": "zabbix-db-storage",
+          "source_container": "zabbix-db-storage"
+        }
+      ]
+    }
   }
 }
