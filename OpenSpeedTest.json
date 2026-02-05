@@ -1,5 +1,8 @@
 {
   "OpenSpeedTest": {
+    "description": "A free and open-source HTML5 network performance estimation tool. Written in vanilla Javascript using only built-in Web APIs. No third-party frameworks or libraries are required.<p>Based on the <a href='https://hub.docker.com/r/openspeedtest/latest' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.0",
+    "website": "https://openspeedtest.com/",
     "containers": {
       "speedtest": {
         "image": "openspeedtest/latest",
@@ -7,19 +10,12 @@
         "ports": {
           "3000": {
             "description": "SpeedTest http WebUI port.",
-            "host_default": 3000,
             "label": "http WebUI port [e.g. 3000]",
+            "host_default": 3000,
             "ui": true
           }
         }
       }
-    },
-    "description": "A free and open-source HTML5 network performance estimation tool. Written in vanilla Javascript using only built-in Web APIs. No third-party frameworks or libraries are required.<p>Based on the <a href='https://hub.docker.com/r/openspeedtest/latest' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "ui": {
-      "https": false,
-      "slug": ""
-    },
-    "website": "https://openspeedtest.com/",
-    "version": "1.0"
+    }
   }
 }

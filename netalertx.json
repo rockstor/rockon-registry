@@ -1,20 +1,19 @@
 {
   "NetAlertX": {
+    "description": "NetAlertX is an intrusion detection system (IDS). Easily visualize all your networks in one place, enhance security with real-time alerts, and enjoy seamless integration with your smart home.<p><b>Note:</b> uses the `net=host` option to enable local scanning.</p><p>Based on the <a href='https://hub.docker.com/r/jokobsk/netalertx' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.0",
+    "website": "https://netalertx.com/",
+    "more_info": "<h4>NetAlertX</h4><p><b>Admin page</b></p><p>To access admin interface go to URL: http://[SERVERIP]:[Web-Port].</p>",
+    "volume_add_support": true,
     "containers": {
       "netalertx": {
         "image": "jokobsk/netalertx",
-        "opts": [
-          [
-            "--net",
-            "host"
-          ]
-        ],
         "launch_order": 1,
         "ports": {
           "20211": {
             "description": "Web-UI Link Port. Recommended: 20211. Must match the subsequent NetAlertX later in the configuration.",
-            "host_default": 20211,
             "label": "Web-UI Port [e.g. 20211]",
+            "host_default": 20211,
             "ui": true
           }
         },
@@ -28,6 +27,12 @@
             "label": "NetAlertX DB [e.g. netalertx-db]"
           }
         },
+        "opts": [
+          [
+            "--net",
+            "host"
+          ]
+        ],
         "environment": {
           "PORT": {
             "description": "NetAlertX Port. Must match Web-UI Port, configured earlier. Ensures admin pages for NetAlertX is Web Browser accessible.",
@@ -36,11 +41,6 @@
           }
         }
       }
-    },
-    "description": "NetAlertX is an intrusion detection system (IDS). Easily visualize all your networks in one place, enhance security with real-time alerts, and enjoy seamless integration with your smart home.<p><b>Note:</b> uses the `net=host` option to enable local scanning.</p><p>Based on the <a href='https://hub.docker.com/r/jokobsk/netalertx' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "more_info": "<h4>NetAlertX</h4><p><b>Admin page</b></p><p>To access admin interface go to URL: http://[SERVERIP]:[Web-Port].</p>",
-    "volume_add_support": true,
-    "website": "https://netalertx.com/",
-    "version": "1.0"
+    }
   }
 }

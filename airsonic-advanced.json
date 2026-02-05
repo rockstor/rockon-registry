@@ -1,67 +1,64 @@
 {
-    "Airsonic Advanced": {
-        "containers": {
-            "airsonic-advanced": {
-                "image": "linuxserver/airsonic-advanced",
-                "launch_order": 1,
-                "ports": {
-                    "4040": {
-                        "description": "Webserver Port.",
-                        "host_default": 4040,
-                        "label": "Webserver port [e.g. 4040]",
-                        "protocol": "tcp",
-                        "ui": true
-                    }
-                },
-                "volumes": {
-                    "/config": {
-                        "description": "Share for Airsonic configuration.",
-                        "label": "Config Storage [e.g. airsonic-config]",
-                        "min_size": 1073741824
-                    },
-                    "/music": {
-                        "description": "Share containing your Media.",
-                        "label": "Music Storage [e.g. airsonic-media]",
-                        "min_size": 1073741824
-                    },
-                    "/playlists": {
-                        "description": "Share for Airsonic playlists.",
-                        "label": "Playlist Storage [e.g. airsonic-playlists]",
-                        "min_size": 1073741824
-                    },
-                    "/podcasts": {
-                        "description": "Share to store podcasts.",
-                        "label": "Podcast Storage [e.g. airsonic-podcasts]",
-                        "min_size": 1073741824
-                    }
-                },
-                "environment": {
-                    "MAX_MEM": {
-                        "description": "This environment variable is used to set the maximum Java heap size in megabytes.",
-                        "label": "MAX_MEM [e.g. 150]",
-                        "index": 1
-                    },
-                    "PUID": {
-                        "description": "Enter a valid UID of an existing user with permission to media shares to run Airsonic as..",
-                        "label": "UID [e.g. 1001]",
-                        "index": 2,
-                        "default": 1001
-                    },
-                    "PGID": {
-                        "description": "Enter a valid GID of an existing user with permission to media shares to run Airsonic as..",
-                        "label": "GID [e.g. 100]",
-                        "index": 3,
-                        "default": 100
-                    }
-                }
-            }
+  "Airsonic Advanced": {
+    "description": "Airsonic music server. <p>Based on a <a href='https://hub.docker.com/r/linuxserver/airsonic-advanced' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architectures.</p>",
+    "version": "2.1",
+    "website": "https://airsonic.github.io/",
+    "volume_add_support": true,
+    "containers": {
+      "airsonic-advanced": {
+        "image": "linuxserver/airsonic-advanced",
+        "launch_order": 1,
+        "ports": {
+          "4040": {
+            "description": "Webserver Port.",
+            "label": "Webserver port [e.g. 4040]",
+            "host_default": 4040,
+            "protocol": "tcp",
+            "ui": true
+          }
         },
-        "description": "Airsonic music server. <p>Based on a <a href='https://hub.docker.com/r/linuxserver/airsonic-advanced' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architectures.</p>",
-        "ui": {
-            "slug": ""
+        "volumes": {
+          "/config": {
+            "description": "Share for Airsonic configuration.",
+            "label": "Config Storage [e.g. airsonic-config]",
+            "min_size": 1073741824
+          },
+          "/music": {
+            "description": "Share containing your Media.",
+            "label": "Music Storage [e.g. airsonic-media]",
+            "min_size": 1073741824
+          },
+          "/playlists": {
+            "description": "Share for Airsonic playlists.",
+            "label": "Playlist Storage [e.g. airsonic-playlists]",
+            "min_size": 1073741824
+          },
+          "/podcasts": {
+            "description": "Share to store podcasts.",
+            "label": "Podcast Storage [e.g. airsonic-podcasts]",
+            "min_size": 1073741824
+          }
         },
-        "volume_add_support": true,
-        "website": "https://airsonic.github.io/",
-        "version": "2.1"
+        "environment": {
+          "MAX_MEM": {
+            "description": "This environment variable is used to set the maximum Java heap size in megabytes.",
+            "label": "MAX_MEM [e.g. 150]",
+            "index": 1
+          },
+          "PGID": {
+            "description": "Enter a valid GID of an existing user with permission to media shares to run Airsonic as..",
+            "label": "GID [e.g. 100]",
+            "index": 3,
+            "default": "100"
+          },
+          "PUID": {
+            "description": "Enter a valid UID of an existing user with permission to media shares to run Airsonic as..",
+            "label": "UID [e.g. 1001]",
+            "index": 2,
+            "default": "1001"
+          }
+        }
+      }
     }
-	}
+  }
+}

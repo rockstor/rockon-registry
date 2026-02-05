@@ -1,5 +1,9 @@
 {
   "PocketMine-MP": {
+    "description": "MineCraft: Pocket Edition Server.<p><strong>Administration: </strong>after install click 'i' icon for instructions.</p><p>Based on a <a href='https://hub.docker.com/r/magicalyak/pocketmine' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p>",
+    "version": "1.8.1.3",
+    "website": "https://pmmp.io/",
+    "more_info": "<h4>Administration</h4><p>Run `docker attach pocketmine`, type `help`. Ctrl-p, ctrl-q to exit.",
     "containers": {
       "pocketmine": {
         "image": "magicalyak/pocketmine",
@@ -7,9 +11,9 @@
         "ports": {
           "19132": {
             "description": "Port for incoming and discovery broadcasts. You may need to open it (tcp/udp) on your firewall.",
+            "label": "Listening port [must be 19132]",
             "host_default": 19132,
-            "protocol": "udp",
-            "label": "Listening port [must be 19132]"
+            "protocol": "udp"
           }
         },
         "volumes": {
@@ -26,11 +30,6 @@
           ]
         ]
       }
-    },
-    "description": "MineCraft: Pocket Edition Server.<p><strong>Administration: </strong>after install click 'i' icon for instructions.</p><p>Based on a <a href='https://hub.docker.com/r/magicalyak/pocketmine' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p>",
-    "volume_add_support": false,
-    "more_info": "<h4>Administration</h4><p>Run `docker attach pocketmine`, type `help`. Ctrl-p, ctrl-q to exit.",
-    "version": "1.8.1.3",
-    "website": "https://pmmp.io/"
+    }
   }
 }

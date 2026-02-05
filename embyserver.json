@@ -1,35 +1,27 @@
 {
   "Emby server": {
+    "description": "Emby media server.<p><b>Note:</b> uses `net=host` to enable core functionality.</p><p>Based on the <a href='https://hub.docker.com/r/emby/embyserver' target='_blank'>official OCI image</a>, available for amd64 architecture only.</p>",
+    "version": "1.1",
+    "website": "https://emby.media/",
+    "more_info": "<h4>Adding media to Emby.</h4><p>You can add Shares(with media) to Emby from the settings wizard of this Rock-on. Then, from Emby WebUI, you can update and re-index your library.</p><p> Visit https://hub.docker.com/r/emby/embyserver for description of each option.",
+    "volume_add_support": true,
     "containers": {
       "embyserver": {
         "image": "emby/embyserver",
         "launch_order": 1,
-        "opts": [
-          [
-            "--net=host",
-            ""
-          ]
-        ],
-        "devices": {
-          "VAAPI": {
-            "description": "<u>Optional:</u> path to hardware transcoding device (/dev/dri/renderD128). Leave blank if not needed.",
-            "label": "VAAPI device"
-          }
-        },
         "ports": {
           "8096": {
             "description": "Emby Server WebUI port.",
-            "host_default": 8096,
             "label": "WebUI port [e.g. 8096]",
+            "host_default": 8096,
             "protocol": "tcp",
             "ui": true
           },
           "8920": {
             "description": "Emby Server HTTPS port.",
-            "host_default": 8920,
             "label": "HTTPS port [e.g. 8920]",
-            "protocol": "tcp",
-            "ui": false
+            "host_default": 8920,
+            "protocol": "tcp"
           }
         },
         "volumes": {
@@ -42,36 +34,39 @@
             "label": "Media Storage [e.g. emby-media]"
           }
         },
+        "opts": [
+          [
+            "--net=host",
+            ""
+          ]
+        ],
         "environment": {
-          "UID": {
-            "description": "UID of an existing user with permission to media shares to run Emby as.",
-            "label": "UID",
-            "index": 1,
-            "default": 1000
-          },
           "GID": {
             "description": "GID of an existing user with permission to media shares to run Emby as.",
             "label": "GID",
             "index": 2,
-            "default": 100
+            "default": "100"
           },
           "GIDLIST": {
             "description": "Enter a comma-separated list of additional GIDs to run emby as",
             "label": "GIDList",
             "index": 3,
-            "default": 100
+            "default": "100"
+          },
+          "UID": {
+            "description": "UID of an existing user with permission to media shares to run Emby as.",
+            "label": "UID",
+            "index": 1,
+            "default": "1000"
+          }
+        },
+        "devices": {
+          "VAAPI": {
+            "description": "<u>Optional:</u> path to hardware transcoding device (/dev/dri/renderD128). Leave blank if not needed.",
+            "label": "VAAPI device"
           }
         }
       }
-    },
-    "description": "Emby media server.<p><b>Note:</b> uses `net=host` to enable core functionality.</p><p>Based on the <a href='https://hub.docker.com/r/emby/embyserver' target='_blank'>official OCI image</a>, available for amd64 architecture only.</p>",
-    "more_info": "<h4>Adding media to Emby.</h4><p>You can add Shares(with media) to Emby from the settings wizard of this Rock-on. Then, from Emby WebUI, you can update and re-index your library.</p><p> Visit https://hub.docker.com/r/emby/embyserver for description of each option.",
-    "ui": {
-      "slug": ""
-    },
-    "volume_add_support": true,
-    "website": "https://emby.media/",
-    "version": "1.1"
+    }
   }
 }
-

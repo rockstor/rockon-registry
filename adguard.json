@@ -1,15 +1,12 @@
 {
   "AdGuard Home": {
+    "description": "A network-wide ads and tracking blocker. Cover all your home devices without client-side software. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/adguard-home.html' target='_blank'>Rock-on guide</a>.</p><p><b>Note:</b> uses `net=host` for core functionality.</p><p>Based on the <a href='https://hub.docker.com/r/adguard/adguardhome' target='_blank'>official OCI Image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.0",
+    "website": "https://hub.docker.com/r/adguard/adguardhome",
     "containers": {
       "adguard": {
         "image": "adguard/adguardhome",
         "launch_order": 1,
-        "opts": [
-          [
-            "--net=adguard-home",
-            ""
-          ]
-        ],
         "volumes": {
           "/opt/adguardhome/conf": {
             "description": "Share for Adguard config.",
@@ -19,11 +16,14 @@
             "description": "Share for Adguard data.",
             "label": "Adguard data [e.g. adguard-config]"
           }
-        }
+        },
+        "opts": [
+          [
+            "--net=adguard-home",
+            ""
+          ]
+        ]
       }
-    },
-    "description": "A network-wide ads and tracking blocker. Cover all your home devices without client-side software. <a href='https://rockstor.com/docs/interface/docker-based-rock-ons/adguard-home.html' target='_blank'>Rock-on guide</a>.</p><p><b>Note:</b> uses `net=host` for core functionality.</p><p>Based on the <a href='https://hub.docker.com/r/adguard/adguardhome' target='_blank'>official OCI Image</a>, available for amd64 and arm64 architecture.</p>",
-    "website": "https://hub.docker.com/r/adguard/adguardhome",
-    "version": "1.0"
+    }
   }
 }

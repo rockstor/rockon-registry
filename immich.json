@@ -5,22 +5,6 @@
     "website": "https://immich.app",
     "icon": "https://immich.app/img/logomark-light.svg",
     "volume_add_support": true,
-    "container_links": {
-      "immich-server": [
-        {
-          "name": "ImmichToRedis",
-          "source_container": "immich-redis"
-        },
-        {
-          "name": "ImmichToDatabase",
-          "source_container": "immich-database"
-        },
-        {
-          "name": "ImmichToMachineLearning",
-          "source_container": "immich-machine-learning"
-        }
-      ]
-    },
     "containers": {
       "immich-database": {
         "image": "ghcr.io/immich-app/postgres",
@@ -59,17 +43,6 @@
           ]
         ]
       },
-      "immich-redis": {
-        "image": "valkey/valkey",
-        "tag": "8-bookworm",
-        "launch_order": 2,
-        "opts": [
-          [
-            "-e",
-            "REDIS_HOSTNAME=immich-redis"
-          ]
-        ]
-      },
       "immich-machine-learning": {
         "image": "ghcr.io/immich-app/immich-machine-learning",
         "tag": "release",
@@ -99,6 +72,17 @@
           ]
         ]
       },
+      "immich-redis": {
+        "image": "valkey/valkey",
+        "tag": "8-bookworm",
+        "launch_order": 2,
+        "opts": [
+          [
+            "-e",
+            "REDIS_HOSTNAME=immich-redis"
+          ]
+        ]
+      },
       "immich-server": {
         "image": "ghcr.io/immich-app/immich-server",
         "tag": "release",
@@ -110,16 +94,6 @@
             "host_default": 2283,
             "protocol": "tcp",
             "ui": true
-          }
-        },
-        "environment": {
-          "IMMICH_LOG_LEVEL": {
-            "description": "Log level (verbose, debug, log, warn, error).",
-            "label": "Log level [e.g. log]"
-          },
-          "IMMICH_IGNORE_MOUNT_CHECK_ERRORS": {
-            "description": "When Immich starts, it checks if it can read and write to the storage volume mounts. Set to true to disable checks.",
-            "label": "Ignore error checks [e.g. false]"
           }
         },
         "volumes": {
@@ -137,8 +111,34 @@
             "-e",
             "DB_HOSTNAME=immich-database"
           ]
-        ]
+        ],
+        "environment": {
+          "IMMICH_IGNORE_MOUNT_CHECK_ERRORS": {
+            "description": "When Immich starts, it checks if it can read and write to the storage volume mounts. Set to true to disable checks.",
+            "label": "Ignore error checks [e.g. false]"
+          },
+          "IMMICH_LOG_LEVEL": {
+            "description": "Log level (verbose, debug, log, warn, error).",
+            "label": "Log level [e.g. log]"
+          }
+        }
       }
+    },
+    "container_links": {
+      "immich-server": [
+        {
+          "name": "ImmichToRedis",
+          "source_container": "immich-redis"
+        },
+        {
+          "name": "ImmichToDatabase",
+          "source_container": "immich-database"
+        },
+        {
+          "name": "ImmichToMachineLearning",
+          "source_container": "immich-machine-learning"
+        }
+      ]
     }
   }
 }
