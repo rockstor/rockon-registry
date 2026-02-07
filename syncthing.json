@@ -4,7 +4,8 @@
     "version": "1.2",
     "website": "https://syncthing.net/",
     "ui": {
-      "https": true
+      "https": true,
+      "slug": ""
     },
     "volume_add_support": true,
     "containers": {

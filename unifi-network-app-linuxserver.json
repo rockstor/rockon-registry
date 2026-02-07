@@ -5,7 +5,8 @@
     "website": "https://ui.com/",
     "more_info": "To limit memory add MEM_LIMIT=1024M as a custom argument after install.",
     "ui": {
-      "https": true
+      "https": true,
+      "slug": ""
     },
     "containers": {
       "unifi-db": {
