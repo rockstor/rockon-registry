@@ -1,5 +1,10 @@
 {
   "MariaDB": {
+    "description": "MariaDB, relational database management system.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/mariadb' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.1",
+    "website": "https://mariadb.org/",
+    "more_info": "<h4>Important locations</h4><p>Configuration file:<code>/config/custom.cnf</code></p> <p>Databases: <code>/config/databases</code></p> <p>Logs: <code>/config/log/mysql/</code></p>",
+    "volume_add_support": true,
     "containers": {
       "linuxserver-mariadb": {
         "image": "linuxserver/mariadb",
@@ -7,10 +12,9 @@
         "ports": {
           "3306": {
             "description": "MariaDB port.",
-            "host_default": 3306,
             "label": "MariaDB port [e.g. 3306]",
-            "protocol": "tcp",
-            "ui": false
+            "host_default": 3306,
+            "protocol": "tcp"
           }
         },
         "volumes": {
@@ -20,31 +24,23 @@
           }
         },
         "environment": {
-          "PUID": {
-            "description": "UID to run MariaDB as. It must have full permissions to the share mapped in the previous step.",
-            "label": "UID to run MariaDB as.",
-            "index": 1
+          "MYSQL_ROOT_PASSWORD": {
+            "description": "Enter a root password for the MariaDB server.",
+            "label": "Root password [min 4 alphanumerics]",
+            "index": 3
           },
           "PGID": {
             "description": "GID to use along with the above UID. It (or the above UID) must have full permissions to the share mapped in the previous step.",
             "label": "GID to run MariaDB as.",
             "index": 2
           },
-          "MYSQL_ROOT_PASSWORD": {
-            "description": "Enter a root password for the MariaDB server.",
-            "label": "Root password [min 4 alphanumerics]",
-            "index": 3
+          "PUID": {
+            "description": "UID to run MariaDB as. It must have full permissions to the share mapped in the previous step.",
+            "label": "UID to run MariaDB as.",
+            "index": 1
           }
         }
       }
-    },
-    "description": "MariaDB, relational database management system.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/mariadb' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "ui": {
-      "slug": ""
-    },
-    "volume_add_support": true,
-    "more_info": "<h4>Important locations</h4><p>Configuration file:<code>/config/custom.cnf</code></p> <p>Databases: <code>/config/databases</code></p> <p>Logs: <code>/config/log/mysql/</code></p>",
-    "website": "https://mariadb.org/",
-    "version": "1.1"
+    }
   }
 }

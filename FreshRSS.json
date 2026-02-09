@@ -1,5 +1,8 @@
 {
   "FreshRSS": {
+    "description": "FreshRSS is a free, self-hostable aggregator for rss feeds. <p>Based on a <a href='https://hub.docker.com/r/linuxserver/freshrss' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.",
+    "version": "1.1",
+    "website": "https://freshrss.org/",
     "containers": {
       "linuxserver-freshrss": {
         "image": "linuxserver/freshrss",
@@ -7,8 +10,8 @@
         "ports": {
           "80": {
             "description": "FreshRSS Web UI Port",
-            "host_default": 3093,
             "label": "WebUI port [e.g. 3093]",
+            "host_default": 3093,
             "protocol": "tcp",
             "ui": true
           }
@@ -20,21 +23,18 @@
           }
         },
         "environment": {
-          "PUID": {
-            "description": "UID to run as. It must have full permissions to all Shares mapped in the previous step.",
-            "label": "UID",
-            "index": 1
-          },
           "PGID": {
             "description": "GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID",
             "index": 2
+          },
+          "PUID": {
+            "description": "UID to run as. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID",
+            "index": 1
           }
         }
       }
-    },
-    "description": "FreshRSS is a free, self-hostable aggregator for rss feeds. <p>Based on a <a href='https://hub.docker.com/r/linuxserver/freshrss' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.",
-    "website": "https://freshrss.org/",
-    "version": "1.1"
+    }
   }
 }

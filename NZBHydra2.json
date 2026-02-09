@@ -1,5 +1,8 @@
 {
   "NZBHydra2": {
+    "description": "NZBHydra2 is a meta search app for NZB indexers, the spiritual successor to NZBmegasearcH. <p>Based on a <a href='https://hub.docker.com/r/linuxserver/nzbhydra2' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.1",
+    "website": "https://github.com/theotherp/nzbhydra2",
     "containers": {
       "nzbhydra2": {
         "image": "linuxserver/nzbhydra2",
@@ -7,8 +10,8 @@
         "ports": {
           "5076": {
             "description": "NZBHydra2 WebUI port.",
-            "host_default": 5076,
             "label": "WebUI port [e.g. 5076]",
+            "host_default": 5076,
             "ui": true
           }
         },
@@ -23,25 +26,18 @@
           }
         },
         "environment": {
-          "PUID": {
-            "description": "Enter a valid UID to run nzbhydra as. It must have full permissions to all Shares mapped in the previous step.",
-            "label": "UID to run NZBHydra as.",
-            "index": 1
-          },
           "PGID": {
             "description": "Enter a valid GID to use along with the above UID. It (or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID to run NZBHydra as.",
             "index": 2
+          },
+          "PUID": {
+            "description": "Enter a valid UID to run nzbhydra as. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID to run NZBHydra as.",
+            "index": 1
           }
         }
       }
-    },
-    "description": "NZBHydra2 is a meta search app for NZB indexers, the spiritual successor to NZBmegasearcH. <p>Based on a <a href='https://hub.docker.com/r/linuxserver/nzbhydra2' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "ui": {
-      "slug": ""
-    },
-    "volume_add_support": false,
-    "website": "https://github.com/theotherp/nzbhydra2",
-    "version": "1.1"
+    }
   }
 }

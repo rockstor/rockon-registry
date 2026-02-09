@@ -1,5 +1,12 @@
 {
   "Ghost": {
+    "description": "A publishing platform for professional bloggers.<p>Based on the <a href='https://hub.docker.com/_/ghost' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.1",
+    "website": "https://ghost.org",
+    "more_info": "navigate to the ui link for the admin site or go to the base url for the public facing site",
+    "ui": {
+      "slug": "ghost"
+    },
     "containers": {
       "ghost": {
         "image": "ghost",
@@ -7,9 +14,9 @@
         "ports": {
           "2368": {
             "description": "Ghost WebUI Port.",
+            "label": "WebUI [e.g. 8081]",
             "host_default": 8081,
             "protocol": "tcp",
-            "label": "WebUI [e.g. 8081]",
             "ui": true
           }
         },
@@ -21,14 +28,6 @@
           }
         }
       }
-    },
-    "description": "A publishing platform for professional bloggers.<p>Based on the <a href='https://hub.docker.com/_/ghost' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "volume_add_support": false,
-    "more_info": "navigate to the ui link for the admin site or go to the base url for the public facing site",
-    "ui": {
-      "slug": "ghost"
-    },
-    "version": "1.1",
-    "website": "https://ghost.org"
+    }
   }
 }

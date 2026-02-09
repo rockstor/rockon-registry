@@ -1,9 +1,33 @@
 {
   "WireGuard Easy": {
+    "description": "The easiest way to run WireGuard VPN + a Web-based Admin UI.<p>Based on the <a href='https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.5",
+    "website": "https://wg-easy.github.io/wg-easy/latest/",
     "containers": {
       "WireGuardEasy": {
         "image": "codeberg.org/wg-easy/wg-easy",
         "launch_order": 1,
+        "ports": {
+          "51820": {
+            "description": "Wireguard port (udp).",
+            "label": "Connection Port [e.g. 51820]",
+            "host_default": 51820,
+            "protocol": "udp"
+          },
+          "51821": {
+            "description": "Wireguard WebUI port (tcp).",
+            "label": "WebUI Port [e.g. 51821]",
+            "host_default": 51821,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/etc/wireguard": {
+            "description": "Share for WireGuard configuration.",
+            "label": "Config Storage [e.g. wireguard-config]"
+          }
+        },
         "opts": [
           [
             "--cap-add",
@@ -22,43 +46,16 @@
             "net.ipv4.ip_forward=1"
           ]
         ],
-        "ports": {
-          "51820": {
-            "description": "Wireguard port (udp).",
-            "host_default": 51820,
-            "label": "Connection Port [e.g. 51820]",
-            "protocol": "udp",
-            "ui": false
-          },
-          "51821": {
-            "description": "Wireguard WebUI port (tcp).",
-            "host_default": 51821,
-            "label": "WebUI Port [e.g. 51821]",
-            "protocol": "tcp",
-            "ui": true
-          }
-        },
-        "volumes": {
-          "/etc/wireguard": {
-            "description": "Share for WireGuard configuration.",
-            "label": "Config Storage [e.g. wireguard-config]"
-          }
-        },
         "environment": {
-          "WG_HOST": {
-            "description": "Enter your WAN IP (externally visible IP), or a Dynamic DNS hostname.",
-            "label": "WAN IP [e.g. yourname.no-ip.info]",
-            "index": 1
-          },
           "PASSWORD_HASH": {
             "description": "Enter an administrator password hash for the WebUI login (see Rockon description for hash generation).",
             "label": "WebUI admin password hash",
             "index": 2
           },
-          "WG_DEVICE": {
-            "description": "Ethernet device the wireguard traffic should be forwarded through.",
-            "label": "Ethernet Device [e.g. eth0]",
-            "index": 3
+          "WG_ALLOWED_IPS": {
+            "description": "Allowed client IPs; comma separated e.g. (192.168.15.0/24, 10.0.1.0/24). For no restrictions enter (0.0.0.0/0, ::/0).",
+            "label": "Allowed IP ranges [e.g. 192.168.15.0/24]",
+            "index": 6
           },
           "WG_DEFAULT_ADDRESS": {
             "description": "Clients' IP address range, using x for the last octet.",
@@ -70,10 +67,15 @@
             "label": "Default DNS Server [e.g. 1.1.1.1]",
             "index": 5
           },
-          "WG_ALLOWED_IPS": {
-            "description": "Allowed client IPs; comma separated e.g. (192.168.15.0/24, 10.0.1.0/24). For no restrictions enter (0.0.0.0/0, ::/0).",
-            "label": "Allowed IP ranges [e.g. 192.168.15.0/24]",
-            "index": 6
+          "WG_DEVICE": {
+            "description": "Ethernet device the wireguard traffic should be forwarded through.",
+            "label": "Ethernet Device [e.g. eth0]",
+            "index": 3
+          },
+          "WG_HOST": {
+            "description": "Enter your WAN IP (externally visible IP), or a Dynamic DNS hostname.",
+            "label": "WAN IP [e.g. yourname.no-ip.info]",
+            "index": 1
           },
           "WG_PERSISTENT_KEEPALIVE": {
             "description": "Seconds to keep the connection open. If 0 the PersistenKeepalive functionality is enabled.",
@@ -82,13 +84,6 @@
           }
         }
       }
-    },
-    "description": "The easiest way to run WireGuard VPN + a Web-based Admin UI.<p>Based on the <a href='https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "ui": {
-      "slug": ""
-    },
-    "volume_add_support": false,
-    "website": "https://wg-easy.github.io/wg-easy/latest/",
-    "version": "1.5"
+    }
   }
 }

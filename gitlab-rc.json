@@ -1,36 +1,36 @@
 {
   "GitLab CE": {
+    "description": "Git repository hosting and collaboration.<p>Based on the <a href='https://hub.docker.com/r/gitlab/gitlab-ce' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.2",
+    "website": "https://about.gitlab.com/",
+    "icon": "https://about.gitlab.com/images/wordmark.png",
+    "more_info": "<p>Default username for your GitLab UI is<code>root</code>and password is<code>5iveL!fe</code></p><p>HTTPS is not enabled by defautt, please see: <a href='https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/nginx.md#enable-https'> https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/nginx.md#enable-https</a></p>",
     "containers": {
       "gitlab-ce": {
         "image": "gitlab/gitlab-ce",
         "launch_order": 1,
         "ports": {
-          "80": {
-            "host_default": 8080,
-            "protocol": "tcp",
-            "label": "HTTP WebUI port [e.g. 8080]",
-            "description": "GitLab WebUI port.",
-            "ui": true
+          "22": {
+            "description": "GitLab SSH port.",
+            "label": "SSH Gitlab port [e.g. 2222]",
+            "host_default": 2222,
+            "protocol": "tcp"
           },
           "443": {
-            "host_default": 8443,
-            "protocol": "tcp",
+            "description": "GitLab WebUI port. Not enabled in OCI image by default",
             "label": "HTTPS WebUI port [e.g. 8443]",
-            "description": "GitLab WebUI port. Not enabled in OCI image by default"
+            "host_default": 8443,
+            "protocol": "tcp"
           },
-          "22": {
-            "host_default": 2222,
+          "80": {
+            "description": "GitLab WebUI port.",
+            "label": "HTTP WebUI port [e.g. 8080]",
+            "host_default": 8080,
             "protocol": "tcp",
-            "label": "SSH Gitlab port [e.g. 2222]",
-            "description": "GitLab SSH port."
+            "ui": true
           }
         },
         "volumes": {
-          "/var/opt/gitlab": {
-            "description": "Share for GitLab repositories.",
-            "label": "Repository Storage [e.g. gitlab-repos]",
-            "min_size": 1048576
-          },
           "/etc/gitlab": {
             "description": "Share for GitLab configuration.",
             "label": "Config Storage [e.g. gitlab-config]"
@@ -39,14 +39,14 @@
             "description": "Share for GitLab log files.",
             "label": "Config logs [e.g. gitlab-logs]",
             "min_size": 1048576
+          },
+          "/var/opt/gitlab": {
+            "description": "Share for GitLab repositories.",
+            "label": "Repository Storage [e.g. gitlab-repos]",
+            "min_size": 1048576
           }
         }
       }
-    },
-    "description": "Git repository hosting and collaboration.<p>Based on the <a href='https://hub.docker.com/r/gitlab/gitlab-ce' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "website": "https://about.gitlab.com/",
-    "icon": "https://about.gitlab.com/images/wordmark.png",
-    "more_info": "<p>Default username for your GitLab UI is<code>root</code>and password is<code>5iveL!fe</code></p><p>HTTPS is not enabled by defautt, please see: <a href='https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/nginx.md#enable-https'> https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/nginx.md#enable-https</a></p>",
-    "version": "1.2"
+    }
   }
 }

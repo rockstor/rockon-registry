@@ -1,5 +1,8 @@
 {
   "Node-RED": {
+    "description": "Low-code programming for event-driven applications. Node-RED is a programming tool for wiring together hardware devices, APIs, and online services in new and interesting ways. <p>Based on the <a href='https://hub.docker.com/r/nodered/node-red' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.",
+    "version": "1.1",
+    "website": "https://nodered.org",
     "containers": {
       "nodered": {
         "image": "nodered/node-red",
@@ -8,8 +11,8 @@
         "ports": {
           "1880": {
             "description": "Node-RED WebUI port.",
-            "host_default": 1880,
             "label": "WebUI port [e.g. 1880]",
+            "host_default": 1880,
             "ui": true
           }
         },
@@ -21,12 +24,6 @@
           }
         }
       }
-    },
-    "version": "1.1",
-    "description": "Low-code programming for event-driven applications. Node-RED is a programming tool for wiring together hardware devices, APIs, and online services in new and interesting ways. <p>Based on the <a href='https://hub.docker.com/r/nodered/node-red' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.",
-    "ui": {
-      "slug": ""
-    },
-    "website": "https://nodered.org"
+    }
   }
 }

@@ -1,21 +1,21 @@
 {
   "SmokePing": {
-    "website": "https://oss.oetiker.ch/smokeping/",
-    "version": "1.1",
     "description": "SmokePing is a network latency history monitor.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/smokeping' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.1",
+    "website": "https://oss.oetiker.ch/smokeping/",
     "ui": {
       "slug": "smokeping/smokeping.cgi"
     },
+    "volume_add_support": true,
     "containers": {
       "SmokePing": {
         "image": "linuxserver/smokeping",
         "launch_order": 1,
-        "volume_add_support": true,
         "ports": {
           "80": {
             "description": "SmokePing WebUI port.",
-            "host_default": 80,
             "label": "WebUI port [e.g. 7878]",
+            "host_default": 80,
             "protocol": "tcp",
             "ui": true
           }
@@ -31,19 +31,18 @@
           }
         },
         "environment": {
-          "PUID": {
-            "description": "Enter a valid UID to run SmokePing as. It must have full permissions to all Shares mapped in the previous step.",
-            "label": "UID to run SmokePing as.",
-            "index": 1
-          },
           "PGID": {
             "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID to run SmokePing as.",
             "index": 2
+          },
+          "PUID": {
+            "description": "Enter a valid UID to run SmokePing as. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID to run SmokePing as.",
+            "index": 1
           }
         }
       }
-    },
-    "volume_add_support": true
+    }
   }
 }

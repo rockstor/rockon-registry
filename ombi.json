@@ -1,5 +1,9 @@
 {
   "Ombi": {
+    "description": "Host your own Plex Request and user management system.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/ombi' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.1",
+    "website": "https://ombi.io/",
+    "volume_add_support": true,
     "containers": {
       "ombi": {
         "image": "linuxserver/ombi",
@@ -7,8 +11,8 @@
         "ports": {
           "3579": {
             "description": "Ombi WebUI port.",
-            "host_default": 3579,
             "label": "WebUI port [e.g. 3579]",
+            "host_default": 3579,
             "protocol": "tcp",
             "ui": true
           }
@@ -20,25 +24,18 @@
           }
         },
         "environment": {
-          "PUID": {
-            "description": "Enter a valid UID to run Ombi as. It must have full permissions to all Shares mapped in the previous step.",
-            "label": "UID to run Ombi as.",
-            "index": 1
-          },
           "PGID": {
             "description": "Enter a valid GID to use along with the above UID. It(or the above UID) must have full permissions to all Shares mapped in the previous step.",
             "label": "GID to run Ombi as.",
             "index": 2
+          },
+          "PUID": {
+            "description": "Enter a valid UID to run Ombi as. It must have full permissions to all Shares mapped in the previous step.",
+            "label": "UID to run Ombi as.",
+            "index": 1
           }
         }
       }
-    },
-    "description": "Host your own Plex Request and user management system.<p>Based on a <a href='https://hub.docker.com/r/linuxserver/ombi' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "ui": {
-      "slug": ""
-    },
-    "volume_add_support": true,
-    "website": "https://ombi.io/",
-    "version": "1.1"
+    }
   }
 }

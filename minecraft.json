@@ -1,5 +1,9 @@
 {
   "Minecraft": {
+    "description": "Minecraft server with selectable version.<p>Based on a <a href='https://hub.docker.com/r/itzg/minecraft-server' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.1",
+    "website": "https://hub.docker.com/r/itzg/minecraft-server/",
+    "volume_add_support": true,
     "containers": {
       "mc": {
         "image": "itzg/minecraft-server",
@@ -7,9 +11,15 @@
         "ports": {
           "25565": {
             "description": "Minecraft standard server port",
-            "host_default": 25565,
             "label": "minecraft [e.g. 25565]",
+            "host_default": 25565,
             "protocol": "tcp"
+          }
+        },
+        "volumes": {
+          "/data": {
+            "description": "Share for the Minecraft server data; including configuration, mods, etc.",
+            "label": "Data storage [e.g. minecraft-data]"
           }
         },
         "environment": {
@@ -18,22 +28,8 @@
             "label": "EULA Accept [e.g. TRUE]",
             "index": 1
           }
-        },
-        "volumes": {
-          "/data": {
-            "description": "Share for the Minecraft server data; including configuration, mods, etc.",
-            "label": "Data storage [e.g. minecraft-data]"
-          }
         }
       }
-    },
-    "description": "Minecraft server with selectable version.<p>Based on a <a href='https://hub.docker.com/r/itzg/minecraft-server' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "ui": {
-      "https": false,
-      "slug": ""
-    },
-    "volume_add_support": true,
-    "website": "https://hub.docker.com/r/itzg/minecraft-server/",
-    "version": "1.1"
+    }
   }
 }

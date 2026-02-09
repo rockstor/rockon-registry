@@ -1,5 +1,8 @@
 {
   "Luanti": {
+    "description": "Formerly known as Minetest. An open source voxel game engine clone of the popular Minecraft. <a href='https://docs.luanti.org/' target='_blank'>Luanti Docs</a>.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/luanti' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.0",
+    "website": "https://www.luanti.org/",
     "containers": {
       "luanti": {
         "image": "linuxserver/luanti",
@@ -7,10 +10,9 @@
         "ports": {
           "30000": {
             "description": "Luanti port: udp.",
-            "host_default": 30000,
             "label": "Luanti port [e.g. 30000]",
-            "protocol": "udp",
-            "ui": false
+            "host_default": 30000,
+            "protocol": "udp"
           }
         },
         "volumes": {
@@ -20,25 +22,18 @@
           }
         },
         "environment": {
-          "PUID": {
-            "description": "Valid UID to run Luanti as. Must have full permissions to the Share mapped in the previous step.",
-            "label": "UID",
-            "index": 1
-          },
           "PGID": {
             "description": "Valid GID to use along with the above UID. It (or the above UID) must have full permissions to the Share mapped in the previous step.",
             "label": "GID",
             "index": 2
+          },
+          "PUID": {
+            "description": "Valid UID to run Luanti as. Must have full permissions to the Share mapped in the previous step.",
+            "label": "UID",
+            "index": 1
           }
         }
       }
-    },
-    "description": "Formerly known as Minetest. An open source voxel game engine clone of the popular Minecraft. <a href='https://docs.luanti.org/' target='_blank'>Luanti Docs</a>.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/luanti' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "ui": {
-      "slug": ""
-    },
-    "volume_add_support": false,
-    "website": "https://www.luanti.org/",
-    "version": "1.0"
+    }
   }
 }

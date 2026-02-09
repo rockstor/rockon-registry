@@ -1,27 +1,24 @@
 {
   "UniFi Network Application by linuxserver.io": {
     "description": "Ubiquiti's UniFi Network Application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.</p><p><b>Note:</b> requires a Ubiquiti account: can be created during initial WebUI setup.</p><p><b>Before install:</b> create a Share named 'unifi-db' containing 'init-mongo.sh' with the content outlined <a href='https://github.com/linuxserver/docker-unifi-network-application?tab=readme-ov-file#setting-up-your-external-database' target='_blank'>here</a>.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/unifi-controller' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "more_info": "To limit memory add MEM_LIMIT=1024M as a custom argument after install.",
-    "website": "https://ui.com/",
     "version": "1.0",
+    "website": "https://ui.com/",
+    "more_info": "To limit memory add MEM_LIMIT=1024M as a custom argument after install.",
     "ui": {
       "https": true,
       "slug": ""
-    },
-    "volume_add_support": false,
-    "container_links": {
-      "unifi-network-application": [
-        {
-          "name": "UnifiToDB",
-          "source_container": "unifi-db"
-        }
-      ]
     },
     "containers": {
       "unifi-db": {
         "image": "mongo",
         "tag": "4.4.29",
         "launch_order": 1,
+        "volumes": {
+          "/data": {
+            "description": "Share for the database files and initial startup script.",
+            "label": "DB storage [must be unifi-db]"
+          }
+        },
         "opts": [
           [
             "-e",
@@ -44,12 +41,6 @@
             "/mnt2/unifi-db/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro"
           ]
         ],
-        "volumes": {
-          "/data": {
-            "description": "Share for the database files and initial startup script.",
-            "label": "DB storage [must be unifi-db]"
-          }
-        },
         "environment": {
           "MONGO_INITDB_ROOT_PASSWORD": {
             "description": "Enter a password for the MongoDB root user.",
@@ -64,6 +55,69 @@
       "unifi-network-application": {
         "image": "lscr.io/linuxserver/unifi-network-application",
         "launch_order": 2,
+        "ports": {
+          "10001": {
+            "description": "Access Point discovery port (UDP).",
+            "label": "AP Discovery [e.g. 10001]",
+            "host_default": 10001,
+            "protocol": "udp"
+          },
+          "1900": {
+            "description": "Port for option to make controller discoverable on a L2 network (udp).",
+            "label": "L2 controller discovery [e.g. 1900]",
+            "host_default": 1900,
+            "protocol": "udp"
+          },
+          "3478": {
+            "description": "Session Traversal Utilities for NAT port, udp.",
+            "label": "STUN [e.g. 3478]",
+            "host_default": 3478,
+            "protocol": "udp"
+          },
+          "5514": {
+            "description": "Remote syslog port.",
+            "label": "Remote syslog [e.g. 5514]",
+            "host_default": 5514,
+            "protocol": "udp"
+          },
+          "6789": {
+            "description": "Mobile throughput test port.",
+            "label": "Mobile speed test [e.g. 6789]",
+            "host_default": 6789,
+            "protocol": "tcp"
+          },
+          "8080": {
+            "description": "Port required for device communication.",
+            "label": "Device communication [e.g. 8080]",
+            "host_default": 8080,
+            "protocol": "tcp"
+          },
+          "8443": {
+            "description": "WebUI and API port.",
+            "label": "WebUI (https) [e.g. 8443]",
+            "host_default": 8443,
+            "protocol": "tcp",
+            "ui": true
+          },
+          "8843": {
+            "description": "Redirect port to https guest portal.",
+            "label": "Guest portal (https) [e.g. 8843]",
+            "host_default": 8843,
+            "protocol": "tcp"
+          },
+          "8880": {
+            "description": "Redirect port to http guest portal.",
+            "label": "Guest portal (http) [e.g. 8880]",
+            "host_default": 8880,
+            "protocol": "tcp"
+          }
+        },
+        "volumes": {
+          "/config": {
+            "description": "Share for Unifi Controller configuration.",
+            "label": "Config Storage [e.g. unifi-config]"
+          }
+        },
         "opts": [
           [
             "-e",
@@ -86,92 +140,29 @@
             "MONGO_AUTHSOURCE=admin"
           ]
         ],
-        "ports": {
-          "1900": {
-            "description": "Port for option to make controller discoverable on a L2 network (udp).",
-            "host_default": 1900,
-            "label": "L2 controller discovery [e.g. 1900]",
-            "protocol": "udp",
-            "ui": false
-          },
-          "3478": {
-            "description": "Session Traversal Utilities for NAT port, udp.",
-            "host_default": 3478,
-            "label": "STUN [e.g. 3478]",
-            "protocol": "udp",
-            "ui": false
-          },
-          "5514": {
-            "description": "Remote syslog port.",
-            "host_default": 5514,
-            "label": "Remote syslog [e.g. 5514]",
-            "protocol": "udp",
-            "ui": false
-          },
-          "6789": {
-            "description": "Mobile throughput test port.",
-            "host_default": 6789,
-            "label": "Mobile speed test [e.g. 6789]",
-            "protocol": "tcp",
-            "ui": false
-          },
-          "8080": {
-            "description": "Port required for device communication.",
-            "host_default": 8080,
-            "label": "Device communication [e.g. 8080]",
-            "protocol": "tcp",
-            "ui": false
-          },
-          "8443": {
-            "description": "WebUI and API port.",
-            "host_default": 8443,
-            "label": "WebUI (https) [e.g. 8443]",
-            "protocol": "tcp",
-            "ui": true
-          },
-          "8843": {
-            "description": "Redirect port to https guest portal.",
-            "host_default": 8843,
-            "label": "Guest portal (https) [e.g. 8843]",
-            "protocol": "tcp",
-            "ui": false
-          },
-          "8880": {
-            "description": "Redirect port to http guest portal.",
-            "host_default": 8880,
-            "label": "Guest portal (http) [e.g. 8880]",
-            "protocol": "tcp",
-            "ui": false
-          },
-          "10001": {
-            "description": "Access Point discovery port (UDP).",
-            "host_default": 10001,
-            "label": "AP Discovery [e.g. 10001]",
-            "protocol": "udp",
-            "ui": false
-          }
-        },
-        "volumes": {
-          "/config": {
-            "description": "Share for Unifi Controller configuration.",
-            "label": "Config Storage [e.g. unifi-config]"
-          }
-        },
         "environment": {
-          "PUID": {
-            "description": " UID to run Unifi. It must have full permissions to the share mapped in the previous step.",
-            "label": "UID"
+          "MONGO_PASS": {
+            "description": "Enter the MongoDB unifi user password.",
+            "label": "DB Password [same as DB unifi user]"
           },
           "PGID": {
             "description": "GID to use along with the UID. It must have full permissions to the unifi share mapped in the previous step.",
             "label": "GID"
           },
-          "MONGO_PASS": {
-            "description": "Enter the MongoDB unifi user password.",
-            "label": "DB Password [same as DB unifi user]"
+          "PUID": {
+            "description": " UID to run Unifi. It must have full permissions to the share mapped in the previous step.",
+            "label": "UID"
           }
         }
       }
+    },
+    "container_links": {
+      "unifi-network-application": [
+        {
+          "name": "UnifiToDB",
+          "source_container": "unifi-db"
+        }
+      ]
     }
   }
 }

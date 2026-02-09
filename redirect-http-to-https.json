@@ -1,5 +1,8 @@
 {
   "HTTP to HTTPS redirect": {
+    "description": "Access the Rockstor Admin Web UI without having to remember to type https://. <p>Based on a <a href='https://hub.docker.com/r/geldim/https-redirect' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p>",
+    "version": "1.1",
+    "website": "https://github.com/geldim/docker-https-redirect/",
     "containers": {
       "redirect-http-to-https": {
         "image": "geldim/https-redirect",
@@ -7,19 +10,12 @@
         "ports": {
           "80": {
             "description": "Set this to port 80 to accept HTTP connections. It will automatically redirect to HTTPS, where the admin UI is hosted (port 443)",
-            "host_default": 80,
             "label": "HTTP port [must be 80]",
+            "host_default": 80,
             "protocol": "tcp"
           }
         }
       }
-    },
-    "description": "Access the Rockstor Admin Web UI without having to remember to type https://. <p>Based on a <a href='https://hub.docker.com/r/geldim/https-redirect' target='_blank'>custom OCI image</a>, available for amd64 architecture only.</p>",
-    "ui": {
-      "https": false,
-      "slug": ""
-    },
-    "website": "https://github.com/geldim/docker-https-redirect/",
-    "version": "1.1"
+    }
   }
 }
