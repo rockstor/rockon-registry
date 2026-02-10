@@ -44,20 +44,17 @@
           "GID": {
             "description": "GID of an existing user with permission to media shares to run Emby as.",
             "label": "GID",
-            "index": 2,
-            "default": "100"
+            "index": 2
           },
           "GIDLIST": {
             "description": "Enter a comma-separated list of additional GIDs to run emby as",
             "label": "GIDList",
-            "index": 3,
-            "default": "100"
+            "index": 3
           },
           "UID": {
             "description": "UID of an existing user with permission to media shares to run Emby as.",
             "label": "UID",
-            "index": 1,
-            "default": "1000"
+            "index": 1
           }
         },
         "devices": {

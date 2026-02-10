@@ -50,14 +50,12 @@
           "PGID": {
             "description": "GID of an existing user with permission to media shares to run Jellyfin as.",
             "label": "GID",
-            "index": 2,
-            "default": "1000"
+            "index": 2
           },
           "PUID": {
             "description": "UID of an existing user with permission to media shares to run Jellyfin as.",
             "label": "UID",
-            "index": 1,
-            "default": "1000"
+            "index": 1
           }
         },
         "devices": {

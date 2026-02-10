@@ -22,8 +22,7 @@
           "WSDDN_WORKGROUP": {
             "description": "Workgroup name. Must be the same name used during the setup of the Samba service on the Rockstor appliance.",
             "label": "Workgroup [e.g. WORKGROUP]",
-            "index": 2,
-            "default": "WORKGROUP"
+            "index": 2
           }
         }
       }
