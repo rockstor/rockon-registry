@@ -5,7 +5,7 @@
     "website": "https://wg-easy.github.io/wg-easy/latest/",
     "containers": {
       "WireGuardEasy": {
-        "image": "codeberg.org/wg-easy/wg-easy",
+        "image": "ghcr.io/wg-easy/wg-easy",
         "launch_order": 1,
         "ports": {
           "51820": {
