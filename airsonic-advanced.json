@@ -48,14 +48,12 @@
           "PGID": {
             "description": "Enter a valid GID of an existing user with permission to media shares to run Airsonic as..",
             "label": "GID [e.g. 100]",
-            "index": 3,
-            "default": "100"
+            "index": 3
           },
           "PUID": {
             "description": "Enter a valid UID of an existing user with permission to media shares to run Airsonic as..",
             "label": "UID [e.g. 1001]",
-            "index": 2,
-            "default": "1001"
+            "index": 2
           }
         }
       }

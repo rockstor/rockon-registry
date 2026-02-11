@@ -49,20 +49,17 @@
           "LC_ALL": {
             "description": "Which locale to start Calibre in, using utf8 (e.g., zh_CN.UTF-8). If in US English, enter 'en_US.UTF-8'. The language can still be adjusted within Calibre's startup wizard.",
             "label": "Locale installs [e.g. en_US.UTF-8]",
-            "index": 3,
-            "default": "en_US.UTF-8"
+            "index": 3
           },
           "PGID": {
             "description": "Enter a valid GID of an existing group with permission to the config share assigned above.",
             "label": "GID",
-            "index": 2,
-            "default": "1000"
+            "index": 2
           },
           "PUID": {
             "description": "Enter a valid UID of an existing user with permission to the config share assigned above.",
             "label": "UID",
-            "index": 1,
-            "default": "1000"
+            "index": 1
           }
         },
         "devices": {

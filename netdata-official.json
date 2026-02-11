@@ -51,8 +51,7 @@
           "PGID": {
             "description": "GID of the 'docker' group. See System - Identity - Groups in Rockstor's UI to find it.",
             "label": "PGID",
-            "index": 1,
-            "default": "472"
+            "index": 1
           }
         }
       }
