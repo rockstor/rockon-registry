@@ -12,46 +12,46 @@
         "launch_order": 1,
         "ports": {
           "443": {
-            "description": "A critical port used for multiple secure web-based services, including web administration, JMAP, REST API, OAuth, TLS certificate provisioning (ACME challenges), autoconfig, and MTA-STS. This port must remain open in nearly all deployments. Suggested default: 10443",
+            "description": "A critical port used for multiple secure web-based services, including web administration, JMAP, REST API, OAuth, TLS certificate provisioning (ACME challenges), autoconfig, and MTA-STS. This port must remain open in nearly all deployments.",
             "host_default": 10443,
-            "label": "HTTPS",
+            "label": "HTTPS [e.g. 10443]",
             "ui": false
           },
           "8080": {
-            "description": "Administration login (for setup, settings changes, etc.). It is strongly recommended to disable this port after setup is complete to prevent unauthenticated, unencrypted access. Suggested default: 18080",
+            "description": "Administration login (for setup, settings changes, etc.). It is strongly recommended to disable this port after setup is complete to prevent unauthenticated, unencrypted access.",
             "host_default": 18080,
-            "label": "HTTP",
+            "label": "HTTP [e.g. 18080]",
             "ui": true
           },
           "25": {
-            "description": "Used for receiving email from other mail servers. This port must remain open for your domain to receive external email traffic reliably (must not be 25 due to local conflicts). Suggested default: 10025",
+            "description": "Used for receiving email from other mail servers. This port must remain open for your domain to receive external email traffic reliably (must not be 25 due to local conflicts).",
             "host_default": 10025,
-            "label": "SMTP"
+            "label": "SMTP [e.g. 10025]"
           },
           "465": {
-            "description": "Handles email submission with implicit TLS encryption. Recommended for securely sending outgoing mail from user clients. It is best to keep this port open and use it in preference to port (10)587. Suggested default: 10465",
+            "description": "Handles email submission with implicit TLS encryption. Recommended for securely sending outgoing mail from user clients. It is best to keep this port open and use it in preference to port (10)587.",
             "host_default": 10465,
-            "label": "SMTPS"
+            "label": "SMTPS [e.g. 10465]"
           },
           "993": {
-            "description": "IMAP over implicit TLS. Required for secure email access via IMAP clients. Keep this port open to allow encrypted mail retrieval. Suggested default: 10993",
+            "description": "IMAP over implicit TLS. Required for secure email access via IMAP clients. Keep this port open to allow encrypted mail retrieval.",
             "host_default": 10993,
-            "label": "IMAPS"
+            "label": "IMAPS [e.g. 10993]"
           },
           "587": {
-            "description": "Handles email submission using STARTTLS. If all your clients are configured to use port (10)465 with implicit TLS, port (10)587 can be disabled for simplicity and security. Suggested default: 10587",
+            "description": "Handles email submission using STARTTLS. If all your clients are configured to use port (10)465 with implicit TLS, port (10)587 can be disabled for simplicity and security.",
             "host_default": 10587,
-            "label": "SMTP Submission"
+            "label": "SMTP Submission [e.g. 10587]"
           },
           "143": {
-            "description": "The standard IMAP port without encryption. This port should generally be disabled in favor of the encrypted IMAPS port ((10)993). Suggested default: 10143",
+            "description": "The standard IMAP port without encryption. This port should generally be disabled in favor of the encrypted IMAPS port ((10)993).",
             "host_default": 10143,
-            "label": "IMAP4"
+            "label": "IMAP4 [e.g. 10143]"
           },
           "4190": {
-            "description": "Used to manage Sieve scripts remotely. Only keep this port open if your users actively use Sieve for email filtering rules. Suggested default: 104190",
+            "description": "Used to manage Sieve scripts remotely. Only keep this port open if your users actively use Sieve for email filtering rules.",
             "host_default": 14190,
-            "label": "ManageSieve"
+            "label": "ManageSieve [e.g. 14190]"
           }
         },
         "volumes": {
