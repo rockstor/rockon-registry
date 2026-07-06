@@ -1,6 +1,6 @@
 {
   "Stalwart": {
-    "description": "<p>Stalwart is an open-source mail & collaboration server with JMAP, IMAP4, POP3, SMTP, CalDAV, CardDAV and WebDAV support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.</p><p>Run <code>chown 2000:2000</code> on the Stalwart shares [e.g. <code>chown 2000:2000 /mnt2/stalwart-config /mnt2/stalwart-data</code>] before setup.</p><p>Use <code>docker logs stalwart</code>for admin <a href='https://stalw.art/docs/install/platform/docker#log-in-to-the-web-interface' target='_blank'>setup</a>.</p><p>Based on the <a href='https://hub.docker.com/r/stalwartlabs/stalwart' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "<p>Stalwart is an open-source mail & collaboration server with JMAP, IMAP4, POP3, SMTP, CalDAV, CardDAV and WebDAV support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.</p><p>Run <code>chown 2000:2000</code> on the Stalwart shares [e.g. <code>chown 2000:2000 /mnt2/stalwart-config /mnt2/stalwart-data</code>] before setup.</p><p>Use <code>docker logs stalwart</code>for admin <a href='https://stalw.art/docs/install/platform/docker/#retrieve-the-administrator-credentials' target='_blank'>setup</a>.</p><p>Based on the <a href='https://hub.docker.com/r/stalwartlabs/stalwart' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "ui": {
       "slug": "admin"
     },
