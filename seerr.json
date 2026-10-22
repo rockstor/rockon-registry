@@ -1,5 +1,5 @@
 {
-  "seerr": {
+  "Seerr": {
     "description": "Request management and media discovery tool for your Media Server (Plex/Emby/Jellyfin), integrating with Sonarr and Radarr.<p><b>Note:</b> If you will use Seerr with Sonarr and Radarr, then make sure all of them are in the same Docker network after installation.</p><p>Based on a <a href='https://hub.docker.com/r/seerr/seerr' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture. Rockstor V5.5.0 or later.</p>",
     "version": "1.0",
     "website": "https://seerr.dev/",
