@@ -16,6 +16,7 @@
   "esphome": "ESPHome.json",
   "file browser": "filebrowser.json",
   "filebot-node": "filebot-node.json",
+  "flaresolverr": "flaresolverr.json",
   "folding@home": "foldingathome-linuxserver.json",
   "forgejo": "forgejo.json",
   "forgejo runner": "forgejo-runner.json",
