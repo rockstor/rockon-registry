@@ -22,15 +22,15 @@
           }
         },
         "environment": {
-          "LOG_LEVEL": {
-            "description": "Set the log verbosity. Valid values include info, debug, warn, and error.",
-            "label": "Log level [e.g. info]",
-            "index": 1
-          },
           "LOG_HTML": {
             "description": "Set to true only for debugging to log HTML that passes through the proxy.",
             "label": "HTML logging [e.g. false]",
             "index": 2
+          },
+          "LOG_LEVEL": {
+            "description": "Set the log verbosity. Valid values include info, debug, warn, and error.",
+            "label": "Log level [e.g. info]",
+            "index": 1
           }
         }
       }
