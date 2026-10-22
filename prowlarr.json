@@ -1,0 +1,31 @@
+{
+  "Prowlarr": {
+    "description": "Prowlarr is an indexer manager and proxy that integrates torrent trackers and Usenet indexers with Sonarr, Radarr and others. See the <a href='https://wiki.servarr.com/prowlarr/quick-start-guide' target='_blank'>quick-start guide</a> for setup information.<p><b>Note:</b> If you will use Prowlarr with FlareSolverr, Sonarr and Radarr, then make sure all of them are in the same Docker network after installation.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/prowlarr' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture. Rockstor V5.5.0 or later.</p>",
+    "version": "1.0",
+    "website": "https://prowlarr.com/",
+    "icon": "https://prowlarr.com/img/favicon.ico",
+    "containers": {
+      "prowlarr": {
+        "image": "linuxserver/prowlarr",
+        "launch_order": 1,
+        "uid": -1,
+        "gid": -1,
+        "ports": {
+          "9696": {
+            "description": "Prowlarr WebUI port.",
+            "label": "WebUI port [e.g. 9696]",
+            "host_default": 9696,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/config": {
+            "description": "Prowlarr database and configuration files.",
+            "label": "Config Storage [e.g. prowlarr-config]"
+          }
+        }
+      }
+    }
+  }
+}
