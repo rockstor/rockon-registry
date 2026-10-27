@@ -1,0 +1,46 @@
+{
+  "Minecraft Bedrock": {
+    "description": "Minecraft Bedrock Edition dedicated server (Windows, mobile, and console clients). The server updates to the latest Bedrock release on every Rock-on start.<p><b>Note:</b> uses `net=host` for core functionality.</p><p>Based on a <a href='https://hub.docker.com/r/itzg/minecraft-bedrock-server' target='_blank'>custom OCI image</a>, available for amd64 and arm64 (via Box64 emulation) architecture.</p>",
+    "version": "1.0",
+    "website": "https://hub.docker.com/r/itzg/minecraft-bedrock-server",
+    "more_info": "<h4>Network</h4><p>Clients connect on TCP port 19132, then each player uses a UDP port in the range 19140-19155. Allow both on any firewall, and forward both for access from outside your network. UDP 7551 is used for LAN discovery.</p><h4>Allowlist</h4><p>The allowlist is off, so any player who can reach the server can join. To restrict access, edit allowlist.json and server.properties (allow-list=true) in the data Share and restart the Rock-on.</p><h4>Administration</h4><p>Send console commands with `docker exec minecraft-bedrock send-command help`; output appears in `docker logs minecraft-bedrock`.</p>",
+    "containers": {
+      "minecraft-bedrock": {
+        "image": "itzg/minecraft-bedrock-server",
+        "launch_order": 1,
+        "volumes": {
+          "/data": {
+            "description": "Share for the server binaries, worlds, and configuration. The server runs as the owner of this Share.",
+            "label": "Data storage [e.g. minecraft-bedrock-data]",
+            "min_size": 1073741824
+          }
+        },
+        "opts": [
+          [
+            "--net=host",
+            ""
+          ],
+          [
+            "-it",
+            ""
+          ],
+          [
+            "-e",
+            "SERVER_UDP_PORTS=19140-19155"
+          ],
+          [
+            "-e",
+            "ALLOW_LIST=false"
+          ]
+        ],
+        "environment": {
+          "EULA": {
+            "description": "You must accept the Minecraft End User License Agreement (https://www.minecraft.net/eula) for the server to run.",
+            "label": "EULA Accept [e.g. TRUE]",
+            "index": 1
+          }
+        }
+      }
+    }
+  }
+}
