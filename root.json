@@ -64,7 +64,7 @@
   "pocketmine-mp": "pocketmine.json",
   "qbittorrent": "qbittorrent_lsio.json",
   "radarr": "radarr.json",
-  "resilio sync": "resilioSync.json",
+  "resilio sync by linuxserver.io": "resilio-sync-linuxserver.json",
   "rustfs": "rustfs.json",
   "sabnzbd": "sabnzb.json",
   "scrutiny": "scrutiny.json",
