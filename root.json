@@ -64,6 +64,7 @@
   "pi-hole": "pi-hole.json",
   "plex": "plex.json",
   "pocketmine-mp": "pocketmine.json",
+  "prowlarr": "prowlarr.json",
   "qbittorrent": "qbittorrent_lsio.json",
   "radarr": "radarr.json",
   "resilio sync": "resilioSync.json",
