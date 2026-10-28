@@ -10,7 +10,6 @@
   "copyparty": "copyparty.json",
   "dashy": "dashy.json",
   "deluge": "deluge.json",
-  "dropbox": "dropbox.json",
   "duck dns": "duckdns.json",
   "duplicati": "duplicati-lsio.json",
   "emby server": "embyserver.json",
@@ -28,9 +27,7 @@
   "gotify": "Gotify.json",
   "handbrake": "handbrake.json",
   "hdhomerun dvr engine": "hdhomerun_dvr.json",
-  "headphones": "headphones.json",
   "home assistant": "home-assistant-linuxserver.json",
-  "http to https redirect": "redirect-http-to-https.json",
   "immich": "immich.json",
   "it-tools": "it-tools.json",
   "jackett": "Jackett.json",
@@ -59,7 +56,6 @@
   "omada controller": "omada-controller.json",
   "ombi": "ombi.json",
   "openspeedtest": "OpenSpeedTest.json",
-  "openvpn": "openvpn.json",
   "paperless-ngx": "paperless-ngx.json",
   "pi-hole": "pi-hole.json",
   "plex": "plex.json",
@@ -73,7 +69,6 @@
   "scrutiny": "scrutiny.json",
   "seafile v12": "seafile12.json",
   "seerr": "seerr.json",
-  "sickchill": "sickchill.json",
   "smokeping": "smokeping.json",
   "sonarr": "sonarr.json",
   "spoolman": "spoolman.json",
@@ -89,6 +84,5 @@
   "watchtower": "watchtower_official.json",
   "web service discovery for windows networks (wsdd-native)": "wsdd.json",
   "wireguard easy": "WireGuardEasy.json",
-  "youtrack official": "youtrack-official.json",
-  "zabbix-xxl": "zabbix-xxl.json"
+  "youtrack official": "youtrack-official.json"
 }
