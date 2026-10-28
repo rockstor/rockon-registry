@@ -1,0 +1,49 @@
+{
+  "Seerr": {
+    "description": "Request management and media discovery tool for your Media Server (Plex/Emby/Jellyfin), integrating with Sonarr and Radarr.<p><b>Note:</b> If you will use Seerr with Sonarr and Radarr, then make sure all of them are in the same Docker network after installation.</p><p>Based on the <a href='https://hub.docker.com/r/seerr/seerr' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture. Rockstor V5.5.0 or later.</p>",
+    "version": "1.0",
+    "website": "https://seerr.dev/",
+    "icon": "https://seerr.dev/os_logo_filled.svg",
+    "containers": {
+      "seerr": {
+        "image": "seerr/seerr",
+        "launch_order": 1,
+        "uid": -1,
+        "gid": -1,
+        "ports": {
+          "5055": {
+            "description": "Seerr WebUI port.",
+            "label": "WebUI port [e.g. 5055]",
+            "host_default": 5055,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/app/config": {
+            "description": "Configuration and database. Minimum Size: 1 GB.",
+            "label": "Config Storage [e.g. seerr-config]",
+            "min_size": 1073741824
+          }
+        },
+        "opts": [
+          [
+            "--security-opt",
+            "no-new-privileges"
+          ],
+          [
+            "--cap-drop",
+            "ALL"
+          ]
+        ],
+        "environment": {
+          "LOG_LEVEL": {
+            "description": "Enter the logging level. Valid levels: debug, info, warn, error",
+            "label": "Logging [e.g. info]",
+            "index": 1
+          }
+        }
+      }
+    }
+  }
+}
