@@ -30,6 +30,7 @@
   "hdhomerun dvr engine": "hdhomerun_dvr.json",
   "headphones": "headphones.json",
   "home assistant": "home-assistant-linuxserver.json",
+  "homebridge": "homebridge.json",
   "http to https redirect": "redirect-http-to-https.json",
   "immich": "immich.json",
   "it-tools": "it-tools.json",

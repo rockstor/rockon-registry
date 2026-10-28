@@ -1,0 +1,52 @@
+{
+  "Homebridge": {
+    "description": "<p>Homebridge is a lightweight server that emulates the iOS HomeKit API, letting you control smart home devices that lack native HomeKit support from Apple's Home app and Siri. Over 2,000 community plugins extend it to a wide range of brands and protocols. Everything is managed from the built-in Homebridge UI, reachable on the Web-UI port configured below.</p><p><b>Note:</b> uses `net=host`, as HomeKit discovers this bridge via mDNS/Bonjour advertisements that do not cross a bridged OCI network. The Web-UI port is consequently fixed at 8581 and cannot be remapped. The host's D-Bus and Avahi sockets are mounted read-only so that Homebridge's Avahi mDNS advertiser may be selected; see the additional information below. This Rock-on also runs as the root user, as its OCI image does not support running otherwise.</p><p>Based on the <a href='https://hub.docker.com/r/homebridge/homebridge' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.0",
+    "website": "https://homebridge.io/",
+    "more_info": "<p>On first launch, browse to the Web-UI and create the Homebridge UI administrator account. There are no default credentials. The HomeKit pairing PIN and QR code are then shown on the status page, ready to be added in Apple's Home app.</p><p><b>mDNS advertiser:</b> the container's own Avahi daemon is disabled, as under host networking it would contend with the host's avahi-daemon for port 5353. The host's D-Bus and Avahi sockets are mounted read-only instead, so that Homebridge UI - Settings - Advanced - mDNS Advertiser offers Avahi alongside the default Bonjour HAP. Avahi is the lighter of the two where the host already runs avahi-daemon. See the <a href='https://github.com/homebridge/homebridge/wiki/mDNS-Options' target='_blank'>mDNS Options</a> documentation for the trade-offs.</p><p>Plugins installed through the Homebridge UI, along with all configuration, are stored in the mapped Share and therefore survive an update of this Rock-on.</p><p>For updates of the application, consider installing the Watchtower Rock-on and running it periodically.</p>",
+    "containers": {
+      "homebridge": {
+        "image": "homebridge/homebridge",
+        "tag": "latest",
+        "launch_order": 1,
+        "ports": {
+          "8581": {
+            "description": "Homebridge UI port (http). As this Rock-on uses host networking, the host port must match the container port. You may need to open the same port on your firewall (tcp).",
+            "label": "Web-UI port [must be 8581]",
+            "host_default": 8581,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/homebridge": {
+            "description": "Share for Homebridge configuration, installed plugins, and persisted HomeKit pairing data. It must be owned by root (0:0).",
+            "label": "Homebridge Config Storage [e.g. homebridge-config]"
+          }
+        },
+        "opts": [
+          [
+            "--net",
+            "host"
+          ],
+          [
+            "-e",
+            "ENABLE_AVAHI=0"
+          ],
+          [
+            "-v",
+            "/var/run/dbus:/var/run/dbus:ro"
+          ],
+          [
+            "-v",
+            "/var/run/avahi-daemon:/var/run/avahi-daemon:ro"
+          ],
+          [
+            "--security-opt",
+            "apparmor=unconfined"
+          ]
+        ]
+      }
+    }
+  }
+}
