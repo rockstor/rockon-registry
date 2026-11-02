@@ -1,9 +1,9 @@
 {
   "Forgejo Runner": {
     "description": "Forgejo Actions runner. Self-host a CI runner for Forgejo instances such as <a href='https://codeberg.org' target='_blank'>codeberg.org</a>.<p><b>Warning:</b> runs with <a href='https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities' target='_blank'>privileged capabilities</a> to enable container management.</p><p>Based on a <a href='https://codeberg.org/phillxnet/forgejo-runner-wrapper' target='_blank'>custom OCI image</a> from the Rockstor maintainers. Available for amd64 architecture only. Rockstor V5.5.0 or later.",
-    "version": "12.5.2",
+    "version": "13",
     "website": "https://forgejo.org/docs/latest/user/actions/",
-    "more_info": "Intended to shares the host OCI instance.<p>Auto enables privileged mode, and automount re host OCI service.<p>Auto configures: <code>-v /var/run/docker.sock:/var/run/docker.sock </code><p>Enabling sibling rather than child container creation for running workflows.",
+    "more_info": "Intended to share the host OCI instance.<p>Auto enables privileged mode, and automount re host OCI service.<p>Auto configures: <code>-v /var/run/docker.sock:/var/run/docker.sock </code><p>Enabling sibling rather than child container creation for running workflows.",
     "containers": {
       "forgejo-runner": {
         "image": "codeberg.org/phillxnet/forgejo-runner-wrapper",
@@ -33,20 +33,20 @@
         ],
         "environment": {
           "INSTANCE": {
-            "description": "Associated Forgejo instance.",
+            "description": "Associated Forgejo instance url.",
             "label": "Forgejo instance [e.g. https://codeberg.org]"
           },
           "LABELS": {
             "description": "Label to define this runner (runs-on-ref:type:specifics).",
             "label": "Runner label [e.g. ubuntu-22.04:docker://node:20-bullseye]"
           },
-          "NAME": {
-            "description": "Display name (no spaces) within the Forgejo instance.",
-            "label": "Runner name [e.g. SelfHosted]"
+          "UUID": {
+            "description": "UUID from the Forgejo instance: Settings - Actions - Runners - 'Create new runner'.",
+            "label": "Registration 'UUID'"
           },
           "TOKEN": {
             "description": "Token from the Forgejo instance: Settings - Actions - Runners - 'Create new runner'.",
-            "label": "Registration 'TOKEN'"
+            "label": "Registration 'Token'"
           }
         }
       }
