@@ -1,9 +1,9 @@
 {
   "UniFi Network Application by linuxserver.io": {
-    "description": "Ubiquiti's UniFi Network Application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.</p><p><b>Note:</b> requires a Ubiquiti account: can be created during initial WebUI setup.</p><p><b>Before install:</b> create a Share named 'unifi-db' containing 'init-mongo.sh' with the content outlined <a href='https://github.com/linuxserver/docker-unifi-network-application?tab=readme-ov-file#setting-up-your-external-database' target='_blank'>here</a>.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/unifi-controller' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
-    "version": "1.0",
+    "description": "Ubiquiti's UniFi Network Application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.</p><p><b>Note:</b> requires a Ubiquiti account: can be created during initial WebUI setup.</p><p><b>Hardware:</b> MongoDB 8.0 requires a CPU with AVX on amd64 (not available on many Celeron and Pentium models) and ARMv8.2-A on arm64 (not available on Raspberry Pi 4).</p><p><b>Before install:</b> create a Share named 'unifi-db' containing 'init-mongo.sh' with the content outlined <a href='https://github.com/linuxserver/docker-unifi-network-application?tab=readme-ov-file#setting-up-your-external-database' target='_blank'>here</a>.</p><p>Based on a <a href='https://hub.docker.com/r/linuxserver/unifi-network-application' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.1",
     "website": "https://ui.com/",
-    "more_info": "To limit memory add MEM_LIMIT=1024M as a custom argument after install.",
+    "more_info": "<p>To limit memory add MEM_LIMIT=1024M as a custom argument after install.</p><h4>Upgrading from MongoDB 4.4</h4><p>Earlier versions of this Rock-on used MongoDB 4.4. MongoDB cannot skip major versions, so do not reinstall this Rock-on onto an existing 4.4 'unifi-db' Share. Either export a backup from the UniFi WebUI and restore it into a fresh install with an empty 'unifi-db' Share (plus init-mongo.sh), or upgrade the existing data step by step through 5.0, 6.0, and 7.0, setting featureCompatibilityVersion after each step, before starting 8.0.</p>",
     "ui": {
       "https": true,
       "slug": ""
@@ -11,7 +11,7 @@
     "containers": {
       "unifi-db": {
         "image": "mongo",
-        "tag": "4.4.29",
+        "tag": "8.0",
         "launch_order": 1,
         "volumes": {
           "/data": {
