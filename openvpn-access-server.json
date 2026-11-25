@@ -1,0 +1,62 @@
+{
+  "OpenVPN access server": {
+    "description": "OpenVPN Access Server provides a VPN server with web-based administration and client interfaces.<p>Based on the <a href='https://hub.docker.com/r/openvpn/openvpn-as' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.1",
+    "website": "https://openvpn.net/access-server/",
+    "more_info": "<p>Create a dedicated Rockstor Share for persistent configuration. The default administrator username is <code>openvpn</code>. Retrieve the initial administrator password from the container log after the first start, using <code>docker logs openvpn-as | grep 'Auto-generated pass'</code>.</p><p>For systems behind a router, forward the desired VPN port, normally UDP 1194, from the router to the Rockstor system. There is normally no need to expose the TCP 943 administrative interface through the router.</p>",
+    "ui": {
+      "https": true,
+      "slug": "admin"
+    },
+    "containers": {
+      "openvpn-as": {
+        "image": "openvpn/openvpn-as",
+        "tag": "latest",
+        "launch_order": 1,
+        "ports": {
+          "1194": {
+            "description": "UDP port for OpenVPN VPN connections.",
+            "label": "UDP port [e.g. 1194]",
+            "host_default": 1194,
+            "protocol": "udp"
+          },
+          "443": {
+            "description": "TCP port for OpenVPN TCP connections. Host port 9443 is used by default to avoid a conflict with the Rockstor HTTPS service.",
+            "label": "TCP port [e.g. 9443]",
+            "host_default": 9443,
+            "protocol": "tcp"
+          },
+          "943": {
+            "description": "HTTPS port for the OpenVPN Access Server Admin and Client Web UIs.",
+            "label": "Web UI port [e.g. 943]",
+            "host_default": 943,
+            "protocol": "tcp",
+            "ui": true
+          }
+        },
+        "volumes": {
+          "/openvpn": {
+            "description": "Choose a dedicated Rockstor Share for persistent OpenVPN Access Server configuration and data.",
+            "label": "Configuration share [e.g. ovpn-as-conf]"
+          }
+        },
+        "opts": [
+          [
+            "--cap-add",
+            "NET_ADMIN"
+          ],
+          [
+            "--cap-add",
+            "MKNOD"
+          ]
+        ],
+        "devices": {
+          "/dev/net/tun": {
+            "description": "TUN network device required by OpenVPN Access Server.",
+            "label": "TUN device [e.g. /dev/net/tun]"
+          }
+        }
+      }
+    }
+  }
+}
