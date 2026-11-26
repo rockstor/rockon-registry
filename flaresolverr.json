@@ -1,0 +1,39 @@
+{
+  "FlareSolverr": {
+    "description": "FlareSolverr is a proxy server to bypass Cloudflare protection, needed by Prowlarr for some torrent sites. See the <a href='https://github.com/FlareSolverr/FlareSolverr#readme' target='_blank'>FlareSolverr guide</a> for setup information.<p><b>Note:</b> This rock-on runs as root.</p><p><b>Note:</b> If you will use FlareSolverr with Prowlarr, make sure both are in the same Docker network after installation.</p><p>Based on the <a href='https://hub.docker.com/r/flaresolverr/flaresolverr' target='_blank'>official OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "version": "1.0",
+    "website": "https://github.com/FlareSolverr/FlareSolverr",
+    "containers": {
+      "flaresolverr": {
+        "image": "flaresolverr/flaresolverr",
+        "launch_order": 1,
+        "ports": {
+          "8191": {
+            "description": "FlareSolverr API port.",
+            "label": "API port [e.g. 8191]",
+            "host_default": 8191,
+            "protocol": "tcp"
+          }
+        },
+        "volumes": {
+          "/config": {
+            "description": "Configuration and optional log files.",
+            "label": "Config Storage [e.g. flaresolverr-config]"
+          }
+        },
+        "environment": {
+          "LOG_HTML": {
+            "description": "Set to true only for debugging to log HTML that passes through the proxy.",
+            "label": "HTML logging [e.g. false]",
+            "index": 2
+          },
+          "LOG_LEVEL": {
+            "description": "Set the log verbosity. Valid values include info, debug, warn, and error.",
+            "label": "Log level [e.g. info]",
+            "index": 1
+          }
+        }
+      }
+    }
+  }
+}
